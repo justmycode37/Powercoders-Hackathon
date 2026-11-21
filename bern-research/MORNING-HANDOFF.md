@@ -1,6 +1,6 @@
 # Bern research: morning handoff
 
-**Status: final.** Written 2026-11-21 05:00 Europe/Zurich by the lead, at ktr0a's request to finalise early. The
+**Status: final, with an addendum from the 05:10 data review (see below).** Written 2026-11-21 05:00 Europe/Zurich by the lead, at ktr0a's request to finalise early. The
 independent reviews planned for 05:00 and 06:40 had not run when this was written; a read-only checkpoint at 03:00
 did. All four worker threads are idle and nothing is uncommitted.
 
@@ -119,6 +119,29 @@ manifests, and one reference station that transit does not list.
 
 Two errors were caught before they were committed: a photo of a memorial plaque in Germany linked to Bern station by
 a keyword match, and a "lines at this kerb" attribute that had picked the kerb across the street for 18 edges.
+
+## Addendum after the 05:10 data review
+
+An independent read-only review ran on commit `a09cd4d` at 05:10. It reproduced the results above (lead validator
+0 FAIL, transit 0 failed, stations 0 FAIL) and raised three points. The lead re-counted the first from the committed
+files.
+
+- **Departures without a boarding edge in Bern.** In `fp2026`, 26,412 of 1,240,690 stop_times at Bern stops (2.1 %)
+  name only the station. 6,728 of them are the Matte and Münsterplattform lifts, which have no edge. Most of the
+  rest are ordinary two-edge bus stops: Wankdorf Center 2,086, Weltpostverein 1,997, Sonnenhof 1,997, Rosengarten
+  1,885, Kasernenstrasse 1,827, Löchligut 1,051, Wankdorf City, Stauffacherbrücke and Winkelriedstrasse 964 each,
+  Wankdorfbrücke 850. For these the data says which stop, not which side of the street.
+- **An inferred side is possible for part of them.** The review measured that matching the bearing towards the next
+  stop against the edge's compass direction decides about 10,600 of those rows, and is right in 97.2 % of decided
+  cases when tested on Bern stops where the edge is known. The transit thread was asked at 05:05 to build this as a
+  separate table flagged `inferred`, not merged into the stop map. **Status: requested, not in this commit.** If it
+  lands, it appears as `transit/data/<feed>/inferred_edges.json` with its own commit and a line below.
+- **11 used Bern edges have no atlas coordinate** (Helvetiaplatz 12, Thunplatz 12, Luisenstrasse 11 and 12,
+  Untermattweg 02, Eigerplatz 32 and 56, Guisanplatz Expo 10, Brunnadernstrasse 17, Technologiepark 12, Holenacker
+  13), covering 9,114 stop_times (0.7 %) by the review's count, which the lead did not re-count. They are part of
+  the 34 listed under `known_gaps`; no open source closes them.
+- **2027 feed:** Bern, Kunstmuseum and Bern, Waisenhausplatz have no trips in `fp2027` (200 of 204 Bern stop points
+  have trips there, against all 204 in `fp2026`). Detail in `transit/HANDOFF.md`.
 
 ## How to run the samples
 
