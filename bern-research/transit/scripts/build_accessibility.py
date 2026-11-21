@@ -14,12 +14,11 @@ empty source cells are left out.
 from __future__ import annotations
 
 import collections
-import datetime as dt
 import json
 import re
 import sys
 
-from common import DATA, read_atlas
+from common import CACHE, DATA, read_atlas
 
 SKIP = {"creationDate", "status"}
 
@@ -51,7 +50,8 @@ def swiss_date(s: str) -> str:
 def main() -> int:
     edges = {f["properties"]["sloid"]: f["properties"] for f in json.loads((DATA / "edges.geojson").read_text(encoding="utf-8"))["features"]}
     stations = {f["properties"]["sloid"]: f["properties"] for f in json.loads((DATA / "stations.geojson").read_text(encoding="utf-8"))["features"] if f["properties"]["sloid"]}
-    today = dt.date.today().isoformat()
+    # "today" = the day the sources were retrieved, so a rebuild from the same cache gives the same file
+    today = json.loads((CACHE / "bfr_wheelchair" / "source.json").read_text(encoding="utf-8"))["fetched_at_utc"][:10]
 
     # ---- BfR wheelchair classification (rows carry validity windows; keep all, mark the one valid today) ----
     flags = ["Autonomie", "Rampeneinsatz", "Voranmeldung", "Ersatztransport", "keinZugang", "keineInfo"]

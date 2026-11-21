@@ -18,6 +18,7 @@ import csv
 import datetime as dt
 import hashlib
 import json
+import random
 import statistics
 import subprocess
 import sys
@@ -48,6 +49,8 @@ SAMPLE_TIMES = {
         ("2026-12-20", "00:30:00", "Sunday after midnight in the 2027 timetable, GTFS times above 24:00:00"),
     ],
 }
+
+RANDOM_SAMPLE = 40
 
 checks: list[dict] = []
 
@@ -131,7 +134,23 @@ def validate_stops(report):
     amb = sum(1 for e in lookup.values() if e["tier"] == "bern" for ids in e["by_designation"].values() if len(ids) > 1)
     uniq = sum(1 for e in lookup.values() if e["tier"] == "bern" for ids in e["by_designation"].values() if len(ids) == 1)
 
+    # accessibility and sectors join on the same ids
+    acc_e = json.loads((DATA / "accessibility_edges.json").read_text(encoding="utf-8"))["edges"]
+    acc_s = json.loads((DATA / "accessibility_stations.json").read_text(encoding="utf-8"))["stations"]
+    sectors = json.loads((DATA / "sectors.geojson").read_text(encoding="utf-8"))["features"]
+    check("accessibility: every edge key exists in edges.geojson", all(k in edge_ids for k in acc_e), f"{len(acc_e)} edges")
+    check("accessibility: every station key exists in stations.geojson", all(k in st_by_sloid for k in acc_s), f"{len(acc_s)} stations")
+    rel_bad = sum(1 for v in acc_s.values() for r in v.get("relations", []) if r.get("reference_point_element_type") == "PLATFORM" and r["element_sloid"] not in edge_ids)
+    check("accessibility: PLATFORM relations point at edges in edges.geojson", rel_bad == 0, f"{rel_bad} relations name an edge that is not in atlas traffic-point-v2", hard=False)
+    check("sectors: every sector belongs to an edge in edges.geojson", all(f["properties"]["edge_sloid"] in edge_ids for f in sectors), f"{len(sectors)} sectors")
+    edge_geom = {f["properties"]["sloid"]: f["geometry"] for f in edges}
+    sd = [haversine_m(*f["geometry"]["coordinates"], *edge_geom[f["properties"]["edge_sloid"]]["coordinates"])
+          for f in sectors if f["geometry"] and edge_geom[f["properties"]["edge_sloid"]]]
+    check("sectors: a sector point lies within 450 m of its edge point", max(sd) <= 450, f"median {statistics.median(sd):.0f} m, max {max(sd):.0f} m over {len(sd)} sectors", hard=False)
+
     report["stops"] = {
+        "accessibility_edges": len(acc_e), "accessibility_stations": len(acc_s), "sectors": len(sectors),
+        "sector_to_edge_distance_m": {"median": round(statistics.median(sd)), "max": round(max(sd))},
         "stations": len(stations),
         "stations_by_tier": dict(collections.Counter(f["properties"]["tier"] for f in stations)),
         "edges_and_areas": len(edges),
@@ -313,7 +332,52 @@ def stationboard(number, date, time_, limit=40):
         return json.loads(r.read().decode("utf-8"))["stationboard"]
 
 
-def samples(tts, report, online):
+def crosscheck(tt, feed, number, label, date, time_, group):
+    """Compare our departures with the stationboard of transport.opendata.ch for one station and time."""
+    base = {"feed": feed, "group": group, "station_number": number, "station": label, "date": date, "from": time_}
+    try:
+        board = stationboard(number, date, time_)
+        time.sleep(0.7)
+    except Exception as exc:                      # network trouble must not fail the offline checks
+        return dict(base, error=str(exc))
+    api = []
+    for b in board:
+        t = b["stop"]["departure"]
+        if not t:
+            continue
+        names = {str(b.get("number") or ""), f"{b.get('category') or ''}{b.get('number') or ''}", str(b.get("category") or "")}
+        api.append((t[:10], t[11:16], names, b.get("to"), b["stop"].get("platform")))
+    if not api:
+        return dict(base, api_departures=0, note="API returned no departures")
+    last = max((a[0], a[1]) for a in api)
+    ours = []
+    for d in tt.departures(number, date, time_, limit=5000, window_sec=30 * 3600):
+        day = (dt.date.fromisoformat(date) + dt.timedelta(days=d["wall_sec"] // 86400)).isoformat()
+        hhmm = f"{d['wall_sec'] % 86400 // 3600:02d}:{d['wall_sec'] % 3600 // 60:02d}"
+        if (day, hhmm) < last:
+            ours.append((day, hhmm, d["route"], d["platform"]))
+    api_in = [a for a in api if (a[0], a[1]) < last]
+    pool = collections.Counter((o[0], o[1], o[2]) for o in ours)
+    ours_plat = collections.defaultdict(set)
+    for o in ours:
+        ours_plat[(o[0], o[1], o[2])].add(o[3])
+    matched = plat_ok = plat_cmp = 0
+    missing = []
+    for a in api_in:
+        hit = next((n for n in a[2] if pool[(a[0], a[1], n)] > 0), None)
+        if hit is None:
+            missing.append([a[1], sorted(a[2])[-1], a[3]])
+            continue
+        pool[(a[0], a[1], hit)] -= 1
+        matched += 1
+        if a[4]:
+            plat_cmp += 1
+            plat_ok += a[4] in ours_plat[(a[0], a[1], hit)]
+    return dict(base, window_until=last[1], api_departures=len(api_in), ours_in_window=len(ours), api_matched_in_ours=matched,
+                api_missing_in_ours=missing[:8], ours_not_in_api=sum(pool.values()), platform_compared=plat_cmp, platform_equal=plat_ok)
+
+
+def samples(tts, report, online, st_by_number):
     out = {"note": "Scheduled departures decoded from data/<feed>/timetable.json with scripts/timetable.py. "
                    "time = local wall clock (Europe/Zurich); gtfs_time = time in the feed, relative to service_date, may exceed 24:00:00.",
            "samples": []}
@@ -329,54 +393,16 @@ def samples(tts, report, online):
                        "| Time | GTFS time | Service day | Line | Headsign | Platform | Edge SLOID |", "|---|---|---|---|---|---|---|"]
                 md += [f"| {d['time'][:5]} | {d['gtfs_time']} | {d['service_date']} | {d['route']} | {d['headsign']} | {d['platform'] or ''} | {d['edge_sloid'] or ''} |" for d in deps]
                 md.append("")
-                if online and feed == "fp2026":
-                    try:
-                        board = stationboard(number, date, time_)
-                        time.sleep(1.0)
-                    except Exception as exc:                      # network trouble must not fail the offline checks
-                        xcheck.append({"station_number": number, "date": date, "from": time_, "error": str(exc)})
-                        continue
-                    api = []
-                    for b in board:
-                        t = b["stop"]["departure"]
-                        if not t:
-                            continue
-                        hhmm = t[11:16]
-                        day = t[:10]
-                        names = {str(b.get("number") or ""), f"{b.get('category') or ''}{b.get('number') or ''}", str(b.get("category") or "")}
-                        api.append((day, hhmm, names, b.get("to"), b["stop"].get("platform")))
-                    if not api:
-                        continue
-                    last = max((a[0], a[1]) for a in api)
-                    ours_all = tt.departures(number, date, time_, limit=2000, window_sec=14 * 3600)
-                    ours = []
-                    for d in ours_all:
-                        day = (dt.date.fromisoformat(date) + dt.timedelta(days=d["wall_sec"] // 86400)).isoformat()
-                        hhmm = f"{d['wall_sec'] % 86400 // 3600:02d}:{d['wall_sec'] % 3600 // 60:02d}"
-                        if (day, hhmm) < last:
-                            ours.append((day, hhmm, d["route"], d["platform"]))
-                    api_in = [a for a in api if (a[0], a[1]) < last]
-                    pool = collections.Counter((o[0], o[1], o[2]) for o in ours)
-                    matched = plat_ok = plat_cmp = 0
-                    missing = []
-                    ours_plat = collections.defaultdict(set)
-                    for o in ours:
-                        ours_plat[(o[0], o[1], o[2])].add(o[3])
-                    for a in api_in:
-                        hit = next((n for n in a[2] if pool[(a[0], a[1], n)] > 0), None)
-                        if hit is None:
-                            missing.append([a[1], sorted(a[2])[-1], a[3]])
-                            continue
-                        pool[(a[0], a[1], hit)] -= 1
-                        matched += 1
-                        if a[4]:
-                            plat_cmp += 1
-                            plat_ok += a[4] in ours_plat[(a[0], a[1], hit)]
-                    extra = sum(pool.values())
-                    xcheck.append({"station_number": number, "station": label, "date": date, "from": time_,
-                                   "window_until": last[1], "api_departures": len(api_in), "ours_in_window": len(ours),
-                                   "api_matched_in_ours": matched, "api_missing_in_ours": missing[:8], "ours_not_in_api": extra,
-                                   "platform_compared": plat_cmp, "platform_equal": plat_ok})
+                if online:
+                    xcheck.append(crosscheck(tt, feed, number, label, date, time_, "focus"))
+    if online:
+        # breadth: a seeded random sample of Bern stops, regular weekday at noon, both feeds
+        rnd = random.Random(351)
+        pool = sorted(n for n, f in st_by_number.items() if f["properties"]["tier"] == "bern" and f["properties"]["stop_point"] and f["properties"]["valid_today"])
+        for number in sorted(rnd.sample(pool, RANDOM_SAMPLE)):
+            for feed, date in (("fp2026", "2026-11-24"), ("fp2027", "2026-12-15")):
+                if feed in tts:
+                    xcheck.append(crosscheck(tts[feed], feed, number, st_by_number[number]["properties"]["name"], date, "12:00:00", "random"))
     VALIDATION.mkdir(exist_ok=True)
     (VALIDATION / "sample_departures.json").write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     (VALIDATION / "sample_departures.md").write_text("\n".join(md) + "\n", encoding="utf-8")
@@ -386,13 +412,24 @@ def samples(tts, report, online):
             "method": "same station, date and time; compare (minute, line) pairs inside the window the API returned; then compare the platform letter",
             "results": xcheck,
         }
-        tot = sum(x.get("api_departures", 0) for x in xcheck)
-        hit = sum(x.get("api_matched_in_ours", 0) for x in xcheck)
-        pc = sum(x.get("platform_compared", 0) for x in xcheck)
-        pe = sum(x.get("platform_equal", 0) for x in xcheck)
-        report["stationboard_crosscheck"]["totals"] = {"api_departures": tot, "matched": hit, "platform_compared": pc, "platform_equal": pe}
-        check("fp2026: sample departures agree with transport.opendata.ch stationboard (>= 95 % of API departures found)", tot > 0 and hit / tot >= 0.95,
-              f"{hit} of {tot} API departures found at the same minute and line; platform equal for {pe} of {pc}", hard=False)
+        totals = {}
+        for feed in tts:
+            for group in ("focus", "random"):
+                xs = [x for x in xcheck if x["feed"] == feed and x["group"] == group]
+                tot = sum(x.get("api_departures", 0) for x in xs)
+                hit = sum(x.get("api_matched_in_ours", 0) for x in xs)
+                extra = sum(x.get("ours_not_in_api", 0) for x in xs)
+                pc = sum(x.get("platform_compared", 0) for x in xs)
+                pe = sum(x.get("platform_equal", 0) for x in xs)
+                errors = sum(1 for x in xs if "error" in x)
+                totals[f"{feed}/{group}"] = {"boards": len(xs), "boards_failed_to_load": errors, "api_departures": tot, "matched": hit,
+                                             "ours_not_in_api": extra, "platform_compared": pc, "platform_equal": pe}
+                what = "focus stations (Bern, Bern Bahnhof, Zytglogge, Wankdorf)" if group == "focus" else f"{RANDOM_SAMPLE} random Bern stops"
+                check(f"{feed}: departures at {what} agree with transport.opendata.ch stationboard (>= 95 % of API departures found)",
+                      tot > 0 and hit / tot >= 0.95,
+                      f"{len(xs) - errors} boards: {hit} of {tot} API departures found at the same minute and line; "
+                      f"{extra} of ours not in the API list; platform equal for {pe} of {pc}", hard=False)
+        report["stationboard_crosscheck"]["totals"] = totals
 
 
 def node_compare(tts):
@@ -438,7 +475,7 @@ def main() -> int:
         ra, rb = ({(r[2], r[4]) for r in tts[f].routes} for f in ("fp2026", "fp2027"))
         report["route_names_only_in_fp2026"] = sorted(f"{d} {n}" for n, d in ra - rb)
         report["route_names_only_in_fp2027"] = sorted(f"{d} {n}" for n, d in rb - ra)
-    samples(tts, report, args.online)
+    samples(tts, report, args.online, st_by_number)
     if args.node:
         node_compare(tts)
 

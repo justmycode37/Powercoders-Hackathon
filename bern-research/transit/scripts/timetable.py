@@ -96,13 +96,14 @@ class Timetable:
                    window_sec: int = 6 * 3600, include_frequency: bool = False) -> list[dict]:
         """Scheduled departures from station `number` on calendar `date` from `time` (local wall clock).
 
-        Looks at the service day `date` and at the previous service day (trips running past midnight,
-        GTFS times >= 24:00:00). Rows whose pickup_type is 1 (no boarding) and final stops are skipped.
+        Looks at the previous service day (trips running past midnight, GTFS times >= 24:00:00), at the
+        service day `date`, and at later service days when the window reaches past midnight. Rows whose pickup_type is 1 (no boarding) and final stops are skipped.
         Wall-clock conversion is plain addition; on the two DST-change days per year GTFS counts from
         noon minus 12 h, which shifts early-morning times by one hour (handled in web/bern-transit.js).
         """
         t0 = hms_to_sec(time)
         day = self.day_index(date)
+        days_ahead = (t0 + window_sec) // 86400          # a window longer than the rest of the day reaches into later service days
         out = []
         for pi, j in self._index().get(number, []):
             p = self.patterns[pi]
@@ -119,7 +120,7 @@ class Timetable:
                 if is_freq and not include_frequency:
                     continue
                 dep = t["st"][k] + p["p"][t["pf"][k]][2 * j + 1]
-                for back in (0, 1):                      # 0 = service day `date`, 1 = the day before
+                for back in range(1, -days_ahead - 1, -1):   # 1 = service day before `date`, 0 = `date`, -1 = the next day ...
                     wall = dep - back * 86400
                     if not t0 <= wall < t0 + window_sec:
                         continue

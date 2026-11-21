@@ -1,0 +1,334 @@
+{
+  "folder": "bern-research/transit/data",
+  "timezone": "Europe/Zurich",
+  "rebuild": "python scripts/run_all.py",
+  "outputs": [
+    {
+      "path": "data/stations.geojson",
+      "description": "Stations (atlas service points / DiDok) in coverage, tiers bern / ring / connected",
+      "bytes": 1096842,
+      "sha256": "624203757ca2e63c4b429ba54b18bc762c515a6cc1022edcbf4f811d8c338709",
+      "records": 1123,
+      "built_by": "scripts/build_stops.py",
+      "sources": [
+        "atlas_service_point",
+        "atlas_service_point_years",
+        "atlas_traffic_point",
+        "atlas_traffic_point_years",
+        "gtfs_fp2026",
+        "gtfs_fp2027",
+        "boundary_bern"
+      ],
+      "commit": true
+    },
+    {
+      "path": "data/edges.geojson",
+      "description": "Boarding edges (kerbs, platforms) and boarding areas of those stations",
+      "bytes": 3008849,
+      "sha256": "61948253552dbb5c487fc24a3d282e9af51d6cccb5139bdefa1d186861fd2b27",
+      "records": 3483,
+      "built_by": "scripts/build_stops.py",
+      "sources": [
+        "atlas_service_point",
+        "atlas_service_point_years",
+        "atlas_traffic_point",
+        "atlas_traffic_point_years",
+        "gtfs_fp2026",
+        "gtfs_fp2027"
+      ],
+      "commit": true
+    },
+    {
+      "path": "data/edge_lookup.json",
+      "description": "number -> designation -> edge SLOID(s)",
+      "bytes": 341638,
+      "sha256": "20af8ec8519afd3184735d2e2540284e9adfb9ee785392592d1a9f0f97ddcabb",
+      "records": 1117,
+      "built_by": "scripts/build_stops.py",
+      "sources": [
+        "atlas_service_point",
+        "atlas_service_point_years",
+        "atlas_traffic_point",
+        "atlas_traffic_point_years",
+        "gtfs_fp2026",
+        "gtfs_fp2027"
+      ],
+      "commit": true
+    },
+    {
+      "path": "data/gtfs_stop_map_fp2026.json",
+      "description": "GTFS stop_id -> edge / station SLOID with stop_times shares, timetable 2026",
+      "bytes": 1512874,
+      "sha256": "1455aa1dea8dee741b727a048bf324314ab6c379fe8dd156a817c047d9fe32ff",
+      "records": 3415,
+      "built_by": "scripts/build_stops.py",
+      "sources": [
+        "atlas_service_point",
+        "atlas_service_point_years",
+        "atlas_traffic_point",
+        "atlas_traffic_point_years",
+        "gtfs_fp2026"
+      ],
+      "commit": true
+    },
+    {
+      "path": "data/gtfs_stop_map_fp2027.json",
+      "description": "GTFS stop_id -> edge / station SLOID with stop_times shares, timetable 2027",
+      "bytes": 1364516,
+      "sha256": "3ccc7f5bfe5a656ad929de98fdc09a60ec1186826832c8c88cf5cb1908091045",
+      "records": 3084,
+      "built_by": "scripts/build_stops.py",
+      "sources": [
+        "atlas_service_point",
+        "atlas_service_point_years",
+        "atlas_traffic_point",
+        "atlas_traffic_point_years",
+        "gtfs_fp2027"
+      ],
+      "commit": true
+    },
+    {
+      "path": "data/coverage_stops.json",
+      "description": "Coverage logic and counts for stations and edges",
+      "bytes": 14714,
+      "sha256": "d3b9c298129b9bf9e839e89e827a031e0939b1d19cc239eeba0b468a381eb082",
+      "records": null,
+      "built_by": "scripts/build_stops.py",
+      "sources": [
+        "atlas_service_point",
+        "atlas_service_point_years",
+        "atlas_traffic_point",
+        "atlas_traffic_point_years",
+        "boundary_bern"
+      ],
+      "commit": true
+    },
+    {
+      "path": "data/accessibility_edges.json",
+      "description": "Accessibility per boarding edge (atlas platform-v2, BfR wheelchair classes)",
+      "bytes": 2123819,
+      "sha256": "0c7493620250772efe227e6768add008ea66cacb82c89bed36fe81f4af18d85a",
+      "records": 2902,
+      "built_by": "scripts/build_accessibility.py",
+      "sources": [
+        "atlas_prm_platform",
+        "bfr_wheelchair"
+      ],
+      "commit": true
+    },
+    {
+      "path": "data/accessibility_stations.json",
+      "description": "Accessibility per station (atlas stop-point, reference points, toilets, parking, contact points, relations)",
+      "bytes": 1168748,
+      "sha256": "d0dd1ed8ed73aa091f224e999ca848c7ae5dacf4fc7a2eba3db23a67f4721483",
+      "records": 1112,
+      "built_by": "scripts/build_accessibility.py",
+      "sources": [
+        "atlas_prm_stop_point",
+        "atlas_prm_reference_point",
+        "atlas_prm_toilet",
+        "atlas_prm_parking_lot",
+        "atlas_prm_contact_point",
+        "atlas_prm_relation",
+        "bfr_wheelchair"
+      ],
+      "commit": true
+    },
+    {
+      "path": "data/sectors.geojson",
+      "description": "Platform sectors with atlas coordinates",
+      "bytes": 1293642,
+      "sha256": "a6195070c421888b8e645aebdc9b56f9cf51a4061e30c1259d3fe743c693e86a",
+      "records": 1803,
+      "built_by": "scripts/build_accessibility.py",
+      "sources": [
+        "atlas_sectors"
+      ],
+      "commit": true
+    },
+    {
+      "path": "data/coverage_accessibility.json",
+      "description": "Counts for the accessibility outputs",
+      "bytes": 861,
+      "sha256": "6ca5ebe74ceb329d012b399ffaa02e0c60cb734876d332fc68a7f4f1b0aeca67",
+      "records": null,
+      "built_by": "scripts/build_accessibility.py",
+      "sources": [],
+      "commit": true
+    },
+    {
+      "path": "data/fp2026/gtfs_bern_fp2026.zip",
+      "description": "Lossless GTFS subset: every trip serving Bern, source rows verbatim",
+      "bytes": 17788850,
+      "sha256": "dcf1d2880db85109f68372caecc306dea481d636fb7932465e35581a0986c9cb",
+      "records": null,
+      "built_by": "scripts/extract_gtfs.py + build_timetable.py",
+      "sources": [
+        "gtfs_fp2026",
+        "atlas_service_point",
+        "atlas_service_point_years",
+        "boundary_bern"
+      ],
+      "commit": true
+    },
+    {
+      "path": "data/fp2026/timetable.json",
+      "description": "Compact pattern-encoded timetable (decodes to the exact stop_times of the subset)",
+      "bytes": 19382885,
+      "sha256": "89b0bf4141f010df9831e47d6d43b1bf147a898001f19e0726ee57aa5f3bb506",
+      "records": 140500,
+      "built_by": "scripts/build_timetable.py",
+      "sources": [
+        "gtfs_fp2026"
+      ],
+      "commit": true
+    },
+    {
+      "path": "data/fp2026/edge_directions.json",
+      "description": "Derived: lines and next stops per stop / edge in tiers bern and ring",
+      "bytes": 1114995,
+      "sha256": "a8f544f52707d4f080af44ecbd7869cee594c8b96e5b47c8f4e13a2cc1e89e31",
+      "records": 1294,
+      "built_by": "scripts/build_timetable.py",
+      "sources": [
+        "gtfs_fp2026"
+      ],
+      "commit": true
+    },
+    {
+      "path": "data/fp2026/segments.geojson",
+      "description": "Derived: every stop-to-stop hop with lines, trip-days and run time",
+      "bytes": 4958999,
+      "sha256": "ffd4ebed4d4215e2b9754f06604ad08f086a97b228f90bd9a9f9de42dcf8aada",
+      "records": 5961,
+      "built_by": "scripts/build_timetable.py",
+      "sources": [
+        "gtfs_fp2026"
+      ],
+      "commit": true
+    },
+    {
+      "path": "data/fp2026/lines.geojson",
+      "description": "Derived: representative stop sequence per line and direction",
+      "bytes": 405776,
+      "sha256": "9d3967bb9b2366a44dcf04a00114a5769d3e5d882cfff122c1d5745a58d8e464",
+      "records": 266,
+      "built_by": "scripts/build_timetable.py",
+      "sources": [
+        "gtfs_fp2026"
+      ],
+      "commit": true
+    },
+    {
+      "path": "data/fp2026/transfers.json",
+      "description": "Minimum transfer times and in-seat transfers (Bern area)",
+      "bytes": 7225198,
+      "sha256": "b4bc579a07f98a2c99beec55be5a93903eda361644ce917028d112090dae2382",
+      "records": 48383,
+      "built_by": "scripts/build_timetable.py",
+      "sources": [
+        "gtfs_fp2026"
+      ],
+      "commit": true
+    },
+    {
+      "path": "data/fp2026/timetable_stats.json",
+      "description": "Record counts of the timetable build",
+      "bytes": 843,
+      "sha256": "1fa1cda7cffedfa8e3ad691525fa71a0c78a7b3ccf7873365838c3cc816b9a71",
+      "records": null,
+      "built_by": "scripts/build_timetable.py",
+      "sources": [
+        "gtfs_fp2026"
+      ],
+      "commit": true
+    },
+    {
+      "path": "data/fp2027/gtfs_bern_fp2027.zip",
+      "description": "Lossless GTFS subset: every trip serving Bern, source rows verbatim",
+      "bytes": 3890046,
+      "sha256": "4da6c3a44cbdb4c88d3397076c3194315466a9411b7ce0c4af79a7877d18e054",
+      "records": null,
+      "built_by": "scripts/extract_gtfs.py + build_timetable.py",
+      "sources": [
+        "gtfs_fp2027",
+        "atlas_service_point",
+        "atlas_service_point_years",
+        "boundary_bern"
+      ],
+      "commit": true
+    },
+    {
+      "path": "data/fp2027/timetable.json",
+      "description": "Compact pattern-encoded timetable (decodes to the exact stop_times of the subset)",
+      "bytes": 4357134,
+      "sha256": "958a639b3b8bd8d77c1d822b3745b6fe3d0260516615c89b2d549883f52d0b89",
+      "records": 32473,
+      "built_by": "scripts/build_timetable.py",
+      "sources": [
+        "gtfs_fp2027"
+      ],
+      "commit": true
+    },
+    {
+      "path": "data/fp2027/edge_directions.json",
+      "description": "Derived: lines and next stops per stop / edge in tiers bern and ring",
+      "bytes": 821393,
+      "sha256": "25d7fc0718c7f8555bec6e4c16c2dc164a5f45092d56bae596b44e335f49a46e",
+      "records": 1174,
+      "built_by": "scripts/build_timetable.py",
+      "sources": [
+        "gtfs_fp2027"
+      ],
+      "commit": true
+    },
+    {
+      "path": "data/fp2027/segments.geojson",
+      "description": "Derived: every stop-to-stop hop with lines, trip-days and run time",
+      "bytes": 3117574,
+      "sha256": "94f77e2759212563ea753824ea9f84cf3869aabfb76f1d390ab463259c461baf",
+      "records": 3747,
+      "built_by": "scripts/build_timetable.py",
+      "sources": [
+        "gtfs_fp2027"
+      ],
+      "commit": true
+    },
+    {
+      "path": "data/fp2027/lines.geojson",
+      "description": "Derived: representative stop sequence per line and direction",
+      "bytes": 351925,
+      "sha256": "316e9e75b033d14eb55df7d3de292c4e680ccdbaa4b1bd1fd6cb495fb43d8ae9",
+      "records": 220,
+      "built_by": "scripts/build_timetable.py",
+      "sources": [
+        "gtfs_fp2027"
+      ],
+      "commit": true
+    },
+    {
+      "path": "data/fp2027/transfers.json",
+      "description": "Minimum transfer times and in-seat transfers (Bern area)",
+      "bytes": 860798,
+      "sha256": "711ce46cb2d0fb25ff6230b8a26de15ccd20fdf2a16e3eab619eb4c00f682b02",
+      "records": 7219,
+      "built_by": "scripts/build_timetable.py",
+      "sources": [
+        "gtfs_fp2027"
+      ],
+      "commit": true
+    },
+    {
+      "path": "data/fp2027/timetable_stats.json",
+      "description": "Record counts of the timetable build",
+      "bytes": 830,
+      "sha256": "eb854639c1e34fce4a94e7a591e4d364d60b162f4fe29d039648d7c4b9643556",
+      "records": null,
+      "built_by": "scripts/build_timetable.py",
+      "sources": [
+        "gtfs_fp2027"
+      ],
+      "commit": true
+    }
+  ]
+}

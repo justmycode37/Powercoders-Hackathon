@@ -13,8 +13,8 @@ Writes  data/stations.geojson            every station in coverage (atlas servic
 
 Coverage tiers (property `tier`):
   bern       atlas service point with municipality FSO number 351 that is a stop point
-             (plus operating points that own a boarding edge used by the timetable)
-  ring       atlas stop point outside Bern, at most RING_KM from the municipal boundary
+             or owns a boarding edge (operating points: stop_point=false)
+  ring       the same outside Bern, at most RING_KM from the municipal boundary
   connected  any other station called at by a trip that serves a `bern` stop (either feed)
 atlas "valid today" is primary; stops and edges valid only earlier or later in the current / next
 timetable year are added from the timetable-years files with valid_today=false.
@@ -137,7 +137,8 @@ def main() -> int:
         return None
 
     for r in sp_rows:
-        if r["stopPoint"] == "true":
+        # stop points, plus operating points that own a boarding edge (e.g. Bern Fischermaetteli, Bern Europaplatz Sued)
+        if r["stopPoint"] == "true" or tp_by_station.get(r["sloid"]):
             t = area_tier(r)
             if t:
                 tier[r["number"]] = t
@@ -387,8 +388,8 @@ def main() -> int:
 
     cov_logic = {
         "bern": "atlas service point with municipality FSO number 351 (atlas attribute fsoNumber) that is a stop point, "
-                "or an operating point owning a boarding edge the timetable uses (stop_point=false)",
-        "ring": f"atlas stop point outside Bern whose coordinate is at most {RING_KM:g} km from the swisstopo municipal boundary of Bern",
+                "or an operating point owning a boarding edge (stop_point=false)",
+        "ring": f"atlas stop point (or operating point owning a boarding edge) outside Bern whose coordinate is at most {RING_KM:g} km from the swisstopo municipal boundary of Bern",
         "connected": "any other station called at by a GTFS trip that serves at least one `bern` stop (fp2026 or fp2027)",
     }
     fc("stations", "Stations (atlas service points / DiDok) in Bern transit coverage", station_feats, {"tiers": cov_logic})
@@ -438,6 +439,29 @@ def main() -> int:
             "without_edges": sorted(f["properties"]["name"] for f in station_feats
                                     if f["properties"]["tier"] == "bern" and f["properties"]["edge_count"] == 0),
             **{f"in_gtfs_{feed}": sum(1 for f in station_feats if f["properties"]["tier"] == "bern" and f["properties"][f"in_gtfs_{feed}"]) for feed in gtfs},
+        },
+        "known_gaps": {
+            "note": "Gaps in the published atlas data, kept visible rather than filled in. Nothing here is estimated.",
+            "bern_stations_without_any_boarding_edge": sorted(
+                [f["properties"]["sloid"], f["properties"]["number"], f["properties"]["name"],
+                 "valid today" if f["properties"]["valid_today"] else f"not valid today ({f['properties']['valid_from']} to {f['properties']['valid_to']})"]
+                for f in station_feats if f["properties"]["tier"] == "bern" and f["properties"]["edge_count"] == 0),
+            "bern_edges_and_areas_without_coordinates": {
+                "count": sum(1 for f in edge_feats if f["properties"]["tier"] == "bern" and not f["properties"]["has_geometry"]),
+                "boarding_platforms": sorted([f["properties"]["sloid"], f["properties"]["station_name"], f["properties"]["designation"] or f["properties"]["designation_operational"]]
+                                             for f in edge_feats if f["properties"]["tier"] == "bern" and not f["properties"]["has_geometry"] and f["properties"]["type"] == "BOARDING_PLATFORM"),
+                "boarding_areas": sorted([f["properties"]["sloid"], f["properties"]["station_name"], f["properties"]["designation"]]
+                                         for f in edge_feats if f["properties"]["tier"] == "bern" and not f["properties"]["has_geometry"] and f["properties"]["type"] == "BOARDING_AREA"),
+            },
+            "bern_edges_without_height": sum(1 for p in bern_edges if p["height_m"] is None),
+            "bern_edges_without_compass_direction": sum(1 for p in bern_edges if p["compass_direction_deg"] is None),
+            "bern_edges_without_public_designation": sum(1 for p in bern_edges if not p["designation"]),
+            "bern_edges_with_coordinates_rounded_to_whole_metres": sum(1 for p in bern_edges if p["coord_rounded"]),
+            "bern_edges_not_referenced_by_any_timetable": sorted(
+                [p["sloid"], p["station_name"], p["designation"] or p["designation_operational"]]
+                for p in bern_edges if not any(p.get(f"in_gtfs_{feed}") for feed in gtfs)),
+            "all_tiers_edges_and_areas_without_coordinates": sum(1 for f in edge_feats if not f["properties"]["has_geometry"]),
+            "stations_without_swiss_sloid": sorted([int(n), gtfs_only[n]["stop_name"]] for n in gtfs_only),
         },
         "ring_stations_inside_polygon_but_other_municipality": sorted(
             [f["properties"]["name"], f["properties"]["municipality"]]
