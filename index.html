@@ -2346,12 +2346,11 @@
           g.appendChild(svgEl('line', { x1: xa, y1: BAR.lineY, x2: xb, y2: BAR.lineY, stroke: 'currentColor', 'stroke-width': 4, 'stroke-linecap': 'round' }));
           return;
         }
-        const xa = s.x0 + (s === first ? 8 : 5), xb = s.x1 - (s === last ? 8 : 5), len = xb - xa;
-        const n = len < 1 ? 1 : Math.floor(len / BAR.dot) + 1;
-        for (let k = 0; k < n; k++) {
-          const cx = n === 1 ? (s.x0 + s.x1) / 2 : xa + (len * k) / (n - 1);
-          g.appendChild(svgEl('circle', { cx, cy: BAR.lineY, r: 1.5, fill: 'currentColor' }));
-        }
+        // evenly spaced, centred in the free space between the ends
+        const xa = s.x0 + (s === first ? 8 : 5), xb = s.x1 - (s === last ? 8 : 5);
+        const n = Math.max(1, Math.floor(Math.max(0, xb - xa) / BAR.dot) + 1);
+        const start = (xa + xb) / 2 - ((n - 1) * BAR.dot) / 2;
+        for (let k = 0; k < n; k++) g.appendChild(svgEl('circle', { cx: start + k * BAR.dot, cy: BAR.lineY, r: 1.5, fill: 'currentColor' }));
       });
       g.appendChild(svgEl('circle', { cx: first.x0, cy: BAR.lineY, r: 3.6, class: 'j-bar-start', 'stroke-width': 2, stroke: 'currentColor' }));
       g.appendChild(svgEl('circle', { cx: last.x1, cy: BAR.lineY, r: 4.2, fill: 'currentColor' }));
