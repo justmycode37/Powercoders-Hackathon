@@ -830,6 +830,7 @@
 
   <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
   <script src="swiss-workshops.js"></script>
+  <script src="community-programmes.js"></script>
   <script src="events.js"></script>
   <script>
     // ---------- Theme helpers ----------
@@ -965,18 +966,21 @@
       return EVENTS.features.filter((event) => EVENTS.matches(event, preferences));
     }
 
+    const EVENT_MIN_ZOOM = 12.5;
     const eventMarkers = [];
     let eventsOn = false;
 
     function updateCards() {
       for (const marker of eventMarkers) marker.remove();
       eventMarkers.length = 0;
-      if (!eventsOn) return;
+      if (!eventsOn || map.getZoom() < EVENT_MIN_ZOOM) return;
 
+      const { clientWidth, clientHeight } = map.getContainer();
       const groups = [];
       for (const feature of visibleEvents()) {
         const coordinates = feature.geometry.coordinates;
         const point = map.project(coordinates);
+        if (point.x < -150 || point.x > clientWidth + 150 || point.y < -180 || point.y > clientHeight + 180) continue;
         // Group venues in screen space. Zooming in separates nearby addresses.
         let group = groups.find((candidate) =>
           Math.abs(candidate.point.x - point.x) < 158 && Math.abs(candidate.point.y - point.y) < 180);
@@ -1061,7 +1065,6 @@
           if (step === 1) pager.append(count);
           pager.append(nav);
         }
-  <script src="community-programmes.js"></script>
         inner.append(pager);
       }
       display();
@@ -1148,7 +1151,7 @@
       setEventsOn(!eventsOn);
       setMenu(false);
       menuBtn.focus();
-      if (!eventsOn || map.getZoom() < EVENT_MIN_ZOOM) return;
+      if (!eventsOn) return;
       const events = visibleEvents();
       if (!events.length) {
         showToast('No events match your preferences.');
@@ -1181,7 +1184,6 @@
     const inSwitzerland = ([lng, lat]) =>
       lng >= CH_BOUNDS[0][0] && lng <= CH_BOUNDS[1][0] &&
       lat >= CH_BOUNDS[0][1] && lat <= CH_BOUNDS[1][1];
-    const EVENT_MIN_ZOOM = 12.5;
 
     // Size the light-blue accuracy halo in metres, like Apple Maps
     function updateAccuracy() {
@@ -1190,12 +1192,10 @@
       const d = Math.min(2 * userAccuracy / mPerPx, 4000);
       accEl.style.width = accEl.style.height = d + 'px';
       accEl.style.display = d < 40 ? 'none' : '';
-      const { clientWidth, clientHeight } = map.getContainer();
     }
     map.on('zoom', updateAccuracy);
 
     function onPosition(pos) {
-        if (point.x < -150 || point.x > clientWidth + 150 || point.y < -180 || point.y > clientHeight + 180) continue;
       const lngLat = [pos.coords.longitude, pos.coords.latitude];
       if (!inSwitzerland(lngLat)) {
         showToast('You are outside Switzerland');
