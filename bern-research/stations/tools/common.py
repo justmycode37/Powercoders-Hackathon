@@ -22,6 +22,9 @@ LICENCE = {
     "constructed": "derived by this project from the cited inputs",
 }
 
+# Study area in LV95: city of Bern plus the inner BERNMOBIL / RBS / BLS ring.
+BBOX_LV95 = dict(e_min=2591500, e_max=2605800, n_min=1194000, n_max=1205200)
+
 # Priority stations (tier 1), set by hand.  Everything else is selected by rule in focus_areas().
 PRIORITY = {
     "bern-bahnhof": dict(title="Bern Bahnhof", numbers=["8507000", "8576646"],

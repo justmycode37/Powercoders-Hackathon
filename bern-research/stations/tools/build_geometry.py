@@ -24,7 +24,8 @@ import math
 import os
 
 import geo
-from common import (DATA, LICENCE, ROOT, Grid, closed_ring, esri_paths, feature, fnum, gj_line, gj_point,
+import kerbs as kerb_survey
+from common import (BBOX_LV95, DATA, LICENCE, ROOT, Grid, closed_ring, esri_paths, feature, fnum, gj_line, gj_point,
                     gj_polygon, osm_id, osm_point, osm_rings, osm_url, osm_way_xy, parse_levels,
                     read_csv, read_json, strip_html, write_geojson)
 
@@ -59,9 +60,8 @@ def chain_points(pts):
     return line
 
 
-def polygon_side(ring, ref_pt):
-    """Split a platform polygon at the two ends of its long axis and return the
-    side (chain of boundary vertices) nearest to ref_pt."""
+def polygon_sides(ring):
+    """Split a platform polygon at the two ends of its long axis -> its two long sides (chains of vertices)."""
     r = geo.min_rect(ring)
     b = math.radians(r["bearing"])
     ux, uy = math.sin(b), math.cos(b)
@@ -76,7 +76,21 @@ def polygon_side(ring, ref_pt):
             out.append(ring[i])
         return out
 
-    a, b_ = walk(i0, i1), walk(i1, i0)[::-1]
+    def trim(chain):
+        """Drop end segments that run across the platform (the short end faces of the polygon)."""
+        chain = list(chain)
+        while len(chain) > 2 and geo.angle_diff(geo.bearing(chain[0], chain[1]), r["bearing"], axial=True) > 45:
+            chain.pop(0)
+        while len(chain) > 2 and geo.angle_diff(geo.bearing(chain[-2], chain[-1]), r["bearing"], axial=True) > 45:
+            chain.pop()
+        return chain
+
+    return trim(walk(i0, i1)), trim(walk(i1, i0)[::-1])
+
+
+def polygon_side(ring, ref_pt):
+    """The long side of a platform polygon nearest to ref_pt -> (chain, distance, distance of the other side)."""
+    a, b_ = polygon_sides(ring)
     da = geo.line_project(ref_pt, a)[0] if len(a) > 1 else 1e9
     db = geo.line_project(ref_pt, b_)[0] if len(b_) > 1 else 1e9
     return (a, da, db) if da <= db else (b_, db, da)
@@ -88,6 +102,11 @@ def main() -> int:
     tp = read_csv("atlas/traffic-point.csv")
     sectors = read_csv("atlas/sectors.csv")
     prm = {r["sloid"]: r for r in read_csv("atlas/prm-platform.csv")}
+    # atlas PRM: named reference points (entrances) and their step-free relation to each platform
+    ref_pts = {r["sloid"]: r for r in read_csv("atlas/prm-reference-point.csv")}
+    relations = collections.defaultdict(list)
+    for r in read_csv("atlas/prm-relation.csv"):
+        relations[r["elementSloid"]].append(r)
     areas = {r["sloid"]: r for r in tp if r["trafficPointElementType"] == "BOARDING_AREA"}
 
     # Reconcile with the transit folder's edge list when it is there (read-only).  Edges it has for
@@ -98,8 +117,12 @@ def main() -> int:
         for f in json.load(open(transit_path, encoding="utf-8"))["features"]:
             q = f["properties"]
             transit[q["sloid"]] = q
-            if q["sloid"] in have or q.get("type") != "BOARDING_PLATFORM" or q.get("tier") != "bern":
+            if q["sloid"] in have or q.get("type") != "BOARDING_PLATFORM" or q.get("tier") not in ("bern", "ring"):
                 continue
+            if q["tier"] == "ring" and not (
+                    q.get("lv95_e") and BBOX_LV95["e_min"] <= q["lv95_e"] <= BBOX_LV95["e_max"]
+                    and BBOX_LV95["n_min"] <= q["lv95_n"] <= BBOX_LV95["n_max"]):
+                continue            # ring edges are taken only inside the study box
             if q["station_sloid"] not in sp:
                 sp[q["station_sloid"]] = dict(
                     sloid=q["station_sloid"], number=str(q["station_number"]), designationOfficial=q["station_name"],
@@ -148,8 +171,10 @@ def main() -> int:
                                   bps=ps[0]["bps"], abk=ps[0]["bps_abk"], line=geo.simplify(line, 0.03),
                                   raw_n=len(line), max_gap=max(gaps), hk_len=ps[0]["haltekante_laenge"], profile=prof))
     g_sbb = Grid(100)
+    sbb_by_abk = collections.defaultdict(list)
     for s in sbb_lines:
         g_sbb.add(s, s["line"])
+        sbb_by_abk[s["abk"]].append(s)
 
     # ---- OSM platforms, tracks, stop positions, shelters ----------------------------
     osm = read_json("osm/city-transit.json")["elements"]
@@ -215,7 +240,8 @@ def main() -> int:
         bern_kerbs[str(a.get("Id_opendata") or "")].append(
             dict(xy=(f["geometry"]["x"], f["geometry"]["y"]), kante=(a.get("Kante") or "").strip(),
                  lines=strip_html(a.get("Nummer_nach")), oid=a["Objectid"], name=a.get("Punktname")))
-    g_av_shelter, av_bahnsteig = Grid(50), []
+    g_av_shelter, av_bahnsteig, g_av_plat = Grid(50), [], Grid(50)
+    av_surfaces = {}
     for f in read_json("bern/av-eo_flaeche_linie.json")["features"]:
         art = f["attributes"].get("Art_beschrieb")
         if art not in ("Unterstand", "Bahnsteig"):
@@ -229,12 +255,126 @@ def main() -> int:
                 g_av_shelter.add(item, ring)
             else:
                 av_bahnsteig.append(item)
+                g_av_plat.add(item, ring)
 
     # ---- one feature per atlas boarding edge ----------------------------------------------
     edges_out, feats_out, report = [], [], collections.Counter()
     station_edges = collections.defaultdict(list)
     used_surfaces, used_shelters = {}, {}
     dist_stats = []
+
+    def rail_platform(c):
+        """True for an OSM platform that belongs to a railway (not a tram or bus kerb)."""
+        if "rail_like" not in c:
+            tg = c["el"].get("tags", {})
+            xy = c["xy"]
+            mid = geo.ring_centroid(xy) if c["kind"] == "polygon" else geo.line_interpolate(xy, geo.line_length(xy) / 2)
+            if tg.get("train") == "yes":
+                c["rail_like"] = True
+            elif tg.get("tram") == "yes" or tg.get("bus") == "yes" or tg.get("highway") == "platform":
+                c["rail_like"] = False
+            else:
+                heavy = nearest_track(mid, 8.0, kinds=("rail", "narrow_gauge", "light_rail"))
+                c["rail_like"] = bool(heavy) and not nearest_track(mid, 8.0, kinds=("tram",))
+        return c["rail_like"]
+
+    def is_rail_edge(t, st):
+        # rail edge: station serves trains, or an operating point without modes whose edge has a published length
+        return "TRAIN" in (st["meansOfTransport"] or "") or (
+            not st["meansOfTransport"] and fnum(t["length"]) is not None and (t["designation"] or "").strip().isdigit())
+
+    def osm_match(P, desig, is_rail, compass, blocked=()):
+        """Best OSM platform for an atlas edge -> dict(c, d, ref_state, line, how, extra, surface) or None."""
+        rad = MATCH_RADIUS_RAIL if is_rail else MATCH_RADIUS_STREET
+        cands = []
+        for c in g_plat.near(P, rad):
+            if osm_id(c["el"]) in blocked:
+                continue
+            if not is_rail and rail_platform(c):
+                continue            # a tram or bus kerb is never a railway platform
+            tg = c["el"].get("tags", {})
+            d = geo.ring_distance(P, c["xy"]) if c["kind"] == "polygon" else geo.line_project(P, c["xy"])[0]
+            if d > rad:
+                continue
+            refs = {x.strip() for k in ("local_ref", "ref") for x in str(tg.get(k, "")).replace(",", ";").split(";") if x.strip()}
+            ref_state = "match" if desig and desig in refs else ("conflict" if desig and refs else "none")
+            if ref_state == "conflict" and d >= 3.0:
+                continue
+            cands.append((d + {"match": -8, "none": 0, "conflict": 12}[ref_state], d, ref_state, c))
+        for _, d, ref_state, c in sorted(cands, key=lambda x: x[:2]):
+            tg = c["el"].get("tags", {})
+            extra = dict(osm_ref=tg.get("local_ref") or tg.get("ref"), osm_name=tg.get("name"),
+                         osm_ref_check=ref_state, osm_level=tg.get("level"))
+            surface = None
+            if c["kind"] == "line":
+                line = c["xy"]
+                how = "OSM platform way matched to the atlas edge by proximity" + (
+                    " and equal ref letter" if ref_state == "match" else "")
+            else:
+                a, b_ = polygon_sides(c["xy"])
+                line = side_how = None
+                if compass is not None and not is_rail and len(a) > 1 and len(b_) > 1 \
+                        and geo.angle_diff(compass, geo.min_rect(c["xy"])["bearing"], axial=True) <= 30:
+                    cen = geo.ring_centroid(c["xy"])
+
+                    def platform_on_right(chain):
+                        m = geo.line_interpolate(chain, geo.line_length(chain) / 2)
+                        return geo.dist(m, cen) > 0.2 and geo.angle_diff(geo.bearing(m, cen), (compass + 90) % 360) < 90
+
+                    ra, rb = platform_on_right(a), platform_on_right(b_)
+                    if ra != rb:
+                        line = a if ra else b_
+                        side_how = "that has the platform on the right of the atlas direction of travel (doors on the right)"
+                if line is None:
+                    ref_pt, side_how = P, "nearest to the atlas point"
+                    if d < 0.5:      # atlas point lies on the platform: use the vehicle side instead
+                        cand = [(geo.dist(P, sp_["xy"]), sp_["xy"]) for sp_ in g_stoppos.near(P, 12)]
+                        tr = nearest_track(P, 12)
+                        if tr:
+                            cand.append((tr[0], tr[3]))
+                        if cand:
+                            ref_pt, side_how = min(cand)[1], "nearest to the nearest OSM stop position / track"
+                            extra["side_ambiguous"] = False
+                        else:
+                            extra["side_ambiguous"] = True
+                    line, _, _ = polygon_side(c["xy"], ref_pt)
+                how = ("kerb line = long side of the OSM platform polygon " + side_how
+                       + "; polygon matched to the atlas edge by proximity"
+                       + (" and equal ref letter" if ref_state == "match" else ""))
+                surface = c
+            if not is_rail and geo.line_length(line) > 100.0:
+                continue            # no tram or bus kerb is that long: not this stop's platform
+            return dict(c=c, d=d, ref_state=ref_state, line=line, how=how, extra=extra, surface=surface)
+        return None
+
+    # One OSM platform line cannot be the kerb of two different edges.  Pre-pass over the tram and bus edges:
+    # the nearest edge keeps a contested line, the others are barred from it (unless they are duplicate
+    # records of the same kerb: same letter, or atlas points within 3 m) and get their next-best geometry.
+    blocked = collections.defaultdict(set)
+    for _ in range(4):
+        claims = collections.defaultdict(list)
+        for t in tp:
+            st = sp.get(t["parentSloidServicePoint"])
+            e, n = fnum(t["lv95East"]), fnum(t["lv95North"])
+            if t["trafficPointElementType"] != "BOARDING_PLATFORM" or not st or e is None or is_rail_edge(t, st):
+                continue
+            desig = (t["designation"] or "").strip()
+            m = osm_match((e, n), desig, False, fnum(t["compassDirection"]), blocked[t["sloid"]])
+            if m:
+                key = (osm_id(m["c"]["el"]), tuple(round(v, 1) for v in m["line"][0]), tuple(round(v, 1) for v in m["line"][-1]))
+                claims[key].append((m["d"], t["sloid"], desig, (e, n)))
+        new = 0
+        for key, cl in claims.items():
+            cl.sort()
+            for d, sloid, dg, Pq in cl[1:]:
+                if (dg and dg == cl[0][2]) or geo.dist(Pq, cl[0][3]) <= 3.0:
+                    continue
+                blocked[sloid].add(key[0])
+                new += 1
+        if not new:
+            break
+    report["osm_platform_shared_claims_resolved"] = sum(len(v) for v in blocked.values())
+
     for t in tp:
         if t["trafficPointElementType"] != "BOARDING_PLATFORM":
             continue
@@ -274,9 +414,7 @@ def main() -> int:
         P = (e, n)
         base.update(lv95_e=round(e, 3), lv95_n=round(n, 3),
                     atlas_lon=fnum(t["wgs84East"]), atlas_lat=fnum(t["wgs84North"]))
-        # rail edge: station serves trains, or an operating point without modes whose edge has a published length
-        is_rail = "TRAIN" in (st["meansOfTransport"] or "") or (
-            not st["meansOfTransport"] and fnum(t["length"]) is not None and (t["designation"] or "").strip().isdigit())
+        is_rail = is_rail_edge(t, st)
         desig = (t["designation"] or "").strip()
         line = method = quality = src = src_id = src_url = lic = how = None
         inferred, extra, surface = False, {}, None
@@ -284,15 +422,26 @@ def main() -> int:
         # 1) SBB surveyed kerb line (rail)
         if is_rail:
             cands = []
-            for s in g_sbb.near(P, MATCH_RADIUS_RAIL):
+            # all SBB kerb lines of this station (by abbreviation), plus anything within the radius: an atlas
+            # coordinate can sit on the wrong platform, the track number then decides
+            pool = {id(s): s for s in g_sbb.near(P, MATCH_RADIUS_RAIL)}
+            for s in sbb_by_abk.get(st.get("abbreviation") or "-", []):
+                pool[id(s)] = s
+            for s in pool.values():
                 d, ch, _, _ = geo.line_project(P, s["line"])
-                if d <= MATCH_RADIUS_RAIL:
+                if d <= MATCH_RADIUS_RAIL or (s["abk"] == st.get("abbreviation") and d <= 400.0):
                     cands.append((0 if s["track"] == desig else 1, d, ch, s))
             if cands:
                 same, d, ch, s = min(cands, key=lambda c: (c[0], c[1]))
+                full = geo.line_length(s["line"])
+                if same == 0 and d > 6.0 and (ch < 0.5 or ch > full - 0.5):
+                    # the atlas point lies beyond the end of the surveyed stretch: SBB covers only part of this edge
+                    base["sbb_partial_coverage"] = (
+                        f"SBB publishes kerb points for only {full:.0f} m of track {s['track']} here, ending {d:.0f} m "
+                        f"from the atlas point; not used for the geometry")
+                    same = 1
                 if same == 0:
                     line = s["line"]
-                    full = geo.line_length(line)
                     alen = fnum(t["length"])
                     method, quality = "sbb_behig_kerb_points", "surveyed"
                     src, src_id = "SBB 21196_behig-haltekantepunkt", f"haltekante_fid {s['fid']}"
@@ -307,7 +456,7 @@ def main() -> int:
                                  kerb_height_profile=s["profile"], kerb_height_profile_note=(
                                      "SBB BehiG class along the line from its first vertex; 'P 55' = 55 cm above rail"),
                                  track_number_match=True)
-                    near_any = min(((geo.line_project(P, o["line"])[0], o["track"]) for o in g_sbb.near(P, MATCH_RADIUS_RAIL)),
+                    near_any = min(((geo.line_project(P, o["line"])[0], o["track"]) for o in pool.values()),
                                    default=None)
                     if near_any and near_any[1] != s["track"] and near_any[0] + 2.0 < d:
                         extra["atlas_position_conflict"] = (
@@ -318,48 +467,61 @@ def main() -> int:
                         how += f"; clipped to the atlas length ({alen:g} m) centred on the atlas point"
                         extra["clipped_from_m"] = round(full, 1)
 
+        # 1b) surveyed platform outline of the Stadt Bern cadastral survey ('Bahnsteig').  Rail edges only: at
+        #     tram and bus stops the surveyed 'Bahnsteig' strips are longer than the stop or belong to a railway.
+        if line is None and is_rail:
+            cands = [(geo.ring_distance(P, c["xy"]), c) for c in g_av_plat.near(P, 8)]
+            cands = [c for c in cands if c[0] <= 4.0]
+            if cands:
+                d, c = min(cands, key=lambda x: x[0])
+                ref_pt, side_how = P, "the atlas point"
+                if d < 0.5:
+                    alt = [(geo.dist(P, sp_["xy"]), sp_["xy"]) for sp_ in g_stoppos.near(P, 14)]
+                    trk = nearest_track(P, 14)
+                    if trk:
+                        alt.append((trk[0], trk[3]))
+                    if alt:
+                        ref_pt, side_how = min(alt)[1], "the nearest OSM stop position / track"
+                        extra_amb = False
+                    else:
+                        extra_amb = True
+                else:
+                    extra_amb = None
+                line, _, _ = polygon_side(c["xy"], ref_pt)
+                method, quality = "av_bahnsteig_outline", "surveyed"
+                src, src_id = "Stadt Bern Amtliche Vermessung, Einzelobjekt 'Bahnsteig'", f"Objectid {c['oid']}"
+                src_url, lic = None, LICENCE["bern"]
+                inferred = True
+                how = ("kerb line = long side of the surveyed platform outline nearest to " + side_how
+                       + "; outline linked to the atlas edge by proximity (" + f"{d:.1f} m)")
+                extra = dict(side_ambiguous=extra_amb)
+                r_ = geo.min_rect(c["xy"])
+                if c["oid"] not in av_surfaces:
+                    av_surfaces[c["oid"]] = feature(
+                        gj_polygon(c["xy"]), id=f"{st['number']}:platform_surface:av-eo-{c['oid']}",
+                        feature_type="platform_surface", station_sloid=st["sloid"], station_number=st["number"],
+                        station_name=st["designationOfficial"], edge_sloids=[t["sloid"]], level=0,
+                        level_source="assumed (open-air platform)", length_m=round(r_["length"], 1),
+                        width_m=round(r_["width"], 1), area_m2=round(abs(geo.ring_area(c["xy"])), 1),
+                        dim_quality="surveyed", dim_note="dimensions measured on the surveyed outline (bounding rectangle)",
+                        geometry_quality="surveyed", source=src, source_id=src_id, licence=lic, inferred=True,
+                        inferred_how="surveyed platform outline linked to the atlas edge(s) by proximity")
+                else:
+                    av_surfaces[c["oid"]]["properties"]["edge_sloids"].append(t["sloid"])
+
         # 2) OSM platform (line or polygon)
         if line is None:
-            rad = MATCH_RADIUS_RAIL if is_rail else MATCH_RADIUS_STREET
-            cands = []
-            for c in g_plat.near(P, rad):
-                tg = c["el"].get("tags", {})
-                d = geo.ring_distance(P, c["xy"]) if c["kind"] == "polygon" else geo.line_project(P, c["xy"])[0]
-                if d > rad:
-                    continue
-                refs = {x.strip() for k in ("local_ref", "ref") for x in str(tg.get(k, "")).replace(",", ";").split(";") if x.strip()}
-                ref_state = "match" if desig and desig in refs else ("conflict" if desig and refs else "none")
-                cands.append((d + {"match": -8, "none": 0, "conflict": 12}[ref_state], d, ref_state, c))
-            if cands:
-                _, d, ref_state, c = min(cands, key=lambda x: x[0])
-                tg = c["el"].get("tags", {})
-                if ref_state != "conflict" or d < 3.0:
-                    method, quality = "osm_platform", "community"
-                    src, src_id, src_url, lic = "OpenStreetMap", osm_id(c["el"]), osm_url(c["el"]), LICENCE["osm"]
-                    inferred = True
-                    extra = dict(osm_ref=tg.get("local_ref") or tg.get("ref"), osm_name=tg.get("name"),
-                                 osm_ref_check=ref_state, osm_level=tg.get("level"))
-                    if c["kind"] == "line":
-                        line = c["xy"]
-                        how = "OSM platform way matched to the atlas edge by proximity" + (
-                            " and equal ref letter" if ref_state == "match" else "")
-                    else:
-                        ref_pt, side_how = P, "the atlas point"
-                        if d < 0.5:      # atlas point lies on the platform: use the vehicle side instead
-                            cand = [(geo.dist(P, s["xy"]), s["xy"]) for s in g_stoppos.near(P, 12)]
-                            tr = nearest_track(P, 12)
-                            if tr:
-                                cand.append((tr[0], tr[3]))
-                            if cand:
-                                ref_pt, side_how = min(cand)[1], "the nearest OSM stop position / track"
-                                extra["side_ambiguous"] = False
-                            else:
-                                extra["side_ambiguous"] = True
-                        line, d_near, d_far = polygon_side(c["xy"], ref_pt)
-                        how = ("kerb line = long side of the OSM platform polygon nearest to " + side_how
-                               + "; polygon matched to the atlas edge by proximity"
-                               + (" and equal ref letter" if ref_state == "match" else ""))
-                        surface = c
+            m = osm_match(P, desig, is_rail, fnum(t["compassDirection"]), blocked.get(t["sloid"], ()))
+            if m:
+                c = m["c"]
+                method, quality = "osm_platform", "community"
+                src, src_id, src_url, lic = "OpenStreetMap", osm_id(c["el"]), osm_url(c["el"]), LICENCE["osm"]
+                inferred = True
+                line, how, extra, surface = m["line"], m["how"], m["extra"], m["surface"]
+                if blocked.get(t["sloid"]):
+                    extra["osm_platforms_left_to_a_nearer_edge"] = sorted(blocked[t["sloid"]])
+            elif blocked.get(t["sloid"]):
+                base["osm_platforms_left_to_a_nearer_edge"] = sorted(blocked[t["sloid"]])
 
         # 3) constructed line
         mode = "rail" if is_rail else "bus"
@@ -411,6 +573,19 @@ def main() -> int:
                 base["lines_at_kerb"] = k["lines"]
                 base["lines_at_kerb_source"] = "Stadt Bern Haltestellen (Nummer_nach), matched by proximity"
 
+        access = []
+        for r in relations.get(t["sloid"], []):
+            rp = ref_pts.get(r["referencePointSloid"], {})
+            access.append(dict(
+                reference_point_sloid=r["referencePointSloid"], reference_point=rp.get("designation"),
+                reference_point_type=rp.get("referencePointType"),
+                main_reference_point=(rp.get("mainReferencePoint") == "true") if rp else None,
+                step_free_access=r["stepFreeAccess"], tactile_visual_marks=r["tactileVisualMarks"],
+                contrasting_areas=r["contrastingAreas"]))
+        if access:
+            base["step_free_access"] = access
+            base["step_free_access_source"] = ("atlas PRM relation + reference point (official; the reference points "
+                                               "are published without coordinates)")
         pr = prm.get(t["sloid"])
         prm_out = None
         if pr:
@@ -433,6 +608,10 @@ def main() -> int:
                 q = geo.line_project(c, line)[2]
                 if geo.dist(c, q) > 0.3:
                     side, side_how = geo.bearing(q, c), "towards the centroid of the matched OSM platform polygon"
+            if side is None and fnum(t["compassDirection"]) is not None and not is_rail \
+                    and geo.angle_diff(fnum(t["compassDirection"]), fwd, axial=True) <= 30:
+                side = (fnum(t["compassDirection"]) + 90) % 360
+                side_how = "right-hand side of the atlas direction of travel (doors on the right)"
             if side is None:
                 veh = nearest_track(mid, 9.0, kinds=("tram", "rail", "light_rail", "narrow_gauge") if (is_rail or mode == "tram") else None)
                 vq, vname = (veh[3], f"OSM {veh[1]} track") if veh else (None, None)
@@ -507,7 +686,47 @@ def main() -> int:
                     if prev is None or d < prev[0]:
                         used_shelters[("osm", s["el"]["id"])] = (d, s, ft)
 
-    feats_out += list(used_surfaces.values())
+    # rail platforms: link OSM platform polygons to the surveyed SBB edges that run along their boundary
+    for ft in edges_out:
+        p, line = ft["properties"], ft.get("_line")
+        if p["geometry_method"] != "sbb_behig_kerb_points" or not line:
+            continue
+        L = geo.line_length(line)
+        samples = [geo.line_interpolate(line, L * k) for k in (0.25, 0.5, 0.75)]
+        best = None
+        for c in g_plat.near(samples[1], 40):
+            if c["kind"] != "polygon":
+                continue
+            ring = c["xy"] + [c["xy"][0]]
+            ds = sorted(geo.line_project(q, ring)[0] for q in samples)
+            if ds[1] <= 2.0 and (best is None or sum(ds) < best[0]):
+                best = (sum(ds), c, ds[1])
+        if not best:
+            continue
+        _, surface, dmed = best
+        key = (osm_id(surface["el"]), round(surface["xy"][0][0], 1))
+        if key not in used_surfaces:
+            tg = surface["el"].get("tags", {})
+            r = geo.min_rect(surface["xy"])
+            used_surfaces[key] = feature(
+                gj_polygon(surface["xy"]), id=f"{p['station_number']}:platform_surface:{osm_id(surface['el'])}",
+                feature_type="platform_surface", station_sloid=p["station_sloid"], station_number=p["station_number"],
+                station_name=p["station_name"], edge_sloids=[p["edge_sloid"]],
+                level=(parse_levels(tg.get("level")) or [None])[0], level_source="OSM level tag" if tg.get("level") else None,
+                length_m=round(r["length"], 1), width_m=round(r["width"], 1), area_m2=round(abs(geo.ring_area(surface["xy"])), 1),
+                dim_quality="source_derived", dim_note="dimensions measured on the OSM polygon (bounding rectangle)",
+                covered=tg.get("covered"), shelter=tg.get("shelter"), surface=tg.get("surface"),
+                wheelchair=tg.get("wheelchair"), tactile_paving=tg.get("tactile_paving"), osm_ref=tg.get("ref"),
+                geometry_quality="community", source="OpenStreetMap", source_id=osm_id(surface["el"]),
+                source_url=osm_url(surface["el"]), licence=LICENCE["osm"], inferred=True,
+                inferred_how="OSM platform polygon linked to the atlas edge(s): the surveyed SBB kerb line runs within "
+                             "2 m of the polygon boundary",
+                verified_against=[dict(source="SBB 21196_behig-haltekantepunkt",
+                                       match="surveyed kerb line runs along the polygon boundary", dist_m=round(dmed, 2))])
+            report["rail_platform_surfaces_linked_to_sbb_edges"] += 1
+        elif p["edge_sloid"] not in used_surfaces[key]["properties"]["edge_sloids"]:
+            used_surfaces[key]["properties"]["edge_sloids"].append(p["edge_sloid"])
+    feats_out += list(used_surfaces.values()) + list(av_surfaces.values())
     for (kind, key), (d, s, ft) in used_shelters.items():
         p = ft["properties"]
         common = dict(feature_type="shelter", station_sloid=p["station_sloid"], station_number=p["station_number"],
@@ -557,6 +776,7 @@ def main() -> int:
             inferred=False))
         report["sector_markers_atlas"] += 1
     num_to_station = {r["number"]: r for r in sp_rows}
+    boards_on_edge = collections.defaultdict(list)
     for b in read_json("sbb/sektortafel.json"):
         st = num_to_station.get(str(b.get("bpuic")))
         if not st or not b.get("geopos"):
@@ -580,6 +800,32 @@ def main() -> int:
             source_url="https://data.sbb.ch/explore/dataset/sektortafel/", licence=LICENCE["sbb"],
             inferred=bool(ed), inferred_how="board position is published by SBB; linked to the atlas edge by equal track number and nearest line" if ed else None))
         report["sector_boards_sbb"] += 1
+        if ed and dd is not None and dd <= 8.0:
+            boards_on_edge[ed["properties"]["edge_sloid"]].append(
+                (ch, {x for x in (b.get("sektor_vorderseite"), b.get("sektor_ruckseiter")) if x and x != "-"}, b["fid"]))
+
+    # sector spans: SBB boards stand at sector boundaries and show the sector on either side.  The stretch
+    # between two consecutive boards that both show the same letter is that sector.
+    for sloid, boards in boards_on_edge.items():
+        ed = edge_by_sloid[sloid]
+        p, line = ed["properties"], ed["_line"]
+        boards.sort(key=lambda x: x[0])
+        for (c0, l0, f0), (c1, l1, f1) in zip(boards, boards[1:]):
+            common = l0 & l1
+            if len(common) != 1 or c1 - c0 < 3.0:
+                continue
+            letter = next(iter(common))
+            feats_out.append(feature(
+                gj_line(geo.line_substring(line, c0, c1)), id=f"{p['station_number']}:sector_span:{sloid}:{letter}:{round(c0)}",
+                feature_type="sector_span", sector=letter, station_sloid=p["station_sloid"],
+                station_number=p["station_number"], station_name=p["station_name"], edge_sloid=sloid,
+                edge_designation=p.get("designation"), from_chainage_m=round(c0, 1), to_chainage_m=round(c1, 1),
+                length_m=round(c1 - c0, 1), boards=[f"fid {f0}", f"fid {f1}"],
+                geometry_quality=p["geometry_quality"], source="SBB sektortafel + the edge line (" + p["source"] + ")",
+                licence=p["licence"], inferred=True,
+                inferred_how="stretch of the edge line between two consecutive SBB sector boards that both show this "
+                             "letter; boards projected onto the line (within 8 m). Not a surveyed sector boundary"))
+            report["sector_spans_derived"] += 1
 
     # ---- stations -----------------------------------------------------------------------------------------
     stations = []
@@ -610,6 +856,12 @@ def main() -> int:
         report["stations"] += 1
         report[f"stations_tier_{tier}"] += 1
 
+    # surveyed pavement / traffic-island boundaries next to tram and bus edges (city of Bern only)
+    kerb_feats, kerb_rep = kerb_survey.kerb_candidates(edges_out)
+    feats_out += kerb_feats
+    for k, v in kerb_rep.items():
+        report[f"kerb_{k}"] = v
+
     for f in edges_out:
         for k in ("_line", "_P", "_mode"):
             f.pop(k, None)
@@ -634,6 +886,48 @@ def main() -> int:
     write_geojson(os.path.join(DATA, "station_features.geojson"), feats_out,
                   dict(meta, licence="mixed per feature: see 'licence' and 'source'; OSM-derived features are ODbL"))
     write_geojson(os.path.join(DATA, "stations.geojson"), stations, dict(meta, licence=LICENCE["atlas"]))
+
+    # station-level accessibility register (atlas PRM), keyed by station
+    acc = {}
+    stop_pt = {r["sloid"]: r for r in read_csv("atlas/prm-stop-point.csv")}
+    edge_desig = {f["properties"]["edge_sloid"]: f["properties"].get("designation") for f in edges_out}
+    for rp in ref_pts.values():
+        a = acc.setdefault(rp["parentSloidServicePoint"], dict(
+            station_sloid=rp["parentSloidServicePoint"], station_number=rp["parentNumberServicePoint"],
+            station_name=(sp.get(rp["parentSloidServicePoint"]) or {}).get("designationOfficial"),
+            reference_points=[], relations=[]))
+        a["reference_points"].append(dict(
+            sloid=rp["sloid"], designation=rp["designation"], type=rp["referencePointType"],
+            main=rp["mainReferencePoint"] == "true", information=rp["additionalInformation"] or None,
+            valid_from=rp["validFrom"], coordinates=None))
+    for el, rels in relations.items():
+        for r in rels:
+            a = acc.get(r["parentSloidServicePoint"])
+            if a is None:
+                continue
+            a["relations"].append(dict(
+                reference_point_sloid=r["referencePointSloid"], element_sloid=el, element_type=r["referencePointElementType"],
+                edge_designation=edge_desig.get(el), step_free_access=r["stepFreeAccess"],
+                tactile_visual_marks=r["tactileVisualMarks"], contrasting_areas=r["contrastingAreas"]))
+    keep = ("assistanceAvailability", "assistanceCondition", "assistanceService", "alternativeTransport", "shuttleService",
+            "ticketMachine", "wheelchairTicketMachine", "audioTicketMachine", "dynamicAudioSystem", "dynamicOpticSystem",
+            "visualInfo", "address", "zipCode", "city", "additionalInformation", "freeText", "validFrom", "validTo")
+    for sl, a in acc.items():
+        r = stop_pt.get(sl)
+        a["stop_point"] = {k: r[k] for k in keep if r.get(k)} if r else None
+    with open(os.path.join(DATA, "accessibility.json"), "w", encoding="utf-8") as f:
+        json.dump(dict(
+            generated_utc=NOW, source="atlas PRM: reference-point-v2, relation-v2, stop-point-v2", licence=LICENCE["atlas"],
+            note="Official register of named access points (reference points) per station and whether each platform, "
+                 "toilet, parking lot or contact point can be reached from them without steps (YES, YES_WITH_LIFT, "
+                 "YES_WITH_RAMP, NO, TO_BE_COMPLETED). atlas publishes the reference points without coordinates, so "
+                 "they are not georeferenced here. The same relations are copied onto the boarding edges as "
+                 "'step_free_access'. Stations without reference points in atlas are not listed.",
+            inferred=False, stations=sorted(acc.values(), key=lambda a: a["station_number"])),
+            f, ensure_ascii=False, indent=1)
+    report["accessibility_stations"] = len(acc)
+    report["accessibility_relations"] = sum(len(a["relations"]) for a in acc.values())
+    report["edges_with_step_free_access"] = sum(1 for f in edges_out if f["properties"].get("step_free_access"))
 
     by_m = collections.defaultdict(list)
     for m, d in dist_stats:

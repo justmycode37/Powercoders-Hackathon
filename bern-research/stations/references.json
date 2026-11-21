@@ -1,0 +1,267 @@
+{
+ "folder": "bern-research/stations",
+ "updated": "2026-11-21",
+ "note": "Operator plans used to check the geometry. None of them is open data, so they are linked here and never copied into the repository (copies read for the checks lived only in the git-ignored .cache/plans/). The wider photo and plan collection is in bern-research/references/ (operator_links.json, photo_records.json). 'plan_checks' is a hand-made record of what was read off each plan on 2026-11-21; build_focus.py copies it onto the matching boarding edges as 'plan_check'.",
+ "plans": [
+  {
+   "id": "bernmobil-kanten-bahnhof-bern-2026",
+   "title": "BERNMOBIL Kantenplan 'Bern Bahnhof und Umgebung' 2026",
+   "publisher": "BERNMOBIL",
+   "url": "https://www.bernmobil.ch/sites/default/files/2026-07/Kanten_Bahnhof_Bern_2026.pdf",
+   "index_page": "https://www.bernmobil.ch/de/fahrplan-netz/kantenplaene",
+   "rights": "no open licence stated; link only",
+   "georeferenced": false,
+   "retrieved": "2026-11-21",
+   "used_for": "kerb letters and the street each kerb is on; lift / stair symbols"
+  },
+  {
+   "id": "bernmobil-kanten-zytglogge-2026",
+   "title": "BERNMOBIL Kantenplan 'Zytglogge' 2026",
+   "publisher": "BERNMOBIL",
+   "url": "https://www.bernmobil.ch/sites/default/files/2025-12/Kanten_Zytglogge_Kante%2520K_2026.pdf",
+   "index_page": "https://www.bernmobil.ch/de/fahrplan-netz/kantenplaene",
+   "rights": "no open licence stated; link only",
+   "georeferenced": false,
+   "retrieved": "2026-11-21",
+   "used_for": "kerb letters, lines per kerb, the street each kerb is on"
+  },
+  {
+   "id": "bernmobil-kanten-wankdorf-bahnhof-2025",
+   "title": "BERNMOBIL Kantenplan 'Wankdorf Bahnhof' 2025",
+   "publisher": "BERNMOBIL",
+   "url": "https://www.bernmobil.ch/sites/default/files/2024-11/4_24317_BM_Kanten_Bahnhof_Wankdorf_A4_2025_DE.pdf",
+   "index_page": "https://www.bernmobil.ch/de/fahrplan-netz/kantenplaene",
+   "rights": "no open licence stated; link only",
+   "georeferenced": false,
+   "retrieved": "2026-11-21",
+   "used_for": "kerb letters at Wankdorf Bahnhof and Wankdorf Bahnhof Nord; position of the lift and the pedestrian accesses of the rail station"
+  },
+  {
+   "id": "sbb-bahnhofplan-bern",
+   "title": "SBB Bahnhofplan Bern (A4, poster, shopping) and interactive plan",
+   "publisher": "SBB (Trafimage)",
+   "url": "https://www.sbb.ch/content/dam/infrastruktur/trafimage/bahnhofplaene/plan-bern-a4.pdf",
+   "more_urls": [
+    "https://www.sbb.ch/content/dam/infrastruktur/trafimage/bahnhofplaene/plan-bern-plakat.pdf",
+    "https://www.sbb.ch/content/dam/infrastruktur/trafimage/bahnhofplaene/plan-bern-shopping.pdf",
+    "https://plans.trafimage.ch/bern"
+   ],
+   "listed_in": "SBB open dataset haltestelle-karte-trafimage (the list of links is open data, the plans are not)",
+   "rights": "no open licence stated; link only",
+   "georeferenced": false,
+   "retrieved": null,
+   "used_for": "NOT checked: on 2026-11-21 the server answered HTTP 403 to a scripted download, so the named passages and entrances of the SBB plan were not compared. Open it in a browser to do that check."
+  },
+  {
+   "id": "sbb-bahnhofplan-bern-wankdorf",
+   "title": "SBB Bahnhofplan Bern Wankdorf (A4, poster)",
+   "publisher": "SBB (Trafimage)",
+   "url": "https://www.sbb.ch/content/dam/infrastruktur/trafimage/bahnhofplaene/plan-bern-wankdorf-a4.pdf",
+   "more_urls": [
+    "https://www.sbb.ch/content/dam/infrastruktur/trafimage/bahnhofplaene/plan-bern-wankdorf-plakat.pdf"
+   ],
+   "listed_in": "SBB open dataset haltestelle-karte-trafimage",
+   "rights": "no open licence stated; link only",
+   "georeferenced": false,
+   "retrieved": null,
+   "used_for": "NOT checked (HTTP 403 to a scripted download on 2026-11-21)"
+  }
+ ],
+ "plan_checks": [
+  {
+   "station_number": "8576646",
+   "station_name": "Bern, Bahnhof",
+   "plan": "bernmobil-kanten-bahnhof-bern-2026",
+   "letters_on_plan": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K1",
+    "L",
+    "M",
+    "N",
+    "Q",
+    "Z"
+   ],
+   "atlas_letters_not_on_plan": [
+    "K2"
+   ],
+   "streets": {
+    "A": "Bahnhofplatz",
+    "B": "Bahnhofplatz",
+    "C": "Bahnhofplatz",
+    "D": "Bahnhofplatz",
+    "E": "Bahnhofplatz west side (Heiliggeistkirche)",
+    "F": "Bahnhofplatz west side (Burgerspital)",
+    "G": "Bollwerk side of the station building",
+    "H": "Bollwerk",
+    "I": "Schauplatzgasse at the Loeb corner",
+    "J": "Christoffelgasse",
+    "K1": "Christoffelgasse",
+    "L": "Bubenbergplatz south side, Loeb corner",
+    "M": "Bubenbergplatz south side",
+    "N": "Schwanengasse",
+    "Q": "Bubenbergplatz at Burgerspital",
+    "Z": "Neuengasse at the Bollwerk corner"
+   },
+   "position_check": "Automated test = nearest named OSM street to the atlas kerb point, compared with the street the plan draws the kerb on. Equal for E, F (Bahnhofplatz), I (Schauplatzgasse), J, K1 (Christoffelgasse), L, M, Q (Bubenbergplatz), N (Schwanengasse). A to D: OSM names the carriageway through the square 'Bubenbergplatz' where the plan labels the island area 'Bahnhofplatz' (same place). G, H, Z: nearest named OSM street is 'Bahnhofplatz' at 9 to 20 m while the plan draws them at Bollwerk (G, H) and at the Neuengasse corner (Z): same junction, not a strict match.",
+   "symbols": "the plan draws lift + stairs/escalator symbols on Bahnhofplatz next to Heiliggeistkirche, at Kante A, at Neuengasse and at the Welle (Schanzenstrasse); OSM has lift and stair/escalator features at all four places (levels -1/0 at Bahnhofplatz and Neuengasse, 0/1 at the Welle)",
+   "position_check_result": {
+    "strict_match": [
+     "E",
+     "F",
+     "I",
+     "J",
+     "K1",
+     "L",
+     "M",
+     "N",
+     "Q"
+    ],
+    "same_place_other_name": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "same_junction_only": [
+     "G",
+     "H",
+     "Z"
+    ]
+   }
+  },
+  {
+   "station_number": "8507785",
+   "station_name": "Bern, Hauptbahnhof (PostAuto station)",
+   "plan": "bernmobil-kanten-bahnhof-bern-2026",
+   "letters_on_plan": [
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y"
+   ],
+   "atlas_letters_not_on_plan": [],
+   "streets": {},
+   "position_check": "the plan only labels the block 'Kanten R bis Y' at the PostAuto station above the tracks; single kerbs are not drawn",
+   "symbols": null,
+   "position_check_result": {
+    "strict_match": [],
+    "same_place_other_name": [],
+    "same_junction_only": []
+   }
+  },
+  {
+   "station_number": "8507110",
+   "station_name": "Bern, Zytglogge",
+   "plan": "bernmobil-kanten-zytglogge-2026",
+   "letters_on_plan": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "K"
+   ],
+   "atlas_letters_not_on_plan": [],
+   "streets": {
+    "A": "Kornhausplatz west side",
+    "B": "Kornhausplatz east side",
+    "C": "Kramgasse north side",
+    "D": "Kramgasse south side",
+    "E": "Theaterplatz, at the Zytglogge tower",
+    "F": "Casinoplatz (Zumstein)",
+    "G": "Kochergasse / Parking Casino",
+    "H": "Amthausgasse",
+    "K": "Casinoplatz east side"
+   },
+   "position_check": "Automated test = nearest named OSM street to the atlas kerb point: equal to the plan's street for all 9 letters (A, B Kornhausplatz; C, D Kramgasse; E Theaterplatz; F, K Casinoplatz; G Kochergasse; H Amthausgasse). The lines per kerb printed on the plan equal the Stadt Bern 'Nummer_nach' lists for A to H.",
+   "symbols": null,
+   "position_check_result": {
+    "strict_match": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "E",
+     "F",
+     "G",
+     "H",
+     "K"
+    ],
+    "same_place_other_name": [],
+    "same_junction_only": []
+   }
+  },
+  {
+   "station_number": "8590129",
+   "station_name": "Bern Wankdorf, Bahnhof",
+   "plan": "bernmobil-kanten-wankdorf-bahnhof-2025",
+   "letters_on_plan": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "atlas_letters_not_on_plan": [],
+   "streets": {
+    "A": "Max-Daetwyler-Platz loop, northern kerb",
+    "B": "Max-Daetwyler-Platz loop",
+    "C": "Max-Daetwyler-Platz loop",
+    "D": "Max-Daetwyler-Platz loop, southern kerb"
+   },
+   "position_check": "Automated test = nearest named OSM street to the atlas kerb point: 'Max-Daetwyler-Platz' for A to D (13 to 19 m), as on the plan; order A, B/C, D from north to south agrees.",
+   "symbols": "one lift at the western underpass of the rail station, pedestrian accesses at Stauffacherstrasse in the east",
+   "position_check_result": {
+    "strict_match": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "same_place_other_name": [],
+    "same_junction_only": []
+   }
+  },
+  {
+   "station_number": "8595543",
+   "station_name": "Bern Wankdorf, Bahnhof Nord",
+   "plan": "bernmobil-kanten-wankdorf-bahnhof-2025",
+   "letters_on_plan": [
+    "E",
+    "F"
+   ],
+   "atlas_letters_not_on_plan": [
+    "G"
+   ],
+   "streets": {
+    "E": "Hoffstrasse / Rosalia-Wenger-Platz, south kerb",
+    "F": "Hoffstrasse / Rosalia-Wenger-Platz, north kerb"
+   },
+   "position_check": "Automated test = nearest named OSM street to the atlas kerb point: 'Rosalia-Wenger-Platz' for E and F, as on the plan. G (Hoffstrasse) is not on the 2025 plan.",
+   "symbols": null,
+   "position_check_result": {
+    "strict_match": [
+     "E",
+     "F"
+    ],
+    "same_place_other_name": [],
+    "same_junction_only": []
+   }
+  }
+ ]
+}

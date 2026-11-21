@@ -19,7 +19,7 @@ import struct
 import sys
 
 import geo
-from common import DATA, EXTRACT, ROOT, osm_rings, read_json
+from common import DATA, ROOT, osm_rings, read_json
 
 BOX = (7.30, 46.88, 7.56, 47.01)       # lon/lat box all features must lie in
 MAX_EDGE_OFFSET = 15.0                 # stated limit: edge geometry vs atlas edge point (m)
@@ -112,7 +112,7 @@ def main() -> int:
     orphan = [e["id"] for e in edges if e["properties"]["station_sloid"] not in st_ids]
     check("FAIL" if orphan else "OK", "every boarding edge has its station in stations.geojson", f"{len(orphan)} orphans", orphan[:5])
     by_method = collections.defaultdict(list)
-    far = []
+    far, unflagged_far = [], []
     for e in edges:
         p = e["properties"]
         if e["geometry"] is None or p.get("lv95_e") is None:
@@ -121,14 +121,16 @@ def main() -> int:
         cs = [lv(c) for c in coords(e["geometry"])]
         d = geo.dist(P, cs[0]) if len(cs) == 1 else geo.line_project(P, cs)[0]
         by_method[p["geometry_method"]].append(d)
+        if d > MAX_EDGE_OFFSET and not p.get("atlas_position_conflict"):
+            unflagged_far.append((e["id"], round(d, 1)))
         if abs(d - p["dist_atlas_to_geometry_m"]) > 0.05:
             far.append((e["id"], "stored distance differs from recomputed", round(d, 2)))
         if d > 5.0:
             far.append((e["id"], p["station_name"], p.get("designation"), round(d, 1),
                         p.get("atlas_position_conflict") or p["geometry_method"]))
-    worst = max((max(v) for v in by_method.values()), default=0)
-    check("FAIL" if worst > MAX_EDGE_OFFSET else "OK",
-          f"edge geometry lies within {MAX_EDGE_OFFSET} m of the atlas edge point (recomputed from the GeoJSON)",
+    check("FAIL" if unflagged_far else "OK",
+          f"edge geometry lies within {MAX_EDGE_OFFSET} m of the atlas edge point, except edges flagged "
+          f"atlas_position_conflict (recomputed from the GeoJSON); unflagged beyond: {len(unflagged_far)}",
           "; ".join(f"{m}: n={len(v)}, median {pct(v, .5)} m, p95 {pct(v, .95)} m, max {round(max(v), 2)} m"
                     for m, v in sorted(by_method.items())),
           dict(edges_over_5m=[f for f in far if len(f) == 5]))
@@ -136,8 +138,9 @@ def main() -> int:
     check("WARN" if n5 else "OK", "edges more than 5 m from their atlas point", f"{n5} edges (listed in report.json)")
     conflicts = [e for e in edges if e["properties"].get("atlas_position_conflict")]
     check("WARN" if conflicts else "OK", "atlas coordinate sits on a different SBB track than its track number",
-          f"{len(conflicts)} edges: " + ", ".join(f"{e['properties']['station_name']} {e['properties']['designation']}"
-                                                 f" ({e['id']})" for e in conflicts))
+          f"{len(conflicts)} edges: " + ", ".join(
+              f"{e['properties']['station_name']} {e['properties']['designation']} ({e['id']}, "
+              f"{e['properties']['dist_atlas_to_geometry_m']} m)" for e in conflicts))
     nogeo = [e["id"] for e in edges if e["geometry"] is None]
     check("WARN" if nogeo else "OK", "edges without any geometry (atlas publishes no coordinates)", f"{len(nogeo)} edges", nogeo)
     meth = collections.Counter(e["properties"]["geometry_method"] for e in edges)
@@ -183,13 +186,22 @@ def main() -> int:
         check("WARN", "SBB vs OSM platform cross-check", "skipped: .cache extracts not present")
 
     # (b) kerb letters: atlas vs Stadt Bern
-    ver = [e["properties"]["verified_against"][0] for e in edges if e["properties"].get("verified_against")]
+    ver = [v for e in edges for v in (e["properties"].get("verified_against") or [])]
     same = [v["dist_m"] for v in ver if "kerb letter" in v["match"]]
     lettered_city = sum(1 for e in edges if e["properties"].get("designation") and e["properties"].get("transit_tier") == "bern"
                         and "TRAIN" not in (e["properties"].get("station_modes") or ""))
     check("OK", "kerb letters confirmed by Stadt Bern kerb points (same station number and letter)",
           f"{len(same)} edges confirmed (of {lettered_city} lettered tram/bus edges in the municipality); distance atlas point to "
           f"city kerb point: median {pct(same, .5)} m, p95 {pct(same, .95)} m, max {max(same) if same else None} m")
+
+    # (b2) surveyed pavement boundaries next to OSM-based and constructed edges
+    kc = [f["properties"] for f in feats if f["properties"]["feature_type"] == "surveyed_kerb_candidate"]
+    for m in ("osm_platform", "constructed"):
+        v = [k["mean_offset_m"] for k in kc if k["edge_geometry_method"] == m]
+        n_m = sum(1 for e in edges if e["properties"]["geometry_method"] == m)
+        check("OK", f"surveyed pavement boundary found next to {m} edges (cadastral survey, city of Bern only)",
+              f"{len(v)} of {n_m} edges; mean offset between the edge line and the surveyed boundary: median {pct(v, .5)} m, "
+              f"p90 {pct(v, .9)} m" + (f"; {sum(1 for x in v if x <= 1.0)} within 1 m" if m == "osm_platform" else ""))
 
     # (c) edge length: geometry vs atlas length
     ratios = [(e["properties"]["length_m"] / e["properties"]["atlas_length_m"], e["id"]) for e in edges

@@ -1,21 +1,35 @@
 {
- "generated_utc": "2026-11-21T01:16:17Z",
+ "generated_utc": "2026-11-21T01:49:52Z",
  "counts": {
-  "edges_osm_platform": 553,
-  "edges_constructed": 448,
-  "edges_sbb_behig_kerb_points": 62,
+  "osm_platform_shared_claims_resolved": 28,
+  "edges_osm_platform": 511,
+  "edges_constructed": 496,
+  "edges_sbb_behig_kerb_points": 63,
   "edges_without_atlas_coordinates": 23,
   "edges_point_only": 9,
+  "edges_av_bahnsteig_outline": 3,
+  "rail_platform_surfaces_linked_to_sbb_edges": 43,
   "shelters_surveyed": 140,
-  "shelters_osm": 99,
+  "shelters_osm": 100,
   "sector_markers_atlas": 126,
   "sector_boards_sbb": 152,
-  "stations": 442,
-  "stations_tier_community": 221,
-  "stations_tier_approximate": 193,
+  "sector_spans_derived": 103,
+  "stations": 446,
+  "stations_tier_community": 212,
+  "stations_tier_approximate": 206,
   "stations_tier_surveyed": 21,
   "stations_tier_point_only": 7,
-  "edges_in_side_file_not_in_transit": 0
+  "kerb_edges_tested": 980,
+  "kerb_candidates": 398,
+  "kerb_candidates_for_osm_platform": 283,
+  "kerb_rejected_too_few_samples_on_one_boundary": 33,
+  "kerb_candidates_for_constructed": 115,
+  "kerb_osm_edges_confirmed_within_1m": 221,
+  "kerb_rejected_boundary_not_parallel": 32,
+  "edges_in_side_file_not_in_transit": 0,
+  "accessibility_stations": 31,
+  "accessibility_relations": 193,
+  "edges_with_step_free_access": 92
  },
  "osm_platform_candidates": 565,
  "sbb_kerb_lines": 60,
@@ -37,6 +51,11 @@
    "note": "atlas point is 10.0 m from SBB track 3 but 0.0 m from SBB track 2; geometry follows the track number, not the atlas coordinate"
   },
   {
+   "edge_sloid": "ch:1:sloid:16161:2:3",
+   "station": "Bern Wankdorf",
+   "note": "atlas point is 85.5 m from SBB track 5 but 0.0 m from SBB track 3; geometry follows the track number, not the atlas coordinate"
+  },
+  {
    "edge_sloid": "ch:1:sloid:16161:3:5",
    "station": "Bern Wankdorf",
    "note": "atlas point is 14.4 m from SBB track 7 but 0.0 m from SBB track 5; geometry follows the track number, not the atlas coordinate"
@@ -44,34 +63,42 @@
  ],
  "dist_atlas_to_geometry_m": {
   "osm_platform": {
-   "n": 553,
-   "median": 2.14,
-   "p95": 8.12,
-   "max": 14.97
+   "n": 511,
+   "median": 2.11,
+   "p95": 6.84,
+   "max": 14.92
   },
   "constructed": {
-   "n": 448,
+   "n": 496,
    "median": 0.0,
    "p95": 0.0,
    "max": 0.0
   },
   "sbb_behig_kerb_points": {
-   "n": 62,
+   "n": 63,
    "median": 0.25,
-   "p95": 7.94,
-   "max": 14.36
+   "p95": 9.97,
+   "max": 85.55
   },
   "point_only": {
    "n": 9,
    "median": 0.0,
    "p95": 0.0,
    "max": 0.0
+  },
+  "av_bahnsteig_outline": {
+   "n": 3,
+   "median": 0.57,
+   "p95": 1.5,
+   "max": 1.5
   }
  },
  "feature_types": {
-  "platform_surface": 183,
-  "shelter": 239,
+  "platform_surface": 219,
+  "shelter": 240,
   "sector_marker": 126,
-  "sector_board": 152
+  "sector_board": 152,
+  "sector_span": 103,
+  "surveyed_kerb_candidate": 398
  }
 }

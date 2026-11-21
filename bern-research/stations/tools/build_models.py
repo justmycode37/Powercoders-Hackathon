@@ -23,7 +23,6 @@ from __future__ import annotations
 import collections
 import datetime as dt
 import json
-import math
 import os
 import struct
 import sys
@@ -204,12 +203,21 @@ def geom_xy(g):
 
 def add_features(b: Builder, feats, level_elev, default_elev):
     """Turn features into geometry.  level_elev: {level: elevation}; default_elev for level-less data."""
-    surfaced = set()
+    surfaced, seen_ids = set(), set()
     for f in feats:
         p = f["properties"]
         if p["feature_type"] == "platform_surface":
             for s in p.get("edge_sloids") or ([p["edge_sloid"]] if p.get("edge_sloid") else []):
                 surfaced.add(s)
+    # the cadastral survey and OSM can both hold the same platform: draw the surveyed one only
+    survey_rings = [geom_xy(f["geometry"]) for f in feats if f["properties"]["feature_type"] == "platform_surface"
+                    and f["properties"].get("geometry_quality") == "surveyed" and f["geometry"]["type"] == "Polygon"]
+
+    def duplicate_of_survey(f):
+        if f["properties"].get("geometry_quality") == "surveyed" or f["geometry"]["type"] != "Polygon":
+            return False
+        c = geo.ring_centroid(geom_xy(f["geometry"]))
+        return any(geo.point_in_ring(c, r) for r in survey_rings)
 
     def elev(p, lv=None):
         lv = p.get("level") if lv is None else lv
@@ -263,6 +271,9 @@ def add_features(b: Builder, feats, level_elev, default_elev):
                 b.end(gg)
                 b.approx[f"platform body of nominal width beside the kerb line ({p.get('geometry_method')})"] += 1
         elif ft == "platform_surface" and g["type"] == "Polygon":
+            if duplicate_of_survey(f):
+                b.skipped["OSM platform polygon covered by a surveyed platform outline"] += 1
+                continue
             z = elev(p)
             gg = b.begin(key, f["id"])
             b.prism(gg, pts, z - (NOM["kerb_rail"] if p.get("length_m", 0) > 90 else NOM["kerb_street"]), z)

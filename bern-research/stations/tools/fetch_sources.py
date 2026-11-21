@@ -5,7 +5,7 @@ Downloads go to .cache/download/ (git-ignored), study-area extracts to
 .cache/extract/.  The run rewrites SOURCES.json (name, url, publisher, licence,
 retrieved, bytes, sha256, used_for) from what is actually on disk.
 
-Usage:  python tools/fetch_sources.py [--only atlas,sbb,osm,bern,photos] [--refresh]
+Usage:  python tools/fetch_sources.py [--only atlas,sbb,osm,bern] [--refresh]
 
 Pure standard library; safe to re-run (cache is reused unless --refresh).
 """
@@ -18,7 +18,6 @@ import io
 import json
 import os
 import sys
-import tempfile
 import time
 import urllib.parse
 import urllib.request
@@ -31,7 +30,7 @@ UA = "Mozilla/5.0 (compatible; bern-station-geometry/0.1; open-data research cli
 
 # Study area: city of Bern plus the inner BERNMOBIL/RBS/BLS agglomeration ring.
 BBOX_WGS = dict(south=46.895, west=7.335, north=46.995, east=7.520)
-BBOX_LV95 = dict(e_min=2591500, e_max=2605800, n_min=1194000, n_max=1205200)
+from common import BBOX_LV95  # noqa: E402  (same box as the builders)
 
 
 
@@ -272,13 +271,16 @@ AV_LAYERS = {
     "strassenbruecken": (94, "city"),
     "bahnbruecken": (95, "city"),
     "bb_gebaeude": (99, "focus"),          # building footprints
+    # land cover: pavements and traffic islands only (their boundary towards the road is the surveyed kerb)
+    "bb_trottoir_insel": (103, "city", "Art_beschrieb LIKE '%Trottoir%' OR Art_beschrieb LIKE '%Verkehrsinsel%'"),
 }
 CITY_ENV = (2594000, 1196500, 2605000, 1204500)   # LV95 envelope of the municipality (generous)
 
 
-def arcgis_query(layer_url: str, env: tuple, depth: int = 0) -> list[dict]:
+def arcgis_query(layer_url: str, env: tuple, depth: int = 0, where: str | None = None) -> list[dict]:
     """Query one envelope; split into quadrants when the server truncates."""
     params = {
+        "where": where or "1=1",
         "geometry": ",".join(str(v) for v in env), "geometryType": "esriGeometryEnvelope",
         "inSR": 2056, "outSR": 2056, "spatialRel": "esriSpatialRelIntersects",
         "outFields": "*", "returnGeometry": "true", "f": "json",
@@ -294,7 +296,7 @@ def arcgis_query(layer_url: str, env: tuple, depth: int = 0) -> list[dict]:
         xm, ym = (x0 + x1) / 2, (y0 + y1) / 2
         out = []
         for sub in ((x0, y0, xm, ym), (xm, y0, x1, ym), (x0, ym, xm, y1), (xm, ym, x1, y1)):
-            out += arcgis_query(layer_url, sub, depth + 1)
+            out += arcgis_query(layer_url, sub, depth + 1, where)
         return out
     return feats
 
@@ -314,7 +316,11 @@ def fetch_bern(cache: str, refresh: bool, log: dict) -> None:
     counts = {}
     jobs = [("haltestellen", f"{BERN_GIS}/Haltestellen/MapServer/0", [(2590000, 1192000, 2608000, 1207000)]),
             ("bahnhoefe", f"{BERN_GIS}/Bahnhoefe/MapServer/0", [(2590000, 1192000, 2608000, 1207000)])]
-    for name, (lid, scope) in AV_LAYERS.items():
+    wheres = {}
+    for name, spec in AV_LAYERS.items():
+        lid, scope = spec[0], spec[1]
+        if len(spec) > 2:
+            wheres[f"av-{name}"] = spec[2]
         envs = [CITY_ENV]
         if scope != "city":         # only areas that touch the municipality envelope
             envs = [e for e in (lv95_env(la, lo, r + 60) for la, lo, r in detail_areas().values())
@@ -328,7 +334,7 @@ def fetch_bern(cache: str, refresh: bool, log: dict) -> None:
         else:
             seen, feats = set(), []
             for env in envs:
-                for f in arcgis_query(url, env):
+                for f in arcgis_query(url, env, where=wheres.get(name)):
                     oid = f["attributes"].get("Objectid", f["attributes"].get("OBJECTID"))
                     if oid in seen:
                         continue

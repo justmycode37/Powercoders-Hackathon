@@ -1,14 +1,14 @@
 {
- "generated_utc": "2026-11-21T01:18:57Z",
+ "generated_utc": "2026-11-21T01:50:29Z",
  "summary": {
-  "OK": 762,
-  "WARN": 48
+  "OK": 763,
+  "WARN": 49
  },
  "results": [
   {
    "level": "OK",
    "check": "data/boarding_edges.geojson: unique ids",
-   "detail": "1095 features, 0 duplicate ids",
+   "detail": "1105 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -56,7 +56,7 @@
   {
    "level": "OK",
    "check": "data/station_features.geojson: unique ids",
-   "detail": "700 features, 0 duplicate ids",
+   "detail": "1238 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -104,7 +104,7 @@
   {
    "level": "OK",
    "check": "data/stations.geojson: unique ids",
-   "detail": "442 features, 0 duplicate ids",
+   "detail": "446 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -157,8 +157,8 @@
   },
   {
    "level": "OK",
-   "check": "edge geometry lies within 15.0 m of the atlas edge point (recomputed from the GeoJSON)",
-   "detail": "constructed: n=448, median 0.0 m, p95 0.0 m, max 0.01 m; osm_platform: n=553, median 2.14 m, p95 8.12 m, max 14.97 m; point_only: n=9, median 0.0 m, p95 0.01 m, max 0.01 m; sbb_behig_kerb_points: n=62, median 0.25 m, p95 7.93 m, max 14.36 m",
+   "check": "edge geometry lies within 15.0 m of the atlas edge point, except edges flagged atlas_position_conflict (recomputed from the GeoJSON); unflagged beyond: 0",
+   "detail": "av_bahnsteig_outline: n=3, median 0.56 m, p95 1.5 m, max 1.5 m; constructed: n=496, median 0.0 m, p95 0.0 m, max 0.01 m; osm_platform: n=511, median 2.11 m, p95 6.84 m, max 14.92 m; point_only: n=9, median 0.0 m, p95 0.01 m, max 0.01 m; sbb_behig_kerb_points: n=63, median 0.25 m, p95 9.97 m, max 85.55 m",
    "data": {
     "edges_over_5m": [
      [
@@ -173,20 +173,6 @@
       "Bern, Brunnadernstrasse",
       "C",
       5.1,
-      "osm_platform"
-     ],
-     [
-      "ch:1:sloid:7062:0:11",
-      "Muri bei Bern",
-      "B",
-      5.7,
-      "osm_platform"
-     ],
-     [
-      "ch:1:sloid:7062:0:2",
-      "Muri bei Bern",
-      "C",
-      9.0,
       "osm_platform"
      ],
      [
@@ -211,6 +197,13 @@
       "osm_platform"
      ],
      [
+      "ch:1:sloid:7251:0:11",
+      "Gümligen, Seidenberg",
+      null,
+      5.1,
+      "osm_platform"
+     ],
+     [
       "ch:1:sloid:16161:1:1",
       "Bern Wankdorf",
       "2",
@@ -223,6 +216,13 @@
       "3",
       10.0,
       "atlas point is 10.0 m from SBB track 3 but 0.0 m from SBB track 2; geometry follows the track number, not the atlas coordinate"
+     ],
+     [
+      "ch:1:sloid:16161:2:3",
+      "Bern Wankdorf",
+      "5",
+      85.5,
+      "atlas point is 85.5 m from SBB track 5 but 0.0 m from SBB track 3; geometry follows the track number, not the atlas coordinate"
      ],
      [
       "ch:1:sloid:16161:3:5",
@@ -242,7 +242,7 @@
       "ch:1:sloid:30259:0:6",
       "Gümligen, Hofgut",
       null,
-      12.5,
+      13.9,
       "osm_platform"
      ],
      [
@@ -285,34 +285,6 @@
       "Bern, Bahnhof",
       "E",
       9.8,
-      "osm_platform"
-     ],
-     [
-      "ch:1:sloid:76982:0:1",
-      "Steinibach, Bahnhof",
-      "A",
-      11.8,
-      "osm_platform"
-     ],
-     [
-      "ch:1:sloid:76982:0:3",
-      "Steinibach, Bahnhof",
-      "C",
-      5.5,
-      "osm_platform"
-     ],
-     [
-      "ch:1:sloid:76981:0:1",
-      "Unterzollikofen, Bahnhof",
-      "A",
-      15.0,
-      "osm_platform"
-     ],
-     [
-      "ch:1:sloid:76998:0:11",
-      "Bolligen, Bahnhof",
-      null,
-      9.6,
       "osm_platform"
      ],
      [
@@ -365,41 +337,6 @@
       "osm_platform"
      ],
      [
-      "ch:1:sloid:82195:0:115985",
-      "Moos, Bahnhof",
-      null,
-      9.0,
-      "osm_platform"
-     ],
-     [
-      "ch:1:sloid:82871:0:11",
-      "Niederwangen, Riedmoosbrücke",
-      null,
-      13.6,
-      "osm_platform"
-     ],
-     [
-      "ch:1:sloid:87485:0:5",
-      "Bern, Rosengarten",
-      null,
-      5.6,
-      "osm_platform"
-     ],
-     [
-      "ch:1:sloid:87485:0:6",
-      "Bern, Rosengarten",
-      null,
-      5.0,
-      "osm_platform"
-     ],
-     [
-      "ch:1:sloid:87481:0:4",
-      "Bern, Burgernziel",
-      null,
-      5.0,
-      "osm_platform"
-     ],
-     [
       "ch:1:sloid:87480:0:5",
       "Bern, Ostring",
       "B",
@@ -414,38 +351,10 @@
       "osm_platform"
      ],
      [
-      "ch:1:sloid:89227:0:1",
-      "Niederwangen, Bahnhof",
-      "B",
-      7.0,
-      "osm_platform"
-     ],
-     [
-      "ch:1:sloid:89227:0:2",
-      "Niederwangen, Bahnhof",
-      "A",
-      7.8,
-      "osm_platform"
-     ],
-     [
       "ch:1:sloid:89268:0:2",
       "Spiegel, Zentrum",
       null,
       5.5,
-      "osm_platform"
-     ],
-     [
-      "ch:1:sloid:89077:0:370042",
-      "Gasel, Bahnhof",
-      null,
-      10.2,
-      "osm_platform"
-     ],
-     [
-      "ch:1:sloid:89077:0:773856",
-      "Gasel, Bahnhof",
-      null,
-      13.0,
       "osm_platform"
      ],
      [
@@ -466,21 +375,14 @@
       "ch:1:sloid:90030:0:1",
       "Bern, Brückfeld",
       null,
-      6.6,
+      7.6,
       "osm_platform"
      ],
      [
       "ch:1:sloid:90017:0:1",
       "Bern, Haldenstrasse",
       null,
-      14.6,
-      "osm_platform"
-     ],
-     [
-      "ch:1:sloid:90023:0:6",
-      "Bern, Sandrain",
-      null,
-      8.8,
+      14.9,
       "osm_platform"
      ],
      [
@@ -491,17 +393,17 @@
       "osm_platform"
      ],
      [
-      "ch:1:sloid:90022:0:4",
-      "Bern, Schönegg",
-      null,
-      7.4,
-      "osm_platform"
-     ],
-     [
       "ch:1:sloid:90022:0:5",
       "Bern, Schönegg",
       null,
       5.9,
+      "osm_platform"
+     ],
+     [
+      "ch:1:sloid:90011:0:2",
+      "Bern, Cäcilienstrasse",
+      null,
+      5.2,
       "osm_platform"
      ],
      [
@@ -512,31 +414,10 @@
       "osm_platform"
      ],
      [
-      "ch:1:sloid:90010:0:3",
-      "Bern, Brunnhof",
-      null,
-      7.3,
-      "osm_platform"
-     ],
-     [
       "ch:1:sloid:90026:0:1",
       "Bern, Sustenweg",
       null,
       6.4,
-      "osm_platform"
-     ],
-     [
-      "ch:1:sloid:90048:0:4",
-      "Bern, Bundesplatz",
-      null,
-      12.2,
-      "osm_platform"
-     ],
-     [
-      "ch:1:sloid:90044:0:4",
-      "Bern, Bümpliz",
-      "B",
-      13.9,
       "osm_platform"
      ],
      [
@@ -554,24 +435,10 @@
       "osm_platform"
      ],
      [
-      "ch:1:sloid:90072:0:2",
-      "Ostermundigen, Tiefenmösli",
-      null,
-      8.1,
-      "osm_platform"
-     ],
-     [
       "ch:1:sloid:90072:0:3",
       "Ostermundigen, Tiefenmösli",
       null,
       6.0,
-      "osm_platform"
-     ],
-     [
-      "ch:1:sloid:90091:0:2",
-      "Bern, Weltistrasse",
-      null,
-      7.1,
       "osm_platform"
      ],
      [
@@ -582,17 +449,17 @@
       "osm_platform"
      ],
      [
-      "ch:1:sloid:90121:0:1",
-      "Köniz, Stapfenrain",
-      null,
-      7.0,
-      "osm_platform"
-     ],
-     [
       "ch:1:sloid:90121:0:2",
       "Köniz, Stapfenrain",
       null,
       5.4,
+      "osm_platform"
+     ],
+     [
+      "ch:1:sloid:94200:0:2",
+      "Bern, Inselspital",
+      null,
+      5.1,
       "osm_platform"
      ],
      [
@@ -627,14 +494,7 @@
       "ch:1:sloid:82225:0:1",
       "Bern, Bümpliz Schloss",
       null,
-      5.6,
-      "osm_platform"
-     ],
-     [
-      "ch:1:sloid:80427:0:3",
-      "Bern Riedbach, Bahnhof",
-      null,
-      12.4,
+      12.1,
       "osm_platform"
      ],
      [
@@ -650,13 +510,6 @@
       null,
       5.4,
       "osm_platform"
-     ],
-     [
-      "ch:1:sloid:71395:0:70723",
-      "Wabern, Tram-Endstation",
-      null,
-      14.1,
-      "osm_platform"
      ]
     ]
    }
@@ -664,13 +517,13 @@
   {
    "level": "WARN",
    "check": "edges more than 5 m from their atlas point",
-   "detail": "71 edges (listed in report.json)",
+   "detail": "50 edges (listed in report.json)",
    "data": null
   },
   {
    "level": "WARN",
    "check": "atlas coordinate sits on a different SBB track than its track number",
-   "detail": "4 edges: Bern 12 (ch:1:sloid:7000:6:32), Bern Wankdorf 2 (ch:1:sloid:16161:1:1), Bern Wankdorf 3 (ch:1:sloid:16161:1:2), Bern Wankdorf 7 (ch:1:sloid:16161:3:5)",
+   "detail": "5 edges: Bern 12 (ch:1:sloid:7000:6:32, 10.08 m), Bern Wankdorf 2 (ch:1:sloid:16161:1:1, 7.94 m), Bern Wankdorf 3 (ch:1:sloid:16161:1:2, 9.97 m), Bern Wankdorf 5 (ch:1:sloid:16161:2:3, 85.55 m), Bern Wankdorf 7 (ch:1:sloid:16161:3:5, 14.36 m)",
    "data": null
   },
   {
@@ -706,25 +559,25 @@
   {
    "level": "OK",
    "check": "boarding edges by geometry method",
-   "detail": "{'osm_platform': 553, 'constructed': 448, 'sbb_behig_kerb_points': 62, 'none': 23, 'point_only': 9}",
+   "detail": "{'osm_platform': 511, 'constructed': 496, 'sbb_behig_kerb_points': 63, 'none': 23, 'point_only': 9, 'av_bahnsteig_outline': 3}",
    "data": null
   },
   {
    "level": "WARN",
    "check": "sector_marker: distance to the linked edge line <= 12.0 m",
-   "detail": "126 of 126 linked; median 2.4 m, p95 12.5 m, max 180.1 m; 7 over",
+   "detail": "126 of 126 linked; median 2.4 m, p95 100.1 m, max 180.1 m; 10 over",
    "data": null
   },
   {
    "level": "WARN",
    "check": "sector_board: distance to the linked edge line <= 12.0 m",
-   "detail": "142 of 152 linked; median 2.4 m, p95 40.1 m, max 180.0 m; 8 over",
+   "detail": "142 of 152 linked; median 2.4 m, p95 5.1 m, max 180.0 m; 4 over",
    "data": null
   },
   {
    "level": "OK",
    "check": "shelter: distance to the linked edge line <= 9.0 m",
-   "detail": "239 of 239 linked; median 3.5 m, p95 8.4 m, max 9.0 m; 0 over",
+   "detail": "240 of 240 linked; median 3.4 m, p95 8.4 m, max 9.0 m; 0 over",
    "data": null
   },
   {
@@ -736,7 +589,7 @@
   {
    "level": "OK",
    "check": "SBB surveyed kerb lines agree with OSM rail platform outlines (two independent sources)",
-   "detail": "557 sample points: median 0.17 m, p90 0.58 m, p99 8.13 m between the SBB kerb line and the nearest OSM platform boundary",
+   "detail": "566 sample points: median 0.17 m, p90 0.57 m, p99 8.13 m between the SBB kerb line and the nearest OSM platform boundary",
    "data": null
   },
   {
@@ -746,9 +599,21 @@
    "data": null
   },
   {
+   "level": "OK",
+   "check": "surveyed pavement boundary found next to osm_platform edges (cadastral survey, city of Bern only)",
+   "detail": "283 of 511 edges; mean offset between the edge line and the surveyed boundary: median 0.58 m, p90 1.53 m; 222 within 1 m",
+   "data": null
+  },
+  {
+   "level": "OK",
+   "check": "surveyed pavement boundary found next to constructed edges (cadastral survey, city of Bern only)",
+   "detail": "115 of 496 edges; mean offset between the edge line and the surveyed boundary: median 1.5 m, p90 2.69 m",
+   "data": null
+  },
+  {
    "level": "WARN",
    "check": "surveyed edge length vs atlas length (within 10 %)",
-   "detail": "62 edges compared, 5 differ by more than 10 %",
+   "detail": "63 edges compared, 5 differ by more than 10 %",
    "data": [
     [
      "ch:1:sloid:7000:0:349752",
@@ -775,7 +640,7 @@
   {
    "level": "OK",
    "check": "data/focus/8504104-thoerishaus-station.geojson: unique ids",
-   "detail": "31 features, 0 duplicate ids",
+   "detail": "33 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -841,13 +706,13 @@
   {
    "level": "OK",
    "check": "focus/8504104-thoerishaus-station: walk graph is consistent",
-   "detail": "30 nodes, 26 edges, 4 components, largest holds 53 % of nodes; boarding edges attach at median 8.0 m, max 27.3 m",
+   "detail": "77 nodes, 81 edges, 3 components, largest holds 78 % of nodes; boarding edges attach at median 5.1 m, max 14.8 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8504105-niederwangen.geojson: unique ids",
-   "detail": "64 features, 0 duplicate ids",
+   "detail": "66 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -913,13 +778,13 @@
   {
    "level": "OK",
    "check": "focus/8504105-niederwangen: walk graph is consistent",
-   "detail": "99 nodes, 94 edges, 13 components, largest holds 55 % of nodes; boarding edges attach at median 12.2 m, max 39.8 m",
+   "detail": "180 nodes, 204 edges, 7 components, largest holds 92 % of nodes; boarding edges attach at median 6.9 m, max 39.8 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8504106-bern-buempliz-sued.geojson: unique ids",
-   "detail": "77 features, 0 duplicate ids",
+   "detail": "81 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -985,13 +850,13 @@
   {
    "level": "OK",
    "check": "focus/8504106-bern-buempliz-sued: walk graph is consistent",
-   "detail": "127 nodes, 141 edges, 3 components, largest holds 97 % of nodes; boarding edges attach at median 13.9 m, max 25.9 m",
+   "detail": "258 nodes, 333 edges, 2 components, largest holds 99 % of nodes; boarding edges attach at median 13.2 m, max 24.8 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8504108-bern-europaplatz.geojson: unique ids",
-   "detail": "93 features, 0 duplicate ids",
+   "detail": "100 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -1051,19 +916,19 @@
   {
    "level": "OK",
    "check": "focus/8504108-bern-europaplatz: features confirmed by a second source",
-   "detail": "passage 1/7, stairs 3/5, ramp_or_link 0/2, entrance 1/2, boarding_edge 0/8",
+   "detail": "passage 1/7, stairs 3/5, ramp_or_link 0/2, entrance 1/2, boarding_edge 3/8",
    "data": null
   },
   {
    "level": "OK",
    "check": "focus/8504108-bern-europaplatz: walk graph is consistent",
-   "detail": "156 nodes, 151 edges, 11 components, largest holds 62 % of nodes; boarding edges attach at median 7.2 m, max 29.5 m",
+   "detail": "255 nodes, 294 edges, 7 components, largest holds 79 % of nodes; boarding edges attach at median 4.7 m, max 9.7 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8504117-oberwangen.geojson: unique ids",
-   "detail": "28 features, 0 duplicate ids",
+   "detail": "30 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -1129,13 +994,13 @@
   {
    "level": "OK",
    "check": "focus/8504117-oberwangen: walk graph is consistent",
-   "detail": "34 nodes, 24 edges, 10 components, largest holds 29 % of nodes; boarding edges attach at median 4.9 m, max 8.6 m",
+   "detail": "90 nodes, 95 edges, 1 components, largest holds 100 % of nodes; boarding edges attach at median 4.9 m, max 8.6 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8504488-bern-riedbach.geojson: unique ids",
-   "detail": "23 features, 0 duplicate ids",
+   "detail": "24 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -1201,13 +1066,13 @@
   {
    "level": "OK",
    "check": "focus/8504488-bern-riedbach: walk graph is consistent",
-   "detail": "22 nodes, 19 edges, 3 components, largest holds 50 % of nodes; boarding edges attach at median 10.5 m, max 19.1 m",
+   "detail": "42 nodes, 43 edges, 3 components, largest holds 90 % of nodes; boarding edges attach at median 6.2 m, max 15.4 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8504489-bern-buempliz-nord.geojson: unique ids",
-   "detail": "76 features, 0 duplicate ids",
+   "detail": "80 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -1267,19 +1132,19 @@
   {
    "level": "OK",
    "check": "focus/8504489-bern-buempliz-nord: features confirmed by a second source",
-   "detail": "passage 2/11, stairs 1/4, boarding_edge 2/7",
+   "detail": "passage 2/11, stairs 1/4, boarding_edge 3/7",
    "data": null
   },
   {
    "level": "OK",
    "check": "focus/8504489-bern-buempliz-nord: walk graph is consistent",
-   "detail": "208 nodes, 234 edges, 3 components, largest holds 96 % of nodes; boarding edges attach at median 7.7 m, max 15.0 m",
+   "detail": "292 nodes, 359 edges, 2 components, largest holds 99 % of nodes; boarding edges attach at median 7.7 m, max 15.0 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8507002-ostermundigen.geojson: unique ids",
-   "detail": "34 features, 0 duplicate ids",
+   "detail": "35 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -1345,13 +1210,13 @@
   {
    "level": "OK",
    "check": "focus/8507002-ostermundigen: walk graph is consistent",
-   "detail": "106 nodes, 95 edges, 17 components, largest holds 55 % of nodes; boarding edges attach at median 6.3 m, max 16.4 m",
+   "detail": "194 nodes, 235 edges, 3 components, largest holds 97 % of nodes; boarding edges attach at median 6.2 m, max 16.4 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8507003-guemligen.geojson: unique ids",
-   "detail": "84 features, 0 duplicate ids",
+   "detail": "86 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -1393,7 +1258,7 @@
   {
    "level": "OK",
    "check": "focus/8507003-guemligen: level elevations increase with level number",
-   "detail": "L-1=557.2 m (approximate), L0=561.7 m (source_derived)",
+   "detail": "L-1=558.0 m (source_derived), L0=561.7 m (source_derived)",
    "data": null
   },
   {
@@ -1417,13 +1282,13 @@
   {
    "level": "OK",
    "check": "focus/8507003-guemligen: walk graph is consistent",
-   "detail": "100 nodes, 100 edges, 8 components, largest holds 60 % of nodes; boarding edges attach at median 6.9 m, max 28.1 m",
+   "detail": "193 nodes, 223 edges, 3 components, largest holds 98 % of nodes; boarding edges attach at median 6.9 m, max 24.4 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8507050-bern-egghoelzli.geojson: unique ids",
-   "detail": "48 features, 0 duplicate ids",
+   "detail": "52 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -1465,7 +1330,7 @@
   {
    "level": "OK",
    "check": "focus/8507050-bern-egghoelzli: level elevations increase with level number",
-   "detail": "L-2=544.2 m (approximate), L0=553.2 m (source_derived)",
+   "detail": "L-1=548.7 m (approximate), L0=553.2 m (source_derived)",
    "data": null
   },
   {
@@ -1483,19 +1348,19 @@
   {
    "level": "OK",
    "check": "focus/8507050-bern-egghoelzli: features confirmed by a second source",
-   "detail": "passage 2/2, boarding_edge 2/7",
+   "detail": "passage 2/2, boarding_edge 5/7",
    "data": null
   },
   {
    "level": "OK",
    "check": "focus/8507050-bern-egghoelzli: walk graph is consistent",
-   "detail": "89 nodes, 92 edges, 2 components, largest holds 98 % of nodes; boarding edges attach at median 14.4 m, max 29.1 m",
+   "detail": "172 nodes, 217 edges, 2 components, largest holds 99 % of nodes; boarding edges attach at median 13.7 m, max 16.0 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8507060-bern-helvetiaplatz.geojson: unique ids",
-   "detail": "68 features, 0 duplicate ids",
+   "detail": "73 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -1555,19 +1420,19 @@
   {
    "level": "OK",
    "check": "focus/8507060-bern-helvetiaplatz: features confirmed by a second source",
-   "detail": "passage 0/2, stairs 3/4, boarding_edge 0/7",
+   "detail": "passage 0/2, stairs 3/4, boarding_edge 2/7",
    "data": null
   },
   {
    "level": "OK",
    "check": "focus/8507060-bern-helvetiaplatz: walk graph is consistent",
-   "detail": "154 nodes, 166 edges, 7 components, largest holds 90 % of nodes; boarding edges attach at median 6.8 m, max 14.6 m",
+   "detail": "217 nodes, 272 edges, 2 components, largest holds 99 % of nodes; boarding edges attach at median 6.8 m, max 14.6 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8507061-bern-brunnadernstrasse.geojson: unique ids",
-   "detail": "67 features, 0 duplicate ids",
+   "detail": "68 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -1627,19 +1492,19 @@
   {
    "level": "OK",
    "check": "focus/8507061-bern-brunnadernstrasse: features confirmed by a second source",
-   "detail": "passage 0/1, boarding_edge 0/7",
+   "detail": "passage 0/1, boarding_edge 1/7",
    "data": null
   },
   {
    "level": "OK",
    "check": "focus/8507061-bern-brunnadernstrasse: walk graph is consistent",
-   "detail": "74 nodes, 77 edges, 4 components, largest holds 92 % of nodes; boarding edges attach at median 7.4 m, max 13.9 m",
+   "detail": "149 nodes, 187 edges, 2 components, largest holds 99 % of nodes; boarding edges attach at median 5.7 m, max 8.0 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8507062-muri-bei-bern.geojson: unique ids",
-   "detail": "19 features, 0 duplicate ids",
+   "detail": "21 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -1685,9 +1550,9 @@
    "data": null
   },
   {
-   "level": "OK",
+   "level": "WARN",
    "check": "focus/8507062-muri-bei-bern: vertical connectors carry level information",
-   "detail": "0 stairs/escalators/lifts/ramps, 0 without any level tag in OSM",
+   "detail": "1 stairs/escalators/lifts/ramps, 1 without any level tag in OSM",
    "data": null
   },
   {
@@ -1699,13 +1564,13 @@
   {
    "level": "OK",
    "check": "focus/8507062-muri-bei-bern: features confirmed by a second source",
-   "detail": "passage 0/1, boarding_edge 0/4",
+   "detail": "passage 0/1, stairs 0/1, boarding_edge 0/4",
    "data": null
   },
   {
    "level": "OK",
    "check": "focus/8507062-muri-bei-bern: walk graph is consistent",
-   "detail": "55 nodes, 48 edges, 8 components, largest holds 42 % of nodes; boarding edges attach at median 7.3 m, max 19.3 m",
+   "detail": "102 nodes, 116 edges, 6 components, largest holds 86 % of nodes; boarding edges attach at median 7.3 m, max 19.1 m",
    "data": null
   },
   {
@@ -1777,7 +1642,7 @@
   {
    "level": "OK",
    "check": "focus/8507067-deisswil: walk graph is consistent",
-   "detail": "31 nodes, 24 edges, 7 components, largest holds 48 % of nodes; boarding edges attach at median 6.5 m, max 19.6 m",
+   "detail": "82 nodes, 92 edges, 2 components, largest holds 98 % of nodes; boarding edges attach at median 6.2 m, max 6.5 m",
    "data": null
   },
   {
@@ -1849,13 +1714,13 @@
   {
    "level": "OK",
    "check": "focus/8507068-bolligen: walk graph is consistent",
-   "detail": "66 nodes, 53 edges, 14 components, largest holds 27 % of nodes; boarding edges attach at median 4.9 m, max 11.0 m",
+   "detail": "130 nodes, 140 edges, 5 components, largest holds 92 % of nodes; boarding edges attach at median 4.9 m, max 11.0 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8507069-ittigen-bei-bern.geojson: unique ids",
-   "detail": "47 features, 0 duplicate ids",
+   "detail": "46 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -1921,13 +1786,13 @@
   {
    "level": "OK",
    "check": "focus/8507069-ittigen-bei-bern: walk graph is consistent",
-   "detail": "177 nodes, 192 edges, 5 components, largest holds 89 % of nodes; boarding edges attach at median 8.8 m, max 14.9 m",
+   "detail": "256 nodes, 319 edges, 1 components, largest holds 100 % of nodes; boarding edges attach at median 4.4 m, max 14.9 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8507077-kehrsatz.geojson: unique ids",
-   "detail": "31 features, 0 duplicate ids",
+   "detail": "33 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -1993,13 +1858,13 @@
   {
    "level": "OK",
    "check": "focus/8507077-kehrsatz: walk graph is consistent",
-   "detail": "95 nodes, 106 edges, 12 components, largest holds 31 % of nodes; boarding edges attach at median 4.3 m, max 44.3 m",
+   "detail": "145 nodes, 175 edges, 3 components, largest holds 90 % of nodes; boarding edges attach at median 4.3 m, max 7.4 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8507078-wabern-bei-bern.geojson: unique ids",
-   "detail": "57 features, 0 duplicate ids",
+   "detail": "60 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -2053,25 +1918,25 @@
   {
    "level": "OK",
    "check": "focus/8507078-wabern-bei-bern: atlas edge height vs swissALTI3D terrain at street level (within 2 m)",
-   "detail": "11 level-0 edges, median difference -0.1 m, 0 beyond 2 m",
+   "detail": "12 level-0 edges, median difference -0.1 m, 0 beyond 2 m",
    "data": []
   },
   {
    "level": "OK",
    "check": "focus/8507078-wabern-bei-bern: features confirmed by a second source",
-   "detail": "passage 0/6, stairs 0/5, entrance 0/3, boarding_edge 3/11",
+   "detail": "passage 0/6, stairs 0/5, entrance 0/3, boarding_edge 3/12",
    "data": null
   },
   {
    "level": "OK",
    "check": "focus/8507078-wabern-bei-bern: walk graph is consistent",
-   "detail": "118 nodes, 105 edges, 19 components, largest holds 20 % of nodes; boarding edges attach at median 12.0 m, max 78.2 m",
+   "detail": "196 nodes, 211 edges, 4 components, largest holds 95 % of nodes; boarding edges attach at median 8.8 m, max 16.7 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8507079-bern-weissenbuehl.geojson: unique ids",
-   "detail": "51 features, 0 duplicate ids",
+   "detail": "56 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -2131,19 +1996,19 @@
   {
    "level": "OK",
    "check": "focus/8507079-bern-weissenbuehl: features confirmed by a second source",
-   "detail": "passage 2/4, stairs 2/2, boarding_edge 0/7",
+   "detail": "passage 2/4, stairs 2/2, boarding_edge 1/7",
    "data": null
   },
   {
    "level": "OK",
    "check": "focus/8507079-bern-weissenbuehl: walk graph is consistent",
-   "detail": "163 nodes, 157 edges, 18 components, largest holds 58 % of nodes; boarding edges attach at median 19.4 m, max 68.7 m",
+   "detail": "253 nodes, 305 edges, 9 components, largest holds 90 % of nodes; boarding edges attach at median 4.5 m, max 26.3 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8507083-koeniz.geojson: unique ids",
-   "detail": "51 features, 0 duplicate ids",
+   "detail": "52 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -2185,7 +2050,7 @@
   {
    "level": "OK",
    "check": "focus/8507083-koeniz: level elevations increase with level number",
-   "detail": "L-1=567.6 m (approximate), L0=572.1 m (source_derived)",
+   "detail": "L-1=567.2 m (source_derived), L0=572.1 m (source_derived)",
    "data": null
   },
   {
@@ -2209,7 +2074,7 @@
   {
    "level": "OK",
    "check": "focus/8507083-koeniz: walk graph is consistent",
-   "detail": "106 nodes, 99 edges, 15 components, largest holds 31 % of nodes; boarding edges attach at median 13.0 m, max 140.7 m",
+   "detail": "231 nodes, 277 edges, 4 components, largest holds 97 % of nodes; boarding edges attach at median 5.4 m, max 37.3 m",
    "data": null
   },
   {
@@ -2281,13 +2146,13 @@
   {
    "level": "OK",
    "check": "focus/8507084-moos: walk graph is consistent",
-   "detail": "5 nodes, 4 edges, 1 components, largest holds 100 % of nodes; boarding edges attach at median 21.1 m, max 23.7 m",
+   "detail": "21 nodes, 20 edges, 1 components, largest holds 100 % of nodes; boarding edges attach at median 13.9 m, max 14.9 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8507085-gasel.geojson: unique ids",
-   "detail": "14 features, 0 duplicate ids",
+   "detail": "15 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -2353,13 +2218,13 @@
   {
    "level": "OK",
    "check": "focus/8507085-gasel: walk graph is consistent",
-   "detail": "8 nodes, 6 edges, 2 components, largest holds 75 % of nodes; boarding edges attach at median 49.7 m, max 50.8 m",
+   "detail": "44 nodes, 44 edges, 2 components, largest holds 95 % of nodes; boarding edges attach at median 11.4 m, max 15.8 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8507091-liebefeld.geojson: unique ids",
-   "detail": "24 features, 0 duplicate ids",
+   "detail": "25 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -2425,13 +2290,13 @@
   {
    "level": "OK",
    "check": "focus/8507091-liebefeld: walk graph is consistent",
-   "detail": "96 nodes, 88 edges, 11 components, largest holds 40 % of nodes; boarding edges attach at median 4.6 m, max 18.0 m",
+   "detail": "210 nodes, 247 edges, 2 components, largest holds 99 % of nodes; boarding edges attach at median 4.6 m, max 18.0 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8507093-kehrsatz-nord.geojson: unique ids",
-   "detail": "21 features, 0 duplicate ids",
+   "detail": "23 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -2497,7 +2362,7 @@
   {
    "level": "OK",
    "check": "focus/8507093-kehrsatz-nord: walk graph is consistent",
-   "detail": "65 nodes, 62 edges, 5 components, largest holds 65 % of nodes; boarding edges attach at median 14.5 m, max 29.2 m",
+   "detail": "123 nodes, 146 edges, 2 components, largest holds 98 % of nodes; boarding edges attach at median 4.2 m, max 11.1 m",
    "data": null
   },
   {
@@ -2569,13 +2434,13 @@
   {
    "level": "OK",
    "check": "focus/8507096-papiermuehle: walk graph is consistent",
-   "detail": "65 nodes, 50 edges, 16 components, largest holds 26 % of nodes; boarding edges attach at median 33.4 m, max 33.6 m",
+   "detail": "149 nodes, 174 edges, 2 components, largest holds 99 % of nodes; boarding edges attach at median 21.4 m, max 33.4 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8508051-bern-felsenau.geojson: unique ids",
-   "detail": "58 features, 0 duplicate ids",
+   "detail": "60 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -2617,7 +2482,7 @@
   {
    "level": "OK",
    "check": "focus/8508051-bern-felsenau: level elevations increase with level number",
-   "detail": "L-3=520.0 m (approximate), L-1=529.0 m (source_derived), L0=539.4 m (source_derived)",
+   "detail": "L-1=529.0 m (source_derived), L0=539.4 m (source_derived)",
    "data": null
   },
   {
@@ -2641,13 +2506,13 @@
   {
    "level": "OK",
    "check": "focus/8508051-bern-felsenau: walk graph is consistent",
-   "detail": "117 nodes, 116 edges, 8 components, largest holds 75 % of nodes; boarding edges attach at median 13.0 m, max 18.7 m",
+   "detail": "177 nodes, 199 edges, 3 components, largest holds 97 % of nodes; boarding edges attach at median 6.2 m, max 10.6 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8508052-bern-tiefenau.geojson: unique ids",
-   "detail": "105 features, 0 duplicate ids",
+   "detail": "107 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -2689,13 +2554,13 @@
   {
    "level": "OK",
    "check": "focus/8508052-bern-tiefenau: level elevations increase with level number",
-   "detail": "L-3=518.0 m (approximate), L-2=522.5 m (approximate), L-1=527.0 m (approximate), L0=531.5 m (source_derived)",
+   "detail": "L-1=527.0 m (approximate), L0=531.5 m (source_derived)",
    "data": null
   },
   {
    "level": "WARN",
    "check": "focus/8508052-bern-tiefenau: vertical connectors carry level information",
-   "detail": "14 stairs/escalators/lifts/ramps, 9 without any level tag in OSM",
+   "detail": "14 stairs/escalators/lifts/ramps, 12 without any level tag in OSM",
    "data": null
   },
   {
@@ -2713,13 +2578,13 @@
   {
    "level": "OK",
    "check": "focus/8508052-bern-tiefenau: walk graph is consistent",
-   "detail": "274 nodes, 289 edges, 9 components, largest holds 88 % of nodes; boarding edges attach at median 13.2 m, max 18.2 m",
+   "detail": "365 nodes, 451 edges, 2 components, largest holds 99 % of nodes; boarding edges attach at median 9.2 m, max 11.3 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8508053-steinibach.geojson: unique ids",
-   "detail": "55 features, 0 duplicate ids",
+   "detail": "54 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -2761,7 +2626,7 @@
   {
    "level": "OK",
    "check": "focus/8508053-steinibach: level elevations increase with level number",
-   "detail": "L-2=518.0 m (approximate), L-1=522.5 m (approximate), L0=527.0 m (source_derived)",
+   "detail": "L-1=522.5 m (approximate), L0=527.0 m (source_derived)",
    "data": null
   },
   {
@@ -2785,7 +2650,7 @@
   {
    "level": "OK",
    "check": "focus/8508053-steinibach: walk graph is consistent",
-   "detail": "72 nodes, 66 edges, 8 components, largest holds 43 % of nodes; boarding edges attach at median 13.2 m, max 69.1 m",
+   "detail": "124 nodes, 147 edges, 2 components, largest holds 98 % of nodes; boarding edges attach at median 11.8 m, max 12.2 m",
    "data": null
   },
   {
@@ -2833,7 +2698,7 @@
   {
    "level": "OK",
    "check": "focus/8508054-worblaufen: level elevations increase with level number",
-   "detail": "L-1=515.5 m (approximate), L0=520.0 m (source_derived), L1=524.5 m (approximate)",
+   "detail": "L-1=516.3 m (source_derived), L0=520.0 m (source_derived), L1=524.5 m (approximate)",
    "data": null
   },
   {
@@ -2857,7 +2722,7 @@
   {
    "level": "OK",
    "check": "focus/8508054-worblaufen: walk graph is consistent",
-   "detail": "158 nodes, 149 edges, 13 components, largest holds 66 % of nodes; boarding edges attach at median 11.7 m, max 35.2 m",
+   "detail": "223 nodes, 262 edges, 3 components, largest holds 98 % of nodes; boarding edges attach at median 11.7 m, max 32.6 m",
    "data": null
   },
   {
@@ -2929,13 +2794,13 @@
   {
    "level": "OK",
    "check": "focus/8508055-unterzollikofen: walk graph is consistent",
-   "detail": "71 nodes, 61 edges, 11 components, largest holds 59 % of nodes; boarding edges attach at median 7.1 m, max 11.5 m",
+   "detail": "161 nodes, 186 edges, 2 components, largest holds 99 % of nodes; boarding edges attach at median 7.1 m, max 10.4 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8508070-oberzollikofen.geojson: unique ids",
-   "detail": "45 features, 0 duplicate ids",
+   "detail": "47 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -2989,25 +2854,25 @@
   {
    "level": "OK",
    "check": "focus/8508070-oberzollikofen: atlas edge height vs swissALTI3D terrain at street level (within 2 m)",
-   "detail": "7 level-0 edges, median difference 0.04 m, 0 beyond 2 m",
+   "detail": "9 level-0 edges, median difference 0.0 m, 0 beyond 2 m",
    "data": []
   },
   {
    "level": "OK",
    "check": "focus/8508070-oberzollikofen: features confirmed by a second source",
-   "detail": "passage 0/10, stairs 0/8, boarding_edge 0/7",
+   "detail": "passage 0/10, stairs 0/8, boarding_edge 0/9",
    "data": null
   },
   {
    "level": "OK",
    "check": "focus/8508070-oberzollikofen: walk graph is consistent",
-   "detail": "122 nodes, 121 edges, 7 components, largest holds 41 % of nodes; boarding edges attach at median 4.1 m, max 14.1 m",
+   "detail": "182 nodes, 186 edges, 11 components, largest holds 49 % of nodes; boarding edges attach at median 4.1 m, max 9.7 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8516154-bern-bruennen-westside.geojson: unique ids",
-   "detail": "65 features, 0 duplicate ids",
+   "detail": "70 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -3067,19 +2932,19 @@
   {
    "level": "OK",
    "check": "focus/8516154-bern-bruennen-westside: features confirmed by a second source",
-   "detail": "passage 1/8, stairs 4/4, escalator 0/2, boarding_edge 0/5",
+   "detail": "passage 1/8, stairs 4/4, escalator 0/2, boarding_edge 3/5",
    "data": null
   },
   {
    "level": "OK",
    "check": "focus/8516154-bern-bruennen-westside: walk graph is consistent",
-   "detail": "78 nodes, 88 edges, 5 components, largest holds 45 % of nodes; boarding edges attach at median 14.4 m, max 75.7 m",
+   "detail": "109 nodes, 130 edges, 5 components, largest holds 87 % of nodes; boarding edges attach at median 11.9 m, max 75.7 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8571342-bern-inselplatz.geojson: unique ids",
-   "detail": "40 features, 0 duplicate ids",
+   "detail": "44 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -3145,13 +3010,13 @@
   {
    "level": "OK",
    "check": "focus/8571342-bern-inselplatz: walk graph is consistent",
-   "detail": "103 nodes, 100 edges, 9 components, largest holds 63 % of nodes; boarding edges attach at median 29.1 m, max 33.8 m",
+   "detail": "172 nodes, 210 edges, 3 components, largest holds 98 % of nodes; boarding edges attach at median 11.2 m, max 11.3 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8571393-bern-eigerplatz.geojson: unique ids",
-   "detail": "52 features, 0 duplicate ids",
+   "detail": "58 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -3211,13 +3076,13 @@
   {
    "level": "OK",
    "check": "focus/8571393-bern-eigerplatz: features confirmed by a second source",
-   "detail": "passage 0/3, stairs 2/4, boarding_edge 0/7",
+   "detail": "passage 0/3, stairs 2/4, boarding_edge 2/7",
    "data": null
   },
   {
    "level": "OK",
    "check": "focus/8571393-bern-eigerplatz: walk graph is consistent",
-   "detail": "124 nodes, 135 edges, 3 components, largest holds 96 % of nodes; boarding edges attach at median 7.7 m, max 8.5 m",
+   "detail": "211 nodes, 262 edges, 1 components, largest holds 100 % of nodes; boarding edges attach at median 6.5 m, max 7.7 m",
    "data": null
   },
   {
@@ -3289,13 +3154,13 @@
   {
    "level": "OK",
    "check": "focus/8571412-liebefeld-hessstrasse: walk graph is consistent",
-   "detail": "49 nodes, 33 edges, 16 components, largest holds 20 % of nodes; boarding edges attach at median 28.1 m, max 32.3 m",
+   "detail": "98 nodes, 105 edges, 4 components, largest holds 94 % of nodes; boarding edges attach at median 13.0 m, max 23.5 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8571413-koeniz-bruehlplatz.geojson: unique ids",
-   "detail": "28 features, 0 duplicate ids",
+   "detail": "27 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -3361,13 +3226,13 @@
   {
    "level": "OK",
    "check": "focus/8571413-koeniz-bruehlplatz: walk graph is consistent",
-   "detail": "57 nodes, 48 edges, 10 components, largest holds 30 % of nodes; boarding edges attach at median 9.5 m, max 34.9 m",
+   "detail": "118 nodes, 133 edges, 2 components, largest holds 98 % of nodes; boarding edges attach at median 5.1 m, max 9.0 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8571436-bern-bachmaetteli.geojson: unique ids",
-   "detail": "47 features, 0 duplicate ids",
+   "detail": "50 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -3427,19 +3292,19 @@
   {
    "level": "OK",
    "check": "focus/8571436-bern-bachmaetteli: features confirmed by a second source",
-   "detail": "passage 0/1, boarding_edge 0/4",
+   "detail": "passage 0/1, boarding_edge 2/4",
    "data": null
   },
   {
    "level": "OK",
    "check": "focus/8571436-bern-bachmaetteli: walk graph is consistent",
-   "detail": "74 nodes, 78 edges, 3 components, largest holds 95 % of nodes; boarding edges attach at median 7.9 m, max 15.4 m",
+   "detail": "127 nodes, 153 edges, 2 components, largest holds 98 % of nodes; boarding edges attach at median 7.9 m, max 10.0 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8576990-bern-guisanplatz-expo.geojson: unique ids",
-   "detail": "17 features, 0 duplicate ids",
+   "detail": "24 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -3499,19 +3364,19 @@
   {
    "level": "OK",
    "check": "focus/8576990-bern-guisanplatz-expo: features confirmed by a second source",
-   "detail": "boarding_edge 0/8",
+   "detail": "boarding_edge 5/8",
    "data": null
   },
   {
    "level": "OK",
    "check": "focus/8576990-bern-guisanplatz-expo: walk graph is consistent",
-   "detail": "45 nodes, 46 edges, 3 components, largest holds 87 % of nodes; boarding edges attach at median 9.3 m, max 65.0 m",
+   "detail": "105 nodes, 131 edges, 2 components, largest holds 96 % of nodes; boarding edges attach at median 9.3 m, max 59.4 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8576999-bern-upd-waldau.geojson: unique ids",
-   "detail": "13 features, 0 duplicate ids",
+   "detail": "16 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -3571,19 +3436,19 @@
   {
    "level": "OK",
    "check": "focus/8576999-bern-upd-waldau: features confirmed by a second source",
-   "detail": "boarding_edge 0/4",
+   "detail": "boarding_edge 2/4",
    "data": null
   },
   {
    "level": "OK",
    "check": "focus/8576999-bern-upd-waldau: walk graph is consistent",
-   "detail": "43 nodes, 40 edges, 4 components, largest holds 86 % of nodes; boarding edges attach at median 5.5 m, max 10.2 m",
+   "detail": "79 nodes, 90 edges, 3 components, largest holds 96 % of nodes; boarding edges attach at median 5.5 m, max 10.2 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8577002-ostermundigen-waldeck.geojson: unique ids",
-   "detail": "20 features, 0 duplicate ids",
+   "detail": "21 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -3625,7 +3490,7 @@
   {
    "level": "OK",
    "check": "focus/8577002-ostermundigen-waldeck: level elevations increase with level number",
-   "detail": "L-2=552.0 m (approximate), L-1=556.5 m (approximate), L0=561.0 m (source_derived)",
+   "detail": "L-1=556.5 m (approximate), L0=561.0 m (source_derived)",
    "data": null
   },
   {
@@ -3649,13 +3514,13 @@
   {
    "level": "OK",
    "check": "focus/8577002-ostermundigen-waldeck: walk graph is consistent",
-   "detail": "37 nodes, 32 edges, 10 components, largest holds 57 % of nodes; boarding edges attach at median 21.4 m, max 21.4 m",
+   "detail": "77 nodes, 86 edges, 7 components, largest holds 87 % of nodes; boarding edges attach at median 8.7 m, max 13.4 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8579896-bern-hirschengraben.geojson: unique ids",
-   "detail": "142 features, 0 duplicate ids",
+   "detail": "168 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -3715,19 +3580,19 @@
   {
    "level": "OK",
    "check": "focus/8579896-bern-hirschengraben: features confirmed by a second source",
-   "detail": "passage 0/4, stairs 0/1, boarding_edge 21/33",
+   "detail": "passage 0/4, stairs 0/1, boarding_edge 26/33",
    "data": null
   },
   {
    "level": "OK",
    "check": "focus/8579896-bern-hirschengraben: walk graph is consistent",
-   "detail": "119 nodes, 141 edges, 2 components, largest holds 97 % of nodes; boarding edges attach at median 64.0 m, max 250.4 m",
+   "detail": "198 nodes, 256 edges, 1 components, largest holds 100 % of nodes; boarding edges attach at median 64.0 m, max 250.4 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8579897-bern-kocherpark.geojson: unique ids",
-   "detail": "61 features, 0 duplicate ids",
+   "detail": "64 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -3787,19 +3652,19 @@
   {
    "level": "OK",
    "check": "focus/8579897-bern-kocherpark: features confirmed by a second source",
-   "detail": "passage 0/3, stairs 2/3, boarding_edge 0/4",
+   "detail": "passage 0/3, stairs 2/3, boarding_edge 2/4",
    "data": null
   },
   {
    "level": "OK",
    "check": "focus/8579897-bern-kocherpark: walk graph is consistent",
-   "detail": "137 nodes, 151 edges, 1 components, largest holds 100 % of nodes; boarding edges attach at median 18.4 m, max 20.9 m",
+   "detail": "203 nodes, 247 edges, 1 components, largest holds 100 % of nodes; boarding edges attach at median 6.5 m, max 17.8 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8579898-bern-buempliz-unterfuehrung.geojson: unique ids",
-   "detail": "56 features, 0 duplicate ids",
+   "detail": "58 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -3865,13 +3730,13 @@
   {
    "level": "OK",
    "check": "focus/8579898-bern-buempliz-unterfuehrung: walk graph is consistent",
-   "detail": "128 nodes, 112 edges, 18 components, largest holds 23 % of nodes; boarding edges attach at median 5.1 m, max 13.6 m",
+   "detail": "200 nodes, 220 edges, 9 components, largest holds 78 % of nodes; boarding edges attach at median 5.1 m, max 9.9 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8579900-bern-buempliz-post.geojson: unique ids",
-   "detail": "60 features, 0 duplicate ids",
+   "detail": "65 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -3931,19 +3796,19 @@
   {
    "level": "OK",
    "check": "focus/8579900-bern-buempliz-post: features confirmed by a second source",
-   "detail": "passage 0/1, stairs 0/1, boarding_edge 0/8",
+   "detail": "passage 0/1, stairs 0/1, boarding_edge 3/8",
    "data": null
   },
   {
    "level": "OK",
    "check": "focus/8579900-bern-buempliz-post: walk graph is consistent",
-   "detail": "105 nodes, 109 edges, 10 components, largest holds 78 % of nodes; boarding edges attach at median 8.0 m, max 68.8 m",
+   "detail": "171 nodes, 211 edges, 4 components, largest holds 95 % of nodes; boarding edges attach at median 5.3 m, max 68.8 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8587479-bern-schosshalde.geojson: unique ids",
-   "detail": "44 features, 0 duplicate ids",
+   "detail": "48 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -4003,13 +3868,13 @@
   {
    "level": "OK",
    "check": "focus/8587479-bern-schosshalde: features confirmed by a second source",
-   "detail": "passage 1/1, stairs 1/3, boarding_edge 0/4",
+   "detail": "passage 1/1, stairs 1/3, boarding_edge 2/4",
    "data": null
   },
   {
    "level": "OK",
    "check": "focus/8587479-bern-schosshalde: walk graph is consistent",
-   "detail": "82 nodes, 76 edges, 8 components, largest holds 56 % of nodes; boarding edges attach at median 5.2 m, max 14.3 m",
+   "detail": "135 nodes, 157 edges, 1 components, largest holds 100 % of nodes; boarding edges attach at median 5.2 m, max 14.2 m",
    "data": null
   },
   {
@@ -4081,13 +3946,13 @@
   {
    "level": "OK",
    "check": "focus/8588562-wabern-gurtenbahn: walk graph is consistent",
-   "detail": "56 nodes, 55 edges, 5 components, largest holds 64 % of nodes; boarding edges attach at median 33.3 m, max 110.3 m",
+   "detail": "118 nodes, 149 edges, 1 components, largest holds 100 % of nodes; boarding edges attach at median 6.3 m, max 16.1 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8588988-bern-aegertenstrasse.geojson: unique ids",
-   "detail": "44 features, 0 duplicate ids",
+   "detail": "48 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -4153,13 +4018,13 @@
   {
    "level": "OK",
    "check": "focus/8588988-bern-aegertenstrasse: walk graph is consistent",
-   "detail": "109 nodes, 114 edges, 2 components, largest holds 97 % of nodes; boarding edges attach at median 2.9 m, max 4.2 m",
+   "detail": "168 nodes, 200 edges, 3 components, largest holds 98 % of nodes; boarding edges attach at median 2.9 m, max 4.2 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8588991-bern-breitfeld.geojson: unique ids",
-   "detail": "69 features, 0 duplicate ids",
+   "detail": "74 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -4219,19 +4084,19 @@
   {
    "level": "OK",
    "check": "focus/8588991-bern-breitfeld: features confirmed by a second source",
-   "detail": "boarding_edge 1/5",
+   "detail": "boarding_edge 5/5",
    "data": null
   },
   {
    "level": "OK",
    "check": "focus/8588991-bern-breitfeld: walk graph is consistent",
-   "detail": "45 nodes, 41 edges, 5 components, largest holds 67 % of nodes; boarding edges attach at median 32.0 m, max 43.4 m",
+   "detail": "95 nodes, 114 edges, 1 components, largest holds 100 % of nodes; boarding edges attach at median 10.8 m, max 29.2 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8589003-bern-thunplatz.geojson: unique ids",
-   "detail": "21 features, 0 duplicate ids",
+   "detail": "25 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -4297,13 +4162,13 @@
   {
    "level": "OK",
    "check": "focus/8589003-bern-thunplatz: walk graph is consistent",
-   "detail": "78 nodes, 81 edges, 5 components, largest holds 78 % of nodes; boarding edges attach at median 12.8 m, max 15.8 m",
+   "detail": "146 nodes, 182 edges, 4 components, largest holds 95 % of nodes; boarding edges attach at median 8.2 m, max 9.3 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8589991-bern-monbijou.geojson: unique ids",
-   "detail": "48 features, 0 duplicate ids",
+   "detail": "52 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -4369,13 +4234,13 @@
   {
    "level": "OK",
    "check": "focus/8589991-bern-monbijou: walk graph is consistent",
-   "detail": "126 nodes, 141 edges, 1 components, largest holds 100 % of nodes; boarding edges attach at median 4.3 m, max 6.8 m",
+   "detail": "198 nodes, 247 edges, 1 components, largest holds 100 % of nodes; boarding edges attach at median 1.8 m, max 4.3 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8589992-bern-sulgenau.geojson: unique ids",
-   "detail": "73 features, 0 duplicate ids",
+   "detail": "77 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -4435,19 +4300,19 @@
   {
    "level": "OK",
    "check": "focus/8589992-bern-sulgenau: features confirmed by a second source",
-   "detail": "passage 0/6, stairs 3/3, boarding_edge 0/4",
+   "detail": "passage 0/6, stairs 3/3, boarding_edge 1/4",
    "data": null
   },
   {
    "level": "OK",
    "check": "focus/8589992-bern-sulgenau: walk graph is consistent",
-   "detail": "123 nodes, 129 edges, 3 components, largest holds 95 % of nodes; boarding edges attach at median 16.6 m, max 19.4 m",
+   "detail": "196 nodes, 235 edges, 2 components, largest holds 99 % of nodes; boarding edges attach at median 16.5 m, max 19.4 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8589993-bern-wander.geojson: unique ids",
-   "detail": "46 features, 0 duplicate ids",
+   "detail": "49 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -4489,7 +4354,7 @@
   {
    "level": "OK",
    "check": "focus/8589993-bern-wander: level elevations increase with level number",
-   "detail": "L-2=521.8 m (approximate), L0=530.8 m (source_derived)",
+   "detail": "L-1=526.3 m (approximate), L0=530.8 m (source_derived)",
    "data": null
   },
   {
@@ -4512,13 +4377,13 @@
   {
    "level": "OK",
    "check": "focus/8589993-bern-wander: features confirmed by a second source",
-   "detail": "passage 1/1, boarding_edge 0/4",
+   "detail": "passage 1/1, boarding_edge 2/4",
    "data": null
   },
   {
    "level": "OK",
    "check": "focus/8589993-bern-wander: walk graph is consistent",
-   "detail": "100 nodes, 100 edges, 4 components, largest holds 90 % of nodes; boarding edges attach at median 8.4 m, max 10.2 m",
+   "detail": "188 nodes, 229 edges, 1 components, largest holds 100 % of nodes; boarding edges attach at median 7.9 m, max 9.4 m",
    "data": null
   },
   {
@@ -4590,13 +4455,13 @@
   {
    "level": "OK",
    "check": "focus/8589996-spiegel-spiegel: walk graph is consistent",
-   "detail": "44 nodes, 40 edges, 5 components, largest holds 68 % of nodes; boarding edges attach at median 12.4 m, max 53.1 m",
+   "detail": "85 nodes, 101 edges, 1 components, largest holds 100 % of nodes; boarding edges attach at median 6.1 m, max 10.6 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8590014-bern-fischermaetteli.geojson: unique ids",
-   "detail": "57 features, 0 duplicate ids",
+   "detail": "61 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -4656,19 +4521,19 @@
   {
    "level": "OK",
    "check": "focus/8590014-bern-fischermaetteli: features confirmed by a second source",
-   "detail": "passage 1/1, boarding_edge 0/5",
+   "detail": "passage 1/1, boarding_edge 4/5",
    "data": null
   },
   {
    "level": "OK",
    "check": "focus/8590014-bern-fischermaetteli: walk graph is consistent",
-   "detail": "84 nodes, 83 edges, 6 components, largest holds 79 % of nodes; boarding edges attach at median 17.4 m, max 33.0 m",
+   "detail": "154 nodes, 186 edges, 1 components, largest holds 100 % of nodes; boarding edges attach at median 16.9 m, max 33.0 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8590021-bern-viktoriaplatz.geojson: unique ids",
-   "detail": "51 features, 0 duplicate ids",
+   "detail": "55 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -4734,13 +4599,13 @@
   {
    "level": "OK",
    "check": "focus/8590021-bern-viktoriaplatz: walk graph is consistent",
-   "detail": "61 nodes, 66 edges, 2 components, largest holds 97 % of nodes; boarding edges attach at median 14.9 m, max 43.1 m",
+   "detail": "132 nodes, 172 edges, 1 components, largest holds 100 % of nodes; boarding edges attach at median 4.8 m, max 5.6 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/8590041-bern-loryplatz.geojson: unique ids",
-   "detail": "65 features, 0 duplicate ids",
+   "detail": "70 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -4800,19 +4665,19 @@
   {
    "level": "OK",
    "check": "focus/8590041-bern-loryplatz: features confirmed by a second source",
-   "detail": "stairs 5/7, boarding_edge 2/6",
+   "detail": "stairs 5/7, boarding_edge 5/6",
    "data": null
   },
   {
    "level": "OK",
    "check": "focus/8590041-bern-loryplatz: walk graph is consistent",
-   "detail": "193 nodes, 223 edges, 4 components, largest holds 91 % of nodes; boarding edges attach at median 12.7 m, max 25.0 m",
+   "detail": "264 nodes, 331 edges, 2 components, largest holds 99 % of nodes; boarding edges attach at median 12.7 m, max 14.4 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/bern-bahnhof.geojson: unique ids",
-   "detail": "1189 features, 0 duplicate ids",
+   "detail": "1328 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -4854,7 +4719,7 @@
   {
    "level": "OK",
    "check": "focus/bern-bahnhof: level elevations increase with level number",
-   "detail": "L-2=517.0 m (source_derived), L-1=536.3 m (approximate), L0=540.8 m (source_derived), L1=545.3 m (approximate), L2=549.8 m (approximate), L3=554.3 m (approximate), L4=558.8 m (approximate), L5=563.3 m (approximate)",
+   "detail": "L-2=517.0 m (source_derived), L-1=536.3 m (approximate), L0=540.8 m (source_derived), L1=547.8 m (source_derived), L2=549.1 m (source_derived), L3=553.6 m (approximate), L4=558.1 m (approximate), L5=562.6 m (approximate)",
    "data": null
   },
   {
@@ -4877,19 +4742,19 @@
   {
    "level": "OK",
    "check": "focus/bern-bahnhof: features confirmed by a second source",
-   "detail": "passage 65/241, stairs 27/53, escalator 17/30, ramp_or_link 7/9, entrance 9/12, boarding_edge 33/90",
+   "detail": "passage 65/241, stairs 27/53, escalator 17/30, ramp_or_link 7/9, entrance 9/12, boarding_edge 44/90",
    "data": null
   },
   {
    "level": "OK",
    "check": "focus/bern-bahnhof: walk graph is consistent",
-   "detail": "1224 nodes, 1487 edges, 29 components, largest holds 93 % of nodes; boarding edges attach at median 16.5 m, max 143.0 m",
+   "detail": "1659 nodes, 2191 edges, 8 components, largest holds 99 % of nodes; boarding edges attach at median 7.2 m, max 140.9 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/wankdorf.geojson: unique ids",
-   "detail": "238 features, 0 duplicate ids",
+   "detail": "268 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -4949,19 +4814,19 @@
   {
    "level": "OK",
    "check": "focus/wankdorf: features confirmed by a second source",
-   "detail": "passage 0/17, stairs 11/16, boarding_edge 8/22",
+   "detail": "passage 0/17, stairs 10/16, boarding_edge 11/22",
    "data": null
   },
   {
    "level": "OK",
    "check": "focus/wankdorf: walk graph is consistent",
-   "detail": "233 nodes, 231 edges, 17 components, largest holds 45 % of nodes; boarding edges attach at median 23.3 m, max 68.3 m",
+   "detail": "474 nodes, 567 edges, 10 components, largest holds 96 % of nodes; boarding edges attach at median 8.7 m, max 36.0 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "data/focus/zytglogge.geojson: unique ids",
-   "detail": "346 features, 0 duplicate ids",
+   "detail": "352 features, 0 duplicate ids",
    "data": []
   },
   {
@@ -5027,85 +4892,85 @@
   {
    "level": "OK",
    "check": "focus/zytglogge: walk graph is consistent",
-   "detail": "271 nodes, 298 edges, 5 components, largest holds 56 % of nodes; boarding edges attach at median 8.1 m, max 31.3 m",
+   "detail": "347 nodes, 436 edges, 1 components, largest holds 100 % of nodes; boarding edges attach at median 5.7 m, max 31.3 m",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8504104-thoerishaus-station.glb: valid GLB 2.0 with sidecar",
-   "detail": "113088 bytes, 5992 triangles, 5 nodes; sidecar states frame, origin and 5 kinds of approximation",
+   "detail": "62596 bytes, 3148 triangles, 6 nodes; sidecar states frame, origin and 5 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8504105-niederwangen.glb: valid GLB 2.0 with sidecar",
-   "detail": "99292 bytes, 5020 triangles, 9 nodes; sidecar states frame, origin and 9 kinds of approximation",
+   "detail": "59208 bytes, 2784 triangles, 9 nodes; sidecar states frame, origin and 8 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8504106-bern-buempliz-sued.glb: valid GLB 2.0 with sidecar",
-   "detail": "89660 bytes, 4336 triangles, 12 nodes; sidecar states frame, origin and 9 kinds of approximation",
+   "detail": "62524 bytes, 2832 triangles, 12 nodes; sidecar states frame, origin and 8 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8504108-bern-europaplatz.glb: valid GLB 2.0 with sidecar",
-   "detail": "150840 bytes, 7464 triangles, 20 nodes; sidecar states frame, origin and 12 kinds of approximation",
+   "detail": "98824 bytes, 4612 triangles, 19 nodes; sidecar states frame, origin and 11 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8504117-oberwangen.glb: valid GLB 2.0 with sidecar",
-   "detail": "88088 bytes, 4608 triangles, 5 nodes; sidecar states frame, origin and 5 kinds of approximation",
+   "detail": "50128 bytes, 2460 triangles, 6 nodes; sidecar states frame, origin and 5 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8504488-bern-riedbach.glb: valid GLB 2.0 with sidecar",
-   "detail": "18584 bytes, 712 triangles, 6 nodes; sidecar states frame, origin and 5 kinds of approximation",
+   "detail": "13804 bytes, 448 triangles, 6 nodes; sidecar states frame, origin and 4 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8504489-bern-buempliz-nord.glb: valid GLB 2.0 with sidecar",
-   "detail": "92496 bytes, 4448 triangles, 14 nodes; sidecar states frame, origin and 11 kinds of approximation",
+   "detail": "60248 bytes, 2692 triangles, 13 nodes; sidecar states frame, origin and 10 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8507002-ostermundigen.glb: valid GLB 2.0 with sidecar",
-   "detail": "49172 bytes, 2224 triangles, 10 nodes; sidecar states frame, origin and 10 kinds of approximation",
+   "detail": "33580 bytes, 1360 triangles, 10 nodes; sidecar states frame, origin and 9 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8507003-guemligen.glb: valid GLB 2.0 with sidecar",
-   "detail": "131304 bytes, 6660 triangles, 12 nodes; sidecar states frame, origin and 10 kinds of approximation",
+   "detail": "82336 bytes, 3940 triangles, 12 nodes; sidecar states frame, origin and 9 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8507050-bern-egghoelzli.glb: valid GLB 2.0 with sidecar",
-   "detail": "29064 bytes, 1112 triangles, 9 nodes; sidecar states frame, origin and 8 kinds of approximation",
+   "detail": "27620 bytes, 1032 triangles, 9 nodes; sidecar states frame, origin and 8 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8507060-bern-helvetiaplatz.glb: valid GLB 2.0 with sidecar",
-   "detail": "20856 bytes, 680 triangles, 9 nodes; sidecar states frame, origin and 9 kinds of approximation",
+   "detail": "20420 bytes, 656 triangles, 9 nodes; sidecar states frame, origin and 9 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8507061-bern-brunnadernstrasse.glb: valid GLB 2.0 with sidecar",
-   "detail": "23512 bytes, 876 triangles, 8 nodes; sidecar states frame, origin and 8 kinds of approximation",
+   "detail": "18524 bytes, 640 triangles, 7 nodes; sidecar states frame, origin and 7 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8507062-muri-bei-bern.glb: valid GLB 2.0 with sidecar",
-   "detail": "14292 bytes, 480 triangles, 6 nodes; sidecar states frame, origin and 5 kinds of approximation",
+   "detail": "11556 bytes, 320 triangles, 6 nodes; sidecar states frame, origin and 5 kinds of approximation",
    "data": null
   },
   {
@@ -5117,109 +4982,109 @@
   {
    "level": "OK",
    "check": "models/8507068-bolligen.glb: valid GLB 2.0 with sidecar",
-   "detail": "27972 bytes, 1168 triangles, 7 nodes; sidecar states frame, origin and 5 kinds of approximation",
+   "detail": "26204 bytes, 1028 triangles, 8 nodes; sidecar states frame, origin and 6 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8507069-ittigen-bei-bern.glb: valid GLB 2.0 with sidecar",
-   "detail": "26268 bytes, 988 triangles, 9 nodes; sidecar states frame, origin and 7 kinds of approximation",
+   "detail": "24036 bytes, 864 triangles, 9 nodes; sidecar states frame, origin and 7 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8507077-kehrsatz.glb: valid GLB 2.0 with sidecar",
-   "detail": "60840 bytes, 2976 triangles, 8 nodes; sidecar states frame, origin and 8 kinds of approximation",
+   "detail": "38536 bytes, 1696 triangles, 9 nodes; sidecar states frame, origin and 8 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8507078-wabern-bei-bern.glb: valid GLB 2.0 with sidecar",
-   "detail": "42272 bytes, 1812 triangles, 10 nodes; sidecar states frame, origin and 9 kinds of approximation",
+   "detail": "36120 bytes, 1428 triangles, 11 nodes; sidecar states frame, origin and 9 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8507079-bern-weissenbuehl.glb: valid GLB 2.0 with sidecar",
-   "detail": "45572 bytes, 1964 triangles, 11 nodes; sidecar states frame, origin and 11 kinds of approximation",
+   "detail": "35280 bytes, 1396 triangles, 11 nodes; sidecar states frame, origin and 10 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8507083-koeniz.glb: valid GLB 2.0 with sidecar",
-   "detail": "57472 bytes, 2604 triangles, 11 nodes; sidecar states frame, origin and 10 kinds of approximation",
+   "detail": "50380 bytes, 2208 triangles, 11 nodes; sidecar states frame, origin and 10 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8507084-moos.glb: valid GLB 2.0 with sidecar",
-   "detail": "30880 bytes, 1488 triangles, 4 nodes; sidecar states frame, origin and 5 kinds of approximation",
+   "detail": "18172 bytes, 784 triangles, 4 nodes; sidecar states frame, origin and 4 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8507085-gasel.glb: valid GLB 2.0 with sidecar",
-   "detail": "41568 bytes, 2040 triangles, 5 nodes; sidecar states frame, origin and 5 kinds of approximation",
+   "detail": "23568 bytes, 1040 triangles, 5 nodes; sidecar states frame, origin and 5 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8507091-liebefeld.glb: valid GLB 2.0 with sidecar",
-   "detail": "29296 bytes, 1332 triangles, 5 nodes; sidecar states frame, origin and 7 kinds of approximation",
+   "detail": "21516 bytes, 900 triangles, 5 nodes; sidecar states frame, origin and 6 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8507093-kehrsatz-nord.glb: valid GLB 2.0 with sidecar",
-   "detail": "57004 bytes, 2848 triangles, 6 nodes; sidecar states frame, origin and 5 kinds of approximation",
+   "detail": "36496 bytes, 1668 triangles, 7 nodes; sidecar states frame, origin and 5 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8507096-papiermuehle.glb: valid GLB 2.0 with sidecar",
-   "detail": "15764 bytes, 508 triangles, 7 nodes; sidecar states frame, origin and 6 kinds of approximation",
+   "detail": "15188 bytes, 476 triangles, 7 nodes; sidecar states frame, origin and 6 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8508051-bern-felsenau.glb: valid GLB 2.0 with sidecar",
-   "detail": "31336 bytes, 1240 triangles, 10 nodes; sidecar states frame, origin and 6 kinds of approximation",
+   "detail": "28708 bytes, 1092 triangles, 10 nodes; sidecar states frame, origin and 6 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8508052-bern-tiefenau.glb: valid GLB 2.0 with sidecar",
-   "detail": "30132 bytes, 1116 triangles, 11 nodes; sidecar states frame, origin and 9 kinds of approximation",
+   "detail": "27572 bytes, 1080 triangles, 8 nodes; sidecar states frame, origin and 8 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8508053-steinibach.glb: valid GLB 2.0 with sidecar",
-   "detail": "18700 bytes, 616 triangles, 8 nodes; sidecar states frame, origin and 6 kinds of approximation",
+   "detail": "16728 bytes, 536 triangles, 7 nodes; sidecar states frame, origin and 6 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8508054-worblaufen.glb: valid GLB 2.0 with sidecar",
-   "detail": "47624 bytes, 1972 triangles, 13 nodes; sidecar states frame, origin and 8 kinds of approximation",
+   "detail": "46208 bytes, 1892 triangles, 13 nodes; sidecar states frame, origin and 8 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8508055-unterzollikofen.glb: valid GLB 2.0 with sidecar",
-   "detail": "16544 bytes, 472 triangles, 9 nodes; sidecar states frame, origin and 9 kinds of approximation",
+   "detail": "15292 bytes, 400 triangles, 9 nodes; sidecar states frame, origin and 9 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8508070-oberzollikofen.glb: valid GLB 2.0 with sidecar",
-   "detail": "17732 bytes, 592 triangles, 7 nodes; sidecar states frame, origin and 7 kinds of approximation",
+   "detail": "18696 bytes, 640 triangles, 7 nodes; sidecar states frame, origin and 7 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8516154-bern-bruennen-westside.glb: valid GLB 2.0 with sidecar",
-   "detail": "79472 bytes, 3840 triangles, 12 nodes; sidecar states frame, origin and 8 kinds of approximation",
+   "detail": "51164 bytes, 2344 triangles, 10 nodes; sidecar states frame, origin and 7 kinds of approximation",
    "data": null
   },
   {
@@ -5231,7 +5096,7 @@
   {
    "level": "OK",
    "check": "models/8571393-bern-eigerplatz.glb: valid GLB 2.0 with sidecar",
-   "detail": "22712 bytes, 884 triangles, 7 nodes; sidecar states frame, origin and 6 kinds of approximation",
+   "detail": "23740 bytes, 940 triangles, 7 nodes; sidecar states frame, origin and 7 kinds of approximation",
    "data": null
   },
   {
@@ -5243,7 +5108,7 @@
   {
    "level": "OK",
    "check": "models/8571413-koeniz-bruehlplatz.glb: valid GLB 2.0 with sidecar",
-   "detail": "18156 bytes, 680 triangles, 6 nodes; sidecar states frame, origin and 5 kinds of approximation",
+   "detail": "16040 bytes, 564 triangles, 6 nodes; sidecar states frame, origin and 5 kinds of approximation",
    "data": null
   },
   {
@@ -5255,7 +5120,7 @@
   {
    "level": "OK",
    "check": "models/8576990-bern-guisanplatz-expo.glb: valid GLB 2.0 with sidecar",
-   "detail": "15056 bytes, 504 triangles, 6 nodes; sidecar states frame, origin and 7 kinds of approximation",
+   "detail": "14044 bytes, 448 triangles, 6 nodes; sidecar states frame, origin and 7 kinds of approximation",
    "data": null
   },
   {
@@ -5267,25 +5132,25 @@
   {
    "level": "OK",
    "check": "models/8577002-ostermundigen-waldeck.glb: valid GLB 2.0 with sidecar",
-   "detail": "15656 bytes, 468 triangles, 8 nodes; sidecar states frame, origin and 5 kinds of approximation",
+   "detail": "15096 bytes, 468 triangles, 7 nodes; sidecar states frame, origin and 5 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8579896-bern-hirschengraben.glb: valid GLB 2.0 with sidecar",
-   "detail": "96796 bytes, 4756 triangles, 9 nodes; sidecar states frame, origin and 8 kinds of approximation",
+   "detail": "90268 bytes, 4392 triangles, 9 nodes; sidecar states frame, origin and 8 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8579897-bern-kocherpark.glb: valid GLB 2.0 with sidecar",
-   "detail": "23192 bytes, 832 triangles, 9 nodes; sidecar states frame, origin and 9 kinds of approximation",
+   "detail": "22904 bytes, 816 triangles, 9 nodes; sidecar states frame, origin and 9 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8579898-bern-buempliz-unterfuehrung.glb: valid GLB 2.0 with sidecar",
-   "detail": "21632 bytes, 808 triangles, 7 nodes; sidecar states frame, origin and 6 kinds of approximation",
+   "detail": "21488 bytes, 800 triangles, 7 nodes; sidecar states frame, origin and 6 kinds of approximation",
    "data": null
   },
   {
@@ -5321,13 +5186,13 @@
   {
    "level": "OK",
    "check": "models/8589003-bern-thunplatz.glb: valid GLB 2.0 with sidecar",
-   "detail": "13512 bytes, 520 triangles, 4 nodes; sidecar states frame, origin and 4 kinds of approximation",
+   "detail": "13080 bytes, 496 triangles, 4 nodes; sidecar states frame, origin and 4 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8589991-bern-monbijou.glb: valid GLB 2.0 with sidecar",
-   "detail": "21724 bytes, 852 triangles, 6 nodes; sidecar states frame, origin and 6 kinds of approximation",
+   "detail": "21580 bytes, 844 triangles, 6 nodes; sidecar states frame, origin and 6 kinds of approximation",
    "data": null
   },
   {
@@ -5351,19 +5216,19 @@
   {
    "level": "OK",
    "check": "models/8590014-bern-fischermaetteli.glb: valid GLB 2.0 with sidecar",
-   "detail": "21848 bytes, 792 triangles, 8 nodes; sidecar states frame, origin and 7 kinds of approximation",
+   "detail": "21416 bytes, 768 triangles, 8 nodes; sidecar states frame, origin and 7 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8590021-bern-viktoriaplatz.glb: valid GLB 2.0 with sidecar",
-   "detail": "21744 bytes, 860 triangles, 6 nodes; sidecar states frame, origin and 6 kinds of approximation",
+   "detail": "21452 bytes, 844 triangles, 6 nodes; sidecar states frame, origin and 6 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/8590041-bern-loryplatz.glb: valid GLB 2.0 with sidecar",
-   "detail": "20612 bytes, 752 triangles, 7 nodes; sidecar states frame, origin and 6 kinds of approximation",
+   "detail": "19456 bytes, 688 triangles, 7 nodes; sidecar states frame, origin and 6 kinds of approximation",
    "data": null
   },
   {
@@ -5393,19 +5258,19 @@
   {
    "level": "OK",
    "check": "models/bern-bahnhof.glb: valid GLB 2.0 with sidecar",
-   "detail": "1342904 bytes, 71540 triangles, 43 nodes; sidecar states frame, origin and 16 kinds of approximation",
+   "detail": "901784 bytes, 47044 triangles, 43 nodes; sidecar states frame, origin and 15 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/wankdorf.glb: valid GLB 2.0 with sidecar",
-   "detail": "254228 bytes, 13156 triangles, 13 nodes; sidecar states frame, origin and 12 kinds of approximation",
+   "detail": "187800 bytes, 9472 triangles, 13 nodes; sidecar states frame, origin and 11 kinds of approximation",
    "data": null
   },
   {
    "level": "OK",
    "check": "models/zytglogge.glb: valid GLB 2.0 with sidecar",
-   "detail": "38624 bytes, 1604 triangles, 10 nodes; sidecar states frame, origin and 9 kinds of approximation",
+   "detail": "37324 bytes, 1532 triangles, 10 nodes; sidecar states frame, origin and 9 kinds of approximation",
    "data": null
   },
   {
@@ -5417,7 +5282,7 @@
   {
    "level": "OK",
    "check": "SOURCES.json: every input has name, url, publisher, licence, retrieved, bytes, sha256, used_for",
-   "detail": "89 inputs, 0 incomplete",
+   "detail": "90 inputs, 0 incomplete",
    "data": []
   }
  ]

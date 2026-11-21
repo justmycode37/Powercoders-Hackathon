@@ -1,6 +1,6 @@
 {
  "folder": "bern-research/stations",
- "generated_utc": "2026-11-21T01:18:58Z",
+ "generated_utc": "2026-11-21T01:50:35Z",
  "study_area": null,
  "rebuild": [
   "python tools/fetch_sources.py",
@@ -116,6 +116,18 @@
    "retrieved": "2026-11-21T01:16:17Z",
    "bytes": 5323991,
    "sha256": "5dd6e3474a031b23bd56c87bf4fe8a383dcf10525542be9e4e30849814eb079e",
+   "used_for": "surveyed outlines: Bahnsteig, Unterstand, Wichtige Treppe, Tunnel/Unterfuehrung, Unterirdisches Gebaeude, Gebaeude, Bruecke",
+   "filter": "server-side bbox or radius query for the study area (see tools/fetch_sources.py)"
+  },
+  {
+   "name": "Amtliche Vermessung (cadastral survey), service 'Amtliche_Vermessung_farbig' [bern-av-bb_trottoir_insel]",
+   "file": ".cache/download/bern-av-bb_trottoir_insel.json",
+   "url": "https://map.bern.ch/arcgis/rest/services/Geoportal/Amtliche_Vermessung_farbig/MapServer",
+   "publisher": "Geoinformation Stadt Bern",
+   "licence": "opendata.swiss terms_open, publisher Geoinformation Stadt Bern: free use, naming the source is recommended. Listed distributions are WMS/WMTS/WFS; this project queried the same public ArcGIS service",
+   "retrieved": "2026-11-21T01:36:06Z",
+   "bytes": 6441072,
+   "sha256": "8d785a8f2db860b523b07a8edc375c6dcb27b06186d47a1affc8c964a3c83d3b",
    "used_for": "surveyed outlines: Bahnsteig, Unterstand, Wichtige Treppe, Tunnel/Unterfuehrung, Unterirdisches Gebaeude, Gebaeude, Bruecke",
    "filter": "server-side bbox or radius query for the study area (see tools/fetch_sources.py)"
   },
@@ -1073,9 +1085,9 @@
    "url": "https://api3.geo.admin.ch/rest/services/height",
    "publisher": "swisstopo",
    "licence": "swisstopo open government data: free use, source 'swisstopo' must be named; API under fair use",
-   "retrieved": "2026-11-21T01:16:51Z",
-   "bytes": 26321,
-   "sha256": "d14129216855026cc321b85a9f52ca1f0bdc49925b68fc073304cf1ce1a662e8",
+   "retrieved": "2026-11-21T01:41:36Z",
+   "bytes": 26405,
+   "sha256": "27f450578f167ff6fa7c46ec9aaf67c72bc2a64b4b7259c2c1d6cc77aaf108c4",
    "used_for": "terrain_height_ln02_m on street-level edges, entrances and access points",
    "filter": "requested by tools/build_focus.py for exactly the points it needs; answers cached"
   }

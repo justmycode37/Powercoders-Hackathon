@@ -1,0 +1,2862 @@
+{
+ "generated_utc": "2026-11-21T01:49:52Z",
+ "source": "atlas PRM: reference-point-v2, relation-v2, stop-point-v2",
+ "licence": "opentransportdata.swiss terms of use (free use, source attribution)",
+ "note": "Official register of named access points (reference points) per station and whether each platform, toilet, parking lot or contact point can be reached from them without steps (YES, YES_WITH_LIFT, YES_WITH_RAMP, NO, TO_BE_COMPLETED). atlas publishes the reference points without coordinates, so they are not georeferenced here. The same relations are copied onto the boarding edges as 'step_free_access'. Stations without reference points in atlas are not listed.",
+ "inferred": false,
+ "stations": [
+  {
+   "station_sloid": "ch:1:sloid:4104",
+   "station_number": "8504104",
+   "station_name": "Thörishaus Station",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:4104:823986",
+     "designation": "Hauptzugang",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": "Zugang Seite Bahnhofplatz/Bahnhofgebäude",
+     "valid_from": "2021-07-21",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:4104:823986",
+     "element_sloid": "ch:1:sloid:4104:2:3",
+     "element_type": "PLATFORM",
+     "edge_designation": "3",
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:4104:823986",
+     "element_sloid": "ch:1:sloid:4104:1:1",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:4104:823986",
+     "element_sloid": "ch:1:sloid:4104:2:2",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:4104:823986",
+     "element_sloid": "ch:1:sloid:4104:669104",
+     "element_type": "PARKING_LOT",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NO"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "NOT_APPLICABLE",
+    "assistanceCondition": "Die Rampe erfüllt nicht die gesetzlichen Anforderungen. Eine Hilfestellung ist auf Verlangen möglich. Bitte melden Sie sich bis spätestens 1 Stunde vor Abfahrt an beim Contact Center Handicap täglich 5.00–24.00 Uhr, Telefon 0800 007 102 (kostenlos in der Schweiz), aus dem Ausland +41 800 007 102.",
+    "assistanceService": "NOT_APPLICABLE",
+    "alternativeTransport": "NO",
+    "shuttleService": "NO",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "YES",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "address": "Freiburgstrasse 866",
+    "zipCode": "3174",
+    "city": "Thörishaus",
+    "validFrom": "2021-07-21",
+    "validTo": "9999-12-31"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:4105",
+   "station_number": "8504105",
+   "station_name": "Niederwangen",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:4105:393085",
+     "designation": "Hauptzugang",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": "Zugang Seite Freiburgstrasse/Bushaltestelle",
+     "valid_from": "2021-07-21",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:4105:393085",
+     "element_sloid": "ch:1:sloid:4105:1:1",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:4105:393085",
+     "element_sloid": "ch:1:sloid:4105:2:2",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NOT_APPLICABLE"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "YES",
+    "assistanceCondition": "Die Rampe zum Perron erfüllt nicht die gesetzlichen Anforderungen. Eine Hilfestellung ist auf Verlangen möglich. Bitte melden Sie sich bis spätestens 1 Stunde vor Abfahrt an beim Contact Center Handicap täglich 5.00–24.00 Uhr, Telefon 0800 007 102 (kostenlos in der Schweiz), aus dem Ausland +41 800 007 102.",
+    "assistanceService": "YES",
+    "alternativeTransport": "NO",
+    "shuttleService": "NO",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "YES",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "address": "Freiburgstrasse 552",
+    "zipCode": "3172",
+    "city": "Köniz",
+    "additionalInformation": "Zugang Seite Bushaltestellen",
+    "validFrom": "2024-05-15",
+    "validTo": "9999-12-31"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:4106",
+   "station_number": "8504106",
+   "station_name": "Bern Bümpliz Süd",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:4106:208789",
+     "designation": "Hauptzugang",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": "Zugang Seite Bahnhofplatz/Shop",
+     "valid_from": "2021-07-21",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:4106:208789",
+     "element_sloid": "ch:1:sloid:4106:1:1",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:4106:208789",
+     "element_sloid": "ch:1:sloid:4106:5421",
+     "element_type": "PARKING_LOT",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NO"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:4106:208789",
+     "element_sloid": "ch:1:sloid:4106:2:2",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NOT_APPLICABLE"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "NOT_APPLICABLE",
+    "assistanceCondition": "Die Rampe erfüllt nicht die gesetzlichen Anforderungen. Eine Hilfestellung ist auf Verlangen möglich.  Bitte melden Sie sich bis spätestens 1 Stunde vor Abfahrt an beim Contact Center Handicap täglich 5.00–24.00 Uhr, Telefon 0800 007 102 (kostenlos in der Schweiz), aus dem Ausland +41 800 007 102.",
+    "assistanceService": "NOT_APPLICABLE",
+    "alternativeTransport": "NO",
+    "shuttleService": "NO",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "YES",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "address": "Bümplizstrasse 202",
+    "zipCode": "3018",
+    "city": "Bern",
+    "validFrom": "2021-07-21",
+    "validTo": "9999-12-31"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:4108",
+   "station_number": "8504108",
+   "station_name": "Bern Europaplatz",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:4108:60270",
+     "designation": "Unterführung",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": "Personenunterführung",
+     "valid_from": "2021-07-21",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:4108:60270",
+     "element_sloid": "ch:1:sloid:4108:1:4",
+     "element_type": "PLATFORM",
+     "edge_designation": "4",
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NO"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:4108:60270",
+     "element_sloid": "ch:1:sloid:4108:2:3",
+     "element_type": "PLATFORM",
+     "edge_designation": "3",
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NO"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "NOT_APPLICABLE",
+    "assistanceService": "NOT_APPLICABLE",
+    "alternativeTransport": "NO",
+    "shuttleService": "NO",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "YES",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "address": "Europaplatz 1",
+    "zipCode": "3008",
+    "city": "Bern",
+    "freeText": "Dieser Bahnhof ist barrierefrei. Sie können autonom reisen.",
+    "validFrom": "2021-07-21",
+    "validTo": "9999-12-31"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:4117",
+   "station_number": "8504117",
+   "station_name": "Oberwangen",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:4117:812353",
+     "designation": "Hauptzugang",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": "Zugang Seite Freiburgstrasse",
+     "valid_from": "2021-07-21",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:4117:812353",
+     "element_sloid": "ch:1:sloid:4117:2:2",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:4117:812353",
+     "element_sloid": "ch:1:sloid:4117:320991",
+     "element_type": "PARKING_LOT",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NO"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:4117:812353",
+     "element_sloid": "ch:1:sloid:4117:964307",
+     "element_type": "TOILET",
+     "edge_designation": null,
+     "step_free_access": "NO",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:4117:812353",
+     "element_sloid": "ch:1:sloid:4117:1:1",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NOT_APPLICABLE"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "NOT_APPLICABLE",
+    "assistanceCondition": "Die Rampe zum Gleis 1 ist im Durchschnitt 13% steil. Eine Hilfestellung ist auf Verlangen möglich. Bitte melden Sie sich bis spätestens 1 Stunde vor Abfahrt an beim Contact Center Handicap täglich 5.00–24.00 Uhr, Telefon 0800 007 102 (kostenlos in der Schweiz), aus dem Ausland +41 800 007 102.",
+    "assistanceService": "NOT_APPLICABLE",
+    "alternativeTransport": "NO",
+    "shuttleService": "NO",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "YES",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "address": "Freiburgstrasse 744",
+    "zipCode": "3173",
+    "city": "Köniz",
+    "validFrom": "2025-02-06",
+    "validTo": "9999-12-31"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:4488",
+   "station_number": "8504488",
+   "station_name": "Bern Riedbach",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:4488:489049",
+     "designation": "Hauptzugang",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": null,
+     "valid_from": "2021-10-04",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:4488:489049",
+     "element_sloid": "ch:1:sloid:4488:0:768398",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:4488:489049",
+     "element_sloid": "ch:1:sloid:4488:371535",
+     "element_type": "PARKING_LOT",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NOT_APPLICABLE",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:4488:489049",
+     "element_sloid": "ch:1:sloid:4488:0:997258",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "YES"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "YES",
+    "assistanceCondition": "Bei dieser Verbindung benötigen Sie einen Shuttle. Bitte melden Sie sich bis spätestens 2 Stunden vor Abfahrt telefonisch beim Contact Center Handicap täglich 5.00 - 24.00 Uhr  Telefon 0800 007 102 (kostenlos in der Schweiz), aus dem Ausland +41 800 007 102.",
+    "assistanceService": "NO",
+    "alternativeTransport": "NO",
+    "shuttleService": "YES",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "NO",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "address": "Bottigenstrasse",
+    "zipCode": "3020",
+    "city": "Bern",
+    "freeText": "Shuttle",
+    "validFrom": "2021-10-04",
+    "validTo": "9999-12-31"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:4489",
+   "station_number": "8504489",
+   "station_name": "Bern Bümpliz Nord",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:4489:411209",
+     "designation": "Hauptzugang",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": null,
+     "valid_from": "2021-10-04",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:4489:411209",
+     "element_sloid": "ch:1:sloid:4489:683796",
+     "element_type": "TOILET",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NOT_APPLICABLE",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:4489:411209",
+     "element_sloid": "ch:1:sloid:4489:805275",
+     "element_type": "PARKING_LOT",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:4489:411209",
+     "element_sloid": "ch:1:sloid:4489:0:151893",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:4489:411209",
+     "element_sloid": "ch:1:sloid:4489:0:366122",
+     "element_type": "PLATFORM",
+     "edge_designation": "5",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:4489:411209",
+     "element_sloid": "ch:1:sloid:4489:0:327702",
+     "element_type": "PLATFORM",
+     "edge_designation": "4",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:4489:411209",
+     "element_sloid": "ch:1:sloid:4489:968232",
+     "element_type": "CONTACT_POINT",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NOT_APPLICABLE"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "YES",
+    "assistanceCondition": "Bei diesem Bahnhof benötigen Sie Ein- und Ausstiegshilfen. Bitte melden Sie sich bis spätestens 1 Stunde vor Abfahrt unter swisspass.ch/handicap oder beim Contact Center Handicap täglich 5.00–24.00 Uhr, Telefon 0800 007 102 (kostenlos in der Schweiz), aus dem Ausland +41 800 007 102.",
+    "assistanceService": "YES",
+    "alternativeTransport": "NO",
+    "shuttleService": "NO",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "NO",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "address": "Mühledorfstrasse 20",
+    "zipCode": "3018",
+    "city": "Bern",
+    "validFrom": "2024-09-26",
+    "validTo": "9999-12-31"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:7000",
+   "station_number": "8507000",
+   "station_name": "Bern",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:7000:744240",
+     "designation": "Zugang Welle/Passarelle via Schanzenstrasse",
+     "type": "ALTERNATIVE_STATION_ENTRANCE",
+     "main": false,
+     "information": "Zugang via Schanzenstrasse",
+     "valid_from": "2021-08-13",
+     "coordinates": null
+    },
+    {
+     "sloid": "ch:1:sloid:7000:454373",
+     "designation": "Hauptzugang via Bahnhofplatz",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": "Zugang via Bahnhofplatz/Tramhaltestelle",
+     "valid_from": "2021-07-21",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:0:1816",
+     "element_type": "PLATFORM",
+     "edge_designation": "3",
+     "step_free_access": "TO_BE_COMPLETED",
+     "tactile_visual_marks": "TO_BE_COMPLETED",
+     "contrasting_areas": "TO_BE_COMPLETED"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:0:1816",
+     "element_type": "PLATFORM",
+     "edge_designation": "3",
+     "step_free_access": "TO_BE_COMPLETED",
+     "tactile_visual_marks": "TO_BE_COMPLETED",
+     "contrasting_areas": "TO_BE_COMPLETED"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:6:13",
+     "element_type": "PLATFORM",
+     "edge_designation": "13",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:6:13",
+     "element_type": "PLATFORM",
+     "edge_designation": "13",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:522547",
+     "element_type": "CONTACT_POINT",
+     "edge_designation": null,
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NO"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:522547",
+     "element_type": "CONTACT_POINT",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NO"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:1:21",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:1:21",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:6:12",
+     "element_type": "PLATFORM",
+     "edge_designation": "12",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:6:12",
+     "element_type": "PLATFORM",
+     "edge_designation": "12",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:55:49",
+     "element_type": "PLATFORM",
+     "edge_designation": "49",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:55:49",
+     "element_type": "PLATFORM",
+     "edge_designation": "49",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:2:3",
+     "element_type": "PLATFORM",
+     "edge_designation": "3",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:2:3",
+     "element_type": "PLATFORM",
+     "edge_designation": "3",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:3:5",
+     "element_type": "PLATFORM",
+     "edge_designation": "5",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:3:5",
+     "element_type": "PLATFORM",
+     "edge_designation": "5",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:501:23",
+     "element_type": "PLATFORM",
+     "edge_designation": "23",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:501:23",
+     "element_type": "PLATFORM",
+     "edge_designation": "23",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:1:1",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:1:1",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:451780",
+     "element_type": "TOILET",
+     "edge_designation": null,
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "PARTIALLY"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:451780",
+     "element_type": "TOILET",
+     "edge_designation": null,
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:463981",
+     "element_type": "CONTACT_POINT",
+     "edge_designation": null,
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "PARTIALLY"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:463981",
+     "element_type": "CONTACT_POINT",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "PARTIALLY"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:0:229097",
+     "element_type": "PLATFORM",
+     "edge_designation": "8",
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:0:229097",
+     "element_type": "PLATFORM",
+     "edge_designation": "8",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:2:4",
+     "element_type": "PLATFORM",
+     "edge_designation": "4",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:2:4",
+     "element_type": "PLATFORM",
+     "edge_designation": "4",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:6:33",
+     "element_type": "PLATFORM",
+     "edge_designation": "13",
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:6:33",
+     "element_type": "PLATFORM",
+     "edge_designation": "13",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:55:50",
+     "element_type": "PLATFORM",
+     "edge_designation": "50",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:55:50",
+     "element_type": "PLATFORM",
+     "edge_designation": "50",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:0:349752",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:0:349752",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:4:7",
+     "element_type": "PLATFORM",
+     "edge_designation": "7",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:4:7",
+     "element_type": "PLATFORM",
+     "edge_designation": "7",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:5:9",
+     "element_type": "PLATFORM",
+     "edge_designation": "9",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:5:9",
+     "element_type": "PLATFORM",
+     "edge_designation": "9",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:282053",
+     "element_type": "CONTACT_POINT",
+     "edge_designation": null,
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "PARTIALLY"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:282053",
+     "element_type": "CONTACT_POINT",
+     "edge_designation": null,
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:5:10",
+     "element_type": "PLATFORM",
+     "edge_designation": "10",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:5:10",
+     "element_type": "PLATFORM",
+     "edge_designation": "10",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:0:1752",
+     "element_type": "PLATFORM",
+     "edge_designation": "5",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:0:1752",
+     "element_type": "PLATFORM",
+     "edge_designation": "5",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:500:21",
+     "element_type": "PLATFORM",
+     "edge_designation": "21",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:500:21",
+     "element_type": "PLATFORM",
+     "edge_designation": "21",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:501:24",
+     "element_type": "PLATFORM",
+     "edge_designation": "24",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:501:24",
+     "element_type": "PLATFORM",
+     "edge_designation": "24",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:12506",
+     "element_type": "PARKING_LOT",
+     "edge_designation": null,
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "PARTIALLY"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:12506",
+     "element_type": "PARKING_LOT",
+     "edge_designation": null,
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "PARTIALLY"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:6:32",
+     "element_type": "PLATFORM",
+     "edge_designation": "12",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:6:32",
+     "element_type": "PLATFORM",
+     "edge_designation": "12",
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:4:8",
+     "element_type": "PLATFORM",
+     "edge_designation": "8",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:4:8",
+     "element_type": "PLATFORM",
+     "edge_designation": "8",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:1:2",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:1:2",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:500:22",
+     "element_type": "PLATFORM",
+     "edge_designation": "22",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:500:22",
+     "element_type": "PLATFORM",
+     "edge_designation": "22",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:454373",
+     "element_sloid": "ch:1:sloid:7000:3:6",
+     "element_type": "PLATFORM",
+     "edge_designation": "6",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7000:744240",
+     "element_sloid": "ch:1:sloid:7000:3:6",
+     "element_type": "PLATFORM",
+     "edge_designation": "6",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "YES",
+    "assistanceCondition": "Aufgrund der Bauarbeiten am Bahnhof Bern kommt es beim Übergang zwischen Treffpunkt und Unterführung zu Engstellen. Der Personenfluss wird geführt (eine Seite in Richtung Gleise, die andere in Richtung Stadt). Es kann zeitweise zu hoher Personendichte kommen. Personen, die Unterstützung benötigen, können sich mindestens eine Stunde vor dem Ein- oder Ausstieg beim CC Handicap melden und erhalten somit eine Hilfestellung vor Ort. Das Contact Center Handicap ist per Telefon unter 0800 007 102 täglich von 5 bis 24 Uhr erreichbar. Dauer der Einschränkung März 2026 bis Dezember 2026.  SBB Rollstuhl für Ein- und Ausstieghilfe vorhanden.",
+    "assistanceService": "YES",
+    "alternativeTransport": "NO",
+    "shuttleService": "NO",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "YES",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "address": "Bahnhofplatz 10",
+    "zipCode": "3011",
+    "city": "Bern",
+    "validFrom": "2026-03-02",
+    "validTo": "2026-12-20"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:7002",
+   "station_number": "8507002",
+   "station_name": "Ostermundigen",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:7002:545533",
+     "designation": "Hauptzugang",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": "Bahnhofplatz bei Aufnahmegebäude",
+     "valid_from": "2021-07-21",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:7002:545533",
+     "element_sloid": "ch:1:sloid:7002:0:1330",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7002:545533",
+     "element_sloid": "ch:1:sloid:7002:930395",
+     "element_type": "CONTACT_POINT",
+     "edge_designation": null,
+     "step_free_access": "NO",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NO"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7002:545533",
+     "element_sloid": "ch:1:sloid:7002:2:2",
+     "element_type": "PLATFORM",
+     "edge_designation": null,
+     "step_free_access": "NO",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7002:545533",
+     "element_sloid": "ch:1:sloid:7002:1:1",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7002:545533",
+     "element_sloid": "ch:1:sloid:7002:2:3",
+     "element_type": "PLATFORM",
+     "edge_designation": "3",
+     "step_free_access": "NO",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NO"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7002:545533",
+     "element_sloid": "ch:1:sloid:7002:968059",
+     "element_type": "PARKING_LOT",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NO"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "NOT_APPLICABLE",
+    "assistanceCondition": "Dieser Bahnhof ist barrierefrei. Sie können autonom reisen.",
+    "assistanceService": "NOT_APPLICABLE",
+    "alternativeTransport": "NO",
+    "shuttleService": "PARTIALLY",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "YES",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "address": "Bahnhofareal 1",
+    "zipCode": "3072",
+    "city": "Ostermundigen",
+    "validFrom": "2026-04-08",
+    "validTo": "9999-12-31"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:7003",
+   "station_number": "8507003",
+   "station_name": "Gümligen",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:7003:800446",
+     "designation": "Ankunft mit Bus",
+     "type": "ALTERNATIVE_STATION_ENTRANCE",
+     "main": false,
+     "information": "Seite Worbstrasse, Bushaltestelle",
+     "valid_from": "2021-10-14",
+     "coordinates": null
+    },
+    {
+     "sloid": "ch:1:sloid:7003:890110",
+     "designation": "Ankunft mit Tram/Auto",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": "Seite Bahnhofgebäude Bahnhofstrasse, Tramhaltestelle",
+     "valid_from": "2021-07-21",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:7003:890110",
+     "element_sloid": "ch:1:sloid:7003:2:2",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "PARTIALLY"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7003:800446",
+     "element_sloid": "ch:1:sloid:7003:2:2",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "PARTIALLY"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7003:800446",
+     "element_sloid": "ch:1:sloid:7003:354410",
+     "element_type": "TOILET",
+     "edge_designation": null,
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "PARTIALLY"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7003:890110",
+     "element_sloid": "ch:1:sloid:7003:354410",
+     "element_type": "TOILET",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "PARTIALLY"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7003:800446",
+     "element_sloid": "ch:1:sloid:7003:430848",
+     "element_type": "PARKING_LOT",
+     "edge_designation": null,
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "PARTIALLY"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7003:890110",
+     "element_sloid": "ch:1:sloid:7003:430848",
+     "element_type": "PARKING_LOT",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "PARTIALLY"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7003:800446",
+     "element_sloid": "ch:1:sloid:7003:2:3",
+     "element_type": "PLATFORM",
+     "edge_designation": "3",
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "PARTIALLY"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7003:890110",
+     "element_sloid": "ch:1:sloid:7003:2:3",
+     "element_type": "PLATFORM",
+     "edge_designation": "3",
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "PARTIALLY"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7003:800446",
+     "element_sloid": "ch:1:sloid:7003:47071",
+     "element_type": "CONTACT_POINT",
+     "edge_designation": null,
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "PARTIALLY"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7003:890110",
+     "element_sloid": "ch:1:sloid:7003:47071",
+     "element_type": "CONTACT_POINT",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7003:890110",
+     "element_sloid": "ch:1:sloid:7003:1:1",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7003:800446",
+     "element_sloid": "ch:1:sloid:7003:1:1",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "PARTIALLY"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "NOT_APPLICABLE",
+    "assistanceCondition": "Die Rampe in die Personenunterführung (süd) ist im Durchschnitt 12.6% steil. Eine Hilfestellung ist auf Verlangen möglich. Bitte melden Sie sich bis spätestens 1 Stunde vor Abfahrt an beim Contact Center Handicap täglich 5.00–24.00 Uhr, Telefon 0800 007 102 (kostenlos in der Schweiz), aus dem Ausland +41 800 007 102.",
+    "assistanceService": "NOT_APPLICABLE",
+    "alternativeTransport": "NO",
+    "shuttleService": "NO",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "YES",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "address": "Bahnhofstrasse 31",
+    "zipCode": "3073",
+    "city": "Gümligen",
+    "validFrom": "2025-01-15",
+    "validTo": "9999-12-31"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:7067",
+   "station_number": "8507067",
+   "station_name": "Deisswil",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:7067:993573",
+     "designation": "Haupteingang Bahnhofstrasse",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": "Perron via Bahnhofsstrasse erreichbar.",
+     "valid_from": "2023-12-05",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:7067:993573",
+     "element_sloid": "ch:1:sloid:7067::1",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7067:993573",
+     "element_sloid": "ch:1:sloid:7067:537979",
+     "element_type": "TOILET",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NO"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7067:993573",
+     "element_sloid": "ch:1:sloid:7067:384058",
+     "element_type": "PARKING_LOT",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "YES"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "NOT_APPLICABLE",
+    "assistanceService": "NOT_APPLICABLE",
+    "alternativeTransport": "NO",
+    "shuttleService": "NO",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "YES",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "validFrom": "2023-12-05",
+    "validTo": "9999-12-31"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:7068",
+   "station_number": "8507068",
+   "station_name": "Bolligen",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:7068:160073",
+     "designation": "Haupteingang Bolligenstrasse",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": "Perron via Gehweg/Rampe erreichbar.",
+     "valid_from": "2023-12-05",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:7068:160073",
+     "element_sloid": "ch:1:sloid:7068:350561",
+     "element_type": "PARKING_LOT",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7068:160073",
+     "element_sloid": "ch:1:sloid:7068::1",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7068:160073",
+     "element_sloid": "ch:1:sloid:7068::2",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7068:160073",
+     "element_sloid": "ch:1:sloid:7068:717584",
+     "element_type": "TOILET",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "YES"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "NOT_APPLICABLE",
+    "assistanceService": "NOT_APPLICABLE",
+    "alternativeTransport": "NO",
+    "shuttleService": "NO",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "YES",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "validFrom": "2023-12-05",
+    "validTo": "9999-12-31"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:7069",
+   "station_number": "8507069",
+   "station_name": "Ittigen bei Bern",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:7069:222771",
+     "designation": "Haupteingang Worbentalstrasse",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": "Perron via Worbentalstrasse erreichbar.",
+     "valid_from": "2023-12-05",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:7069:222771",
+     "element_sloid": "ch:1:sloid:7069:53857",
+     "element_type": "TOILET",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NO"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7069:222771",
+     "element_sloid": "ch:1:sloid:7069::2",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7069:222771",
+     "element_sloid": "ch:1:sloid:7069::1",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7069:222771",
+     "element_sloid": "ch:1:sloid:7069:762475",
+     "element_type": "PARKING_LOT",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NO"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "NOT_APPLICABLE",
+    "assistanceService": "NOT_APPLICABLE",
+    "alternativeTransport": "NO",
+    "shuttleService": "NO",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "YES",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "validFrom": "2023-12-05",
+    "validTo": "9999-12-31"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:7077",
+   "station_number": "8507077",
+   "station_name": "Kehrsatz",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:7077:155913",
+     "designation": "Hauptzugang",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": null,
+     "valid_from": "2021-10-04",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:7077:155913",
+     "element_sloid": "ch:1:sloid:7077:555200",
+     "element_type": "PARKING_LOT",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NO"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7077:155913",
+     "element_sloid": "ch:1:sloid:7077:0:607961",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7077:155913",
+     "element_sloid": "ch:1:sloid:7077:0:912842",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "NO",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NOT_APPLICABLE"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "YES",
+    "assistanceCondition": "Doppelt-/Mehrfachtraktion: - Fahrrichtung Bern: nur im hinteren Zugteil - Fahrrichtung Thun: nur im vorderen Zugteil",
+    "assistanceService": "PARTIALLY",
+    "alternativeTransport": "NO",
+    "shuttleService": "NO",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "NO",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "NO",
+    "visualInfo": "YES",
+    "address": "Belpstrasse 10",
+    "zipCode": "3122",
+    "city": "Kehrsatz",
+    "validFrom": "2021-10-04",
+    "validTo": "9999-12-31"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:7078",
+   "station_number": "8507078",
+   "station_name": "Wabern bei Bern",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:7078:666402",
+     "designation": "Hauptzugang",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": null,
+     "valid_from": "2021-10-04",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:7078:666402",
+     "element_sloid": "ch:1:sloid:7078:476760",
+     "element_type": "PARKING_LOT",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7078:666402",
+     "element_sloid": "ch:1:sloid:7078:0:816533",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7078:666402",
+     "element_sloid": "ch:1:sloid:7078:0:568472",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "YES"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "NO",
+    "assistanceCondition": "Dieser Bahnhof ist barrierefrei. Sie können autonom reisen.",
+    "assistanceService": "NO",
+    "alternativeTransport": "NO",
+    "shuttleService": "NO",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "NO",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "address": "Bahnhofstrasse 20",
+    "zipCode": "3084",
+    "city": "Wabern",
+    "validFrom": "2021-10-04",
+    "validTo": "9999-12-31"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:7079",
+   "station_number": "8507079",
+   "station_name": "Bern Weissenbühl",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:7079:131297",
+     "designation": "Hauptzugang",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": null,
+     "valid_from": "2021-10-04",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:7079:131297",
+     "element_sloid": "ch:1:sloid:7079:0:405080",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NO"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7079:131297",
+     "element_sloid": "ch:1:sloid:7079:185106",
+     "element_type": "CONTACT_POINT",
+     "edge_designation": null,
+     "step_free_access": "NO",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NO"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7079:131297",
+     "element_sloid": "ch:1:sloid:7079:0:133445",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7079:131297",
+     "element_sloid": "ch:1:sloid:7079:661647",
+     "element_type": "TOILET",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NO"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7079:131297",
+     "element_sloid": "ch:1:sloid:7079:83645",
+     "element_type": "PARKING_LOT",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NOT_APPLICABLE"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "NO",
+    "assistanceCondition": "Dieser Bahnhof ist barrierefrei. Sie können autonom reisen.",
+    "assistanceService": "NO",
+    "alternativeTransport": "NO",
+    "shuttleService": "NOT_APPLICABLE",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "NO",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "address": "Südbahnhofstrasse 14",
+    "zipCode": "3007",
+    "city": "Bern",
+    "validFrom": "2021-10-04",
+    "validTo": "9999-12-31"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:7082",
+   "station_number": "8507082",
+   "station_name": "Bern Europaplatz Süd",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:7082:606135",
+     "designation": "Hauptzugang",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": null,
+     "valid_from": "2021-10-04",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:7082:606135",
+     "element_sloid": "ch:1:sloid:7082:0:562230",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "NO",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7082:606135",
+     "element_sloid": "ch:1:sloid:7082:0:833632",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "NO",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "YES",
+    "assistanceCondition": "Bei dieser Verbindung benötigen Sie einen Shuttle. Bitte melden Sie sich bis spätestens 2 Stunden vor Abfahrt telefonisch beim Contact Center Handicap täglich 5.00 - 24.00 Uhr  Telefon 0800 007 102 (kostenlos in der Schweiz), aus dem Ausland +41 800 007 102.",
+    "assistanceService": "YES",
+    "alternativeTransport": "NO",
+    "shuttleService": "YES",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "NO",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "address": "Mühledorfstrasse 20",
+    "zipCode": "3018",
+    "city": "Bern",
+    "freeText": "Shuttle",
+    "validFrom": "2021-10-04",
+    "validTo": "9999-12-31"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:7083",
+   "station_number": "8507083",
+   "station_name": "Köniz",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:7083:584366",
+     "designation": "Hauptzugang",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": null,
+     "valid_from": "2021-10-04",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:7083:584366",
+     "element_sloid": "ch:1:sloid:7083:0:502349",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7083:584366",
+     "element_sloid": "ch:1:sloid:7083:389008",
+     "element_type": "CONTACT_POINT",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7083:584366",
+     "element_sloid": "ch:1:sloid:7083:0:291332",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7083:584366",
+     "element_sloid": "ch:1:sloid:7083:84767",
+     "element_type": "PARKING_LOT",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NOT_APPLICABLE"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "NOT_APPLICABLE",
+    "assistanceCondition": "Dieser Bahnhof ist barrierefrei. Sie können autonom reisen.",
+    "assistanceService": "NOT_APPLICABLE",
+    "alternativeTransport": "NO",
+    "shuttleService": "NO",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "NO",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "address": "Sonnenweg 21",
+    "zipCode": "3098",
+    "city": "Köniz",
+    "validFrom": "2021-10-04",
+    "validTo": "9999-12-31"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:7084",
+   "station_number": "8507084",
+   "station_name": "Moos",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:7084:295124",
+     "designation": "Hauptzugang",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": null,
+     "valid_from": "2021-10-04",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:7084:295124",
+     "element_sloid": "ch:1:sloid:7084:0:952816",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7084:295124",
+     "element_sloid": "ch:1:sloid:7084:158913",
+     "element_type": "PARKING_LOT",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NOT_APPLICABLE"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "YES",
+    "assistanceCondition": "Bei diesem Bahnhof benötigen Sie Ein- und Ausstiegshilfen. Bitte melden Sie sich bis spätestens 1 Stunde vor Abfahrt unter swisspass.ch/handicap oder beim Contact Center Handicap täglich 5.00–24.00 Uhr, Telefon 0800 007 102 (kostenlos in der Schweiz), aus dem Ausland +41 800 007 102.",
+    "assistanceService": "YES",
+    "alternativeTransport": "NO",
+    "shuttleService": "NO",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "NO",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "address": "Moos",
+    "zipCode": "3098",
+    "city": "Köniz",
+    "validFrom": "2021-10-04",
+    "validTo": "9999-12-31"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:7085",
+   "station_number": "8507085",
+   "station_name": "Gasel",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:7085:629774",
+     "designation": "Hauptzugang",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": null,
+     "valid_from": "2021-10-04",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:7085:629774",
+     "element_sloid": "ch:1:sloid:7085:363893",
+     "element_type": "TOILET",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NO"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7085:629774",
+     "element_sloid": "ch:1:sloid:7085:0:179395",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NO"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7085:629774",
+     "element_sloid": "ch:1:sloid:7085:0:482749",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NO"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7085:629774",
+     "element_sloid": "ch:1:sloid:7085:617346",
+     "element_type": "PARKING_LOT",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NO"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "NOT_APPLICABLE",
+    "assistanceCondition": "Einfachtraktion: - Fahrrichtung Schwarzenburg - Bern: Türe \"Rollstuhlabteil\" in der Zugsmitte (3. oder 4. Wagen)",
+    "assistanceService": "NOT_APPLICABLE",
+    "alternativeTransport": "NO",
+    "shuttleService": "NO",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "NO",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "address": "Schwarzenburgstrasse 574",
+    "zipCode": "3144",
+    "city": "Gasel",
+    "validFrom": "2021-10-04",
+    "validTo": "9999-12-31"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:7091",
+   "station_number": "8507091",
+   "station_name": "Liebefeld",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:7091:326588",
+     "designation": "Hauptzugang",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": null,
+     "valid_from": "2021-10-04",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:7091:326588",
+     "element_sloid": "ch:1:sloid:7091:0:398105",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "NO"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "YES",
+    "assistanceCondition": "Bei diesem Bahnhof benötigen Sie Ein- und Ausstiegshilfen. Bitte melden Sie sich bis spätestens 1 Stunde vor Abfahrt unter swisspass.ch/handicap oder beim Contact Center Handicap täglich 5.00–24.00 Uhr, Telefon 0800 007 102 (kostenlos in der Schweiz), aus dem Ausland +41 800 007 102.",
+    "assistanceService": "YES",
+    "alternativeTransport": "NO",
+    "shuttleService": "NO",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "NO",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "address": "Stationsstrasse",
+    "zipCode": "3097",
+    "city": "Köniz",
+    "freeText": "Bei diesem Bahnhof benötigen Sie Ein- und Ausstiegshilfen. Bitte melden Sie sich bis spätestens 1 Stunde vor Abfahrt unter swisspass.ch/handicap oder beim Contact Center Handicap täglich 5.00–24.00 Uhr, Telefon 0800 007 102 (kostenlos in der Schweiz), aus dem Ausland +41 800 007 102.",
+    "validFrom": "2021-10-04",
+    "validTo": "9999-12-31"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:7093",
+   "station_number": "8507093",
+   "station_name": "Kehrsatz Nord",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:7093:743098",
+     "designation": "Hauptzugang",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": null,
+     "valid_from": "2021-10-04",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:7093:743098",
+     "element_sloid": "ch:1:sloid:7093:0:92358",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7093:743098",
+     "element_sloid": "ch:1:sloid:7093:0:998409",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "YES"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "YES",
+    "assistanceCondition": "Doppelt-/Mehrfachtraktion: - Fahrrichtung Bern: nur im hinteren Zugteil - Fahrrichtung Thun: nur im vorderen Zugteil",
+    "assistanceService": "PARTIALLY",
+    "alternativeTransport": "NO",
+    "shuttleService": "NO",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "NO",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "address": "Im Breitenacker",
+    "zipCode": "3122",
+    "city": "Kehrsatz",
+    "validFrom": "2021-10-04",
+    "validTo": "9999-12-31"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:7096",
+   "station_number": "8507096",
+   "station_name": "Papiermühle",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:7096:998748",
+     "designation": "Hauptzugang Papiermühlestrasse",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": "Perron via Gehweg Papiermühlestrasse erreichbar.",
+     "valid_from": "2023-12-05",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:7096:998748",
+     "element_sloid": "ch:1:sloid:7096:794808",
+     "element_type": "PARKING_LOT",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7096:998748",
+     "element_sloid": "ch:1:sloid:7096::2",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7096:998748",
+     "element_sloid": "ch:1:sloid:7096:159046",
+     "element_type": "TOILET",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NO"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:7096:998748",
+     "element_sloid": "ch:1:sloid:7096::1",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "NOT_APPLICABLE",
+    "assistanceService": "NOT_APPLICABLE",
+    "alternativeTransport": "NO",
+    "shuttleService": "NO",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "YES",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "validFrom": "2023-12-05",
+    "validTo": "9999-12-31"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:8051",
+   "station_number": "8508051",
+   "station_name": "Bern Felsenau",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:8051:105237",
+     "designation": "Haupteingang Engehaldenquartier",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": "Perron via Treppe/Treppenlift erreichbar. Zugang zum Haupteingang von Tiefenaustrasse nur via Treppe/Lift",
+     "valid_from": "2023-12-05",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:8051:105237",
+     "element_sloid": "ch:1:sloid:8051::1",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:8051:105237",
+     "element_sloid": "ch:1:sloid:8051:227941",
+     "element_type": "PARKING_LOT",
+     "edge_designation": null,
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NO"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:8051:105237",
+     "element_sloid": "ch:1:sloid:8051::2",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "NOT_APPLICABLE",
+    "assistanceService": "NOT_APPLICABLE",
+    "alternativeTransport": "NO",
+    "shuttleService": "NO",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "YES",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "validFrom": "2023-12-05",
+    "validTo": "9999-12-31"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:8052",
+   "station_number": "8508052",
+   "station_name": "Bern Tiefenau",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:8052:388701",
+     "designation": "Haupteingang Tiefenaustrasse",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": "Perron via Treppe/Rampe und Lift erreichbar.",
+     "valid_from": "2023-12-05",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:8052:388701",
+     "element_sloid": "ch:1:sloid:8052:410532",
+     "element_type": "TOILET",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NO"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:8052:388701",
+     "element_sloid": "ch:1:sloid:8052::1",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:8052:388701",
+     "element_sloid": "ch:1:sloid:8052::2",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:8052:388701",
+     "element_sloid": "ch:1:sloid:8052:811953",
+     "element_type": "PARKING_LOT",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NO"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "NOT_APPLICABLE",
+    "assistanceService": "NOT_APPLICABLE",
+    "alternativeTransport": "NO",
+    "shuttleService": "NO",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "YES",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "validFrom": "2023-12-05",
+    "validTo": "9999-12-31"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:8053",
+   "station_number": "8508053",
+   "station_name": "Steinibach",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:8053:490186",
+     "designation": "Hauptzugang Bernstrasse",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": "Perron via Fussgängerstreifen Bernstrasse erreichbar.",
+     "valid_from": "2023-12-05",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:8053:490186",
+     "element_sloid": "ch:1:sloid:8053:448573",
+     "element_type": "TOILET",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NO"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:8053:490186",
+     "element_sloid": "ch:1:sloid:8053::1",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:8053:490186",
+     "element_sloid": "ch:1:sloid:8053:853834",
+     "element_type": "PARKING_LOT",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NO"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "NOT_APPLICABLE",
+    "assistanceService": "NOT_APPLICABLE",
+    "alternativeTransport": "NO",
+    "shuttleService": "NO",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "YES",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "validFrom": "2023-12-05",
+    "validTo": "9999-12-31"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:8054",
+   "station_number": "8508054",
+   "station_name": "Worblaufen",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:8054:133912",
+     "designation": "Hauptzugang Passarelle",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": "Perron 1, 2 + 3: Perron via Treppe/Lift über Passarelle Bahnhof Worblaufen erreichbar oder über Parkplatz alte Tiefenaustrasse.  Perron 4, 5 + 6:  Perron via Treppe/Lift über Passarelle Bahnhof Worblaufen erreichbar.",
+     "valid_from": "2023-12-05",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:8054:133912",
+     "element_sloid": "ch:1:sloid:8054::5",
+     "element_type": "PLATFORM",
+     "edge_designation": "5",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:8054:133912",
+     "element_sloid": "ch:1:sloid:8054::6",
+     "element_type": "PLATFORM",
+     "edge_designation": "6",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:8054:133912",
+     "element_sloid": "ch:1:sloid:8054::4",
+     "element_type": "PLATFORM",
+     "edge_designation": "4",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:8054:133912",
+     "element_sloid": "ch:1:sloid:8054:95531",
+     "element_type": "TOILET",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NO"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:8054:133912",
+     "element_sloid": "ch:1:sloid:8054:334479",
+     "element_type": "CONTACT_POINT",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "PARTIALLY"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:8054:133912",
+     "element_sloid": "ch:1:sloid:8054::3",
+     "element_type": "PLATFORM",
+     "edge_designation": "3",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:8054:133912",
+     "element_sloid": "ch:1:sloid:8054::1",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:8054:133912",
+     "element_sloid": "ch:1:sloid:8054::2",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:8054:133912",
+     "element_sloid": "ch:1:sloid:8054:464914",
+     "element_type": "CONTACT_POINT",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "PARTIALLY"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:8054:133912",
+     "element_sloid": "ch:1:sloid:8054:118693",
+     "element_type": "PARKING_LOT",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "PARTIALLY"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "NOT_APPLICABLE",
+    "assistanceService": "NOT_APPLICABLE",
+    "alternativeTransport": "NO",
+    "shuttleService": "NO",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "YES",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "validFrom": "2023-12-05",
+    "validTo": "9999-12-31"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:8055",
+   "station_number": "8508055",
+   "station_name": "Unterzollikofen",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:8055:445731",
+     "designation": "Hauptzugang Bernstrasse",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": "Perron via Gehweg Bernstrasse erreichbar.",
+     "valid_from": "2023-12-05",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:8055:445731",
+     "element_sloid": "ch:1:sloid:8055:282336",
+     "element_type": "TOILET",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:8055:445731",
+     "element_sloid": "ch:1:sloid:8055::1",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:8055:445731",
+     "element_sloid": "ch:1:sloid:8055:620559",
+     "element_type": "PARKING_LOT",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NO"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "NOT_APPLICABLE",
+    "assistanceService": "NOT_APPLICABLE",
+    "alternativeTransport": "NO",
+    "shuttleService": "NO",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "YES",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "validFrom": "2023-12-05",
+    "validTo": "9999-12-31"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:8070",
+   "station_number": "8508070",
+   "station_name": "Oberzollikofen",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:8070:731058",
+     "designation": "Hauptzugang Kreuzstrasse",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": "Perron via Wegverbindung zwischen Bahnhhof und Kreuzstrasse erreichbar.",
+     "valid_from": "2023-12-05",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:8070:731058",
+     "element_sloid": "ch:1:sloid:8070::2",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:8070:731058",
+     "element_sloid": "ch:1:sloid:8070::1",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:8070:731058",
+     "element_sloid": "ch:1:sloid:8070:409403",
+     "element_type": "TOILET",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NO"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:8070:731058",
+     "element_sloid": "ch:1:sloid:8070:504547",
+     "element_type": "PARKING_LOT",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NO"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "NOT_APPLICABLE",
+    "assistanceService": "NOT_APPLICABLE",
+    "alternativeTransport": "NO",
+    "shuttleService": "NO",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "YES",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "validFrom": "2023-12-05",
+    "validTo": "9999-12-31"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:16154",
+   "station_number": "8516154",
+   "station_name": "Bern Brünnen Westside",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:16154:940228",
+     "designation": "Hauptzugang",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": null,
+     "valid_from": "2021-10-04",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:16154:940228",
+     "element_sloid": "ch:1:sloid:16154:0:880854",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:16154:940228",
+     "element_sloid": "ch:1:sloid:16154:0:898925",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "YES",
+    "assistanceCondition": "Dieser Bahnhof ist barrierefrei. Sie können autonom reisen.",
+    "assistanceService": "PARTIALLY",
+    "alternativeTransport": "NO",
+    "shuttleService": "NO",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "NO",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "address": "Riedbachstrasse",
+    "zipCode": "3027",
+    "city": "Bern",
+    "validFrom": "2021-10-04",
+    "validTo": "9999-12-31"
+   }
+  },
+  {
+   "station_sloid": "ch:1:sloid:16161",
+   "station_number": "8516161",
+   "station_name": "Bern Wankdorf",
+   "reference_points": [
+    {
+     "sloid": "ch:1:sloid:16161:661403",
+     "designation": "Max-Daetwyler-Platz",
+     "type": "MAIN_STATION_ENTRANCE",
+     "main": true,
+     "information": "Seite Stadion/Tramhaltestelle",
+     "valid_from": "2021-07-21",
+     "coordinates": null
+    },
+    {
+     "sloid": "ch:1:sloid:16161:253506",
+     "designation": "Rosalia-Wenger-Platz",
+     "type": "ALTERNATIVE_STATION_ENTRANCE",
+     "main": false,
+     "information": "Seite Hilfikerstrasse",
+     "valid_from": "2021-10-14",
+     "coordinates": null
+    },
+    {
+     "sloid": "ch:1:sloid:16161:122",
+     "designation": "Zugang Ost",
+     "type": "ALTERNATIVE_STATION_ENTRANCE",
+     "main": false,
+     "information": "Nur mit Treppen zugänglich.",
+     "valid_from": "2024-06-06",
+     "coordinates": null
+    }
+   ],
+   "relations": [
+    {
+     "reference_point_sloid": "ch:1:sloid:16161:661403",
+     "element_sloid": "ch:1:sloid:16161:1:1",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:16161:253506",
+     "element_sloid": "ch:1:sloid:16161:1:1",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "NOT_APPLICABLE"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:16161:122",
+     "element_sloid": "ch:1:sloid:16161:1:1",
+     "element_type": "PLATFORM",
+     "edge_designation": "2",
+     "step_free_access": "TO_BE_COMPLETED",
+     "tactile_visual_marks": "TO_BE_COMPLETED",
+     "contrasting_areas": "TO_BE_COMPLETED"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:16161:122",
+     "element_sloid": "ch:1:sloid:16161:2:3",
+     "element_type": "PLATFORM",
+     "edge_designation": "5",
+     "step_free_access": "NO",
+     "tactile_visual_marks": "TO_BE_COMPLETED",
+     "contrasting_areas": "TO_BE_COMPLETED"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:16161:661403",
+     "element_sloid": "ch:1:sloid:16161:2:3",
+     "element_type": "PLATFORM",
+     "edge_designation": "5",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:16161:253506",
+     "element_sloid": "ch:1:sloid:16161:2:3",
+     "element_type": "PLATFORM",
+     "edge_designation": "5",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:16161:122",
+     "element_sloid": "ch:1:sloid:16161:595930",
+     "element_type": "TOILET",
+     "edge_designation": null,
+     "step_free_access": "TO_BE_COMPLETED",
+     "tactile_visual_marks": "TO_BE_COMPLETED",
+     "contrasting_areas": "TO_BE_COMPLETED"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:16161:253506",
+     "element_sloid": "ch:1:sloid:16161:595930",
+     "element_type": "TOILET",
+     "edge_designation": null,
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:16161:661403",
+     "element_sloid": "ch:1:sloid:16161:595930",
+     "element_type": "TOILET",
+     "edge_designation": null,
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:16161:661403",
+     "element_sloid": "ch:1:sloid:16161:0:0",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES_WITH_RAMP",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:16161:253506",
+     "element_sloid": "ch:1:sloid:16161:0:0",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:16161:122",
+     "element_sloid": "ch:1:sloid:16161:0:0",
+     "element_type": "PLATFORM",
+     "edge_designation": "1",
+     "step_free_access": "NO",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "TO_BE_COMPLETED"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:16161:122",
+     "element_sloid": "ch:1:sloid:16161:2:4",
+     "element_type": "PLATFORM",
+     "edge_designation": "6",
+     "step_free_access": "TO_BE_COMPLETED",
+     "tactile_visual_marks": "TO_BE_COMPLETED",
+     "contrasting_areas": "TO_BE_COMPLETED"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:16161:253506",
+     "element_sloid": "ch:1:sloid:16161:2:4",
+     "element_type": "PLATFORM",
+     "edge_designation": "6",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:16161:661403",
+     "element_sloid": "ch:1:sloid:16161:2:4",
+     "element_type": "PLATFORM",
+     "edge_designation": "6",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:16161:253506",
+     "element_sloid": "ch:1:sloid:16161:1:2",
+     "element_type": "PLATFORM",
+     "edge_designation": "3",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:16161:661403",
+     "element_sloid": "ch:1:sloid:16161:1:2",
+     "element_type": "PLATFORM",
+     "edge_designation": "3",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:16161:122",
+     "element_sloid": "ch:1:sloid:16161:1:2",
+     "element_type": "PLATFORM",
+     "edge_designation": "3",
+     "step_free_access": "TO_BE_COMPLETED",
+     "tactile_visual_marks": "TO_BE_COMPLETED",
+     "contrasting_areas": "TO_BE_COMPLETED"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:16161:253506",
+     "element_sloid": "ch:1:sloid:16161:3:5",
+     "element_type": "PLATFORM",
+     "edge_designation": "7",
+     "step_free_access": "YES",
+     "tactile_visual_marks": "NO",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:16161:661403",
+     "element_sloid": "ch:1:sloid:16161:3:5",
+     "element_type": "PLATFORM",
+     "edge_designation": "7",
+     "step_free_access": "YES_WITH_LIFT",
+     "tactile_visual_marks": "YES",
+     "contrasting_areas": "YES"
+    },
+    {
+     "reference_point_sloid": "ch:1:sloid:16161:122",
+     "element_sloid": "ch:1:sloid:16161:3:5",
+     "element_type": "PLATFORM",
+     "edge_designation": "7",
+     "step_free_access": "TO_BE_COMPLETED",
+     "tactile_visual_marks": "TO_BE_COMPLETED",
+     "contrasting_areas": "TO_BE_COMPLETED"
+    }
+   ],
+   "stop_point": {
+    "assistanceAvailability": "YES",
+    "assistanceCondition": "Der Ein- / Ausstieg ist bei entsprechenden Fahrzeugen barrierefrei möglich.  Bitte beachten sie die Information im Fahrplan und melden Sie sich nötigenfalls bis spätestens 1 Stunde vor Abfahrt unter swisspass.ch/handicap oder beim Contact Center Handicap täglich 5.00–24.00 Uhr, Telefon 0800 007 102 (kostenlos in der Schweiz), aus dem Ausland +41 800 007 102.  Der Hauptzugang zum Bahnhofgebäude und zu den Perronanlagen ist stufenfrei möglich. Vom Nebenzugang in Richtung Stauffacherstrasse sind die Perrons lediglich über Treppen erreichbar.",
+    "assistanceService": "YES",
+    "alternativeTransport": "NO",
+    "shuttleService": "NO",
+    "ticketMachine": "YES",
+    "wheelchairTicketMachine": "YES",
+    "audioTicketMachine": "NO",
+    "dynamicAudioSystem": "YES",
+    "dynamicOpticSystem": "YES",
+    "visualInfo": "YES",
+    "address": "Max-Daetwyler-Platz 1",
+    "zipCode": "3014",
+    "city": "Bern",
+    "validFrom": "2021-07-21",
+    "validTo": "9999-12-31"
+   }
+  }
+ ]
+}

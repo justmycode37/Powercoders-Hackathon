@@ -80,6 +80,68 @@ def _plan_checks():
 PLAN_CHECKS, PLANS = _plan_checks()
 
 
+STREETS = ("living_street", "residential", "unclassified", "tertiary", "secondary", "primary",
+           "tertiary_link", "secondary_link", "primary_link", "pedestrian")
+_ROADS = None
+
+
+def roads():
+    """Citywide OSM road centrelines (no node ids in that extract; joined to the graph by coordinate)."""
+    global _ROADS
+    if _ROADS is None:
+        _ROADS = Grid(100)
+        try:
+            els = read_json("osm/city-roads.json")["elements"]
+        except FileNotFoundError:
+            els = []
+        for el in els:
+            geom = [g for g in el.get("geometry", []) if g]
+            xy = osm_way_xy(el)
+            if len(xy) >= 2 and len(xy) == len(geom):
+                _ROADS.add(dict(id=el["id"], tags=el.get("tags", {}), xy=xy,
+                                keys=[(round(g["lon"], 7), round(g["lat"], 7)) for g in geom]), xy)
+    return _ROADS
+
+
+TLM_PATH = os.path.join(os.path.dirname(DATA), "..", "city3d", "data", "network", "tlm_paths_3d.geojson")
+TLM_NOTE = "swissTLM3D 3D path heights, LN02 (read from bern-research/city3d/data/network/tlm_paths_3d.geojson)"
+_TLM = None
+
+
+def tlm_paths():
+    """swissTLM3D footpaths with measured Z (LN02), if the city3d folder has built them; else an empty index."""
+    global _TLM
+    if _TLM is None:
+        _TLM = Grid(60)
+        if os.path.exists(TLM_PATH):
+            with open(TLM_PATH, encoding="utf-8") as f:
+                for ft in json.load(f)["features"]:
+                    g = ft["geometry"]
+                    if g["type"] != "LineString":
+                        continue
+                    cs = [c for c in g["coordinates"] if len(c) > 2]
+                    if len(cs) < 2:
+                        continue
+                    xy = [geo.wgs84_to_lv95(c[0], c[1]) for c in cs]
+                    _TLM.add(dict(xy=xy, z=[c[2] for c in cs], id=ft["properties"].get("id"),
+                                  kunstbaute=ft["properties"].get("kunstbaute")), xy)
+    return _TLM
+
+
+def tlm_height(q, r=3.5):
+    """Measured path height at point q -> list of (z, tlm id) for every TLM path passing within r metres."""
+    out = []
+    for t in tlm_paths().near(q, r):
+        d, _, pt, i = geo.line_project(q, t["xy"])
+        if d > r:
+            continue
+        a, b = t["xy"][i], t["xy"][i + 1]
+        seg = geo.dist(a, b) or 1.0
+        k = min(1.0, max(0.0, geo.dist(a, pt) / seg))
+        out.append((t["z"][i] + k * (t["z"][i + 1] - t["z"][i]), t["id"]))
+    return out
+
+
 def infer_level(t):
     """Level for a walkway that has no OSM level tag but is a tunnel (or a bridge with a layer tag).
     Returns (level, reason) or None.  Steps are handled from the ways at their ends instead."""
@@ -91,10 +153,11 @@ def infer_level(t):
         lay = None
     if t.get("tunnel") == "yes":
         if lay is not None and lay < 0:
-            return (lay, f"OSM tunnel=yes with layer={lay}, no level tag: level taken from the layer")
+            # OSM layer is a drawing order, not a storey count: any negative layer becomes level -1
+            return (-1, f"OSM tunnel=yes with layer={lay}, no level tag: assumed one level below street level")
         return None      # tunnel=yes alone is also used for arcades in the old town: do not guess
     if t.get("bridge") in ("yes", "viaduct") and lay is not None and lay > 0:
-        return (lay, f"OSM bridge=yes with layer={lay}, no level tag: level taken from the layer")
+        return (1, f"OSM bridge=yes with layer={lay}, no level tag: assumed one level above street level")
     return None
 
 
@@ -291,6 +354,19 @@ def build(slug, cfg, edges_all, feats_all, network):
                                          height_quality="approximate", height_note="nominal roof height, not measured")
                         if ft == "platform_surface":
                             props.update(level=0, level_note=None, level_source="assumed (open-air platform)")
+                            linked = []           # boarding edges that run along this surveyed platform outline
+                            closed = ring + [ring[0]]
+                            for ef in out:
+                                ep = ef["properties"]
+                                if ep["feature_type"] != "boarding_edge" or not ef["geometry"] or ef["geometry"]["type"] != "LineString":
+                                    continue
+                                ln = [geo.wgs84_to_lv95(c[0], c[1]) for c in ef["geometry"]["coordinates"]]
+                                LL = geo.line_length(ln)
+                                ds = sorted(geo.line_project(geo.line_interpolate(ln, LL * k), closed)[0] for k in (0.25, 0.5, 0.75))
+                                if ds[1] <= 2.0:
+                                    linked.append(ep["edge_sloid"])
+                            if linked:
+                                props.update(edge_sloids=linked, edge_link_how="edge lines that run within 2 m of this outline")
                         out.append(feature(gj_polygon(ring), **props))
                     else:
                         props["length_m"] = round(geo.line_length(path), 1)
@@ -622,17 +698,64 @@ def build(slug, cfg, edges_all, feats_all, network):
             if (lv > 0 and z < z0 + 1.5 * lv) or (lv < 0 and z > z0 + 1.5 * lv):
                 rejected[lv] = f"atlas heights of {table[lv]['n_samples']} edges on this level (median {z} m) rejected: not consistent with level 0 at {z0} m"
                 del table[lv]
+    # levels without usable atlas heights: measured heights of swissTLM3D paths that run along features of the
+    # level (only heights on the right side of level 0 count, so a path on the ground under a bridge is ignored)
+    if 0 in table:
+        z0 = table[0]["elevation_m"]
+        for lv in all_levels:
+            if lv in table or lv == 0:
+                continue
+            zs, ids = [], set()
+            for f in out:
+                pr = f["properties"]
+                if pr.get("level") != lv or pr["feature_type"] not in ("passage", "platform_surface", "boarding_edge") \
+                        or not f["geometry"] or pr.get("level_source") == "inferred":
+                    continue
+                g = f["geometry"]
+                cs = g["coordinates"] if g["type"] == "LineString" else (g["coordinates"][0] if g["type"] == "Polygon" else [g["coordinates"]])
+                ln = [geo.wgs84_to_lv95(c[0], c[1]) for c in cs]
+                L = geo.line_length(ln)
+                for k in range(max(1, int(L / 5.0)) + 1):
+                    q = geo.line_interpolate(ln, min(L, k * 5.0))
+                    for z, tid in tlm_height(q):
+                        if (lv > 0 and z >= z0 + 2.0) or (lv < 0 and z <= z0 - 2.0):
+                            zs.append(z)
+                            ids.add(tid)
+            if len(zs) >= 3:
+                table[lv] = dict(level=lv, elevation_m=round(statistics.median(zs), 1), elevation_min_m=round(min(zs), 1),
+                                 elevation_max_m=round(max(zs), 1), n_samples=len(zs), elevation_quality="source_derived",
+                                 elevation_source=f"median of {len(zs)} height samples on {len(ids)} paths: {TLM_NOTE}; "
+                                                  "matched to the OSM features of this level within 3.5 m")
+        # keep the table monotonic: a measured level that is not above the measured level below it is dropped
+        for lv in sorted(k for k in table if k > 0):
+            below = [table[k]["elevation_m"] for k in table if k < lv]
+            if below and table[lv]["elevation_m"] <= max(below) + 1.0:
+                del table[lv]
+        for lv in sorted((k for k in table if k < 0), reverse=True):
+            above = [table[k]["elevation_m"] for k in table if k > lv]
+            if above and table[lv]["elevation_m"] >= min(above) - 1.0:
+                del table[lv]
     known = sorted(table)
     for lv in all_levels:
         if lv in table:
             continue
-        if known:
+        lower = [k for k in known if k < lv]
+        upper = [k for k in known if k > lv]
+        why = f". {rejected[lv]}" if lv in rejected else ""
+        a, b = (max(lower), min(upper)) if lower and upper else (None, None)
+        # between two known levels: interpolate, but only if they are ordinary storeys apart (2.5 to 7 m per level);
+        # the deep RBS station two levels below the SBB tracks is not
+        if a is not None and 2.5 <= (table[b]["elevation_m"] - table[a]["elevation_m"]) / (b - a) <= 7.0:
+            za, zb = table[a]["elevation_m"], table[b]["elevation_m"]
+            table[lv] = dict(level=lv, elevation_m=round(za + (zb - za) * (lv - a) / (b - a), 1), n_samples=0,
+                             elevation_quality="approximate",
+                             elevation_source=f"interpolated between level {a} ({za} m) and level {b} ({zb} m); not measured" + why)
+        elif known:
             toward0 = [k for k in known if (lv < k <= 0) or (0 <= k < lv)]     # anchor on the level-0 side
             ref = min(toward0 or known, key=lambda k: abs(k - lv))
             table[lv] = dict(level=lv, elevation_m=round(table[ref]["elevation_m"] + (lv - ref) * STOREY, 1), n_samples=0,
                              elevation_quality="approximate",
-                             elevation_source=f"nominal {STOREY} m per level from level {ref}; not measured"
-                             + (f". {rejected[lv]}" if lv in rejected else ""))
+                             elevation_source=f"nominal {STOREY} m per level from level {ref}; not measured" + why)
         else:
             table[lv] = dict(level=lv, elevation_m=None, n_samples=0, elevation_quality="missing", elevation_source=None)
 
@@ -658,29 +781,67 @@ def build(slug, cfg, edges_all, feats_all, network):
     # ---- walk graph -----------------------------------------------------------------------------------
     special = {f["properties"]["source_id"].split("-")[-1]: f["properties"]["feature_type"] for f in out
                if f["properties"].get("source_id", "").startswith("osm-node-")}
-    gn, ge = {}, []
+    # Graph ways: (1) OSM walkways of the detail extract, (2) service roads of the detail extract that are not
+    # private, (3) public streets from the citywide road extract.  Streets make the graph connected where people
+    # walk along or across a road; they are labelled kind="street" so a router can weight them.
+    def ckey(g):
+        return (round(g["lon"], 7), round(g["lat"], 7))
+
+    gways, key2id = [], {}
     for w in walk:
-        ids, xy, t = w["el"].get("nodes", []), w["xy"], w["t"]
-        if len(ids) != len(xy):
+        geom = [g for g in w["el"].get("geometry", []) if g]
+        ids, t = w["el"].get("nodes", []), w["t"]
+        if len(ids) != len(geom) or len(geom) != len(w["xy"]):
             continue
+        ks = [ckey(g) for g in geom]
+        key2id.update(zip(ks, ids))
         kind = ("escalator" if t.get("conveying") else "stairs") if t["highway"] == "steps" else (
             "moving_walkway" if t.get("conveying") else "walk")
+        gways.append(dict(way=w["el"]["id"], keys=ks, xy=w["xy"], kind=kind, levels=w["levels"] or None, t=t))
+    have_way = {g["way"] for g in gways}
+    for el in osm:
+        t = tags(el)
+        if el["type"] == "way" and t.get("highway") == "service" and t.get("access") not in ("private", "no") \
+                and t.get("foot") != "no" and el["id"] not in have_way:
+            geom = [g for g in el.get("geometry", []) if g]
+            xy = osm_way_xy(el)
+            if len(geom) == len(xy) == len(el.get("nodes", [])) and len(xy) >= 2 and near(xy):
+                ks = [ckey(g) for g in geom]
+                key2id.update(zip(ks, el["nodes"]))
+                gways.append(dict(way=el["id"], keys=ks, xy=xy, kind="street", levels=None, t=t))
+                have_way.add(el["id"])
+    for rd in roads().near(C, R + 50):
+        if rd["tags"].get("highway") not in STREETS or rd["id"] in have_way or not near(rd["xy"]):
+            continue
+        gways.append(dict(way=rd["id"], keys=rd["keys"], xy=rd["xy"], kind="street", levels=None, t=rd["tags"]))
+        have_way.add(rd["id"])
+    usek = collections.Counter(k for g in gways for k in g["keys"])
+    lift_ids = {nid for nid, n in nodes.items() if tags(n).get("highway") == "elevator"}
+
+    def node_id(k):
+        return key2id.get(k) or f"c{k[0]:.7f},{k[1]:.7f}"
+
+    gn, ge = {}, []
+    for g in gways:
+        ks, xy, t = g["keys"], g["xy"], g["t"]
         start = 0
-        for i in range(1, len(ids)):
-            if i == len(ids) - 1 or use[ids[i]] > 1 or str(ids[i]) in special or tags(nodes.get(ids[i], {})).get("highway") == "elevator":
+        for i in range(1, len(ks)):
+            nid = node_id(ks[i])
+            if i == len(ks) - 1 or usek[ks[i]] > 1 or str(nid) in special or nid in lift_ids:
                 seg = xy[start:i + 1]
-                for nid, q in ((ids[start], xy[start]), (ids[i], xy[i])):
-                    if nid not in gn:
-                        ll = geo.lv95_to_wgs84(*q)
-                        nt = tags(nodes.get(nid, {}))
-                        gn[nid] = dict(id=nid, lon=round(ll[0], 7), lat=round(ll[1], 7),
-                                       kind="lift" if nt.get("highway") == "elevator" else special.get(str(nid)),
-                                       levels=parse_levels(nt.get("level")) or None)
-                ge.append(dict(id=f"{w['el']['id']}:{start}", a=ids[start], b=ids[i], way=w["el"]["id"], kind=kind,
-                               levels=w["levels"] or None, length_m=round(geo.line_length(seg), 1),
+                for k in (ks[start], ks[i]):
+                    n_id = node_id(k)
+                    if n_id not in gn:
+                        nt = tags(nodes.get(n_id, {})) if isinstance(n_id, int) else {}
+                        gn[n_id] = dict(id=n_id, lon=k[0], lat=k[1],
+                                        kind="lift" if nt.get("highway") == "elevator" else special.get(str(n_id)),
+                                        levels=parse_levels(nt.get("level")) or None)
+                ge.append(dict(id=f"{g['way']}:{start}", a=node_id(ks[start]), b=nid, way=g["way"], kind=g["kind"],
+                               street_class=t.get("highway") if g["kind"] == "street" else None,
+                               levels=g["levels"], length_m=round(geo.line_length(seg), 1),
                                tunnel=t.get("tunnel"), indoor=t.get("indoor"), covered=t.get("covered"),
                                conveying=t.get("conveying"), wheelchair=t.get("wheelchair"), name=t.get("name"),
-                               coords=[[round(c, 7) for c in geo.lv95_to_wgs84(*q)] for q in seg]))
+                               coords=[list(k) for k in ks[start:i + 1]]))
                 start = i
     # attach boarding edges to their nearest graph node
     gnodes = list(gn.values())
@@ -700,9 +861,12 @@ def build(slug, cfg, edges_all, feats_all, network):
         p["walk_graph_node_dist_m"] = round(geo.dist(P, gxy[n["id"]]), 1)
         p["walk_graph_node_how"] = "nearest walk-graph node on the same level (inferred link, not a surveyed access)"
     graph = dict(
-        focus=slug, generated_utc=NOW, licence=LICENCE["osm"], source="OpenStreetMap ways: " + ", ".join(WALK),
+        focus=slug, generated_utc=NOW, licence=LICENCE["osm"], source="OpenStreetMap ways: " + ", ".join(WALK) + "; streets: service, " + ", ".join(STREETS),
         note="Community data. Edges are OSM way stretches between junctions; 'levels' is the OSM level tag "
-             "(two values on stairs/escalators/ramps = connects those levels). Lift nodes carry their levels.",
+             "(two values on stairs/escalators/ramps = connects those levels; null = street level). Lift nodes carry "
+             "their levels. kind 'street' = road centreline (street_class), walkable along a pavement that OSM does "
+             "not map separately; crossing a road is only modelled where OSM has a footway crossing it. Node ids are "
+             "OSM node ids, or 'c<lon>,<lat>' where the road extract carries no ids.",
         nodes=gnodes, edges=ge)
     with open(os.path.join(DATA, "focus", f"{slug}.walk_graph.json"), "w", encoding="utf-8") as fh:
         json.dump(graph, fh, ensure_ascii=False, separators=(",", ":"))
