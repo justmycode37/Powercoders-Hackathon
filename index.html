@@ -572,8 +572,6 @@
       border-radius: 20px; background: #20232bea; color: white; font-size: 11px;
     }
     .ev-pager button { background: transparent; border: 0; color: inherit; width: 32px; height: 32px; font-size: 20px; cursor: pointer; }
-    .ev-cluster { border: 2px solid white; border-radius: 24px; min-width: 40px; height: 40px;
-      background: #503677; color: white; font: 700 14px system-ui; box-shadow: var(--shadow); cursor: pointer; }
     @keyframes ev-in {
       from { transform: scale(.5); opacity: 0; }
       to   { transform: none; opacity: 1; }
@@ -979,39 +977,48 @@
       if (!eventsOn || map.getZoom() < EVENT_MIN_ZOOM) return;
 
       const { clientWidth, clientHeight } = map.getContainer();
-      const groups = [];
+      const venues = new Map();
       for (const feature of visibleEvents()) {
         const coordinates = feature.geometry.coordinates;
-        const point = map.project(coordinates);
-        if (point.x < -150 || point.x > clientWidth + 150 || point.y < -180 || point.y > clientHeight + 180) continue;
-        // Group venues in screen space. Zooming in separates nearby addresses.
-        let group = groups.find((candidate) =>
-          Math.abs(candidate.point.x - point.x) < 158 && Math.abs(candidate.point.y - point.y) < 180);
-        if (!group) {
-          group = { point, coordinates, features: [] };
-          groups.push(group);
+        const key = coordinates.join(',');
+        let venue = venues.get(key);
+        if (!venue) {
+          const point = map.project(coordinates);
+          if (point.x < -75 || point.x > clientWidth + 75 || point.y < 0 || point.y > clientHeight + 186) continue;
+          venue = { point, coordinates, features: [] };
+          venues.set(key, venue);
         }
-        group.features.push(feature);
+        venue.features.push(feature);
       }
-      for (const { coordinates, features } of groups) {
-        const bounds = new maplibregl.LngLatBounds();
-        features.forEach((feature) => bounds.extend(feature.geometry.coordinates));
-        const distinctVenues = bounds.getWest() !== bounds.getEast() || bounds.getNorth() !== bounds.getSouth();
-        const cluster = distinctVenues && map.getZoom() < map.getMaxZoom() - 0.1;
-        const element = cluster ? document.createElement('button') : makeVenueCard(features);
-        if (cluster) {
-          element.type = 'button';
-          element.className = 'ev-cluster';
-          element.textContent = features.length;
-          element.setAttribute('aria-label', 'Zoom to ' + features.length + ' events near ' + features[0].properties.city);
-          element.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const nextZoom = Math.min(map.getMaxZoom(), map.getZoom() + 2);
-            map.easeTo({ center: bounds.getCenter(), zoom: nextZoom });
-          });
-        }
-        const marker = new maplibregl.Marker({ element, anchor: cluster ? 'center' : 'bottom' })
-          .setLngLat(cluster ? bounds.getCenter() : coordinates).addTo(map);
+
+      // Give local support programmes first pick of the available map space.
+      const supportTags = ['newcomers', 'language', 'free-food', 'blind-low-vision', 'deaf', 'wheelchair', 'adaptive-sport'];
+      function compareEvents(a, b) {
+        const first = a.properties;
+        const second = b.properties;
+        const support = (event) => event.tags.some(tag => supportTags.includes(tag));
+        const deadline = (event) => event.through ? Date.parse(event.through) : Infinity;
+        return Number(support(second)) - Number(support(first))
+          || Number(Boolean(first.areaOnly)) - Number(Boolean(second.areaOnly))
+          || deadline(first) - deadline(second)
+          || first.id.localeCompare(second.id);
+      }
+      const candidates = Array.from(venues.values());
+      for (const venue of candidates) venue.features.sort(compareEvents);
+      candidates.sort((a, b) => compareEvents(a.features[0], b.features[0]));
+
+      const shown = [];
+      for (const venue of candidates) {
+        const overlap = shown.find(other => Math.abs(other.point.x - venue.point.x) < 158
+          && Math.abs(other.point.y - venue.point.y) < 202);
+        if (!overlap) shown.push(venue);
+        // At maximum zoom, keep even adjacent doors accessible from the pager.
+        else if (map.getZoom() >= map.getMaxZoom() - 0.01) overlap.features.push(...venue.features);
+      }
+      for (const venue of shown) {
+        const element = makeVenueCard(venue.features);
+        const marker = new maplibregl.Marker({ element, anchor: 'bottom' })
+          .setLngLat(venue.coordinates).addTo(map);
         eventMarkers.push(marker);
       }
     }
@@ -1063,7 +1070,7 @@
           const nav = document.createElement('button');
           nav.type = 'button';
           nav.textContent = step < 0 ? '‹' : '›';
-          nav.setAttribute('aria-label', step < 0 ? 'Previous event at this venue' : 'Next event at this venue');
+          nav.setAttribute('aria-label', step < 0 ? 'Previous event' : 'Next event');
           nav.addEventListener('click', (e) => {
             e.stopPropagation();
             index = (index + step + features.length) % features.length;
