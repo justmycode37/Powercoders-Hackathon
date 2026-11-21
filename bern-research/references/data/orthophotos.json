@@ -1,0 +1,710 @@
+{
+ "generated": "2026-11-21T01:54:20+01:00",
+ "count": 16,
+ "items": [
+  {
+   "id": "ortho-8507000_bern",
+   "file": "orthophoto/8507000_bern.jpg",
+   "world_file": "orthophoto/8507000_bern.jgw",
+   "station": {
+    "number": 8507000,
+    "sloid": "ch:1:sloid:7000",
+    "name": "Bern"
+   },
+   "feature": "Bern station: track hall roof, Welle (west access), Bollwerk, Schanzenbrücke",
+   "bbox_lv95": [
+    2599718,
+    1199580,
+    2600238,
+    1199920
+   ],
+   "crs": "EPSG:2056",
+   "bbox_wgs84": [
+    7.4349331,
+    46.9473031,
+    7.4417636,
+    46.9503615
+   ],
+   "bbox_wgs84_note": "converted with swisstopo approximate formulas (about 1 m)",
+   "metres_per_pixel": [
+    0.2,
+    0.2
+   ],
+   "width_px": 2600,
+   "height_px": 1700,
+   "bytes": 1445182,
+   "sha256": "614afd87804e844f971bb9779ee93e20c5bf10e4603473a10b6b239571af6307",
+   "source": "swisstopo SWISSIMAGE (WMS layer ch.swisstopo.swissimage)",
+   "source_url": "https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ch.swisstopo.swissimage&STYLES=&CRS=EPSG%3A2056&BBOX=2599718%2C1199580%2C2600238%2C1199920&WIDTH=2600&HEIGHT=1700&FORMAT=image%2Fjpeg",
+   "publisher": "Federal Office of Topography swisstopo",
+   "licence": "swisstopo free geodata (OGD)",
+   "licence_url": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-ogd",
+   "attribution": "© swisstopo",
+   "capture_date": null,
+   "capture_date_note": "SWISSIMAGE flight year varies per area; look up in map.geo.admin.ch layer ch.swisstopo.images-swissimage-dop10.metadata",
+   "retrieved": "2026-11-21T01:54:20+01:00",
+   "inferred": false,
+   "model_use": "Top-down footprint: canopy outlines, platform edges, tram islands, kerbs, road markings; drape on terrain or trace in a GIS (world file + EPSG:2056)."
+  },
+  {
+   "id": "ortho-8576646_bern-bahnhof",
+   "file": "orthophoto/8576646_bern-bahnhof.jpg",
+   "world_file": "orthophoto/8576646_bern-bahnhof.jgw",
+   "station": {
+    "number": 8576646,
+    "sloid": "ch:1:sloid:76646",
+    "name": "Bern, Bahnhof"
+   },
+   "feature": "Bahnhofplatz: Baldachin canopy, tram/bus islands, Bubenbergplatz/Hirschengraben edge",
+   "bbox_lv95": [
+    2600010,
+    1199579,
+    2600230,
+    1199759
+   ],
+   "crs": "EPSG:2056",
+   "bbox_wgs84": [
+    7.4387686,
+    46.9472941,
+    7.4416584,
+    46.9489132
+   ],
+   "bbox_wgs84_note": "converted with swisstopo approximate formulas (about 1 m)",
+   "metres_per_pixel": [
+    0.1,
+    0.1
+   ],
+   "width_px": 2200,
+   "height_px": 1800,
+   "bytes": 1195850,
+   "sha256": "c006fe7a90e288066f348f9e46ceca96ae3beda89e30979e6fa5950f1f012cda",
+   "source": "swisstopo SWISSIMAGE (WMS layer ch.swisstopo.swissimage)",
+   "source_url": "https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ch.swisstopo.swissimage&STYLES=&CRS=EPSG%3A2056&BBOX=2600010%2C1199579%2C2600230%2C1199759&WIDTH=2200&HEIGHT=1800&FORMAT=image%2Fjpeg",
+   "publisher": "Federal Office of Topography swisstopo",
+   "licence": "swisstopo free geodata (OGD)",
+   "licence_url": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-ogd",
+   "attribution": "© swisstopo",
+   "capture_date": null,
+   "capture_date_note": "SWISSIMAGE flight year varies per area; look up in map.geo.admin.ch layer ch.swisstopo.images-swissimage-dop10.metadata",
+   "retrieved": "2026-11-21T01:54:20+01:00",
+   "inferred": false,
+   "model_use": "Top-down footprint: canopy outlines, platform edges, tram islands, kerbs, road markings; drape on terrain or trace in a GIS (world file + EPSG:2056)."
+  },
+  {
+   "id": "ortho-8507110_bern-zytglogge",
+   "file": "orthophoto/8507110_bern-zytglogge.jpg",
+   "world_file": "orthophoto/8507110_bern-zytglogge.jgw",
+   "station": {
+    "number": 8507110,
+    "sloid": "ch:1:sloid:7110",
+    "name": "Bern, Zytglogge"
+   },
+   "feature": "Zytglogge/Kornhausplatz/Theaterplatz tram stop islands",
+   "bbox_lv95": [
+    2600595,
+    1199570,
+    2600755,
+    1199710
+   ],
+   "crs": "EPSG:2056",
+   "bbox_wgs84": [
+    7.4464526,
+    46.9472129,
+    7.4485545,
+    46.9484721
+   ],
+   "bbox_wgs84_note": "converted with swisstopo approximate formulas (about 1 m)",
+   "metres_per_pixel": [
+    0.1,
+    0.1
+   ],
+   "width_px": 1600,
+   "height_px": 1400,
+   "bytes": 708239,
+   "sha256": "8f20ca2f377227a8bf7349b9617e13c829fc08cfb74ddf006635fedc7b47c402",
+   "source": "swisstopo SWISSIMAGE (WMS layer ch.swisstopo.swissimage)",
+   "source_url": "https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ch.swisstopo.swissimage&STYLES=&CRS=EPSG%3A2056&BBOX=2600595%2C1199570%2C2600755%2C1199710&WIDTH=1600&HEIGHT=1400&FORMAT=image%2Fjpeg",
+   "publisher": "Federal Office of Topography swisstopo",
+   "licence": "swisstopo free geodata (OGD)",
+   "licence_url": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-ogd",
+   "attribution": "© swisstopo",
+   "capture_date": null,
+   "capture_date_note": "SWISSIMAGE flight year varies per area; look up in map.geo.admin.ch layer ch.swisstopo.images-swissimage-dop10.metadata",
+   "retrieved": "2026-11-21T01:54:20+01:00",
+   "inferred": false,
+   "model_use": "Top-down footprint: canopy outlines, platform edges, tram islands, kerbs, road markings; drape on terrain or trace in a GIS (world file + EPSG:2056)."
+  },
+  {
+   "id": "ortho-8516161_bern-wankdorf",
+   "file": "orthophoto/8516161_bern-wankdorf.jpg",
+   "world_file": "orthophoto/8516161_bern-wankdorf.jgw",
+   "station": {
+    "number": 8516161,
+    "sloid": "ch:1:sloid:16161",
+    "name": "Bern Wankdorf"
+   },
+   "feature": "Bern Wankdorf station platforms, underpass exits, bus/tram stop",
+   "bbox_lv95": [
+    2601873,
+    1201732,
+    2602213,
+    1201992
+   ],
+   "crs": "EPSG:2056",
+   "bbox_wgs84": [
+    7.4632482,
+    46.9666581,
+    7.467717,
+    46.9689958
+   ],
+   "bbox_wgs84_note": "converted with swisstopo approximate formulas (about 1 m)",
+   "metres_per_pixel": [
+    0.149978,
+    0.150029
+   ],
+   "width_px": 2267,
+   "height_px": 1733,
+   "bytes": 1138699,
+   "sha256": "922ad6e30b5a3c7e8f409cbb537338d7164bd5abe2e6843af600625f1eaf0e04",
+   "source": "swisstopo SWISSIMAGE (WMS layer ch.swisstopo.swissimage)",
+   "source_url": "https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ch.swisstopo.swissimage&STYLES=&CRS=EPSG%3A2056&BBOX=2601873%2C1201732%2C2602213%2C1201992&WIDTH=2267&HEIGHT=1733&FORMAT=image%2Fjpeg",
+   "publisher": "Federal Office of Topography swisstopo",
+   "licence": "swisstopo free geodata (OGD)",
+   "licence_url": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-ogd",
+   "attribution": "© swisstopo",
+   "capture_date": null,
+   "capture_date_note": "SWISSIMAGE flight year varies per area; look up in map.geo.admin.ch layer ch.swisstopo.images-swissimage-dop10.metadata",
+   "retrieved": "2026-11-21T01:54:20+01:00",
+   "inferred": false,
+   "model_use": "Top-down footprint: canopy outlines, platform edges, tram islands, kerbs, road markings; drape on terrain or trace in a GIS (world file + EPSG:2056)."
+  },
+  {
+   "id": "ortho-8588699_bern-wankdorf-center",
+   "file": "orthophoto/8588699_bern-wankdorf-center.jpg",
+   "world_file": "orthophoto/8588699_bern-wankdorf-center.jgw",
+   "station": {
+    "number": 8588699,
+    "sloid": "ch:1:sloid:88699",
+    "name": "Bern, Wankdorf Center"
+   },
+   "feature": "Wankdorf Center tram stop",
+   "bbox_lv95": [
+    2601985,
+    1201095,
+    2602165,
+    1201255
+   ],
+   "crs": "EPSG:2056",
+   "bbox_wgs84": [
+    7.4647171,
+    46.9609279,
+    7.4670828,
+    46.9623665
+   ],
+   "bbox_wgs84_note": "converted with swisstopo approximate formulas (about 1 m)",
+   "metres_per_pixel": [
+    0.1,
+    0.1
+   ],
+   "width_px": 1800,
+   "height_px": 1600,
+   "bytes": 767543,
+   "sha256": "77993afc6c033d5b4d6bf0d34fa6b83d82dc5924925c816e8e3ead8bbf42bd4d",
+   "source": "swisstopo SWISSIMAGE (WMS layer ch.swisstopo.swissimage)",
+   "source_url": "https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ch.swisstopo.swissimage&STYLES=&CRS=EPSG%3A2056&BBOX=2601985%2C1201095%2C2602165%2C1201255&WIDTH=1800&HEIGHT=1600&FORMAT=image%2Fjpeg",
+   "publisher": "Federal Office of Topography swisstopo",
+   "licence": "swisstopo free geodata (OGD)",
+   "licence_url": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-ogd",
+   "attribution": "© swisstopo",
+   "capture_date": null,
+   "capture_date_note": "SWISSIMAGE flight year varies per area; look up in map.geo.admin.ch layer ch.swisstopo.images-swissimage-dop10.metadata",
+   "retrieved": "2026-11-21T01:54:20+01:00",
+   "inferred": false,
+   "model_use": "Top-down footprint: canopy outlines, platform edges, tram islands, kerbs, road markings; drape on terrain or trace in a GIS (world file + EPSG:2056)."
+  },
+  {
+   "id": "ortho-8504108_bern-europaplatz",
+   "file": "orthophoto/8504108_bern-europaplatz.jpg",
+   "world_file": "orthophoto/8504108_bern-europaplatz.jgw",
+   "station": {
+    "number": 8504108,
+    "sloid": "ch:1:sloid:4108",
+    "name": "Bern Europaplatz"
+   },
+   "feature": "Europaplatz: S-Bahn viaduct station, tram stop below, House of Religions",
+   "bbox_lv95": [
+    2597394,
+    1199126,
+    2597654,
+    1199346
+   ],
+   "crs": "EPSG:2056",
+   "bbox_wgs84": [
+    7.4044097,
+    46.9432142,
+    7.4078234,
+    46.9451941
+   ],
+   "bbox_wgs84_note": "converted with swisstopo approximate formulas (about 1 m)",
+   "metres_per_pixel": [
+    0.119982,
+    0.120022
+   ],
+   "width_px": 2167,
+   "height_px": 1833,
+   "bytes": 1133285,
+   "sha256": "47f0ee1baeae5966ebfa7278a5286213bdf2f493c61e52c7dc7c6d3efa632f26",
+   "source": "swisstopo SWISSIMAGE (WMS layer ch.swisstopo.swissimage)",
+   "source_url": "https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ch.swisstopo.swissimage&STYLES=&CRS=EPSG%3A2056&BBOX=2597394%2C1199126%2C2597654%2C1199346&WIDTH=2167&HEIGHT=1833&FORMAT=image%2Fjpeg",
+   "publisher": "Federal Office of Topography swisstopo",
+   "licence": "swisstopo free geodata (OGD)",
+   "licence_url": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-ogd",
+   "attribution": "© swisstopo",
+   "capture_date": null,
+   "capture_date_note": "SWISSIMAGE flight year varies per area; look up in map.geo.admin.ch layer ch.swisstopo.images-swissimage-dop10.metadata",
+   "retrieved": "2026-11-21T01:54:20+01:00",
+   "inferred": false,
+   "model_use": "Top-down footprint: canopy outlines, platform edges, tram islands, kerbs, road markings; drape on terrain or trace in a GIS (world file + EPSG:2056)."
+  },
+  {
+   "id": "ortho-8516154_bern-bruennen-westside",
+   "file": "orthophoto/8516154_bern-bruennen-westside.jpg",
+   "world_file": "orthophoto/8516154_bern-bruennen-westside.jgw",
+   "station": {
+    "number": 8516154,
+    "sloid": "ch:1:sloid:16154",
+    "name": "Bern Brünnen Westside"
+   },
+   "feature": "Brünnen Westside: covered station below Westside centre, tram terminus",
+   "bbox_lv95": [
+    2595046,
+    1199119,
+    2595306,
+    1199319
+   ],
+   "crs": "EPSG:2056",
+   "bbox_wgs84": [
+    7.3735708,
+    46.9431379,
+    7.3769836,
+    46.9449388
+   ],
+   "bbox_wgs84_note": "converted with swisstopo approximate formulas (about 1 m)",
+   "metres_per_pixel": [
+    0.119982,
+    0.119976
+   ],
+   "width_px": 2167,
+   "height_px": 1667,
+   "bytes": 1155991,
+   "sha256": "04c13e63984cbd4eaaeef5c445e4ca75e041948e7a7a5334ffd91c5eea04c6ce",
+   "source": "swisstopo SWISSIMAGE (WMS layer ch.swisstopo.swissimage)",
+   "source_url": "https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ch.swisstopo.swissimage&STYLES=&CRS=EPSG%3A2056&BBOX=2595046%2C1199119%2C2595306%2C1199319&WIDTH=2167&HEIGHT=1667&FORMAT=image%2Fjpeg",
+   "publisher": "Federal Office of Topography swisstopo",
+   "licence": "swisstopo free geodata (OGD)",
+   "licence_url": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-ogd",
+   "attribution": "© swisstopo",
+   "capture_date": null,
+   "capture_date_note": "SWISSIMAGE flight year varies per area; look up in map.geo.admin.ch layer ch.swisstopo.images-swissimage-dop10.metadata",
+   "retrieved": "2026-11-21T01:54:20+01:00",
+   "inferred": false,
+   "model_use": "Top-down footprint: canopy outlines, platform edges, tram islands, kerbs, road markings; drape on terrain or trace in a GIS (world file + EPSG:2056)."
+  },
+  {
+   "id": "ortho-8504489_bern-buempliz-nord",
+   "file": "orthophoto/8504489_bern-buempliz-nord.jpg",
+   "world_file": "orthophoto/8504489_bern-buempliz-nord.jgw",
+   "station": {
+    "number": 8504489,
+    "sloid": "ch:1:sloid:4489",
+    "name": "Bern Bümpliz Nord"
+   },
+   "feature": "Bümpliz Nord station",
+   "bbox_lv95": [
+    2596169,
+    1199337,
+    2596389,
+    1199497
+   ],
+   "crs": "EPSG:2056",
+   "bbox_wgs84": [
+    7.3883186,
+    46.9451062,
+    7.3912069,
+    46.9465467
+   ],
+   "bbox_wgs84_note": "converted with swisstopo approximate formulas (about 1 m)",
+   "metres_per_pixel": [
+    0.120022,
+    0.12003
+   ],
+   "width_px": 1833,
+   "height_px": 1333,
+   "bytes": 672843,
+   "sha256": "06cc1c5060b437b7b69b90c866569b9d8561d89bf1c89ba25d43f49a7d1ece8f",
+   "source": "swisstopo SWISSIMAGE (WMS layer ch.swisstopo.swissimage)",
+   "source_url": "https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ch.swisstopo.swissimage&STYLES=&CRS=EPSG%3A2056&BBOX=2596169%2C1199337%2C2596389%2C1199497&WIDTH=1833&HEIGHT=1333&FORMAT=image%2Fjpeg",
+   "publisher": "Federal Office of Topography swisstopo",
+   "licence": "swisstopo free geodata (OGD)",
+   "licence_url": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-ogd",
+   "attribution": "© swisstopo",
+   "capture_date": null,
+   "capture_date_note": "SWISSIMAGE flight year varies per area; look up in map.geo.admin.ch layer ch.swisstopo.images-swissimage-dop10.metadata",
+   "retrieved": "2026-11-21T01:54:20+01:00",
+   "inferred": false,
+   "model_use": "Top-down footprint: canopy outlines, platform edges, tram islands, kerbs, road markings; drape on terrain or trace in a GIS (world file + EPSG:2056)."
+  },
+  {
+   "id": "ortho-8504106_bern-buempliz-sued",
+   "file": "orthophoto/8504106_bern-buempliz-sued.jpg",
+   "world_file": "orthophoto/8504106_bern-buempliz-sued.jgw",
+   "station": {
+    "number": 8504106,
+    "sloid": "ch:1:sloid:4106",
+    "name": "Bern Bümpliz Süd"
+   },
+   "feature": "Bümpliz Süd station",
+   "bbox_lv95": [
+    2596586,
+    1198410,
+    2596806,
+    1198570
+   ],
+   "crs": "EPSG:2056",
+   "bbox_wgs84": [
+    7.3938026,
+    46.93677,
+    7.3966907,
+    46.9382103
+   ],
+   "bbox_wgs84_note": "converted with swisstopo approximate formulas (about 1 m)",
+   "metres_per_pixel": [
+    0.120022,
+    0.12003
+   ],
+   "width_px": 1833,
+   "height_px": 1333,
+   "bytes": 742803,
+   "sha256": "9b1a089cce101a107183a8aaf4d1f6009a4d2e759c952c49805d532ccb6612ac",
+   "source": "swisstopo SWISSIMAGE (WMS layer ch.swisstopo.swissimage)",
+   "source_url": "https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ch.swisstopo.swissimage&STYLES=&CRS=EPSG%3A2056&BBOX=2596586%2C1198410%2C2596806%2C1198570&WIDTH=1833&HEIGHT=1333&FORMAT=image%2Fjpeg",
+   "publisher": "Federal Office of Topography swisstopo",
+   "licence": "swisstopo free geodata (OGD)",
+   "licence_url": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-ogd",
+   "attribution": "© swisstopo",
+   "capture_date": null,
+   "capture_date_note": "SWISSIMAGE flight year varies per area; look up in map.geo.admin.ch layer ch.swisstopo.images-swissimage-dop10.metadata",
+   "retrieved": "2026-11-21T01:54:20+01:00",
+   "inferred": false,
+   "model_use": "Top-down footprint: canopy outlines, platform edges, tram islands, kerbs, road markings; drape on terrain or trace in a GIS (world file + EPSG:2056)."
+  },
+  {
+   "id": "ortho-8507079_bern-weissenbuehl",
+   "file": "orthophoto/8507079_bern-weissenbuehl.jpg",
+   "world_file": "orthophoto/8507079_bern-weissenbuehl.jgw",
+   "station": {
+    "number": 8507079,
+    "sloid": "ch:1:sloid:7079",
+    "name": "Bern Weissenbühl"
+   },
+   "feature": "Weissenbühl station (BLS)",
+   "bbox_lv95": [
+    2599234,
+    1198219,
+    2599454,
+    1198379
+   ],
+   "crs": "EPSG:2056",
+   "bbox_wgs84": [
+    7.428578,
+    46.9350602,
+    7.4314669,
+    46.9364996
+   ],
+   "bbox_wgs84_note": "converted with swisstopo approximate formulas (about 1 m)",
+   "metres_per_pixel": [
+    0.120022,
+    0.12003
+   ],
+   "width_px": 1833,
+   "height_px": 1333,
+   "bytes": 736039,
+   "sha256": "f08016e074c0991df62eb11843bda0c2be4390d0fb128926bb39d73d3a6f2c98",
+   "source": "swisstopo SWISSIMAGE (WMS layer ch.swisstopo.swissimage)",
+   "source_url": "https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ch.swisstopo.swissimage&STYLES=&CRS=EPSG%3A2056&BBOX=2599234%2C1198219%2C2599454%2C1198379&WIDTH=1833&HEIGHT=1333&FORMAT=image%2Fjpeg",
+   "publisher": "Federal Office of Topography swisstopo",
+   "licence": "swisstopo free geodata (OGD)",
+   "licence_url": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-ogd",
+   "attribution": "© swisstopo",
+   "capture_date": null,
+   "capture_date_note": "SWISSIMAGE flight year varies per area; look up in map.geo.admin.ch layer ch.swisstopo.images-swissimage-dop10.metadata",
+   "retrieved": "2026-11-21T01:54:20+01:00",
+   "inferred": false,
+   "model_use": "Top-down footprint: canopy outlines, platform edges, tram islands, kerbs, road markings; drape on terrain or trace in a GIS (world file + EPSG:2056)."
+  },
+  {
+   "id": "ortho-8508051_bern-felsenau",
+   "file": "orthophoto/8508051_bern-felsenau.jpg",
+   "world_file": "orthophoto/8508051_bern-felsenau.jgw",
+   "station": {
+    "number": 8508051,
+    "sloid": "ch:1:sloid:8051",
+    "name": "Bern Felsenau"
+   },
+   "feature": "Felsenau station (RBS)",
+   "bbox_lv95": [
+    2600338,
+    1201856,
+    2600518,
+    1202016
+   ],
+   "crs": "EPSG:2056",
+   "bbox_wgs84": [
+    7.4430786,
+    46.9677761,
+    7.445444,
+    46.9692152
+   ],
+   "bbox_wgs84_note": "converted with swisstopo approximate formulas (about 1 m)",
+   "metres_per_pixel": [
+    0.12,
+    0.12003
+   ],
+   "width_px": 1500,
+   "height_px": 1333,
+   "bytes": 566248,
+   "sha256": "f85b2cbcfc08302db539ca179e0254bb26b452a769b5b058b6b949dc80d14ce5",
+   "source": "swisstopo SWISSIMAGE (WMS layer ch.swisstopo.swissimage)",
+   "source_url": "https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ch.swisstopo.swissimage&STYLES=&CRS=EPSG%3A2056&BBOX=2600338%2C1201856%2C2600518%2C1202016&WIDTH=1500&HEIGHT=1333&FORMAT=image%2Fjpeg",
+   "publisher": "Federal Office of Topography swisstopo",
+   "licence": "swisstopo free geodata (OGD)",
+   "licence_url": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-ogd",
+   "attribution": "© swisstopo",
+   "capture_date": null,
+   "capture_date_note": "SWISSIMAGE flight year varies per area; look up in map.geo.admin.ch layer ch.swisstopo.images-swissimage-dop10.metadata",
+   "retrieved": "2026-11-21T01:54:20+01:00",
+   "inferred": false,
+   "model_use": "Top-down footprint: canopy outlines, platform edges, tram islands, kerbs, road markings; drape on terrain or trace in a GIS (world file + EPSG:2056)."
+  },
+  {
+   "id": "ortho-8508052_bern-tiefenau",
+   "file": "orthophoto/8508052_bern-tiefenau.jpg",
+   "world_file": "orthophoto/8508052_bern-tiefenau.jgw",
+   "station": {
+    "number": 8508052,
+    "sloid": "ch:1:sloid:8052",
+    "name": "Bern Tiefenau"
+   },
+   "feature": "Tiefenau station (RBS)",
+   "bbox_lv95": [
+    2600790,
+    1202328,
+    2600970,
+    1202488
+   ],
+   "crs": "EPSG:2056",
+   "bbox_wgs84": [
+    7.4490188,
+    46.9720214,
+    7.4513845,
+    46.9734604
+   ],
+   "bbox_wgs84_note": "converted with swisstopo approximate formulas (about 1 m)",
+   "metres_per_pixel": [
+    0.12,
+    0.12003
+   ],
+   "width_px": 1500,
+   "height_px": 1333,
+   "bytes": 563396,
+   "sha256": "f7e51ed85bea5496746df7b147d81b33936e4ca1a44e42de6ba926a6906f94af",
+   "source": "swisstopo SWISSIMAGE (WMS layer ch.swisstopo.swissimage)",
+   "source_url": "https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ch.swisstopo.swissimage&STYLES=&CRS=EPSG%3A2056&BBOX=2600790%2C1202328%2C2600970%2C1202488&WIDTH=1500&HEIGHT=1333&FORMAT=image%2Fjpeg",
+   "publisher": "Federal Office of Topography swisstopo",
+   "licence": "swisstopo free geodata (OGD)",
+   "licence_url": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-ogd",
+   "attribution": "© swisstopo",
+   "capture_date": null,
+   "capture_date_note": "SWISSIMAGE flight year varies per area; look up in map.geo.admin.ch layer ch.swisstopo.images-swissimage-dop10.metadata",
+   "retrieved": "2026-11-21T01:54:20+01:00",
+   "inferred": false,
+   "model_use": "Top-down footprint: canopy outlines, platform edges, tram islands, kerbs, road markings; drape on terrain or trace in a GIS (world file + EPSG:2056)."
+  },
+  {
+   "id": "ortho-8504488_bern-riedbach",
+   "file": "orthophoto/8504488_bern-riedbach.jpg",
+   "world_file": "orthophoto/8504488_bern-riedbach.jgw",
+   "station": {
+    "number": 8504488,
+    "sloid": "ch:1:sloid:4488",
+    "name": "Bern Riedbach"
+   },
+   "feature": "Riedbach station",
+   "bbox_lv95": [
+    2591947,
+    1198822,
+    2592127,
+    1198982
+   ],
+   "crs": "EPSG:2056",
+   "bbox_wgs84": [
+    7.3328734,
+    46.940436,
+    7.3352347,
+    46.9418773
+   ],
+   "bbox_wgs84_note": "converted with swisstopo approximate formulas (about 1 m)",
+   "metres_per_pixel": [
+    0.12,
+    0.12003
+   ],
+   "width_px": 1500,
+   "height_px": 1333,
+   "bytes": 591219,
+   "sha256": "4f8eca5f249e0a266e13bc6322c924161ef76405f32fc0d76725d59d704b6841",
+   "source": "swisstopo SWISSIMAGE (WMS layer ch.swisstopo.swissimage)",
+   "source_url": "https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ch.swisstopo.swissimage&STYLES=&CRS=EPSG%3A2056&BBOX=2591947%2C1198822%2C2592127%2C1198982&WIDTH=1500&HEIGHT=1333&FORMAT=image%2Fjpeg",
+   "publisher": "Federal Office of Topography swisstopo",
+   "licence": "swisstopo free geodata (OGD)",
+   "licence_url": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-ogd",
+   "attribution": "© swisstopo",
+   "capture_date": null,
+   "capture_date_note": "SWISSIMAGE flight year varies per area; look up in map.geo.admin.ch layer ch.swisstopo.images-swissimage-dop10.metadata",
+   "retrieved": "2026-11-21T01:54:20+01:00",
+   "inferred": false,
+   "model_use": "Top-down footprint: canopy outlines, platform edges, tram islands, kerbs, road markings; drape on terrain or trace in a GIS (world file + EPSG:2056)."
+  },
+  {
+   "id": "ortho-8576990_bern-guisanplatz-expo",
+   "file": "orthophoto/8576990_bern-guisanplatz-expo.jpg",
+   "world_file": "orthophoto/8576990_bern-guisanplatz-expo.jgw",
+   "station": {
+    "number": 8576990,
+    "sloid": "ch:1:sloid:76990",
+    "name": "Bern, Guisanplatz Expo"
+   },
+   "feature": "Guisanplatz Expo tram/bus stop",
+   "bbox_lv95": [
+    2601845,
+    1200867,
+    2602025,
+    1201027
+   ],
+   "crs": "EPSG:2056",
+   "bbox_wgs84": [
+    7.4628768,
+    46.9588774,
+    7.4652423,
+    46.9603161
+   ],
+   "bbox_wgs84_note": "converted with swisstopo approximate formulas (about 1 m)",
+   "metres_per_pixel": [
+    0.1,
+    0.1
+   ],
+   "width_px": 1800,
+   "height_px": 1600,
+   "bytes": 876427,
+   "sha256": "c93483d74c996227e2a8141142cb08523951c32248e26917d39700034fb55334",
+   "source": "swisstopo SWISSIMAGE (WMS layer ch.swisstopo.swissimage)",
+   "source_url": "https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ch.swisstopo.swissimage&STYLES=&CRS=EPSG%3A2056&BBOX=2601845%2C1200867%2C2602025%2C1201027&WIDTH=1800&HEIGHT=1600&FORMAT=image%2Fjpeg",
+   "publisher": "Federal Office of Topography swisstopo",
+   "licence": "swisstopo free geodata (OGD)",
+   "licence_url": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-ogd",
+   "attribution": "© swisstopo",
+   "capture_date": null,
+   "capture_date_note": "SWISSIMAGE flight year varies per area; look up in map.geo.admin.ch layer ch.swisstopo.images-swissimage-dop10.metadata",
+   "retrieved": "2026-11-21T01:54:20+01:00",
+   "inferred": false,
+   "model_use": "Top-down footprint: canopy outlines, platform edges, tram islands, kerbs, road markings; drape on terrain or trace in a GIS (world file + EPSG:2056)."
+  },
+  {
+   "id": "ortho-8507060_bern-helvetiaplatz",
+   "file": "orthophoto/8507060_bern-helvetiaplatz.jpg",
+   "world_file": "orthophoto/8507060_bern-helvetiaplatz.jgw",
+   "station": {
+    "number": 8507060,
+    "sloid": "ch:1:sloid:7060",
+    "name": "Bern, Helvetiaplatz"
+   },
+   "feature": "Helvetiaplatz tram stop",
+   "bbox_lv95": [
+    2600725,
+    1199132,
+    2600885,
+    1199272
+   ],
+   "crs": "EPSG:2056",
+   "bbox_wgs84": [
+    7.4481595,
+    46.9432729,
+    7.4502612,
+    46.944532
+   ],
+   "bbox_wgs84_note": "converted with swisstopo approximate formulas (about 1 m)",
+   "metres_per_pixel": [
+    0.1,
+    0.1
+   ],
+   "width_px": 1600,
+   "height_px": 1400,
+   "bytes": 686750,
+   "sha256": "a537c9957921b5ac7f1317df19e15d41356f82d97cb93f6857181898b63ae0fc",
+   "source": "swisstopo SWISSIMAGE (WMS layer ch.swisstopo.swissimage)",
+   "source_url": "https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ch.swisstopo.swissimage&STYLES=&CRS=EPSG%3A2056&BBOX=2600725%2C1199132%2C2600885%2C1199272&WIDTH=1600&HEIGHT=1400&FORMAT=image%2Fjpeg",
+   "publisher": "Federal Office of Topography swisstopo",
+   "licence": "swisstopo free geodata (OGD)",
+   "licence_url": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-ogd",
+   "attribution": "© swisstopo",
+   "capture_date": null,
+   "capture_date_note": "SWISSIMAGE flight year varies per area; look up in map.geo.admin.ch layer ch.swisstopo.images-swissimage-dop10.metadata",
+   "retrieved": "2026-11-21T01:54:20+01:00",
+   "inferred": false,
+   "model_use": "Top-down footprint: canopy outlines, platform edges, tram islands, kerbs, road markings; drape on terrain or trace in a GIS (world file + EPSG:2056)."
+  },
+  {
+   "id": "ortho-8508054_worblaufen",
+   "file": "orthophoto/8508054_worblaufen.jpg",
+   "world_file": "orthophoto/8508054_worblaufen.jgw",
+   "station": {
+    "number": 8508054,
+    "sloid": "ch:1:sloid:8054",
+    "name": "Worblaufen"
+   },
+   "feature": "Worblaufen station (RBS junction)",
+   "bbox_lv95": [
+    2601335,
+    1202996,
+    2601555,
+    1203176
+   ],
+   "crs": "EPSG:2056",
+   "bbox_wgs84": [
+    7.4561827,
+    46.9780293,
+    7.4590747,
+    46.979648
+   ],
+   "bbox_wgs84_note": "converted with swisstopo approximate formulas (about 1 m)",
+   "metres_per_pixel": [
+    0.120022,
+    0.12
+   ],
+   "width_px": 1833,
+   "height_px": 1500,
+   "bytes": 760595,
+   "sha256": "63126a35195a5b19cbc364be7ae1aeb612460665598fa5a2e823bcf0fdfe1c67",
+   "source": "swisstopo SWISSIMAGE (WMS layer ch.swisstopo.swissimage)",
+   "source_url": "https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ch.swisstopo.swissimage&STYLES=&CRS=EPSG%3A2056&BBOX=2601335%2C1202996%2C2601555%2C1203176&WIDTH=1833&HEIGHT=1500&FORMAT=image%2Fjpeg",
+   "publisher": "Federal Office of Topography swisstopo",
+   "licence": "swisstopo free geodata (OGD)",
+   "licence_url": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-ogd",
+   "attribution": "© swisstopo",
+   "capture_date": null,
+   "capture_date_note": "SWISSIMAGE flight year varies per area; look up in map.geo.admin.ch layer ch.swisstopo.images-swissimage-dop10.metadata",
+   "retrieved": "2026-11-21T01:54:20+01:00",
+   "inferred": false,
+   "model_use": "Top-down footprint: canopy outlines, platform edges, tram islands, kerbs, road markings; drape on terrain or trace in a GIS (world file + EPSG:2056)."
+  }
+ ]
+}

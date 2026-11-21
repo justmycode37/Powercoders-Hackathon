@@ -1,0 +1,47 @@
+{
+ "id": "station-clock-generic",
+ "title": "Hanging double-sided station clock (generic, not the SBB design)",
+ "file": "assets/station-clock-generic.gltf",
+ "format": "glTF 2.0 (embedded buffer)",
+ "approximate": true,
+ "inferred": true,
+ "inferred_how": "parametric primitives; dimensions estimated from the evidence listed, not measured",
+ "units": "metre",
+ "axes": "glTF: +Y up, right-handed; +X along the long side, +Z towards the passenger/front side",
+ "origin": "centre of footprint at ground level (y = 0)",
+ "parameters": {
+  "diameter": 0.8,
+  "mount_h": 2.8,
+  "arm": 0.5
+ },
+ "bbox_m": {
+  "min": [
+   -0.42,
+   2.78,
+   -0.53
+  ],
+  "max": [
+   0.42,
+   4.23,
+   0.048
+  ]
+ },
+ "triangles": 680,
+ "evidence": [
+  {
+   "kind": "dataset",
+   "ref": "sbb-dataset-haltestelle-uhr",
+   "what": "clock positions, mounting type (befestigung), lighting; fetched by stations/"
+  },
+  {
+   "kind": "photos",
+   "ref": "tag:clock",
+   "what": "see data/manifest.json records whose features include the tag named here"
+  }
+ ],
+ "notes": "Deliberately generic dial: the SBB station clock design is protected; do not texture it with the original face.",
+ "licence": "CC0 1.0 (original work generated for this repository)",
+ "bytes": 78089,
+ "sha256": "eab57873b8f4afe13ab5e27373c16d180cbf296c51e716f02850378d4798412a",
+ "source": "tools/07_assets.py"
+}

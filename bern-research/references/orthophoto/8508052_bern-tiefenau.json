@@ -1,0 +1,44 @@
+{
+ "id": "ortho-8508052_bern-tiefenau",
+ "file": "orthophoto/8508052_bern-tiefenau.jpg",
+ "world_file": "orthophoto/8508052_bern-tiefenau.jgw",
+ "station": {
+  "number": 8508052,
+  "sloid": "ch:1:sloid:8052",
+  "name": "Bern Tiefenau"
+ },
+ "feature": "Tiefenau station (RBS)",
+ "bbox_lv95": [
+  2600790,
+  1202328,
+  2600970,
+  1202488
+ ],
+ "crs": "EPSG:2056",
+ "bbox_wgs84": [
+  7.4490188,
+  46.9720214,
+  7.4513845,
+  46.9734604
+ ],
+ "bbox_wgs84_note": "converted with swisstopo approximate formulas (about 1 m)",
+ "metres_per_pixel": [
+  0.12,
+  0.12003
+ ],
+ "width_px": 1500,
+ "height_px": 1333,
+ "bytes": 563396,
+ "sha256": "f7e51ed85bea5496746df7b147d81b33936e4ca1a44e42de6ba926a6906f94af",
+ "source": "swisstopo SWISSIMAGE (WMS layer ch.swisstopo.swissimage)",
+ "source_url": "https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ch.swisstopo.swissimage&STYLES=&CRS=EPSG%3A2056&BBOX=2600790%2C1202328%2C2600970%2C1202488&WIDTH=1500&HEIGHT=1333&FORMAT=image%2Fjpeg",
+ "publisher": "Federal Office of Topography swisstopo",
+ "licence": "swisstopo free geodata (OGD)",
+ "licence_url": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-ogd",
+ "attribution": "© swisstopo",
+ "capture_date": null,
+ "capture_date_note": "SWISSIMAGE flight year varies per area; look up in map.geo.admin.ch layer ch.swisstopo.images-swissimage-dop10.metadata",
+ "retrieved": "2026-11-21T01:54:20+01:00",
+ "inferred": false,
+ "model_use": "Top-down footprint: canopy outlines, platform edges, tram islands, kerbs, road markings; drape on terrain or trace in a GIS (world file + EPSG:2056)."
+}

@@ -1,0 +1,866 @@
+{
+ "generated": "2026-11-21T01:53:00+01:00",
+ "count": 46,
+ "note": "Links only unless redistribute=true. Station keys are atlas number + SLOID.",
+ "links": [
+  {
+   "id": "sbb-trafimage-plan-bern-a4-8507000",
+   "title": "SBB Bahnhofplan Bern (A4)",
+   "url": "https://www.sbb.ch/content/dam/infrastruktur/trafimage/bahnhofplaene/plan-bern-a4.pdf",
+   "publisher": "SBB (Trafimage)",
+   "kind": "station_plan_pdf",
+   "licence": "All rights reserved by the publisher (no open licence stated). Link only; do not redistribute. Listed in the SBB open data portal index, but the plan PDF itself carries no open licence.",
+   "redistribute": false,
+   "stations": [
+    {
+     "number": 8507000,
+     "sloid": "ch:1:sloid:7000"
+    }
+   ],
+   "use_for_3d": "Authoritative 2D layout: platform/track numbering, sectors, underpasses (Christoffel, Welle, Passage), entrances, stairs, lifts, ramps, bus/tram stops around the station. Trace footprints and vertical connections; check against atlas edge SLOIDs.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "application/pdf",
+   "content_length": "5502993",
+   "last_modified": "Thu, 03 Sep 2026 06:12:35 GMT",
+   "check_note": "answered only to a browser user agent"
+  },
+  {
+   "id": "sbb-trafimage-plan-bern-a4-poster-8507000",
+   "title": "SBB Bahnhofplan Bern (poster A1/A0)",
+   "url": "https://www.sbb.ch/content/dam/infrastruktur/trafimage/bahnhofplaene/plan-bern-plakat.pdf",
+   "publisher": "SBB (Trafimage)",
+   "kind": "station_plan_pdf",
+   "licence": "All rights reserved by the publisher (no open licence stated). Link only; do not redistribute.",
+   "redistribute": false,
+   "stations": [
+    {
+     "number": 8507000,
+     "sloid": "ch:1:sloid:7000"
+    }
+   ],
+   "use_for_3d": "Higher-detail poster version of the same plan: better for tracing small features (stairs, lifts).",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "application/pdf",
+   "content_length": "6979437",
+   "last_modified": "Sat, 21 Nov 2026 00:21:14 GMT",
+   "check_note": "answered only to a browser user agent"
+  },
+  {
+   "id": "sbb-trafimage-plan-bern-a4-shopping-8507000",
+   "title": "SBB 'Shopping im Bahnhof' Bern",
+   "url": "https://www.sbb.ch/content/dam/infrastruktur/trafimage/bahnhofplaene/plan-bern-shopping.pdf",
+   "publisher": "SBB (Trafimage)",
+   "kind": "station_plan_pdf",
+   "licence": "All rights reserved by the publisher (no open licence stated). Link only; do not redistribute.",
+   "redistribute": false,
+   "stations": [
+    {
+     "number": 8507000,
+     "sloid": "ch:1:sloid:7000"
+    }
+   ],
+   "use_for_3d": "Shop/service unit layout of the concourse levels: subdivide the underground passages into frontage units.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "application/pdf",
+   "content_length": "7903840",
+   "last_modified": "Fri, 20 Nov 2026 11:21:56 GMT",
+   "check_note": "answered only to a browser user agent"
+  },
+  {
+   "id": "sbb-trafimage-plan-bern-a4-interactive-8507000",
+   "title": "SBB interactive station plan Bern",
+   "url": "https://plans.trafimage.ch/bern",
+   "publisher": "SBB (Trafimage)",
+   "kind": "interactive_plan",
+   "licence": "All rights reserved by the publisher (no open licence stated). Link only; do not redistribute.",
+   "redistribute": false,
+   "stations": [
+    {
+     "number": 8507000,
+     "sloid": "ch:1:sloid:7000"
+    }
+   ],
+   "use_for_3d": "Interactive multi-level plan (levels switchable): use to understand which level each passage/stair belongs to.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "text/html",
+   "content_length": "591",
+   "last_modified": "Wed, 18 Nov 2026 16:55:16 GMT"
+  },
+  {
+   "id": "sbb-trafimage-plan-bern-wankdorf-a4-8516161",
+   "title": "SBB Bahnhofplan Bern Wankdorf (A4)",
+   "url": "https://www.sbb.ch/content/dam/infrastruktur/trafimage/bahnhofplaene/plan-bern-wankdorf-a4.pdf",
+   "publisher": "SBB (Trafimage)",
+   "kind": "station_plan_pdf",
+   "licence": "All rights reserved by the publisher (no open licence stated). Link only; do not redistribute. Listed in the SBB open data portal index, but the plan PDF itself carries no open licence.",
+   "redistribute": false,
+   "stations": [
+    {
+     "number": 8516161,
+     "sloid": "ch:1:sloid:16161"
+    }
+   ],
+   "use_for_3d": "Authoritative 2D layout: platform/track numbering, sectors, underpasses (Christoffel, Welle, Passage), entrances, stairs, lifts, ramps, bus/tram stops around the station. Trace footprints and vertical connections; check against atlas edge SLOIDs.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "application/pdf",
+   "content_length": "1414138",
+   "last_modified": "Thu, 03 Sep 2026 06:18:00 GMT",
+   "check_note": "answered only to a browser user agent"
+  },
+  {
+   "id": "sbb-trafimage-plan-bern-wankdorf-a4-poster-8516161",
+   "title": "SBB Bahnhofplan Bern Wankdorf (poster A1/A0)",
+   "url": "https://www.sbb.ch/content/dam/infrastruktur/trafimage/bahnhofplaene/plan-bern-wankdorf-plakat.pdf",
+   "publisher": "SBB (Trafimage)",
+   "kind": "station_plan_pdf",
+   "licence": "All rights reserved by the publisher (no open licence stated). Link only; do not redistribute.",
+   "redistribute": false,
+   "stations": [
+    {
+     "number": 8516161,
+     "sloid": "ch:1:sloid:16161"
+    }
+   ],
+   "use_for_3d": "Higher-detail poster version of the same plan: better for tracing small features (stairs, lifts).",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "application/pdf",
+   "content_length": "1442943",
+   "last_modified": "Fri, 20 Nov 2026 11:38:59 GMT",
+   "check_note": "answered only to a browser user agent"
+  },
+  {
+   "id": "sbb-trafimage-plan-bern-europaplatz-a4-8504108",
+   "title": "SBB Bahnhofplan Bern Europaplatz (A4)",
+   "url": "https://www.sbb.ch/content/dam/infrastruktur/trafimage/bahnhofplaene/plan-bern-europaplatz-a4.pdf",
+   "publisher": "SBB (Trafimage)",
+   "kind": "station_plan_pdf",
+   "licence": "All rights reserved by the publisher (no open licence stated). Link only; do not redistribute. Listed in the SBB open data portal index, but the plan PDF itself carries no open licence.",
+   "redistribute": false,
+   "stations": [
+    {
+     "number": 8504108,
+     "sloid": "ch:1:sloid:4108"
+    }
+   ],
+   "use_for_3d": "Authoritative 2D layout: platform/track numbering, sectors, underpasses (Christoffel, Welle, Passage), entrances, stairs, lifts, ramps, bus/tram stops around the station. Trace footprints and vertical connections; check against atlas edge SLOIDs.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "application/pdf",
+   "content_length": "1410310",
+   "last_modified": "Tue, 29 Jul 2025 05:36:59 GMT",
+   "check_note": "answered only to a browser user agent"
+  },
+  {
+   "id": "sbb-trafimage-plan-bern-europaplatz-a4-poster-8504108",
+   "title": "SBB Bahnhofplan Bern Europaplatz (poster A1/A0)",
+   "url": "https://www.sbb.ch/content/dam/infrastruktur/trafimage/bahnhofplaene/plan-bern-europaplatz-plakat.pdf",
+   "publisher": "SBB (Trafimage)",
+   "kind": "station_plan_pdf",
+   "licence": "All rights reserved by the publisher (no open licence stated). Link only; do not redistribute.",
+   "redistribute": false,
+   "stations": [
+    {
+     "number": 8504108,
+     "sloid": "ch:1:sloid:4108"
+    }
+   ],
+   "use_for_3d": "Higher-detail poster version of the same plan: better for tracing small features (stairs, lifts).",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "application/pdf",
+   "content_length": "2701813",
+   "last_modified": "Tue, 29 Jul 2025 05:37:01 GMT",
+   "check_note": "answered only to a browser user agent"
+  },
+  {
+   "id": "sbb-trafimage-plan-bern-europaplatz-a4-8507082",
+   "title": "SBB Bahnhofplan Bern Europaplatz Süd (A4)",
+   "url": "https://www.sbb.ch/content/dam/infrastruktur/trafimage/bahnhofplaene/plan-bern-europaplatz-a4.pdf",
+   "publisher": "SBB (Trafimage)",
+   "kind": "station_plan_pdf",
+   "licence": "All rights reserved by the publisher (no open licence stated). Link only; do not redistribute. Listed in the SBB open data portal index, but the plan PDF itself carries no open licence.",
+   "redistribute": false,
+   "stations": [
+    {
+     "number": 8507082,
+     "sloid": "ch:1:sloid:7082"
+    }
+   ],
+   "use_for_3d": "Authoritative 2D layout: platform/track numbering, sectors, underpasses (Christoffel, Welle, Passage), entrances, stairs, lifts, ramps, bus/tram stops around the station. Trace footprints and vertical connections; check against atlas edge SLOIDs.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "application/pdf",
+   "content_length": "1410310",
+   "last_modified": "Tue, 29 Jul 2025 05:36:59 GMT",
+   "check_note": "answered only to a browser user agent"
+  },
+  {
+   "id": "sbb-trafimage-plan-bern-europaplatz-a4-poster-8507082",
+   "title": "SBB Bahnhofplan Bern Europaplatz Süd (poster A1/A0)",
+   "url": "https://www.sbb.ch/content/dam/infrastruktur/trafimage/bahnhofplaene/plan-bern-europaplatz-plakat.pdf",
+   "publisher": "SBB (Trafimage)",
+   "kind": "station_plan_pdf",
+   "licence": "All rights reserved by the publisher (no open licence stated). Link only; do not redistribute.",
+   "redistribute": false,
+   "stations": [
+    {
+     "number": 8507082,
+     "sloid": "ch:1:sloid:7082"
+    }
+   ],
+   "use_for_3d": "Higher-detail poster version of the same plan: better for tracing small features (stairs, lifts).",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "application/pdf",
+   "content_length": "2701813",
+   "last_modified": "Tue, 29 Jul 2025 05:37:01 GMT",
+   "check_note": "answered only to a browser user agent"
+  },
+  {
+   "id": "bernmobil-kanten-bahnhof-bern-2026",
+   "title": "BERNMOBIL Kantenplan Bern Bahnhof 2026",
+   "url": "https://www.bernmobil.ch/sites/default/files/2026-07/Kanten_Bahnhof_Bern_2026.pdf",
+   "publisher": "BERNMOBIL",
+   "kind": "kerb_plan_pdf",
+   "licence": "All rights reserved by the publisher (no open licence stated). Link only; do not redistribute.",
+   "redistribute": false,
+   "stations": [
+    {
+     "number": 8576646,
+     "sloid": "ch:1:sloid:76646"
+    }
+   ],
+   "use_for_3d": "Letters of every tram/bus boarding edge around Bahnhofplatz/Bubenbergplatz/Hirschengraben with lines per edge: assign edge SLOIDs (atlas designation) to the canopy (Baldachin) and island platforms.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "application/pdf",
+   "last_modified": "Tue, 07 Jul 2026 11:30:31 GMT"
+  },
+  {
+   "id": "bernmobil-kanten-zytglogge-k-2026",
+   "title": "BERNMOBIL Kantenplan Zytglogge (Kante K) 2026",
+   "url": "https://www.bernmobil.ch/sites/default/files/2025-12/Kanten_Zytglogge_Kante%2520K_2026.pdf",
+   "publisher": "BERNMOBIL",
+   "kind": "kerb_plan_pdf",
+   "licence": "All rights reserved by the publisher (no open licence stated). Link only; do not redistribute.",
+   "redistribute": false,
+   "stations": [
+    {
+     "number": 8507110,
+     "sloid": "ch:1:sloid:7110"
+    }
+   ],
+   "use_for_3d": "Edge K (atlas ch:1:sloid:7110:0:17) position and served lines at Zytglogge/Kornhausplatz.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "application/pdf",
+   "last_modified": "Tue, 16 Dec 2025 13:51:10 GMT"
+  },
+  {
+   "id": "bernmobil-kanten-wankdorf-2025",
+   "title": "BERNMOBIL Kantenplan Bahnhof Wankdorf 2025",
+   "url": "https://www.bernmobil.ch/sites/default/files/2024-11/4_24317_BM_Kanten_Bahnhof_Wankdorf_A4_2025_DE.pdf",
+   "publisher": "BERNMOBIL",
+   "kind": "kerb_plan_pdf",
+   "licence": "All rights reserved by the publisher (no open licence stated). Link only; do not redistribute.",
+   "redistribute": false,
+   "stations": [
+    {
+     "number": 8590129,
+     "sloid": "ch:1:sloid:90129"
+    },
+    {
+     "number": 8516161,
+     "sloid": "ch:1:sloid:16161"
+    }
+   ],
+   "use_for_3d": "Bus/tram edges at Bern Wankdorf, Bahnhof and their relation to the SBB station accesses.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "application/pdf",
+   "last_modified": "Fri, 15 Nov 2024 14:02:11 GMT"
+  },
+  {
+   "id": "bernmobil-kantenplaene-index",
+   "title": "BERNMOBIL Kantenpläne (index page)",
+   "url": "https://www.bernmobil.ch/de/fahrplan-netz/kantenplaene",
+   "publisher": "BERNMOBIL",
+   "kind": "index_page",
+   "licence": "All rights reserved by the publisher (no open licence stated). Link only; do not redistribute.",
+   "redistribute": false,
+   "stations": [],
+   "use_for_3d": "Landing page listing all current kerb plans (check here for newer editions).",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "text/html; charset=utf-8"
+  },
+  {
+   "id": "libero-netzplan-bern-2026",
+   "title": "Libero Netzplan Bern 2026",
+   "url": "https://www.bernmobil.ch/sites/default/files/2025-11/Libero%20Netzplan%20Bern%202026.pdf",
+   "publisher": "Libero / BERNMOBIL",
+   "kind": "network_map_pdf",
+   "licence": "All rights reserved by the publisher (no open licence stated). Link only; do not redistribute.",
+   "redistribute": false,
+   "stations": [],
+   "use_for_3d": "Schematic network: line colours/numbers for signage textures (do not copy graphics; re-derive from GTFS route colours).",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "application/pdf",
+   "last_modified": "Fri, 14 Nov 2025 07:56:36 GMT"
+  },
+  {
+   "id": "bern-normalien-2-5-3",
+   "title": "Stadt Bern Normalien 2.5.3: Tram-/Bus-Kombihaltestellen, Verkehrsinseln",
+   "url": "https://www.bern.ch/themen/planen-und-bauen/bern-baut/planen-und-projektieren/c-normalien/2-strassenbau/2-5-tram-bus-kombihaltestellen-verkehrsinseln-1/2-5-3.pdf/download",
+   "publisher": "Stadt Bern, Tiefbauamt",
+   "kind": "design_standard_pdf",
+   "licence": "All rights reserved by the publisher (no open licence stated). Link only; do not redistribute.",
+   "redistribute": false,
+   "stations": [],
+   "use_for_3d": "Standard cross-sections of combined tram/bus stops: kerb heights, platform widths, ramps. Use as the parameter source for generic stop platforms.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 206,
+   "content_type": "application/pdf",
+   "last_modified": "Tue, 18 Aug 2026 12:08:13 GMT",
+   "final_url": "https://www.bern.ch/themen/planen-und-bauen/bern-baut/Standards-Normalien/c-normalien/2-strassenbau/2-5-tram-bus-kombihaltestellen-verkehrsinseln-1/2-5-3.pdf/@@download/file/2_5_3.pdf"
+  },
+  {
+   "id": "bern-normalien-2-5-2-2-2",
+   "title": "Stadt Bern Normalien 2.5.2.2.2 (Haltestellen-Detail)",
+   "url": "https://www.bern.ch/themen/planen-und-bauen/bern-baut/planen-und-projektieren/c-normalien/2-strassenbau/2-5-tram-bus-kombihaltestellen-verkehrsinseln-1/2-5-2-2-2.pdf/download",
+   "publisher": "Stadt Bern, Tiefbauamt",
+   "kind": "design_standard_pdf",
+   "licence": "All rights reserved by the publisher (no open licence stated). Link only; do not redistribute.",
+   "redistribute": false,
+   "stations": [],
+   "use_for_3d": "Detail sheet for stop kerbs and island ends.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 206,
+   "content_type": "application/pdf",
+   "last_modified": "Tue, 18 Aug 2026 12:08:14 GMT",
+   "final_url": "https://www.bern.ch/themen/planen-und-bauen/bern-baut/Standards-Normalien/c-normalien/2-strassenbau/2-5-tram-bus-kombihaltestellen-verkehrsinseln-1/2-5-2-2-2.pdf/@@download/file/2_5_2_2.pdf"
+  },
+  {
+   "id": "bern-normalien-2-5-3-1-1",
+   "title": "Stadt Bern Normalien 2.5.3.1.1 (Haltestellen-Detail)",
+   "url": "https://www.bern.ch/themen/planen-und-bauen/bern-baut/Planungsgrundsaetze-Standards-Normalien/c-normalien/2-strassenbau/2-5-tram-bus-kombihaltestellen-verkehrsinseln-1/2-5-3-1-1.pdf/view",
+   "publisher": "Stadt Bern, Tiefbauamt",
+   "kind": "design_standard_pdf",
+   "licence": "All rights reserved by the publisher (no open licence stated). Link only; do not redistribute.",
+   "redistribute": false,
+   "stations": [],
+   "use_for_3d": "Detail sheet for combined stops.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 206,
+   "content_type": "text/html;charset=utf-8",
+   "final_url": "https://www.bern.ch/themen/planen-und-bauen/bern-baut/Standards-Normalien/c-normalien/2-strassenbau/2-5-tram-bus-kombihaltestellen-verkehrsinseln-1/2-5-3-1-1.pdf/view"
+  },
+  {
+   "id": "be-hindernisfreie-bushaltestellen-2017",
+   "title": "Kanton Bern AÖV: Arbeitshilfe hindernisfreie Bushaltestellen (2017)",
+   "url": "https://www.bvd.be.ch/content/dam/bvd/dokumente/de/aoev/mobilit%C3%A4t/%C3%B6ffentlicher-verkehr/aoev_Arbeitshilfe_Hindernisfreie%20Bushaltestellen_Juli%202017_definitiv_d.pdf",
+   "publisher": "Kanton Bern, Amt für öffentlichen Verkehr",
+   "kind": "design_standard_pdf",
+   "licence": "All rights reserved by the publisher (no open licence stated). Link only; do not redistribute.",
+   "redistribute": false,
+   "stations": [],
+   "use_for_3d": "Kerb heights (22 cm / Kasseler kerb), tactile lines, shelter clearances: parameters for bus-stop assets.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "application/pdf",
+   "content_length": "833466",
+   "last_modified": "Wed, 28 Oct 2026 08:42:33 GMT"
+  },
+  {
+   "id": "be-grundlagen-hindernisfreie-bushaltestellen",
+   "title": "Kanton Bern AÖV: Grundlagenbericht hindernisfreie Bushaltestellen",
+   "url": "https://www.bvd.be.ch/content/dam/bvd/dokumente/de/aoev/mobilit%C3%A4t/%C3%B6ffentlicher-verkehr/aoev_Grundlagenbericht_Hindernisfreie_Bushaltestellen.pdf",
+   "publisher": "Kanton Bern, Amt für öffentlichen Verkehr",
+   "kind": "design_standard_pdf",
+   "licence": "All rights reserved by the publisher (no open licence stated). Link only; do not redistribute.",
+   "redistribute": false,
+   "stations": [],
+   "use_for_3d": "Background report for the same standard.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "application/pdf",
+   "content_length": "1452284",
+   "last_modified": "Tue, 27 Oct 2026 20:58:41 GMT"
+  },
+  {
+   "id": "bern-testplanung-stadtraum-bahnhof-uebersicht",
+   "title": "Stadt Bern: Übersichtsplan Testplanung Stadtraum Bahnhof Bern",
+   "url": "https://www.bern.ch/mediencenter/medienmitteilungen/aktuell_ptk/testplanung-zum-stadtraum-bahnhof-bern/dokumente/ubersichtsplan-testplanung-stadtraum-bahnhof-bern.pdf/download",
+   "publisher": "Stadt Bern",
+   "kind": "planning_pdf",
+   "licence": "All rights reserved by the publisher (no open licence stated). Link only; do not redistribute.",
+   "redistribute": false,
+   "stations": [
+    {
+     "number": 8507000,
+     "sloid": "ch:1:sloid:7000"
+    }
+   ],
+   "use_for_3d": "Perimeter and named public spaces around the station.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "application/pdf",
+   "content_length": "9741106",
+   "last_modified": "Tue, 22 Nov 2022 07:27:17 GMT",
+   "final_url": "https://www.bern.ch/mediencenter/medienmitteilungen/aktuell_ptk/testplanung-zum-stadtraum-bahnhof-bern/dokumente/ubersichtsplan-testplanung-stadtraum-bahnhof-bern.pdf/@@download/file/%C3%9Cbersichtsplan%20Testplanung%20Stadtraum%20Bahnhof%20Bern.pdf"
+  },
+  {
+   "id": "bern-zbb-factsheet-massnahmen",
+   "title": "Stadt Bern: Factsheet Bau- und Verkehrsmassnahmen Zukunft Bahnhof Bern (ZBB)",
+   "url": "https://www.bern.ch/mediencenter/medienmitteilungen/aktuell_ptk/zukunft-bahnhof-bern-verkehrsmassnahmen-werden-aufgelegt/dokumente/factsheet-bau-und-verkehrsmassnahmen-zbb.pdf/download",
+   "publisher": "Stadt Bern",
+   "kind": "planning_pdf",
+   "licence": "All rights reserved by the publisher (no open licence stated). Link only; do not redistribute.",
+   "redistribute": false,
+   "stations": [
+    {
+     "number": 8507000,
+     "sloid": "ch:1:sloid:7000"
+    },
+    {
+     "number": 8576646,
+     "sloid": "ch:1:sloid:76646"
+    }
+   ],
+   "use_for_3d": "Future Bubenbergplatz/Hirschengraben layout and new access Bubenberg: model a 'future' variant separately from the current state.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "application/pdf",
+   "content_length": "5352516",
+   "last_modified": "Mon, 31 Jul 2023 15:34:54 GMT",
+   "final_url": "https://www.bern.ch/mediencenter/medienmitteilungen/aktuell_ptk/zukunft-bahnhof-bern-verkehrsmassnahmen-werden-aufgelegt/dokumente/factsheet-bau-und-verkehrsmassnahmen-zbb.pdf/@@download/file/Factsheet%20Bau-%20und%20Verkehrsmassnahmen%20ZBB.pdf"
+  },
+  {
+   "id": "bern-zbb-kurzdossier-mitwirkung",
+   "title": "Stadt Bern: Kurzdossier Mitwirkung ZBB Verkehrsmassnahmen",
+   "url": "https://www.bern.ch/mediencenter/medienmitteilungen/aktuell_ptk/bahnhof-bern-verkehrsmassnahmen-gehen-in-die-mitwir-kung/dokumente/kurzdossier-mitwirkung-zbb.pdf/download",
+   "publisher": "Stadt Bern",
+   "kind": "planning_pdf",
+   "licence": "All rights reserved by the publisher (no open licence stated). Link only; do not redistribute.",
+   "redistribute": false,
+   "stations": [
+    {
+     "number": 8507000,
+     "sloid": "ch:1:sloid:7000"
+    }
+   ],
+   "use_for_3d": "Plans and visualisations of the access Bubenberg and Hirschengraben stop.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "application/pdf",
+   "content_length": "2969980",
+   "last_modified": "Tue, 19 Feb 2019 11:27:07 GMT",
+   "final_url": "https://www.bern.ch/mediencenter/medienmitteilungen/aktuell_ptk/bahnhof-bern-verkehrsmassnahmen-gehen-in-die-mitwir-kung/dokumente/kurzdossier-mitwirkung-zbb.pdf/@@download/file/Kurzdossier_Mitwirkung_ZBB.pdf"
+  },
+  {
+   "id": "bern-ueo-zbb-erlaeuterungsbericht",
+   "title": "Stadt Bern: Überbauungsordnung ZBB, Erläuterungsbericht",
+   "url": "https://www.bern.ch/themen/planen-und-bauen/mitwirkungen-und-offentliche-auflagen/abgeschlossene-mitwirkungen/2023/ueberbauungsordnung-zbb-stadt-bern-verkehrsmassnahmen/inhaltsverzeichnis/ueo-3-erlauterungsbericht.pdf/download",
+   "publisher": "Stadt Bern",
+   "kind": "planning_pdf",
+   "licence": "All rights reserved by the publisher (no open licence stated). Link only; do not redistribute.",
+   "redistribute": false,
+   "stations": [
+    {
+     "number": 8507000,
+     "sloid": "ch:1:sloid:7000"
+    }
+   ],
+   "use_for_3d": "Dimensions and phasing of the future station squares.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 206,
+   "content_type": "application/pdf",
+   "last_modified": "Mon, 24 Mar 2025 09:35:04 GMT",
+   "final_url": "https://www.bern.ch/themen/planen-und-bauen/mitwirkungen-und-offentliche-auflagen/abgeschlossene-mitwirkungen/2023/ueberbauungsordnung-zbb-stadt-bern-verkehrsmassnahmen/inhaltsverzeichnis/ueo-3-erlauterungsbericht.pdf/@@download/file/UeO-3_Erl%C3%A4uterungsbericht.pdf"
+  },
+  {
+   "id": "bern-zukunftsbild-stadtraum-bahnhof-2035",
+   "title": "Stadt Bern: Zukunftsbild und Ziele Stadtraum Bahnhof Bern 2035ff",
+   "url": "https://www.bern.ch/mediencenter/medienmitteilungen/aktuell_ptk/stadtraum-bahnhof-gemeinderat-legt-eckwerte-fuer-richtplan-fest/dokumente/zukunftsbild-ziele-stadtraum-bahnhof-bern-2035ff.pdf/download",
+   "publisher": "Stadt Bern",
+   "kind": "planning_pdf",
+   "licence": "All rights reserved by the publisher (no open licence stated). Link only; do not redistribute.",
+   "redistribute": false,
+   "stations": [
+    {
+     "number": 8507000,
+     "sloid": "ch:1:sloid:7000"
+    }
+   ],
+   "use_for_3d": "Long-term target image (not current state).",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "application/pdf",
+   "content_length": "7917502",
+   "last_modified": "Tue, 27 Feb 2024 09:10:11 GMT",
+   "final_url": "https://www.bern.ch/mediencenter/medienmitteilungen/aktuell_ptk/stadtraum-bahnhof-gemeinderat-legt-eckwerte-fuer-richtplan-fest/dokumente/zukunftsbild-ziele-stadtraum-bahnhof-bern-2035ff.pdf/@@download/file/Zukunftsbild%20Ziele_Stadtraum%20Bahnhof%20Bern%202035ff.pdf"
+  },
+  {
+   "id": "bern-zbb-broschuere-gesamtkonzept-2015",
+   "title": "Stadt Bern: Broschüre Gesamtkonzept (2015)",
+   "url": "https://www.bern.ch/mediencenter/medienmitteilungen/aktuell_ptk/der-erste-ausbauschritt-ist-in-sicht/listingblock.2015-06-11.5494697548/broschure-gesamtkonzept.pdf",
+   "publisher": "Stadt Bern",
+   "kind": "planning_pdf",
+   "licence": "All rights reserved by the publisher (no open licence stated). Link only; do not redistribute.",
+   "redistribute": false,
+   "stations": [
+    {
+     "number": 8507000,
+     "sloid": "ch:1:sloid:7000"
+    }
+   ],
+   "use_for_3d": "Overall concept sections of the station expansion.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "application/pdf",
+   "content_length": "2281269",
+   "last_modified": "Fri, 30 Oct 2015 13:42:58 GMT",
+   "final_url": "https://www.bern.ch/mediencenter/medienmitteilungen/aktuell_ptk/der-erste-ausbauschritt-ist-in-sicht/listingblock.2015-06-11.5494697548/broschure-gesamtkonzept.pdf/@@download/file/Brosch%C3%BCre%20Gesamtkonzept.pdf"
+  },
+  {
+   "id": "rbs-unterbern-2018-01",
+   "title": "RBS Magazin UNTERBERN 01/2018",
+   "url": "https://www.rbs.ch/sites/default/files/2025/01-2018_UNTERBERN.pdf",
+   "publisher": "RBS",
+   "kind": "project_magazine_pdf",
+   "licence": "All rights reserved by the publisher (no open licence stated). Link only; do not redistribute.",
+   "redistribute": false,
+   "stations": [
+    {
+     "number": 8507000,
+     "sloid": "ch:1:sloid:7000"
+    }
+   ],
+   "use_for_3d": "Sections and renderings of the new RBS underground station below the SBB tracks.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "application/pdf",
+   "content_length": "4665348",
+   "last_modified": "Tue, 17 Jun 2025 11:56:11 GMT"
+  },
+  {
+   "id": "rbs-unterbern-2021-07",
+   "title": "RBS Magazin UNTERBERN 07/2021",
+   "url": "https://www.rbs.ch/sites/default/files/2025/07-2021_UNTERBERN.pdf",
+   "publisher": "RBS",
+   "kind": "project_magazine_pdf",
+   "licence": "All rights reserved by the publisher (no open licence stated). Link only; do not redistribute.",
+   "redistribute": false,
+   "stations": [
+    {
+     "number": 8507000,
+     "sloid": "ch:1:sloid:7000"
+    }
+   ],
+   "use_for_3d": "Construction progress photos and cavern cross-sections (RBS station).",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "application/pdf",
+   "content_length": "516779",
+   "last_modified": "Tue, 17 Jun 2025 11:56:12 GMT"
+  },
+  {
+   "id": "are-faktenblatt-wankdorf",
+   "title": "ARE Faktenblatt Verkehrsdrehscheibe Bern Wankdorf",
+   "url": "https://www.are.admin.ch/dam/de/sd-web/PH2wDWL8WVCV/faktenblatt-verkehrsdrehscheibe-bern-wankdorf.pdf",
+   "publisher": "Bundesamt für Raumentwicklung ARE",
+   "kind": "planning_pdf",
+   "licence": "Swiss federal publication; reuse terms not stated in the PDF. Link only.",
+   "redistribute": false,
+   "stations": [
+    {
+     "number": 8516161,
+     "sloid": "ch:1:sloid:16161"
+    },
+    {
+     "number": 8590129,
+     "sloid": "ch:1:sloid:90129"
+    }
+   ],
+   "use_for_3d": "Hub concept for Wankdorf: access points and modal interchange.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "application/pdf",
+   "content_length": "139302",
+   "last_modified": "Tue, 29 Jul 2025 10:03:30 GMT"
+  },
+  {
+   "id": "sbb-bahnhof-bern-page",
+   "title": "SBB: Bahnhof Bern (services, accesses, orientation)",
+   "url": "https://www.sbb.ch/de/bahnhof-services/bahnhoefe/bahnhof-bern.html",
+   "publisher": "SBB",
+   "kind": "web_page",
+   "licence": "All rights reserved by the publisher (no open licence stated). Link only; do not redistribute.",
+   "redistribute": false,
+   "stations": [
+    {
+     "number": 8507000,
+     "sloid": "ch:1:sloid:7000"
+    }
+   ],
+   "use_for_3d": "Current service locations and access descriptions.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "text/html; charset=UTF-8",
+   "final_url": "https://www.sbb.ch/de/reiseinformationen/bahnhoefe/bahnhof-finden/bahnhof-bern.html",
+   "check_note": "answered only to a browser user agent"
+  },
+  {
+   "id": "sbb-dataset-mobiliar-im-bahnhof",
+   "title": "SBB: Mobiliar im Bahnhof (furniture inventory per station)",
+   "url": "https://data.sbb.ch/explore/dataset/mobiliar-im-bahnhof/",
+   "publisher": "SBB",
+   "kind": "open_dataset",
+   "licence": "Not stated in the dataset metadata (checked 2026-11-21). Link only; derived counts only.",
+   "redistribute": false,
+   "stations": [],
+   "use_for_3d": "Counts of benches, ticket machines, info points, recycling stations per station: drives how many parametric furniture assets to place (see assets/EVIDENCE).",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "content_length": "130321"
+  },
+  {
+   "id": "sbb-dataset-haltestelle-wartehallen",
+   "title": "SBB: Haltestelle Wartehallen (waiting shelters)",
+   "url": "https://data.sbb.ch/explore/dataset/haltestelle-wartehallen/",
+   "publisher": "SBB",
+   "kind": "open_dataset",
+   "licence": "SBB Open Data terms (https://data.sbb.ch/page/licence); open use with source attribution 'SBB'",
+   "redistribute": false,
+   "stations": [],
+   "use_for_3d": "Shelter positions and building type; fetched by stations/.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "content_length": "132655"
+  },
+  {
+   "id": "sbb-dataset-haltestelle-uhr",
+   "title": "SBB: Haltestelle Uhr (station clocks)",
+   "url": "https://data.sbb.ch/explore/dataset/haltestelle-uhr/",
+   "publisher": "SBB",
+   "kind": "open_dataset",
+   "licence": "SBB Open Data terms (https://data.sbb.ch/page/licence); open use with source attribution 'SBB'",
+   "redistribute": false,
+   "stations": [],
+   "use_for_3d": "Clock positions, mounting and lighting: place SBB clock assets; fetched by stations/.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "content_length": "135456"
+  },
+  {
+   "id": "sbb-dataset-billetautomat",
+   "title": "SBB: Billetautomat (ticket machines)",
+   "url": "https://data.sbb.ch/explore/dataset/billetautomat/",
+   "publisher": "SBB",
+   "kind": "open_dataset",
+   "licence": "SBB Open Data terms (https://data.sbb.ch/page/licence); open use with source attribution 'SBB'",
+   "redistribute": false,
+   "stations": [],
+   "use_for_3d": "Ticket machine positions; fetched by stations/.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "content_length": "133414"
+  },
+  {
+   "id": "sbb-dataset-sektortafel",
+   "title": "SBB: Sektortafel (sector boards)",
+   "url": "https://data.sbb.ch/explore/dataset/sektortafel/",
+   "publisher": "SBB",
+   "kind": "open_dataset",
+   "licence": "SBB Open Data terms (https://data.sbb.ch/page/licence); open use with source attribution 'SBB'",
+   "redistribute": false,
+   "stations": [],
+   "use_for_3d": "Sector board positions along platforms; fetched by stations/.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "content_length": "131590"
+  },
+  {
+   "id": "sbb-dataset-perron",
+   "title": "SBB: Perron (platforms)",
+   "url": "https://data.sbb.ch/explore/dataset/perron/",
+   "publisher": "SBB",
+   "kind": "open_dataset",
+   "licence": "SBB Open Data terms (https://data.sbb.ch/page/licence); open use with source attribution 'SBB'",
+   "redistribute": false,
+   "stations": [],
+   "use_for_3d": "Platform attributes; fetched by stations/.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "content_length": "132923"
+  },
+  {
+   "id": "sbb-dataset-bilder-von-bahnhofen",
+   "title": "SBB: Bilder von Bahnhöfen (station photos)",
+   "url": "https://data.sbb.ch/explore/dataset/bilder-von-bahnhofen/",
+   "publisher": "SBB",
+   "kind": "open_dataset",
+   "licence": "SBB Open Data terms (https://data.sbb.ch/page/licence); open use with source attribution 'SBB'",
+   "redistribute": false,
+   "stations": [],
+   "use_for_3d": "20 station photos; no Bern photo in this set (checked 2026-11-21).",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "content_length": "129088"
+  },
+  {
+   "id": "sbb-dataset-historische-bahnhofbilder",
+   "title": "SBB: Historische Bahnhofbilder",
+   "url": "https://data.sbb.ch/explore/dataset/historische-bahnhofbilder/",
+   "publisher": "SBB",
+   "kind": "open_dataset",
+   "licence": "SBB Open Data terms (https://data.sbb.ch/page/licence); open use with source attribution 'SBB'",
+   "redistribute": false,
+   "stations": [],
+   "use_for_3d": "Historic photo of Bern station, 1958-09-13 (SBB Historic F_116_00001_058): pre-1970s station, only for historic variants.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "text/html; charset=utf-8",
+   "content_length": "131518"
+  },
+  {
+   "id": "sbb-historic-bern-1958",
+   "title": "SBB Historic: Bahnhof Bern 1958 (F_116_00001_058)",
+   "url": "https://data.sbb.ch/api/explore/v2.1/catalog/datasets/historische-bahnhofbilder/files/9de687b4661e6b0ac3784b4488849d6b",
+   "publisher": "SBB Historic",
+   "kind": "historic_photo",
+   "licence": "Published in the SBB data portal under its portal terms; SBB Historic image rights not stated per image. Link only.",
+   "redistribute": false,
+   "stations": [
+    {
+     "number": 8507000,
+     "sloid": "ch:1:sloid:7000"
+    }
+   ],
+   "use_for_3d": "Old station building (demolished 1957-1974): only relevant for a historic reconstruction.",
+   "capture_date": "1958-09-13",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "image/jpeg"
+  },
+  {
+   "id": "otd-traffic-point-v2",
+   "title": "opentransportdata.swiss: Traffic point elements (Haltekanten)",
+   "url": "https://data.opentransportdata.swiss/dataset/traffic-point-v2/permalink",
+   "publisher": "SBB / SKI (atlas)",
+   "kind": "open_dataset",
+   "licence": "opentransportdata.swiss terms of use (https://opentransportdata.swiss/en/terms-of-use/), attribution",
+   "redistribute": false,
+   "stations": [],
+   "use_for_3d": "Edge SLOIDs and designations used as join keys for every image in this collection (fetched by transit/ and stations/).",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "text/csv",
+   "content_length": "22986127",
+   "last_modified": "Fri, 20 Nov 2026 01:21:09 GMT",
+   "final_url": "https://83025b28472d6aa2bf5ae59f3724aa78.eu.r2.cloudflarestorage.com/dx-omd-prod/resources/c2cda870-8f8e-4463-984b-7351d7107228/actual-date-world-traffic-point.csv?response-content-disposition=attachment%3B%20filename%3Dactual-date-world-traffic-point.csv&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=9bd93e9511bb186699e38b472e825929%2F20261121%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261121T005310Z&X-Amz-Expires=60&X-Amz-SignedHeaders=host&X-Amz-Signature=d79e86f4606157324f4c0428bff9144aef975a8597d59c9e67609d4f1df2edee"
+  },
+  {
+   "id": "bern-geoportal-haltestellen",
+   "title": "Geoinformation Stadt Bern: Haltestellen (kerbs with letters)",
+   "url": "https://map.bern.ch/arcgis/rest/services/Geoportal/Haltestellen/MapServer/0",
+   "publisher": "Stadt Bern",
+   "kind": "open_dataset",
+   "licence": "open (opendata.swiss terms_open)",
+   "redistribute": false,
+   "stations": [],
+   "use_for_3d": "Kerb letters and positions for city stops.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "text/html;charset=utf-8"
+  },
+  {
+   "id": "swisstopo-swissimage-wms",
+   "title": "swisstopo SWISSIMAGE 10 cm orthophoto (WMS)",
+   "url": "https://wms.geo.admin.ch/?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.3.0",
+   "publisher": "swisstopo",
+   "kind": "imagery_service",
+   "licence": "swisstopo free geodata (OGD), attribution '© swisstopo' (https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-ogd)",
+   "redistribute": true,
+   "stations": [],
+   "use_for_3d": "Top-down footprint of canopies, platforms, tram islands and road markings; crops for the hubs are stored in orthophoto/.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "text/html; charset=utf-8"
+  },
+  {
+   "id": "panoramax-api",
+   "title": "Panoramax (federated open street-level imagery, STAC API)",
+   "url": "https://api.panoramax.xyz/api",
+   "publisher": "Panoramax / OpenStreetMap France and contributors",
+   "kind": "imagery_service",
+   "licence": "Per picture, mostly CC BY-SA 4.0 (recorded per item)",
+   "redistribute": true,
+   "stations": [],
+   "use_for_3d": "Georeferenced photos with compass azimuth: camera-pose references; see data/panoramax_items.json.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "application/json"
+  },
+  {
+   "id": "mapillary",
+   "title": "Mapillary street-level imagery",
+   "url": "https://www.mapillary.com/app/?lat=46.9488&lng=7.4391&z=17",
+   "publisher": "Mapillary (Meta)",
+   "kind": "imagery_service",
+   "licence": "CC BY-SA 4.0, but the API requires an access token",
+   "redistribute": false,
+   "stations": [],
+   "use_for_3d": "Dense coverage of Bern; BLOCKED for harvesting (token needed, contract rule 9). Browse manually.",
+   "status_note": "blocked: API key required",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "text/html; charset=\"utf-8\""
+  },
+  {
+   "id": "kartaview",
+   "title": "KartaView street-level imagery",
+   "url": "https://kartaview.org/map/@46.9488,7.4391,17z",
+   "publisher": "KartaView (Grab)",
+   "kind": "imagery_service",
+   "licence": "CC BY-SA 4.0",
+   "redistribute": false,
+   "stations": [],
+   "use_for_3d": "API at api.openstreetcam.org did not answer within 20 s on 2026-11-21; not harvested.",
+   "status_note": "unavailable at harvest time",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "text/html",
+   "content_length": "2155",
+   "last_modified": "Tue, 17 Nov 2026 08:34:46 GMT"
+  },
+  {
+   "id": "commons-geosearch",
+   "title": "Wikimedia Commons map of geotagged files around Bern station",
+   "url": "https://commons.wikimedia.org/wiki/Special:Nearby#/coord/46.9488,7.4391",
+   "publisher": "Wikimedia Commons",
+   "kind": "imagery_service",
+   "licence": "Per file (recorded in data/commons_candidates.json)",
+   "redistribute": false,
+   "stations": [],
+   "use_for_3d": "Browse further geotagged photos.",
+   "checked": "2026-11-21T01:53:00+01:00",
+   "http_status": 200,
+   "content_type": "text/html; charset=UTF-8"
+  }
+ ]
+}

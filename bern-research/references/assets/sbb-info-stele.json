@@ -1,0 +1,48 @@
+{
+ "id": "sbb-info-stele",
+ "title": "Information stele (double-sided)",
+ "file": "assets/sbb-info-stele.gltf",
+ "format": "glTF 2.0 (embedded buffer)",
+ "approximate": true,
+ "inferred": true,
+ "inferred_how": "parametric primitives; dimensions estimated from the evidence listed, not measured",
+ "units": "metre",
+ "axes": "glTF: +Y up, right-handed; +X along the long side, +Z towards the passenger/front side",
+ "origin": "centre of footprint at ground level (y = 0)",
+ "parameters": {
+  "width": 0.55,
+  "depth": 0.18,
+  "height": 2.4,
+  "panel_h": 1.4
+ },
+ "bbox_m": {
+  "min": [
+   -0.275,
+   0.0,
+   -0.096
+  ],
+  "max": [
+   0.275,
+   2.4,
+   0.096
+  ]
+ },
+ "triangles": 36,
+ "evidence": [
+  {
+   "kind": "dataset",
+   "ref": "sbb-dataset-mobiliar-im-bahnhof",
+   "what": "'Stele' and 'Infopunkt' listed for Bern"
+  },
+  {
+   "kind": "photos",
+   "ref": "tag:signage",
+   "what": "see data/manifest.json records whose features include the tag named here"
+  }
+ ],
+ "notes": "",
+ "licence": "CC0 1.0 (original work generated for this repository)",
+ "bytes": 5926,
+ "sha256": "823918723f5d25e677648af7893cd867a1348d6d8a578a61142e603a1543308c",
+ "source": "tools/07_assets.py"
+}

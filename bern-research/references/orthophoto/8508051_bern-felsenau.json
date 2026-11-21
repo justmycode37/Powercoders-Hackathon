@@ -1,0 +1,44 @@
+{
+ "id": "ortho-8508051_bern-felsenau",
+ "file": "orthophoto/8508051_bern-felsenau.jpg",
+ "world_file": "orthophoto/8508051_bern-felsenau.jgw",
+ "station": {
+  "number": 8508051,
+  "sloid": "ch:1:sloid:8051",
+  "name": "Bern Felsenau"
+ },
+ "feature": "Felsenau station (RBS)",
+ "bbox_lv95": [
+  2600338,
+  1201856,
+  2600518,
+  1202016
+ ],
+ "crs": "EPSG:2056",
+ "bbox_wgs84": [
+  7.4430786,
+  46.9677761,
+  7.445444,
+  46.9692152
+ ],
+ "bbox_wgs84_note": "converted with swisstopo approximate formulas (about 1 m)",
+ "metres_per_pixel": [
+  0.12,
+  0.12003
+ ],
+ "width_px": 1500,
+ "height_px": 1333,
+ "bytes": 566248,
+ "sha256": "f85b2cbcfc08302db539ca179e0254bb26b452a769b5b058b6b949dc80d14ce5",
+ "source": "swisstopo SWISSIMAGE (WMS layer ch.swisstopo.swissimage)",
+ "source_url": "https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ch.swisstopo.swissimage&STYLES=&CRS=EPSG%3A2056&BBOX=2600338%2C1201856%2C2600518%2C1202016&WIDTH=1500&HEIGHT=1333&FORMAT=image%2Fjpeg",
+ "publisher": "Federal Office of Topography swisstopo",
+ "licence": "swisstopo free geodata (OGD)",
+ "licence_url": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-ogd",
+ "attribution": "© swisstopo",
+ "capture_date": null,
+ "capture_date_note": "SWISSIMAGE flight year varies per area; look up in map.geo.admin.ch layer ch.swisstopo.images-swissimage-dop10.metadata",
+ "retrieved": "2026-11-21T01:54:20+01:00",
+ "inferred": false,
+ "model_use": "Top-down footprint: canopy outlines, platform edges, tram islands, kerbs, road markings; drape on terrain or trace in a GIS (world file + EPSG:2056)."
+}

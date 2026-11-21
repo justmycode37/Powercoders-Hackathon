@@ -1,0 +1,702 @@
+{
+ "generated": "2026-11-21T01:56:18+01:00",
+ "count": 10,
+ "note": "All assets are approximate, original, CC0. See each sidecar for evidence.",
+ "assets": [
+  {
+   "id": "sbb-platform-bench",
+   "title": "Platform bench (SBB style, generic)",
+   "file": "assets/sbb-platform-bench.gltf",
+   "format": "glTF 2.0 (embedded buffer)",
+   "approximate": true,
+   "inferred": true,
+   "inferred_how": "parametric primitives; dimensions estimated from the evidence listed, not measured",
+   "units": "metre",
+   "axes": "glTF: +Y up, right-handed; +X along the long side, +Z towards the passenger/front side",
+   "origin": "centre of footprint at ground level (y = 0)",
+   "parameters": {
+    "length": 1.8,
+    "seat_h": 0.45,
+    "depth": 0.45,
+    "back_h": 0.4,
+    "legs": 2
+   },
+   "bbox_m": {
+    "min": [
+     -0.9,
+     0.0,
+     -0.225
+    ],
+    "max": [
+     0.9,
+     0.93,
+     0.225
+    ]
+   },
+   "triangles": 72,
+   "evidence": [
+    {
+     "kind": "dataset",
+     "ref": "sbb-dataset-mobiliar-im-bahnhof",
+     "what": "'Sitzbank' is listed for Bern (8507000)"
+    },
+    {
+     "kind": "photos",
+     "ref": "tag:bench",
+     "what": "see data/manifest.json records whose features include the tag named here"
+    },
+    {
+     "kind": "standard",
+     "what": "seat height 0.45 m is the usual ergonomic value (SN 640 075 style); not measured"
+    }
+   ],
+   "notes": "Slat detail collapsed into slabs.",
+   "licence": "CC0 1.0 (original work generated for this repository)",
+   "bytes": 9951,
+   "sha256": "9f64c8931830fdb4d6dd7f3146e03ed90d666b72a37826ffce847f4eded30e20",
+   "source": "tools/07_assets.py"
+  },
+  {
+   "id": "sbb-ticket-machine",
+   "title": "Ticket machine (red body, generic)",
+   "file": "assets/sbb-ticket-machine.gltf",
+   "format": "glTF 2.0 (embedded buffer)",
+   "approximate": true,
+   "inferred": true,
+   "inferred_how": "parametric primitives; dimensions estimated from the evidence listed, not measured",
+   "units": "metre",
+   "axes": "glTF: +Y up, right-handed; +X along the long side, +Z towards the passenger/front side",
+   "origin": "centre of footprint at ground level (y = 0)",
+   "parameters": {
+    "width": 0.62,
+    "depth": 0.45,
+    "height": 1.8,
+    "screen_w": 0.4,
+    "screen_h": 0.32
+   },
+   "bbox_m": {
+    "min": [
+     -0.33,
+     0.0,
+     -0.235
+    ],
+    "max": [
+     0.33,
+     1.8,
+     0.305
+    ]
+   },
+   "triangles": 48,
+   "evidence": [
+    {
+     "kind": "dataset",
+     "ref": "sbb-dataset-billetautomat",
+     "what": "positions and type per machine (fetched by stations/)"
+    },
+    {
+     "kind": "dataset",
+     "ref": "sbb-dataset-mobiliar-im-bahnhof",
+     "what": "'Billetautomat' listed for Bern"
+    },
+    {
+     "kind": "photos",
+     "ref": "tag:ticket_machine",
+     "what": "see data/manifest.json records whose features include the tag named here"
+    }
+   ],
+   "notes": "Red body and dark screen echo the common SBB machine; proportions estimated from photos, not measured. No logo.",
+   "licence": "CC0 1.0 (original work generated for this repository)",
+   "bytes": 8555,
+   "sha256": "0ee2ac6548d95f2cd1932474cc3dcef7786d83e7aa93634929994618752a0f3e",
+   "source": "tools/07_assets.py"
+  },
+  {
+   "id": "sbb-recycling-station",
+   "title": "Recycling station, stainless steel, 3 bins",
+   "file": "assets/sbb-recycling-station.gltf",
+   "format": "glTF 2.0 (embedded buffer)",
+   "approximate": true,
+   "inferred": true,
+   "inferred_how": "parametric primitives; dimensions estimated from the evidence listed, not measured",
+   "units": "metre",
+   "axes": "glTF: +Y up, right-handed; +X along the long side, +Z towards the passenger/front side",
+   "origin": "centre of footprint at ground level (y = 0)",
+   "parameters": {
+    "bins": 3,
+    "bin_w": 0.42,
+    "depth": 0.4,
+    "height": 1.0
+   },
+   "bbox_m": {
+    "min": [
+     -0.63,
+     0.0,
+     -0.21
+    ],
+    "max": [
+     0.63,
+     1.02,
+     0.21
+    ]
+   },
+   "triangles": 84,
+   "evidence": [
+    {
+     "kind": "dataset",
+     "ref": "sbb-dataset-mobiliar-im-bahnhof",
+     "what": "'Recyclingstation Chromstahl' listed for Bern (stainless = Chromstahl)"
+    },
+    {
+     "kind": "photos",
+     "ref": "tag:furniture",
+     "what": "see data/manifest.json records whose features include the tag named here"
+    }
+   ],
+   "notes": "",
+   "licence": "CC0 1.0 (original work generated for this repository)",
+   "bytes": 11337,
+   "sha256": "e5cc1f0609195ea28513ec39bb47e29f5dc6fda1d547ecbdd0b4bc1c44bbd36d",
+   "source": "tools/07_assets.py"
+  },
+  {
+   "id": "sbb-info-stele",
+   "title": "Information stele (double-sided)",
+   "file": "assets/sbb-info-stele.gltf",
+   "format": "glTF 2.0 (embedded buffer)",
+   "approximate": true,
+   "inferred": true,
+   "inferred_how": "parametric primitives; dimensions estimated from the evidence listed, not measured",
+   "units": "metre",
+   "axes": "glTF: +Y up, right-handed; +X along the long side, +Z towards the passenger/front side",
+   "origin": "centre of footprint at ground level (y = 0)",
+   "parameters": {
+    "width": 0.55,
+    "depth": 0.18,
+    "height": 2.4,
+    "panel_h": 1.4
+   },
+   "bbox_m": {
+    "min": [
+     -0.275,
+     0.0,
+     -0.096
+    ],
+    "max": [
+     0.275,
+     2.4,
+     0.096
+    ]
+   },
+   "triangles": 36,
+   "evidence": [
+    {
+     "kind": "dataset",
+     "ref": "sbb-dataset-mobiliar-im-bahnhof",
+     "what": "'Stele' and 'Infopunkt' listed for Bern"
+    },
+    {
+     "kind": "photos",
+     "ref": "tag:signage",
+     "what": "see data/manifest.json records whose features include the tag named here"
+    }
+   ],
+   "notes": "",
+   "licence": "CC0 1.0 (original work generated for this repository)",
+   "bytes": 5926,
+   "sha256": "823918723f5d25e677648af7893cd867a1348d6d8a578a61142e603a1543308c",
+   "source": "tools/07_assets.py"
+  },
+  {
+   "id": "station-clock-generic",
+   "title": "Hanging double-sided station clock (generic, not the SBB design)",
+   "file": "assets/station-clock-generic.gltf",
+   "format": "glTF 2.0 (embedded buffer)",
+   "approximate": true,
+   "inferred": true,
+   "inferred_how": "parametric primitives; dimensions estimated from the evidence listed, not measured",
+   "units": "metre",
+   "axes": "glTF: +Y up, right-handed; +X along the long side, +Z towards the passenger/front side",
+   "origin": "centre of footprint at ground level (y = 0)",
+   "parameters": {
+    "diameter": 0.8,
+    "mount_h": 2.8,
+    "arm": 0.5
+   },
+   "bbox_m": {
+    "min": [
+     -0.42,
+     2.78,
+     -0.53
+    ],
+    "max": [
+     0.42,
+     4.23,
+     0.048
+    ]
+   },
+   "triangles": 680,
+   "evidence": [
+    {
+     "kind": "dataset",
+     "ref": "sbb-dataset-haltestelle-uhr",
+     "what": "clock positions, mounting type (befestigung), lighting; fetched by stations/"
+    },
+    {
+     "kind": "photos",
+     "ref": "tag:clock",
+     "what": "see data/manifest.json records whose features include the tag named here"
+    }
+   ],
+   "notes": "Deliberately generic dial: the SBB station clock design is protected; do not texture it with the original face.",
+   "licence": "CC0 1.0 (original work generated for this repository)",
+   "bytes": 78089,
+   "sha256": "eab57873b8f4afe13ab5e27373c16d180cbf296c51e716f02850378d4798412a",
+   "source": "tools/07_assets.py"
+  },
+  {
+   "id": "platform-sector-sign",
+   "title": "Platform sector sign (letter field blank)",
+   "file": "assets/platform-sector-sign.gltf",
+   "format": "glTF 2.0 (embedded buffer)",
+   "approximate": true,
+   "inferred": true,
+   "inferred_how": "parametric primitives; dimensions estimated from the evidence listed, not measured",
+   "units": "metre",
+   "axes": "glTF: +Y up, right-handed; +X along the long side, +Z towards the passenger/front side",
+   "origin": "centre of footprint at ground level (y = 0)",
+   "parameters": {
+    "width": 0.6,
+    "height": 0.5,
+    "mount_h": 2.6
+   },
+   "bbox_m": {
+    "min": [
+     -0.3,
+     2.6,
+     -0.027
+    ],
+    "max": [
+     0.3,
+     3.9,
+     0.027
+    ]
+   },
+   "triangles": 60,
+   "evidence": [
+    {
+     "kind": "dataset",
+     "ref": "sbb-dataset-sektortafel",
+     "what": "143 sector boards for Bern (BN) with positions (fetched by stations/)"
+    },
+    {
+     "kind": "photos",
+     "ref": "tag:platform",
+     "what": "see data/manifest.json records whose features include the tag named here"
+    }
+   ],
+   "notes": "Apply the sector letter (A-E) as a texture or text at load time.",
+   "licence": "CC0 1.0 (original work generated for this repository)",
+   "bytes": 9205,
+   "sha256": "8e2f9c7ee2ca26e360e473ed53be250a8572e47fbd851d18686fcc6111f3d894",
+   "source": "tools/07_assets.py"
+  },
+  {
+   "id": "departure-display-hanging",
+   "title": "Hanging platform departure display",
+   "file": "assets/departure-display-hanging.gltf",
+   "format": "glTF 2.0 (embedded buffer)",
+   "approximate": true,
+   "inferred": true,
+   "inferred_how": "parametric primitives; dimensions estimated from the evidence listed, not measured",
+   "units": "metre",
+   "axes": "glTF: +Y up, right-handed; +X along the long side, +Z towards the passenger/front side",
+   "origin": "centre of footprint at ground level (y = 0)",
+   "parameters": {
+    "width": 2.4,
+    "height": 0.55,
+    "depth": 0.15,
+    "mount_h": 2.7
+   },
+   "bbox_m": {
+    "min": [
+     -1.2,
+     2.7,
+     -0.08
+    ],
+    "max": [
+     1.2,
+     4.25,
+     0.08
+    ]
+   },
+   "triangles": 60,
+   "evidence": [
+    {
+     "kind": "photos",
+     "ref": "tag:signage",
+     "what": "see data/manifest.json records whose features include the tag named here"
+    },
+    {
+     "kind": "dataset",
+     "ref": "sbb-dataset-mobiliar-im-bahnhof",
+     "what": "'BildschirmMonitor' and 'Videoanlage' listed for Bern"
+    }
+   ],
+   "notes": "",
+   "licence": "CC0 1.0 (original work generated for this repository)",
+   "bytes": 9257,
+   "sha256": "3f04603c805ab4c2efe96c27b7c0213732c1382fb088630cfdaea75a48358185",
+   "source": "tools/07_assets.py"
+  },
+  {
+   "id": "tram-bus-shelter",
+   "title": "Tram/bus stop shelter (glass, flat roof)",
+   "file": "assets/tram-bus-shelter.gltf",
+   "format": "glTF 2.0 (embedded buffer)",
+   "approximate": true,
+   "inferred": true,
+   "inferred_how": "parametric primitives; dimensions estimated from the evidence listed, not measured",
+   "units": "metre",
+   "axes": "glTF: +Y up, right-handed; +X along the long side, +Z towards the passenger/front side",
+   "origin": "centre of footprint at ground level (y = 0)",
+   "parameters": {
+    "length": 4.0,
+    "depth": 1.6,
+    "height": 2.5,
+    "roof_overhang": 0.25,
+    "back_glass": true,
+    "side_glass": true
+   },
+   "bbox_m": {
+    "min": [
+     -2.25,
+     0.0,
+     -1.05
+    ],
+    "max": [
+     2.25,
+     2.63,
+     1.05
+    ]
+   },
+   "triangles": 108,
+   "evidence": [
+    {
+     "kind": "dataset",
+     "ref": "sbb-dataset-haltestelle-wartehallen",
+     "what": "shelter inventory (rail stops)"
+    },
+    {
+     "kind": "photos",
+     "ref": "tag:shelter",
+     "what": "see data/manifest.json records whose features include the tag named here"
+    },
+    {
+     "kind": "standard",
+     "ref": "be-hindernisfreie-bushaltestellen-2017",
+     "what": "clear passage behind/around shelters"
+    }
+   ],
+   "notes": "Generic city-stop shelter; Bern uses several shelter generations, check the stop photos before placing.",
+   "licence": "CC0 1.0 (original work generated for this repository)",
+   "bytes": 14696,
+   "sha256": "3da786f413941ddac904d68a4ac370953091182df018210e1e693e53d12def67",
+   "source": "tools/07_assets.py"
+  },
+  {
+   "id": "tram-island-platform-30m",
+   "title": "Tram/bus island platform, 30 m, with end ramps",
+   "file": "assets/tram-island-platform-30m.gltf",
+   "format": "glTF 2.0 (embedded buffer)",
+   "approximate": true,
+   "inferred": true,
+   "inferred_how": "parametric primitives; dimensions estimated from the evidence listed, not measured",
+   "units": "metre",
+   "axes": "glTF: +Y up, right-handed; +X along the long side, +Z towards the passenger/front side",
+   "origin": "centre of footprint at ground level (y = 0)",
+   "parameters": {
+    "length": 30.0,
+    "width": 3.0,
+    "kerb_h": 0.27,
+    "ramp_len": 4.0,
+    "tactile_offset": 0.6
+   },
+   "bbox_m": {
+    "min": [
+     -19.0,
+     0.0,
+     -1.5
+    ],
+    "max": [
+     19.0,
+     0.276,
+     1.5
+    ]
+   },
+   "triangles": 44,
+   "evidence": [
+    {
+     "kind": "standard",
+     "ref": "bern-normalien-2-5-3",
+     "what": "Stadt Bern standard cross-sections for combined tram/bus stops (kerb height, widths)"
+    },
+    {
+     "kind": "standard",
+     "ref": "be-hindernisfreie-bushaltestellen-2017",
+     "what": "barrier-free boarding height for low-floor vehicles"
+    },
+    {
+     "kind": "orthophoto",
+     "ref": "ortho-8507110_bern-zytglogge",
+     "what": "island widths visible top-down"
+    }
+   ],
+   "notes": "Kerb height 0.27 m and width 3.0 m are approximate typical values; length is a parameter (use atlas edge length when available).",
+   "licence": "CC0 1.0 (original work generated for this repository)",
+   "bytes": 6825,
+   "sha256": "bc6ef26c2e2440012271113d9164ef370a09b454571656dea840100f73102b24",
+   "source": "tools/07_assets.py"
+  },
+  {
+   "id": "baldachin-bahnhofplatz-approx",
+   "title": "Baldachin Bahnhofplatz Bern (glass canopy), coarse approximation",
+   "file": "assets/baldachin-bahnhofplatz-approx.gltf",
+   "format": "glTF 2.0 (embedded buffer)",
+   "approximate": true,
+   "inferred": true,
+   "inferred_how": "parametric primitives; dimensions estimated from the evidence listed, not measured",
+   "units": "metre",
+   "axes": "glTF: +Y up, right-handed; +X along the long side, +Z towards the passenger/front side",
+   "origin": "centre of footprint at ground level (y = 0)",
+   "parameters": {
+    "outline_xz": [
+     [
+      -19.92,
+      -41.46
+     ],
+     [
+      -14.97,
+      -44.21
+     ],
+     [
+      -7.27,
+      -44.98
+     ],
+     [
+      -2.87,
+      -41.46
+     ],
+     [
+      2.63,
+      -32.66
+     ],
+     [
+      8.13,
+      -23.86
+     ],
+     [
+      13.63,
+      -12.86
+     ],
+     [
+      18.03,
+      -1.86
+     ],
+     [
+      21.88,
+      9.14
+     ],
+     [
+      23.53,
+      20.14
+     ],
+     [
+      22.43,
+      28.94
+     ],
+     [
+      18.03,
+      35.54
+     ],
+     [
+      10.33,
+      39.94
+     ],
+     [
+      1.53,
+      40.49
+     ],
+     [
+      -7.27,
+      37.74
+     ],
+     [
+      -13.87,
+      32.24
+     ],
+     [
+      -17.17,
+      24.54
+     ],
+     [
+      -18.05,
+      8.04
+     ],
+     [
+      -18.82,
+      -8.46
+     ],
+     [
+      -19.92,
+      -24.96
+     ]
+    ],
+    "height": 9.0,
+    "roof_thick": 0.6,
+    "columns": [
+     [
+      -5.0,
+      -28.0,
+      0.25
+     ],
+     [
+      2.0,
+      -12.0,
+      0.25
+     ],
+     [
+      6.0,
+      4.0,
+      0.25
+     ],
+     [
+      8.0,
+      20.0,
+      0.25
+     ]
+    ]
+   },
+   "bbox_m": {
+    "min": [
+     -19.92,
+     0.0,
+     -44.98
+    ],
+    "max": [
+     23.53,
+     9.0,
+     40.49
+    ]
+   },
+   "triangles": 300,
+   "evidence": [
+    {
+     "kind": "orthophoto",
+     "ref": "ortho-8576646_bern-bahnhof",
+     "what": "outline hand-traced from SWISSIMAGE 0.1 m/px, estimated error 1.5 m"
+    },
+    {
+     "kind": "photos",
+     "ref": "tag:canopy",
+     "what": "Commons photos of Bahnhofplatz/Baldachin: roof is a curved glass/steel shell; height and column positions are estimates"
+    },
+    {
+     "kind": "link",
+     "ref": "bernmobil-kanten-bahnhof-bern-2026",
+     "what": "edges under/along the canopy"
+    }
+   ],
+   "notes": "The real roof is a doubly curved shell; this is a flat slab at an estimated 9 m with 4 estimated columns. Local frame: +X east, -Z north, origin at outline centroid. LV95 of the origin is in 'anchor_lv95'.",
+   "licence": "CC0 1.0 (original work generated for this repository)",
+   "bytes": 35880,
+   "sha256": "f93da0da717de0d49c4a2154fac8cebdd3dcc9781c95ba60df754dcfb543e258",
+   "source": "tools/07_assets.py",
+   "anchor_lv95": [
+    2600133.87,
+    1199629.54
+   ],
+   "footprint_lv95": [
+    [
+     2600113.95,
+     1199671.0
+    ],
+    [
+     2600118.9,
+     1199673.75
+    ],
+    [
+     2600126.6,
+     1199674.52
+    ],
+    [
+     2600131.0,
+     1199671.0
+    ],
+    [
+     2600136.5,
+     1199662.2
+    ],
+    [
+     2600142.0,
+     1199653.4
+    ],
+    [
+     2600147.5,
+     1199642.4
+    ],
+    [
+     2600151.9,
+     1199631.4
+    ],
+    [
+     2600155.75,
+     1199620.4
+    ],
+    [
+     2600157.4,
+     1199609.4
+    ],
+    [
+     2600156.3,
+     1199600.6
+    ],
+    [
+     2600151.9,
+     1199594.0
+    ],
+    [
+     2600144.2,
+     1199589.6
+    ],
+    [
+     2600135.4,
+     1199589.05
+    ],
+    [
+     2600126.6,
+     1199591.8
+    ],
+    [
+     2600120.0,
+     1199597.3
+    ],
+    [
+     2600116.7,
+     1199605.0
+    ],
+    [
+     2600115.82,
+     1199621.5
+    ],
+    [
+     2600115.05,
+     1199638.0
+    ],
+    [
+     2600113.95,
+     1199654.5
+    ]
+   ]
+  }
+ ]
+}

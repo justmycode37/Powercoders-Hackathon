@@ -1,0 +1,44 @@
+{
+ "id": "ortho-8516154_bern-bruennen-westside",
+ "file": "orthophoto/8516154_bern-bruennen-westside.jpg",
+ "world_file": "orthophoto/8516154_bern-bruennen-westside.jgw",
+ "station": {
+  "number": 8516154,
+  "sloid": "ch:1:sloid:16154",
+  "name": "Bern Brünnen Westside"
+ },
+ "feature": "Brünnen Westside: covered station below Westside centre, tram terminus",
+ "bbox_lv95": [
+  2595046,
+  1199119,
+  2595306,
+  1199319
+ ],
+ "crs": "EPSG:2056",
+ "bbox_wgs84": [
+  7.3735708,
+  46.9431379,
+  7.3769836,
+  46.9449388
+ ],
+ "bbox_wgs84_note": "converted with swisstopo approximate formulas (about 1 m)",
+ "metres_per_pixel": [
+  0.119982,
+  0.119976
+ ],
+ "width_px": 2167,
+ "height_px": 1667,
+ "bytes": 1155991,
+ "sha256": "04c13e63984cbd4eaaeef5c445e4ca75e041948e7a7a5334ffd91c5eea04c6ce",
+ "source": "swisstopo SWISSIMAGE (WMS layer ch.swisstopo.swissimage)",
+ "source_url": "https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ch.swisstopo.swissimage&STYLES=&CRS=EPSG%3A2056&BBOX=2595046%2C1199119%2C2595306%2C1199319&WIDTH=2167&HEIGHT=1667&FORMAT=image%2Fjpeg",
+ "publisher": "Federal Office of Topography swisstopo",
+ "licence": "swisstopo free geodata (OGD)",
+ "licence_url": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-ogd",
+ "attribution": "© swisstopo",
+ "capture_date": null,
+ "capture_date_note": "SWISSIMAGE flight year varies per area; look up in map.geo.admin.ch layer ch.swisstopo.images-swissimage-dop10.metadata",
+ "retrieved": "2026-11-21T01:54:20+01:00",
+ "inferred": false,
+ "model_use": "Top-down footprint: canopy outlines, platform edges, tram islands, kerbs, road markings; drape on terrain or trace in a GIS (world file + EPSG:2056)."
+}

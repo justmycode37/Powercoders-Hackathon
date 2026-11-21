@@ -1,0 +1,48 @@
+{
+ "id": "departure-display-hanging",
+ "title": "Hanging platform departure display",
+ "file": "assets/departure-display-hanging.gltf",
+ "format": "glTF 2.0 (embedded buffer)",
+ "approximate": true,
+ "inferred": true,
+ "inferred_how": "parametric primitives; dimensions estimated from the evidence listed, not measured",
+ "units": "metre",
+ "axes": "glTF: +Y up, right-handed; +X along the long side, +Z towards the passenger/front side",
+ "origin": "centre of footprint at ground level (y = 0)",
+ "parameters": {
+  "width": 2.4,
+  "height": 0.55,
+  "depth": 0.15,
+  "mount_h": 2.7
+ },
+ "bbox_m": {
+  "min": [
+   -1.2,
+   2.7,
+   -0.08
+  ],
+  "max": [
+   1.2,
+   4.25,
+   0.08
+  ]
+ },
+ "triangles": 60,
+ "evidence": [
+  {
+   "kind": "photos",
+   "ref": "tag:signage",
+   "what": "see data/manifest.json records whose features include the tag named here"
+  },
+  {
+   "kind": "dataset",
+   "ref": "sbb-dataset-mobiliar-im-bahnhof",
+   "what": "'BildschirmMonitor' and 'Videoanlage' listed for Bern"
+  }
+ ],
+ "notes": "",
+ "licence": "CC0 1.0 (original work generated for this repository)",
+ "bytes": 9257,
+ "sha256": "3f04603c805ab4c2efe96c27b7c0213732c1382fb088630cfdaea75a48358185",
+ "source": "tools/07_assets.py"
+}
