@@ -1,6 +1,6 @@
 {
  "folder": "bern-research/stations",
- "generated_utc": "2026-11-21T01:50:35Z",
+ "generated_utc": "2026-11-21T01:53:11Z",
  "study_area": null,
  "rebuild": [
   "python tools/fetch_sources.py",

@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-11-21T01:49:55Z",
+ "generated_utc": "2026-11-21T01:52:33Z",
  "selection": {
   "tier_1": "priority stations set by hand: bern-bahnhof, zytglogge, wankdorf",
   "tier_2": "rule: every atlas rail station in the study area and every tram/bus stop with at least 4 lettered kerbs, unless it already lies inside another focus area (see tools/common.py focus_areas)"

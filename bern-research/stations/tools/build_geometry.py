@@ -462,6 +462,10 @@ def main() -> int:
                         extra["atlas_position_conflict"] = (
                             f"atlas point is {d:.1f} m from SBB track {s['track']} but {near_any[0]:.1f} m from "
                             f"SBB track {near_any[1]}; geometry follows the track number, not the atlas coordinate")
+                        how = (f"geometry is the operator's surveyed kerb points of track {s['track']} chained in order; "
+                               f"linked to this atlas edge by equal track number within the same station, NOT by "
+                               f"proximity: the atlas coordinate lies {d:.1f} m away, on SBB track {near_any[1]} "
+                               f"({near_any[0]:.1f} m). See atlas_position_conflict")
                     if alen and alen < 0.8 * full:
                         line = geo.line_substring(line, ch - alen / 2, ch + alen / 2)
                         how += f"; clipped to the atlas length ({alen:g} m) centred on the atlas point"

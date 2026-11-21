@@ -1,6 +1,6 @@
 # stations/ HANDOFF
 
-Thread: Bern Station Geometry and 3D Models. State of 2026-11-21, 02:55 Europe/Zurich. Formats and schemas are in
+Thread: Bern Station Geometry and 3D Models. State of 2026-11-21, 02:53 Europe/Zurich. Formats and schemas are in
 [README.md](README.md); this file gives coverage, limits, findings, and how to rebuild and load.
 
 ## What is here

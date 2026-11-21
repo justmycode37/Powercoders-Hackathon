@@ -1,6 +1,6 @@
 # stations/ STATUS
 
-Updated: 2026-11-21 02:55 Europe/Zurich. Owner thread: Bern Station Geometry and 3D Models.
+Updated: 2026-11-21 02:53 Europe/Zurich. Owner thread: Bern Station Geometry and 3D Models.
 
 ## Ready to validate and commit
 
@@ -30,7 +30,7 @@ bern-research/stations/validation/report.json
 Sizes: `data/` 4.7 MB, `data/focus/` 11.9 MB, `models/` 3.2 MB, everything else under 0.6 MB. Largest file
 `data/boarding_edges.geojson` 2.4 MB. `.cache/` (about 160 MB) is git-ignored.
 
-Checks at 02:45:
+Checks at 02:53:
 - `python tools/validate.py`: 0 FAIL, 49 WARN, 763 OK (`validation/report.md`). 41 of the WARN are "stairs without a
   level tag in OSM" at single focus stations.
 - `python -I ../lead/validate/validate.py`: 0 FAIL. One WARN is mine and intended, see "Wankdorf" below.
@@ -85,6 +85,15 @@ rail stations, 28 tram/bus stops with at least 4 lettered kerbs). The list with 
 - BERNMOBIL kerb plans (read from the public PDFs, not copied): all 9 Zytglogge letters, 16 of 17 Bern Bahnhof
   letters (K2 is not on the 2026 plan) and A-F at Wankdorf Bahnhof / Nord (G is not on the 2025 plan) are confirmed.
   The SBB station plans could not be fetched by script (HTTP 403), so named SBB passages are not plan-checked.
+
+## Lead note of 02:55, handled
+
+- `ch:1:sloid:16161:2:3` (Bern Wankdorf track 5, 85.5 m from its atlas point) is the track-number rule, not a
+  regression. Before 02:22 the edge had wrongly taken the kerb of track 3, because that is where the atlas
+  coordinate lies. The feature now says so in `inferred_how` ("linked ... by equal track number within the same
+  station, NOT by proximity: the atlas coordinate lies 85.5 m away, on SBB track 3"), carries
+  `atlas_position_conflict` and `dist_atlas_to_geometry_m: 85.55`, and is listed with the other four conflicts in
+  `data/build-report.json` (`atlas_position_conflicts`), in `validation/report.md` and in `HANDOFF.md`.
 
 ## In progress
 

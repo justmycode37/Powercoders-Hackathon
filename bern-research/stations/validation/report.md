@@ -1,6 +1,6 @@
 # stations/ validation report
 
-Generated 2026-11-21T01:50:29Z by `python tools/validate.py`. **0 FAIL, 49 WARN, 763 OK.** Lists that are cut short here are complete in `report.json`.
+Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN, 763 OK.** Lists that are cut short here are complete in `report.json`.
 
 - **OK** data/boarding_edges.geojson: unique ids: 1105 features, 0 duplicate ids
 - **OK** data/boarding_edges.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
