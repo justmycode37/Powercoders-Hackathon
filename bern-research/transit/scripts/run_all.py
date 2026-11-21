@@ -44,6 +44,8 @@ def main() -> int:
     run("build_accessibility.py")
     for feed in ("fp2026", "fp2027"):
         run("build_timetable.py", "--feed", feed)
+    for feed in ("fp2026", "fp2027"):
+        run("build_inferred_edges.py", "--feed", feed)   # separate inferred table for station-level stop_times
     run("slice_timetable.py", "--feed", "fp2026")      # the days left in the 2026 timetable year, a much smaller file
     run("write_manifest.py")
     flags = [] if args.offline else ["--online"]

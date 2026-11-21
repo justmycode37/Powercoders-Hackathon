@@ -1,8 +1,8 @@
 # Validation report
 
-Generated 2026-11-21T02:36:48+01:00 by `scripts/validate.py` `--online` `--node`.
+Generated 2026-11-21T05:09:14+01:00 by `scripts/validate.py` `--online` `--node`.
 
-**75 of 79 checks passed, 4 warnings, 0 failed.**
+**83 of 87 checks passed, 4 warnings, 0 failed.**
 
 | Result | Check | Detail |
 |---|---|---|
@@ -60,6 +60,10 @@ Generated 2026-11-21T02:36:48+01:00 by `scripts/validate.py` `--online` `--node`
 | pass | fp2026: every atlas stop in Bern municipality has scheduled trips | 204 of 204; missing: [] |
 | pass | fp2026: at least one trip runs on every day of the feed | 364 days, min 6,453 / max 10,618 trips per day |
 | pass | fp2026: timetable_2026-11-21_2026-12-12.json holds exactly the trips running 2026-11-21 to 2026-12-12, unchanged | 35,443 of 140,500 trips; stop_times identical: True; same trips on each of 23 days: True; same departures at the focus stations: True |
+| pass | fp2026: inferred_edges.json is reproduced exactly by re-running the rule and its back-test | 230 groups |
+| pass | fp2026: inferred_edges.json covers every station-level stop_time at tier-bern stops | 26,412 stop_times in the table, 26,412 in gtfs_stop_map; resolved 10,588 (40.09 %) |
+| pass | fp2026: every inferred edge exists in edges.geojson and belongs to the stop's own station; flags complete | 0 bad references |
+| pass | fp2026: back-test of the inference rule on stops with a known edge (>= 95 % of decided trip-days correct, >= 99 % in class high) | decided 42.72 % of trip-days; correct 96.74 % by trip-days, 95.1 % by stop_times; class high 99.96 %, class medium 88.8 % (stop_times) |
 | pass | fp2027: stop_times rows of a trip are contiguous and every trip id is in trips.txt |  |
 | pass | fp2027: subset zip passes CRC test | 3,890,046 bytes |
 | pass | fp2027: routes -> agency | 123 routes, 18 agencies |
@@ -80,6 +84,10 @@ Generated 2026-11-21T02:36:48+01:00 by `scripts/validate.py` `--online` `--node`
 | pass | fp2027: every edge used by the timetable is in edges.geojson | 1 GTFS station(s) use edges that atlas files under another service point: [['Bern Europaplatz', 'Bern Europaplatz Süd']] |
 | warn | fp2027: every atlas stop in Bern municipality has scheduled trips | 200 of 204; missing: [[8510471, 'Bern, Kunstmuseum'], [8511982, 'Bern, Bundesgasse'], [8512116, 'Bern, Waisenhausplatz'], [8512525, 'Bern, Berner Fachhochschule']] |
 | pass | fp2027: at least one trip runs on every day of the feed | 364 days, min 6,669 / max 9,452 trips per day |
+| pass | fp2027: inferred_edges.json is reproduced exactly by re-running the rule and its back-test | 162 groups |
+| pass | fp2027: inferred_edges.json covers every station-level stop_time at tier-bern stops | 11,164 stop_times in the table, 11,164 in gtfs_stop_map; resolved 1,810 (16.21 %) |
+| pass | fp2027: every inferred edge exists in edges.geojson and belongs to the stop's own station; flags complete | 0 bad references |
+| pass | fp2027: back-test of the inference rule on stops with a known edge (>= 95 % of decided trip-days correct, >= 99 % in class high) | decided 43.19 % of trip-days; correct 96.98 % by trip-days, 97.11 % by stop_times; class high 100.0 %, class medium 93.34 % (stop_times) |
 | pass | fp2026: departures at focus stations (Bern, Bern Bahnhof, Zytglogge, Wankdorf) agree with transport.opendata.ch stationboard (>= 95 % of API departures found) | 15 boards: 575 of 575 API departures found at the same minute and line; 0 of ours not in the API list; platform equal for 563 of 563 |
 | pass | fp2026: departures at 40 random Bern stops agree with transport.opendata.ch stationboard (>= 95 % of API departures found) | 40 boards: 1466 of 1466 API departures found at the same minute and line; 0 of ours not in the API list; platform equal for 306 of 306 |
 | pass | fp2027: departures at focus stations (Bern, Bern Bahnhof, Zytglogge, Wankdorf) agree with transport.opendata.ch stationboard (>= 95 % of API departures found) | 10 boards: 387 of 387 API departures found at the same minute and line; 0 of ours not in the API list; platform equal for 385 of 385 |

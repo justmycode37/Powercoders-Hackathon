@@ -350,6 +350,36 @@ def validate_slices(feed, tt, report):
         report["feeds"][feed].setdefault("window_files", {})[path.name] = {"trips": len(part), "window": [w["from"], w["to"]], "bytes": path.stat().st_size}
 
 
+def validate_inferred(feed, tt, report, edge_by_sloid):
+    """inferred_edges.json: repeat the inference and its back-test, check references and totals."""
+    path = DATA / feed / "inferred_edges.json"
+    if not path.exists():
+        return
+    import build_inferred_edges as bie
+    stored = json.loads(path.read_text(encoding="utf-8"))
+    records, backtest = bie.infer(tt.doc, list(edge_by_sloid.values()))
+    check(f"{feed}: inferred_edges.json is reproduced exactly by re-running the rule and its back-test",
+          records == stored["records"] and json.loads(json.dumps(backtest)) == stored["back_test"], f"{len(records)} groups")
+    smap = json.loads((DATA / f"gtfs_stop_map_{feed}.json").read_text(encoding="utf-8"))
+    station_rows = smap["summary_tier_bern"]["rows_by_kind"].get("station", 0) + smap["summary_tier_bern"]["rows_by_kind"].get("edge_unresolved", 0)
+    s = stored["summary"]
+    check(f"{feed}: inferred_edges.json covers every station-level stop_time at tier-bern stops", s["station_level_stop_times"] == station_rows,
+          f"{s['station_level_stop_times']:,} stop_times in the table, {station_rows:,} in gtfs_stop_map; resolved {s['stop_times_resolved']:,} ({s['resolved_pct']} %)")
+    bad = [r["stop_id"] for r in stored["records"] if r["status"] == "resolved"
+           and (r["edge_sloid"] not in edge_by_sloid or edge_by_sloid[r["edge_sloid"]]["properties"]["station_sloid"] != r["station_sloid"])]
+    flags = all(r["inferred"] is True and r["inferred_how"] and (r["status"] == "resolved") == (r["edge_sloid"] is not None)
+                and (r["status"] == "resolved" or r["unresolved_reason"]) for r in stored["records"])
+    check(f"{feed}: every inferred edge exists in edges.geojson and belongs to the stop's own station; flags complete", not bad and flags, f"{len(bad)} bad references")
+    b = stored["back_test"]
+    hi = b["by_confidence"].get("high", {})
+    check(f"{feed}: back-test of the inference rule on stops with a known edge (>= 95 % of decided trip-days correct, >= 99 % in class high)",
+          b["correct_among_decided_pct"]["trip_days"] >= 95 and hi.get("correct_pct_trip_days", 0) >= 99,
+          f"decided {b['decided_share_of_all_pct']['trip_days']} % of trip-days; correct {b['correct_among_decided_pct']['trip_days']} % by trip-days, "
+          f"{b['correct_among_decided_pct']['stop_times']} % by stop_times; class high {hi.get('correct_pct_stop_times')} %, "
+          f"class medium {b['by_confidence'].get('medium', {}).get('correct_pct_stop_times')} % (stop_times)", hard=False)
+    report["feeds"][feed]["inferred_edges"] = {"summary": s, "back_test": {k: b[k] for k in ("decided_share_of_all_pct", "correct_among_decided_pct", "wrong_among_decided_pct", "ambiguous_share_of_all_pct", "by_confidence")}}
+
+
 def stationboard(number, date, time_, limit=40):
     q = urllib.parse.urlencode({"id": number, "datetime": f"{date} {time_[:5]}", "limit": limit})
     req = urllib.request.Request(f"https://transport.opendata.ch/v1/stationboard?{q}", headers={"User-Agent": USER_AGENT})
@@ -494,6 +524,7 @@ def main() -> int:
         if (DATA / feed / "timetable.json").exists():
             tts[feed] = validate_feed(feed, report, st_by_number, edge_by_sloid, today)
             validate_slices(feed, tts[feed], report)
+            validate_inferred(feed, tts[feed], report, edge_by_sloid)
     if len(tts) == 2:
         a, b = ({s[1] for s in tts[f].stops if st_by_number[s[1]]["properties"]["tier"] == "bern"} for f in ("fp2026", "fp2027"))
         report["bern_stations_only_in_fp2026"] = sorted([n, st_by_number[n]["properties"]["name"]] for n in a - b)

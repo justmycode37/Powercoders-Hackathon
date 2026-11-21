@@ -1,6 +1,6 @@
 # transit/ handoff
 
-Owner thread: Bern Transit GTFS and DiDok Data. State of 2026-11-21, 02:40 Europe/Zurich. Nothing is staged or
+Owner thread: Bern Transit GTFS and DiDok Data. State of 2026-11-21, 05:15 Europe/Zurich. Nothing is staged or
 committed by this thread; everything is inside `bern-research/transit/`.
 
 ## What you get
@@ -22,14 +22,15 @@ attributes. All of it joins on atlas SLOIDs and DiDok numbers. Two timetable yea
 | `data/<feed>/gtfs_bern_<feed>.zip` | lossless GTFS subset (valid GTFS, source rows verbatim) | fp2026: 140,500 trips, 2,066,447 stop_times, 166 routes, 8,839 services. fp2027: 32,473 trips, 444,996 stop_times, 123 routes, 1,858 services |
 | `data/<feed>/timetable.json` | the same timetable, compact; decodes to the zip exactly | fp2026: 11,941 patterns. fp2027: 2,577 patterns |
 | `data/fp2026/timetable_2026-11-21_2026-12-12.json` | the same schema, only the trips that run on the 22 days left in the 2026 timetable year; 4.8 MB instead of 19.4 MB | 35,443 trips, 501,227 stop_times |
+| `data/<feed>/inferred_edges.json` | inferred: boarding edge for stop_times that name only the station, with back-test (separate table) | 230 / 162 records |
 | `data/<feed>/edge_directions.json` | derived: lines and next stops per edge | 1,294 / 1,174 stops |
 | `data/<feed>/segments.geojson` | derived: every stop-to-stop hop | 5,961 / 3,747 |
 | `data/<feed>/lines.geojson` | derived: one stop sequence per line and direction | 266 / 220 |
 | `data/<feed>/transfers.json` | minimum transfer times, in-seat transfers | 48,383 / 7,219 |
 | `data/coverage_stops.json`, `data/coverage_accessibility.json` | coverage logic, counts, known gaps | |
-| `SOURCES.json`, `data/MANIFEST.json` | provenance of inputs and outputs (sha256, bytes, licence) | 16 inputs, 25 outputs |
-| `validation/` | `report.md`, `report.json`, `sample_departures.md`, `sample_departures.json` | 79 checks |
-| `scripts/`, `web/bern-transit.js` | pipeline and a thin reader | 12 scripts |
+| `SOURCES.json`, `data/MANIFEST.json` | provenance of inputs and outputs (sha256, bytes, licence) | 16 inputs, 27 outputs |
+| `validation/` | `report.md`, `report.json`, `sample_departures.md`, `sample_departures.json` | 87 checks |
+| `scripts/`, `web/bern-transit.js` | pipeline and a thin reader | 13 scripts |
 
 Total 81 MB, largest file 19.4 MB. Field-level schemas are in `docs/SCHEMA.md`.
 
@@ -58,7 +59,7 @@ fp2026, 9,141 in fp2027). The 2026 feed carries a year of construction-site vari
 
 ## Validation
 
-`python scripts/validate.py --online --node`: 79 checks, 75 pass, 4 warnings, 0 failed. Highlights:
+`python scripts/validate.py --online --node`: 87 checks, 83 pass, 4 warnings, 0 failed. Highlights:
 
 - `timetable.json` decodes to exactly the stop_times (2,066,447 and 444,996 rows, all 7 columns) and trips
   (all 9 columns) of the GTFS subset, for both feeds.
@@ -181,6 +182,50 @@ on the Monday before.
 - **No official line ids (SLNID).** atlas publishes a line directory (`line-v2`), but joining it to GTFS routes by
   operator and line number is ambiguous for PostAuto and long-distance lines (95 of 139 lines match uniquely), so
   it was left out rather than guessed. Lines are identified by operator, `route_short_name` and `route_desc`.
+
+## Inferred edges for station-level stop times (added 05:10, separate table)
+
+`data/<feed>/inferred_edges.json`, built by `scripts/build_inferred_edges.py`. It changes no other file:
+`timetable.json`, the GTFS subset and `gtfs_stop_map_*` stay as published and remain the source of truth.
+
+The gap: at tier-bern stops, 26,412 of 1,240,690 stop_times in fp2026 (2.1 %) and 11,164 of 243,243 in fp2027
+(4.6 %) name the station, not an edge.
+
+The rule: for each such stop_time with a next stop, compare the atlas `compass_direction_deg` of every boarding
+edge of the stop with the bearing from that edge to the next stop. Accept the best edge only when it is within
+50 degrees and the second-best is at least 60 degrees worse. One record per (stop_id, route, direction_id,
+headsign, next stop), each with `inferred: true`, `inferred_how`, both angle differences, a `confidence` class and
+the stop_times and trip-days it covers.
+
+| | fp2026 | fp2027 |
+|---|---|---|
+| station-level stop_times at Bern stops | 26,412 | 11,164 |
+| resolved | 10,588 (40.1 %) | 1,810 (16.2 %) |
+| of which `confidence: high` / `medium` | 8,540 / 2,048 | 1,575 / 235 |
+| left: ambiguous | 7,588 | 1,578 |
+| left: last stop of the trip (no bearing) | 3,988 | 3,597 |
+| left: no edge at the stop (Matte lift, Bern Europaplatz) | 3,364 | 3,364 |
+| left: fewer than two edges with compass and coordinate | 882 | 813 |
+| left: one edge only | 2 | 2 |
+| records (resolved) | 230 (105) | 162 (56) |
+
+Back-test, the same rule on the stop_times at Bern stops where GTFS names the edge (1,214,278 in fp2026):
+
+| | fp2026 | fp2027 |
+|---|---|---|
+| decided (share of all trip-days) | 42.7 % | 43.2 % |
+| correct among decided, by trip-days | 96.74 % | 96.98 % |
+| correct among decided, by stop_times | 95.10 % | 97.11 % |
+| class `high`, by stop_times | 99.96 % (128 wrong of 301,337) | 100 % (0 wrong of 53,357) |
+| class `medium`, by stop_times | 88.8 % | 93.3 % |
+
+The data review measured 97.2 % correct by trip-days; this build measures 96.7 % (it takes the bearing from each
+candidate edge rather than from the stop point). **Use `confidence: high` as fact-like and treat `medium` as a
+hint.** `high` means: best edge within 25 degrees, margin at least 120 degrees, exactly two candidate edges and no
+edge of the stop without compass or coordinate. The rule fails at stops with more than two kerbs or a turning
+loop; the back-test lists them (`back_test.stops_where_the_rule_is_wrong_most_often`): Bern, Hirschengraben
+(wrong in practically every case), Bern, Neufeld P+R, Bern, Guisanplatz Expo, Bern, Brunnhof, Bern, Wittigkofen,
+Bern, Luisenstrasse. `validate.py` re-runs the inference and the back-test and compares them with the file.
 
 ## How to rebuild
 

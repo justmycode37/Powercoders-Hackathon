@@ -42,6 +42,8 @@ for feed, src in (("fp2026", GTFS_26), ("fp2027", GTFS_27)):
         (f"{feed}/lines.geojson", "Derived: representative stop sequence per line and direction", "build_timetable.py", src, "features"),
         (f"{feed}/transfers.json", "Minimum transfer times and in-seat transfers (Bern area)", "build_timetable.py", src, "rows"),
         (f"{feed}/timetable_stats.json", "Record counts of the timetable build", "build_timetable.py", src, None),
+        (f"{feed}/inferred_edges.json", "Inferred (bearing vs compass) boarding edge for stop_times at Bern stops that name only the station, with back-test",
+         "build_inferred_edges.py", src + ATLAS[2:], "records"),
     ]
 
 

@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-21T02:36:48+01:00",
+ "generated": "2026-11-21T05:09:14+01:00",
  "feeds": {
   "fp2026": {
    "national_rows": {
@@ -192,6 +192,70 @@
       "2026-12-12"
      ],
      "bytes": 4829285
+    }
+   },
+   "inferred_edges": {
+    "summary": {
+     "groups": 230,
+     "groups_resolved": 105,
+     "station_level_stop_times": 26412,
+     "stop_times_resolved": 10588,
+     "stop_times_unresolved": 15824,
+     "resolved_pct": 40.09,
+     "stop_times_by_outcome": {
+      "ambiguous": 7588,
+      "edges_without_compass_or_coordinates": 882,
+      "last_stop_of_trip": 3988,
+      "no_edge_at_stop": 3364,
+      "one_edge_only": 2,
+      "resolved_high": 8540,
+      "resolved_medium": 2048
+     },
+     "trip_days_by_outcome": {
+      "ambiguous": 194624,
+      "edges_without_compass_or_coordinates": 29543,
+      "last_stop_of_trip": 650569,
+      "no_edge_at_stop": 626768,
+      "one_edge_only": 728,
+      "resolved_high": 216929,
+      "resolved_medium": 46778
+     }
+    },
+    "back_test": {
+     "decided_share_of_all_pct": {
+      "stop_times": 43.95,
+      "trip_days": 42.72
+     },
+     "correct_among_decided_pct": {
+      "stop_times": 95.1,
+      "trip_days": 96.74
+     },
+     "wrong_among_decided_pct": {
+      "stop_times": 4.9,
+      "trip_days": 3.26
+     },
+     "ambiguous_share_of_all_pct": {
+      "stop_times": 38.49,
+      "trip_days": 35.19
+     },
+     "by_confidence": {
+      "high": {
+       "correct_stop_times": 301209,
+       "wrong_stop_times": 128,
+       "correct_pct_stop_times": 99.96,
+       "correct_trip_days": 5343095,
+       "wrong_trip_days": 128,
+       "correct_pct_trip_days": 100.0
+      },
+      "medium": {
+       "correct_stop_times": 206359,
+       "wrong_stop_times": 26026,
+       "correct_pct_stop_times": 88.8,
+       "correct_trip_days": 4285643,
+       "wrong_trip_days": 324609,
+       "correct_pct_trip_days": 92.96
+      }
+     }
     }
    }
   },
@@ -395,6 +459,70 @@
     "Busbetrieb Solothurn und Umgebung": 6,
     "Drahtseilbahn Marzili-Stadt Bern AG": 2,
     "SBB Infrastruktur AG Bahnersatz": 1
+   },
+   "inferred_edges": {
+    "summary": {
+     "groups": 162,
+     "groups_resolved": 56,
+     "station_level_stop_times": 11164,
+     "stop_times_resolved": 1810,
+     "stop_times_unresolved": 9354,
+     "resolved_pct": 16.21,
+     "stop_times_by_outcome": {
+      "ambiguous": 1578,
+      "edges_without_compass_or_coordinates": 813,
+      "last_stop_of_trip": 3597,
+      "no_edge_at_stop": 3364,
+      "one_edge_only": 2,
+      "resolved_high": 1575,
+      "resolved_medium": 235
+     },
+     "trip_days_by_outcome": {
+      "ambiguous": 202249,
+      "edges_without_compass_or_coordinates": 29570,
+      "last_stop_of_trip": 652918,
+      "no_edge_at_stop": 626888,
+      "one_edge_only": 728,
+      "resolved_high": 207317,
+      "resolved_medium": 25634
+     }
+    },
+    "back_test": {
+     "decided_share_of_all_pct": {
+      "stop_times": 40.65,
+      "trip_days": 43.19
+     },
+     "correct_among_decided_pct": {
+      "stop_times": 97.11,
+      "trip_days": 96.98
+     },
+     "wrong_among_decided_pct": {
+      "stop_times": 2.89,
+      "trip_days": 3.02
+     },
+     "ambiguous_share_of_all_pct": {
+      "stop_times": 30.02,
+      "trip_days": 34.84
+     },
+     "by_confidence": {
+      "high": {
+       "correct_stop_times": 53357,
+       "wrong_stop_times": 0,
+       "correct_pct_stop_times": 100.0,
+       "correct_trip_days": 5678522,
+       "wrong_trip_days": 0,
+       "correct_pct_trip_days": 100.0
+      },
+      "medium": {
+       "correct_stop_times": 38255,
+       "wrong_stop_times": 2729,
+       "correct_pct_stop_times": 93.34,
+       "correct_trip_days": 4053904,
+       "wrong_trip_days": 302943,
+       "correct_pct_trip_days": 93.05
+      }
+     }
+    }
    }
   }
  },
@@ -2671,6 +2799,30 @@
    "detail": "35,443 of 140,500 trips; stop_times identical: True; same trips on each of 23 days: True; same departures at the focus stations: True"
   },
   {
+   "check": "fp2026: inferred_edges.json is reproduced exactly by re-running the rule and its back-test",
+   "ok": true,
+   "hard": true,
+   "detail": "230 groups"
+  },
+  {
+   "check": "fp2026: inferred_edges.json covers every station-level stop_time at tier-bern stops",
+   "ok": true,
+   "hard": true,
+   "detail": "26,412 stop_times in the table, 26,412 in gtfs_stop_map; resolved 10,588 (40.09 %)"
+  },
+  {
+   "check": "fp2026: every inferred edge exists in edges.geojson and belongs to the stop's own station; flags complete",
+   "ok": true,
+   "hard": true,
+   "detail": "0 bad references"
+  },
+  {
+   "check": "fp2026: back-test of the inference rule on stops with a known edge (>= 95 % of decided trip-days correct, >= 99 % in class high)",
+   "ok": true,
+   "hard": false,
+   "detail": "decided 42.72 % of trip-days; correct 96.74 % by trip-days, 95.1 % by stop_times; class high 99.96 %, class medium 88.8 % (stop_times)"
+  },
+  {
    "check": "fp2027: stop_times rows of a trip are contiguous and every trip id is in trips.txt",
    "ok": true,
    "hard": true,
@@ -2791,6 +2943,30 @@
    "detail": "364 days, min 6,669 / max 9,452 trips per day"
   },
   {
+   "check": "fp2027: inferred_edges.json is reproduced exactly by re-running the rule and its back-test",
+   "ok": true,
+   "hard": true,
+   "detail": "162 groups"
+  },
+  {
+   "check": "fp2027: inferred_edges.json covers every station-level stop_time at tier-bern stops",
+   "ok": true,
+   "hard": true,
+   "detail": "11,164 stop_times in the table, 11,164 in gtfs_stop_map; resolved 1,810 (16.21 %)"
+  },
+  {
+   "check": "fp2027: every inferred edge exists in edges.geojson and belongs to the stop's own station; flags complete",
+   "ok": true,
+   "hard": true,
+   "detail": "0 bad references"
+  },
+  {
+   "check": "fp2027: back-test of the inference rule on stops with a known edge (>= 95 % of decided trip-days correct, >= 99 % in class high)",
+   "ok": true,
+   "hard": false,
+   "detail": "decided 43.19 % of trip-days; correct 96.98 % by trip-days, 97.11 % by stop_times; class high 100.0 %, class medium 93.34 % (stop_times)"
+  },
+  {
    "check": "fp2026: departures at focus stations (Bern, Bern Bahnhof, Zytglogge, Wankdorf) agree with transport.opendata.ch stationboard (>= 95 % of API departures found)",
    "ok": true,
    "hard": false,
@@ -2822,8 +2998,8 @@
   }
  ],
  "summary": {
-  "checks": 79,
-  "passed": 75,
+  "checks": 87,
+  "passed": 83,
   "warnings": 4,
   "failed": 0
  }

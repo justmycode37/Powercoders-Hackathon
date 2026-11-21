@@ -244,6 +244,20 @@
       "commit": true
     },
     {
+      "path": "data/fp2026/inferred_edges.json",
+      "description": "Inferred (bearing vs compass) boarding edge for stop_times at Bern stops that name only the station, with back-test",
+      "bytes": 208296,
+      "sha256": "43f7f72f9256f4d568947e330c5a7d0f35bb6de6e5577e9291bb9a14ac6960eb",
+      "records": 230,
+      "built_by": "scripts/build_inferred_edges.py",
+      "sources": [
+        "gtfs_fp2026",
+        "atlas_traffic_point",
+        "atlas_traffic_point_years"
+      ],
+      "commit": true
+    },
+    {
       "path": "data/fp2027/gtfs_bern_fp2027.zip",
       "description": "Lossless GTFS subset: every trip serving Bern, source rows verbatim",
       "bytes": 3890046,
@@ -327,6 +341,20 @@
       "built_by": "scripts/build_timetable.py",
       "sources": [
         "gtfs_fp2027"
+      ],
+      "commit": true
+    },
+    {
+      "path": "data/fp2027/inferred_edges.json",
+      "description": "Inferred (bearing vs compass) boarding edge for stop_times at Bern stops that name only the station, with back-test",
+      "bytes": 148014,
+      "sha256": "92eb3679eef46c09fe8f992b23198d3382cc5ec08d7ae4598410d9fd28c47121",
+      "records": 162,
+      "built_by": "scripts/build_inferred_edges.py",
+      "sources": [
+        "gtfs_fp2027",
+        "atlas_traffic_point",
+        "atlas_traffic_point_years"
       ],
       "commit": true
     },

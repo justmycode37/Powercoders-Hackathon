@@ -202,6 +202,32 @@ note, derived_from }`; `meta.counts` is recomputed. Service masks are unchanged.
 incomplete. Built by `scripts/slice_timetable.py`; the validation checks that it holds exactly those trips with
 identical stop_times.
 
+## data/<feed>/inferred_edges.json  (inferred, `inferred: true`)
+
+A separate table for the stop_times at tier-bern stops that reference only the station. It does not change the
+timetable or the stop map.
+
+Top level: `feed`, `description`, `inferred`, `inferred_how`, `method` (`rule`, `thresholds`, `candidates`,
+`bearing`, `unresolved_reasons`), `sources` (path, sha256), `summary`, `back_test`, `records[]`.
+
+| Record field | Meaning |
+|---|---|
+| `stop_id`, `station_sloid`, `number`, `stop_name` | the station-level GTFS stop |
+| `route`, `route_desc`, `direction_id`, `headsign` | the trips the record covers |
+| `next_stop_id`, `next_number`, `next_name`, `bearing_to_next_deg` | next stop of those trips; bearing from the stop point (for reference) |
+| `status` | `resolved` or `unresolved` |
+| `edge_sloid`, `edge_designation` | the inferred edge (null when unresolved) |
+| `unresolved_reason` | `ambiguous`, `last_stop_of_trip`, `no_edge_at_stop`, `edges_without_compass_or_coordinates`, `one_edge_only` |
+| `angle_diff_best_deg`, `angle_diff_second_deg` | difference between edge compass and travel bearing, best and second-best candidate |
+| `candidate_edges`, `edges_without_compass_or_coordinates` | edges compared; edges of the stop that could not be compared |
+| `confidence` | `high` (best <= 25 degrees, margin >= 120, exactly two candidates, no uncomparable edge) or `medium` |
+| `stop_times`, `trip_days` | stop_times covered; trips times operating days |
+| `inferred`, `inferred_how` | always `true`, with the rule and thresholds |
+
+To use it: for a stop_time whose stop resolves to kind `station` in `gtfs_stop_map`, look up
+(stop_id, route, direction_id, headsign, next stop id). `back_test` reports how often the same rule picks the
+right edge where GTFS names it (overall, per confidence class, and the stops where it fails most).
+
 ## data/<feed>/edge_directions.json  (derived, `inferred: true`)
 
 `stops[]` for every GTFS stop in tiers `bern` and `ring`: `stop_id`, `edge_sloid`, `station_sloid`, `number`,

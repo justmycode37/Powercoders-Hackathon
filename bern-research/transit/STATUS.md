@@ -1,6 +1,6 @@
 # transit/ status
 
-Updated 2026-11-21 02:40 Europe/Zurich. Owner thread: Bern Transit GTFS and DiDok Data.
+Updated 2026-11-21 05:15 Europe/Zurich. Owner thread: Bern Transit GTFS and DiDok Data.
 
 **Done. Everything in this folder is ready to commit.** `HANDOFF.md` is written. No further data changes are
 planned; if one becomes necessary it will be listed here first.
@@ -8,7 +8,7 @@ planned; if one becomes necessary it will be listed here first.
 ## Ready to commit
 
 Everything below is rebuilt from the downloads by `python scripts/run_all.py` (checked: two consecutive rebuilds
-from `.cache/` give 25 byte-identical outputs), passes `scripts/validate.py --online --node` (79 checks: 75 pass, 4 warnings,
+from `.cache/` give byte-identical outputs), passes `scripts/validate.py --online --node` (87 checks: 83 pass, 4 warnings,
 0 failed) and has no failure in the join section of `bern-research/lead/validate/validate.py`. No file is above
 25 MB (largest 19.4 MB, 81 MB in total).
 
@@ -16,7 +16,7 @@ from `.cache/` give 25 byte-identical outputs), passes `scripts/validate.py --on
 |---|---|---|---|
 | `README.md`, `HANDOFF.md`, `docs/SCHEMA.md` | overview, handoff, field-level schemas | | |
 | `SOURCES.json` | input manifest: url, publisher, licence, retrieved, bytes, sha256, used_for | 16 sources | |
-| `data/MANIFEST.json` | output manifest: bytes, sha256, records, script, inputs | 25 outputs | |
+| `data/MANIFEST.json` | output manifest: bytes, sha256, records, script, inputs | 27 outputs | |
 | `data/stations.geojson` | stations with atlas `sloid` and `number`, `tier`, WGS84 + LV95, height | 1,123 (208 bern, 386 ring, 529 connected) | 1.1 MB |
 | `data/edges.geojson` | boarding edges and areas: `sloid`, `designation`, `designation_operational`, `station_sloid`, WGS84 + LV95, `height_m`, `type`, `compass_direction_deg`, `coord_rounded` | 3,483 (bern: 598 edges + 21 areas) | 3.0 MB |
 | `data/edge_lookup.json` | `number -> designation -> [edge sloid]` | 1,117 stations | 0.3 MB |
@@ -29,16 +29,17 @@ from `.cache/` give 25 byte-identical outputs), passes `scripts/validate.py --on
 | `data/fp2026/gtfs_bern_fp2026.zip` | lossless GTFS subset, source rows verbatim | 140,500 trips, 2,066,447 stop_times | 17.8 MB |
 | `data/fp2026/timetable.json` | compact timetable; decodes to exactly the subset | 166 routes, 11,941 patterns, 8,839 services | 19.4 MB |
 | `data/fp2026/timetable_2026-11-21_2026-12-12.json` | the same schema, only trips running on the remaining days of the 2026 timetable year (lighter to load) | 35,443 trips, 501,227 stop_times | 4.8 MB |
+| `data/fp2026/inferred_edges.json`, `data/fp2027/inferred_edges.json` | **new 05:10, ready.** Inferred boarding edge for stop_times that name only the station; separate table, nothing else changed | 230 / 162 records | 0.2 / 0.1 MB |
 | `data/fp2026/edge_directions.json` | derived: lines and next stops per edge (bern + ring) | 1,294 stops | 1.1 MB |
 | `data/fp2026/segments.geojson` | derived: every stop-to-stop hop, lines, trip-days, run time | 5,961 | 5.0 MB |
 | `data/fp2026/lines.geojson` | derived: representative stop sequence per line and direction | 266 | 0.4 MB |
 | `data/fp2026/transfers.json` | minimum transfer times and in-seat transfers | 48,383 | 7.2 MB |
 | `data/fp2026/timetable_stats.json`, `data/fp2027/timetable_stats.json` | record counts | | |
 | `data/fp2027/*` | the same files for the 2027 timetable | 32,473 trips, 444,996 stop_times, 123 routes | 13.4 MB total |
-| `validation/report.md`, `report.json` | validation run | 79 checks | |
+| `validation/report.md`, `report.json` | validation run | 87 checks | |
 | `validation/sample_departures.md`, `.json` | Bern, Bern Bahnhof, Zytglogge, Wankdorf on five date/time cases | 25 boards | |
 | `web/bern-transit.js` | thin reader for `timetable.json` (departures, vehicles); same results as `scripts/timetable.py` | | 7 KB |
-| `scripts/*.py` | pipeline, standard library only | 12 files | |
+| `scripts/*.py` | pipeline, standard library only | 13 files | |
 | `.gitignore` | ignores `.cache/` and `__pycache__/` | | |
 
 Not yet in lead snapshot 2 (`dc2b49e`), all additive, no existing data file changed:
@@ -62,6 +63,27 @@ Changes between snapshot 1 (`94ace7d`) and snapshot 2: `stations.geojson` went f
 `edges.geojson` from 3,411 to 3,483 (stops and edges valid earlier or later in the timetable year, operating
 points that own an edge such as Bern Fischermätteli, edges whose parent link atlas had dropped). New properties:
 `valid_today`, `stop_point`; `gtfs_stop_map_*` gained `edge_station_sloid`. No property was renamed or removed.
+
+## Inferred edges (lead request of 05:05, done 05:15)
+
+Ready to commit: `data/fp2026/inferred_edges.json`, `data/fp2027/inferred_edges.json`,
+`scripts/build_inferred_edges.py`, and the touched `scripts/validate.py`, `scripts/run_all.py`,
+`scripts/write_manifest.py`, `data/MANIFEST.json`, `validation/report.*`, `HANDOFF.md`, `STATUS.md`,
+`README.md`, `docs/SCHEMA.md`. No existing data file changed.
+
+| | fp2026 | fp2027 |
+|---|---|---|
+| station-level stop_times at Bern stops | 26,412 | 11,164 |
+| resolved by the rule | 10,588 (40.1 %): 8,540 high, 2,048 medium | 1,810 (16.2 %): 1,575 high, 235 medium |
+| left unresolved | 15,824 | 9,354 |
+| why: ambiguous / last stop / no edge / edges without compass / one edge | 7,588 / 3,988 / 3,364 / 882 / 2 | 1,578 / 3,597 / 3,364 / 813 / 2 |
+| back-test, correct among decided (trip-days / stop_times) | 96.74 % / 95.10 % | 96.98 % / 97.11 % |
+| back-test by class (stop_times): high / medium | 99.96 % / 88.8 % | 100 % / 93.3 % |
+
+Rule: atlas compass direction of each edge against the bearing to the next stop; best within 50 degrees and
+second-best at least 60 degrees worse. The review measured 97.2 % by trip-days, this build 96.7 %. Trust
+`confidence: high`; `medium` is a hint. Stops where the rule is wrong most often are in the file's `back_test`
+(Bern, Hirschengraben; Bern, Neufeld P+R; Bern, Guisanplatz Expo; Bern, Brunnhof; Bern, Wittigkofen).
 
 ## Feeds and service days
 

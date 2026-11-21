@@ -27,6 +27,7 @@ data/
     timetable.json              compact timetable
     timetable_<from>_<to>.json  the same for a date window (fp2026: the days left in 2026, 4.8 MB)
     edge_directions.json  segments.geojson  lines.geojson  transfers.json
+    inferred_edges.json         inferred edge for stop times that name only the station (separate, with back-test)
 scripts/                      pipeline (Python 3.11, standard library only)
 web/bern-transit.js           thin reader for timetable.json (browser and node)
 validation/                   report and sample departures
@@ -76,7 +77,7 @@ python scripts/run_all.py --skip-fetch # reuse .cache/
 
 Building takes about two and a half minutes after the downloads. Steps: `fetch_sources.py` (16 downloads, about 560 MB; atlas links change every night, so they are looked up on the dataset page by file name) -> `extract_gtfs.py --feed <feed>` (one streaming pass over
 the national feed) -> `build_stops.py` -> `build_accessibility.py` -> `build_timetable.py --feed <feed>` ->
-`slice_timetable.py --feed fp2026` -> `write_manifest.py` -> `validate.py --online --node`.
+`build_inferred_edges.py --feed <feed>` -> `slice_timetable.py --feed fp2026` -> `write_manifest.py` -> `validate.py --online --node`.
 
 A rebuild picks up whatever the publisher has released by then (GTFS twice a week, atlas daily), so counts move.
 The exact inputs of the committed files are pinned by sha256 in `SOURCES.json`.
