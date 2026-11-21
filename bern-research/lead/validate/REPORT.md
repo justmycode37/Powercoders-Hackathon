@@ -1,6 +1,6 @@
 # Validation report
 
-Run 2026-11-21T04:54:41+01:00 on HEAD `42a502f`, folders: transit, city3d, stations, references, lead.
+Run 2026-11-21T05:14:43+01:00 on HEAD `2f60434`, folders: transit, city3d, stations, references, lead.
 
 **0 FAIL, 19 WARN, 104 OK**
 
@@ -16,7 +16,7 @@ Run 2026-11-21T04:54:41+01:00 on HEAD `42a502f`, folders: transit, city3d, stati
 - **WARN** transit/data/sectors.geojson: 1540 of 1803 vertices outside the Bern box (7.2, 46.85, 7.7, 47.1)
 - **WARN** transit/data/stations.geojson: 2 vertices outside Switzerland (expected only for stations on through trips)
 - **WARN** transit/data/stations.geojson: 355 of 1123 vertices outside the Bern box (7.2, 46.85, 7.7, 47.1)
-- **OK** 49 files, 77.7 MB would be committed
+- **OK** 52 files, 78.1 MB would be committed
 - **OK** transit/SOURCES.json: 16 manifest entries, all with url, licence, date, checksum
 - **OK** transit/data/edges.geojson: 3483 features, 3222 vertices, 7753 SLOID values
 - **OK** transit/data/fp2026/lines.geojson: 266 features, 3535 vertices, 0 SLOID values

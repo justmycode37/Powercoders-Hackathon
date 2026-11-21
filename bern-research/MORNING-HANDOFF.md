@@ -2,7 +2,7 @@
 
 **Status: final, with an addendum from the 05:10 data review (see below).** Written 2026-11-21 05:00 Europe/Zurich by the lead, at ktr0a's request to finalise early. The
 independent reviews planned for 05:00 and 06:40 had not run when this was written; a read-only checkpoint at 03:00
-did. All four worker threads are idle and nothing is uncommitted.
+did; the 05:10 review is covered in the addendum. All four worker threads are idle and nothing is uncommitted.
 
 - Checkout: `C:\Users\apfel\Documents\Coding\Powercoders-Hackathon`
 - Branch: `bern-transit-3d`, **local only**, from `origin/main` @ `a4cc40f`. Nothing pushed, no PR, no upstream set.
@@ -133,9 +133,16 @@ files.
   Wankdorfbrücke 850. For these the data says which stop, not which side of the street.
 - **An inferred side is possible for part of them.** The review measured that matching the bearing towards the next
   stop against the edge's compass direction decides about 10,600 of those rows, and is right in 97.2 % of decided
-  cases when tested on Bern stops where the edge is known. The transit thread was asked at 05:05 to build this as a
-  separate table flagged `inferred`, not merged into the stop map. **Status: requested, not in this commit.** If it
-  lands, it appears as `transit/data/<feed>/inferred_edges.json` with its own commit and a line below.
+  cases when tested on Bern stops where the edge is known. The transit thread built this as a separate table flagged
+  `inferred`, not merged into the stop map: **`transit/data/<feed>/inferred_edges.json`, commit `2f60434`.**
+  - `fp2026`: 10,588 of the 26,412 rows resolved (8,540 high confidence, 2,048 medium). 15,824 stay unresolved:
+    7,588 ambiguous, 3,988 last stop of the trip, 3,364 no edge at the stop, 882 edges without compass or
+    coordinates. `fp2027`: 1,810 of 11,164 resolved.
+  - Back-test of the same rule on Bern stops where GTFS names the edge: 95.1 % of decided stop_times correct in
+    `fp2026` (96.7 % by trip-days), 97.1 % in `fp2027`. By class in `fp2026`: high 99.96 %, medium 88.8 %. Use the
+    high class as a default and treat medium as a hint.
+  - Lead check: every resolved edge exists in `edges.geojson`, belongs to the record's station and has coordinates;
+    the stop map, timetable and GTFS subset are unchanged.
 - **11 used Bern edges have no atlas coordinate** (Helvetiaplatz 12, Thunplatz 12, Luisenstrasse 11 and 12,
   Untermattweg 02, Eigerplatz 32 and 56, Guisanplatz Expo 10, Brunnadernstrasse 17, Technologiepark 12, Holenacker
   13), covering 9,114 stop_times (0.7 %) by the review's count, which the lead did not re-count. They are part of
@@ -220,9 +227,9 @@ Per-input licence, URL, date and checksum are in each folder's `SOURCES.json`.
 | Commit | Content |
 |---|---|
 | `d9c0739`, `c8fa6cf`, `3cee3f6` | Lead contract, source list, validator, join checks |
-| `94ace7d`, `dc2b49e`, `ec017da` | Transit snapshots 1 to 3 |
+| `94ace7d`, `dc2b49e`, `ec017da`, `2f60434` | Transit snapshots 1 to 4 (the last adds the inferred edges) |
 | `2487027`, `17503fd` | References snapshots 1 and 2 |
 | `376e88c` | City 3D snapshot 1 (138 MB of data in 755 files) |
 | `acb14c1`, `33752f6`, `e9bf38b`, `3766ba6` | Stations snapshots 1 to 4 |
 | `e5d9948`, `42a502f` | Sample loader, smoke test, live-API cross-check |
-| `930c519`, `d093b85`, `abf846f`, `aa519e5`, and the final commit that adds this text | Handoff and validation report updates |
+| `930c519`, `d093b85`, `abf846f`, `aa519e5`, `a09cd4d`, `db7e107`, and the commit that adds the last addendum lines | Handoff and validation report updates |
