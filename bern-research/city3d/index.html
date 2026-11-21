@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Bern 3D basemap</title>
+<!-- Thin sample loader for bern-research/city3d data. Serve bern-research/ over HTTP:
+     cd bern-research && python -m http.server 8000  ->  http://localhost:8000/city3d/
+     Query params: ?edges=<url of a GeoJSON point layer> (default ../transit/data/edges.geojson), ?lod2=0 to skip the GLB,
+     ?lod2=full for the uncompressed GLB (default is the 1.5 MB meshopt variant),
+     ?buildings=vt to use the streamed swisstopo vector tile extrusions instead of the swissBUILDINGS3D footprints. -->
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" />
+<style>
+  :root { --bg: #f4f2ee; --panel: rgba(255,255,255,.92); --ink: #1d1d1f; --muted: #6e6e73; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #111; --panel: rgba(28,28,30,.92); --ink: #f5f5f7; --muted: #a1a1a6; } }
+  :root[data-theme="dark"] { --bg: #111; --panel: rgba(28,28,30,.92); --ink: #f5f5f7; --muted: #a1a1a6; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); font: 14px/1.35 system-ui, -apple-system, sans-serif; }
+  #map { position: fixed; inset: 0; }
+  #panel { position: fixed; left: 12px; top: 12px; max-width: min(320px, calc(100vw - 24px)); background: var(--panel);
+           border-radius: 12px; padding: 10px 12px; box-shadow: 0 2px 12px rgba(0,0,0,.18); z-index: 2; }
+  #panel summary { font-weight: 650; cursor: pointer; }
+  #panel label { display: flex; gap: 8px; align-items: center; padding: 3px 0; font-size: 14px; }
+  #panel input { width: 18px; height: 18px; }
+  #stat { color: var(--muted); font-size: 12px; margin-top: 6px; white-space: pre-line; }
+  #attr { position: fixed; right: 8px; bottom: 6px; font-size: 11px; color: var(--muted); background: var(--panel);
+          padding: 2px 6px; border-radius: 6px; z-index: 2; max-width: calc(100vw - 24px); }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<details id="panel" open>
+  <summary>Bern 3D basemap (city3d)</summary>
+  <label><input type="checkbox" id="t-terrain" checked> Terrain swissALTI3D 2 m</label>
+  <label><input type="checkbox" id="t-bld" checked> Buildings (extruded)</label>
+  <label><input type="checkbox" id="t-lod2" checked> LOD2 roofs, central sample</label>
+  <label><input type="checkbox" id="t-bridges" checked> Bridges (TLM deck, approx.)</label>
+  <label><input type="checkbox" id="t-paths" checked> Paths and stairs (TLM)</label>
+  <label><input type="checkbox" id="t-osm"> OSM footways (ODbL)</label>
+  <label><input type="checkbox" id="t-edges" checked> Transit boarding edges</label>
+  <div id="stat">loading…</div>
+</details>
+<div id="attr">© swisstopo · © OpenStreetMap contributors (ODbL) · opentransportdata.swiss</div>
+
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.169.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.169.0/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
+
+const q = new URLSearchParams(location.search);
+const EDGES_URL = q.get('edges') || '../transit/data/edges.geojson';
+const D = './data';
+const BOUNDS = [7.29401, 46.89702, 7.51751, 46.99603];         // coverage box (LV95 E2589-2606 N1194-1205 km)
+const GLB_ORIGIN = { lng: 7.4478274, lat: 46.9488337, h: 500 }; // LV95 2600700/1199750, LN02 500 m (central_lod2.meta.json)
+const stat = (s) => (document.getElementById('stat').textContent = s);
+const log = [];
+
+const map = new maplibregl.Map({
+  container: 'map',
+  style: 'https://vectortiles.geo.admin.ch/styles/ch.swisstopo.lightbasemap.vt/style.json',
+  center: [7.4474, 46.9480], zoom: 15.6, pitch: 62, bearing: -20, maxPitch: 80,
+  maxBounds: [[BOUNDS[0] - 0.05, BOUNDS[1] - 0.03], [BOUNDS[2] + 0.05, BOUNDS[3] + 0.03]],
+  attributionControl: false, antialias: true,
+});
+map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), 'bottom-right');
+window.map = map;
+
+map.on('load', async () => {
+  // ---- terrain: swissALTI3D 2 m -> Terrain-RGB WebP pyramid (z8-15 whole box, z16 centre) ----
+  const demSrc = { type: 'raster-dem', tiles: [new URL(D + '/terrain/{z}/{x}/{y}.webp', location.href).href.replace(/%7B/g, '{').replace(/%7D/g, '}')],
+    tileSize: 256, encoding: 'mapbox', minzoom: 8, maxzoom: 17, bounds: BOUNDS, attribution: '© swisstopo swissALTI3D' };
+  map.addSource('bern-dem', demSrc);
+  map.addSource('bern-dem-hs', { ...demSrc, maxzoom: 15 }); // separate source for hillshade (MapLibre recommendation)
+  map.addLayer({ id: 'hillshade', type: 'hillshade', source: 'bern-dem-hs', paint: { 'hillshade-exaggeration': 0.35, 'hillshade-shadow-color': '#5a5a5a' } },
+               map.getStyle().layers.find(l => l.type === 'symbol')?.id);
+  map.setTerrain({ source: 'bern-dem', exaggeration: 1 });
+  map.setSky?.({ 'sky-color': '#bcd6f0', 'horizon-color': '#eef3f8', 'fog-color': '#eef3f8', 'sky-horizon-blend': 0.6, 'horizon-fog-blend': 0.6, 'fog-ground-blend': 0.8 });
+
+  // hide the style's flat building fills; extrusions replace them
+  for (const l of map.getStyle().layers) if (l['source-layer'] === 'building' && l.type === 'fill') map.setLayoutProperty(l.id, 'visibility', 'none');
+  const firstSymbol = map.getStyle().layers.find(l => l.type === 'symbol')?.id;
+
+  // ---- buildings across Bern ----
+  if (q.get('buildings') !== 'vt') {
+    // default: swissBUILDINGS3D footprints + height above terrain point (slim render copy, 16 MB / 3 MB gzip)
+    map.addSource('bld', { type: 'geojson', data: D + '/buildings/bern_buildings_extrude.geojson' });
+    map.addLayer({ id: 'bld', type: 'fill-extrusion', source: 'bld', minzoom: 12,
+      // buildings that are in the LOD2 GLB are drawn by the GLB instead (property c = 1)
+      filter: q.get('lod2') === '0' ? ['all'] : ['==', ['get', 'c'], 0],
+      paint: { 'fill-extrusion-color': '#e7e2da', 'fill-extrusion-height': ['get', 'h'], 'fill-extrusion-opacity': 0.92 } }, firstSymbol);
+    log.push('buildings: swissBUILDINGS3D footprints (bern_buildings_extrude.geojson)');
+  } else {
+    // ?buildings=vt: zero-download swisstopo vector tile extrusions (flat roofs; overlap the LOD2 sample)
+    map.addLayer({ id: 'bld', type: 'fill-extrusion', source: 'base_v1.0.0', 'source-layer': 'building', minzoom: 13, paint: {
+      'fill-extrusion-color': '#e7e2da', 'fill-extrusion-height': ['coalesce', ['get', 'render_height'], 6],
+      'fill-extrusion-base': ['coalesce', ['get', 'render_min_height'], 0], 'fill-extrusion-opacity': 0.92 } }, firstSymbol);
+    log.push('buildings: swisstopo base.vt render_height (streamed)');
+  }
+
+  // ---- bridges: TLM centreline buffered to nominal width, floating at TLM deck height above terrain ----
+  map.addSource('bridges', { type: 'geojson', data: D + '/network/bridges_deck_approx.geojson' });
+  map.addLayer({ id: 'bridges', type: 'fill-extrusion', source: 'bridges', paint: {
+    'fill-extrusion-color': ['match', ['get', 'class'], 'rail', '#8e7cc3', 'tram', '#8e7cc3', 'path', '#d08a3a', 'stairs', '#d08a3a', '#b0a89c'],
+    'fill-extrusion-base': ['get', 'base_above_terrain_m'], 'fill-extrusion-height': ['get', 'top_above_terrain_m'], 'fill-extrusion-opacity': 0.95 } }, firstSymbol);
+
+  // ---- public paths and stairs (swissTLM3D) ----
+  map.addSource('paths', { type: 'geojson', data: D + '/network/tlm_paths_3d.geojson' });
+  map.addLayer({ id: 'paths', type: 'line', source: 'paths', minzoom: 13, filter: ['!', ['get', 'is_tunnel']], paint: {
+    'line-color': ['match', ['get', 'class'], 'stairs', '#e4572e', 'lift', '#2e86de', '#d08a3a'],
+    'line-width': ['interpolate', ['linear'], ['zoom'], 13, 0.6, 17, 2.5], 'line-dasharray': [2, 1] } }, firstSymbol);
+
+  // ---- OSM footways (off by default) ----
+  map.addSource('osm', { type: 'geojson', data: D + '/network/osm_paths_bridges.geojson' });
+  map.addLayer({ id: 'osm', type: 'line', source: 'osm', minzoom: 14, layout: { visibility: 'none' },
+    filter: ['==', ['geometry-type'], 'LineString'], paint: { 'line-color': '#2a9d8f', 'line-width': 1.2 } }, firstSymbol);
+
+  // ---- transit boarding edges overlay (any GeoJSON points; coloured by diff to terrain if present) ----
+  try {
+    const [edges, val] = await Promise.all([
+      fetch(EDGES_URL).then(r => r.json()),
+      fetch(D + '/validation/edge_terrain_heights.json').then(r => r.ok ? r.json() : null).catch(() => null)]);
+    const diff = new Map((val?.all || []).map(r => [r.sloid, r.diff_m]));
+    edges.features = edges.features.filter(f => f.geometry);
+    for (const f of edges.features) { const d = diff.get(f.properties.sloid); if (d != null) f.properties._diff = d; }
+    map.addSource('edges', { type: 'geojson', data: edges });
+    map.addLayer({ id: 'edges', type: 'circle', source: 'edges', minzoom: 12, paint: {
+      'circle-radius': ['interpolate', ['linear'], ['zoom'], 12, 2, 17, 6],
+      'circle-color': ['case', ['!', ['has', '_diff']], '#888',
+        ['<=', ['abs', ['get', '_diff']], 1], '#2bb673', ['<=', ['abs', ['get', '_diff']], 3], '#f5a623', '#e03131'],
+      'circle-stroke-color': '#fff', 'circle-stroke-width': 1, 'circle-pitch-alignment': 'map' } });
+    map.on('click', 'edges', (e) => {
+      const p = e.features[0].properties;
+      new maplibregl.Popup().setLngLat(e.lngLat).setHTML(`<b>${p.station_name ?? ''} ${p.designation ?? ''}</b><br>${p.sloid}<br>atlas ${p.height_m ?? '–'} m LN02` +
+        (p._diff != null ? `<br>atlas − terrain: ${(+p._diff).toFixed(2)} m` : '')).addTo(map);
+    });
+    log.push(`edges: ${edges.features.length} from ${EDGES_URL}` + (val ? `, ${Math.round(val.summary.share_within_tolerance * 100)} % within ±${val.summary.tolerance_m} m of terrain` : ''));
+  } catch (err) { log.push('edges: not loaded (' + err.message + ')'); }
+
+  // ---- central LOD2 GLB through a three.js custom layer ----
+  if (q.get('lod2') !== '0') map.addLayer(lod2Layer(), firstSymbol);
+  stat(log.join('\n'));
+
+  const toggle = (id, layers, fn) => document.getElementById(id).addEventListener('change', (e) => {
+    for (const l of layers) map.getLayer(l) && map.setLayoutProperty(l, 'visibility', e.target.checked ? 'visible' : 'none');
+    fn?.(e.target.checked);
+  });
+  toggle('t-terrain', ['hillshade'], (on) => map.setTerrain(on ? { source: 'bern-dem', exaggeration: 1 } : null));
+  toggle('t-bld', ['bld']); toggle('t-lod2', ['lod2']); toggle('t-bridges', ['bridges']);
+  toggle('t-paths', ['paths']); toggle('t-osm', ['osm']); toggle('t-edges', ['edges']);
+});
+
+function lod2Layer() {
+  let renderer, scene, camera, ready = false;
+  return {
+    id: 'lod2', type: 'custom', renderingMode: '3d',
+    onAdd(m, gl) {
+      camera = new THREE.Camera(); scene = new THREE.Scene();
+      scene.add(new THREE.AmbientLight(0xffffff, 1.6));
+      const sun = new THREE.DirectionalLight(0xffffff, 1.6); sun.position.set(-0.4, 1, 0.6); scene.add(sun);
+      const t0 = performance.now();
+      // default: 1.5 MB meshopt variant (render only); ?lod2=full loads the 21 MB GLB with the _BUILDING_INDEX attribute
+      const file = q.get('lod2') === 'full' ? 'central_lod2.glb' : 'central_lod2.meshopt.glb';
+      new GLTFLoader().setMeshoptDecoder(MeshoptDecoder).load(D + '/buildings/' + file, (g) => {
+        g.scene.traverse((o) => {
+          if (!o.isMesh) return;
+          o.geometry.computeVertexNormals(); // GLBs ship without normals; flatShading gives per-face normals anyway
+          o.material = new THREE.MeshLambertMaterial({ color: o.material.color, side: THREE.DoubleSide, flatShading: true });
+        });
+        scene.add(g.scene); ready = true; m.triggerRepaint();
+        log.push(`LOD2 ${file} loaded in ${((performance.now() - t0) / 1000).toFixed(1)} s`); stat(log.join('\n'));
+      }, undefined, (e) => { log.push('LOD2 GLB failed: ' + e.message); stat(log.join('\n')); });
+      renderer = new THREE.WebGLRenderer({ canvas: m.getCanvas(), context: gl, antialias: true });
+      renderer.autoClear = false;
+    },
+    render(gl, matrix) {
+      if (!ready) return;
+      // MapLibre renders terrain relative to the elevation of the camera centre, so offset the absolute LN02 origin by it.
+      const centreElev = map.terrain ? (map.transform.elevation || 0) : 0;
+      const h = map.terrain ? GLB_ORIGIN.h - centreElev : GLB_ORIGIN.h - 540; // without terrain: sit the town on z=0 approx.
+      const mc = maplibregl.MercatorCoordinate.fromLngLat([GLB_ORIGIN.lng, GLB_ORIGIN.lat], h);
+      const s = mc.meterInMercatorCoordinateUnits();
+      const l = new THREE.Matrix4().makeTranslation(mc.x, mc.y, mc.z).scale(new THREE.Vector3(s, -s, s))
+        .multiply(new THREE.Matrix4().makeRotationX(Math.PI / 2));
+      camera.projectionMatrix = new THREE.Matrix4().fromArray(matrix).multiply(l);
+      renderer.resetState(); renderer.render(scene, camera);
+    },
+  };
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+{
+ "folder": "bern-research/city3d",
+ "outputs": [
+  {
+   "file": "data/buildings/bern_buildings_extrude.geojson",
+   "bytes": 16070719,
+   "sha256": "e7204e2b9f1db6b2c3c76c07f90004e4be0d460043b7c8c7bd517098cf948fd9",
+   "features": 46946
+  },
+  {
+   "file": "data/buildings/bern_buildings_municipality.geojson",
+   "bytes": 19354849,
+   "sha256": "d36fbc89be30a9f2e8a052ec0737c0e9e07aff96dddc17f9f8c36a93a301cb87",
+   "features": 20925
+  },
+  {
+   "file": "data/buildings/bern_buildings_ring.geojson",
+   "bytes": 22823858,
+   "sha256": "54d005d325e2f55f7a05e1cc7108a53dc6c25741662fd8c9250344e6532f2839",
+   "features": 26021
+  },
+  {
+   "file": "data/buildings/buildings_stats.json",
+   "bytes": 2469,
+   "sha256": "294c689068aa0a9a635d15f9027e259d229ce5107bae1074ed90ebc5e71531be"
+  },
+  {
+   "file": "data/buildings/central_lod2.glb",
+   "bytes": 21079148,
+   "sha256": "e0b2db7e6ffb0b2051b4cc81bdfa69958d66c8182a1440fb8d4025d55827513e"
+  },
+  {
+   "file": "data/buildings/central_lod2.meshopt.glb",
+   "bytes": 1526380,
+   "sha256": "6afe2411563d5e221c230a824ca507d2e7ea86ee24268b04e7b24643bf43df7e"
+  },
+  {
+   "file": "data/buildings/central_lod2.meta.json",
+   "bytes": 524002,
+   "sha256": "05445ef1aec1883b7d68f2a763694da97822e155661c49a4f5750625a5f89281"
+  },
+  {
+   "file": "data/network/bridges_deck_approx.geojson",
+   "bytes": 2772481,
+   "sha256": "a7f795c646b044d0102f135455f42e2f295c7304ecfe953056ca235c3cb3e62e",
+   "features": 3854
+  },
+  {
+   "file": "data/network/bridges_tlm.geojson",
+   "bytes": 570489,
+   "sha256": "0f923325fcc5b82c32b3d6a83e80fea5fa9c543dc0856ae30a420c29c6808871",
+   "features": 632
+  },
+  {
+   "file": "data/network/network_stats.json",
+   "bytes": 820,
+   "sha256": "74db39326abde307b1c8e15c71fd50d8068412745868e3e0d56c6aea2911ad41"
+  },
+  {
+   "file": "data/network/osm_paths_bridges.geojson",
+   "bytes": 12288332,
+   "sha256": "6ec16dcd5b89a30336112be40ef8fcf85690a98fdd2efa6f581329db396ee558",
+   "features": 27531
+  },
+  {
+   "file": "data/network/tlm_paths_3d.geojson",
+   "bytes": 14634476,
+   "sha256": "e4e27bd7337a99d738f6064ad8131456d9c422fd27fe0c2720d49e5c5e3bd7d1",
+   "features": 13297
+  },
+  {
+   "file": "data/network/tlm_rail_3d.geojson",
+   "bytes": 1544824,
+   "sha256": "77843dbd78182d1ceabc8738a58d7614264c7b97dc717575c901d24a6a60f46c",
+   "features": 1489
+  },
+  {
+   "file": "data/network/tlm_roads_3d.geojson",
+   "bytes": 16385653,
+   "sha256": "174499f827e4d488a57ec4f67ddceffaef0d02fc56cca2fe8bd9f9cc879b385a",
+   "features": 17031
+  },
+  {
+   "file": "data/validation/edge_terrain_heights.json",
+   "bytes": 600113,
+   "sha256": "b3fab932f03b206c51fae1b070080026dc36b0dd4293a63f6b50e882150f7a26"
+  },
+  {
+   "file": "data/terrain/{z}/{x}/{y}.webp",
+   "tiles": 725,
+   "bytes": 14621002,
+   "per_zoom": {
+    "8": {
+     "tiles": 1,
+     "bytes": 88656
+    },
+    "9": {
+     "tiles": 1,
+     "bytes": 80672
+    },
+    "10": {
+     "tiles": 2,
+     "bytes": 137400
+    },
+    "11": {
+     "tiles": 4,
+     "bytes": 235282
+    },
+    "12": {
+     "tiles": 12,
+     "bytes": 524618
+    },
+    "13": {
+     "tiles": 28,
+     "bytes": 952940
+    },
+    "14": {
+     "tiles": 96,
+     "bytes": 2408052
+    },
+    "15": {
+     "tiles": 330,
+     "bytes": 6469678
+    },
+    "16": {
+     "tiles": 56,
+     "bytes": 1034606
+    },
+    "17": {
+     "tiles": 195,
+     "bytes": 2689098
+    }
+   },
+   "sha256_of_listing": "21f56980cde0e147ce682b555951d18a062288b2d31e756b075f645a22a622ed",
+   "sha256_of_listing_how": "sha256 over lines '<relpath>\\0<sha256 of file>\\n' in sorted path order"
+  }
+ ]
+}

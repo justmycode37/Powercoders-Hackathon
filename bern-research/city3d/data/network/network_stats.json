@@ -1,0 +1,43 @@
+{
+ "tlm_strassen_strasse": 30325,
+ "tlm_oev_eisenbahn": 1489,
+ "tlm_oev_uebrige_bahn": 3,
+ "tlm_features": 31817,
+ "tlm_by_class": {
+  "path": 12066,
+  "road": 16676,
+  "stairs": 1134,
+  "square": 94,
+  "motorway": 355,
+  "rail": 1197,
+  "tram": 292,
+  "lift": 3
+ },
+ "bridges_tlm": 632,
+ "bridge_deck_pieces": 3854,
+ "osm_features": 27531,
+ "osm_by_highway": {
+  "footway": 16947,
+  "track": 3142,
+  "steps": 2891,
+  "path": 2502,
+  "living_street": 651,
+  "cycleway": 308,
+  "-": 260,
+  "service": 234,
+  "pedestrian": 222,
+  "elevator": 108,
+  "motorway": 55,
+  "secondary": 37,
+  "residential": 34,
+  "motorway_link": 30,
+  "unclassified": 27,
+  "primary": 26,
+  "tertiary": 23,
+  "corridor": 11,
+  "trunk": 6,
+  "bridleway": 5
+ },
+ "osm_bridges": 808,
+ "stairs_tlm": 1134
+}
