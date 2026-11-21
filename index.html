@@ -592,24 +592,27 @@
       transform: translateX(-50%) rotate(45deg);
       box-shadow: 3px 3px 6px rgba(0,0,0,.08);
     }
+    .ev-card { width: 150px; }
+    .ev-inner { isolation: isolate; }
     .ev-body {
-      display: block;
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      min-height: 44px;
-      padding: 8px;
-      font: inherit;
-      font-size: 14px;
-      text-align: left;
-      background: var(--bar-bg);
-      color: var(--bar-text);
-      border: 0;
-      border-left: 4px solid var(--c);
-      border-radius: 8px;
-      cursor: pointer;
+      display: block; width: 100%; padding: 0; border: 0; border-radius: 16px;
+      overflow: hidden; text-align: left; font: inherit; background: var(--bar-bg);
+      color: var(--bar-text); cursor: pointer;
     }
-    .ev-body + .ev-body { border-top: 1px solid var(--pressed); }
+    .ev-body img { display: block; width: 100%; height: 108px; object-fit: cover; }
+    .ev-caption { display: block; padding: 7px 9px 9px; }
+    .ev-caption strong, .ev-caption small {
+      display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
+    }
+    .ev-caption strong { font-size: 13px; line-height: 1.2; }
+    .ev-caption small { margin-top: 3px; font-size: 11px; line-height: 1.25; }
+    .ev-pager {
+      position: absolute; top: 4px; right: 4px; display: flex; align-items: center;
+      border-radius: 20px; background: #20232bea; color: white; font-size: 11px;
+    }
+    .ev-pager button { background: transparent; border: 0; color: inherit; width: 32px; height: 32px; font-size: 20px; cursor: pointer; }
+    .ev-cluster { border: 2px solid white; border-radius: 24px; min-width: 40px; height: 40px;
+      background: #503677; color: white; font: 700 14px system-ui; box-shadow: var(--shadow); cursor: pointer; }
     @keyframes ev-in {
       from { transform: scale(.5); opacity: 0; }
       to   { transform: none; opacity: 1; }
@@ -799,6 +802,10 @@
       <p>Show events that match any selected option. Clear all selections to see all events.</p>
       <label><input type="checkbox" value="blind-low-vision"> For blind and low-vision people</label>
       <label><input type="checkbox" value="free-food"> Free food</label>
+      <label><input type="checkbox" value="newcomers"> Newcomers and refugees</label>
+      <label><input type="checkbox" value="women"> Women’s groups</label>
+      <label><input type="checkbox" value="lgbtq"> LGBTQIA+ community</label>
+      <label><input type="checkbox" value="adaptive-sport"> Adaptive sport</label>
       <label><input type="checkbox" value="language"> Language practice</label>
     </fieldset>
   </dialog>
@@ -862,6 +869,7 @@
   </div>
 
   <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+  <script src="swiss-workshops.js"></script>
   <script src="events.js"></script>
   <script>
     // ---------- Theme helpers ----------
@@ -980,35 +988,102 @@
       eventMarkers.length = 0;
       if (!eventsOn) return;
 
-      const venues = new Map();
-      for (const event of visibleEvents()) {
-        const key = event.geometry.coordinates.join(',');
-        if (!venues.has(key)) venues.set(key, []);
-        venues.get(key).push(event);
-      }
-      for (const events of venues.values()) {
-        const card = document.createElement('div');
-        card.className = 'ev-card';
-        const inner = document.createElement('div');
-        inner.className = 'ev-inner';
-        for (const { properties: event } of events) {
-          const button = document.createElement('button');
-          button.type = 'button';
-          button.className = 'ev-body';
-          button.style.setProperty('--c', event.color);
-          button.textContent = event.title;
-          button.addEventListener('click', (e) => {
-            e.stopPropagation();
-            openEvent(event.id);
-          });
-          inner.append(button);
+      const groups = [];
+      for (const feature of visibleEvents()) {
+        const coordinates = feature.geometry.coordinates;
+        const point = map.project(coordinates);
+        // Group venues in screen space. Zooming in separates nearby addresses.
+        let group = groups.find((candidate) =>
+          Math.abs(candidate.point.x - point.x) < 158 && Math.abs(candidate.point.y - point.y) < 180);
+        if (!group) {
+          group = { point, coordinates, features: [] };
+          groups.push(group);
         }
-        card.append(inner);
-        const marker = new maplibregl.Marker({ element: card, anchor: 'bottom' })
-          .setLngLat(events[0].geometry.coordinates).addTo(map);
+        group.features.push(feature);
+      }
+      for (const { coordinates, features } of groups) {
+        const bounds = new maplibregl.LngLatBounds();
+        features.forEach((feature) => bounds.extend(feature.geometry.coordinates));
+        const distinctVenues = bounds.getWest() !== bounds.getEast() || bounds.getNorth() !== bounds.getSouth();
+        const cluster = distinctVenues && map.getZoom() < map.getMaxZoom() - 0.1;
+        const element = cluster ? document.createElement('button') : makeVenueCard(features);
+        if (cluster) {
+          element.type = 'button';
+          element.className = 'ev-cluster';
+          element.textContent = features.length;
+          element.setAttribute('aria-label', 'Zoom to ' + features.length + ' events near ' + features[0].properties.city);
+          element.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const nextZoom = Math.min(map.getMaxZoom(), map.getZoom() + 2);
+            map.easeTo({ center: bounds.getCenter(), zoom: nextZoom });
+          });
+        }
+        const marker = new maplibregl.Marker({ element, anchor: cluster ? 'center' : 'bottom' })
+          .setLngLat(cluster ? bounds.getCenter() : coordinates).addTo(map);
         eventMarkers.push(marker);
       }
     }
+
+    function makeVenueCard(features) {
+      const card = document.createElement('div');
+      card.className = 'ev-card';
+      const inner = document.createElement('div');
+      inner.className = 'ev-inner';
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'ev-body';
+      const photo = document.createElement('img');
+      photo.loading = 'lazy';
+      photo.alt = '';
+      photo.addEventListener('error', () => {
+        if (!photo.src.endsWith('/event-images/community.webp')) photo.src = 'event-images/community.webp';
+      });
+      const caption = document.createElement('span');
+      caption.className = 'ev-caption';
+      const title = document.createElement('strong');
+      const time = document.createElement('small');
+      caption.append(title, time);
+      button.append(photo, caption);
+      inner.append(button);
+      card.append(inner);
+      let index = 0;
+      const count = document.createElement('span');
+      function display() {
+        const event = features[index].properties;
+        photo.src = event.image;
+        title.textContent = event.title;
+        time.textContent = event.when;
+        count.textContent = (index + 1) + '/' + features.length;
+      }
+      button.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openEvent(features[index].properties.id);
+      });
+      if (features.length > 1) {
+        const pager = document.createElement('div');
+        pager.className = 'ev-pager';
+        pager.setAttribute('aria-live', 'polite');
+        for (const step of [-1, 1]) {
+          const nav = document.createElement('button');
+          nav.type = 'button';
+          nav.textContent = step < 0 ? '‹' : '›';
+          nav.setAttribute('aria-label', step < 0 ? 'Previous event at this venue' : 'Next event at this venue');
+          nav.addEventListener('click', (e) => {
+            e.stopPropagation();
+            index = (index + step + features.length) % features.length;
+            display();
+          });
+          if (step === 1) pager.append(count);
+          pager.append(nav);
+        }
+        inner.append(pager);
+      }
+      display();
+      return card;
+    }
+    map.on('zoomend', updateCards);
+    map.on('rotateend', updateCards);
+    map.on('resize', updateCards);
 
     function setEventsOn(enabled) {
       eventsOn = enabled;
