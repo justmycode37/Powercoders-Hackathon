@@ -1037,7 +1037,7 @@
         const event = features[index].properties;
         photo.src = event.image;
         title.textContent = event.title;
-        time.textContent = event.when;
+        time.textContent = (event.areaOnly ? 'Town area · ' : '') + event.when;
         count.textContent = (index + 1) + '/' + features.length;
       }
       button.addEventListener('click', (e) => {
@@ -1061,13 +1061,16 @@
           if (step === 1) pager.append(count);
           pager.append(nav);
         }
+  <script src="community-programmes.js"></script>
         inner.append(pager);
       }
       display();
       return card;
     }
-    map.on('zoomend', updateCards);
-    map.on('rotateend', updateCards);
+    map.on('moveend', updateCards);
+    map.on('zoom', () => {
+      if (eventMarkers.length && map.getZoom() < EVENT_MIN_ZOOM) updateCards();
+    });
     map.on('resize', updateCards);
 
     function setEventsOn(enabled) {
@@ -1145,22 +1148,13 @@
       setEventsOn(!eventsOn);
       setMenu(false);
       menuBtn.focus();
-      if (!eventsOn) return;
+      if (!eventsOn || map.getZoom() < EVENT_MIN_ZOOM) return;
       const events = visibleEvents();
       if (!events.length) {
         showToast('No events match your preferences.');
         return;
       }
-      const bounds = new maplibregl.LngLatBounds();
-      events.forEach((event) => bounds.extend(event.geometry.coordinates));
-      const { clientHeight, clientWidth } = map.getContainer();
-      map.fitBounds(bounds, {
-        padding: {
-          top: Math.min(165, clientHeight / 3), bottom: Math.min(100, clientHeight / 4),
-          left: Math.min(72, clientWidth / 4), right: Math.min(72, clientWidth / 4),
-        },
-        maxZoom: 15, duration: 600,
-      });
+      if (map.getZoom() < EVENT_MIN_ZOOM) showToast('Zoom into a town or neighbourhood to see events.');
     });
     document.getElementById('settingsBtn').addEventListener('click', () => {
       setMenu(false);
@@ -1187,6 +1181,7 @@
     const inSwitzerland = ([lng, lat]) =>
       lng >= CH_BOUNDS[0][0] && lng <= CH_BOUNDS[1][0] &&
       lat >= CH_BOUNDS[0][1] && lat <= CH_BOUNDS[1][1];
+    const EVENT_MIN_ZOOM = 12.5;
 
     // Size the light-blue accuracy halo in metres, like Apple Maps
     function updateAccuracy() {
@@ -1195,10 +1190,12 @@
       const d = Math.min(2 * userAccuracy / mPerPx, 4000);
       accEl.style.width = accEl.style.height = d + 'px';
       accEl.style.display = d < 40 ? 'none' : '';
+      const { clientWidth, clientHeight } = map.getContainer();
     }
     map.on('zoom', updateAccuracy);
 
     function onPosition(pos) {
+        if (point.x < -150 || point.x > clientWidth + 150 || point.y < -180 || point.y > clientHeight + 180) continue;
       const lngLat = [pos.coords.longitude, pos.coords.latitude];
       if (!inSwitzerland(lngLat)) {
         showToast('You are outside Switzerland');

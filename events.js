@@ -76,12 +76,14 @@
 
   const scheduledEvents = window.SWISS_EVENT_SERIES.flatMap(({ sessions, ...series }) =>
     sessions.map((session) => ({ ...series, ...session })));
-  listings.push(...window.SWISS_WORKSHOPS, ...scheduledEvents);
-  const themePhotos = { food: 'food', language: 'learning', jobs: 'digital', workshop: 'art', sport: 'outdoors' };
+  listings.push(...window.SWISS_WORKSHOPS, ...scheduledEvents, ...window.COMMUNITY_PROGRAMMES);
+  const themePhotos = { food: 'food', language: 'learning', kids: 'learning', jobs: 'digital', workshop: 'art', sport: 'outdoors' };
   const features = listings.map(({ coordinates, ...listing }) => ({
     type: 'Feature',
     geometry: { type: 'Point', coordinates },
     properties: {
+      cost: 'Check fees with the organizer',
+      attendance: 'Contact the organizer for registration details',
       ...listing,
       image: listing.image || ('event-images/' + (themePhotos[listing.cat] || 'community') + '.webp'),
       color: CATEGORIES[listing.cat].color,
