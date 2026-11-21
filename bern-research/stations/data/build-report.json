@@ -1,0 +1,77 @@
+{
+ "generated_utc": "2026-11-21T01:16:17Z",
+ "counts": {
+  "edges_osm_platform": 553,
+  "edges_constructed": 448,
+  "edges_sbb_behig_kerb_points": 62,
+  "edges_without_atlas_coordinates": 23,
+  "edges_point_only": 9,
+  "shelters_surveyed": 140,
+  "shelters_osm": 99,
+  "sector_markers_atlas": 126,
+  "sector_boards_sbb": 152,
+  "stations": 442,
+  "stations_tier_community": 221,
+  "stations_tier_approximate": 193,
+  "stations_tier_surveyed": 21,
+  "stations_tier_point_only": 7,
+  "edges_in_side_file_not_in_transit": 0
+ },
+ "osm_platform_candidates": 565,
+ "sbb_kerb_lines": 60,
+ "sbb_kerb_line_max_point_gap_m": 1.12,
+ "atlas_position_conflicts": [
+  {
+   "edge_sloid": "ch:1:sloid:7000:6:32",
+   "station": "Bern",
+   "note": "atlas point is 10.1 m from SBB track 12 but 0.5 m from SBB track 13; geometry follows the track number, not the atlas coordinate"
+  },
+  {
+   "edge_sloid": "ch:1:sloid:16161:1:1",
+   "station": "Bern Wankdorf",
+   "note": "atlas point is 7.9 m from SBB track 2 but 0.1 m from SBB track 1; geometry follows the track number, not the atlas coordinate"
+  },
+  {
+   "edge_sloid": "ch:1:sloid:16161:1:2",
+   "station": "Bern Wankdorf",
+   "note": "atlas point is 10.0 m from SBB track 3 but 0.0 m from SBB track 2; geometry follows the track number, not the atlas coordinate"
+  },
+  {
+   "edge_sloid": "ch:1:sloid:16161:3:5",
+   "station": "Bern Wankdorf",
+   "note": "atlas point is 14.4 m from SBB track 7 but 0.0 m from SBB track 5; geometry follows the track number, not the atlas coordinate"
+  }
+ ],
+ "dist_atlas_to_geometry_m": {
+  "osm_platform": {
+   "n": 553,
+   "median": 2.14,
+   "p95": 8.12,
+   "max": 14.97
+  },
+  "constructed": {
+   "n": 448,
+   "median": 0.0,
+   "p95": 0.0,
+   "max": 0.0
+  },
+  "sbb_behig_kerb_points": {
+   "n": 62,
+   "median": 0.25,
+   "p95": 7.94,
+   "max": 14.36
+  },
+  "point_only": {
+   "n": 9,
+   "median": 0.0,
+   "p95": 0.0,
+   "max": 0.0
+  }
+ },
+ "feature_types": {
+  "platform_surface": 183,
+  "shelter": 239,
+  "sector_marker": 126,
+  "sector_board": 152
+ }
+}

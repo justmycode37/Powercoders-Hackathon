@@ -1,0 +1,4630 @@
+{
+ "generated_utc": "2026-11-21T01:18:22Z",
+ "selection": {
+  "tier_1": "priority stations set by hand: bern-bahnhof, zytglogge, wankdorf",
+  "tier_2": "rule: every atlas rail station in the study area and every tram/bus stop with at least 4 lettered kerbs, unless it already lies inside another focus area (see tools/common.py focus_areas)"
+ },
+ "focus": [
+  {
+   "slug": "bern-bahnhof",
+   "title": "Bern Bahnhof",
+   "stations": [
+    {
+     "number": "8507000",
+     "sloid": "ch:1:sloid:7000",
+     "name": "Bern",
+     "role": "primary"
+    },
+    {
+     "number": "8507785",
+     "sloid": "ch:1:sloid:7785",
+     "name": "Bern, Hauptbahnhof",
+     "role": "adjacent"
+    },
+    {
+     "number": "8510471",
+     "sloid": "ch:1:sloid:10471",
+     "name": "Bern, Kunstmuseum",
+     "role": "adjacent"
+    },
+    {
+     "number": "8530257",
+     "sloid": "ch:1:sloid:30257",
+     "name": "Bern (Marzilibahn)",
+     "role": "adjacent"
+    },
+    {
+     "number": "8571357",
+     "sloid": "ch:1:sloid:71357",
+     "name": "Bern, Universität",
+     "role": "adjacent"
+    },
+    {
+     "number": "8576646",
+     "sloid": "ch:1:sloid:76646",
+     "name": "Bern, Bahnhof",
+     "role": "primary"
+    },
+    {
+     "number": "8579748",
+     "sloid": "ch:1:sloid:79748",
+     "name": "Bern, Obergericht",
+     "role": "adjacent"
+    },
+    {
+     "number": "8579896",
+     "sloid": "ch:1:sloid:79896",
+     "name": "Bern, Hirschengraben",
+     "role": "adjacent"
+    },
+    {
+     "number": "8579897",
+     "sloid": "ch:1:sloid:79897",
+     "name": "Bern, Kocherpark",
+     "role": "adjacent"
+    },
+    {
+     "number": "8588990",
+     "sloid": "ch:1:sloid:88990",
+     "name": "Bern, Bollwerk",
+     "role": "adjacent"
+    },
+    {
+     "number": "8588989",
+     "sloid": "ch:1:sloid:88989",
+     "name": "Bern, Bärenplatz",
+     "role": "adjacent"
+    },
+    {
+     "number": "8590048",
+     "sloid": "ch:1:sloid:90048",
+     "name": "Bern, Bundesplatz",
+     "role": "adjacent"
+    },
+    {
+     "number": "8581351",
+     "sloid": "ch:1:sloid:81351",
+     "name": "Bern, Schanzenstrasse",
+     "role": "adjacent"
+    },
+    {
+     "number": "8512116",
+     "sloid": "ch:1:sloid:12116",
+     "name": "Bern, Waisenhausplatz",
+     "role": "adjacent"
+    },
+    {
+     "number": "8511982",
+     "sloid": "ch:1:sloid:11982",
+     "name": "Bern, Bundesgasse",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": -2,
+     "elevation_m": 517.0,
+     "elevation_min_m": 517.0,
+     "elevation_max_m": 517.0,
+     "n_samples": 4,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    },
+    {
+     "level": -1,
+     "elevation_m": 536.3,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 540.8,
+     "elevation_min_m": 539.8,
+     "elevation_max_m": 549.0,
+     "n_samples": 49,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    },
+    {
+     "level": 1,
+     "elevation_m": 545.3,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 2,
+     "elevation_m": 549.8,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured. atlas heights of 6 edges on this level (median 540.0 m) rejected: not consistent with level 0 at 540.8 m"
+    },
+    {
+     "level": 3,
+     "elevation_m": 554.3,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 4,
+     "elevation_m": 558.8,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 5,
+     "elevation_m": 563.3,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    }
+   ],
+   "features": 1189,
+   "by_type": {
+    "boarding_edge": 90,
+    "platform_surface": 43,
+    "shelter": 20,
+    "sector_marker": 98,
+    "sector_board": 116,
+    "underground_structure": 13,
+    "stairs_outline": 71,
+    "underpass_outline": 8,
+    "canopy": 10,
+    "bridge_outline": 13,
+    "building_footprint": 53,
+    "building_part": 119,
+    "roof": 17,
+    "passage": 241,
+    "stairs": 53,
+    "escalator": 30,
+    "ramp_or_link": 9,
+    "lift": 48,
+    "entrance": 12,
+    "access_point": 83,
+    "ticket_machine": 15,
+    "clock": 27
+   },
+   "by_geometry_quality": {
+    "surveyed": 207,
+    "community": 709,
+    "approximate": 15,
+    "missing": 2,
+    "official_point": 256
+   },
+   "cross_checked_by_type": {
+    "boarding_edge": 33,
+    "stairs": 27,
+    "passage": 65,
+    "escalator": 17,
+    "ramp_or_link": 7,
+    "entrance": 9
+   },
+   "inferred": 485,
+   "walk_graph": {
+    "nodes": 1224,
+    "edges": 1487
+   },
+   "by_type_and_level": {
+    "access_point@0": 83,
+    "boarding_edge@-2": 4,
+    "boarding_edge@0": 80,
+    "boarding_edge@2": 6,
+    "bridge_outline@none": 13,
+    "building_footprint@0": 53,
+    "building_part@-1": 2,
+    "building_part@0": 112,
+    "building_part@2": 5,
+    "canopy@0": 10,
+    "clock@none": 27,
+    "entrance@0": 12,
+    "escalator@-1": 2,
+    "escalator@[-1, 0]": 10,
+    "escalator@[0, 1]": 14,
+    "escalator@[1, 2]": 3,
+    "escalator@none": 1,
+    "lift@-1": 3,
+    "lift@0": 6,
+    "lift@1": 6,
+    "lift@[-1, 0, 1, 2]": 2,
+    "lift@[-1, 0, 1]": 3,
+    "lift@[-1, 0]": 7,
+    "lift@[-1, 2, 3, 4, 5]": 2,
+    "lift@[-1, 5]": 1,
+    "lift@[-2, 5]": 1,
+    "lift@[0, 1, 2]": 1,
+    "lift@[0, 1]": 6,
+    "lift@[0, 2]": 1,
+    "lift@none": 9,
+    "passage@-1": 65,
+    "passage@-2": 1,
+    "passage@0": 26,
+    "passage@1": 76,
+    "passage@2": 34,
+    "passage@3": 2,
+    "passage@4": 4,
+    "passage@5": 3,
+    "passage@none": 30,
+    "platform_surface@-2": 2,
+    "platform_surface@0": 35,
+    "platform_surface@2": 6,
+    "ramp_or_link@[-1, 0]": 6,
+    "ramp_or_link@[-2, -1]": 2,
+    "ramp_or_link@[0, 2]": 1,
+    "roof@0": 14,
+    "roof@2": 3,
+    "sector_board@0": 116,
+    "sector_marker@0": 98,
+    "shelter@0": 20,
+    "stairs@-1": 2,
+    "stairs@0": 1,
+    "stairs@1": 1,
+    "stairs@4": 1,
+    "stairs@[-1, 0]": 17,
+    "stairs@[-2, -1]": 1,
+    "stairs@[0, 1]": 15,
+    "stairs@[0, 2]": 1,
+    "stairs@[1, 2]": 1,
+    "stairs@[2, 3]": 1,
+    "stairs@none": 12,
+    "stairs_outline@none": 71,
+    "ticket_machine@none": 15,
+    "underground_structure@none": 13,
+    "underpass_outline@none": 8
+   },
+   "tier": 1,
+   "selected_because": "priority station"
+  },
+  {
+   "slug": "zytglogge",
+   "title": "Bern, Zytglogge",
+   "stations": [
+    {
+     "number": "8507110",
+     "sloid": "ch:1:sloid:7110",
+     "name": "Bern, Zytglogge",
+     "role": "primary"
+    }
+   ],
+   "levels": [
+    {
+     "level": -1,
+     "elevation_m": 535.2,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 539.7,
+     "elevation_min_m": 529.8,
+     "elevation_max_m": 541.9,
+     "n_samples": 14,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    },
+    {
+     "level": 1,
+     "elevation_m": 544.2,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    }
+   ],
+   "features": 346,
+   "by_type": {
+    "boarding_edge": 14,
+    "platform_surface": 5,
+    "shelter": 1,
+    "underground_structure": 2,
+    "stairs_outline": 64,
+    "underpass_outline": 20,
+    "bridge_outline": 5,
+    "building_footprint": 84,
+    "building_part": 88,
+    "roof": 2,
+    "passage": 21,
+    "stairs": 5,
+    "access_point": 35
+   },
+   "by_geometry_quality": {
+    "approximate": 6,
+    "community": 164,
+    "surveyed": 176
+   },
+   "cross_checked_by_type": {
+    "boarding_edge": 8,
+    "passage": 7,
+    "stairs": 4
+   },
+   "inferred": 61,
+   "walk_graph": {
+    "nodes": 271,
+    "edges": 298
+   },
+   "by_type_and_level": {
+    "access_point@0": 35,
+    "boarding_edge@0": 14,
+    "bridge_outline@none": 5,
+    "building_footprint@0": 84,
+    "building_part@0": 88,
+    "passage@-1": 2,
+    "passage@1": 1,
+    "passage@none": 18,
+    "platform_surface@0": 5,
+    "roof@0": 2,
+    "shelter@0": 1,
+    "stairs@none": 5,
+    "stairs_outline@none": 64,
+    "underground_structure@none": 2,
+    "underpass_outline@none": 20
+   },
+   "tier": 1,
+   "selected_because": "priority station"
+  },
+  {
+   "slug": "wankdorf",
+   "title": "Bern Wankdorf",
+   "stations": [
+    {
+     "number": "8516161",
+     "sloid": "ch:1:sloid:16161",
+     "name": "Bern Wankdorf",
+     "role": "primary"
+    },
+    {
+     "number": "8576996",
+     "sloid": "ch:1:sloid:76996",
+     "name": "Bern, Wankdorfplatz",
+     "role": "adjacent"
+    },
+    {
+     "number": "8576995",
+     "sloid": "ch:1:sloid:76995",
+     "name": "Ittigen, Schermenwaldstrasse",
+     "role": "adjacent"
+    },
+    {
+     "number": "8589007",
+     "sloid": "ch:1:sloid:89007",
+     "name": "Bern, Wyler",
+     "role": "adjacent"
+    },
+    {
+     "number": "8590129",
+     "sloid": "ch:1:sloid:90129",
+     "name": "Bern Wankdorf, Bahnhof",
+     "role": "primary"
+    },
+    {
+     "number": "8595136",
+     "sloid": "ch:1:sloid:95136",
+     "name": "Bern, Wankdorfbrücke",
+     "role": "adjacent"
+    },
+    {
+     "number": "8595543",
+     "sloid": "ch:1:sloid:95543",
+     "name": "Bern Wankdorf, Bahnhof Nord",
+     "role": "primary"
+    }
+   ],
+   "levels": [
+    {
+     "level": -1,
+     "elevation_m": 545.5,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 550.0,
+     "elevation_min_m": 548.0,
+     "elevation_max_m": 552.4,
+     "n_samples": 13,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    },
+    {
+     "level": 1,
+     "elevation_m": 554.5,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    }
+   ],
+   "features": 238,
+   "by_type": {
+    "boarding_edge": 22,
+    "platform_surface": 10,
+    "shelter": 17,
+    "sector_marker": 19,
+    "sector_board": 27,
+    "underground_structure": 4,
+    "canopy": 7,
+    "stairs_outline": 11,
+    "bridge_outline": 4,
+    "building_footprint": 9,
+    "building_part": 16,
+    "roof": 14,
+    "stairs": 16,
+    "passage": 17,
+    "lift": 9,
+    "access_point": 23,
+    "ticket_machine": 3,
+    "clock": 10
+   },
+   "by_geometry_quality": {
+    "surveyed": 60,
+    "community": 115,
+    "approximate": 3,
+    "missing": 1,
+    "official_point": 59
+   },
+   "cross_checked_by_type": {
+    "boarding_edge": 8,
+    "stairs": 11
+   },
+   "inferred": 122,
+   "walk_graph": {
+    "nodes": 233,
+    "edges": 231
+   },
+   "by_type_and_level": {
+    "access_point@0": 23,
+    "boarding_edge@0": 22,
+    "bridge_outline@none": 4,
+    "building_footprint@0": 9,
+    "building_part@0": 16,
+    "canopy@0": 7,
+    "clock@none": 10,
+    "lift@[0, 1]": 4,
+    "lift@none": 5,
+    "passage@1": 16,
+    "passage@none": 1,
+    "platform_surface@0": 10,
+    "roof@0": 14,
+    "sector_board@0": 27,
+    "sector_marker@0": 19,
+    "shelter@0": 17,
+    "stairs@[-1, 0]": 1,
+    "stairs@[0, 1]": 5,
+    "stairs@none": 10,
+    "stairs_outline@none": 11,
+    "ticket_machine@none": 3,
+    "underground_structure@none": 4
+   },
+   "tier": 1,
+   "selected_because": "priority station"
+  },
+  {
+   "slug": "8508054-worblaufen",
+   "title": "Worblaufen",
+   "stations": [
+    {
+     "number": "8508054",
+     "sloid": "ch:1:sloid:8054",
+     "name": "Worblaufen",
+     "role": "primary"
+    },
+    {
+     "number": "8576983",
+     "sloid": "ch:1:sloid:76983",
+     "name": "Worblaufen, Bahnhof",
+     "role": "adjacent"
+    },
+    {
+     "number": "8589542",
+     "sloid": "ch:1:sloid:89542",
+     "name": "Worblaufen, Bahnhofplatz",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": -1,
+     "elevation_m": 515.5,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 520.0,
+     "elevation_min_m": 513.955,
+     "elevation_max_m": 520.0,
+     "n_samples": 7,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    },
+    {
+     "level": 1,
+     "elevation_m": 524.5,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    }
+   ],
+   "features": 88,
+   "by_type": {
+    "boarding_edge": 10,
+    "platform_surface": 4,
+    "shelter": 2,
+    "building_part": 5,
+    "roof": 8,
+    "passage": 15,
+    "stairs": 15,
+    "lift": 4,
+    "entrance": 2,
+    "access_point": 23
+   },
+   "by_geometry_quality": {
+    "community": 84,
+    "approximate": 4
+   },
+   "cross_checked_by_type": {
+    "boarding_edge": 2
+   },
+   "inferred": 45,
+   "walk_graph": {
+    "nodes": 158,
+    "edges": 149
+   },
+   "by_type_and_level": {
+    "access_point@0": 23,
+    "boarding_edge@0": 10,
+    "building_part@0": 5,
+    "entrance@0": 2,
+    "lift@[-1, 0]": 2,
+    "lift@none": 2,
+    "passage@-1": 9,
+    "passage@1": 1,
+    "passage@none": 5,
+    "platform_surface@0": 4,
+    "roof@0": 8,
+    "shelter@0": 2,
+    "stairs@[-1, 0]": 1,
+    "stairs@none": 14
+   },
+   "tier": 2,
+   "selected_because": "atlas rail station"
+  },
+  {
+   "slug": "8504104-thoerishaus-station",
+   "title": "Thörishaus Station",
+   "stations": [
+    {
+     "number": "8504104",
+     "sloid": "ch:1:sloid:4104",
+     "name": "Thörishaus Station",
+     "role": "primary"
+    },
+    {
+     "number": "8510887",
+     "sloid": "ch:1:sloid:10887",
+     "name": "Thörishaus Station, Bahnhof",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": -1,
+     "elevation_m": 581.2,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 585.7,
+     "elevation_min_m": 585.3,
+     "elevation_max_m": 587.9,
+     "n_samples": 5,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 31,
+   "by_type": {
+    "boarding_edge": 5,
+    "building_part": 10,
+    "passage": 3,
+    "stairs": 2,
+    "access_point": 8,
+    "ticket_machine": 1,
+    "clock": 2
+   },
+   "by_geometry_quality": {
+    "surveyed": 3,
+    "approximate": 2,
+    "community": 23,
+    "official_point": 3
+   },
+   "cross_checked_by_type": {},
+   "inferred": 17,
+   "walk_graph": {
+    "nodes": 30,
+    "edges": 26
+   },
+   "by_type_and_level": {
+    "access_point@0": 8,
+    "boarding_edge@0": 5,
+    "building_part@0": 10,
+    "clock@none": 2,
+    "passage@-1": 3,
+    "stairs@[-1, 0]": 1,
+    "stairs@none": 1,
+    "ticket_machine@none": 1
+   },
+   "tier": 2,
+   "selected_because": "atlas rail station"
+  },
+  {
+   "slug": "8504489-bern-buempliz-nord",
+   "title": "Bern Bümpliz Nord",
+   "stations": [
+    {
+     "number": "8504489",
+     "sloid": "ch:1:sloid:4489",
+     "name": "Bern Bümpliz Nord",
+     "role": "primary"
+    },
+    {
+     "number": "8579523",
+     "sloid": "ch:1:sloid:79523",
+     "name": "Bern Bümpliz Nord, Bahnhof",
+     "role": "adjacent"
+    },
+    {
+     "number": "8591757",
+     "sloid": "ch:1:sloid:91757",
+     "name": "Bern, Fellerstrasse",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": -2,
+     "elevation_m": 546.4,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": -1,
+     "elevation_m": 550.9,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 555.4,
+     "elevation_min_m": 555.3,
+     "elevation_max_m": 556.3,
+     "n_samples": 5,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 76,
+   "by_type": {
+    "boarding_edge": 7,
+    "shelter": 2,
+    "underground_structure": 4,
+    "stairs_outline": 4,
+    "canopy": 1,
+    "underpass_outline": 2,
+    "platform_surface": 2,
+    "building_footprint": 9,
+    "building_part": 8,
+    "roof": 1,
+    "passage": 11,
+    "stairs": 4,
+    "lift": 2,
+    "access_point": 13,
+    "ticket_machine": 2,
+    "clock": 4
+   },
+   "by_geometry_quality": {
+    "surveyed": 27,
+    "community": 43,
+    "official_point": 6
+   },
+   "cross_checked_by_type": {
+    "boarding_edge": 2,
+    "passage": 2,
+    "stairs": 1
+   },
+   "inferred": 36,
+   "walk_graph": {
+    "nodes": 208,
+    "edges": 234
+   },
+   "by_type_and_level": {
+    "access_point@0": 13,
+    "boarding_edge@0": 7,
+    "building_footprint@0": 9,
+    "building_part@0": 8,
+    "canopy@0": 1,
+    "clock@none": 4,
+    "lift@[-2, 0]": 1,
+    "lift@none": 1,
+    "passage@-1": 5,
+    "passage@-2": 3,
+    "passage@none": 3,
+    "platform_surface@0": 2,
+    "roof@0": 1,
+    "shelter@0": 2,
+    "stairs@[-1, 0]": 1,
+    "stairs@[-2, 0]": 2,
+    "stairs@none": 1,
+    "stairs_outline@none": 4,
+    "ticket_machine@none": 2,
+    "underground_structure@none": 4,
+    "underpass_outline@none": 2
+   },
+   "tier": 2,
+   "selected_because": "atlas rail station"
+  },
+  {
+   "slug": "8507002-ostermundigen",
+   "title": "Ostermundigen",
+   "stations": [
+    {
+     "number": "8507002",
+     "sloid": "ch:1:sloid:7002",
+     "name": "Ostermundigen",
+     "role": "primary"
+    },
+    {
+     "number": "8577003",
+     "sloid": "ch:1:sloid:77003",
+     "name": "Ostermundigen, Bahnhof",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": -1,
+     "elevation_m": 553.8,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 558.3,
+     "elevation_min_m": 557.9,
+     "elevation_max_m": 558.3,
+     "n_samples": 3,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 34,
+   "by_type": {
+    "boarding_edge": 9,
+    "platform_surface": 1,
+    "shelter": 1,
+    "building_part": 5,
+    "roof": 1,
+    "stairs": 4,
+    "passage": 3,
+    "entrance": 1,
+    "access_point": 9
+   },
+   "by_geometry_quality": {
+    "surveyed": 2,
+    "community": 28,
+    "approximate": 4
+   },
+   "cross_checked_by_type": {},
+   "inferred": 24,
+   "walk_graph": {
+    "nodes": 106,
+    "edges": 95
+   },
+   "by_type_and_level": {
+    "access_point@0": 9,
+    "boarding_edge@0": 9,
+    "building_part@0": 5,
+    "entrance@0": 1,
+    "passage@-1": 3,
+    "platform_surface@0": 1,
+    "roof@0": 1,
+    "shelter@0": 1,
+    "stairs@[-1, 0]": 1,
+    "stairs@none": 3
+   },
+   "tier": 2,
+   "selected_because": "atlas rail station"
+  },
+  {
+   "slug": "8507003-guemligen",
+   "title": "Gümligen",
+   "stations": [
+    {
+     "number": "8507003",
+     "sloid": "ch:1:sloid:7003",
+     "name": "Gümligen",
+     "role": "primary"
+    },
+    {
+     "number": "8577014",
+     "sloid": "ch:1:sloid:77014",
+     "name": "Gümligen, Bahnhof (Bus)",
+     "role": "adjacent"
+    },
+    {
+     "number": "8595488",
+     "sloid": "ch:1:sloid:95488",
+     "name": "Gümligen, Bahnhof (Tram)",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": -1,
+     "elevation_m": 557.2,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 561.7,
+     "elevation_min_m": 561.0,
+     "elevation_max_m": 562.1,
+     "n_samples": 5,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 84,
+   "by_type": {
+    "boarding_edge": 9,
+    "platform_surface": 2,
+    "shelter": 1,
+    "sector_marker": 9,
+    "sector_board": 9,
+    "building_part": 12,
+    "roof": 4,
+    "passage": 7,
+    "stairs": 9,
+    "lift": 1,
+    "access_point": 15,
+    "ticket_machine": 2,
+    "clock": 4
+   },
+   "by_geometry_quality": {
+    "surveyed": 3,
+    "approximate": 4,
+    "community": 53,
+    "official_point": 24
+   },
+   "cross_checked_by_type": {},
+   "inferred": 44,
+   "walk_graph": {
+    "nodes": 100,
+    "edges": 100
+   },
+   "by_type_and_level": {
+    "access_point@0": 15,
+    "boarding_edge@0": 9,
+    "building_part@0": 12,
+    "clock@none": 4,
+    "lift@[-1, 0]": 1,
+    "passage@-1": 5,
+    "passage@none": 2,
+    "platform_surface@0": 2,
+    "roof@0": 4,
+    "sector_board@0": 9,
+    "sector_marker@0": 9,
+    "shelter@0": 1,
+    "stairs@[-1, 0]": 3,
+    "stairs@none": 6,
+    "ticket_machine@none": 2
+   },
+   "tier": 2,
+   "selected_because": "atlas rail station"
+  },
+  {
+   "slug": "8504105-niederwangen",
+   "title": "Niederwangen",
+   "stations": [
+    {
+     "number": "8504105",
+     "sloid": "ch:1:sloid:4105",
+     "name": "Niederwangen",
+     "role": "primary"
+    },
+    {
+     "number": "8582871",
+     "sloid": "ch:1:sloid:82871",
+     "name": "Niederwangen, Riedmoosbrücke",
+     "role": "adjacent"
+    },
+    {
+     "number": "8589227",
+     "sloid": "ch:1:sloid:89227",
+     "name": "Niederwangen, Bahnhof",
+     "role": "adjacent"
+    },
+    {
+     "number": "8590403",
+     "sloid": "ch:1:sloid:90403",
+     "name": "Niederwangen, Moos",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": -1,
+     "elevation_m": 563.1,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 567.6,
+     "elevation_min_m": 567.1,
+     "elevation_max_m": 569.3,
+     "n_samples": 7,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    },
+    {
+     "level": 1,
+     "elevation_m": 572.1,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    }
+   ],
+   "features": 64,
+   "by_type": {
+    "boarding_edge": 12,
+    "platform_surface": 1,
+    "shelter": 1,
+    "building_part": 8,
+    "roof": 6,
+    "passage": 5,
+    "stairs": 9,
+    "lift": 2,
+    "access_point": 16,
+    "ticket_machine": 2,
+    "clock": 2
+   },
+   "by_geometry_quality": {
+    "surveyed": 2,
+    "community": 52,
+    "approximate": 6,
+    "official_point": 4
+   },
+   "cross_checked_by_type": {
+    "boarding_edge": 4
+   },
+   "inferred": 37,
+   "walk_graph": {
+    "nodes": 99,
+    "edges": 94
+   },
+   "by_type_and_level": {
+    "access_point@0": 16,
+    "boarding_edge@0": 12,
+    "building_part@0": 8,
+    "clock@none": 2,
+    "lift@none": 2,
+    "passage@-1": 2,
+    "passage@1": 3,
+    "platform_surface@0": 1,
+    "roof@0": 6,
+    "shelter@0": 1,
+    "stairs@none": 9,
+    "ticket_machine@none": 2
+   },
+   "tier": 2,
+   "selected_because": "atlas rail station"
+  },
+  {
+   "slug": "8504106-bern-buempliz-sued",
+   "title": "Bern Bümpliz Süd",
+   "stations": [
+    {
+     "number": "8504106",
+     "sloid": "ch:1:sloid:4106",
+     "name": "Bern Bümpliz Süd",
+     "role": "primary"
+    },
+    {
+     "number": "8589226",
+     "sloid": "ch:1:sloid:89226",
+     "name": "Bern Bümpliz Süd, Bahnhof",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": -1,
+     "elevation_m": 557.1,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 561.6,
+     "elevation_min_m": 560.9,
+     "elevation_max_m": 562.7,
+     "n_samples": 6,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 77,
+   "by_type": {
+    "boarding_edge": 6,
+    "shelter": 6,
+    "underground_structure": 4,
+    "canopy": 4,
+    "stairs_outline": 7,
+    "platform_surface": 2,
+    "underpass_outline": 1,
+    "building_footprint": 14,
+    "building_part": 14,
+    "roof": 2,
+    "stairs": 4,
+    "passage": 3,
+    "entrance": 1,
+    "access_point": 5,
+    "ticket_machine": 2,
+    "clock": 2
+   },
+   "by_geometry_quality": {
+    "surveyed": 40,
+    "community": 33,
+    "official_point": 4
+   },
+   "cross_checked_by_type": {
+    "boarding_edge": 4,
+    "stairs": 3,
+    "entrance": 1
+   },
+   "inferred": 25,
+   "walk_graph": {
+    "nodes": 127,
+    "edges": 141
+   },
+   "by_type_and_level": {
+    "access_point@0": 5,
+    "boarding_edge@0": 6,
+    "building_footprint@0": 14,
+    "building_part@0": 14,
+    "canopy@0": 4,
+    "clock@none": 2,
+    "entrance@0": 1,
+    "passage@-1": 1,
+    "passage@none": 2,
+    "platform_surface@0": 2,
+    "roof@0": 2,
+    "shelter@0": 6,
+    "stairs@none": 4,
+    "stairs_outline@none": 7,
+    "ticket_machine@none": 2,
+    "underground_structure@none": 4,
+    "underpass_outline@none": 1
+   },
+   "tier": 2,
+   "selected_because": "atlas rail station"
+  },
+  {
+   "slug": "8504108-bern-europaplatz",
+   "title": "Bern Europaplatz",
+   "stations": [
+    {
+     "number": "8504108",
+     "sloid": "ch:1:sloid:4108",
+     "name": "Bern Europaplatz",
+     "role": "primary"
+    },
+    {
+     "number": "8580939",
+     "sloid": "ch:1:sloid:80939",
+     "name": "Bern Europaplatz, Bahnhof",
+     "role": "adjacent"
+    },
+    {
+     "number": "8507082",
+     "sloid": "ch:1:sloid:7082",
+     "name": "Bern Europaplatz Süd",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": -1,
+     "elevation_m": 548.5,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 1; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 553.0,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 1; not measured"
+    },
+    {
+     "level": 1,
+     "elevation_m": 557.5,
+     "elevation_min_m": 557.3,
+     "elevation_max_m": 557.7,
+     "n_samples": 2,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 93,
+   "by_type": {
+    "boarding_edge": 8,
+    "platform_surface": 5,
+    "shelter": 5,
+    "underground_structure": 3,
+    "stairs_outline": 8,
+    "underpass_outline": 2,
+    "canopy": 2,
+    "bridge_outline": 3,
+    "building_footprint": 8,
+    "building_part": 16,
+    "roof": 2,
+    "ramp_or_link": 2,
+    "stairs": 5,
+    "passage": 7,
+    "lift": 1,
+    "entrance": 2,
+    "access_point": 10,
+    "ticket_machine": 1,
+    "clock": 3
+   },
+   "by_geometry_quality": {
+    "surveyed": 38,
+    "community": 50,
+    "approximate": 1,
+    "official_point": 4
+   },
+   "cross_checked_by_type": {
+    "passage": 1,
+    "stairs": 3,
+    "entrance": 1
+   },
+   "inferred": 43,
+   "walk_graph": {
+    "nodes": 156,
+    "edges": 151
+   },
+   "by_type_and_level": {
+    "access_point@0": 10,
+    "boarding_edge@-1": 2,
+    "boarding_edge@0": 4,
+    "boarding_edge@1": 2,
+    "bridge_outline@none": 3,
+    "building_footprint@0": 8,
+    "building_part@0": 16,
+    "canopy@0": 2,
+    "clock@none": 3,
+    "entrance@-1": 1,
+    "entrance@0": 1,
+    "lift@[-1, 0]": 1,
+    "passage@-1": 2,
+    "passage@0": 1,
+    "passage@1": 3,
+    "passage@none": 1,
+    "platform_surface@0": 5,
+    "ramp_or_link@[0, 1]": 2,
+    "roof@0": 2,
+    "shelter@0": 5,
+    "stairs@[-1, 0]": 2,
+    "stairs@[0, 1]": 2,
+    "stairs@none": 1,
+    "stairs_outline@none": 8,
+    "ticket_machine@none": 1,
+    "underground_structure@none": 3,
+    "underpass_outline@none": 2
+   },
+   "tier": 2,
+   "selected_because": "atlas rail station"
+  },
+  {
+   "slug": "8504117-oberwangen",
+   "title": "Oberwangen",
+   "stations": [
+    {
+     "number": "8504117",
+     "sloid": "ch:1:sloid:4117",
+     "name": "Oberwangen",
+     "role": "primary"
+    },
+    {
+     "number": "8594655",
+     "sloid": "ch:1:sloid:94655",
+     "name": "Oberwangen b. Bern, Friedhof",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": -1,
+     "elevation_m": 571.3,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 575.8,
+     "elevation_min_m": 575.8,
+     "elevation_max_m": 575.9,
+     "n_samples": 2,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 28,
+   "by_type": {
+    "boarding_edge": 4,
+    "building_part": 6,
+    "roof": 2,
+    "passage": 4,
+    "stairs": 3,
+    "access_point": 6,
+    "ticket_machine": 1,
+    "clock": 2
+   },
+   "by_geometry_quality": {
+    "surveyed": 2,
+    "approximate": 2,
+    "community": 21,
+    "official_point": 3
+   },
+   "cross_checked_by_type": {},
+   "inferred": 14,
+   "walk_graph": {
+    "nodes": 34,
+    "edges": 24
+   },
+   "by_type_and_level": {
+    "access_point@0": 6,
+    "boarding_edge@0": 4,
+    "building_part@0": 6,
+    "clock@none": 2,
+    "passage@-1": 4,
+    "roof@0": 2,
+    "stairs@none": 3,
+    "ticket_machine@none": 1
+   },
+   "tier": 2,
+   "selected_because": "atlas rail station"
+  },
+  {
+   "slug": "8504488-bern-riedbach",
+   "title": "Bern Riedbach",
+   "stations": [
+    {
+     "number": "8580427",
+     "sloid": "ch:1:sloid:80427",
+     "name": "Bern Riedbach, Bahnhof",
+     "role": "adjacent"
+    },
+    {
+     "number": "8504488",
+     "sloid": "ch:1:sloid:4488",
+     "name": "Bern Riedbach",
+     "role": "primary"
+    }
+   ],
+   "levels": [
+    {
+     "level": -1,
+     "elevation_m": 564.0,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 568.5,
+     "elevation_min_m": 568.1,
+     "elevation_max_m": 568.6,
+     "n_samples": 5,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 23,
+   "by_type": {
+    "boarding_edge": 5,
+    "platform_surface": 1,
+    "building_part": 6,
+    "passage": 1,
+    "stairs": 2,
+    "entrance": 1,
+    "access_point": 4,
+    "ticket_machine": 1,
+    "clock": 2
+   },
+   "by_geometry_quality": {
+    "approximate": 2,
+    "community": 16,
+    "surveyed": 2,
+    "official_point": 3
+   },
+   "cross_checked_by_type": {
+    "boarding_edge": 1
+   },
+   "inferred": 11,
+   "walk_graph": {
+    "nodes": 22,
+    "edges": 19
+   },
+   "by_type_and_level": {
+    "access_point@0": 4,
+    "boarding_edge@0": 5,
+    "building_part@0": 6,
+    "clock@none": 2,
+    "entrance@0": 1,
+    "passage@-1": 1,
+    "platform_surface@0": 1,
+    "stairs@none": 2,
+    "ticket_machine@none": 1
+   },
+   "tier": 2,
+   "selected_because": "atlas rail station"
+  },
+  {
+   "slug": "8507068-bolligen",
+   "title": "Bolligen",
+   "stations": [
+    {
+     "number": "8507068",
+     "sloid": "ch:1:sloid:7068",
+     "name": "Bolligen",
+     "role": "primary"
+    },
+    {
+     "number": "8576998",
+     "sloid": "ch:1:sloid:76998",
+     "name": "Bolligen, Bahnhof",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": -1,
+     "elevation_m": 534.5,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 539.0,
+     "elevation_min_m": 538.9,
+     "elevation_max_m": 539.959,
+     "n_samples": 4,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    },
+    {
+     "level": 1,
+     "elevation_m": 543.5,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    }
+   ],
+   "features": 47,
+   "by_type": {
+    "boarding_edge": 4,
+    "platform_surface": 3,
+    "shelter": 2,
+    "building_part": 4,
+    "roof": 6,
+    "stairs": 8,
+    "passage": 4,
+    "access_point": 16
+   },
+   "by_geometry_quality": {
+    "community": 47
+   },
+   "cross_checked_by_type": {
+    "boarding_edge": 1
+   },
+   "inferred": 29,
+   "walk_graph": {
+    "nodes": 66,
+    "edges": 53
+   },
+   "by_type_and_level": {
+    "access_point@0": 16,
+    "boarding_edge@0": 4,
+    "building_part@0": 4,
+    "passage@-1": 1,
+    "passage@1": 3,
+    "platform_surface@0": 3,
+    "roof@0": 6,
+    "shelter@0": 2,
+    "stairs@none": 8
+   },
+   "tier": 2,
+   "selected_because": "atlas rail station"
+  },
+  {
+   "slug": "8507069-ittigen-bei-bern",
+   "title": "Ittigen bei Bern",
+   "stations": [
+    {
+     "number": "8507069",
+     "sloid": "ch:1:sloid:7069",
+     "name": "Ittigen bei Bern",
+     "role": "primary"
+    },
+    {
+     "number": "8589030",
+     "sloid": "ch:1:sloid:89030",
+     "name": "Ittigen, Bahnhof",
+     "role": "adjacent"
+    },
+    {
+     "number": "8589034",
+     "sloid": "ch:1:sloid:89034",
+     "name": "Ittigen, Talgut-Zentrum",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": -1,
+     "elevation_m": 521.5,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 526.0,
+     "elevation_min_m": 525.7,
+     "elevation_max_m": 526.0,
+     "n_samples": 4,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 47,
+   "by_type": {
+    "boarding_edge": 5,
+    "platform_surface": 2,
+    "shelter": 1,
+    "building_part": 6,
+    "roof": 2,
+    "passage": 4,
+    "stairs": 7,
+    "lift": 1,
+    "access_point": 19
+   },
+   "by_geometry_quality": {
+    "community": 45,
+    "approximate": 2
+   },
+   "cross_checked_by_type": {},
+   "inferred": 32,
+   "walk_graph": {
+    "nodes": 177,
+    "edges": 192
+   },
+   "by_type_and_level": {
+    "access_point@0": 19,
+    "boarding_edge@0": 5,
+    "building_part@0": 6,
+    "lift@none": 1,
+    "passage@-1": 2,
+    "passage@none": 2,
+    "platform_surface@0": 2,
+    "roof@0": 2,
+    "shelter@0": 1,
+    "stairs@none": 7
+   },
+   "tier": 2,
+   "selected_because": "atlas rail station"
+  },
+  {
+   "slug": "8507077-kehrsatz",
+   "title": "Kehrsatz",
+   "stations": [
+    {
+     "number": "8507077",
+     "sloid": "ch:1:sloid:7077",
+     "name": "Kehrsatz",
+     "role": "primary"
+    },
+    {
+     "number": "8571398",
+     "sloid": "ch:1:sloid:71398",
+     "name": "Kehrsatz, Bahnhof",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": -1,
+     "elevation_m": 565.7,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 570.2,
+     "elevation_min_m": 570.0,
+     "elevation_max_m": 570.5,
+     "n_samples": 4,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 31,
+   "by_type": {
+    "boarding_edge": 5,
+    "building_part": 9,
+    "roof": 4,
+    "passage": 1,
+    "stairs": 4,
+    "entrance": 1,
+    "access_point": 3,
+    "ticket_machine": 2,
+    "clock": 2
+   },
+   "by_geometry_quality": {
+    "surveyed": 2,
+    "approximate": 3,
+    "community": 22,
+    "official_point": 4
+   },
+   "cross_checked_by_type": {},
+   "inferred": 12,
+   "walk_graph": {
+    "nodes": 95,
+    "edges": 106
+   },
+   "by_type_and_level": {
+    "access_point@0": 3,
+    "boarding_edge@0": 5,
+    "building_part@0": 9,
+    "clock@none": 2,
+    "entrance@0": 1,
+    "passage@-1": 1,
+    "roof@0": 4,
+    "stairs@[-1, 0]": 1,
+    "stairs@none": 3,
+    "ticket_machine@none": 2
+   },
+   "tier": 2,
+   "selected_because": "atlas rail station"
+  },
+  {
+   "slug": "8507078-wabern-bei-bern",
+   "title": "Wabern bei Bern",
+   "stations": [
+    {
+     "number": "8507097",
+     "sloid": "ch:1:sloid:7097",
+     "name": "Wabern (Gurtenbahn)",
+     "role": "adjacent"
+    },
+    {
+     "number": "8507078",
+     "sloid": "ch:1:sloid:7078",
+     "name": "Wabern bei Bern",
+     "role": "primary"
+    },
+    {
+     "number": "8588562",
+     "sloid": "ch:1:sloid:88562",
+     "name": "Wabern, Gurtenbahn",
+     "role": "adjacent"
+    },
+    {
+     "number": "8590101",
+     "sloid": "ch:1:sloid:90101",
+     "name": "Wabern, Morillon",
+     "role": "adjacent"
+    },
+    {
+     "number": "8512578",
+     "sloid": "ch:1:sloid:12578",
+     "name": "Wabern, Gurtenbahn Talstation",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": -1,
+     "elevation_m": 555.3,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 559.8,
+     "elevation_min_m": 559.8,
+     "elevation_max_m": 559.9,
+     "n_samples": 2,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 57,
+   "by_type": {
+    "boarding_edge": 11,
+    "shelter": 1,
+    "building_part": 17,
+    "roof": 4,
+    "passage": 6,
+    "stairs": 5,
+    "lift": 1,
+    "entrance": 3,
+    "access_point": 6,
+    "ticket_machine": 1,
+    "clock": 2
+   },
+   "by_geometry_quality": {
+    "official_point": 4,
+    "surveyed": 2,
+    "community": 50,
+    "approximate": 1
+   },
+   "cross_checked_by_type": {
+    "boarding_edge": 3
+   },
+   "inferred": 32,
+   "walk_graph": {
+    "nodes": 118,
+    "edges": 105
+   },
+   "by_type_and_level": {
+    "access_point@0": 6,
+    "boarding_edge@0": 11,
+    "building_part@0": 17,
+    "clock@none": 2,
+    "entrance@0": 3,
+    "lift@none": 1,
+    "passage@-1": 1,
+    "passage@none": 5,
+    "roof@0": 4,
+    "shelter@0": 1,
+    "stairs@none": 5,
+    "ticket_machine@none": 1
+   },
+   "tier": 2,
+   "selected_because": "atlas rail station"
+  },
+  {
+   "slug": "8507079-bern-weissenbuehl",
+   "title": "Bern Weissenbühl",
+   "stations": [
+    {
+     "number": "8507079",
+     "sloid": "ch:1:sloid:7079",
+     "name": "Bern Weissenbühl",
+     "role": "primary"
+    },
+    {
+     "number": "8595142",
+     "sloid": "ch:1:sloid:95142",
+     "name": "Bern, Weissenbühl (Tram)",
+     "role": "adjacent"
+    },
+    {
+     "number": "8595931",
+     "sloid": "ch:1:sloid:95931",
+     "name": "Bern Weissenbühl, Bahnhof",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": -1,
+     "elevation_m": 545.9,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 550.4,
+     "elevation_min_m": 549.9,
+     "elevation_max_m": 550.7,
+     "n_samples": 4,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 51,
+   "by_type": {
+    "boarding_edge": 7,
+    "shelter": 3,
+    "underground_structure": 2,
+    "underpass_outline": 1,
+    "platform_surface": 2,
+    "stairs_outline": 3,
+    "canopy": 2,
+    "building_footprint": 7,
+    "building_part": 9,
+    "roof": 4,
+    "passage": 4,
+    "stairs": 2,
+    "access_point": 1,
+    "ticket_machine": 1,
+    "clock": 3
+   },
+   "by_geometry_quality": {
+    "surveyed": 21,
+    "community": 22,
+    "approximate": 4,
+    "official_point": 4
+   },
+   "cross_checked_by_type": {
+    "stairs": 2,
+    "passage": 2
+   },
+   "inferred": 15,
+   "walk_graph": {
+    "nodes": 163,
+    "edges": 157
+   },
+   "by_type_and_level": {
+    "access_point@0": 1,
+    "boarding_edge@0": 7,
+    "building_footprint@0": 7,
+    "building_part@0": 9,
+    "canopy@0": 2,
+    "clock@none": 3,
+    "passage@-1": 3,
+    "passage@none": 1,
+    "platform_surface@0": 2,
+    "roof@0": 4,
+    "shelter@0": 3,
+    "stairs@[-1, 0]": 1,
+    "stairs@none": 1,
+    "stairs_outline@none": 3,
+    "ticket_machine@none": 1,
+    "underground_structure@none": 2,
+    "underpass_outline@none": 1
+   },
+   "tier": 2,
+   "selected_because": "atlas rail station"
+  },
+  {
+   "slug": "8507083-koeniz",
+   "title": "Köniz",
+   "stations": [
+    {
+     "number": "8507083",
+     "sloid": "ch:1:sloid:7083",
+     "name": "Köniz",
+     "role": "primary"
+    },
+    {
+     "number": "8571413",
+     "sloid": "ch:1:sloid:71413",
+     "name": "Köniz, Brühlplatz",
+     "role": "adjacent"
+    },
+    {
+     "number": "8590118",
+     "sloid": "ch:1:sloid:90118",
+     "name": "Liebefeld, Sägestrasse",
+     "role": "adjacent"
+    },
+    {
+     "number": "8580927",
+     "sloid": "ch:1:sloid:80927",
+     "name": "Köniz, Bahnhof",
+     "role": "adjacent"
+    },
+    {
+     "number": "8571414",
+     "sloid": "ch:1:sloid:71414",
+     "name": "Köniz, Zentrum",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": -1,
+     "elevation_m": 567.6,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 572.1,
+     "elevation_min_m": 571.0,
+     "elevation_max_m": 572.4,
+     "n_samples": 4,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 51,
+   "by_type": {
+    "boarding_edge": 13,
+    "platform_surface": 3,
+    "shelter": 4,
+    "building_part": 12,
+    "roof": 3,
+    "stairs": 4,
+    "passage": 5,
+    "lift": 1,
+    "access_point": 3,
+    "ticket_machine": 1,
+    "clock": 2
+   },
+   "by_geometry_quality": {
+    "surveyed": 2,
+    "community": 46,
+    "official_point": 3
+   },
+   "cross_checked_by_type": {
+    "boarding_edge": 3
+   },
+   "inferred": 28,
+   "walk_graph": {
+    "nodes": 106,
+    "edges": 99
+   },
+   "by_type_and_level": {
+    "access_point@0": 3,
+    "boarding_edge@0": 13,
+    "building_part@0": 12,
+    "clock@none": 2,
+    "lift@[-1, 0]": 1,
+    "passage@-1": 1,
+    "passage@none": 4,
+    "platform_surface@0": 3,
+    "roof@0": 3,
+    "shelter@0": 4,
+    "stairs@[-1, 0]": 1,
+    "stairs@none": 3,
+    "ticket_machine@none": 1
+   },
+   "tier": 2,
+   "selected_because": "atlas rail station"
+  },
+  {
+   "slug": "8507085-gasel",
+   "title": "Gasel",
+   "stations": [
+    {
+     "number": "8507085",
+     "sloid": "ch:1:sloid:7085",
+     "name": "Gasel",
+     "role": "primary"
+    },
+    {
+     "number": "8589077",
+     "sloid": "ch:1:sloid:89077",
+     "name": "Gasel, Bahnhof",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": 0,
+     "elevation_m": 650.0,
+     "elevation_min_m": 649.9,
+     "elevation_max_m": 650.0,
+     "n_samples": 4,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 14,
+   "by_type": {
+    "boarding_edge": 4,
+    "platform_surface": 1,
+    "building_part": 6,
+    "roof": 1,
+    "ticket_machine": 1,
+    "clock": 1
+   },
+   "by_geometry_quality": {
+    "surveyed": 2,
+    "community": 10,
+    "official_point": 2
+   },
+   "cross_checked_by_type": {},
+   "inferred": 6,
+   "walk_graph": {
+    "nodes": 8,
+    "edges": 6
+   },
+   "by_type_and_level": {
+    "boarding_edge@0": 4,
+    "building_part@0": 6,
+    "clock@none": 1,
+    "platform_surface@0": 1,
+    "roof@0": 1,
+    "ticket_machine@none": 1
+   },
+   "tier": 2,
+   "selected_because": "atlas rail station"
+  },
+  {
+   "slug": "8507093-kehrsatz-nord",
+   "title": "Kehrsatz Nord",
+   "stations": [
+    {
+     "number": "8507093",
+     "sloid": "ch:1:sloid:7093",
+     "name": "Kehrsatz Nord",
+     "role": "primary"
+    },
+    {
+     "number": "8571397",
+     "sloid": "ch:1:sloid:71397",
+     "name": "Kehrsatz, Rössli",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": -1,
+     "elevation_m": 563.0,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 567.5,
+     "elevation_min_m": 567.5,
+     "elevation_max_m": 567.5,
+     "n_samples": 2,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 21,
+   "by_type": {
+    "boarding_edge": 4,
+    "building_part": 5,
+    "roof": 2,
+    "stairs": 2,
+    "passage": 1,
+    "access_point": 4,
+    "ticket_machine": 1,
+    "clock": 2
+   },
+   "by_geometry_quality": {
+    "surveyed": 2,
+    "approximate": 2,
+    "community": 14,
+    "official_point": 3
+   },
+   "cross_checked_by_type": {},
+   "inferred": 11,
+   "walk_graph": {
+    "nodes": 65,
+    "edges": 62
+   },
+   "by_type_and_level": {
+    "access_point@0": 4,
+    "boarding_edge@0": 4,
+    "building_part@0": 5,
+    "clock@none": 2,
+    "passage@-1": 1,
+    "roof@0": 2,
+    "stairs@none": 2,
+    "ticket_machine@none": 1
+   },
+   "tier": 2,
+   "selected_because": "atlas rail station"
+  },
+  {
+   "slug": "8507096-papiermuehle",
+   "title": "Papiermühle",
+   "stations": [
+    {
+     "number": "8507096",
+     "sloid": "ch:1:sloid:7096",
+     "name": "Papiermühle",
+     "role": "primary"
+    },
+    {
+     "number": "8576993",
+     "sloid": "ch:1:sloid:76993",
+     "name": "Papiermühle, Bahnhof",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": 0,
+     "elevation_m": 521.0,
+     "elevation_min_m": 520.6,
+     "elevation_max_m": 521.0,
+     "n_samples": 4,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    },
+    {
+     "level": 1,
+     "elevation_m": 525.5,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    }
+   ],
+   "features": 35,
+   "by_type": {
+    "boarding_edge": 4,
+    "platform_surface": 2,
+    "building_part": 24,
+    "roof": 2,
+    "passage": 1,
+    "access_point": 2
+   },
+   "by_geometry_quality": {
+    "community": 35
+   },
+   "cross_checked_by_type": {},
+   "inferred": 18,
+   "walk_graph": {
+    "nodes": 65,
+    "edges": 50
+   },
+   "by_type_and_level": {
+    "access_point@0": 2,
+    "boarding_edge@0": 4,
+    "building_part@0": 24,
+    "passage@1": 1,
+    "platform_surface@0": 2,
+    "roof@0": 2
+   },
+   "tier": 2,
+   "selected_because": "atlas rail station"
+  },
+  {
+   "slug": "8508051-bern-felsenau",
+   "title": "Bern Felsenau",
+   "stations": [
+    {
+     "number": "8507638",
+     "sloid": "ch:1:sloid:7638",
+     "name": "Bern Felsenau, Bahnhof",
+     "role": "adjacent"
+    },
+    {
+     "number": "8508051",
+     "sloid": "ch:1:sloid:8051",
+     "name": "Bern Felsenau",
+     "role": "primary"
+    },
+    {
+     "number": "8590065",
+     "sloid": "ch:1:sloid:90065",
+     "name": "Bern, Rossfeld",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": -3,
+     "elevation_m": 520.0,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level -1; not measured"
+    },
+    {
+     "level": -1,
+     "elevation_m": 529.0,
+     "elevation_min_m": 529.0,
+     "elevation_max_m": 534.0,
+     "n_samples": 3,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    },
+    {
+     "level": 0,
+     "elevation_m": 539.4,
+     "elevation_min_m": 534.5,
+     "elevation_max_m": 544.2,
+     "n_samples": 2,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 58,
+   "by_type": {
+    "boarding_edge": 6,
+    "platform_surface": 2,
+    "shelter": 2,
+    "underground_structure": 2,
+    "underpass_outline": 1,
+    "stairs_outline": 1,
+    "bridge_outline": 3,
+    "building_footprint": 5,
+    "building_part": 4,
+    "roof": 1,
+    "passage": 7,
+    "stairs": 7,
+    "lift": 1,
+    "access_point": 16
+   },
+   "by_geometry_quality": {
+    "approximate": 3,
+    "community": 42,
+    "surveyed": 13
+   },
+   "cross_checked_by_type": {
+    "boarding_edge": 2,
+    "passage": 1,
+    "stairs": 4
+   },
+   "inferred": 31,
+   "walk_graph": {
+    "nodes": 117,
+    "edges": 116
+   },
+   "by_type_and_level": {
+    "access_point@0": 16,
+    "boarding_edge@-1": 3,
+    "boarding_edge@0": 3,
+    "bridge_outline@none": 3,
+    "building_footprint@0": 5,
+    "building_part@0": 4,
+    "lift@none": 1,
+    "passage@-1": 3,
+    "passage@-3": 2,
+    "passage@none": 2,
+    "platform_surface@-1": 2,
+    "roof@0": 1,
+    "shelter@0": 2,
+    "stairs@none": 7,
+    "stairs_outline@none": 1,
+    "underground_structure@none": 2,
+    "underpass_outline@none": 1
+   },
+   "tier": 2,
+   "selected_because": "atlas rail station"
+  },
+  {
+   "slug": "8508052-bern-tiefenau",
+   "title": "Bern Tiefenau",
+   "stations": [
+    {
+     "number": "8507636",
+     "sloid": "ch:1:sloid:7636",
+     "name": "Bern Tiefenau, Bahnhof",
+     "role": "adjacent"
+    },
+    {
+     "number": "8508052",
+     "sloid": "ch:1:sloid:8052",
+     "name": "Bern Tiefenau",
+     "role": "primary"
+    }
+   ],
+   "levels": [
+    {
+     "level": -3,
+     "elevation_m": 518.0,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": -2,
+     "elevation_m": 522.5,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": -1,
+     "elevation_m": 527.0,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 531.5,
+     "elevation_min_m": 531.0,
+     "elevation_max_m": 532.0,
+     "n_samples": 4,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 105,
+   "by_type": {
+    "boarding_edge": 4,
+    "underground_structure": 2,
+    "stairs_outline": 9,
+    "underpass_outline": 4,
+    "canopy": 2,
+    "building_footprint": 14,
+    "building_part": 17,
+    "roof": 1,
+    "passage": 19,
+    "stairs": 12,
+    "escalator": 1,
+    "lift": 1,
+    "access_point": 19
+   },
+   "by_geometry_quality": {
+    "approximate": 2,
+    "community": 72,
+    "surveyed": 31
+   },
+   "cross_checked_by_type": {
+    "passage": 18,
+    "stairs": 7,
+    "escalator": 1
+   },
+   "inferred": 51,
+   "walk_graph": {
+    "nodes": 274,
+    "edges": 289
+   },
+   "by_type_and_level": {
+    "access_point@0": 19,
+    "boarding_edge@0": 4,
+    "building_footprint@0": 14,
+    "building_part@0": 17,
+    "canopy@0": 2,
+    "escalator@[-3, -2]": 1,
+    "lift@none": 1,
+    "passage@-1": 3,
+    "passage@-2": 12,
+    "passage@-3": 4,
+    "roof@0": 1,
+    "stairs@[-2, -1]": 1,
+    "stairs@[-2, 0]": 2,
+    "stairs@[-3, -2]": 1,
+    "stairs@none": 8,
+    "stairs_outline@none": 9,
+    "underground_structure@none": 2,
+    "underpass_outline@none": 4
+   },
+   "tier": 2,
+   "selected_because": "atlas rail station"
+  },
+  {
+   "slug": "8508070-oberzollikofen",
+   "title": "Oberzollikofen",
+   "stations": [
+    {
+     "number": "8508070",
+     "sloid": "ch:1:sloid:8070",
+     "name": "Oberzollikofen",
+     "role": "primary"
+    },
+    {
+     "number": "8589049",
+     "sloid": "ch:1:sloid:89049",
+     "name": "Zollikofen, Kreuz",
+     "role": "adjacent"
+    },
+    {
+     "number": "8595604",
+     "sloid": "ch:1:sloid:95604",
+     "name": "Oberzollikofen, Bahnhof",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": -1,
+     "elevation_m": 553.5,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 558.0,
+     "elevation_min_m": 558.0,
+     "elevation_max_m": 558.0,
+     "n_samples": 2,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 45,
+   "by_type": {
+    "boarding_edge": 7,
+    "building_part": 4,
+    "roof": 2,
+    "passage": 10,
+    "stairs": 8,
+    "lift": 1,
+    "access_point": 13
+   },
+   "by_geometry_quality": {
+    "approximate": 6,
+    "official_point": 1,
+    "community": 38
+   },
+   "cross_checked_by_type": {},
+   "inferred": 31,
+   "walk_graph": {
+    "nodes": 122,
+    "edges": 121
+   },
+   "by_type_and_level": {
+    "access_point@0": 13,
+    "boarding_edge@0": 7,
+    "building_part@0": 4,
+    "lift@none": 1,
+    "passage@-1": 10,
+    "roof@0": 2,
+    "stairs@[-1, 0]": 2,
+    "stairs@none": 6
+   },
+   "tier": 2,
+   "selected_because": "atlas rail station"
+  },
+  {
+   "slug": "8516154-bern-bruennen-westside",
+   "title": "Bern Brünnen Westside",
+   "stations": [
+    {
+     "number": "8516154",
+     "sloid": "ch:1:sloid:16154",
+     "name": "Bern Brünnen Westside",
+     "role": "primary"
+    },
+    {
+     "number": "8582262",
+     "sloid": "ch:1:sloid:82262",
+     "name": "Bern Brünnen Westside, Bahnhof",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": -1,
+     "elevation_m": 549.1,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 553.6,
+     "elevation_min_m": 553.5,
+     "elevation_max_m": 558.0,
+     "n_samples": 4,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    },
+    {
+     "level": 1,
+     "elevation_m": 558.7,
+     "elevation_min_m": 558.7,
+     "elevation_max_m": 558.7,
+     "n_samples": 1,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 65,
+   "by_type": {
+    "boarding_edge": 5,
+    "platform_surface": 8,
+    "shelter": 2,
+    "underground_structure": 5,
+    "stairs_outline": 4,
+    "underpass_outline": 1,
+    "building_footprint": 5,
+    "building_part": 7,
+    "roof": 2,
+    "passage": 8,
+    "stairs": 4,
+    "escalator": 2,
+    "lift": 2,
+    "access_point": 6,
+    "ticket_machine": 2,
+    "clock": 2
+   },
+   "by_geometry_quality": {
+    "surveyed": 25,
+    "community": 36,
+    "official_point": 4
+   },
+   "cross_checked_by_type": {
+    "passage": 1,
+    "stairs": 4
+   },
+   "inferred": 21,
+   "walk_graph": {
+    "nodes": 78,
+    "edges": 88
+   },
+   "by_type_and_level": {
+    "access_point@0": 6,
+    "boarding_edge@0": 4,
+    "boarding_edge@1": 1,
+    "building_footprint@0": 5,
+    "building_part@0": 7,
+    "clock@none": 2,
+    "escalator@[0, 1]": 2,
+    "lift@none": 2,
+    "passage@-1": 3,
+    "passage@1": 5,
+    "platform_surface@0": 8,
+    "roof@0": 2,
+    "shelter@0": 2,
+    "stairs@none": 4,
+    "stairs_outline@none": 4,
+    "ticket_machine@none": 2,
+    "underground_structure@none": 5,
+    "underpass_outline@none": 1
+   },
+   "tier": 2,
+   "selected_because": "atlas rail station"
+  },
+  {
+   "slug": "8507067-deisswil",
+   "title": "Deisswil",
+   "stations": [
+    {
+     "number": "8507067",
+     "sloid": "ch:1:sloid:7067",
+     "name": "Deisswil",
+     "role": "primary"
+    },
+    {
+     "number": "8507919",
+     "sloid": "ch:1:sloid:7919",
+     "name": "Deisswil, Bahnhof",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": 0,
+     "elevation_m": 549.0,
+     "elevation_min_m": 548.0,
+     "elevation_max_m": 549.0,
+     "n_samples": 3,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 21,
+   "by_type": {
+    "boarding_edge": 3,
+    "platform_surface": 1,
+    "building_part": 9,
+    "roof": 1,
+    "stairs": 2,
+    "passage": 1,
+    "access_point": 4
+   },
+   "by_geometry_quality": {
+    "community": 19,
+    "approximate": 2
+   },
+   "cross_checked_by_type": {},
+   "inferred": 9,
+   "walk_graph": {
+    "nodes": 31,
+    "edges": 24
+   },
+   "by_type_and_level": {
+    "access_point@0": 4,
+    "boarding_edge@0": 3,
+    "building_part@0": 9,
+    "passage@none": 1,
+    "platform_surface@0": 1,
+    "roof@0": 1,
+    "stairs@none": 2
+   },
+   "tier": 2,
+   "selected_because": "atlas rail station"
+  },
+  {
+   "slug": "8507084-moos",
+   "title": "Moos",
+   "stations": [
+    {
+     "number": "8507084",
+     "sloid": "ch:1:sloid:7084",
+     "name": "Moos",
+     "role": "primary"
+    },
+    {
+     "number": "8582195",
+     "sloid": "ch:1:sloid:82195",
+     "name": "Moos, Bahnhof",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": 0,
+     "elevation_m": 628.0,
+     "elevation_min_m": 628.0,
+     "elevation_max_m": 628.2,
+     "n_samples": 3,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 17,
+   "by_type": {
+    "boarding_edge": 3,
+    "platform_surface": 1,
+    "building_part": 10,
+    "roof": 1,
+    "ticket_machine": 1,
+    "clock": 1
+   },
+   "by_geometry_quality": {
+    "surveyed": 1,
+    "community": 13,
+    "approximate": 1,
+    "official_point": 2
+   },
+   "cross_checked_by_type": {},
+   "inferred": 4,
+   "walk_graph": {
+    "nodes": 5,
+    "edges": 4
+   },
+   "by_type_and_level": {
+    "boarding_edge@0": 3,
+    "building_part@0": 10,
+    "clock@none": 1,
+    "platform_surface@0": 1,
+    "roof@0": 1,
+    "ticket_machine@none": 1
+   },
+   "tier": 2,
+   "selected_because": "atlas rail station"
+  },
+  {
+   "slug": "8507091-liebefeld",
+   "title": "Liebefeld",
+   "stations": [
+    {
+     "number": "8507091",
+     "sloid": "ch:1:sloid:7091",
+     "name": "Liebefeld",
+     "role": "primary"
+    },
+    {
+     "number": "8590059",
+     "sloid": "ch:1:sloid:90059",
+     "name": "Liebefeld, Liebefeld Park",
+     "role": "adjacent"
+    },
+    {
+     "number": "8590056",
+     "sloid": "ch:1:sloid:90056",
+     "name": "Liebefeld, Neuhausplatz",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": 0,
+     "elevation_m": 563.3,
+     "elevation_min_m": 563.3,
+     "elevation_max_m": 563.3,
+     "n_samples": 1,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 24,
+   "by_type": {
+    "boarding_edge": 6,
+    "platform_surface": 3,
+    "shelter": 2,
+    "building_part": 9,
+    "roof": 2,
+    "ticket_machine": 1,
+    "clock": 1
+   },
+   "by_geometry_quality": {
+    "surveyed": 1,
+    "community": 20,
+    "approximate": 1,
+    "official_point": 2
+   },
+   "cross_checked_by_type": {
+    "boarding_edge": 1
+   },
+   "inferred": 11,
+   "walk_graph": {
+    "nodes": 96,
+    "edges": 88
+   },
+   "by_type_and_level": {
+    "boarding_edge@0": 6,
+    "building_part@0": 9,
+    "clock@none": 1,
+    "platform_surface@0": 3,
+    "roof@0": 2,
+    "shelter@0": 2,
+    "ticket_machine@none": 1
+   },
+   "tier": 2,
+   "selected_because": "atlas rail station"
+  },
+  {
+   "slug": "8508053-steinibach",
+   "title": "Steinibach",
+   "stations": [
+    {
+     "number": "8508053",
+     "sloid": "ch:1:sloid:8053",
+     "name": "Steinibach",
+     "role": "primary"
+    },
+    {
+     "number": "8576982",
+     "sloid": "ch:1:sloid:76982",
+     "name": "Steinibach, Bahnhof",
+     "role": "adjacent"
+    },
+    {
+     "number": "8589053",
+     "sloid": "ch:1:sloid:89053",
+     "name": "Steinibach BE, Aarestrasse",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": -2,
+     "elevation_m": 518.0,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": -1,
+     "elevation_m": 522.5,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 527.0,
+     "elevation_min_m": 525.955,
+     "elevation_max_m": 527.0,
+     "n_samples": 3,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 55,
+   "by_type": {
+    "boarding_edge": 6,
+    "platform_surface": 2,
+    "building_part": 12,
+    "roof": 1,
+    "passage": 5,
+    "stairs": 9,
+    "access_point": 20
+   },
+   "by_geometry_quality": {
+    "community": 52,
+    "approximate": 3
+   },
+   "cross_checked_by_type": {
+    "boarding_edge": 2
+   },
+   "inferred": 34,
+   "walk_graph": {
+    "nodes": 72,
+    "edges": 66
+   },
+   "by_type_and_level": {
+    "access_point@0": 20,
+    "boarding_edge@0": 6,
+    "building_part@0": 12,
+    "passage@-1": 4,
+    "passage@-2": 1,
+    "platform_surface@0": 2,
+    "roof@0": 1,
+    "stairs@none": 9
+   },
+   "tier": 2,
+   "selected_because": "atlas rail station"
+  },
+  {
+   "slug": "8508055-unterzollikofen",
+   "title": "Unterzollikofen",
+   "stations": [
+    {
+     "number": "8508055",
+     "sloid": "ch:1:sloid:8055",
+     "name": "Unterzollikofen",
+     "role": "primary"
+    },
+    {
+     "number": "8576981",
+     "sloid": "ch:1:sloid:76981",
+     "name": "Unterzollikofen, Bahnhof",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": -1,
+     "elevation_m": 539.5,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 544.0,
+     "elevation_min_m": 543.0,
+     "elevation_max_m": 544.4,
+     "n_samples": 4,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 29,
+   "by_type": {
+    "boarding_edge": 4,
+    "platform_surface": 1,
+    "shelter": 1,
+    "building_part": 4,
+    "roof": 2,
+    "stairs": 5,
+    "passage": 2,
+    "access_point": 10
+   },
+   "by_geometry_quality": {
+    "community": 28,
+    "approximate": 1
+   },
+   "cross_checked_by_type": {},
+   "inferred": 20,
+   "walk_graph": {
+    "nodes": 71,
+    "edges": 61
+   },
+   "by_type_and_level": {
+    "access_point@0": 10,
+    "boarding_edge@0": 4,
+    "building_part@0": 4,
+    "passage@-1": 2,
+    "platform_surface@0": 1,
+    "roof@0": 2,
+    "shelter@0": 1,
+    "stairs@[-1, 0]": 1,
+    "stairs@none": 4
+   },
+   "tier": 2,
+   "selected_because": "atlas rail station"
+  },
+  {
+   "slug": "8579896-bern-hirschengraben",
+   "title": "Bern, Hirschengraben",
+   "stations": [
+    {
+     "number": "8576646",
+     "sloid": "ch:1:sloid:76646",
+     "name": "Bern, Bahnhof",
+     "role": "adjacent"
+    },
+    {
+     "number": "8579896",
+     "sloid": "ch:1:sloid:79896",
+     "name": "Bern, Hirschengraben",
+     "role": "primary"
+    },
+    {
+     "number": "8511982",
+     "sloid": "ch:1:sloid:11982",
+     "name": "Bern, Bundesgasse",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": -1,
+     "elevation_m": 536.8,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 541.3,
+     "elevation_min_m": 538.9,
+     "elevation_max_m": 542.4,
+     "n_samples": 9,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    },
+    {
+     "level": 1,
+     "elevation_m": 545.8,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    }
+   ],
+   "features": 142,
+   "by_type": {
+    "boarding_edge": 33,
+    "platform_surface": 17,
+    "shelter": 8,
+    "underground_structure": 1,
+    "canopy": 3,
+    "stairs_outline": 1,
+    "building_footprint": 25,
+    "building_part": 42,
+    "passage": 4,
+    "stairs": 1,
+    "access_point": 7
+   },
+   "by_geometry_quality": {
+    "community": 101,
+    "approximate": 4,
+    "missing": 2,
+    "surveyed": 35
+   },
+   "cross_checked_by_type": {
+    "boarding_edge": 21
+   },
+   "inferred": 95,
+   "walk_graph": {
+    "nodes": 119,
+    "edges": 141
+   },
+   "by_type_and_level": {
+    "access_point@0": 7,
+    "boarding_edge@0": 33,
+    "building_footprint@0": 25,
+    "building_part@0": 40,
+    "building_part@1": 2,
+    "canopy@0": 3,
+    "passage@-1": 1,
+    "passage@none": 3,
+    "platform_surface@0": 17,
+    "shelter@0": 8,
+    "stairs@none": 1,
+    "stairs_outline@none": 1,
+    "underground_structure@none": 1
+   },
+   "tier": 2,
+   "selected_because": "7 lettered kerbs"
+  },
+  {
+   "slug": "8507061-bern-brunnadernstrasse",
+   "title": "Bern, Brunnadernstrasse",
+   "stations": [
+    {
+     "number": "8507061",
+     "sloid": "ch:1:sloid:7061",
+     "name": "Bern, Brunnadernstrasse",
+     "role": "primary"
+    }
+   ],
+   "levels": [
+    {
+     "level": 0,
+     "elevation_m": 553.1,
+     "elevation_min_m": 552.8,
+     "elevation_max_m": 554.4,
+     "n_samples": 6,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 67,
+   "by_type": {
+    "boarding_edge": 7,
+    "platform_surface": 1,
+    "shelter": 3,
+    "underground_structure": 5,
+    "canopy": 1,
+    "stairs_outline": 1,
+    "building_footprint": 18,
+    "building_part": 27,
+    "roof": 1,
+    "passage": 1,
+    "access_point": 2
+   },
+   "by_geometry_quality": {
+    "community": 37,
+    "approximate": 1,
+    "missing": 1,
+    "surveyed": 28
+   },
+   "cross_checked_by_type": {},
+   "inferred": 18,
+   "walk_graph": {
+    "nodes": 74,
+    "edges": 77
+   },
+   "by_type_and_level": {
+    "access_point@0": 2,
+    "boarding_edge@0": 7,
+    "building_footprint@0": 18,
+    "building_part@0": 27,
+    "canopy@0": 1,
+    "passage@none": 1,
+    "platform_surface@0": 1,
+    "roof@0": 1,
+    "shelter@0": 3,
+    "stairs_outline@none": 1,
+    "underground_structure@none": 5
+   },
+   "tier": 2,
+   "selected_because": "5 lettered kerbs"
+  },
+  {
+   "slug": "8576990-bern-guisanplatz-expo",
+   "title": "Bern, Guisanplatz Expo",
+   "stations": [
+    {
+     "number": "8576990",
+     "sloid": "ch:1:sloid:76990",
+     "name": "Bern, Guisanplatz Expo",
+     "role": "primary"
+    }
+   ],
+   "levels": [
+    {
+     "level": 0,
+     "elevation_m": 558.0,
+     "elevation_min_m": 557.5,
+     "elevation_max_m": 559.0,
+     "n_samples": 7,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 17,
+   "by_type": {
+    "boarding_edge": 8,
+    "platform_surface": 2,
+    "shelter": 3,
+    "underground_structure": 2,
+    "roof": 1,
+    "building_part": 1
+   },
+   "by_geometry_quality": {
+    "community": 9,
+    "approximate": 2,
+    "missing": 1,
+    "surveyed": 5
+   },
+   "cross_checked_by_type": {},
+   "inferred": 13,
+   "walk_graph": {
+    "nodes": 45,
+    "edges": 46
+   },
+   "by_type_and_level": {
+    "boarding_edge@0": 8,
+    "building_part@0": 1,
+    "platform_surface@0": 2,
+    "roof@0": 1,
+    "shelter@0": 3,
+    "underground_structure@none": 2
+   },
+   "tier": 2,
+   "selected_because": "5 lettered kerbs"
+  },
+  {
+   "slug": "8588562-wabern-gurtenbahn",
+   "title": "Wabern, Gurtenbahn",
+   "stations": [
+    {
+     "number": "8588562",
+     "sloid": "ch:1:sloid:88562",
+     "name": "Wabern, Gurtenbahn",
+     "role": "primary"
+    }
+   ],
+   "levels": [
+    {
+     "level": 0,
+     "elevation_m": 552.6,
+     "elevation_min_m": 551.1,
+     "elevation_max_m": 556.1,
+     "n_samples": 5,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 33,
+   "by_type": {
+    "boarding_edge": 5,
+    "building_part": 28
+   },
+   "by_geometry_quality": {
+    "community": 33
+   },
+   "cross_checked_by_type": {},
+   "inferred": 10,
+   "walk_graph": {
+    "nodes": 56,
+    "edges": 55
+   },
+   "by_type_and_level": {
+    "boarding_edge@0": 5,
+    "building_part@0": 28
+   },
+   "tier": 2,
+   "selected_because": "5 lettered kerbs"
+  },
+  {
+   "slug": "8590014-bern-fischermaetteli",
+   "title": "Bern, Fischermätteli",
+   "stations": [
+    {
+     "number": "8590014",
+     "sloid": "ch:1:sloid:90014",
+     "name": "Bern, Fischermätteli",
+     "role": "primary"
+    }
+   ],
+   "levels": [
+    {
+     "level": -1,
+     "elevation_m": 540.5,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 545.0,
+     "elevation_min_m": 544.6,
+     "elevation_max_m": 547.6,
+     "n_samples": 5,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 57,
+   "by_type": {
+    "boarding_edge": 5,
+    "platform_surface": 2,
+    "shelter": 3,
+    "underground_structure": 4,
+    "underpass_outline": 3,
+    "stairs_outline": 2,
+    "bridge_outline": 1,
+    "building_footprint": 15,
+    "building_part": 18,
+    "roof": 1,
+    "passage": 1,
+    "access_point": 2
+   },
+   "by_geometry_quality": {
+    "community": 31,
+    "surveyed": 26
+   },
+   "cross_checked_by_type": {
+    "passage": 1
+   },
+   "inferred": 20,
+   "walk_graph": {
+    "nodes": 84,
+    "edges": 83
+   },
+   "by_type_and_level": {
+    "access_point@0": 2,
+    "boarding_edge@0": 5,
+    "bridge_outline@none": 1,
+    "building_footprint@0": 15,
+    "building_part@0": 18,
+    "passage@-1": 1,
+    "platform_surface@0": 2,
+    "roof@0": 1,
+    "shelter@0": 3,
+    "stairs_outline@none": 2,
+    "underground_structure@none": 4,
+    "underpass_outline@none": 3
+   },
+   "tier": 2,
+   "selected_because": "5 lettered kerbs"
+  },
+  {
+   "slug": "8507050-bern-egghoelzli",
+   "title": "Bern, Egghölzli",
+   "stations": [
+    {
+     "number": "8507050",
+     "sloid": "ch:1:sloid:7050",
+     "name": "Bern, Egghölzli",
+     "role": "primary"
+    }
+   ],
+   "levels": [
+    {
+     "level": -2,
+     "elevation_m": 544.2,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 553.2,
+     "elevation_min_m": 553.0,
+     "elevation_max_m": 553.6,
+     "n_samples": 7,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 48,
+   "by_type": {
+    "boarding_edge": 7,
+    "platform_surface": 4,
+    "shelter": 4,
+    "underground_structure": 3,
+    "stairs_outline": 3,
+    "canopy": 5,
+    "building_footprint": 6,
+    "roof": 3,
+    "building_part": 7,
+    "passage": 2,
+    "access_point": 4
+   },
+   "by_geometry_quality": {
+    "community": 29,
+    "approximate": 1,
+    "surveyed": 18
+   },
+   "cross_checked_by_type": {
+    "boarding_edge": 2,
+    "passage": 2
+   },
+   "inferred": 23,
+   "walk_graph": {
+    "nodes": 89,
+    "edges": 92
+   },
+   "by_type_and_level": {
+    "access_point@0": 4,
+    "boarding_edge@0": 7,
+    "building_footprint@0": 6,
+    "building_part@0": 7,
+    "canopy@0": 5,
+    "passage@-2": 2,
+    "platform_surface@0": 4,
+    "roof@0": 3,
+    "shelter@0": 4,
+    "stairs_outline@none": 3,
+    "underground_structure@none": 3
+   },
+   "tier": 2,
+   "selected_because": "4 lettered kerbs"
+  },
+  {
+   "slug": "8507060-bern-helvetiaplatz",
+   "title": "Bern, Helvetiaplatz",
+   "stations": [
+    {
+     "number": "8507060",
+     "sloid": "ch:1:sloid:7060",
+     "name": "Bern, Helvetiaplatz",
+     "role": "primary"
+    }
+   ],
+   "levels": [
+    {
+     "level": -1,
+     "elevation_m": 526.1,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 530.6,
+     "elevation_min_m": 530.2,
+     "elevation_max_m": 531.2,
+     "n_samples": 6,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 68,
+   "by_type": {
+    "boarding_edge": 7,
+    "platform_surface": 2,
+    "shelter": 3,
+    "underground_structure": 2,
+    "stairs_outline": 10,
+    "canopy": 1,
+    "building_footprint": 10,
+    "building_part": 13,
+    "roof": 2,
+    "stairs": 4,
+    "passage": 2,
+    "access_point": 12
+   },
+   "by_geometry_quality": {
+    "community": 41,
+    "approximate": 2,
+    "missing": 1,
+    "surveyed": 24
+   },
+   "cross_checked_by_type": {
+    "stairs": 3
+   },
+   "inferred": 27,
+   "walk_graph": {
+    "nodes": 154,
+    "edges": 166
+   },
+   "by_type_and_level": {
+    "access_point@0": 12,
+    "boarding_edge@0": 7,
+    "building_footprint@0": 10,
+    "building_part@0": 13,
+    "canopy@0": 1,
+    "passage@-1": 2,
+    "platform_surface@0": 2,
+    "roof@0": 2,
+    "shelter@0": 3,
+    "stairs@none": 4,
+    "stairs_outline@none": 10,
+    "underground_structure@none": 2
+   },
+   "tier": 2,
+   "selected_because": "4 lettered kerbs"
+  },
+  {
+   "slug": "8507062-muri-bei-bern",
+   "title": "Muri bei Bern",
+   "stations": [
+    {
+     "number": "8507062",
+     "sloid": "ch:1:sloid:7062",
+     "name": "Muri bei Bern",
+     "role": "primary"
+    }
+   ],
+   "levels": [
+    {
+     "level": 0,
+     "elevation_m": 556.8,
+     "elevation_min_m": 556.5,
+     "elevation_max_m": 557.0,
+     "n_samples": 4,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 19,
+   "by_type": {
+    "boarding_edge": 4,
+    "platform_surface": 1,
+    "shelter": 1,
+    "building_part": 7,
+    "roof": 3,
+    "passage": 1,
+    "access_point": 2
+   },
+   "by_geometry_quality": {
+    "community": 19
+   },
+   "cross_checked_by_type": {},
+   "inferred": 9,
+   "walk_graph": {
+    "nodes": 55,
+    "edges": 48
+   },
+   "by_type_and_level": {
+    "access_point@0": 2,
+    "boarding_edge@0": 4,
+    "building_part@0": 7,
+    "passage@none": 1,
+    "platform_surface@0": 1,
+    "roof@0": 3,
+    "shelter@0": 1
+   },
+   "tier": 2,
+   "selected_because": "4 lettered kerbs"
+  },
+  {
+   "slug": "8571342-bern-inselplatz",
+   "title": "Bern, Inselplatz",
+   "stations": [
+    {
+     "number": "8571342",
+     "sloid": "ch:1:sloid:71342",
+     "name": "Bern, Inselplatz",
+     "role": "primary"
+    }
+   ],
+   "levels": [
+    {
+     "level": -1,
+     "elevation_m": 539.5,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 544.0,
+     "elevation_min_m": 543.0,
+     "elevation_max_m": 545.0,
+     "n_samples": 4,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    },
+    {
+     "level": 1,
+     "elevation_m": 548.5,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    }
+   ],
+   "features": 40,
+   "by_type": {
+    "boarding_edge": 4,
+    "underground_structure": 2,
+    "bridge_outline": 4,
+    "building_footprint": 10,
+    "building_part": 10,
+    "stairs": 2,
+    "passage": 3,
+    "lift": 1,
+    "access_point": 4
+   },
+   "by_geometry_quality": {
+    "approximate": 4,
+    "surveyed": 16,
+    "community": 20
+   },
+   "cross_checked_by_type": {
+    "passage": 1
+   },
+   "inferred": 19,
+   "walk_graph": {
+    "nodes": 103,
+    "edges": 100
+   },
+   "by_type_and_level": {
+    "access_point@0": 4,
+    "boarding_edge@0": 4,
+    "bridge_outline@none": 4,
+    "building_footprint@0": 10,
+    "building_part@0": 10,
+    "lift@none": 1,
+    "passage@-1": 2,
+    "passage@1": 1,
+    "stairs@[-1, 0]": 1,
+    "stairs@none": 1,
+    "underground_structure@none": 2
+   },
+   "tier": 2,
+   "selected_because": "4 lettered kerbs"
+  },
+  {
+   "slug": "8571393-bern-eigerplatz",
+   "title": "Bern, Eigerplatz",
+   "stations": [
+    {
+     "number": "8571393",
+     "sloid": "ch:1:sloid:71393",
+     "name": "Bern, Eigerplatz",
+     "role": "primary"
+    }
+   ],
+   "levels": [
+    {
+     "level": 0,
+     "elevation_m": 524.5,
+     "elevation_min_m": 524.1,
+     "elevation_max_m": 525.6,
+     "n_samples": 5,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 52,
+   "by_type": {
+    "boarding_edge": 7,
+    "shelter": 2,
+    "underground_structure": 3,
+    "stairs_outline": 5,
+    "building_footprint": 11,
+    "building_part": 11,
+    "roof": 2,
+    "stairs": 4,
+    "passage": 3,
+    "access_point": 4
+   },
+   "by_geometry_quality": {
+    "community": 29,
+    "missing": 2,
+    "surveyed": 21
+   },
+   "cross_checked_by_type": {
+    "stairs": 2
+   },
+   "inferred": 18,
+   "walk_graph": {
+    "nodes": 124,
+    "edges": 135
+   },
+   "by_type_and_level": {
+    "access_point@0": 4,
+    "boarding_edge@0": 7,
+    "building_footprint@0": 11,
+    "building_part@0": 11,
+    "passage@none": 3,
+    "roof@0": 2,
+    "shelter@0": 2,
+    "stairs@none": 4,
+    "stairs_outline@none": 5,
+    "underground_structure@none": 3
+   },
+   "tier": 2,
+   "selected_because": "4 lettered kerbs"
+  },
+  {
+   "slug": "8571412-liebefeld-hessstrasse",
+   "title": "Liebefeld, Hessstrasse",
+   "stations": [
+    {
+     "number": "8571412",
+     "sloid": "ch:1:sloid:71412",
+     "name": "Liebefeld, Hessstrasse",
+     "role": "primary"
+    }
+   ],
+   "levels": [
+    {
+     "level": 0,
+     "elevation_m": 562.2,
+     "elevation_min_m": 561.0,
+     "elevation_max_m": 562.3,
+     "n_samples": 6,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 35,
+   "by_type": {
+    "boarding_edge": 6,
+    "shelter": 1,
+    "building_part": 26,
+    "roof": 2
+   },
+   "by_geometry_quality": {
+    "community": 33,
+    "approximate": 2
+   },
+   "cross_checked_by_type": {},
+   "inferred": 28,
+   "walk_graph": {
+    "nodes": 49,
+    "edges": 33
+   },
+   "by_type_and_level": {
+    "boarding_edge@0": 6,
+    "building_part@0": 26,
+    "roof@0": 2,
+    "shelter@0": 1
+   },
+   "tier": 2,
+   "selected_because": "4 lettered kerbs"
+  },
+  {
+   "slug": "8571413-koeniz-bruehlplatz",
+   "title": "Köniz, Brühlplatz",
+   "stations": [
+    {
+     "number": "8571413",
+     "sloid": "ch:1:sloid:71413",
+     "name": "Köniz, Brühlplatz",
+     "role": "primary"
+    }
+   ],
+   "levels": [
+    {
+     "level": 0,
+     "elevation_m": 569.5,
+     "elevation_min_m": 568.8,
+     "elevation_max_m": 569.9,
+     "n_samples": 4,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 28,
+   "by_type": {
+    "boarding_edge": 4,
+    "platform_surface": 2,
+    "shelter": 1,
+    "building_part": 13,
+    "passage": 1,
+    "stairs": 2,
+    "access_point": 5
+   },
+   "by_geometry_quality": {
+    "community": 28
+   },
+   "cross_checked_by_type": {},
+   "inferred": 18,
+   "walk_graph": {
+    "nodes": 57,
+    "edges": 48
+   },
+   "by_type_and_level": {
+    "access_point@0": 5,
+    "boarding_edge@0": 4,
+    "building_part@0": 13,
+    "passage@none": 1,
+    "platform_surface@0": 2,
+    "shelter@0": 1,
+    "stairs@none": 2
+   },
+   "tier": 2,
+   "selected_because": "4 lettered kerbs"
+  },
+  {
+   "slug": "8571436-bern-bachmaetteli",
+   "title": "Bern, Bachmätteli",
+   "stations": [
+    {
+     "number": "8571436",
+     "sloid": "ch:1:sloid:71436",
+     "name": "Bern, Bachmätteli",
+     "role": "primary"
+    }
+   ],
+   "levels": [
+    {
+     "level": 0,
+     "elevation_m": 558.7,
+     "elevation_min_m": 558.5,
+     "elevation_max_m": 558.8,
+     "n_samples": 4,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    },
+    {
+     "level": 1,
+     "elevation_m": 563.2,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    }
+   ],
+   "features": 47,
+   "by_type": {
+    "boarding_edge": 4,
+    "shelter": 2,
+    "underground_structure": 6,
+    "stairs_outline": 2,
+    "bridge_outline": 2,
+    "building_footprint": 13,
+    "building_part": 15,
+    "passage": 1,
+    "access_point": 2
+   },
+   "by_geometry_quality": {
+    "community": 22,
+    "surveyed": 25
+   },
+   "cross_checked_by_type": {},
+   "inferred": 9,
+   "walk_graph": {
+    "nodes": 74,
+    "edges": 78
+   },
+   "by_type_and_level": {
+    "access_point@0": 2,
+    "boarding_edge@0": 4,
+    "bridge_outline@none": 2,
+    "building_footprint@0": 13,
+    "building_part@0": 15,
+    "passage@1": 1,
+    "shelter@0": 2,
+    "stairs_outline@none": 2,
+    "underground_structure@none": 6
+   },
+   "tier": 2,
+   "selected_because": "4 lettered kerbs"
+  },
+  {
+   "slug": "8576999-bern-upd-waldau",
+   "title": "Bern, UPD Waldau",
+   "stations": [
+    {
+     "number": "8576999",
+     "sloid": "ch:1:sloid:76999",
+     "name": "Bern, UPD Waldau",
+     "role": "primary"
+    }
+   ],
+   "levels": [
+    {
+     "level": 0,
+     "elevation_m": 558.0,
+     "elevation_min_m": 557.9,
+     "elevation_max_m": 558.4,
+     "n_samples": 4,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 13,
+   "by_type": {
+    "boarding_edge": 4,
+    "shelter": 3,
+    "underground_structure": 1,
+    "canopy": 1,
+    "building_footprint": 1,
+    "building_part": 3
+   },
+   "by_geometry_quality": {
+    "community": 9,
+    "surveyed": 4
+   },
+   "cross_checked_by_type": {},
+   "inferred": 7,
+   "walk_graph": {
+    "nodes": 43,
+    "edges": 40
+   },
+   "by_type_and_level": {
+    "boarding_edge@0": 4,
+    "building_footprint@0": 1,
+    "building_part@0": 3,
+    "canopy@0": 1,
+    "shelter@0": 3,
+    "underground_structure@none": 1
+   },
+   "tier": 2,
+   "selected_because": "4 lettered kerbs"
+  },
+  {
+   "slug": "8577002-ostermundigen-waldeck",
+   "title": "Ostermundigen, Waldeck",
+   "stations": [
+    {
+     "number": "8577002",
+     "sloid": "ch:1:sloid:77002",
+     "name": "Ostermundigen, Waldeck",
+     "role": "primary"
+    }
+   ],
+   "levels": [
+    {
+     "level": -2,
+     "elevation_m": 552.0,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": -1,
+     "elevation_m": 556.5,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 561.0,
+     "elevation_min_m": 560.9,
+     "elevation_max_m": 561.3,
+     "n_samples": 4,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 20,
+   "by_type": {
+    "boarding_edge": 4,
+    "shelter": 2,
+    "underground_structure": 1,
+    "building_footprint": 1,
+    "building_part": 5,
+    "roof": 1,
+    "passage": 2,
+    "stairs": 1,
+    "access_point": 3
+   },
+   "by_geometry_quality": {
+    "community": 17,
+    "approximate": 1,
+    "surveyed": 2
+   },
+   "cross_checked_by_type": {
+    "passage": 1
+   },
+   "inferred": 11,
+   "walk_graph": {
+    "nodes": 37,
+    "edges": 32
+   },
+   "by_type_and_level": {
+    "access_point@0": 3,
+    "boarding_edge@0": 4,
+    "building_footprint@0": 1,
+    "building_part@0": 5,
+    "passage@-1": 1,
+    "passage@-2": 1,
+    "roof@0": 1,
+    "shelter@0": 2,
+    "stairs@none": 1,
+    "underground_structure@none": 1
+   },
+   "tier": 2,
+   "selected_because": "4 lettered kerbs"
+  },
+  {
+   "slug": "8579897-bern-kocherpark",
+   "title": "Bern, Kocherpark",
+   "stations": [
+    {
+     "number": "8579897",
+     "sloid": "ch:1:sloid:79897",
+     "name": "Bern, Kocherpark",
+     "role": "primary"
+    }
+   ],
+   "levels": [
+    {
+     "level": -1,
+     "elevation_m": 526.9,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 531.4,
+     "elevation_min_m": 528.5,
+     "elevation_max_m": 534.2,
+     "n_samples": 4,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 61,
+   "by_type": {
+    "boarding_edge": 4,
+    "platform_surface": 2,
+    "underground_structure": 1,
+    "stairs_outline": 2,
+    "canopy": 1,
+    "underpass_outline": 1,
+    "building_footprint": 15,
+    "roof": 2,
+    "building_part": 20,
+    "passage": 3,
+    "stairs": 3,
+    "lift": 1,
+    "access_point": 6
+   },
+   "by_geometry_quality": {
+    "community": 40,
+    "approximate": 1,
+    "surveyed": 20
+   },
+   "cross_checked_by_type": {
+    "stairs": 2
+   },
+   "inferred": 25,
+   "walk_graph": {
+    "nodes": 137,
+    "edges": 151
+   },
+   "by_type_and_level": {
+    "access_point@0": 6,
+    "boarding_edge@0": 4,
+    "building_footprint@0": 15,
+    "building_part@0": 20,
+    "canopy@0": 1,
+    "lift@[-1, 0]": 1,
+    "passage@none": 3,
+    "platform_surface@0": 2,
+    "roof@0": 2,
+    "stairs@[-1, 0]": 1,
+    "stairs@none": 2,
+    "stairs_outline@none": 2,
+    "underground_structure@none": 1,
+    "underpass_outline@none": 1
+   },
+   "tier": 2,
+   "selected_because": "4 lettered kerbs"
+  },
+  {
+   "slug": "8579898-bern-buempliz-unterfuehrung",
+   "title": "Bern, Bümpliz Unterführung",
+   "stations": [
+    {
+     "number": "8579898",
+     "sloid": "ch:1:sloid:79898",
+     "name": "Bern, Bümpliz Unterführung",
+     "role": "primary"
+    }
+   ],
+   "levels": [
+    {
+     "level": -1,
+     "elevation_m": 554.3,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 558.8,
+     "elevation_min_m": 557.9,
+     "elevation_max_m": 559.3,
+     "n_samples": 4,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 56,
+   "by_type": {
+    "boarding_edge": 4,
+    "platform_surface": 1,
+    "shelter": 4,
+    "underground_structure": 3,
+    "building_footprint": 18,
+    "building_part": 18,
+    "passage": 1,
+    "stairs": 2,
+    "access_point": 5
+   },
+   "by_geometry_quality": {
+    "community": 31,
+    "surveyed": 25
+   },
+   "cross_checked_by_type": {
+    "boarding_edge": 4
+   },
+   "inferred": 24,
+   "walk_graph": {
+    "nodes": 128,
+    "edges": 112
+   },
+   "by_type_and_level": {
+    "access_point@0": 5,
+    "boarding_edge@0": 4,
+    "building_footprint@0": 18,
+    "building_part@0": 18,
+    "passage@-1": 1,
+    "platform_surface@0": 1,
+    "shelter@0": 4,
+    "stairs@none": 2,
+    "underground_structure@none": 3
+   },
+   "tier": 2,
+   "selected_because": "4 lettered kerbs"
+  },
+  {
+   "slug": "8579900-bern-buempliz-post",
+   "title": "Bern, Bümpliz Post",
+   "stations": [
+    {
+     "number": "8579900",
+     "sloid": "ch:1:sloid:79900",
+     "name": "Bern, Bümpliz Post",
+     "role": "primary"
+    },
+    {
+     "number": "8571436",
+     "sloid": "ch:1:sloid:71436",
+     "name": "Bern, Bachmätteli",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": 0,
+     "elevation_m": 557.5,
+     "elevation_min_m": 557.4,
+     "elevation_max_m": 557.5,
+     "n_samples": 4,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 60,
+   "by_type": {
+    "boarding_edge": 8,
+    "shelter": 4,
+    "underground_structure": 2,
+    "stairs_outline": 2,
+    "building_footprint": 19,
+    "building_part": 19,
+    "stairs": 1,
+    "passage": 1,
+    "access_point": 4
+   },
+   "by_geometry_quality": {
+    "community": 33,
+    "surveyed": 27
+   },
+   "cross_checked_by_type": {},
+   "inferred": 16,
+   "walk_graph": {
+    "nodes": 105,
+    "edges": 109
+   },
+   "by_type_and_level": {
+    "access_point@0": 4,
+    "boarding_edge@0": 8,
+    "building_footprint@0": 19,
+    "building_part@0": 19,
+    "passage@none": 1,
+    "shelter@0": 4,
+    "stairs@none": 1,
+    "stairs_outline@none": 2,
+    "underground_structure@none": 2
+   },
+   "tier": 2,
+   "selected_because": "4 lettered kerbs"
+  },
+  {
+   "slug": "8587479-bern-schosshalde",
+   "title": "Bern, Schosshalde",
+   "stations": [
+    {
+     "number": "8587479",
+     "sloid": "ch:1:sloid:87479",
+     "name": "Bern, Schosshalde",
+     "role": "primary"
+    }
+   ],
+   "levels": [
+    {
+     "level": -1,
+     "elevation_m": 561.3,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 565.8,
+     "elevation_min_m": 564.1,
+     "elevation_max_m": 566.964,
+     "n_samples": 4,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 44,
+   "by_type": {
+    "boarding_edge": 4,
+    "shelter": 1,
+    "underground_structure": 7,
+    "stairs_outline": 5,
+    "building_footprint": 8,
+    "building_part": 9,
+    "stairs": 3,
+    "passage": 1,
+    "access_point": 6
+   },
+   "by_geometry_quality": {
+    "community": 23,
+    "surveyed": 21
+   },
+   "cross_checked_by_type": {
+    "stairs": 1,
+    "passage": 1
+   },
+   "inferred": 13,
+   "walk_graph": {
+    "nodes": 82,
+    "edges": 76
+   },
+   "by_type_and_level": {
+    "access_point@0": 6,
+    "boarding_edge@0": 4,
+    "building_footprint@0": 8,
+    "building_part@0": 9,
+    "passage@-1": 1,
+    "shelter@0": 1,
+    "stairs@[-1, 0]": 1,
+    "stairs@none": 2,
+    "stairs_outline@none": 5,
+    "underground_structure@none": 7
+   },
+   "tier": 2,
+   "selected_because": "4 lettered kerbs"
+  },
+  {
+   "slug": "8588988-bern-aegertenstrasse",
+   "title": "Bern, Aegertenstrasse",
+   "stations": [
+    {
+     "number": "8588988",
+     "sloid": "ch:1:sloid:88988",
+     "name": "Bern, Aegertenstrasse",
+     "role": "primary"
+    },
+    {
+     "number": "8590062",
+     "sloid": "ch:1:sloid:90062",
+     "name": "Bern, Tillierstrasse",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": 0,
+     "elevation_m": 524.5,
+     "elevation_min_m": 523.7,
+     "elevation_max_m": 526.5,
+     "n_samples": 4,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 44,
+   "by_type": {
+    "boarding_edge": 6,
+    "shelter": 1,
+    "underground_structure": 4,
+    "canopy": 1,
+    "stairs_outline": 1,
+    "building_footprint": 15,
+    "building_part": 16
+   },
+   "by_geometry_quality": {
+    "community": 22,
+    "surveyed": 22
+   },
+   "cross_checked_by_type": {
+    "boarding_edge": 2
+   },
+   "inferred": 11,
+   "walk_graph": {
+    "nodes": 109,
+    "edges": 114
+   },
+   "by_type_and_level": {
+    "boarding_edge@0": 6,
+    "building_footprint@0": 15,
+    "building_part@0": 16,
+    "canopy@0": 1,
+    "shelter@0": 1,
+    "stairs_outline@none": 1,
+    "underground_structure@none": 4
+   },
+   "tier": 2,
+   "selected_because": "4 lettered kerbs"
+  },
+  {
+   "slug": "8588991-bern-breitfeld",
+   "title": "Bern, Breitfeld",
+   "stations": [
+    {
+     "number": "8588991",
+     "sloid": "ch:1:sloid:88991",
+     "name": "Bern, Breitfeld",
+     "role": "primary"
+    },
+    {
+     "number": "8590085",
+     "sloid": "ch:1:sloid:90085",
+     "name": "Bern, Wylerhuus",
+     "role": "adjacent"
+    }
+   ],
+   "levels": [
+    {
+     "level": 0,
+     "elevation_m": 554.7,
+     "elevation_min_m": 554.4,
+     "elevation_max_m": 555.1,
+     "n_samples": 4,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 69,
+   "by_type": {
+    "boarding_edge": 5,
+    "platform_surface": 1,
+    "underground_structure": 3,
+    "canopy": 1,
+    "building_footprint": 28,
+    "building_part": 29,
+    "roof": 2
+   },
+   "by_geometry_quality": {
+    "community": 37,
+    "surveyed": 32
+   },
+   "cross_checked_by_type": {
+    "boarding_edge": 1
+   },
+   "inferred": 8,
+   "walk_graph": {
+    "nodes": 45,
+    "edges": 41
+   },
+   "by_type_and_level": {
+    "boarding_edge@0": 5,
+    "building_footprint@0": 28,
+    "building_part@0": 29,
+    "canopy@0": 1,
+    "platform_surface@0": 1,
+    "roof@0": 2,
+    "underground_structure@none": 3
+   },
+   "tier": 2,
+   "selected_because": "4 lettered kerbs"
+  },
+  {
+   "slug": "8589003-bern-thunplatz",
+   "title": "Bern, Thunplatz",
+   "stations": [
+    {
+     "number": "8589003",
+     "sloid": "ch:1:sloid:89003",
+     "name": "Bern, Thunplatz",
+     "role": "primary"
+    }
+   ],
+   "levels": [
+    {
+     "level": 0,
+     "elevation_m": 552.0,
+     "elevation_min_m": 547.8,
+     "elevation_max_m": 553.1,
+     "n_samples": 4,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 21,
+   "by_type": {
+    "boarding_edge": 5,
+    "platform_surface": 3,
+    "canopy": 1,
+    "building_footprint": 4,
+    "building_part": 8
+   },
+   "by_geometry_quality": {
+    "community": 15,
+    "missing": 1,
+    "surveyed": 5
+   },
+   "cross_checked_by_type": {
+    "boarding_edge": 4
+   },
+   "inferred": 7,
+   "walk_graph": {
+    "nodes": 78,
+    "edges": 81
+   },
+   "by_type_and_level": {
+    "boarding_edge@0": 5,
+    "building_footprint@0": 4,
+    "building_part@0": 8,
+    "canopy@0": 1,
+    "platform_surface@0": 3
+   },
+   "tier": 2,
+   "selected_because": "4 lettered kerbs"
+  },
+  {
+   "slug": "8589991-bern-monbijou",
+   "title": "Bern, Monbijou",
+   "stations": [
+    {
+     "number": "8589991",
+     "sloid": "ch:1:sloid:89991",
+     "name": "Bern, Monbijou",
+     "role": "primary"
+    }
+   ],
+   "levels": [
+    {
+     "level": 0,
+     "elevation_m": 526.9,
+     "elevation_min_m": 526.0,
+     "elevation_max_m": 527.1,
+     "n_samples": 4,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 48,
+   "by_type": {
+    "boarding_edge": 4,
+    "platform_surface": 2,
+    "shelter": 3,
+    "underground_structure": 2,
+    "canopy": 3,
+    "stairs_outline": 1,
+    "building_footprint": 15,
+    "building_part": 18
+   },
+   "by_geometry_quality": {
+    "community": 26,
+    "surveyed": 22
+   },
+   "cross_checked_by_type": {
+    "boarding_edge": 4
+   },
+   "inferred": 17,
+   "walk_graph": {
+    "nodes": 126,
+    "edges": 141
+   },
+   "by_type_and_level": {
+    "boarding_edge@0": 4,
+    "building_footprint@0": 15,
+    "building_part@0": 18,
+    "canopy@0": 3,
+    "platform_surface@0": 2,
+    "shelter@0": 3,
+    "stairs_outline@none": 1,
+    "underground_structure@none": 2
+   },
+   "tier": 2,
+   "selected_because": "4 lettered kerbs"
+  },
+  {
+   "slug": "8589992-bern-sulgenau",
+   "title": "Bern, Sulgenau",
+   "stations": [
+    {
+     "number": "8589992",
+     "sloid": "ch:1:sloid:89992",
+     "name": "Bern, Sulgenau",
+     "role": "primary"
+    }
+   ],
+   "levels": [
+    {
+     "level": -1,
+     "elevation_m": 516.6,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 521.1,
+     "elevation_min_m": 520.5,
+     "elevation_max_m": 521.5,
+     "n_samples": 4,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 73,
+   "by_type": {
+    "boarding_edge": 4,
+    "shelter": 1,
+    "underground_structure": 4,
+    "canopy": 1,
+    "stairs_outline": 7,
+    "underpass_outline": 2,
+    "bridge_outline": 1,
+    "building_footprint": 16,
+    "building_part": 18,
+    "passage": 6,
+    "stairs": 3,
+    "access_point": 10
+   },
+   "by_geometry_quality": {
+    "community": 40,
+    "approximate": 2,
+    "surveyed": 31
+   },
+   "cross_checked_by_type": {
+    "stairs": 3
+   },
+   "inferred": 19,
+   "walk_graph": {
+    "nodes": 123,
+    "edges": 129
+   },
+   "by_type_and_level": {
+    "access_point@0": 10,
+    "boarding_edge@0": 4,
+    "bridge_outline@none": 1,
+    "building_footprint@0": 16,
+    "building_part@0": 18,
+    "canopy@0": 1,
+    "passage@-1": 1,
+    "passage@none": 5,
+    "shelter@0": 1,
+    "stairs@none": 3,
+    "stairs_outline@none": 7,
+    "underground_structure@none": 4,
+    "underpass_outline@none": 2
+   },
+   "tier": 2,
+   "selected_because": "4 lettered kerbs"
+  },
+  {
+   "slug": "8589993-bern-wander",
+   "title": "Bern, Wander",
+   "stations": [
+    {
+     "number": "8589993",
+     "sloid": "ch:1:sloid:89993",
+     "name": "Bern, Wander",
+     "role": "primary"
+    }
+   ],
+   "levels": [
+    {
+     "level": -2,
+     "elevation_m": 521.8,
+     "n_samples": 0,
+     "elevation_quality": "approximate",
+     "elevation_source": "nominal 4.5 m per level from level 0; not measured"
+    },
+    {
+     "level": 0,
+     "elevation_m": 530.8,
+     "elevation_min_m": 529.4,
+     "elevation_max_m": 535.4,
+     "n_samples": 4,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 46,
+   "by_type": {
+    "boarding_edge": 4,
+    "shelter": 1,
+    "underground_structure": 2,
+    "stairs_outline": 3,
+    "canopy": 2,
+    "building_footprint": 14,
+    "building_part": 16,
+    "roof": 1,
+    "passage": 1,
+    "access_point": 2
+   },
+   "by_geometry_quality": {
+    "community": 24,
+    "surveyed": 22
+   },
+   "cross_checked_by_type": {
+    "passage": 1
+   },
+   "inferred": 11,
+   "walk_graph": {
+    "nodes": 100,
+    "edges": 100
+   },
+   "by_type_and_level": {
+    "access_point@0": 2,
+    "boarding_edge@0": 4,
+    "building_footprint@0": 14,
+    "building_part@0": 16,
+    "canopy@0": 2,
+    "passage@-2": 1,
+    "roof@0": 1,
+    "shelter@0": 1,
+    "stairs_outline@none": 3,
+    "underground_structure@none": 2
+   },
+   "tier": 2,
+   "selected_because": "4 lettered kerbs"
+  },
+  {
+   "slug": "8589996-spiegel-spiegel",
+   "title": "Spiegel, Spiegel",
+   "stations": [
+    {
+     "number": "8589268",
+     "sloid": "ch:1:sloid:89268",
+     "name": "Spiegel, Zentrum",
+     "role": "adjacent"
+    },
+    {
+     "number": "8589996",
+     "sloid": "ch:1:sloid:89996",
+     "name": "Spiegel, Spiegel",
+     "role": "primary"
+    }
+   ],
+   "levels": [
+    {
+     "level": 0,
+     "elevation_m": 607.0,
+     "elevation_min_m": 605.1,
+     "elevation_max_m": 607.8,
+     "n_samples": 4,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 26,
+   "by_type": {
+    "boarding_edge": 6,
+    "shelter": 2,
+    "building_part": 11,
+    "roof": 1,
+    "stairs": 2,
+    "access_point": 4
+   },
+   "by_geometry_quality": {
+    "community": 24,
+    "approximate": 2
+   },
+   "cross_checked_by_type": {
+    "boarding_edge": 1
+   },
+   "inferred": 13,
+   "walk_graph": {
+    "nodes": 44,
+    "edges": 40
+   },
+   "by_type_and_level": {
+    "access_point@0": 4,
+    "boarding_edge@0": 6,
+    "building_part@0": 11,
+    "roof@0": 1,
+    "shelter@0": 2,
+    "stairs@none": 2
+   },
+   "tier": 2,
+   "selected_because": "4 lettered kerbs"
+  },
+  {
+   "slug": "8590021-bern-viktoriaplatz",
+   "title": "Bern, Viktoriaplatz",
+   "stations": [
+    {
+     "number": "8590021",
+     "sloid": "ch:1:sloid:90021",
+     "name": "Bern, Viktoriaplatz",
+     "role": "primary"
+    }
+   ],
+   "levels": [
+    {
+     "level": 0,
+     "elevation_m": 558.7,
+     "elevation_min_m": 558.4,
+     "elevation_max_m": 559.0,
+     "n_samples": 4,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 51,
+   "by_type": {
+    "boarding_edge": 4,
+    "platform_surface": 2,
+    "shelter": 3,
+    "underground_structure": 2,
+    "stairs_outline": 2,
+    "canopy": 2,
+    "underpass_outline": 1,
+    "building_footprint": 16,
+    "building_part": 19
+   },
+   "by_geometry_quality": {
+    "community": 25,
+    "surveyed": 26
+   },
+   "cross_checked_by_type": {
+    "boarding_edge": 4
+   },
+   "inferred": 17,
+   "walk_graph": {
+    "nodes": 61,
+    "edges": 66
+   },
+   "by_type_and_level": {
+    "boarding_edge@0": 4,
+    "building_footprint@0": 16,
+    "building_part@0": 19,
+    "canopy@0": 2,
+    "platform_surface@0": 2,
+    "shelter@0": 3,
+    "stairs_outline@none": 2,
+    "underground_structure@none": 2,
+    "underpass_outline@none": 1
+   },
+   "tier": 2,
+   "selected_because": "4 lettered kerbs"
+  },
+  {
+   "slug": "8590041-bern-loryplatz",
+   "title": "Bern, Loryplatz",
+   "stations": [
+    {
+     "number": "8590041",
+     "sloid": "ch:1:sloid:90041",
+     "name": "Bern, Loryplatz",
+     "role": "primary"
+    }
+   ],
+   "levels": [
+    {
+     "level": 0,
+     "elevation_m": 538.5,
+     "elevation_min_m": 537.6,
+     "elevation_max_m": 538.7,
+     "n_samples": 6,
+     "elevation_quality": "source_derived",
+     "elevation_source": "median atlas height of the boarding edges on this level (LN02 assumed)"
+    }
+   ],
+   "features": 65,
+   "by_type": {
+    "boarding_edge": 6,
+    "platform_surface": 2,
+    "shelter": 2,
+    "stairs_outline": 4,
+    "building_footprint": 15,
+    "building_part": 15,
+    "stairs": 7,
+    "access_point": 14
+   },
+   "by_geometry_quality": {
+    "community": 44,
+    "surveyed": 21
+   },
+   "cross_checked_by_type": {
+    "boarding_edge": 2,
+    "stairs": 5
+   },
+   "inferred": 34,
+   "walk_graph": {
+    "nodes": 193,
+    "edges": 223
+   },
+   "by_type_and_level": {
+    "access_point@0": 14,
+    "boarding_edge@0": 6,
+    "building_footprint@0": 15,
+    "building_part@0": 15,
+    "platform_surface@0": 2,
+    "shelter@0": 2,
+    "stairs@0": 1,
+    "stairs@none": 6,
+    "stairs_outline@none": 4
+   },
+   "tier": 2,
+   "selected_because": "4 lettered kerbs"
+  }
+ ]
+}
