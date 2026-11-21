@@ -1,0 +1,2 @@
+# Research data: keep bytes exactly as written (checksums in manifests must stay valid on every OS)
+* -text
