@@ -1,5 +1,4 @@
-// Sample community events for immigrants, refugees and marginalised groups.
-// NOTE: this is generated demo data, not real events. Replace `generateEvents` with a real feed later.
+// Community listings sourced from the organizers below.
 (function () {
   const CATEGORIES = {
     language:  { color: '#5856d6', label: 'Language' },
@@ -24,149 +23,70 @@
     health:    'M12 5v14M5 12h14',
   };
 
-  const LANG = { de: 'German', fr: 'French', it: 'Italian' };
-
-  const ABOUT = {
-    language: 'Practise everyday conversation in a relaxed group. All levels welcome — volunteers help you with pronunciation, vocabulary and real-life situations like shopping, doctor visits or talking to neighbours.',
-    food: 'Come by, eat together and meet people from the neighbourhood. The meal is free and vegetarian options are always available. Feel free to bring friends and family.',
-    legal: 'Trained volunteers and lawyers answer your questions confidentially and free of charge. Bring any letters or documents you have. Interpreters can be arranged on request.',
-    jobs: 'A practical session to help you take the next step towards work or training in Switzerland. Bring your laptop if you have one — otherwise devices are provided.',
-    community: 'A safe and welcoming space to meet others, share experiences and make new friends. No registration needed — just drop in.',
-    sport: 'Get moving and have fun together. No experience or equipment needed, and everyone is welcome regardless of level. Water is provided.',
-    kids: 'A friendly afternoon for children and parents. Volunteers support with homework, reading and play while parents can connect and ask questions.',
-    health: 'Confidential support with health questions from trained professionals. Free of charge and independent of your residence status. Interpreters available.',
-  };
-  const AUDIENCE = {
-    language: 'Newcomers, refugees and anyone learning the local language',
-    food: 'Everyone — especially newcomers and people living alone',
-    legal: 'Asylum seekers, refugees and migrants',
-    jobs: 'Job seekers with a migration background',
-    community: 'Migrants, refugees, LGBTQ+ people and allies',
-    sport: 'Everyone, all ages and levels',
-    kids: 'Families and children',
-    health: 'Anyone, regardless of residence status',
-  };
-
-  const TITLES = {
-    language: [
-      (l) => `${l} conversation café`, (l) => `${l} for beginners`, (l) => `${l} A2 practice group`,
-      (l) => `Free ${l} lesson`, () => 'Language exchange evening', (l) => `${l} for parents`,
-    ],
-    food: [
-      () => 'Free community dinner', () => 'Cooking together: dishes from home', () => 'Open lunch table',
-      () => 'Breakfast meetup', () => 'Free food distribution', () => 'Neighbourhood potluck',
-    ],
-    legal: [
-      () => 'Free asylum law advice', () => 'Residence permit Q&A', () => 'Help with official letters',
-      () => 'Tenant rights consultation', () => 'Family reunification info', () => 'Anti-discrimination counselling',
-    ],
-    jobs: [
-      () => 'CV & job application workshop', () => 'Coding taster session', () => 'Diploma recognition info',
-      () => 'Interview practice', () => 'Mentoring for job seekers', () => 'Internship info evening',
-    ],
-    community: [
-      () => 'Newcomers meetup', () => 'LGBTQ+ refugee meetup', () => "Women's circle",
-      () => 'Intercultural evening', () => 'Open community café', () => 'Music & dance night',
-    ],
-    sport: [
-      () => 'Football for everyone', () => 'Women-only swimming', () => 'Free yoga in the park',
-      () => 'Running group', () => 'Volleyball meetup', () => 'Bike repair & ride',
-    ],
-    kids: [
-      () => 'Homework help', () => 'Kids play afternoon', () => 'Reading hour for families',
-      () => 'Youth computer club', () => 'Parents & toddlers group', () => 'School system info for parents',
-    ],
-    health: [
-      () => 'Free health consultation', () => 'Mental health support group', () => 'Trauma counselling',
-      () => 'Women’s health info', () => 'Vaccination info session', () => 'Health insurance help',
-    ],
-  };
-
-  const VENUES = ['Community centre', 'Library', 'Neighbourhood hall', 'Youth centre', 'Parish hall', 'Park', 'School', 'Café', 'Sports hall', 'Culture house'];
-  const DAYS = ['Today', 'Today', 'Tomorrow', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-  const TIMES = ['09:00', '10:00', '12:00', '14:00', '15:30', '17:00', '18:00', '18:30', '19:00', '20:00'];
-
-  // [name, lat, lng, number of events, spread in degrees, language]
-  const CITIES = [
-    ['Zürich', 47.3769, 8.5417, 80, .025, 'de'],
-    ['Genève', 46.2044, 6.1432, 60, .02, 'fr'],
-    ['Basel', 47.5596, 7.5886, 50, .018, 'de'],
-    ['Bern', 46.9480, 7.4474, 60, .018, 'de'],
-    ['Lausanne', 46.5197, 6.6323, 45, .016, 'fr'],
-    ['Winterthur', 47.4988, 8.7237, 25, .014, 'de'],
-    ['Luzern', 47.0502, 8.3093, 30, .014, 'de'],
-    ['St. Gallen', 47.4245, 9.3767, 25, .013, 'de'],
-    ['Lugano', 46.0037, 8.9511, 25, .012, 'it'],
-    ['Biel/Bienne', 47.1368, 7.2468, 25, .012, 'de'],
-    ['Thun', 46.7580, 7.6280, 15, .01, 'de'],
-    ['Fribourg', 46.8065, 7.1619, 20, .01, 'fr'],
-    ['Neuchâtel', 46.9900, 6.9310, 15, .01, 'fr'],
-    ['Chur', 46.8508, 9.5320, 15, .01, 'de'],
-    ['Sion', 46.2330, 7.3600, 12, .01, 'fr'],
-    ['Aarau', 47.3900, 8.0450, 12, .009, 'de'],
-    ['Schaffhausen', 47.6970, 8.6340, 10, .009, 'de'],
-    ['Zug', 47.1660, 8.5150, 12, .009, 'de'],
-    ['Olten', 47.3500, 7.9030, 10, .008, 'de'],
-    ['Baden', 47.4730, 8.3070, 10, .008, 'de'],
-    ['Bellinzona', 46.1950, 9.0230, 10, .008, 'it'],
-    ['Yverdon', 46.7785, 6.6410, 10, .008, 'fr'],
+  const listings = [
+    {
+      id: 'speak-out-dinner', cat: 'food', title: 'Free dinner at Speak-Out',
+      coordinates: [8.544008, 47.374928], city: 'Zürich',
+      venue: 'Gassenküche Speak-Out, Häringstrasse 3',
+      when: 'Weekdays from 20:00', cost: 'Free meal', attendance: 'Drop in',
+      about: 'A warm meal is served from 20:00. Check the visitor page for seasonal Wednesday closures.',
+      audience: 'Open to everyone', tags: ['free-food'],
+      url: 'https://www.speakout-zueri.ch/besuchen',
+    },
+    {
+      id: 'aoz-german-oerlikon', cat: 'language', title: 'Beginner German at PBZ Oerlikon',
+      coordinates: [8.545239, 47.411751], city: 'Zürich',
+      venue: 'PBZ Oerlikon, Hofwiesenstrasse 379',
+      when: 'Tuesdays, 09:30–11:30', cost: 'Free', attendance: 'No registration needed',
+      about: 'Practise German for everyday situations. See AOZ’s course page for holiday closures.',
+      audience: 'Adults in the city of Zürich who speak little or no German', tags: ['language'],
+      url: 'https://aoz.ch/de/kurse-und-angebote/deutsch-der-bibliothek',
+    },
+    {
+      id: 'witikon-language-cafe', cat: 'language', title: 'German conversation café in Witikon',
+      coordinates: [8.594219, 47.360008], city: 'Zürich',
+      venue: 'GZ Witikon, Witikonerstrasse 405',
+      when: 'Tuesdays in even-numbered weeks, 11:30–12:30', cost: 'Free', attendance: 'No registration needed',
+      about: 'Practise speaking German in an informal group. The café takes a break during city school holidays.',
+      audience: 'Anyone who wants to practise German', tags: ['language'],
+      url: 'https://gz-zh.ch/gz-witikon/programm/',
+    },
+    {
+      id: 'bbz-advent-2026', cat: 'community', title: 'Advent gathering at BBZ Zürich',
+      coordinates: [8.395218, 47.418839], city: 'Dietikon',
+      venue: 'BBZ Zürich, Moosmattstrasse 30',
+      when: '10 December 2026 from 14:30', through: '2026-12-10T23:59:59+01:00',
+      cost: 'Ask the organizer about cost', attendance: 'Advance registration required',
+      about: 'An Advent afternoon gathering at the Swiss Federation of the Blind and Visually Impaired’s community centre. Contact the centre to register.',
+      audience: 'Blind and low-vision people', tags: ['blind-low-vision'],
+      url: 'https://sbv-fsa.ch/bbz/zuerich/',
+    },
+    {
+      id: 'bbz-ceramics', cat: 'community', title: 'Clay workshop at BBZ Zürich',
+      coordinates: [8.395218, 47.418839], city: 'Dietikon',
+      venue: 'BBZ Zürich, Moosmattstrasse 30',
+      when: 'Usually Tuesdays', cost: 'Ask about course and materials fees', attendance: 'Contact the organizer',
+      about: 'Work with clay at the BBZ. Contact the centre for the next workshop time and availability.',
+      audience: 'Blind and low-vision people', tags: ['blind-low-vision'],
+      url: 'https://sbv-fsa.ch/bbz/zuerich/',
+    },
   ];
 
-  function rng(seed) {
-    return function () {
-      seed |= 0; seed = (seed + 0x6D2B79F5) | 0;
-      let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
-      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-    };
-  }
-  const pick = (r, arr) => arr[Math.floor(r() * arr.length)];
-  const catKeys = Object.keys(CATEGORIES);
+  const features = listings.map(({ coordinates, ...listing }) => ({
+    type: 'Feature',
+    geometry: { type: 'Point', coordinates },
+    properties: {
+      ...listing,
+      color: CATEGORIES[listing.cat].color,
+      category: CATEGORIES[listing.cat].label,
+    },
+  }));
 
-  function makeEvents(lat, lng, n, spread, lang, seed, idPrefix, city) {
-    const r = rng(seed);
-    const out = [];
-    const lngScale = 1 / Math.cos(lat * Math.PI / 180);
-    for (let i = 0; i < n; i++) {
-      // Sum of uniforms ≈ normal: denser in the centre, thinning outwards
-      const dx = (r() + r() + r() - 1.5) * spread * 1.6;
-      const dy = (r() + r() + r() - 1.5) * spread * 1.6;
-      const cat = pick(r, catKeys);
-      out.push({
-        type: 'Feature',
-        geometry: { type: 'Point', coordinates: [lng + dx * lngScale, lat + dy] },
-        properties: {
-          id: `${idPrefix}-${i}`,
-          cat,
-          color: CATEGORIES[cat].color,
-          title: pick(r, TITLES[cat])(LANG[lang] || 'German'),
-          when: `${pick(r, DAYS)} ${pick(r, TIMES)}`,
-          venue: pick(r, VENUES),
-          city,
-          category: CATEGORIES[cat].label,
-          about: ABOUT[cat],
-          audience: AUDIENCE[cat],
-          duration: pick(r, ['1 h', '1.5 h', '2 h', '2 h', '3 h']),
-        },
-      });
-    }
-    return out;
+  function matches(event, preferences, now = Date.now()) {
+    const { through, tags } = event.properties;
+    return (!through || Date.parse(through) >= now)
+      && (!preferences.length || preferences.some((preference) => tags.includes(preference)));
   }
 
-  function generateEvents() {
-    const features = [];
-    CITIES.forEach(([name, lat, lng, n, spread, lang], ci) => {
-      features.push(...makeEvents(lat, lng, Math.round(n * 1.5), spread, lang, 1000 + ci, name, name));
-    });
-    return { type: 'FeatureCollection', features };
-  }
-
-  // Extra events around any spot (used around the user's position so there is always something nearby)
-  function eventsAround(lat, lng, n = 30) {
-    const seed = Math.round(lat * 1000) * 7919 + Math.round(lng * 1000);
-    const lang = lng < 7.1 ? 'fr' : lat < 46.4 && lng > 8.4 ? 'it' : 'de';
-    return makeEvents(lat, lng, n, .012, lang, seed, `near-${seed}`, 'Near you');
-  }
-
-  window.EVENTS = { CATEGORIES, GLYPHS, generateEvents, eventsAround };
+  window.EVENTS = { GLYPHS, features, matches };
 })();

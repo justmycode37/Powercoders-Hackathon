@@ -30,6 +30,9 @@
       --sheet-bg: #ffffff;
       --row-bg: #f2f2f7;
       --done: #34c759;
+      --glass: rgba(246,246,248,.82);
+      --card: #ffffff;
+      --hair: rgba(60,60,67,.12);
       --shadow: 0 6px 24px rgba(0,0,0,.14), 0 1px 3px rgba(0,0,0,.08);
       --user-blue: #0a84ff;
       --pin-red: #ff3b30;
@@ -48,6 +51,9 @@
       --sheet-bg: #1c1c1e;
       --row-bg: #3a3a3c;
       --done: #1f8a3b;
+      --glass: rgba(28,28,30,.78);
+      --card: rgba(58,58,60,.72);
+      --hair: rgba(255,255,255,.1);
       --shadow: 0 6px 24px rgba(0,0,0,.45), 0 1px 3px rgba(0,0,0,.3);
       color-scheme: dark;
     }
@@ -230,27 +236,32 @@
     .search-wrap.collapsed .search .clear { display: none; }
     .search-wrap.collapsed .results { display: none; }
 
-    /* ===== Journey ===== */
-    /* Top pill: departure time · progress bar with change points · arrival time */
+    /* ===== Journey (Apple Maps–style) ===== */
+    .glass {
+      background: var(--glass);
+      -webkit-backdrop-filter: blur(28px) saturate(180%);
+      backdrop-filter: blur(28px) saturate(180%);
+    }
+
+    /* Top pill: depart · slim progress line · arrive */
     .j-pill {
       position: fixed;
       left: 12px;
       right: 12px;
-      top: calc(env(safe-area-inset-top) + 12px);
+      top: calc(env(safe-area-inset-top) + 10px);
       z-index: 15;
-      height: 58px;
+      height: 54px;
       display: none;
       align-items: center;
-      gap: 4px;
+      gap: 2px;
       padding: 0 6px;
-      background: var(--bar-bg);
       color: var(--bar-text);
-      border-radius: 29px;
-      box-shadow: var(--shadow);
+      border-radius: 27px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.18), 0 0 0 .5px var(--hair);
     }
     body.journey-mode .j-pill { display: flex; animation: pill-in .55s var(--spring) both; }
     @keyframes pill-in { from { transform: translateY(-130%); } to { transform: none; } }
-    body.journey-mode .menu { top: calc(env(safe-area-inset-top) + 82px); }
+    body.journey-mode .menu { top: calc(env(safe-area-inset-top) + 76px); }
     .menu { transition: top .45s var(--spring); }
     .j-time {
       flex: none;
@@ -258,52 +269,51 @@
       background: transparent;
       color: inherit;
       font: inherit;
-      padding: 6px 10px;
-      border-radius: 20px;
+      padding: 5px 10px;
+      border-radius: 18px;
       cursor: pointer;
-      text-align: center;
-      line-height: 1.05;
+      text-align: left;
+      line-height: 1.1;
     }
+    #jArrBtn { text-align: right; }
     .j-time:active { background: var(--pressed); }
-    .j-time small { display: block; font-size: 10px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--bar-secondary); margin-bottom: 2px; }
-    .j-time b { font-size: 19px; font-weight: 800; font-variant-numeric: tabular-nums; }
-    .j-bar { flex: 1; position: relative; height: 22px; margin: 0 8px; }
+    .j-time small { display: block; font-size: 11px; font-weight: 500; color: var(--bar-secondary); }
+    .j-time b { font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
+    .j-bar { flex: 1; position: relative; height: 18px; margin: 0 4px; }
     .j-layer { position: absolute; inset: 0; }
     .j-layer.done { clip-path: inset(-8px calc(100% - var(--p, 0%)) -8px -8px); }
-    .j-base { position: absolute; left: 0; right: 0; top: 50%; height: 3px; transform: translateY(-50%); background: var(--bar-secondary); opacity: .25; border-radius: 2px; }
+    .j-base { position: absolute; left: 0; right: 0; top: 50%; height: 2px; transform: translateY(-50%); background: var(--bar-secondary); opacity: .22; border-radius: 1px; }
     .j-seg { position: absolute; top: 50%; transform: translateY(-50%); }
-    /* rides: rounded pills in the same colour as the line badges */
-    .j-seg.ride { height: 8px; border-radius: 4px; background: var(--seg, var(--bar-text)); box-shadow: 0 0 0 2px var(--bar-bg); }
-    .j-seg.walk { height: 0; border-top: 3px dotted var(--bar-secondary); }
+    .j-seg.ride { height: 4px; border-radius: 2px; background: var(--seg, var(--bar-text)); }
+    .j-seg.walk { height: 0; border-top: 2px dotted var(--bar-secondary); }
     .j-layer.done .j-seg.ride { background: var(--done); }
     .j-layer.done .j-seg.walk { border-top-color: var(--done); }
     .j-layer.done .j-base { background: var(--done); opacity: 1; }
     .j-node {
       position: absolute;
       top: 50%;
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: var(--bar-bg);
-      border: 2.5px solid var(--bar-text);
+      border: 2px solid var(--bar-secondary);
       box-sizing: border-box;
       transform: translate(-50%, -50%);
-      transition: border-color .3s ease, background-color .3s ease;
+      transition: border-color .3s ease;
       z-index: 1;
     }
-    .j-node.end { width: 14px; height: 14px; border-width: 3.5px; }
+    .j-node.end { width: 10px; height: 10px; border-color: var(--bar-text); }
     .j-node.done { border-color: var(--done); }
-    /* "you are here" on the bar */
     .j-now {
       position: absolute;
       top: 50%;
       left: var(--p, 0%);
-      width: 14px;
-      height: 14px;
+      width: 12px;
+      height: 12px;
       border-radius: 50%;
       background: var(--done);
-      border: 3px solid #fff;
-      box-shadow: 0 1px 4px rgba(0,0,0,.35);
+      border: 2.5px solid #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,.3);
       box-sizing: border-box;
       transform: translate(-50%, -50%);
       z-index: 2;
@@ -315,16 +325,14 @@
     .route-now::before { content: ""; position: absolute; inset: -10px; border-radius: 50%; background: rgba(52,199,89,.28); animation: pulse 2s ease-out infinite; }
     .route-now::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: #34c759; border: 3px solid #fff; box-shadow: 0 1px 5px rgba(0,0,0,.35); }
 
-    /* Bottom widget: the search bar grows into it */
+    /* Bottom sheet: the search bar grows into it */
     .journey {
       display: none;
       flex-direction: column;
-      background: var(--bar-bg);
       color: var(--bar-text);
-      border-radius: 26px;
-      box-shadow: var(--shadow);
+      border-radius: 28px;
+      box-shadow: 0 10px 40px rgba(0,0,0,.22), 0 0 0 .5px var(--hair);
       overflow: hidden;
-      transition: background-color .3s ease;
     }
     .search-wrap.journey-open .search,
     .search-wrap.journey-open .results { display: none; }
@@ -332,55 +340,58 @@
     .journey > * { animation: j-fade .35s ease .18s both; }
     @keyframes j-grow {
       from { max-height: 52px; border-radius: 26px; }
-      to   { max-height: 620px; border-radius: 26px; }
+      to   { max-height: 620px; border-radius: 28px; }
     }
     @keyframes j-fade {
       from { opacity: 0; transform: translateY(8px); }
       to   { opacity: 1; transform: none; }
     }
-    .j-head { display: flex; align-items: flex-start; gap: 12px; padding: 14px 12px 2px 18px; }
+    .j-grab { width: 36px; height: 5px; border-radius: 3px; background: var(--bar-secondary); opacity: .35; margin: 7px auto 0; }
+    .j-head { display: flex; align-items: flex-start; gap: 12px; padding: 8px 14px 0 20px; }
     .j-dest { flex: 1; min-width: 0; }
-    .j-dest b { display: block; font-size: 17px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .j-dest span { display: block; margin-top: 2px; font-size: 13px; color: var(--bar-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .j-dest b { display: block; font-size: 24px; font-weight: 700; letter-spacing: -.02em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .j-dest span { display: block; margin-top: 1px; font-size: 15px; color: var(--bar-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .j-close {
       flex: none;
       width: 30px;
       height: 30px;
+      margin-top: 2px;
       border: 0;
       padding: 0;
       border-radius: 50%;
-      background: var(--row-bg);
+      background: var(--hair);
       color: var(--bar-secondary);
       display: grid;
       place-items: center;
       cursor: pointer;
     }
-    .j-close svg { width: 12px; height: 12px; }
-    .j-strip { display: flex; gap: 6px; overflow-x: auto; padding: 10px 18px 10px; scrollbar-width: none; }
+    .j-close svg { width: 11px; height: 11px; }
+
+    /* Route summary: walk › M15 › M13 › pin */
+    .j-strip { display: flex; align-items: center; gap: 4px; overflow-x: auto; padding: 10px 20px 12px; scrollbar-width: none; }
     .j-strip::-webkit-scrollbar { display: none; }
+    .j-chev { flex: none; color: var(--bar-secondary); opacity: .6; font-size: 15px; font-weight: 600; }
     .j-chip {
       flex: none;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
-      height: 30px;
-      padding: 0 10px;
+      gap: 3px;
+      padding: 3px 2px;
       border: 0;
-      border-radius: 9px;
-      background: var(--row-bg);
-      color: var(--bar-text);
+      background: transparent;
+      color: var(--bar-secondary);
       font: inherit;
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 600;
       cursor: pointer;
-      transition: background-color .2s ease, color .2s ease;
+      opacity: .75;
+      transition: opacity .2s ease, transform .2s ease;
     }
-    .j-chip.walk { padding: 0 8px; font-weight: 600; color: var(--bar-secondary); }
-    .j-chip.active { background: var(--user-blue); color: #fff; }
-    .j-chip svg, .j-badge svg, .j-kicker svg, .j-alert svg { fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
-    .j-chip svg { width: 16px; height: 16px; }
+    .j-chip svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+    .j-chip.active { opacity: 1; color: var(--bar-text); transform: scale(1.06); }
+    .j-chip .j-badge { font-size: 13px; }
 
-    /* Card carousel: one card at a time, swipe with finger or mouse */
+    /* Card carousel: one card at a time */
     .j-viewport { margin: 0 12px; overflow: hidden; touch-action: pan-y; cursor: grab; }
     .j-viewport:active { cursor: grabbing; }
     .j-track { display: flex; transition: transform .42s var(--spring); will-change: transform; }
@@ -390,48 +401,48 @@
       height: 100%;
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      padding: 14px 14px 14px;
-      border-radius: 20px;
-      background: var(--row-bg);
+      gap: 16px;
+      padding: 16px;
+      border-radius: 22px;
+      background: var(--card);
+      box-shadow: 0 1px 2px rgba(0,0,0,.06);
       user-select: none;
       -webkit-user-select: none;
     }
-    .j-kicker { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--bar-secondary); }
-    .j-kicker svg { width: 16px; height: 16px; }
-    .j-title { font-size: 22px; font-weight: 800; line-height: 1.2; letter-spacing: -.01em; }
-    .j-take { display: flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 600; min-width: 0; }
-    .j-take .dir { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .j-take .lbl { color: var(--bar-secondary); font-weight: 500; flex: none; }
+    .j-row { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .j-ico { flex: none; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; color: #fff; }
+    .j-ico svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+    .j-txt { flex: 1; min-width: 0; }
+    .j-title { font-size: 18px; font-weight: 600; line-height: 1.25; letter-spacing: -.01em; }
+    .j-subtitle { margin-top: 3px; display: flex; flex-wrap: wrap; align-items: center; gap: 5px; font-size: 14px; color: var(--bar-secondary); }
+    .j-step { font-size: 12px; font-weight: 500; color: var(--bar-secondary); align-self: flex-start; white-space: nowrap; }
     .j-badge {
       flex: none;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
-      padding: 3px 8px;
-      border-radius: 7px;
+      padding: 1px 6px;
+      border-radius: 5px;
       color: #fff;
-      font-size: 15px;
-      font-weight: 800;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.35;
     }
-    .j-badge svg { width: 15px; height: 15px; }
-    .j-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-    .j-facts.one { grid-template-columns: 1fr; }
-    .j-fact { background: var(--bar-bg); border-radius: 14px; padding: 9px 12px 10px; min-width: 0; }
-    .j-fact .j-label { font-size: 12px; color: var(--bar-secondary); }
-    .j-fact .v { font-size: 30px; font-weight: 800; line-height: 1.1; font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .j-fact .v.sm { font-size: 20px; }
-    .j-fact .sub { font-size: 12px; color: var(--bar-secondary); margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .j-delay { color: #ff3b30; font-size: 15px; font-weight: 800; margin-left: 4px; }
-    .j-note { font-size: 14px; color: var(--bar-secondary); line-height: 1.35; }
-    .j-note b { color: var(--bar-text); font-weight: 700; }
-    .j-alert { display: flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 700; color: #ff9500; }
-    .j-alert svg { width: 17px; height: 17px; flex: none; }
+    .j-metrics { display: grid; grid-template-columns: 1fr 1fr; column-gap: 12px; padding-left: 52px; }
+    .j-metrics.one { grid-template-columns: 1fr; }
+    .j-metric .k { font-size: 12px; font-weight: 500; color: var(--bar-secondary); }
+    .j-metric .v { margin-top: 1px; font-size: 30px; font-weight: 600; letter-spacing: -.02em; font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .j-delay { color: #ff3b30; font-size: 15px; font-weight: 600; margin-left: 5px; letter-spacing: 0; }
+    .j-foot { padding-left: 52px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 14px; color: var(--bar-secondary); margin-top: auto; }
+    .j-foot b { color: var(--bar-text); font-weight: 600; }
+    .j-tag { display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 999px; font-size: 13px; font-weight: 600; }
+    .j-tag svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+    .j-tag.warn { background: rgba(255,149,0,.16); color: #ff9500; }
+    .j-tag.ok { background: rgba(52,199,89,.16); color: #34c759; }
     .j-dots { display: flex; justify-content: center; gap: 7px; padding: 12px 0 14px; }
     .j-dot { width: 7px; height: 7px; padding: 0; border: 0; border-radius: 50%; background: var(--bar-text); opacity: .25; cursor: pointer; transition: opacity .2s ease, transform .2s ease; }
-    .j-dot.active { opacity: 1; transform: scale(1.2); }
+    .j-dot.active { opacity: 1; transform: scale(1.15); }
     .j-status:empty { display: none; }
-    .j-status { padding: 8px 18px 22px; font-size: 15px; color: var(--bar-secondary); }
+    .j-status { padding: 8px 20px 22px; font-size: 15px; color: var(--bar-secondary); }
 
     /* Time picker sheet */
     .t-dim { position: fixed; inset: 0; z-index: 49; background: rgba(0,0,0,.35); opacity: 0; pointer-events: none; transition: opacity .3s ease; }
@@ -625,6 +636,36 @@
       font-weight: 600;
       cursor: pointer;
     }
+    .event-dialog {
+      box-sizing: border-box;
+      width: min(100%, 540px);
+      max-height: 90vh;
+      padding: 22px;
+      border: 1px solid var(--hairline, #888);
+      border-radius: 22px;
+      background: var(--bar-bg);
+      color: var(--bar-text);
+    }
+    .event-dialog::backdrop { background: rgb(0 0 0 / 55%); }
+    .event-dialog header { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .event-dialog h1 { margin: 0 0 12px; }
+    .event-dialog button, .event-dialog label { min-height: 44px; }
+    .event-dialog label { display: flex; align-items: center; gap: 10px; }
+    .event-dialog input { width: 20px; height: 20px; }
+    .event-dialog button {
+      font: inherit;
+      padding: 8px 14px;
+      color: inherit;
+      background: transparent;
+      border: 1px solid currentColor;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    #eventList { list-style: none; padding: 0; margin: 12px 0; }
+    #eventList li + li { margin-top: 8px; }
+    #eventList button { width: 100%; text-align: left; }
+    #eventList small { display: block; margin-top: 4px; }
+    #evOrganizer { display: grid; place-items: center; margin-bottom: 10px; }
     .ev-map-btn:active { background: #0070e0; }
 
     .user-accuracy {
@@ -674,14 +715,14 @@
         <path d="M12 2v1.4M12 20.6V22M2 12h1.4M20.6 12H22M4.93 4.93l1 1M18.07 18.07l1 1M4.93 19.07l1-1M18.07 5.93l1-1" />
       </svg>
     </button>
-    <button class="fab menu-item" id="eventsBtn" data-slot="1" type="button" aria-label="Show events" aria-pressed="false" tabindex="-1">
+    <button class="fab menu-item" id="eventsBtn" data-slot="1" type="button" aria-label="Events" aria-haspopup="dialog" tabindex="-1">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <rect x="3.5" y="5" width="17" height="15.5" rx="3" />
         <path d="M3.5 10h17M8 3v4M16 3v4" />
         <path d="M8 14.5h.01M12 14.5h.01M16 14.5h.01" stroke-width="3.2" />
       </svg>
     </button>
-    <button class="fab menu-item" id="settingsBtn" data-slot="2" type="button" aria-label="Settings" tabindex="-1">
+    <button class="fab menu-item" id="settingsBtn" data-slot="2" type="button" aria-label="Settings" aria-haspopup="dialog" tabindex="-1">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
         <circle cx="12" cy="12" r="3" />
@@ -701,7 +742,7 @@
 
   <div class="toast" id="toast" role="status"></div>
 
-  <div class="j-pill" id="jPill">
+  <div class="j-pill glass" id="jPill">
     <button class="j-time" id="jDepBtn" type="button" aria-label="Change departure time"><small>Depart</small><b id="jDep">--:--</b></button>
     <div class="j-bar" id="jBar"></div>
     <button class="j-time" id="jArrBtn" type="button" aria-label="Change arrival time"><small>Arrive</small><b id="jArr">--:--</b></button>
@@ -723,6 +764,31 @@
     </div>
   </div>
 
+  <dialog class="event-dialog" id="settingsPage" aria-labelledby="settingsTitle">
+    <header>
+      <h1 id="settingsTitle">Settings</h1>
+      <form method="dialog"><button>Done</button></form>
+    </header>
+    <fieldset id="eventPreferences">
+      <legend>Event preferences</legend>
+      <p>Show events that match any selected option. Clear all selections to see all events.</p>
+      <label><input type="checkbox" value="blind-low-vision"> For blind and low-vision people</label>
+      <label><input type="checkbox" value="free-food"> Free food</label>
+      <label><input type="checkbox" value="language"> Language practice</label>
+    </fieldset>
+  </dialog>
+
+  <dialog class="event-dialog" id="eventsPage" aria-labelledby="eventsTitle">
+    <header>
+      <h1 id="eventsTitle">Events</h1>
+      <form method="dialog"><button>Done</button></form>
+    </header>
+    <label><input type="checkbox" id="eventsOnMap"> Show events on the map</label>
+    <p id="eventEmpty" hidden>No events match your preferences.</p>
+    <ul id="eventList"></ul>
+    <button id="eventSettings" type="button">Event preferences</button>
+  </dialog>
+
   <article class="ev-page" id="evPage" aria-hidden="true">
     <div class="ev-hero" id="evHero">
       <button class="fab ev-back" id="evBack" type="button" aria-label="Back">
@@ -735,7 +801,7 @@
       <div class="ev-rows">
         <div class="ev-row">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="3" /><path d="M3.5 10h17M8 3v4M16 3v4" /></svg>
-          <div><span id="evWhen"></span><small id="evDuration"></small></div>
+          <div><span id="evWhen"></span></div>
         </div>
         <div class="ev-row">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11z" /><circle cx="12" cy="10" r="2.3" /></svg>
@@ -743,13 +809,14 @@
         </div>
         <div class="ev-row">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z" /></svg>
-          <div>Free<small>No registration needed</small></div>
+          <div><span id="evCost"></span><small id="evAttendance"></small></div>
         </div>
       </div>
       <h2>About</h2>
       <p id="evAbout"></p>
       <h2>Who it’s for</h2>
       <p id="evAudience"></p>
+      <a class="ev-map-btn" id="evOrganizer" target="_blank" rel="noopener noreferrer">Organizer details</a>
       <button class="ev-map-btn" id="evShowMap" type="button">Show on map</button>
     </div>
   </article>
@@ -766,7 +833,8 @@
         <span><svg viewBox="0 0 10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7"/></svg></span>
       </button>
     </form>
-    <section class="journey" id="journey" aria-label="Journey">
+    <section class="journey glass" id="journey" aria-label="Journey">
+      <div class="j-grab"></div>
       <div class="j-head">
         <div class="j-dest"><b id="jTo"></b><span id="jSub"></span></div>
         <button class="j-close" id="jClose" type="button" aria-label="End journey">
@@ -874,8 +942,23 @@
       return dark;
     }
 
-    // ---------- Events (sample data from events.js) ----------
-    const EVENTS_FC = EVENTS.generateEvents();
+    // ---------- Community events ----------
+    const preferencesKey = 'event-preferences';
+    const preferencesPanel = document.getElementById('eventPreferences');
+    const preferenceInputs = [...preferencesPanel.querySelectorAll('input')];
+    try {
+      const saved = JSON.parse(localStorage.getItem(preferencesKey));
+      if (Array.isArray(saved)) {
+        preferenceInputs.forEach((input) => { input.checked = saved.includes(input.value); });
+      }
+    } catch { /* Preferences still work for the current page. */ }
+
+    const selectedPreferences = () => preferenceInputs.filter((input) => input.checked).map((input) => input.value);
+    function visibleEvents() {
+      const preferences = selectedPreferences();
+      return EVENTS.features.filter((event) => EVENTS.matches(event, preferences));
+    }
+
     const CARD_W = 124, CARD_H = 150, CARD_MIN_ZOOM = 12.5, MAX_CARDS = 14;
     const cards = new Map(); // event id → marker
 
@@ -918,7 +1001,7 @@
     }
 
     // Show cards for the events nearest the centre that fit without overlapping
-    let eventsOn = false; // toggled with the events button in the top-right menu
+    let eventsOn = false;
     function updateCards() {
       if (!eventsOn || map.getZoom() < CARD_MIN_ZOOM) { clearCards(); return; }
       const W = map.getContainer().clientWidth;
@@ -926,7 +1009,7 @@
       const c = map.project(map.getCenter());
       const me = userLngLat ? map.project(userLngLat) : null;
       const candidates = [];
-      for (const f of EVENTS_FC.features) {
+      for (const f of visibleEvents()) {
         const p = map.project(f.geometry.coordinates);
         // keep clear of the screen edges, the top menu and the bottom search bar
         if (p.x < CARD_W / 2 + 6 || p.x > W - CARD_W / 2 - 6 || p.y < CARD_H + (document.body.classList.contains("journey-mode") ? 84 : 16) || p.y > H - wrap.getBoundingClientRect().height - 32) continue;
@@ -1011,15 +1094,67 @@
     document.getElementById('themeBtn').addEventListener('click', () =>
       setTheme(currentTheme() === 'dark' ? 'light' : 'dark', true));
     const eventsBtn = document.getElementById('eventsBtn');
+    const eventsPage = document.getElementById('eventsPage');
+    const settingsPage = document.getElementById('settingsPage');
+    const eventsOnMap = document.getElementById('eventsOnMap');
+
+    function renderEventList() {
+      const events = visibleEvents();
+      document.getElementById('eventEmpty').hidden = events.length > 0;
+      const items = events.map(({ properties: event }) => {
+        const item = document.createElement('li');
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.textContent = event.title;
+        const details = document.createElement('small');
+        details.textContent = [event.city, event.when, event.cost].join(' · ');
+        button.append(details);
+        button.addEventListener('click', () => {
+          eventsPage.close();
+          openEvent(event.id);
+        });
+        item.append(button);
+        return item;
+      });
+      document.getElementById('eventList').replaceChildren(...items);
+    }
+
     eventsBtn.addEventListener('click', () => {
-      eventsOn = !eventsOn;
-      eventsBtn.classList.toggle('active', eventsOn);
-      eventsBtn.setAttribute('aria-pressed', String(eventsOn));
-      eventsBtn.setAttribute('aria-label', eventsOn ? 'Hide events' : 'Show events');
+      setMenu(false);
+      renderEventList();
+      eventsPage.showModal();
+    });
+    eventsOnMap.addEventListener('change', () => {
+      eventsOn = eventsOnMap.checked;
       updateCards();
     });
+
+    let returnToEvents = false;
     document.getElementById('settingsBtn').addEventListener('click', () => {
-      // Settings screen not built yet
+      setMenu(false);
+      settingsPage.showModal();
+    });
+    document.getElementById('eventSettings').addEventListener('click', () => {
+      returnToEvents = true;
+      eventsPage.close();
+      settingsPage.showModal();
+    });
+    settingsPage.addEventListener('close', () => {
+      if (returnToEvents) {
+        returnToEvents = false;
+        renderEventList();
+        eventsPage.showModal();
+      } else {
+        menuBtn.focus();
+      }
+    });
+    eventsPage.addEventListener('close', () => {
+      if (!settingsPage.open && !location.hash.startsWith('#event/')) menuBtn.focus();
+    });
+    preferencesPanel.addEventListener('change', () => {
+      try { localStorage.setItem(preferencesKey, JSON.stringify(selectedPreferences())); }
+      catch { /* Preferences still work for the current page. */ }
+      updateCards();
     });
 
     // ---------- Current location ----------
@@ -1032,7 +1167,6 @@
     let userLngLat = null;
     let userAccuracy = 0;
     let centeredOnUser = false;
-    let nearbyAdded = false;
 
     const inSwitzerland = ([lng, lat]) =>
       lng >= CH_BOUNDS[0][0] && lng <= CH_BOUNDS[1][0] &&
@@ -1060,12 +1194,6 @@
       userMarker.setLngLat(lngLat);
       if (!userMarker._map) { accMarker.addTo(map); userMarker.addTo(map); }
       updateAccuracy();
-      if (!nearbyAdded) {
-        // Make sure there are events around the user, wherever they are
-        nearbyAdded = true;
-        EVENTS_FC.features.push(...EVENTS.eventsAround(lngLat[1], lngLat[0]));
-        setTimeout(updateCards, 0);
-      }
       if (!centeredOnUser && !destMarker._map) {
         centeredOnUser = true;
         map.jumpTo({ center: lngLat, zoom: 15 });
@@ -1531,84 +1659,78 @@
     const mk = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
     const minutesBetween = (a, b) => Math.max(0, Math.round((new Date(b) - new Date(a)) / 60000));
     function badge(j) {
-      const mode = modeOf(j.category);
-      const b = mk('span', 'j-badge');
-      b.style.background = MODE_COLOR[mode];
-      b.innerHTML = icon(mode);
-      b.appendChild(document.createTextNode(lineLabel(j)));
+      const b = mk('span', 'j-badge', lineLabel(j));
+      b.style.background = MODE_COLOR[modeOf(j.category)];
       return b;
     }
     const platformWord = (j) => modeOf(j.category) === 'train' ? 'Platform' : 'Stop';
-    function kicker(iconName, text) {
-      const k = mk('div', 'j-kicker');
-      k.innerHTML = icon(iconName);
-      k.appendChild(document.createTextNode(text));
-      return k;
+    const platformOf = (stop) => (stop.prognosis && stop.prognosis.platform) || stop.platform || '–';
+    const ICON_COLOR = { walk: '#8e8e93', change: '#ff9500', pin: '#ff3b30' };
+
+    // Card header: coloured round icon · title · grey subtitle (may contain badges)
+    function cardHead(iconName, color, title, subParts, stepText) {
+      const row = mk('div', 'j-row');
+      const ico = mk('div', 'j-ico');
+      ico.style.background = color;
+      ico.innerHTML = icon(iconName);
+      const txt = mk('div', 'j-txt');
+      txt.appendChild(mk('div', 'j-title', title));
+      if (subParts && subParts.length) {
+        const sub = mk('div', 'j-subtitle');
+        subParts.forEach((p) => sub.append(typeof p === 'string' ? document.createTextNode(p) : p));
+        txt.appendChild(sub);
+      }
+      row.append(ico, txt, mk('div', 'j-step', stepText));
+      return row;
     }
-    function fact(label, value, opts = {}) {
-      const f = mk('div', 'j-fact');
-      f.appendChild(mk('div', 'j-label', label));
-      const v = mk('div', 'v' + (opts.small ? ' sm' : ''), value);
-      if (opts.delay > 0) v.appendChild(mk('span', 'j-delay', `+${opts.delay}′`));
-      f.appendChild(v);
-      if (opts.sub) f.appendChild(mk('div', 'sub', opts.sub));
-      return f;
+    function metric(k, v, delay) {
+      const m = mk('div', 'j-metric');
+      m.appendChild(mk('div', 'k', k));
+      const val = mk('div', 'v', v);
+      if (delay > 0) val.appendChild(mk('span', 'j-delay', `+${delay}′`));
+      m.appendChild(val);
+      return m;
     }
-    function facts(...items) {
-      const g = mk('div', 'j-facts' + (items.length === 1 ? ' one' : ''));
+    function metrics(...items) {
+      const g = mk('div', 'j-metrics' + (items.length === 1 ? ' one' : ''));
       g.append(...items);
       return g;
     }
-    function take(label, j) {
-      const t = mk('div', 'j-take');
-      if (label) t.appendChild(mk('span', 'lbl', label));
-      t.append(badge(j), mk('span', 'dir', `→ ${j.to}`));
+    function foot(...parts) { // strings, {b: text}, or nodes
+      const f = mk('div', 'j-foot');
+      parts.forEach((p) => f.append(typeof p === 'string' ? document.createTextNode(p) : p.b != null ? mk('b', null, p.b) : p));
+      return f;
+    }
+    function tag(kind, iconName, text) {
+      const t = mk('span', 'j-tag ' + kind);
+      t.innerHTML = icon(iconName);
+      t.appendChild(document.createTextNode(text));
       return t;
     }
-    function note(parts) { // [text, bold, text, …]
-      const n = mk('div', 'j-note');
-      parts.forEach((t, i) => n.appendChild(i % 2 ? mk('b', null, t) : document.createTextNode(t)));
-      return n;
-    }
-    function alertLine(iconName, text) {
-      const a = mk('div', 'j-alert');
-      a.innerHTML = icon(iconName);
-      a.appendChild(document.createTextNode(text));
-      return a;
-    }
-    const platformOf = (stop) => (stop.prognosis && stop.prognosis.platform) || stop.platform || '–';
 
     function walkCard(st, n, total) {
       const card = mk('div', 'j-card');
-      card.appendChild(kicker('walk', `Step ${n}/${total} · Walk ${st.min} min`));
-      card.appendChild(mk('div', 'j-title', `Walk ${st.min} min to ${st.toName}`));
       if (st.next) {
         const s = st.next;
-        card.appendChild(take('Then take', s.journey));
-        card.appendChild(facts(
-          fact('Departs', fmtTime(s.departure.departure), { delay: s.departure.delay }),
-          fact(platformWord(s.journey), platformOf(s.departure)),
-        ));
-        card.appendChild(note(['Start walking at ', fmtTime(st.start)]));
+        card.appendChild(cardHead('walk', ICON_COLOR.walk, `Walk to ${st.toName}`,
+          [`${st.min} min · then`, badge(s.journey), `→ ${s.journey.to}`], `${n} of ${total}`));
+        card.appendChild(metrics(metric('Departs', fmtTime(s.departure.departure), s.departure.delay), metric(platformWord(s.journey), platformOf(s.departure))));
+        card.appendChild(foot('Leave at ', { b: fmtTime(st.start) }));
       } else {
-        card.appendChild(facts(fact('You arrive', fmtTime(journeyConn.to.arrival))));
-        card.appendChild(note(['Follow the dotted line on the map', '']));
+        card.appendChild(cardHead('walk', ICON_COLOR.walk, `Walk to ${st.toName}`, [`${st.min} min · follow the dotted line`], `${n} of ${total}`));
+        card.appendChild(metrics(metric('Arrive', fmtTime(journeyConn.to.arrival))));
       }
       return card;
     }
 
     function rideCard(st, n, total) {
-      const s = st.s, j = s.journey;
+      const s = st.s, j = s.journey, mode = modeOf(j.category);
       const stops = Math.max(0, j.passList.length - 1);
       const card = mk('div', 'j-card');
-      card.appendChild(kicker(modeOf(j.category), `Step ${n}/${total} · Ride ${stops} stop${stops === 1 ? '' : 's'} · ${minutesBetween(s.departure.departure, s.arrival.arrival)} min`));
-      card.appendChild(take('', j));
-      card.appendChild(mk('div', 'j-title', `Get off at ${s.arrival.station.name}`));
-      card.appendChild(facts(
-        fact('Departs', fmtTime(s.departure.departure), { delay: s.departure.delay, sub: s.departure.station.name }),
-        fact(platformWord(j), platformOf(s.departure)),
-      ));
-      card.appendChild(note(['Arrive ', fmtTime(s.arrival.arrival), ` at ${platformWord(j)} `, platformOf(s.arrival)]));
+      card.appendChild(cardHead(mode, MODE_COLOR[mode], `Get off at ${s.arrival.station.name}`,
+        [badge(j), `→ ${j.to}`], `${n} of ${total}`));
+      card.appendChild(metrics(metric('Departs', fmtTime(s.departure.departure), s.departure.delay), metric(platformWord(j), platformOf(s.departure))));
+      card.appendChild(foot(`${stops} stop${stops === 1 ? '' : 's'} · ${minutesBetween(s.departure.departure, s.arrival.arrival)} min · arrives `, { b: fmtTime(s.arrival.arrival) }));
       return card;
     }
 
@@ -1617,28 +1739,22 @@
       const wait = minutesBetween(prev.arrival.arrival, next.departure.departure);
       const sameStation = prev.arrival.station.name === next.departure.station.name;
       const card = mk('div', 'j-card');
-      card.appendChild(kicker('change', `Step ${n}/${total} · Change · ${wait} min`));
-      card.appendChild(mk('div', 'j-title', sameStation
-        ? `Change at ${next.departure.station.name}`
-        : `Walk ${st.walkMin || ''} min to ${next.departure.station.name}`.replace('Walk  min', 'Walk')));
-      card.appendChild(take('Take', next.journey));
-      card.appendChild(facts(
-        fact('Departs', fmtTime(next.departure.departure), { delay: next.departure.delay }),
-        fact(platformWord(next.journey), platformOf(next.departure)),
-      ));
+      const title = sameStation ? `Change at ${next.departure.station.name}` : `Walk to ${next.departure.station.name}`;
+      card.appendChild(cardHead('change', ICON_COLOR.change, title, [`${wait} min · take`, badge(next.journey), `→ ${next.journey.to}`], `${n} of ${total}`));
+      card.appendChild(metrics(metric('Departs', fmtTime(next.departure.departure), next.departure.delay), metric(platformWord(next.journey), platformOf(next.departure))));
       const pa = platformOf(prev.arrival), pd = platformOf(next.departure);
-      if (!sameStation || st.walkMin > 0) card.appendChild(alertLine('walk', `You arrive at ${prev.arrival.station.name}${pa !== '–' ? ', ' + platformWord(prev.journey) + ' ' + pa : ''}`));
-      else if (pa !== '–' && pd !== '–' && pa !== pd) card.appendChild(alertLine('change', `Change platform: ${pa} → ${pd}`));
-      else card.appendChild(note(['Same platform – stay where you are', '']));
+      if (!sameStation || st.walkMin > 0) card.appendChild(foot(tag('warn', 'walk', `${st.walkMin ? st.walkMin + ' min walk' : 'Short walk'} from ${platformWord(prev.journey)} ${pa}`)));
+      else if (pa !== '–' && pd !== '–' && pa !== pd) card.appendChild(foot(tag('warn', 'change', `${platformWord(next.journey)} ${pa} → ${pd}`)));
+      else card.appendChild(foot(tag('ok', 'change', 'Same platform')));
       return card;
     }
 
     function arriveCard(st, n, total) {
       const card = mk('div', 'j-card');
-      card.appendChild(kicker('pin', `Step ${n}/${total} · Arrival`));
-      card.appendChild(mk('div', 'j-title', `You arrive at ${st.destTitle}`));
-      card.appendChild(facts(fact('Arrival', fmtTime(st.time), { sub: dayLabel(st.time) })));
-      if (st.from) card.appendChild(note(['Last stop: ', st.from.arrival.station.name]));
+      card.appendChild(cardHead('pin', ICON_COLOR.pin, `Arrive at ${st.destTitle}`,
+        st.from ? [`Last stop: ${st.from.arrival.station.name}`] : [], `${n} of ${total}`));
+      card.appendChild(metrics(metric('Arrival', fmtTime(st.time))));
+      card.appendChild(foot(dayLabel(st.time)));
       return card;
     }
 
@@ -1647,14 +1763,11 @@
       chip.type = 'button';
       chip.dataset.step = i;
       if (st.type === 'walk') {
-        chip.classList.add('walk');
         chip.innerHTML = icon('walk');
-        chip.appendChild(document.createTextNode(`${st.min}′`));
+        chip.appendChild(document.createTextNode(`${st.min}`));
       } else if (st.type === 'ride') {
-        chip.innerHTML = icon(modeOf(st.s.journey.category));
-        chip.appendChild(document.createTextNode(lineLabel(st.s.journey)));
+        chip.appendChild(badge(st.s.journey));
       } else if (st.type === 'change') {
-        chip.classList.add('walk');
         chip.innerHTML = icon('change');
         chip.setAttribute('aria-label', 'Change');
       } else {
@@ -1735,7 +1848,7 @@
       journeyStep = 0;
       document.getElementById('jDep').textContent = fmtTime(conn.from.departure);
       document.getElementById('jArr').textContent = fmtTime(conn.to.arrival);
-      document.getElementById('jTo').textContent = `To ${destTitle}`;
+      document.getElementById('jTo').textContent = destTitle;
       document.getElementById('jSub').textContent =
         `${dayLabel(conn.from.departure)} · ${fmtDuration(conn.duration)}` +
         (conn.transfers ? ` · ${conn.transfers} change${conn.transfers > 1 ? 's' : ''}` : ' · direct');
@@ -1746,6 +1859,7 @@
       jStatus.textContent = '';
       const total = journeySteps.length;
       journeySteps.forEach((st, i) => {
+        if (i) jStrip.appendChild(mk('span', 'j-chev', '›'));
         jStrip.appendChild(stepChip(st, i));
         const slide = mk('div', 'j-slide');
         slide.appendChild(st.type === 'walk' ? walkCard(st, i + 1, total)
@@ -1851,7 +1965,7 @@
       document.getElementById('jBar').innerHTML = '';
       document.getElementById('jDep').textContent = '--:--';
       document.getElementById('jArr').textContent = '--:--';
-      document.getElementById('jTo').textContent = `To ${r.title}`;
+      document.getElementById('jTo').textContent = r.title;
       document.getElementById('jSub').textContent = '';
       jStatus.textContent = 'Finding a connection…';
       setRoute([]);
@@ -2047,7 +2161,7 @@
     let pageEvent = null;
     let pushedHash = false;
 
-    const findEvent = (id) => EVENTS_FC.features.find((f) => f.properties.id === id);
+    const findEvent = (id) => EVENTS.features.find((f) => f.properties.id === id);
 
     function openEvent(id) {
       pushedHash = true;
@@ -2071,7 +2185,9 @@
       document.getElementById('evCat').textContent = p.category;
       document.getElementById('evTitle').textContent = p.title;
       document.getElementById('evWhen').textContent = p.when;
-      document.getElementById('evDuration').textContent = 'Duration ' + p.duration;
+      document.getElementById('evCost').textContent = p.cost;
+      document.getElementById('evAttendance').textContent = p.attendance;
+      document.getElementById('evOrganizer').href = p.url;
       document.getElementById('evVenue').textContent = p.venue;
       document.getElementById('evCity').textContent = p.city;
       document.getElementById('evAbout').textContent = p.about;
@@ -2088,6 +2204,7 @@
         setMenu(false);
         evPage.classList.add('open');
         evPage.setAttribute('aria-hidden', 'false');
+        document.getElementById('evBack').focus();
       } else {
         evPage.classList.remove('open');
         evPage.setAttribute('aria-hidden', 'true');
@@ -2105,7 +2222,11 @@
     document.getElementById('evShowMap').addEventListener('click', () => {
       const f = pageEvent;
       closeEvent();
-      if (f) map.flyTo({ center: f.geometry.coordinates, zoom: Math.max(map.getZoom(), 16), speed: 1.4 });
+      if (f) {
+        eventsOnMap.checked = true;
+        eventsOn = true;
+        map.flyTo({ center: f.geometry.coordinates, zoom: Math.max(map.getZoom(), 16), speed: 1.4 });
+      }
     });
     routeFromHash(); // a shared #event/… link opens straight on the page
 
