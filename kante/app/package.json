@@ -1,0 +1,31 @@
+{
+  "name": "kante-app",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "mock": "node mock/server.mjs",
+    "dev:mock": "node scripts/dev-mock.mjs",
+    "build": "tsc --noEmit -p . && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit -p . && tsc --noEmit -p mock",
+    "smoke": "node scripts/smoke.mjs",
+    "shots": "KANTE_API=${KANTE_API:-http://localhost:8080} node scripts/shots.mjs",
+    "icons": "node scripts/gen-icons.mjs",
+    "perf": "node scripts/perf.mjs",
+    "smoke:real": "KANTE_API=${KANTE_API:-http://localhost:8080} node scripts/smoke.mjs",
+    "peek": "node scripts/peek.mjs"
+  },
+  "dependencies": {
+    "@preact/signals": "^2.11.4",
+    "maplibre-gl": "^6.19.0",
+    "preact": "^11.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "playwright": "^1.64.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8"
+  }
+}
