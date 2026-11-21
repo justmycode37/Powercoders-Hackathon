@@ -5,6 +5,7 @@
     food:      { color: '#ff9500', label: 'Community meal' },
     legal:     { color: '#007aff', label: 'Advice' },
     jobs:      { color: '#30b0c7', label: 'Work & training' },
+    workshop:  { color: '#8c557d', label: 'Creative workshop' },
     community: { color: '#ff2d55', label: 'Meetup' },
     sport:     { color: '#34c759', label: 'Sport' },
     kids:      { color: '#e6a800', label: 'Kids & learning' },
@@ -13,6 +14,7 @@
 
   // Stroke glyphs on a 24×24 grid, drawn white on the coloured circle
   const GLYPHS = {
+    workshop: 'M4 16l-1 5 5-1L20 8l-4-4zM13 7l4 4',
     language:  'M5 5h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-8l-4 3.5V17H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z',
     food:      'M7 3v7a2 2 0 0 0 4 0V3M9 10v11M16 21V3c-2 1.5-3 4-3 7h3',
     legal:     'M12 4v16M7 20h10M5 7h14M5 7l-2.5 6a2.5 2.5 0 0 0 5 0zM19 7l-2.5 6a2.5 2.5 0 0 0 5 0z',
@@ -39,7 +41,7 @@
       venue: 'PBZ Oerlikon, Hofwiesenstrasse 379',
       when: 'Tuesdays, 09:30–11:30', cost: 'Free', attendance: 'No registration needed',
       about: 'Practise German for everyday situations. See AOZ’s course page for holiday closures.',
-      audience: 'Adults in the city of Zürich who speak little or no German', tags: ['language'],
+      audience: 'Adults in the city of Zürich who speak little or no German', tags: ['language', 'newcomers'],
       url: 'https://aoz.ch/de/kurse-und-angebote/deutsch-der-bibliothek',
     },
     {
@@ -72,11 +74,18 @@
     },
   ];
 
+  const scheduledEvents = window.SWISS_EVENT_SERIES.flatMap(({ sessions, ...series }) =>
+    sessions.map((session) => ({ ...series, ...session })));
+  listings.push(...window.SWISS_WORKSHOPS, ...scheduledEvents, ...window.COMMUNITY_PROGRAMMES);
+  const themePhotos = { food: 'food', language: 'learning', kids: 'learning', jobs: 'digital', workshop: 'art', sport: 'outdoors' };
   const features = listings.map(({ coordinates, ...listing }) => ({
     type: 'Feature',
     geometry: { type: 'Point', coordinates },
     properties: {
+      cost: 'Check fees with the organizer',
+      attendance: 'Contact the organizer for registration details',
       ...listing,
+      image: listing.image || ('event-images/' + (themePhotos[listing.cat] || 'community') + '.webp'),
       color: CATEGORIES[listing.cat].color,
       category: CATEGORIES[listing.cat].label,
     },
