@@ -567,11 +567,9 @@
     }
     .ev-caption strong { font-size: 13px; line-height: 1.2; }
     .ev-caption small { margin-top: 3px; font-size: 11px; line-height: 1.25; -webkit-line-clamp: 1; }
-    .ev-pager {
-      position: absolute; top: 4px; right: 4px; display: flex; align-items: center;
-      border-radius: 20px; background: #20232bea; color: white; font-size: 11px;
-    }
-    .ev-pager button { background: transparent; border: 0; color: inherit; width: 32px; height: 32px; font-size: 20px; cursor: pointer; }
+    .ev-related { display: block; margin: 0 0 20px; }
+    .ev-related[hidden] { display: none; }
+    .ev-related select { display: block; width: 100%; margin-top: 6px; font: inherit; }
     @keyframes ev-in {
       from { transform: scale(.5); opacity: 0; }
       to   { transform: none; opacity: 1; }
@@ -652,7 +650,7 @@
       border-radius: 10px;
       cursor: pointer;
     }
-    #evOrganizer { display: grid; place-items: center; margin-bottom: 10px; }
+    #evOrganizer { text-decoration: none; display: grid; place-items: center; margin-bottom: 10px; }
     .ev-map-btn:active { background: #0070e0; }
 
     .user-accuracy {
@@ -796,6 +794,9 @@
       <p id="evAbout"></p>
       <h2>Who it’s for</h2>
       <p id="evAudience"></p>
+      <label class="ev-related" hidden>Events at this map pin
+        <select id="evRelated"></select>
+      </label>
       <a class="ev-map-btn" id="evOrganizer" target="_blank" rel="noopener noreferrer">Organizer details</a>
       <button class="ev-map-btn" id="evShowJourney" type="button">Show journey</button>
       <p id="evJourneyStatus" role="status"></p>
@@ -1013,7 +1014,7 @@
         const overlap = shown.find(other => Math.abs(other.point.x - venue.point.x) < 158
           && Math.abs(other.point.y - venue.point.y) < 202);
         if (!overlap) shown.push(venue);
-        // At maximum zoom, keep even adjacent doors accessible from the pager.
+        // At maximum zoom, keep even adjacent doors accessible from the event details.
         else if (map.getZoom() >= map.getMaxZoom() - 0.01) overlap.features.push(...venue.features);
       }
       for (const venue of shown) {
@@ -1025,6 +1026,7 @@
     }
 
     function makeVenueCard(features) {
+      const event = features[0].properties;
       const card = document.createElement('div');
       card.className = 'ev-card';
       const inner = document.createElement('div');
@@ -1036,7 +1038,7 @@
       photo.loading = 'lazy';
       photo.alt = '';
       photo.addEventListener('error', () => {
-        const original = features[index].properties.imageSource;
+        const original = event.imageSource;
         if (original && photo.src !== original) photo.src = original;
         else button.classList.add('no-photo');
       });
@@ -1048,41 +1050,15 @@
       button.append(photo, caption);
       inner.append(button);
       card.append(inner);
-      let index = 0;
-      const count = document.createElement('span');
-      function display() {
-        const event = features[index].properties;
-        button.classList.toggle('no-photo', !event.image);
-        if (event.image) photo.src = event.image;
-        else photo.removeAttribute('src');
-        title.textContent = event.title;
-        time.textContent = (event.areaOnly ? 'Town area · ' : '') + event.when;
-        count.textContent = (index + 1) + '/' + features.length;
-      }
+      button.classList.toggle('no-photo', !event.image);
+      if (event.image) photo.src = event.image;
+      title.textContent = event.title;
+      time.textContent = (event.areaOnly ? 'Town area · ' : '') + event.when;
       button.addEventListener('click', (e) => {
         e.stopPropagation();
-        openEvent(features[index].properties.id);
+        eventsAtPin = features;
+        openEvent(event.id);
       });
-      if (features.length > 1) {
-        const pager = document.createElement('div');
-        pager.className = 'ev-pager';
-        pager.setAttribute('aria-live', 'polite');
-        for (const step of [-1, 1]) {
-          const nav = document.createElement('button');
-          nav.type = 'button';
-          nav.textContent = step < 0 ? '‹' : '›';
-          nav.setAttribute('aria-label', step < 0 ? 'Previous event' : 'Next event');
-          nav.addEventListener('click', (e) => {
-            e.stopPropagation();
-            index = (index + step + features.length) % features.length;
-            display();
-          });
-          if (step === 1) pager.append(count);
-          pager.append(nav);
-        }
-        inner.append(pager);
-      }
-      display();
       return card;
     }
     map.on('moveend', updateCards);
@@ -2758,9 +2734,25 @@
       location.hash = 'event/' + encodeURIComponent(id);
     }
 
+    let eventsAtPin = [];
+    const related = document.getElementById('evRelated');
+    related.addEventListener('change', () => {
+      history.replaceState(null, '', '#event/' + encodeURIComponent(related.value));
+      routeFromHash();
+    });
+
     function renderEventPage(f) {
       const p = f.properties;
       pageEvent = f;
+      const choices = eventsAtPin.includes(f) ? eventsAtPin : [];
+      related.replaceChildren();
+      related.parentElement.hidden = choices.length < 2;
+      if (choices.length > 1) {
+        for (const { properties } of choices) {
+          related.add(new Option(properties.title + ' · ' + properties.when, properties.id));
+        }
+        related.value = p.id;
+      }
       evHero.style.setProperty('--c', p.color);
       evContent.style.setProperty('--c', p.color);
       [...evHero.children].forEach((n) => { if (n.id !== 'evBack') n.remove(); });
