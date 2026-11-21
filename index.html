@@ -2297,7 +2297,7 @@
     const jBar = document.getElementById('jBar');
     const SVG_NS = 'http://www.w3.org/2000/svg';
     const svgEl = (tag, attrs) => { const e = document.createElementNS(SVG_NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); return e; };
-    const BAR = { pad: 6, lineY: 26, textY: 14, dot: 7.5, ball: 2 }; // dots as tall as the 4 px ride line
+    const BAR = { pad: 6, lineY: 26, textY: 14, dot: 8, ball: 2.5, node: 4.2, inset: 4 }; // ball: walking dots, node: ends of a ride
     // → { segs: [{ kind, a, b, x0, x1, label }], t0, t1, W, x(t), tAt(px) }
     function barLayout() {
       const t0 = new Date(journeyConn.from.departure).getTime(), t1 = new Date(journeyConn.to.arrival).getTime();
@@ -2307,7 +2307,7 @@
       journeyConn.sections.filter((s) => s.journey).forEach((s) => {
         const a = Math.max(cursor, new Date(s.departure.departure).getTime()), b = Math.max(a, new Date(s.arrival.arrival).getTime());
         if (a > cursor || rides) segs.push({ kind: 'gap', a: cursor, b: a, min: rides ? 28 : 17 }); // a change, or the walk to the first stop
-        segs.push({ kind: 'ride', a, b, min: 16, label: lineLabel(s.journey) });
+        segs.push({ kind: 'ride', a, b, min: 26, label: lineLabel(s.journey) });
         cursor = b;
         rides++;
       });
@@ -2337,20 +2337,24 @@
     }
     function drawBarArt(g, { segs }) {
       const first = segs[0], last = segs[segs.length - 1];
+      const dot = (cx, r) => g.appendChild(svgEl('circle', { cx, cy: BAR.lineY, r, fill: 'currentColor' }));
       segs.forEach((s) => {
         if (s.kind === 'ride') {
-          const xa = s.x0 + 2.5, xb = Math.max(xa, s.x1 - 2.5); // a little air around each ride
+          // a big dot where the ride starts and where it ends, the line between them
+          const xa = s === first ? s.x0 : s.x0 + BAR.inset, xb = Math.max(xa, s === last ? s.x1 : s.x1 - BAR.inset);
           g.appendChild(svgEl('line', { x1: xa, y1: BAR.lineY, x2: xb, y2: BAR.lineY, stroke: 'currentColor', 'stroke-width': 4, 'stroke-linecap': 'round' }));
+          if (s !== first) dot(xa, BAR.node);
+          if (s !== last) dot(xb, BAR.node);
           return;
         }
-        // evenly spaced, centred in the free space between the ends
-        const xa = s.x0 + (s === first ? 8 : 5), xb = s.x1 - (s === last ? 8 : 5);
+        // walking / changing / waiting: evenly spaced dots, clear of the big dots on either side
+        const xa = s.x0 + (s === first ? 10 : 6), xb = s.x1 - (s === last ? 10 : 6);
         const n = Math.max(1, Math.floor(Math.max(0, xb - xa) / BAR.dot) + 1);
         const start = (xa + xb) / 2 - ((n - 1) * BAR.dot) / 2;
-        for (let k = 0; k < n; k++) g.appendChild(svgEl('circle', { cx: start + k * BAR.dot, cy: BAR.lineY, r: BAR.ball, fill: 'currentColor' }));
+        for (let k = 0; k < n; k++) dot(start + k * BAR.dot, BAR.ball);
       });
       g.appendChild(svgEl('circle', { cx: first.x0, cy: BAR.lineY, r: 3.6, class: 'j-bar-start', 'stroke-width': 2, stroke: 'currentColor' }));
-      g.appendChild(svgEl('circle', { cx: last.x1, cy: BAR.lineY, r: 4.2, fill: 'currentColor' }));
+      dot(last.x1, BAR.node);
     }
     function renderBar() {
       jBar.replaceChildren();
