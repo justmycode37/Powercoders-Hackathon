@@ -34,9 +34,9 @@
    "what": "143 sector boards for Bern (BN) with positions (fetched by stations/)"
   },
   {
-   "kind": "photos",
-   "ref": "tag:platform",
-   "what": "see data/manifest.json records whose features include the tag named here"
+   "kind": "photo",
+   "ref": "commons:179915274",
+   "what": "blue sector signs with white track numbers and sector letter"
   }
  ],
  "notes": "Apply the sector letter (A-E) as a texture or text at load time.",

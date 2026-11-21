@@ -18,7 +18,6 @@ EXTRA = {8504495: ("Bern Stöckacker", "ch:1:sloid:4495"), 8507081: ("Bern Fisch
 # seed category -> (station numbers, include direct subcats?, relevance weight)
 SEEDS = {
     "Category:Bern railway station": ([8507000], True, 3),
-    "Category:New Bern station": ([8507000], False, 3),
     "Category:Christoffel-Unterführung (Bern)": ([8507000], True, 3),
     "Category:Bahnhofplatz (Bern)": ([8576646, 8507000], False, 3),
     "Category:Bubenbergplatz (Bern)": ([8576646, 8579896], False, 2),
@@ -126,6 +125,25 @@ for n, s in ST.items():
     print("geo", n, s["name"], r, "m:", len(hits), flush=True)
     for h in hits:
         add(h["title"], [n], "geosearch", 0, dist=round(h["dist"], 1))
+
+# targeted full-text file searches (namespace 6) for features and stops that categories cover poorly
+SEARCHES = {
+    "Wankdorf Center tram": ([8588699], 2), "Wankdorf Bahnhof Tram": ([8590129, 8516161], 2), "Bahnhof Wankdorf Bern": ([8516161], 2),
+    "Christoffelunterführung": ([8507000], 3), "Christoffel Unterführung Bern": ([8507000], 3),
+    "Bahnhof Bern Welle": ([8507000], 3), "Baldachin Bahnhofplatz Bern": ([8576646], 3),
+    "Zytglogge Haltestelle Tram": ([8507110], 3), "Bahnhof Bern Halle": ([8507000], 3), "Bahnhof Bern Perron": ([8507000], 3),
+    "Bern Bahnhof Treffpunkt": ([8507000], 3), "Bern Hirschengraben Haltestelle": ([8579896], 2), "Guisanplatz Tram Bern": ([8576990], 2),
+}
+for q, (nums, w) in SEARCHES.items():
+    try:
+        d = commons(action="query", list="search", srsearch=q, srnamespace="6", srlimit="50")
+    except Exception as e:
+        print("  ! search", q, e, flush=True)
+        continue
+    hits = d.get("query", {}).get("search", [])
+    print("search", q, len(hits), flush=True)
+    for h in hits:
+        add(h["title"], nums, "search", w, cat="search:" + q)
 
 print("candidates:", len(cand), flush=True)
 titles = list(cand)

@@ -1,0 +1,39 @@
+{
+ "checked": "2026-11-21T02:54:20+01:00",
+ "ok": true,
+ "errors": [],
+ "warnings": [
+  "commons:123309975: camera outside Bern area (8.3, 46.8)",
+  "commons:43808449: camera outside Bern area (9.705099, 52.214594)"
+ ],
+ "warnings_total": 2,
+ "references": 2450,
+ "by_kind": {
+  "photo": 2143,
+  "streetlevel_photo": 233,
+  "orthophoto": 16,
+  "station_plan_pdf": 9,
+  "interactive_plan": 1,
+  "kerb_plan_pdf": 3,
+  "index_page": 1,
+  "network_map_pdf": 1,
+  "design_standard_pdf": 5,
+  "planning_pdf": 7,
+  "project_magazine_pdf": 2,
+  "web_page": 1,
+  "open_dataset": 10,
+  "historic_photo": 1,
+  "imagery_service": 5,
+  "parametric_asset": 12
+ },
+ "stored_by_kind": {
+  "photo": 122,
+  "streetlevel_photo": 22,
+  "orthophoto": 16,
+  "parametric_asset": 12
+ },
+ "stored_bytes": 58606088,
+ "geojson_points": 1638,
+ "relevance_unverified_linked": 162,
+ "search_linked_verified": 0
+}

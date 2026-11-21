@@ -53,14 +53,20 @@ def commons(**p):
     return http(COMMONS_API + "?" + urllib.parse.urlencode(p), minint=3.0)
 
 
+CACHE_DATA = os.path.join(CACHE, "data")  # git-ignored pipeline intermediates (rebuildable)
+INTERMEDIATE = {"commons_candidates.json", "photo_records.json"}
+
+
 def load(name):
-    with open(os.path.join(DATA, name), encoding="utf-8") as f:
+    p = os.path.join(CACHE_DATA if name in INTERMEDIATE else DATA, name)
+    with open(p, encoding="utf-8") as f:
         return json.load(f)
 
 
 def save(name, obj):
-    os.makedirs(DATA, exist_ok=True)
-    p = os.path.join(DATA, name)
+    d = CACHE_DATA if name in INTERMEDIATE else DATA
+    os.makedirs(d, exist_ok=True)
+    p = os.path.join(d, name)
     with open(p, "w", encoding="utf-8", newline="\n") as f:
         json.dump(obj, f, ensure_ascii=False, indent=1)
         f.write("\n")

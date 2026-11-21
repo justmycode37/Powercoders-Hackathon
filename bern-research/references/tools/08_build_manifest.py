@@ -20,7 +20,14 @@ links = load("operator_links.json")["links"]
 assets = load("assets.json")["assets"]
 
 refs = []
+import math
+def _dist(lat1, lon1, lat2, lon2):
+    x = math.radians(lon2 - lon1) * math.cos(math.radians((lat1 + lat2) / 2))
+    return 6371000 * math.hypot(x, math.radians(lat2 - lat1))
 for r in photos:
+    cam = (r.get("viewpoint") or {}).get("camera")
+    s0 = ST.get(r["stations"][0]["number"]) if r.get("stations") else None
+    r["camera_to_station_m"] = round(_dist(cam["lat"], cam["lon"], s0["lat"], s0["lon"]), 1) if cam and s0 and s0.get("lat") else None
     d = r.get("download")
     refs.append({**r, "stored": bool(d), "file": d["file"] if d else None})
 for o in orthos:
@@ -88,9 +95,18 @@ for r in refs:
         e = bs.setdefault(str(n), {"number": n, "sloid": s.get("sloid") or ST.get(n, {}).get("sloid"), "name": s.get("name") or ST.get(n, {}).get("name"),
                                    "counts": collections.Counter(), "stored": [], "linked": []})
         e["counts"][r["kind"] + (":stored" if r.get("stored") else ":linked")] += 1
+        if r["kind"] in ("photo", "streetlevel_photo") and (r.get("stored") or r.get("score", 0) >= 8):
+            for t in r.get("feature_tags") or []:
+                e.setdefault("by_feature", {}).setdefault(t, []).append((0 if r.get("stored") else 1, -r.get("score", 0), r["id"]))
         (e["stored"] if r.get("stored") else e["linked"]).append(r["id"])
+WD = {w["number"]: w for w in load("wikidata_stations.json")["stations"]}
 for e in bs.values():
+    w = WD.get(e["number"])
+    e["wikidata"] = w["wikidata"] if w else None
+    e["commons_category"] = w["commons_category"] if w else None
     e["counts"] = dict(e["counts"])
+    e["by_feature"] = {t: [x[2] for x in sorted(v)[:15]] for t, v in sorted(e.get("by_feature", {}).items())}
+    e["by_feature_note"] = "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)"
     e["linked"] = e["linked"][:60]
     e["linked_truncated"] = True if len(e["linked"]) == 60 else False
 json.dump({"generated": now, "stations": dict(sorted(bs.items(), key=lambda kv: -len(kv[1]["stored"])))},
@@ -123,11 +139,14 @@ def fsize(rel):
 S = []
 for name, url, pub, lic, rel, used in [
     ("atlas service points (stop points, Bern + neighbours)", "https://data.sbb.ch/explore/dataset/dienststellen-gemass-opentransportdataswiss/", "SBB / atlas", "SBB Open Data terms", "data/stations.json", "station keys (number, sloid, coordinates)"),
-    ("Wikimedia Commons API (categories, geosearch, imageinfo)", "https://commons.wikimedia.org/w/api.php", "Wikimedia Foundation / contributors", "per file (in manifest)", "data/commons_candidates.json", "photo candidates and licence metadata"),
+    ("Wikimedia Commons API (categories, geosearch, imageinfo)", "https://commons.wikimedia.org/w/api.php", "Wikimedia Foundation / contributors", "per file (in manifest)", ".cache/data/commons_candidates.json", "photo candidates and licence metadata (intermediate, git-ignored; all records are in manifest.json)"),
     ("Panoramax STAC search", "https://api.panoramax.xyz/api/search", "Panoramax federation / contributors", "per picture (in manifest)", "data/panoramax_items.json", "georeferenced street-level photos with heading"),
     ("SBB Trafimage plan index + operator link checks", "https://data.sbb.ch/explore/dataset/haltestelle-karte-trafimage/", "SBB and others", "per link (in manifest)", "data/operator_links.json", "link register"),
     ("swisstopo SWISSIMAGE WMS", "https://wms.geo.admin.ch/", "swisstopo", "swisstopo free geodata (OGD)", "data/orthophotos.json", "orthophoto crops"),
-    ("transit/ edge lookup and edges (read-only)", "../transit/data/edge_lookup.json; ../transit/data/edges.geojson", "this repository (transit/)", "see transit/", None, "edge SLOIDs for designations and edges in view"),
+    ("Wikidata SPARQL join on P954 (IBNR)", "https://query.wikidata.org/sparql", "Wikidata", "CC0 1.0", "data/wikidata_stations.json", "Wikidata QID and Commons category per station"),
+    ("transit/ edge lookup (read-only)", "../transit/data/edge_lookup.json", "this repository (transit/)", "see transit/ (atlas, opentransportdata.swiss terms)", "../transit/data/edge_lookup.json", "edge SLOIDs for track/edge designations named in photo titles"),
+    ("transit/ boarding edges (read-only)", "../transit/data/edges.geojson", "this repository (transit/)", "see transit/ (atlas, opentransportdata.swiss terms)", "../transit/data/edges.geojson", "edge positions for edges_in_view"),
+    ("transit/ stations (read-only)", "../transit/data/stations.geojson", "this repository (transit/)", "see transit/ (atlas, opentransportdata.swiss terms)", "../transit/data/stations.geojson", "in_transit_coverage flag in data/stations.json"),
 ]:
     b, h = fsize(rel) if rel else (None, None)
     S.append({"name": name, "url": url, "publisher": pub, "licence": lic, "retrieved": now[:10], "derived_file": rel, "bytes": b, "sha256": h, "used_for": used})

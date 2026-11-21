@@ -1,0 +1,105 @@
+{
+ "generated": "2026-11-21T02:53:41+01:00",
+ "rebuild": "see HANDOFF.md (python -I -X utf8 tools/01..09 in order)",
+ "sources": [
+  {
+   "name": "atlas service points (stop points, Bern + neighbours)",
+   "url": "https://data.sbb.ch/explore/dataset/dienststellen-gemass-opentransportdataswiss/",
+   "publisher": "SBB / atlas",
+   "licence": "SBB Open Data terms",
+   "retrieved": "2026-11-21",
+   "derived_file": "data/stations.json",
+   "bytes": 172334,
+   "sha256": "43bdb0976bcc62a0d2b36ca52d6a58ea1eb4af7678632739cd44f9dd1217a33f",
+   "used_for": "station keys (number, sloid, coordinates)"
+  },
+  {
+   "name": "Wikimedia Commons API (categories, geosearch, imageinfo)",
+   "url": "https://commons.wikimedia.org/w/api.php",
+   "publisher": "Wikimedia Foundation / contributors",
+   "licence": "per file (in manifest)",
+   "retrieved": "2026-11-21",
+   "derived_file": ".cache/data/commons_candidates.json",
+   "bytes": 9426803,
+   "sha256": "c1ed6919688d3a720bf5a9ae6a210eb75be352ab93e6909aeab44878b2115f4f",
+   "used_for": "photo candidates and licence metadata (intermediate, git-ignored; all records are in manifest.json)"
+  },
+  {
+   "name": "Panoramax STAC search",
+   "url": "https://api.panoramax.xyz/api/search",
+   "publisher": "Panoramax federation / contributors",
+   "licence": "per picture (in manifest)",
+   "retrieved": "2026-11-21",
+   "derived_file": "data/panoramax_items.json",
+   "bytes": 243213,
+   "sha256": "47841f24be30b59d57f6f7a0b4ca3c3b8f0511496ba9049455c4780513c63e24",
+   "used_for": "georeferenced street-level photos with heading"
+  },
+  {
+   "name": "SBB Trafimage plan index + operator link checks",
+   "url": "https://data.sbb.ch/explore/dataset/haltestelle-karte-trafimage/",
+   "publisher": "SBB and others",
+   "licence": "per link (in manifest)",
+   "retrieved": "2026-11-21",
+   "derived_file": "data/operator_links.json",
+   "bytes": 39114,
+   "sha256": "07865d99d862164c39b246899be2eed74b0ce154f5a2f1a1d4e0ba0bfaff8146",
+   "used_for": "link register"
+  },
+  {
+   "name": "swisstopo SWISSIMAGE WMS",
+   "url": "https://wms.geo.admin.ch/",
+   "publisher": "swisstopo",
+   "licence": "swisstopo free geodata (OGD)",
+   "retrieved": "2026-11-21",
+   "derived_file": "data/orthophotos.json",
+   "bytes": 27676,
+   "sha256": "4c1ac4fe2d9e22b964eebcc73453100144a9c760df35ce7c33a120ea54f79bf8",
+   "used_for": "orthophoto crops"
+  },
+  {
+   "name": "Wikidata SPARQL join on P954 (IBNR)",
+   "url": "https://query.wikidata.org/sparql",
+   "publisher": "Wikidata",
+   "licence": "CC0 1.0",
+   "retrieved": "2026-11-21",
+   "derived_file": "data/wikidata_stations.json",
+   "bytes": 26846,
+   "sha256": "b9d881ab71afa169a8a3ab47968eb2c6fefa8dd851baee86bd0c75b2829a2f97",
+   "used_for": "Wikidata QID and Commons category per station"
+  },
+  {
+   "name": "transit/ edge lookup (read-only)",
+   "url": "../transit/data/edge_lookup.json",
+   "publisher": "this repository (transit/)",
+   "licence": "see transit/ (atlas, opentransportdata.swiss terms)",
+   "retrieved": "2026-11-21",
+   "derived_file": "../transit/data/edge_lookup.json",
+   "bytes": 341638,
+   "sha256": "20af8ec8519afd3184735d2e2540284e9adfb9ee785392592d1a9f0f97ddcabb",
+   "used_for": "edge SLOIDs for track/edge designations named in photo titles"
+  },
+  {
+   "name": "transit/ boarding edges (read-only)",
+   "url": "../transit/data/edges.geojson",
+   "publisher": "this repository (transit/)",
+   "licence": "see transit/ (atlas, opentransportdata.swiss terms)",
+   "retrieved": "2026-11-21",
+   "derived_file": "../transit/data/edges.geojson",
+   "bytes": 3008849,
+   "sha256": "61948253552dbb5c487fc24a3d282e9af51d6cccb5139bdefa1d186861fd2b27",
+   "used_for": "edge positions for edges_in_view"
+  },
+  {
+   "name": "transit/ stations (read-only)",
+   "url": "../transit/data/stations.geojson",
+   "publisher": "this repository (transit/)",
+   "licence": "see transit/ (atlas, opentransportdata.swiss terms)",
+   "retrieved": "2026-11-21",
+   "derived_file": "../transit/data/stations.geojson",
+   "bytes": 1096842,
+   "sha256": "624203757ca2e63c4b429ba54b18bc762c515a6cc1022edcbf4f811d8c338709",
+   "used_for": "in_transit_coverage flag in data/stations.json"
+  }
+ ]
+}

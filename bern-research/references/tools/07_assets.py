@@ -243,7 +243,7 @@ def b_sector_sign(m, width, height, mount_h):
 
 
 def b_departure_board(m, width, height, depth, mount_h):
-    m.box("anthracite", 0, mount_h + height / 2, 0, width, height, depth)
+    m.box("blue_sign", 0, mount_h + height / 2, 0, width, height, depth)
     for zf in (depth / 2 + 0.003, -depth / 2 - 0.003):
         m.box("screen", 0, mount_h + height / 2, zf, width - 0.08, height - 0.08, 0.004)
     for x in (-width / 2 + 0.1, width / 2 - 0.1):
@@ -306,9 +306,10 @@ asset("sbb-ticket-machine", "Ticket machine (red body, generic)", dict(width=0.6
        {"kind": "dataset", "ref": "sbb-dataset-mobiliar-im-bahnhof", "what": "'Billetautomat' listed for Bern"},
        {"kind": "photos", "ref": "tag:ticket_machine", "what": EVID_PHOTOS}],
       b_ticket_machine, "Red body and dark screen echo the common SBB machine; proportions estimated from photos, not measured. No logo.")
-asset("sbb-recycling-station", "Recycling station, stainless steel, 3 bins", dict(bins=3, bin_w=0.42, depth=0.40, height=1.00),
+asset("sbb-recycling-station", "Recycling station, stainless steel, 4 openings", dict(bins=4, bin_w=0.36, depth=0.42, height=1.00),
       [{"kind": "dataset", "ref": "sbb-dataset-mobiliar-im-bahnhof", "what": "'Recyclingstation Chromstahl' listed for Bern (stainless = Chromstahl)"},
-       {"kind": "photos", "ref": "tag:furniture", "what": EVID_PHOTOS}], b_recycling)
+       {"kind": "photo", "ref": "commons:60777612", "what": "Bern station hall seen from above: two recycling stations with 4 round openings each, side panels printed"}],
+      b_recycling, "Printed side panels (sorting pictograms) are not modelled; openings shown as slots.")
 asset("sbb-info-stele", "Information stele (double-sided)", dict(width=0.55, depth=0.18, height=2.40, panel_h=1.40),
       [{"kind": "dataset", "ref": "sbb-dataset-mobiliar-im-bahnhof", "what": "'Stele' and 'Infopunkt' listed for Bern"},
        {"kind": "photos", "ref": "tag:signage", "what": EVID_PHOTOS}], b_info_stele)
@@ -318,9 +319,9 @@ asset("station-clock-generic", "Hanging double-sided station clock (generic, not
       b_clock, "Deliberately generic dial: the SBB station clock design is protected; do not texture it with the original face.")
 asset("platform-sector-sign", "Platform sector sign (letter field blank)", dict(width=0.60, height=0.50, mount_h=2.60),
       [{"kind": "dataset", "ref": "sbb-dataset-sektortafel", "what": "143 sector boards for Bern (BN) with positions (fetched by stations/)"},
-       {"kind": "photos", "ref": "tag:platform", "what": EVID_PHOTOS}], b_sector_sign, "Apply the sector letter (A-E) as a texture or text at load time.")
+       {"kind": "photo", "ref": "commons:179915274", "what": "blue sector signs with white track numbers and sector letter"}], b_sector_sign, "Apply the sector letter (A-E) as a texture or text at load time.")
 asset("departure-display-hanging", "Hanging platform departure display", dict(width=2.40, height=0.55, depth=0.15, mount_h=2.70),
-      [{"kind": "photos", "ref": "tag:signage", "what": EVID_PHOTOS},
+      [{"kind": "photo", "ref": "commons:179915274", "what": "Bern Perronhalle: blue hanging platform displays and blue sector signs (12 A 13), clocks on the same hangers"},
        {"kind": "dataset", "ref": "sbb-dataset-mobiliar-im-bahnhof", "what": "'BildschirmMonitor' and 'Videoanlage' listed for Bern"}], b_departure_board)
 asset("tram-bus-shelter", "Tram/bus stop shelter (glass, flat roof)", dict(length=4.0, depth=1.6, height=2.5, roof_overhang=0.25, back_glass=True, side_glass=True),
       [{"kind": "dataset", "ref": "sbb-dataset-haltestelle-wartehallen", "what": "shelter inventory (rail stops)"},
@@ -332,6 +333,31 @@ asset("tram-island-platform-30m", "Tram/bus island platform, 30 m, with end ramp
        {"kind": "standard", "ref": "be-hindernisfreie-bushaltestellen-2017", "what": "barrier-free boarding height for low-floor vehicles"},
        {"kind": "orthophoto", "ref": "ortho-8507110_bern-zytglogge", "what": "island widths visible top-down"}],
       b_island, "Kerb height 0.27 m and width 3.0 m are approximate typical values; length is a parameter (use atlas edge length when available).")
+
+def b_hall_column(m, diameter, height, sleeve_h):
+    m.cyl("white", 0, height / 2, 0, diameter / 2, height, seg=24)
+    m.cyl("dark_grey", 0, sleeve_h / 2, 0, diameter / 2 + 0.02, sleeve_h, seg=24)
+
+
+def b_ring_bench(m, r_inner, r_outer, seat_h, planter_h, seg=48):
+    # sloped wooden planter cone from r_outer-0.35 (seat inner edge) up to r_inner at planter_h; seat ring at seat_h
+    r_seat_in = r_outer - 0.45
+    for i in range(seg):
+        a0, a1 = 2 * math.pi * i / seg, 2 * math.pi * (i + 1) / seg
+        P = lambda r, a, y: (r * math.cos(a), y, r * math.sin(a))
+        m.quad("concrete", P(r_outer, a0, 0), P(r_outer, a0, seat_h), P(r_outer, a1, seat_h), P(r_outer, a1, 0))       # outer wall
+        m.quad("concrete", P(r_outer, a0, seat_h), P(r_seat_in, a0, seat_h), P(r_seat_in, a1, seat_h), P(r_outer, a1, seat_h))  # seat
+        m.quad("wood", P(r_seat_in, a0, seat_h), P(r_inner, a0, planter_h), P(r_inner, a1, planter_h), P(r_seat_in, a1, seat_h))  # slope
+        m.quad("dark_grey", P(r_inner, a0, planter_h), P(0.25, a0, planter_h - 0.05), P(0.25, a1, planter_h - 0.05), P(r_inner, a1, planter_h))  # grille
+
+
+asset("platform-hall-column", "Platform hall column (round, white, dark base sleeve)", dict(diameter=0.50, height=5.5, sleeve_h=1.6),
+      [{"kind": "photo", "ref": "commons:179915274", "what": "Bern Perronhalle: white round columns with a dark lower sleeve along the platforms"},
+       {"kind": "link", "ref": "sbb-trafimage-plan-bern-a4-8507000", "what": "platform positions for column rows"}],
+      b_hall_column, "Diameter and height estimated from the photo against a 1.8 m person/ticket machine; spacing must come from plans or orthophoto.")
+asset("hall-meeting-point-ring-bench", "Station hall meeting point: ring bench with tree planter", dict(r_inner=1.0, r_outer=2.3, seat_h=0.45, planter_h=0.95),
+      [{"kind": "photo", "ref": "commons:60777612", "what": "Bern station hall from above: circular bench around a tree, wooden sloped planter, meeting-point sign posts"}],
+      b_ring_bench, "Tree and the meeting-point sign posts are not modelled. Radii estimated from people seated on the ring (about 0.5 m per person).")
 
 # Baldachin (Bahnhofplatz canopy, 2008): outline hand-traced from the SWISSIMAGE crop of Bahnhofplatz
 ortho = {o["station"]["number"]: o for o in load("orthophotos.json")["items"]}[8576646]

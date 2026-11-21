@@ -12,7 +12,7 @@ from common import ROOT, sha256, load
 TRANSIT = os.path.join(os.path.dirname(ROOT), "transit", "data")
 M = json.load(open(os.path.join(ROOT, "manifest.json"), encoding="utf-8"))
 ST = {s["number"]: s for s in load("stations.json")["stations"]}
-EXTRA = {int(k): v[1] for k, v in load("commons_candidates.json").get("extra_service_points", {}).items()}
+EXTRA = {}  # non-stop service points are now part of data/stations.json (stop_point = false)
 EDGE_SLOIDS = {f["properties"]["sloid"] for f in json.load(open(os.path.join(TRANSIT, "edges.geojson"), encoding="utf-8"))["features"]}
 ALLOWED = re.compile(r"^(CC0|CC BY(-SA)? \d|CC BY(-SA)?$|Public domain|PD|Attribution|swisstopo free geodata|CC0 1\.0)", re.I)
 
@@ -62,6 +62,12 @@ for r in M["references"]:
         err.append(f"{rid}: licence '{r.get('licence')}' not in the allowed set")
     if r["kind"] in ("photo", "streetlevel_photo") and r.get("author") in (None, "", "unknown"):
         err.append(f"{rid}: no author")
+    if not r.get("licence_url"):
+        err.append(f"{rid}: stored file without licence_url")
+    if r.get("relevance_unverified"):
+        err.append(f"{rid}: stored file whose station link is unverified")
+    if any(set((s.get("relation") or "").split("+")) <= {"search"} for s in r.get("stations") or []) and not r.get("relevance_check"):
+        err.append(f"{rid}: stored search hit without relevance_check")
 if total > 60 * 1024 * 1024:
     err.append(f"total stored bytes {total} > 60 MB")
 
@@ -71,6 +77,19 @@ for sub in ("images", "orthophoto", "assets"):
             rel = os.path.relpath(os.path.join(dp, fn), ROOT).replace("\\", "/")
             if rel not in listed:
                 err.append(f"unlisted file in tree: {rel}")
+
+SRC = json.load(open(os.path.join(ROOT, "SOURCES.json"), encoding="utf-8"))["sources"]
+for x in SRC:
+    if not x.get("sha256"):
+        err.append(f"SOURCES.json: '{x['name']}' has no sha256")
+TS = {f["properties"]["number"] for f in json.load(open(os.path.join(TRANSIT, "stations.geojson"), encoding="utf-8"))["features"]}
+used = {s["number"] for r in M["references"] for s in r.get("stations") or []}
+for n, st in ST.items():
+    if n not in TS and not st.get("coverage_note"):
+        err.append(f"data/stations.json: {n} not in transit stations and no coverage_note")
+    if n not in TS and n in used:
+        warn.append(f"station {n} is referenced but outside transit coverage")
+unver = [r for r in M["references"] if r.get("relevance_unverified")]
 
 G = json.load(open(os.path.join(ROOT, "references.geojson"), encoding="utf-8"))
 for f in G["features"]:
@@ -84,13 +103,15 @@ kinds = collections.Counter(r["kind"] for r in M["references"])
 stored_k = collections.Counter(r["kind"] for r in M["references"] if r.get("stored"))
 rep = {"checked": datetime.datetime.now().astimezone().isoformat(timespec="seconds"), "ok": not err, "errors": err, "warnings": warn[:200],
        "warnings_total": len(warn), "references": len(M["references"]), "by_kind": dict(kinds), "stored_by_kind": dict(stored_k),
-       "stored_bytes": total, "geojson_points": len(G["features"])}
+       "stored_bytes": total, "geojson_points": len(G["features"]), "relevance_unverified_linked": len(unver),
+       "search_linked_verified": sum(1 for r in M["references"] if r.get("relevance_check") and not r.get("relevance_unverified"))}
 os.makedirs(os.path.join(ROOT, "validation"), exist_ok=True)
 json.dump(rep, open(os.path.join(ROOT, "validation", "report.json"), "w", encoding="utf-8", newline="\n"), ensure_ascii=False, indent=1)
 md = [f"# references/ validation", "", f"Checked {rep['checked']}: **{'OK' if rep['ok'] else 'FAILED'}**", "",
       f"- references: {rep['references']} ({', '.join(f'{k} {v}' for k, v in kinds.items())})",
       f"- stored files: {sum(stored_k.values())} ({', '.join(f'{k} {v}' for k, v in stored_k.items())}), {total / 1048576:.1f} MiB",
-      f"- viewpoint points in references.geojson: {rep['geojson_points']}", f"- errors: {len(err)}, warnings: {len(warn)}", ""]
+      f"- viewpoint points in references.geojson: {rep['geojson_points']}",
+      f"- search-only station links: {rep['search_linked_verified']} confirmed by category or coordinates, {rep['relevance_unverified_linked']} flagged relevance_unverified (link only)", f"- errors: {len(err)}, warnings: {len(warn)}", ""]
 md += ["## Errors", ""] + [f"- {e}" for e in err[:100]] + [""] if err else []
 md += ["## Warnings (first 30)", ""] + [f"- {w}" for w in warn[:30]] if warn else []
 open(os.path.join(ROOT, "validation", "report.md"), "w", encoding="utf-8", newline="\n").write("\n".join(md) + "\n")

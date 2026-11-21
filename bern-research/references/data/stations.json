@@ -2,7 +2,7 @@
  "retrieved": "2026-11-21",
  "source_url": "https://data.sbb.ch/api/explore/v2.1/catalog/datasets/dienststellen-gemass-opentransportdataswiss/exports/json?where=stoppoint%3D%22true%22+and+fsonumber+in+%28%22351%22%2C%22362%22%2C%22363%22%2C%22356%22%2C%22355%22%29&select=number%2Csloid%2Cdesignationofficial%2Cabbreviation%2Cmeansoftransport%2Cmunicipalityname%2Cfsonumber%2Cgeopos%2Cheight%2Cbusinessorganisationabbreviationde%2Cvalidfrom%2Cvalidto",
  "licence": "SBB Open Data terms (https://data.sbb.ch/page/licence); atlas data originates from opentransportdata.swiss",
- "count": 359,
+ "count": 362,
  "stations": [
   {
    "number": 8507000,
@@ -16,8 +16,10 @@
    "lat": 46.9488323,
    "height_m_ln02": 540.2,
    "operator": "SBB",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8530257,
@@ -31,8 +33,10 @@
    "lat": 46.9459645,
    "height_m_ln02": 540.0,
    "operator": "DMB",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8516154,
@@ -46,8 +50,10 @@
    "lat": 46.944037,
    "height_m_ln02": 558.5,
    "operator": "BLS-bn",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8582262,
@@ -61,8 +67,10 @@
    "lat": 46.9444171,
    "height_m_ln02": 557.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8504489,
@@ -76,8 +84,10 @@
    "lat": 46.9458292,
    "height_m_ln02": 555.35,
    "operator": "BLS-bn",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8579523,
@@ -91,8 +101,10 @@
    "lat": 46.94572,
    "height_m_ln02": 555.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8504106,
@@ -106,8 +118,10 @@
    "lat": 46.9374875,
    "height_m_ln02": 561.8,
    "operator": "SBB",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589226,
@@ -121,8 +135,10 @@
    "lat": 46.9375366,
    "height_m_ln02": 560.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8504108,
@@ -136,8 +152,10 @@
    "lat": 46.9442098,
    "height_m_ln02": 556.39,
    "operator": "SBB",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8580939,
@@ -151,8 +169,10 @@
    "lat": 46.9432521,
    "height_m_ln02": 551.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8508051,
@@ -166,8 +186,10 @@
    "lat": 46.9685,
    "height_m_ln02": 528.8,
    "operator": "RBS",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507638,
@@ -181,8 +203,10 @@
    "lat": 46.9683068,
    "height_m_ln02": 534.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8530258,
@@ -196,8 +220,10 @@
    "lat": 46.9451999,
    "height_m_ln02": 507.0,
    "operator": "DMB",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8500249,
@@ -211,8 +237,10 @@
    "lat": 46.94663,
    "height_m_ln02": 503.6,
    "operator": "AMP",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8500258,
@@ -226,8 +254,10 @@
    "lat": 46.94663,
    "height_m_ln02": 506.3,
    "operator": "AMP",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8504488,
@@ -241,8 +271,10 @@
    "lat": 46.9411543,
    "height_m_ln02": 568.3,
    "operator": "BLS-bn",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8580427,
@@ -256,8 +288,10 @@
    "lat": 46.9410767,
    "height_m_ln02": 583.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8508052,
@@ -271,8 +305,10 @@
    "lat": 46.97274,
    "height_m_ln02": 531.7,
    "operator": "RBS",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507636,
@@ -286,8 +322,10 @@
    "lat": 46.9729626,
    "height_m_ln02": 531.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8516161,
@@ -301,8 +339,10 @@
    "lat": 46.9678258,
    "height_m_ln02": 548.5,
    "operator": "SBB",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590129,
@@ -316,8 +356,10 @@
    "lat": 46.9665967,
    "height_m_ln02": 552.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8595543,
@@ -331,8 +373,10 @@
    "lat": 46.9677661,
    "height_m_ln02": 550.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507079,
@@ -346,8 +390,10 @@
    "lat": 46.9357794,
    "height_m_ln02": 550.1,
    "operator": "BLS-gbs",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8595931,
@@ -361,8 +407,10 @@
    "lat": 46.9358356,
    "height_m_ln02": 550.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8588988,
@@ -376,8 +424,10 @@
    "lat": 46.9402703,
    "height_m_ln02": 520.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590004,
@@ -391,8 +441,10 @@
    "lat": 46.9659068,
    "height_m_ln02": 566.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8571436,
@@ -406,8 +458,10 @@
    "lat": 46.9400981,
    "height_m_ln02": 530.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590113,
@@ -421,8 +475,10 @@
    "lat": 46.9460537,
    "height_m_ln02": 501.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8576646,
@@ -436,8 +492,10 @@
    "lat": 46.9481054,
    "height_m_ln02": 540.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590016,
@@ -451,8 +509,10 @@
    "lat": 46.9375088,
    "height_m_ln02": 540.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8571344,
@@ -466,8 +526,10 @@
    "lat": 46.9492298,
    "height_m_ln02": 555.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507993,
@@ -481,8 +543,10 @@
    "lat": 46.9473951,
    "height_m_ln02": 551.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590028,
@@ -496,8 +560,10 @@
    "lat": 46.9566688,
    "height_m_ln02": 555.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590003,
@@ -511,8 +577,10 @@
    "lat": 46.9493609,
    "height_m_ln02": 579.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590047,
@@ -526,8 +594,10 @@
    "lat": 46.948491,
    "height_m_ln02": 557.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8582552,
@@ -541,8 +611,10 @@
    "lat": 46.9398677,
    "height_m_ln02": 565.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8588990,
@@ -556,8 +628,10 @@
    "lat": 46.9516405,
    "height_m_ln02": 533.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8508075,
@@ -571,8 +645,10 @@
    "lat": 46.9588716,
    "height_m_ln02": 564.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8588991,
@@ -586,8 +662,10 @@
    "lat": 46.9625599,
    "height_m_ln02": 555.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507992,
@@ -601,8 +679,10 @@
    "lat": 46.9497865,
    "height_m_ln02": 554.0,
    "operator": "PAG",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507061,
@@ -616,8 +696,10 @@
    "lat": 46.94118,
    "height_m_ln02": 553.1,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590010,
@@ -631,8 +713,10 @@
    "lat": 46.9444976,
    "height_m_ln02": 529.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590030,
@@ -646,8 +730,10 @@
    "lat": 46.9606085,
    "height_m_ln02": 566.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590108,
@@ -661,8 +747,10 @@
    "lat": 46.943056,
    "height_m_ln02": 558.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590048,
@@ -676,8 +764,10 @@
    "lat": 46.9470439,
    "height_m_ln02": 543.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8587481,
@@ -691,8 +781,10 @@
    "lat": 46.9421203,
    "height_m_ln02": 537.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590034,
@@ -706,8 +798,10 @@
    "lat": 46.9483915,
    "height_m_ln02": 519.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8588989,
@@ -721,8 +815,10 @@
    "lat": 46.9481233,
    "height_m_ln02": 520.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8512251,
@@ -736,8 +832,10 @@
    "lat": 46.9363035,
    "height_m_ln02": 595.7,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590044,
@@ -751,8 +849,10 @@
    "lat": 46.9375749,
    "height_m_ln02": 575.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8579899,
@@ -766,8 +866,10 @@
    "lat": 46.9422776,
    "height_m_ln02": 530.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8579900,
@@ -781,8 +883,10 @@
    "lat": 46.9415114,
    "height_m_ln02": 530.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8582225,
@@ -796,8 +900,10 @@
    "lat": 46.9437595,
    "height_m_ln02": 520.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8579898,
@@ -811,8 +917,10 @@
    "lat": 46.9421889,
    "height_m_ln02": 530.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8582554,
@@ -826,8 +934,10 @@
    "lat": 46.9335676,
    "height_m_ln02": 566.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8571439,
@@ -841,8 +951,10 @@
    "lat": 46.935652,
    "height_m_ln02": 585.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590011,
@@ -856,8 +968,10 @@
    "lat": 46.941628,
    "height_m_ln02": 542.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590111,
@@ -871,8 +985,10 @@
    "lat": 46.9450559,
    "height_m_ln02": 503.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590115,
@@ -886,8 +1002,10 @@
    "lat": 46.9408103,
    "height_m_ln02": 503.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590093,
@@ -901,8 +1019,10 @@
    "lat": 46.9446879,
    "height_m_ln02": 554.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590092,
@@ -916,8 +1036,10 @@
    "lat": 46.9443293,
    "height_m_ln02": 560.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590039,
@@ -931,8 +1053,10 @@
    "lat": 46.9639007,
    "height_m_ln02": 534.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590054,
@@ -946,8 +1070,10 @@
    "lat": 46.9362398,
    "height_m_ln02": 560.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507050,
@@ -961,8 +1087,10 @@
    "lat": 46.93676,
    "height_m_ln02": 553.7,
    "operator": "RBS",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8571393,
@@ -976,8 +1104,10 @@
    "lat": 46.9411428,
    "height_m_ln02": 524.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590063,
@@ -991,8 +1121,10 @@
    "lat": 46.9326378,
    "height_m_ln02": 546.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590029,
@@ -1006,8 +1138,10 @@
    "lat": 46.9585217,
    "height_m_ln02": 558.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8591757,
@@ -1021,8 +1155,10 @@
    "lat": 46.946952,
    "height_m_ln02": 553.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590066,
@@ -1036,8 +1172,10 @@
    "lat": 46.9726711,
    "height_m_ln02": 510.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590014,
@@ -1051,8 +1189,10 @@
    "lat": 46.9407364,
    "height_m_ln02": 544.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8583046,
@@ -1066,8 +1206,10 @@
    "lat": 46.9519802,
    "height_m_ln02": 554.0,
    "operator": "PAG",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590074,
@@ -1081,8 +1223,10 @@
    "lat": 46.9754146,
    "height_m_ln02": 493.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590049,
@@ -1096,8 +1240,10 @@
    "lat": 46.9525367,
    "height_m_ln02": 578.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8594651,
@@ -1111,8 +1257,10 @@
    "lat": 46.9381657,
    "height_m_ln02": 503.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8588994,
@@ -1126,8 +1274,10 @@
    "lat": 46.9547976,
    "height_m_ln02": 540.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590090,
@@ -1141,8 +1291,10 @@
    "lat": 46.9452579,
    "height_m_ln02": 562.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590018,
@@ -1156,8 +1308,10 @@
    "lat": 46.9639186,
    "height_m_ln02": 544.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8576990,
@@ -1171,8 +1325,10 @@
    "lat": 46.9595986,
    "height_m_ln02": 540.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590045,
@@ -1186,8 +1342,10 @@
    "lat": 46.9478097,
    "height_m_ln02": 544.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590025,
@@ -1201,8 +1359,10 @@
    "lat": 46.9513514,
    "height_m_ln02": 551.0,
    "operator": "PAG",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590017,
@@ -1216,8 +1376,10 @@
    "lat": 46.9630012,
    "height_m_ln02": 540.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590083,
@@ -1231,8 +1393,10 @@
    "lat": 46.9320545,
    "height_m_ln02": 563.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590073,
@@ -1246,8 +1410,10 @@
    "lat": 46.9378756,
    "height_m_ln02": 558.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590015,
@@ -1261,8 +1427,10 @@
    "lat": 46.9442732,
    "height_m_ln02": 526.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507785,
@@ -1276,8 +1444,10 @@
    "lat": 46.9489959,
    "height_m_ln02": 549.0,
    "operator": "PAG",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507060,
@@ -1291,8 +1461,10 @@
    "lat": 46.9439,
    "height_m_ln02": 531.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590027,
@@ -1306,8 +1478,10 @@
    "lat": 46.9537813,
    "height_m_ln02": 540.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8579896,
@@ -1321,8 +1495,10 @@
    "lat": 46.9460635,
    "height_m_ln02": 540.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590081,
@@ -1336,8 +1512,10 @@
    "lat": 46.9303179,
    "height_m_ln02": 569.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8571435,
@@ -1351,8 +1529,10 @@
    "lat": 46.9486578,
    "height_m_ln02": 537.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8510151,
@@ -1366,8 +1546,10 @@
    "lat": 46.9461058,
    "height_m_ln02": 540.4,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8502905,
@@ -1381,8 +1563,10 @@
    "lat": 46.9420762,
    "height_m_ln02": 549.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8582555,
@@ -1396,8 +1580,10 @@
    "lat": 46.9317563,
    "height_m_ln02": 563.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590064,
@@ -1411,8 +1597,10 @@
    "lat": 46.9612563,
    "height_m_ln02": 563.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8594201,
@@ -1426,8 +1614,10 @@
    "lat": 46.9462868,
    "height_m_ln02": 558.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8571342,
@@ -1441,8 +1631,10 @@
    "lat": 46.9483027,
    "height_m_ln02": 542.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8594200,
@@ -1456,8 +1648,10 @@
    "lat": 46.947142,
    "height_m_ln02": 544.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590024,
@@ -1471,8 +1665,10 @@
    "lat": 46.9679754,
    "height_m_ln02": 524.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590060,
@@ -1486,8 +1682,10 @@
    "lat": 46.9367892,
    "height_m_ln02": 514.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8576991,
@@ -1501,8 +1699,10 @@
    "lat": 46.9549938,
    "height_m_ln02": 560.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590009,
@@ -1516,8 +1716,10 @@
    "lat": 46.945685,
    "height_m_ln02": 528.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8579897,
@@ -1531,8 +1733,10 @@
    "lat": 46.9458834,
    "height_m_ln02": 540.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8510471,
@@ -1546,8 +1750,10 @@
    "lat": 46.9510939,
    "height_m_ln02": 535.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590020,
@@ -1561,8 +1767,10 @@
    "lat": 46.9528904,
    "height_m_ln02": 551.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590035,
@@ -1576,8 +1784,10 @@
    "lat": 46.9446766,
    "height_m_ln02": 553.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8583222,
@@ -1591,8 +1801,10 @@
    "lat": 46.9590698,
    "height_m_ln02": 565.0,
    "operator": "PAG",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8588996,
@@ -1606,8 +1818,10 @@
    "lat": 46.957595,
    "height_m_ln02": 540.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590041,
@@ -1621,8 +1835,10 @@
    "lat": 46.9444429,
    "height_m_ln02": 539.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590006,
@@ -1636,8 +1852,10 @@
    "lat": 46.9423746,
    "height_m_ln02": 539.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8588997,
@@ -1651,8 +1869,10 @@
    "lat": 46.9349152,
    "height_m_ln02": 538.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8571359,
@@ -1666,8 +1886,10 @@
    "lat": 46.9559754,
    "height_m_ln02": 558.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590120,
@@ -1681,8 +1903,10 @@
    "lat": 46.9492463,
    "height_m_ln02": 504.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8576985,
@@ -1696,8 +1920,10 @@
    "lat": 46.9702996,
    "height_m_ln02": 540.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8588998,
@@ -1711,8 +1937,10 @@
    "lat": 46.9343116,
    "height_m_ln02": 547.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8576997,
@@ -1726,8 +1954,10 @@
    "lat": 46.9636567,
    "height_m_ln02": 540.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590114,
@@ -1741,8 +1971,10 @@
    "lat": 46.943086,
    "height_m_ln02": 502.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8583205,
@@ -1756,8 +1988,10 @@
    "lat": 46.9519274,
    "height_m_ln02": 553.0,
    "operator": "PAG",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8571358,
@@ -1771,8 +2005,10 @@
    "lat": 46.9532144,
    "height_m_ln02": 557.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589991,
@@ -1786,8 +2022,10 @@
    "lat": 46.9437606,
    "height_m_ln02": 527.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590076,
@@ -1801,8 +2039,10 @@
    "lat": 46.9397848,
    "height_m_ln02": 536.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8502904,
@@ -1816,8 +2056,10 @@
    "lat": 46.9339993,
    "height_m_ln02": 572.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8588999,
@@ -1831,8 +2073,10 @@
    "lat": 46.9644028,
    "height_m_ln02": 555.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590013,
@@ -1846,8 +2090,10 @@
    "lat": 46.9401882,
    "height_m_ln02": 547.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590112,
@@ -1861,8 +2107,10 @@
    "lat": 46.9476273,
    "height_m_ln02": 500.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590075,
@@ -1876,8 +2124,10 @@
    "lat": 46.9630011,
    "height_m_ln02": 575.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8571438,
@@ -1891,8 +2141,10 @@
    "lat": 46.9377319,
    "height_m_ln02": 585.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590033,
@@ -1906,8 +2158,10 @@
    "lat": 46.9486169,
    "height_m_ln02": 522.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507982,
@@ -1921,8 +2175,10 @@
    "lat": 46.9355037,
    "height_m_ln02": 592.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8571440,
@@ -1936,8 +2192,10 @@
    "lat": 46.9370529,
    "height_m_ln02": 610.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8579748,
@@ -1951,8 +2209,10 @@
    "lat": 46.9499673,
    "height_m_ln02": 559.0,
    "operator": "PAG",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8587480,
@@ -1966,8 +2226,10 @@
    "lat": 46.9451235,
    "height_m_ln02": 537.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589000,
@@ -1981,8 +2243,10 @@
    "lat": 46.9594737,
    "height_m_ln02": 550.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590012,
@@ -1996,8 +2260,10 @@
    "lat": 46.9402875,
    "height_m_ln02": 546.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589001,
@@ -2011,8 +2277,10 @@
    "lat": 46.9386671,
    "height_m_ln02": 552.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590008,
@@ -2026,8 +2294,10 @@
    "lat": 46.9672918,
    "height_m_ln02": 524.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590077,
@@ -2041,8 +2311,10 @@
    "lat": 46.9462342,
    "height_m_ln02": 549.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590032,
@@ -2056,8 +2328,10 @@
    "lat": 46.9480507,
    "height_m_ln02": 533.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8591756,
@@ -2071,8 +2345,10 @@
    "lat": 46.9471923,
    "height_m_ln02": 557.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8581119,
@@ -2086,8 +2362,10 @@
    "lat": 46.9475172,
    "height_m_ln02": 528.0,
    "operator": "PAG",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8587485,
@@ -2101,8 +2379,10 @@
    "lat": 46.9521152,
    "height_m_ln02": 569.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590065,
@@ -2116,8 +2396,10 @@
    "lat": 46.9682994,
    "height_m_ln02": 544.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589002,
@@ -2131,8 +2413,10 @@
    "lat": 46.9377427,
    "height_m_ln02": 555.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8587483,
@@ -2146,8 +2430,10 @@
    "lat": 46.9538973,
    "height_m_ln02": 560.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590023,
@@ -2161,8 +2447,10 @@
    "lat": 46.931662,
    "height_m_ln02": 544.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8581351,
@@ -2176,8 +2464,10 @@
    "lat": 46.9479434,
    "height_m_ln02": 545.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590086,
@@ -2191,8 +2481,10 @@
    "lat": 46.9662121,
    "height_m_ln02": 553.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8577000,
@@ -2206,8 +2498,10 @@
    "lat": 46.9606018,
    "height_m_ln02": 554.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590042,
@@ -2221,8 +2515,10 @@
    "lat": 46.9441718,
    "height_m_ln02": 540.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8587479,
@@ -2236,8 +2532,10 @@
    "lat": 46.9475806,
    "height_m_ln02": 565.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590050,
@@ -2251,8 +2549,10 @@
    "lat": 46.9537495,
    "height_m_ln02": 567.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590080,
@@ -2266,8 +2566,10 @@
    "lat": 46.964647,
    "height_m_ln02": 546.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8587484,
@@ -2281,8 +2583,10 @@
    "lat": 46.9535821,
    "height_m_ln02": 537.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590022,
@@ -2296,8 +2600,10 @@
    "lat": 46.9339919,
    "height_m_ln02": 536.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590079,
@@ -2311,8 +2617,10 @@
    "lat": 46.9608776,
    "height_m_ln02": 556.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590036,
@@ -2326,8 +2634,10 @@
    "lat": 46.9447841,
    "height_m_ln02": 556.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590019,
@@ -2341,8 +2651,10 @@
    "lat": 46.943352,
    "height_m_ln02": 556.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590089,
@@ -2356,8 +2668,10 @@
    "lat": 46.943126,
    "height_m_ln02": 563.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590109,
@@ -2371,8 +2685,10 @@
    "lat": 46.9444849,
    "height_m_ln02": 559.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8579901,
@@ -2386,8 +2702,10 @@
    "lat": 46.9394755,
    "height_m_ln02": 530.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8576988,
@@ -2401,8 +2719,10 @@
    "lat": 46.9661306,
    "height_m_ln02": 540.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590005,
@@ -2416,8 +2736,10 @@
    "lat": 46.9439372,
    "height_m_ln02": 544.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590043,
@@ -2431,8 +2753,10 @@
    "lat": 46.944671,
    "height_m_ln02": 556.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589992,
@@ -2446,8 +2770,10 @@
    "lat": 46.9399737,
    "height_m_ln02": 521.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590026,
@@ -2461,8 +2787,10 @@
    "lat": 46.965169,
    "height_m_ln02": 527.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590037,
@@ -2476,8 +2804,10 @@
    "lat": 46.9463756,
    "height_m_ln02": 565.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590084,
@@ -2491,8 +2821,10 @@
    "lat": 46.9356094,
    "height_m_ln02": 562.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589003,
@@ -2506,8 +2838,10 @@
    "lat": 46.9404219,
    "height_m_ln02": 553.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590061,
@@ -2521,8 +2855,10 @@
    "lat": 46.9382641,
    "height_m_ln02": 526.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590062,
@@ -2536,8 +2872,10 @@
    "lat": 46.9392179,
    "height_m_ln02": 521.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590046,
@@ -2551,8 +2889,10 @@
    "lat": 46.9489035,
    "height_m_ln02": 557.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8576999,
@@ -2566,8 +2906,10 @@
    "lat": 46.9637568,
    "height_m_ln02": 558.1,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590038,
@@ -2581,8 +2923,10 @@
    "lat": 46.9548963,
    "height_m_ln02": 556.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8571357,
@@ -2596,8 +2940,10 @@
    "lat": 46.9508848,
    "height_m_ln02": 540.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8582210,
@@ -2611,8 +2957,10 @@
    "lat": 46.9494026,
    "height_m_ln02": 548.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590021,
@@ -2626,8 +2974,10 @@
    "lat": 46.9549861,
    "height_m_ln02": 559.4,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8512116,
@@ -2641,8 +2991,10 @@
    "lat": 46.9498593,
    "height_m_ln02": 539.2,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589993,
@@ -2656,8 +3008,10 @@
    "lat": 46.9369243,
    "height_m_ln02": 531.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8588699,
@@ -2671,8 +3025,10 @@
    "lat": 46.9616491,
    "height_m_ln02": 555.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8576987,
@@ -2686,8 +3042,10 @@
    "lat": 46.9669827,
    "height_m_ln02": 553.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8595136,
@@ -2701,8 +3059,10 @@
    "lat": 46.9661009,
    "height_m_ln02": 555.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8576996,
@@ -2716,8 +3076,10 @@
    "lat": 46.9649048,
    "height_m_ln02": 549.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8582553,
@@ -2731,8 +3093,10 @@
    "lat": 46.9355748,
    "height_m_ln02": 564.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8595142,
@@ -2746,8 +3110,10 @@
    "lat": 46.9356109,
    "height_m_ln02": 542.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590053,
@@ -2761,8 +3127,10 @@
    "lat": 46.9389747,
    "height_m_ln02": 543.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590091,
@@ -2776,8 +3144,10 @@
    "lat": 46.9462009,
    "height_m_ln02": 577.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8588174,
@@ -2791,8 +3161,10 @@
    "lat": 46.9388177,
    "height_m_ln02": 550.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8571343,
@@ -2806,8 +3178,10 @@
    "lat": 46.9495137,
    "height_m_ln02": 548.0,
    "operator": "PAG",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8595137,
@@ -2821,8 +3195,10 @@
    "lat": 46.9490082,
    "height_m_ln02": 551.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589005,
@@ -2836,8 +3212,10 @@
    "lat": 46.9366968,
    "height_m_ln02": 539.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8576989,
@@ -2851,8 +3229,10 @@
    "lat": 46.9632072,
    "height_m_ln02": 554.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589006,
@@ -2866,8 +3246,10 @@
    "lat": 46.9377982,
    "height_m_ln02": 555.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589007,
@@ -2881,8 +3263,10 @@
    "lat": 46.9653196,
    "height_m_ln02": 555.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590078,
@@ -2896,8 +3280,10 @@
    "lat": 46.9648538,
    "height_m_ln02": 553.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589008,
@@ -2911,8 +3297,10 @@
    "lat": 46.9609681,
    "height_m_ln02": 555.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590031,
@@ -2926,8 +3314,10 @@
    "lat": 46.9690726,
    "height_m_ln02": 524.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590085,
@@ -2941,8 +3331,10 @@
    "lat": 46.9633965,
    "height_m_ln02": 554.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8595138,
@@ -2956,8 +3348,10 @@
    "lat": 46.9661171,
    "height_m_ln02": 560.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8577001,
@@ -2971,8 +3365,10 @@
    "lat": 46.9574548,
    "height_m_ln02": 559.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590127,
@@ -2986,8 +3382,10 @@
    "lat": 46.9508081,
    "height_m_ln02": 577.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589994,
@@ -3001,8 +3399,10 @@
    "lat": 46.9324896,
    "height_m_ln02": 554.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507110,
@@ -3016,8 +3416,10 @@
    "lat": 46.94784,
    "height_m_ln02": 540.5,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8571345,
@@ -3031,8 +3433,10 @@
    "lat": 46.961873,
    "height_m_ln02": 493.0,
    "operator": "PAG",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507085,
@@ -3046,8 +3450,10 @@
    "lat": 46.900928,
    "height_m_ln02": 649.507,
    "operator": "BLS-gbs",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589077,
@@ -3061,8 +3467,10 @@
    "lat": 46.90101,
    "height_m_ln02": 650.0,
    "operator": "BLS-EV",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8571418,
@@ -3076,8 +3484,10 @@
    "lat": 46.893215,
    "height_m_ln02": 688.0,
    "operator": "PAG",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507098,
@@ -3091,8 +3501,10 @@
    "lat": 46.9237733,
    "height_m_ln02": 688.0,
    "operator": "GB",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507099,
@@ -3106,8 +3518,10 @@
    "lat": 46.9196086,
    "height_m_ln02": 833.0,
    "operator": "GB",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507003,
@@ -3121,8 +3535,10 @@
    "lat": 46.9343219,
    "height_m_ln02": 561.496,
    "operator": "SBB",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8577011,
@@ -3136,8 +3552,10 @@
    "lat": 46.9418837,
    "height_m_ln02": 565.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8577014,
@@ -3151,8 +3569,10 @@
    "lat": 46.9336469,
    "height_m_ln02": 562.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8595488,
@@ -3166,8 +3586,10 @@
    "lat": 46.9343997,
    "height_m_ln02": 561.0,
    "operator": "RBS",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8530259,
@@ -3181,8 +3603,10 @@
    "lat": 46.93277,
    "height_m_ln02": 565.5,
    "operator": "RBS",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8577012,
@@ -3196,8 +3620,10 @@
    "lat": 46.9402726,
    "height_m_ln02": 565.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8577013,
@@ -3211,8 +3637,10 @@
    "lat": 46.9353441,
    "height_m_ln02": 565.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507052,
@@ -3226,8 +3654,10 @@
    "lat": 46.93492,
    "height_m_ln02": 558.7,
    "operator": "RBS",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8595603,
@@ -3241,8 +3671,10 @@
    "lat": 46.9279027,
    "height_m_ln02": 563.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8577010,
@@ -3256,8 +3688,10 @@
    "lat": 46.9425412,
    "height_m_ln02": 570.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507251,
@@ -3271,8 +3705,10 @@
    "lat": 46.93302,
    "height_m_ln02": 560.0,
    "operator": "RBS",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8511852,
@@ -3286,8 +3722,10 @@
    "lat": 46.9325512,
    "height_m_ln02": 559.2,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507053,
@@ -3301,8 +3739,10 @@
    "lat": 46.93261,
    "height_m_ln02": 571.5,
    "operator": "RBS",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8577016,
@@ -3316,8 +3756,10 @@
    "lat": 46.9278176,
    "height_m_ln02": 562.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8577015,
@@ -3331,8 +3773,10 @@
    "lat": 46.9306694,
    "height_m_ln02": 565.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507069,
@@ -3346,8 +3790,10 @@
    "lat": 46.97331,
    "height_m_ln02": 526.3,
    "operator": "RBS",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8576992,
@@ -3361,8 +3807,10 @@
    "lat": 46.9792035,
    "height_m_ln02": 555.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589030,
@@ -3376,8 +3824,10 @@
    "lat": 46.9735711,
    "height_m_ln02": 526.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8587292,
@@ -3391,8 +3841,10 @@
    "lat": 46.9788861,
    "height_m_ln02": 585.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8576994,
@@ -3406,8 +3858,10 @@
    "lat": 46.97174,
    "height_m_ln02": 557.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589036,
@@ -3421,8 +3875,10 @@
    "lat": 46.9819109,
    "height_m_ln02": 577.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589031,
@@ -3436,8 +3892,10 @@
    "lat": 46.9761121,
    "height_m_ln02": 584.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589032,
@@ -3451,8 +3909,10 @@
    "lat": 46.9783905,
    "height_m_ln02": 587.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8508076,
@@ -3466,8 +3926,10 @@
    "lat": 46.9831799,
    "height_m_ln02": 570.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589033,
@@ -3481,8 +3943,10 @@
    "lat": 46.9791368,
    "height_m_ln02": 597.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8595514,
@@ -3496,8 +3960,10 @@
    "lat": 46.9735837,
    "height_m_ln02": 539.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507912,
@@ -3511,8 +3977,10 @@
    "lat": 46.9772883,
    "height_m_ln02": 547.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8576995,
@@ -3526,8 +3994,10 @@
    "lat": 46.9684122,
    "height_m_ln02": 550.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589034,
@@ -3541,8 +4011,10 @@
    "lat": 46.9739216,
    "height_m_ln02": 528.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8505438,
@@ -3556,8 +4028,10 @@
    "lat": 46.9762415,
    "height_m_ln02": 544.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589035,
@@ -3571,8 +4045,10 @@
    "lat": 46.9797328,
    "height_m_ln02": 581.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507083,
@@ -3586,8 +4062,10 @@
    "lat": 46.9246066,
    "height_m_ln02": 571.786,
    "operator": "BLS-gbs",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8580927,
@@ -3601,8 +4079,10 @@
    "lat": 46.9247333,
    "height_m_ln02": 571.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8571413,
@@ -3616,8 +4096,10 @@
    "lat": 46.9261999,
    "height_m_ln02": 570.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590096,
@@ -3631,8 +4113,10 @@
    "lat": 46.9200075,
    "height_m_ln02": 601.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590095,
@@ -3646,8 +4130,10 @@
    "lat": 46.9211648,
    "height_m_ln02": 625.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590097,
@@ -3661,8 +4147,10 @@
    "lat": 46.9207196,
    "height_m_ln02": 598.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590057,
@@ -3676,8 +4164,10 @@
    "lat": 46.9191476,
    "height_m_ln02": 599.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8571415,
@@ -3691,8 +4181,10 @@
    "lat": 46.9204421,
    "height_m_ln02": 589.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589267,
@@ -3706,8 +4198,10 @@
    "lat": 46.9206592,
    "height_m_ln02": 604.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590121,
@@ -3721,8 +4215,10 @@
    "lat": 46.920021,
    "height_m_ln02": 611.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590098,
@@ -3736,8 +4232,10 @@
    "lat": 46.922088,
    "height_m_ln02": 583.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8571414,
@@ -3751,8 +4249,10 @@
    "lat": 46.92306,
    "height_m_ln02": 574.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507091,
@@ -3766,8 +4266,10 @@
    "lat": 46.9300112,
    "height_m_ln02": 562.782,
    "operator": "BLS-gbs",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8502906,
@@ -3781,8 +4283,10 @@
    "lat": 46.9287196,
    "height_m_ln02": 565.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8571412,
@@ -3796,8 +4300,10 @@
    "lat": 46.9323535,
    "height_m_ln02": 563.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590100,
@@ -3811,8 +4317,10 @@
    "lat": 46.9308975,
    "height_m_ln02": 558.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590059,
@@ -3826,8 +4334,10 @@
    "lat": 46.930914,
    "height_m_ln02": 561.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590056,
@@ -3841,8 +4351,10 @@
    "lat": 46.9292491,
    "height_m_ln02": 568.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590119,
@@ -3856,8 +4368,10 @@
    "lat": 46.9340793,
    "height_m_ln02": 560.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590055,
@@ -3871,8 +4385,10 @@
    "lat": 46.9329283,
    "height_m_ln02": 562.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8579515,
@@ -3886,8 +4402,10 @@
    "lat": 46.9311492,
    "height_m_ln02": 562.1,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590099,
@@ -3901,8 +4419,10 @@
    "lat": 46.9307171,
    "height_m_ln02": 567.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590118,
@@ -3916,8 +4436,10 @@
    "lat": 46.9265951,
    "height_m_ln02": 570.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589266,
@@ -3931,8 +4453,10 @@
    "lat": 46.9310661,
    "height_m_ln02": 564.5,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507087,
@@ -3946,8 +4470,10 @@
    "lat": 46.8764021,
    "height_m_ln02": 668.645,
    "operator": "BLS-gbs",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589078,
@@ -3961,8 +4487,10 @@
    "lat": 46.87619,
    "height_m_ln02": 669.0,
    "operator": "BLS-EV",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507084,
@@ -3976,8 +4504,10 @@
    "lat": 46.9099859,
    "height_m_ln02": 627.793,
    "operator": "BLS-gbs",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8582195,
@@ -3991,8 +4521,10 @@
    "lat": 46.9106789,
    "height_m_ln02": 628.0,
    "operator": "PAG",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589037,
@@ -4006,8 +4538,10 @@
    "lat": 46.9254178,
    "height_m_ln02": 570.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8577020,
@@ -4021,8 +4555,10 @@
    "lat": 46.9280682,
    "height_m_ln02": 564.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8577022,
@@ -4036,8 +4572,10 @@
    "lat": 46.9259435,
    "height_m_ln02": 560.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8577018,
@@ -4051,8 +4589,10 @@
    "lat": 46.9339928,
    "height_m_ln02": 556.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8577021,
@@ -4066,8 +4606,10 @@
    "lat": 46.9271036,
    "height_m_ln02": 564.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507062,
@@ -4081,8 +4623,10 @@
    "lat": 46.93141,
    "height_m_ln02": 556.5,
    "operator": "RBS",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507086,
@@ -4096,8 +4640,10 @@
    "lat": 46.886437,
    "height_m_ln02": 655.664,
    "operator": "BLS-gbs",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8580925,
@@ -4111,8 +4657,10 @@
    "lat": 46.8862337,
    "height_m_ln02": 657.0,
    "operator": "PAG",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8581386,
@@ -4126,8 +4674,10 @@
    "lat": 46.8845454,
    "height_m_ln02": 708.0,
    "operator": "PAG",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8593310,
@@ -4141,8 +4691,10 @@
    "lat": 46.8836577,
    "height_m_ln02": 654.0,
    "operator": "PAG",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8581387,
@@ -4156,8 +4708,10 @@
    "lat": 46.8842596,
    "height_m_ln02": 728.0,
    "operator": "PAG",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8583213,
@@ -4171,8 +4725,10 @@
    "lat": 46.8861714,
    "height_m_ln02": 659.0,
    "operator": "PAG",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8504105,
@@ -4186,8 +4742,10 @@
    "lat": 46.9255071,
    "height_m_ln02": 568.5,
    "operator": "SBB",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589227,
@@ -4201,8 +4759,10 @@
    "lat": 46.9257892,
    "height_m_ln02": 570.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8593295,
@@ -4216,8 +4776,10 @@
    "lat": 46.9269607,
    "height_m_ln02": 580.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590105,
@@ -4231,8 +4793,10 @@
    "lat": 46.9208827,
    "height_m_ln02": 587.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590082,
@@ -4246,8 +4810,10 @@
    "lat": 46.9282471,
    "height_m_ln02": 569.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8582556,
@@ -4261,8 +4827,10 @@
    "lat": 46.9308364,
    "height_m_ln02": 567.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590106,
@@ -4276,8 +4844,10 @@
    "lat": 46.9220547,
    "height_m_ln02": 575.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590403,
@@ -4291,8 +4861,10 @@
    "lat": 46.9236658,
    "height_m_ln02": 588.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507524,
@@ -4306,8 +4878,10 @@
    "lat": 46.9279348,
    "height_m_ln02": 598.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8582871,
@@ -4321,8 +4895,10 @@
    "lat": 46.9266984,
    "height_m_ln02": 576.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8582557,
@@ -4336,8 +4912,10 @@
    "lat": 46.9277763,
    "height_m_ln02": 581.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507528,
@@ -4351,8 +4929,10 @@
    "lat": 46.9258026,
    "height_m_ln02": 609.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507526,
@@ -4366,8 +4946,10 @@
    "lat": 46.926641,
    "height_m_ln02": 622.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8579867,
@@ -4381,8 +4963,10 @@
    "lat": 46.8831846,
    "height_m_ln02": 736.0,
    "operator": "PAG",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8571419,
@@ -4396,8 +4980,10 @@
    "lat": 46.8831038,
    "height_m_ln02": 733.0,
    "operator": "PAG",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8581385,
@@ -4411,8 +4997,10 @@
    "lat": 46.8836683,
    "height_m_ln02": 737.0,
    "operator": "PAG",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8579868,
@@ -4426,8 +5014,10 @@
    "lat": 46.8823475,
    "height_m_ln02": 734.0,
    "operator": "PAG",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8571420,
@@ -4441,8 +5031,11 @@
    "lat": 46.8782655,
    "height_m_ln02": 716.0,
    "operator": "PAG",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": false,
+   "coverage_note": "stop point of an adjoining municipality included in full here (Ittigen, Ostermundigen, Muri, Köniz) but outside transit/ tiers (not within 5 km of the Bern boundary and not on a trip serving Bern); no reference in this folder points at it"
   },
   {
    "number": 8504117,
@@ -4456,8 +5049,10 @@
    "lat": 46.9145711,
    "height_m_ln02": 575.24,
    "operator": "SBB",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8594655,
@@ -4471,8 +5066,10 @@
    "lat": 46.9154367,
    "height_m_ln02": 581.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507002,
@@ -4486,8 +5083,10 @@
    "lat": 46.9568024,
    "height_m_ln02": 557.954,
    "operator": "SBB",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8577003,
@@ -4501,8 +5100,10 @@
    "lat": 46.9558513,
    "height_m_ln02": 558.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8577006,
@@ -4516,8 +5117,10 @@
    "lat": 46.955946,
    "height_m_ln02": 550.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8577008,
@@ -4531,8 +5134,10 @@
    "lat": 46.9493359,
    "height_m_ln02": 558.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8577009,
@@ -4546,8 +5151,10 @@
    "lat": 46.9463575,
    "height_m_ln02": 562.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8577007,
@@ -4561,8 +5168,10 @@
    "lat": 46.9530503,
    "height_m_ln02": 557.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8594260,
@@ -4576,8 +5185,10 @@
    "lat": 46.9652582,
    "height_m_ln02": 548.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590088,
@@ -4591,8 +5202,10 @@
    "lat": 46.9605735,
    "height_m_ln02": 552.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590070,
@@ -4606,8 +5219,10 @@
    "lat": 46.954141,
    "height_m_ln02": 553.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590051,
@@ -4621,8 +5236,10 @@
    "lat": 46.9582625,
    "height_m_ln02": 573.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590052,
@@ -4636,8 +5253,10 @@
    "lat": 46.9562359,
    "height_m_ln02": 613.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590007,
@@ -4651,8 +5270,10 @@
    "lat": 46.9592715,
    "height_m_ln02": 567.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590072,
@@ -4666,8 +5287,10 @@
    "lat": 46.9478089,
    "height_m_ln02": 553.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8577002,
@@ -4681,8 +5304,10 @@
    "lat": 46.9543687,
    "height_m_ln02": 558.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590071,
@@ -4696,8 +5321,10 @@
    "lat": 46.9509028,
    "height_m_ln02": 555.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8577005,
@@ -4711,8 +5338,10 @@
    "lat": 46.9578344,
    "height_m_ln02": 548.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8577004,
@@ -4726,8 +5355,10 @@
    "lat": 46.9579449,
    "height_m_ln02": 558.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507096,
@@ -4741,8 +5372,10 @@
    "lat": 46.9742573,
    "height_m_ln02": 520.9,
    "operator": "RBS",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8576993,
@@ -4756,8 +5389,10 @@
    "lat": 46.9742303,
    "height_m_ln02": 523.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8595932,
@@ -4771,8 +5406,10 @@
    "lat": 46.9087039,
    "height_m_ln02": 662.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590058,
@@ -4786,8 +5423,10 @@
    "lat": 46.9128509,
    "height_m_ln02": 631.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8571417,
@@ -4801,8 +5440,10 @@
    "lat": 46.9102872,
    "height_m_ln02": 651.0,
    "operator": "PAG",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589999,
@@ -4816,8 +5457,10 @@
    "lat": 46.9211728,
    "height_m_ln02": 627.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590001,
@@ -4831,8 +5474,10 @@
    "lat": 46.9272185,
    "height_m_ln02": 562.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590002,
@@ -4846,8 +5491,10 @@
    "lat": 46.9263459,
    "height_m_ln02": 560.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589995,
@@ -4861,8 +5508,10 @@
    "lat": 46.9285587,
    "height_m_ln02": 569.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590000,
@@ -4876,8 +5525,10 @@
    "lat": 46.9267328,
    "height_m_ln02": 563.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589996,
@@ -4891,8 +5542,10 @@
    "lat": 46.9265708,
    "height_m_ln02": 565.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589997,
@@ -4906,8 +5559,10 @@
    "lat": 46.9249964,
    "height_m_ln02": 565.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589998,
@@ -4921,8 +5576,10 @@
    "lat": 46.9224774,
    "height_m_ln02": 573.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589268,
@@ -4936,8 +5593,10 @@
    "lat": 46.926148,
    "height_m_ln02": 618.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589199,
@@ -4951,8 +5610,10 @@
    "lat": 46.9356172,
    "height_m_ln02": 555.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8504115,
@@ -4966,8 +5627,10 @@
    "lat": 46.8935692,
    "height_m_ln02": 575.34,
    "operator": "SBB",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8588079,
@@ -4981,8 +5644,10 @@
    "lat": 46.8936416,
    "height_m_ln02": 574.0,
    "operator": "PAG",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8504104,
@@ -4996,8 +5661,10 @@
    "lat": 46.9046257,
    "height_m_ln02": 585.35,
    "operator": "SBB",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8510887,
@@ -5011,8 +5678,10 @@
    "lat": 46.9052858,
    "height_m_ln02": 588.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8510147,
@@ -5026,8 +5695,10 @@
    "lat": 46.8951703,
    "height_m_ln02": 580.1,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507097,
@@ -5041,8 +5712,10 @@
    "lat": 46.927821,
    "height_m_ln02": 573.0,
    "operator": "GB",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8507078,
@@ -5056,8 +5729,10 @@
    "lat": 46.9286628,
    "height_m_ln02": 559.7,
    "operator": "BLS-gbs",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590104,
@@ -5071,8 +5746,10 @@
    "lat": 46.9261642,
    "height_m_ln02": 545.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590107,
@@ -5086,8 +5763,10 @@
    "lat": 46.9244914,
    "height_m_ln02": 550.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590102,
@@ -5101,8 +5780,10 @@
    "lat": 46.9303929,
    "height_m_ln02": 535.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8580567,
@@ -5116,8 +5797,10 @@
    "lat": 46.9286661,
    "height_m_ln02": 552.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8512579,
@@ -5131,8 +5814,10 @@
    "lat": 46.9193765,
    "height_m_ln02": 839.7,
    "operator": "GB-EV",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8588562,
@@ -5146,8 +5831,10 @@
    "lat": 46.9300697,
    "height_m_ln02": 560.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8512578,
@@ -5161,8 +5848,10 @@
    "lat": 46.9279009,
    "height_m_ln02": 572.1,
    "operator": "GB-EV",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8581306,
@@ -5176,8 +5865,10 @@
    "lat": 46.9228449,
    "height_m_ln02": 560.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590087,
@@ -5191,8 +5882,10 @@
    "lat": 46.9243468,
    "height_m_ln02": 547.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590101,
@@ -5206,8 +5899,10 @@
    "lat": 46.929899,
    "height_m_ln02": 553.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8571395,
@@ -5221,8 +5916,10 @@
    "lat": 46.9280274,
    "height_m_ln02": 554.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590110,
@@ -5236,8 +5933,10 @@
    "lat": 46.9292681,
    "height_m_ln02": 536.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8590103,
@@ -5251,8 +5950,10 @@
    "lat": 46.9272085,
    "height_m_ln02": 551.0,
    "operator": "SVB Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8508054,
@@ -5266,8 +5967,10 @@
    "lat": 46.97884,
    "height_m_ln02": 520.2,
    "operator": "RBS",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8505434,
@@ -5281,8 +5984,10 @@
    "lat": 46.981536,
    "height_m_ln02": 531.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8505436,
@@ -5296,8 +6001,10 @@
    "lat": 46.9805285,
    "height_m_ln02": 541.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8505435,
@@ -5311,8 +6018,10 @@
    "lat": 46.9809428,
    "height_m_ln02": 533.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8505437,
@@ -5326,8 +6035,10 @@
    "lat": 46.9800049,
    "height_m_ln02": 551.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8576983,
@@ -5341,8 +6052,10 @@
    "lat": 46.9787773,
    "height_m_ln02": 520.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8589542,
@@ -5356,8 +6069,10 @@
    "lat": 46.97962,
    "height_m_ln02": 520.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8505433,
@@ -5371,8 +6086,10 @@
    "lat": 46.9797005,
    "height_m_ln02": 545.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
   },
   {
    "number": 8576984,
@@ -5386,8 +6103,64 @@
    "lat": 46.977461,
    "height_m_ln02": 500.0,
    "operator": "RBS Auto",
+   "stop_point": true,
    "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
-   "inferred": false
+   "inferred": false,
+   "in_transit_coverage": true
+  },
+  {
+   "number": 8507082,
+   "sloid": "ch:1:sloid:7082",
+   "name": "Bern Europaplatz Süd",
+   "abbreviation": "BNAH",
+   "means_of_transport": null,
+   "municipality": "Bern",
+   "fso": "351",
+   "lon": 7.4074695,
+   "lat": 46.9434464,
+   "height_m_ln02": 546.4,
+   "operator": "BLS-gbs",
+   "stop_point": false,
+   "note": "atlas service point that is not a current stop point; kept because references point at it",
+   "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
+   "inferred": false,
+   "in_transit_coverage": true
+  },
+  {
+   "number": 8507081,
+   "sloid": "ch:1:sloid:7081",
+   "name": "Bern Fischermätteli",
+   "abbreviation": "BNFI",
+   "means_of_transport": null,
+   "municipality": "Bern",
+   "fso": "351",
+   "lon": 7.4121293,
+   "lat": 46.9417654,
+   "height_m_ln02": 551.0,
+   "operator": "BLS-gbs",
+   "stop_point": false,
+   "note": "atlas service point that is not a current stop point; kept because references point at it",
+   "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
+   "inferred": false,
+   "in_transit_coverage": true
+  },
+  {
+   "number": 8504495,
+   "sloid": "ch:1:sloid:4495",
+   "name": "Bern Stöckacker",
+   "abbreviation": "BNST",
+   "means_of_transport": null,
+   "municipality": "Bern",
+   "fso": "351",
+   "lon": 7.4011785,
+   "lat": 46.9463603,
+   "height_m_ln02": 551.0,
+   "operator": "BLS-bn",
+   "stop_point": false,
+   "note": "atlas service point that is not a current stop point; kept because references point at it",
+   "source": "SBB data portal: dienststellen-gemass-opentransportdataswiss (atlas service points)",
+   "inferred": false,
+   "in_transit_coverage": true
   }
  ]
 }

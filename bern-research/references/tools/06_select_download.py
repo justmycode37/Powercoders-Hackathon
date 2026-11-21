@@ -46,7 +46,7 @@ TAGS = [  # (tag, regex over title + description + categories)
     ("signage", r"(sign\b|signage|schild|anzeige|display|abfahrt|departure|board\b|wegweiser|piktogramm)"),
     ("clock", r"(clock|uhr\b|bahnhofsuhr)"),
     ("ticket_machine", r"(ticket machine|billetautomat|fahrkartenautomat)"),
-    ("bench", r"(bench|sitzbank|bank\b)"),
+    ("bench", r"(bench|sitzbank|parkbank)"),
     ("facade", r"(facade|fassade|façade|front|exterior|aussen|bahnhofgebäude|station building|empfangsgebäude)"),
     ("square", r"(platz\b|bahnhofplatz|bubenbergplatz|hirschengraben|kornhausplatz|europaplatz|square)"),
     ("aerial", r"(aerial|luftbild|luftaufnahme|from above|von oben|drone|vogelschau|swissair photo)"),
@@ -54,6 +54,7 @@ TAGS = [  # (tag, regex over title + description + categories)
     ("construction", r"(construction|baustelle|umbau|ausbau|bau\b|bauarbeiten|zukunft bahnhof|zbb|tiefbahnhof|neubau)"),
     ("night", r"(night|nacht|abend|evening|dusk|blue hour)"),
     ("map_plan", r"(map\b|plan\b|karte|netzplan|diagram|schema|gleisplan|lageplan)"),
+    ("station", r"(railway station|train station|bahnhof|\bbhf\b|\bgare\b|stazione|tram stop|haltestelle)"),
     ("artwork", r"(skulptur|sculpture|plastik|kunst|artwork|wandmalerei|mural|brunnen|fountain|denkmal)"),
 ]
 TAGS = [(t, re.compile(r, re.I)) for t, r in TAGS]
@@ -76,6 +77,7 @@ USE = {
     "construction": "construction state (Zukunft Bahnhof Bern works); verify current state before modelling",
     "night": "lighting reference",
     "map_plan": "plan or diagram: layout and naming",
+    "station": "general station view (check visually which elements are shown)",
     "artwork": "public art at the station (usually not needed for transit geometry)",
 }
 DESIGNATION = [re.compile(r"\b(?:gleis|track|perron|platform|voie|gl\.)\s*(\d{1,2})\b", re.I),
@@ -164,7 +166,22 @@ now = datetime.datetime.now().astimezone().isoformat(timespec="seconds")
 records = []
 
 # ------------------------------------------------------------------------------------------ Commons
+# seeds removed after the 2026-11-21 harvest; drop files that came only from them
+EXCLUDED_SEEDS = {"Category:New Bern station"}  # New Bern, North Carolina (USA), not Bern
+# Commons categories that place a file at a station: the hand-mapped seed categories and their subcategories
+# (as harvested) plus each station's Commons category from Wikidata (P373)
+STATION_CATS = {x for c in CC["files"] for x in c["seed_categories"] if not x.startswith("search:")} - EXCLUDED_SEEDS - {"Category:Tram stops in Bern"}  # city-wide, names no station
+STATION_CATS |= {w["commons_category"] for w in load("wikidata_stations.json")["stations"] if w.get("commons_category")}
+
+
+def precise(cam):
+    """coordinates given with at least 4 decimals (about 10 m); 2-decimal values (about 1 km) do not place a photo"""
+    return all(len(repr(float(cam[k])).split(".")[-1]) >= 4 for k in ("lat", "lon"))
+
+
 for c in CC["files"]:
+    if c["seed_categories"] and set(c["seed_categories"]) <= EXCLUDED_SEEDS and not any("geosearch" in v["via"] for v in c["stations"].values()):
+        continue
     ii = c.get("imageinfo")
     if not ii:
         continue
@@ -189,10 +206,43 @@ for c in CC["files"]:
             cam = None
     if cam is None and prim:
         cam = {"lat": round(prim[0]["lat"], 7), "lon": round(prim[0]["lon"], 7), "source": "Commons primary coordinate (camera or object, not distinguished)"}
+    if not st_links:  # e.g. files directly in "Tram stops in Bern": match a stop name in the title, else nearest stop to the camera
+        for n, srec in ST.items():
+            short = srec["name"].split(", ", 1)[-1]
+            if srec.get("municipality") == "Bern" and len(short) > 4 and re.search(r"\b" + re.escape(short) + r"\b", c["title"]):
+                st_links.append(station_ref(n, relation="name-in-title", distance_m=None))
+        if not st_links and cam:
+            best = min(((dist(cam["lat"], cam["lon"], s2["lat"], s2["lon"]), n) for n, s2 in ST.items() if s2.get("lat")), default=None)
+            if best and best[0] < 250:
+                st_links.append(station_ref(best[1], relation="nearest-to-camera", distance_m=round(best[0], 1)))
+    # relevance check for full-text search hits (lead review 02:55): a station link that comes only from
+    # `relation: search` is kept as verified only if a Commons station category or the coordinates place it there
+    only_search = bool(st_links) and all(set(x["relation"].split("+")) <= {"search"} for x in st_links)
+    relevance_unverified, relevance_check = False, None
+    if only_search:
+        s0 = ST.get(st_links[0]["number"])
+        in_cat = sorted(set(c.get("categories", [])) & STATION_CATS)
+        near_m = None
+        if cam and s0 and s0.get("lat") and precise(cam):
+            near_m = dist(cam["lat"], cam["lon"], s0["lat"], s0["lon"])
+        if in_cat:
+            relevance_check = "search hit confirmed by Commons category " + in_cat[0]
+        elif near_m is not None and near_m <= 400:
+            relevance_check = f"search hit confirmed by coordinates ({near_m:.0f} m from the station point)"
+        else:
+            relevance_unverified = True
+            relevance_check = ("search hit not placed at the station by a Commons station category or by coordinates"
+                               + (f" (camera {near_m:.0f} m away)" if near_m is not None else " (no precise coordinates)"))
     date = parse_date(em.get("DateTimeOriginal"))
     year = int(date[:4]) if date else None
     w, h = ii.get("width", 0), ii.get("height", 0)
     allowed = bool(ALLOWED.match(lic)) and "nd" not in lic.lower() and "nc" not in lic.lower()
+    if allowed and not em.get("LicenseUrl"):
+        # e.g. "Attribution" via {{Kurt Rasmussen permission}}: a permission template, not a licence with a URL (lead review 02:55)
+        allowed = False
+        lic_note = "licence template without a licence URL (permission or generic attribution template): link only"
+    else:
+        lic_note = None
     is_image = mime in ("image/jpeg", "image/png", "image/tiff", "image/webp")
     # score
     s = c["relevance"] * 2
@@ -201,6 +251,7 @@ for c in CC["files"]:
     s -= 3 if "artwork" in tags and not any(t in tags for t in ("platform", "concourse", "canopy", "tram_stop")) else 0
     s -= 2 if tags == ["vehicle"] else 0
     s += 3 if year and year >= 2015 else (1 if year and year >= 2008 else (-4 if year and year < 1990 else 0))
+    s -= 4 if only_search and not tags else 0  # full-text hit without any transit keyword
     s += 2 if cam else 0
     s += 1 if w * h >= 4e6 else 0
     near = [x for x in st_links if x["distance_m"] is not None]
@@ -224,7 +275,8 @@ for c in CC["files"]:
                       "setting": "aerial" if "aerial" in tags else ("interior" if "concourse" in tags else "street-level")},
         "edge_designations": resolve_designations(numbers, c["title"] + " " + desc),
         "model_use": "; ".join(USE[t] for t in tags if t in USE) or "context view; check visually",
-        "redistributable": allowed, "redistributable_why": "licence allows redistribution with attribution" if allowed else f"licence '{lic}' not in the allowed set: link only",
+        "redistributable": allowed, "redistributable_why": lic_note or ("licence allows redistribution with attribution" if allowed else f"licence '{lic}' not in the allowed set: link only"),
+        "relevance_unverified": relevance_unverified, "relevance_check": relevance_check,
         "score": s, "retrieved": CC["retrieved"], "_thumburl": ii.get("thumburl"), "_is_image": is_image,
         "inferred": True, "inferred_how": "station link by Commons category (hand-mapped) or GeoData distance; tags by keyword",
     }
@@ -273,19 +325,28 @@ cnt = collections.Counter()
 for r in sorted(records, key=lambda r: -r["score"]):
     if not (r["redistributable"] and r["_is_image"] and r["_thumburl"]):
         continue
-    if r["kind"] == "photo" and r["score"] < 6:
-        continue
+    if r.get("relevance_unverified"):
+        continue  # search hit not confirmed at the station: linked only
+    if r["kind"] == "photo" and (r["score"] < 6 or not r["feature_tags"]):
+        continue  # untagged photos are linked, never stored
     if r["kind"] == "photo" and r["capture_date"] and r["capture_date"][:4].isdigit() and int(r["capture_date"][:4]) < 1990:
         continue
     budget = COMMONS_BUDGET if r["kind"] == "photo" else PANORAMAX_BUDGET
     if cnt[r["kind"]] >= budget:
         continue
     p = primary(r)
+    if p is None:
+        continue
     cap = HUB_CAP.get(p, DEFAULT_CAP)
     if r["kind"] == "streetlevel_photo":
         cap = 4 if p in FOCUS else 2
     if per[(r["kind"], p)] >= cap:
         continue
+    if r["kind"] == "photo":  # at most 2 files per (author, capture date, station): avoids burst series
+        key = (r.get("author"), r.get("capture_date"), p)
+        if per[("burst",) + key] >= 2:
+            continue
+        per[("burst",) + key] += 1
     if r["kind"] == "streetlevel_photo":  # skip near-duplicate frames of the same sequence
         cam, hd = r["viewpoint"]["camera"], r["viewpoint"]["heading_deg"] or 0
         if any(q["kind"] == "streetlevel_photo" and dist(cam["lat"], cam["lon"], q["viewpoint"]["camera"]["lat"], q["viewpoint"]["camera"]["lon"]) < 10
@@ -331,6 +392,15 @@ for r in selected:
         url = r["_thumburl"]
         if p not in FOCUS:
             url = url.replace("/1280px-", "/960px-")
+        if "upload.wikimedia.org" in url:
+            # small original (<= 1280 px) served unscaled from upload.wikimedia.org, which answers 429 to this client:
+            # use a 960 px thumbnail from thumb.wikimedia.org instead, or skip when the original is narrower
+            m2 = re.match(r"https://upload\.wikimedia\.org/wikipedia/commons/(\w)/(\w\w)/([^?]+)", url)
+            if m2 and r["original_size_px"][0] > 960:
+                url = f"https://thumb.wikimedia.org/wikipedia/commons/thumb/{m2.group(1)}/{m2.group(2)}/{m2.group(3)}/960px-{m2.group(3)}"
+            else:
+                r["download_skipped"] = "original narrower than 960 px and upload.wikimedia.org rate-limited this client"
+                continue
         name = f"c{r['id'].split(':')[1]}_{slug}"
     else:
         url = r["_thumburl"]
@@ -364,10 +434,27 @@ for r in selected:
                          "retrieved": now}
         total += r["download"]["bytes"]
 print("downloaded bytes", total, flush=True)
+if not NO_DL:  # remove derivatives this script downloaded earlier that are no longer selected
+    keep = {os.path.normcase(os.path.join(ROOT, r["download"]["file"])) for r in records if r.get("download")}
+    for dp, _, fs in os.walk(IMG):
+        for fn in fs:
+            fp = os.path.join(dp, fn)
+            if os.path.normcase(fp) not in keep:
+                os.remove(fp)
+                print("  removed stale", os.path.relpath(fp, ROOT), flush=True)
 
 for r in records:
     r.pop("_thumburl", None); r.pop("_is_image", None)
     r.setdefault("download", None)
+    if not r["download"]:
+        if r.get("relevance_unverified"):
+            r["not_stored_reason"] = r["relevance_check"]
+        elif not r["redistributable"]:
+            r["not_stored_reason"] = r["redistributable_why"]
+        elif r.get("download_skipped"):
+            r["not_stored_reason"] = r["download_skipped"]
+        else:
+            r["not_stored_reason"] = "not selected (score, per-station cap or budget)"
     r.setdefault("edges_in_view", [])
 save("photo_records.json", {"generated": now, "count": len(records), "downloaded": sum(1 for r in records if r["download"]),
                             "downloaded_bytes": total, "records": sorted(records, key=lambda r: -r["score"])})

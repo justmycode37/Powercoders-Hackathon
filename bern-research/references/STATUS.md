@@ -1,21 +1,36 @@
 # references/ STATUS (Bern Station Reference Collection)
 
-Updated 02:10 Europe/Zurich, 2026-11-21.
+Updated 03:00 Europe/Zurich, 2026-11-21, after the lead review of 02:55. **READY for the lead to validate and commit.**
+`validation/report.md`: **OK, 0 errors, 0 warnings.** Details are in HANDOFF.md, section "Changes after the lead review".
 
-## Done
-- `data/stations.json`: 359 atlas stop points (202 in the City of Bern, plus Ittigen, Ostermundigen, Muri and Köniz) with `number`, `sloid` and coordinates (`tools/01_stations.py`).
-- `data/panoramax_items.json`: 233 georeferenced street-level photos (CC BY-SA 4.0) with GPS position, compass azimuth, field of view and capture time, keyed to stations (`tools/03_harvest_panoramax.py`).
-- `data/operator_links.json`: 46 operator plans, standards, planning PDFs, datasets and imagery services. All 46 URLs checked live; sbb.ch answers only browser user agents, which is noted per link. They are links only and nothing proprietary is copied (`tools/04_operator_links.py`).
-- `orthophoto/`: 16 swisstopo SWISSIMAGE crops of the hubs (0.1 to 0.2 m/px, LV95), each with a `.jgw` world file and a `.json` sidecar, about 14 MB (`tools/05_orthophotos.py`).
-- `assets/`: 10 original parametric glTF assets (bench, ticket machine, recycling station, info stele, generic clock, sector sign, departure display, shelter, tram island, Baldachin approximation). Each sidecar gives evidence, units, axes and origin, and sets `approximate: true` (`tools/07_assets.py`).
+## Lead review items (02:55): done
+1. **Search false positives.** Rule: a station link whose only source is `relation: search` stays only if a Commons station
+   category (hand-mapped seeds and their subcategories, or the station's Wikidata P373; not the city-wide "Tram stops in Bern")
+   or precise coordinates within 400 m place the file at the station.
+   - Stored items with a search-only link: **5 reviewed, 0 confirmed, 5 removed** from `images/` and set to `stored: false`
+     with `not_stored_reason`. They are the memorial plaque `commons:146611998`, 2 climate-demo photos,
+     "Wankdorf Bahnhof nördliches Gebiet 07" and "Tram Tramlink Bern Roof".
+   - Linked-only records: **162 flagged `relevance_unverified: true`**, with the reason in `relevance_check`.
+2. **"Attribution" licences.** All 9 used `{{Kurt Rasmussen permission}}`, a permission template with no licence URL.
+   **All 9 were removed** from the stored subset. New rule: a Commons file is stored only if Commons provides a `LicenseUrl`.
+   **0 stored files lack `licence_url`.**
+3. **`SOURCES.json`.** All 9 entries now have `bytes` and `sha256`; the transit inputs are split per file.
+   In `data/stations.json`, 8571420 "Oberscherli, Scherliau" (Köniz) is kept with `in_transit_coverage: false` and a `coverage_note`:
+   whole adjoining municipalities are included here, transit/ has a 5 km ring, and no reference points at it.
+   The validator now enforces all three rules.
 
-## In progress
-- Wikimedia Commons harvest (seed categories plus GeoData geosearch around rail and tram stops). It is slowed by API rate limits (HTTP 429).
-- Then `tools/06_select_download.py` (licence filter, scoring, download of about 125 Commons and 22 Panoramax images), `tools/08_build_manifest.py` and `tools/09_validate.py`.
+## Counts
+- 2,450 references. 172 stored files, 55.9 MiB: 122 Commons, 22 Panoramax, 16 orthophotos, 12 glTF assets.
+- 41 stations have stored files; 90 have any reference. 1,638 viewpoints are in `references.geojson`.
 
 ## Blocked
-- Mapillary: the API needs a token (contract rule 9), so it is recorded as a link only.
-- KartaView: the API did not answer, so it is recorded as a link only.
+- Mapillary (token needed), KartaView (API unresponsive). Both are recorded as links. No new harvesting was done for this review.
 
-## Ready for the lead to commit (provisional, final list in HANDOFF.md)
-- `references/.gitignore`, `tools/`, `data/stations.json`, `data/panoramax_items.json`, `data/operator_links.json`, `data/orthophotos.json`, `orthophoto/`, `assets/`, `data/assets.json`
+## Ready for the lead to commit (cleaned paths)
+- `bern-research/references/` except `.cache/` (ignored by `references/.gitignore`): `.gitignore`, `STATUS.md`, `HANDOFF.md`,
+  `ATTRIBUTION.md`, `SOURCES.json`, `manifest.json`, `references.geojson`, `by_station.json`, `browse.html`, `data/`,
+  `images/`, `orthophoto/`, `assets/`, `tools/`, `validation/`. 248 files, about 65 MB, no file above 5 MB.
+- Removed since your last look (not on disk any more, never committed): 13 image files, 5 search false positives
+  (listed above) and 8 Rasmussen-permission files (`commons:50104748, 50104767, 46058516, 50104762, 50104749, 30246582,
+  46058522, 30671211`). The 9th, `commons:41464297`, had already dropped out of the stored set. All 13 remain in
+  `manifest.json` as linked records with a `not_stored_reason`.

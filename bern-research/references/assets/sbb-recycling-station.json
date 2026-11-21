@@ -1,6 +1,6 @@
 {
  "id": "sbb-recycling-station",
- "title": "Recycling station, stainless steel, 3 bins",
+ "title": "Recycling station, stainless steel, 4 openings",
  "file": "assets/sbb-recycling-station.gltf",
  "format": "glTF 2.0 (embedded buffer)",
  "approximate": true,
@@ -10,24 +10,24 @@
  "axes": "glTF: +Y up, right-handed; +X along the long side, +Z towards the passenger/front side",
  "origin": "centre of footprint at ground level (y = 0)",
  "parameters": {
-  "bins": 3,
-  "bin_w": 0.42,
-  "depth": 0.4,
+  "bins": 4,
+  "bin_w": 0.36,
+  "depth": 0.42,
   "height": 1.0
  },
  "bbox_m": {
   "min": [
-   -0.63,
+   -0.72,
    0.0,
-   -0.21
+   -0.22
   ],
   "max": [
-   0.63,
+   0.72,
    1.02,
-   0.21
+   0.22
   ]
  },
- "triangles": 84,
+ "triangles": 108,
  "evidence": [
   {
    "kind": "dataset",
@@ -35,14 +35,14 @@
    "what": "'Recyclingstation Chromstahl' listed for Bern (stainless = Chromstahl)"
   },
   {
-   "kind": "photos",
-   "ref": "tag:furniture",
-   "what": "see data/manifest.json records whose features include the tag named here"
+   "kind": "photo",
+   "ref": "commons:60777612",
+   "what": "Bern station hall seen from above: two recycling stations with 4 round openings each, side panels printed"
   }
  ],
- "notes": "",
+ "notes": "Printed side panels (sorting pictograms) are not modelled; openings shown as slots.",
  "licence": "CC0 1.0 (original work generated for this repository)",
- "bytes": 11337,
- "sha256": "e5cc1f0609195ea28513ec39bb47e29f5dc6fda1d547ecbdd0b4bc1c44bbd36d",
+ "bytes": 13970,
+ "sha256": "9f5b5397db56c3fd96e0b5eb57b49a6986aa0330f5f70fe1564b68754cd91d5e",
  "source": "tools/07_assets.py"
 }

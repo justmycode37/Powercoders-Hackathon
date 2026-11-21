@@ -1,0 +1,47 @@
+{
+ "id": "platform-hall-column",
+ "title": "Platform hall column (round, white, dark base sleeve)",
+ "file": "assets/platform-hall-column.gltf",
+ "format": "glTF 2.0 (embedded buffer)",
+ "approximate": true,
+ "inferred": true,
+ "inferred_how": "parametric primitives; dimensions estimated from the evidence listed, not measured",
+ "units": "metre",
+ "axes": "glTF: +Y up, right-handed; +X along the long side, +Z towards the passenger/front side",
+ "origin": "centre of footprint at ground level (y = 0)",
+ "parameters": {
+  "diameter": 0.5,
+  "height": 5.5,
+  "sleeve_h": 1.6
+ },
+ "bbox_m": {
+  "min": [
+   -0.27,
+   0.0,
+   -0.27
+  ],
+  "max": [
+   0.27,
+   5.5,
+   0.27
+  ]
+ },
+ "triangles": 192,
+ "evidence": [
+  {
+   "kind": "photo",
+   "ref": "commons:179915274",
+   "what": "Bern Perronhalle: white round columns with a dark lower sleeve along the platforms"
+  },
+  {
+   "kind": "link",
+   "ref": "sbb-trafimage-plan-bern-a4-8507000",
+   "what": "platform positions for column rows"
+  }
+ ],
+ "notes": "Diameter and height estimated from the photo against a 1.8 m person/ticket machine; spacing must come from plans or orthophoto.",
+ "licence": "CC0 1.0 (original work generated for this repository)",
+ "bytes": 23367,
+ "sha256": "85000969b8aa97749064a63a37e9aec27d3191799360989874470c8e6659867a",
+ "source": "tools/07_assets.py"
+}

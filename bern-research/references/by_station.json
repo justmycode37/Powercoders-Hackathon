@@ -1,0 +1,4325 @@
+{
+ "generated": "2026-11-21T02:53:41+01:00",
+ "stations": {
+  "8507000": {
+   "number": 8507000,
+   "sloid": "ch:1:sloid:7000",
+   "name": "Bern",
+   "counts": {
+    "photo:linked": 815,
+    "photo:stored": 46,
+    "streetlevel_photo:stored": 5,
+    "streetlevel_photo:linked": 25,
+    "orthophoto:stored": 1,
+    "station_plan_pdf:linked": 3,
+    "interactive_plan:linked": 1,
+    "planning_pdf:linked": 6,
+    "project_magazine_pdf:linked": 2,
+    "web_page:linked": 1,
+    "historic_photo:linked": 1
+   },
+   "stored": [
+    "commons:179915274",
+    "commons:120562687",
+    "commons:161668456",
+    "commons:161668460",
+    "commons:129522379",
+    "commons:99681663",
+    "commons:71781270",
+    "commons:79338652",
+    "commons:79338651",
+    "commons:61581359",
+    "commons:57538939",
+    "commons:23308405",
+    "commons:167495390",
+    "commons:57109469",
+    "commons:57109488",
+    "commons:99681654",
+    "commons:37911106",
+    "commons:7762914",
+    "commons:64995488",
+    "commons:64995492",
+    "commons:70029746",
+    "commons:72688840",
+    "commons:72275376",
+    "commons:50981437",
+    "commons:54760035",
+    "commons:113523969",
+    "commons:85022140",
+    "commons:92401173",
+    "commons:92401176",
+    "commons:40817138",
+    "commons:57480379",
+    "commons:68392139",
+    "commons:68392140",
+    "commons:51459884",
+    "commons:60777612",
+    "commons:144372633",
+    "commons:61836405",
+    "commons:56601799",
+    "commons:88738787",
+    "commons:97124568",
+    "commons:34604079",
+    "commons:4002376",
+    "commons:492442",
+    "commons:138348846",
+    "commons:57046308",
+    "commons:57109473",
+    "panoramax:8bff5a8d-45bd-4d2d-b100-f5a1abaf423a",
+    "panoramax:ead07825-b0ff-4707-8339-692ddf2340c6",
+    "panoramax:c7d77006-b4b0-41f0-92cb-45fc1178ac47",
+    "panoramax:c095f926-97a4-487b-830e-ea1b468d165c",
+    "panoramax:0e1d83ef-721a-4cfa-8923-90ee2cf37fb4",
+    "ortho-8507000_bern"
+   ],
+   "linked": [
+    "commons:146611998",
+    "commons:154137930",
+    "commons:99681645",
+    "commons:99681614",
+    "commons:99681597",
+    "commons:109182899",
+    "commons:179915293",
+    "commons:82671880",
+    "commons:82675325",
+    "commons:82671902",
+    "commons:82671866",
+    "commons:82671871",
+    "commons:82671918",
+    "commons:82671981",
+    "commons:82671852",
+    "commons:79338650",
+    "commons:92401175",
+    "commons:57480356",
+    "commons:57480341",
+    "commons:57480332",
+    "commons:97725797",
+    "commons:82675341",
+    "commons:82675306",
+    "commons:82675409",
+    "commons:82675326",
+    "commons:82675308",
+    "commons:82671982",
+    "commons:82671892",
+    "commons:82671946",
+    "commons:82671867",
+    "commons:82675353",
+    "commons:82675376",
+    "commons:82675350",
+    "commons:82675382",
+    "commons:82671879",
+    "commons:82675317",
+    "commons:82671973",
+    "commons:82675418",
+    "commons:82671964",
+    "commons:82675361",
+    "commons:82675402",
+    "commons:82675406",
+    "commons:82675405",
+    "commons:82675309",
+    "commons:82675352",
+    "commons:82675377",
+    "commons:82675340",
+    "commons:82675407",
+    "commons:82671952",
+    "commons:82675389",
+    "commons:82675371",
+    "commons:82675398",
+    "commons:82671893",
+    "commons:82675384",
+    "commons:82671882",
+    "commons:82675368",
+    "commons:82671894",
+    "commons:82671930",
+    "commons:82675413",
+    "commons:82675307"
+   ],
+   "by_feature": {
+    "aerial": [
+     "commons:81693426",
+     "commons:107490376",
+     "commons:37479527",
+     "commons:83215650"
+    ],
+    "artwork": [
+     "commons:144372633",
+     "commons:154137930",
+     "commons:43808449",
+     "commons:98117602",
+     "commons:198446175",
+     "commons:61581369",
+     "commons:91724671",
+     "commons:91724680",
+     "commons:91725088",
+     "commons:94969783",
+     "commons:94970121",
+     "commons:94970132",
+     "commons:94970143",
+     "commons:94970483",
+     "commons:95270353"
+    ],
+    "canopy": [
+     "commons:57109469",
+     "commons:57109488",
+     "commons:61581359",
+     "commons:57480379",
+     "commons:57480332",
+     "commons:57480341",
+     "commons:57480356",
+     "commons:20202840",
+     "commons:5248853",
+     "commons:81693426",
+     "commons:107490376",
+     "commons:15947479",
+     "commons:15947578"
+    ],
+    "clock": [
+     "commons:138348846",
+     "commons:138348850"
+    ],
+    "concourse": [
+     "commons:179915274",
+     "commons:129522379",
+     "commons:161668456",
+     "commons:161668460",
+     "commons:99681663",
+     "commons:37911106",
+     "commons:99681654",
+     "commons:50981437",
+     "commons:72275376",
+     "commons:51459884",
+     "commons:60777612",
+     "commons:146611998",
+     "commons:109182899",
+     "commons:82671852",
+     "commons:82671866"
+    ],
+    "construction": [
+     "commons:161668456",
+     "commons:161668460",
+     "commons:79338651",
+     "commons:79338652",
+     "commons:144372633",
+     "commons:68392139",
+     "commons:68392140",
+     "commons:79338650",
+     "commons:98117602",
+     "commons:81693426",
+     "commons:144372638",
+     "commons:183907289",
+     "commons:183907291",
+     "commons:183907295",
+     "commons:81693418"
+    ],
+    "entrance": [
+     "commons:120562687",
+     "commons:129522379",
+     "commons:23308405",
+     "commons:71781270",
+     "commons:79338651",
+     "commons:79338652",
+     "commons:64995488",
+     "commons:64995492",
+     "commons:70029746",
+     "commons:72688840",
+     "commons:7762914",
+     "commons:144372633",
+     "commons:34604079",
+     "commons:4002376",
+     "commons:492442"
+    ],
+    "facade": [
+     "commons:40817138",
+     "commons:170913617",
+     "commons:133484762",
+     "commons:34625282",
+     "commons:37479527",
+     "commons:15679868"
+    ],
+    "map_plan": [
+     "commons:88738787",
+     "commons:34604079",
+     "commons:12383967",
+     "commons:2227922",
+     "commons:133484762",
+     "commons:197257683",
+     "commons:8977296"
+    ],
+    "night": [
+     "commons:57109469",
+     "commons:57109488",
+     "commons:97725797",
+     "commons:57108952",
+     "commons:57109427",
+     "commons:57109433",
+     "commons:57109467",
+     "commons:57046250",
+     "commons:57046293",
+     "commons:57046316",
+     "commons:57109529",
+     "commons:97698322",
+     "commons:97701795",
+     "commons:97702570",
+     "commons:97705707"
+    ],
+    "platform": [
+     "commons:120562687",
+     "commons:179915274",
+     "commons:161668456",
+     "commons:161668460",
+     "commons:71781270",
+     "commons:99681663",
+     "commons:99681654",
+     "commons:54760035",
+     "commons:85022140",
+     "commons:92401173",
+     "commons:92401176",
+     "commons:56601799",
+     "commons:97124568",
+     "panoramax:0e1d83ef-721a-4cfa-8923-90ee2cf37fb4",
+     "panoramax:c095f926-97a4-487b-830e-ea1b468d165c"
+    ],
+    "signage": [
+     "commons:99681663",
+     "commons:113523969",
+     "commons:50981437",
+     "commons:64995488",
+     "commons:64995492",
+     "commons:70029746",
+     "commons:72275376",
+     "commons:88738787",
+     "commons:138348846",
+     "commons:82671852",
+     "commons:82671866",
+     "commons:82671871",
+     "commons:82671880",
+     "commons:82671902",
+     "commons:82671918"
+    ],
+    "square": [
+     "commons:129522379",
+     "commons:167495390",
+     "commons:23308405",
+     "commons:57109469",
+     "commons:57109488",
+     "commons:57538939",
+     "commons:61581359",
+     "commons:37911106",
+     "commons:40817138",
+     "commons:57480379",
+     "commons:144372633",
+     "commons:57046308",
+     "commons:57109473",
+     "commons:57480332",
+     "commons:57480341"
+    ],
+    "stairs_lift": [
+     "commons:109182899",
+     "commons:36356940",
+     "commons:6035445",
+     "commons:6035470"
+    ],
+    "station": [
+     "commons:120562687",
+     "commons:179915274",
+     "commons:161668456",
+     "commons:161668460",
+     "commons:167495390",
+     "commons:23308405",
+     "commons:57109469",
+     "commons:57109488",
+     "commons:57538939",
+     "commons:61581359",
+     "commons:71781270",
+     "commons:79338651",
+     "commons:79338652",
+     "commons:99681663",
+     "commons:99681654"
+    ],
+    "street_level": [
+     "panoramax:0e1d83ef-721a-4cfa-8923-90ee2cf37fb4",
+     "panoramax:8bff5a8d-45bd-4d2d-b100-f5a1abaf423a",
+     "panoramax:c095f926-97a4-487b-830e-ea1b468d165c",
+     "panoramax:c7d77006-b4b0-41f0-92cb-45fc1178ac47",
+     "panoramax:ead07825-b0ff-4707-8339-692ddf2340c6",
+     "panoramax:06a02666-e534-42e6-b490-a940d07d0b21",
+     "panoramax:0b298235-a8f3-4d80-af8b-8d2a03c029e9",
+     "panoramax:3135df26-4a26-41f9-b335-556631f1fe69",
+     "panoramax:421945b3-3c0f-4681-a28f-d384de6027e6",
+     "panoramax:535b2e5a-d4b1-4fac-9d2b-ebb08356c87c",
+     "panoramax:8a8ae3d4-4cb0-4bf1-bddd-6660754899ad",
+     "panoramax:92895cfb-f6e6-4394-bd9f-44fd794d4721",
+     "panoramax:a15f2abe-bcc6-4d49-8090-557ffc0be466",
+     "panoramax:b59bf01a-9f98-433f-91dd-336ccb7df56a"
+    ],
+    "ticket_machine": [
+     "commons:167495390"
+    ],
+    "tram_stop": [
+     "commons:167495390",
+     "commons:57538939",
+     "panoramax:8bff5a8d-45bd-4d2d-b100-f5a1abaf423a",
+     "panoramax:c7d77006-b4b0-41f0-92cb-45fc1178ac47",
+     "panoramax:ead07825-b0ff-4707-8339-692ddf2340c6",
+     "commons:154137930",
+     "commons:175934182",
+     "panoramax:06a02666-e534-42e6-b490-a940d07d0b21",
+     "panoramax:b59bf01a-9f98-433f-91dd-336ccb7df56a"
+    ],
+    "vehicle": [
+     "commons:120562687",
+     "commons:129522379",
+     "commons:167495390",
+     "commons:57538939",
+     "commons:99681663",
+     "commons:99681654",
+     "commons:113523969",
+     "commons:50981437",
+     "commons:64995488",
+     "commons:64995492",
+     "commons:70029746",
+     "commons:72275376",
+     "commons:72688840",
+     "commons:144372633",
+     "commons:56601799"
+    ]
+   },
+   "wikidata": "Q28870",
+   "commons_category": "Category:Bern railway station",
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": true
+  },
+  "8576646": {
+   "number": 8576646,
+   "sloid": "ch:1:sloid:76646",
+   "name": "Bern, Bahnhof",
+   "counts": {
+    "photo:stored": 25,
+    "photo:linked": 277,
+    "streetlevel_photo:stored": 5,
+    "streetlevel_photo:linked": 10,
+    "orthophoto:stored": 1,
+    "kerb_plan_pdf:linked": 1,
+    "planning_pdf:linked": 1,
+    "parametric_asset:stored": 1
+   },
+   "stored": [
+    "commons:129522379",
+    "commons:61581359",
+    "commons:57538939",
+    "commons:23308405",
+    "commons:167495390",
+    "commons:57109469",
+    "commons:57109488",
+    "commons:50356119",
+    "commons:50356123",
+    "commons:37911106",
+    "commons:129522378",
+    "commons:129543001",
+    "commons:129542945",
+    "commons:99682212",
+    "commons:99682240",
+    "commons:54760035",
+    "commons:113523969",
+    "commons:40817138",
+    "commons:57480379",
+    "commons:148255202",
+    "commons:144372633",
+    "commons:61836405",
+    "commons:61580898",
+    "commons:57046308",
+    "commons:57109473",
+    "panoramax:8bff5a8d-45bd-4d2d-b100-f5a1abaf423a",
+    "panoramax:ead07825-b0ff-4707-8339-692ddf2340c6",
+    "panoramax:c7d77006-b4b0-41f0-92cb-45fc1178ac47",
+    "panoramax:c095f926-97a4-487b-830e-ea1b468d165c",
+    "panoramax:0e1d83ef-721a-4cfa-8923-90ee2cf37fb4",
+    "ortho-8576646_bern-bahnhof",
+    "asset:baldachin-bahnhofplatz-approx"
+   ],
+   "linked": [
+    "commons:154137930",
+    "commons:129542947",
+    "commons:129542958",
+    "commons:129542948",
+    "commons:57480356",
+    "commons:57480341",
+    "commons:57480332",
+    "commons:175934182",
+    "commons:54765561",
+    "commons:61581364",
+    "commons:61581366",
+    "commons:61581365",
+    "commons:41351913",
+    "commons:54765315",
+    "commons:54765328",
+    "commons:54765342",
+    "commons:54765368",
+    "commons:54765372",
+    "commons:54765382",
+    "commons:54765403",
+    "commons:54765433",
+    "commons:54765441",
+    "commons:54765449",
+    "commons:54765500",
+    "commons:54765513",
+    "commons:54765538",
+    "commons:54765464",
+    "commons:167495367",
+    "commons:167495383",
+    "commons:105507574",
+    "commons:105507577",
+    "commons:57108952",
+    "commons:57109427",
+    "commons:57109433",
+    "commons:57109467",
+    "commons:54765557",
+    "commons:54765322",
+    "commons:54765336",
+    "commons:54765348",
+    "commons:54765354",
+    "commons:24338533",
+    "commons:5248853",
+    "commons:53248317",
+    "commons:20202840",
+    "commons:31078842",
+    "commons:99682180",
+    "commons:99682173",
+    "commons:99682131",
+    "commons:99682097",
+    "commons:99682085",
+    "commons:46075038",
+    "commons:34625282",
+    "commons:34624919",
+    "commons:8977296",
+    "commons:6592863",
+    "commons:57480382",
+    "commons:180642960",
+    "commons:144372629",
+    "commons:144372628",
+    "commons:115611905"
+   ],
+   "by_feature": {
+    "artwork": [
+     "commons:144372633",
+     "commons:154137930",
+     "commons:61581369"
+    ],
+    "canopy": [
+     "commons:57109469",
+     "commons:57109488",
+     "commons:61581359",
+     "commons:50356119",
+     "commons:50356123",
+     "commons:57480379",
+     "commons:57480332",
+     "commons:57480341",
+     "commons:57480356",
+     "commons:20202840",
+     "commons:5248853",
+     "commons:15947479",
+     "commons:15947578"
+    ],
+    "concourse": [
+     "commons:129522379",
+     "commons:37911106",
+     "commons:148255202",
+     "commons:61580898",
+     "commons:20202840",
+     "commons:99682097",
+     "commons:140953017",
+     "commons:113523973",
+     "commons:53250675",
+     "commons:61581377"
+    ],
+    "construction": [
+     "commons:144372633",
+     "commons:139193205",
+     "commons:144372628",
+     "commons:144372629"
+    ],
+    "entrance": [
+     "commons:129522379",
+     "commons:23308405",
+     "commons:148255202",
+     "commons:144372633",
+     "commons:20202840",
+     "commons:129635136"
+    ],
+    "facade": [
+     "commons:40817138",
+     "commons:34625282"
+    ],
+    "map_plan": [
+     "commons:8977296",
+     "commons:8977510"
+    ],
+    "night": [
+     "commons:57109469",
+     "commons:57109488",
+     "commons:57108952",
+     "commons:57109427",
+     "commons:57109433",
+     "commons:57109467",
+     "commons:57046250",
+     "commons:57046316",
+     "commons:57109529",
+     "commons:36356941",
+     "commons:5544023"
+    ],
+    "platform": [
+     "commons:54760035",
+     "panoramax:0e1d83ef-721a-4cfa-8923-90ee2cf37fb4",
+     "panoramax:c095f926-97a4-487b-830e-ea1b468d165c",
+     "panoramax:c7d77006-b4b0-41f0-92cb-45fc1178ac47",
+     "panoramax:06a02666-e534-42e6-b490-a940d07d0b21",
+     "panoramax:0b298235-a8f3-4d80-af8b-8d2a03c029e9",
+     "panoramax:3135df26-4a26-41f9-b335-556631f1fe69",
+     "panoramax:421945b3-3c0f-4681-a28f-d384de6027e6",
+     "panoramax:535b2e5a-d4b1-4fac-9d2b-ebb08356c87c",
+     "panoramax:8a8ae3d4-4cb0-4bf1-bddd-6660754899ad",
+     "panoramax:92895cfb-f6e6-4394-bd9f-44fd794d4721",
+     "panoramax:a15f2abe-bcc6-4d49-8090-557ffc0be466",
+     "panoramax:b59bf01a-9f98-433f-91dd-336ccb7df56a"
+    ],
+    "signage": [
+     "commons:113523969",
+     "commons:34624919"
+    ],
+    "square": [
+     "commons:129522379",
+     "commons:167495390",
+     "commons:23308405",
+     "commons:57109469",
+     "commons:57109488",
+     "commons:57538939",
+     "commons:61581359",
+     "commons:37911106",
+     "commons:40817138",
+     "commons:57480379",
+     "commons:99682212",
+     "commons:99682240",
+     "commons:144372633",
+     "commons:57046308",
+     "commons:57109473"
+    ],
+    "station": [
+     "commons:167495390",
+     "commons:23308405",
+     "commons:57109469",
+     "commons:57109488",
+     "commons:57538939",
+     "commons:61581359",
+     "commons:50356119",
+     "commons:50356123",
+     "commons:113523969",
+     "commons:129522378",
+     "commons:129542945",
+     "commons:129543001",
+     "commons:40817138",
+     "commons:54760035",
+     "commons:57480379"
+    ],
+    "street_level": [
+     "panoramax:0e1d83ef-721a-4cfa-8923-90ee2cf37fb4",
+     "panoramax:8bff5a8d-45bd-4d2d-b100-f5a1abaf423a",
+     "panoramax:c095f926-97a4-487b-830e-ea1b468d165c",
+     "panoramax:c7d77006-b4b0-41f0-92cb-45fc1178ac47",
+     "panoramax:ead07825-b0ff-4707-8339-692ddf2340c6",
+     "panoramax:06a02666-e534-42e6-b490-a940d07d0b21",
+     "panoramax:0b298235-a8f3-4d80-af8b-8d2a03c029e9",
+     "panoramax:3135df26-4a26-41f9-b335-556631f1fe69",
+     "panoramax:421945b3-3c0f-4681-a28f-d384de6027e6",
+     "panoramax:535b2e5a-d4b1-4fac-9d2b-ebb08356c87c",
+     "panoramax:8a8ae3d4-4cb0-4bf1-bddd-6660754899ad",
+     "panoramax:92895cfb-f6e6-4394-bd9f-44fd794d4721",
+     "panoramax:a15f2abe-bcc6-4d49-8090-557ffc0be466",
+     "panoramax:b59bf01a-9f98-433f-91dd-336ccb7df56a"
+    ],
+    "ticket_machine": [
+     "commons:167495390"
+    ],
+    "tram_stop": [
+     "commons:167495390",
+     "commons:57538939",
+     "commons:50356119",
+     "commons:50356123",
+     "commons:129522378",
+     "commons:129542945",
+     "commons:129543001",
+     "commons:99682212",
+     "commons:99682240",
+     "panoramax:8bff5a8d-45bd-4d2d-b100-f5a1abaf423a",
+     "panoramax:c7d77006-b4b0-41f0-92cb-45fc1178ac47",
+     "panoramax:ead07825-b0ff-4707-8339-692ddf2340c6",
+     "commons:154137930",
+     "commons:129542947",
+     "commons:129542948"
+    ],
+    "vehicle": [
+     "commons:129522379",
+     "commons:167495390",
+     "commons:57538939",
+     "commons:50356119",
+     "commons:50356123",
+     "commons:113523969",
+     "commons:129522378",
+     "commons:129542945",
+     "commons:129543001",
+     "commons:99682212",
+     "commons:99682240",
+     "commons:144372633",
+     "commons:61836405",
+     "commons:154137930",
+     "commons:129542947"
+    ]
+   },
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": true
+  },
+  "8507110": {
+   "number": 8507110,
+   "sloid": "ch:1:sloid:7110",
+   "name": "Bern, Zytglogge",
+   "counts": {
+    "photo:stored": 11,
+    "photo:linked": 444,
+    "streetlevel_photo:linked": 2,
+    "orthophoto:stored": 1,
+    "kerb_plan_pdf:linked": 1
+   },
+   "stored": [
+    "commons:179551379",
+    "commons:189616661",
+    "commons:11097215",
+    "commons:99681563",
+    "commons:61580848",
+    "commons:134589552",
+    "commons:61580855",
+    "commons:22524146",
+    "commons:99681948",
+    "commons:61002111",
+    "commons:145811866",
+    "ortho-8507110_bern-zytglogge"
+   ],
+   "linked": [
+    "commons:30246582",
+    "commons:61580854",
+    "commons:14523646",
+    "commons:99681876",
+    "commons:99681859",
+    "commons:99681844",
+    "commons:99681918",
+    "commons:99681549",
+    "commons:61580850",
+    "commons:61580864",
+    "commons:145811869",
+    "commons:145811984",
+    "commons:90102719",
+    "commons:65132056",
+    "commons:66985399",
+    "commons:62827377",
+    "commons:98492223",
+    "commons:138348915",
+    "commons:67092081",
+    "commons:61580844",
+    "commons:145811985",
+    "commons:145811986",
+    "commons:65132051",
+    "commons:62827375",
+    "commons:62827376",
+    "commons:62827374",
+    "commons:93957352",
+    "commons:61580865",
+    "commons:138348914",
+    "commons:54765344",
+    "commons:54765363",
+    "commons:57261943",
+    "commons:57264113",
+    "commons:57265098",
+    "commons:57265106",
+    "commons:57265434",
+    "commons:57265438",
+    "commons:57265448",
+    "commons:57265450",
+    "commons:134584914",
+    "commons:153332467",
+    "commons:153332474",
+    "commons:153332476",
+    "commons:148677113",
+    "commons:31743711",
+    "commons:57259212",
+    "commons:29335684",
+    "commons:29335638",
+    "commons:29335636",
+    "commons:57265481",
+    "commons:61580858",
+    "commons:61580859",
+    "commons:117586619",
+    "commons:117586832",
+    "commons:110280357",
+    "commons:117596381",
+    "commons:57263428",
+    "commons:126493560",
+    "commons:61580870",
+    "commons:126493460"
+   ],
+   "by_feature": {
+    "concourse": [
+     "commons:134589552",
+     "commons:61580864",
+     "commons:126493460",
+     "commons:126493560",
+     "commons:29335636",
+     "commons:61580870"
+    ],
+    "entrance": [
+     "commons:61580848",
+     "commons:134589552",
+     "commons:61580855",
+     "commons:61580850",
+     "commons:98492223",
+     "commons:61580865",
+     "commons:57263428"
+    ],
+    "facade": [
+     "commons:61580848",
+     "commons:61580855",
+     "commons:61002111",
+     "commons:61580854",
+     "commons:61580864",
+     "commons:62827377",
+     "commons:61580844",
+     "commons:61580865",
+     "commons:110280357",
+     "commons:117586619",
+     "commons:117586832",
+     "commons:117596381",
+     "commons:61580858",
+     "commons:61580859"
+    ],
+    "night": [
+     "commons:189616661",
+     "commons:99681918"
+    ],
+    "platform": [
+     "commons:99681563"
+    ],
+    "signage": [
+     "commons:148677113"
+    ],
+    "square": [
+     "commons:11097215",
+     "commons:61580848",
+     "commons:61002111",
+     "commons:145811866",
+     "commons:14523646",
+     "commons:30246582",
+     "commons:61580854",
+     "commons:145811869",
+     "commons:145811984",
+     "commons:62827377",
+     "commons:65132056",
+     "commons:66985399",
+     "commons:90102719",
+     "commons:138348915",
+     "commons:145811985"
+    ],
+    "stairs_lift": [
+     "commons:29335638",
+     "commons:29335684"
+    ],
+    "station": [
+     "commons:179551379",
+     "commons:189616661",
+     "commons:11097215",
+     "commons:99681563",
+     "commons:22524146",
+     "commons:99681948",
+     "commons:14523646",
+     "commons:30246582",
+     "commons:99681549",
+     "commons:99681844",
+     "commons:99681859",
+     "commons:99681876",
+     "commons:99681918"
+    ],
+    "tram_stop": [
+     "commons:179551379",
+     "commons:189616661",
+     "commons:11097215",
+     "commons:99681563",
+     "commons:22524146",
+     "commons:99681948",
+     "commons:14523646",
+     "commons:30246582",
+     "commons:99681549",
+     "commons:99681844",
+     "commons:99681859",
+     "commons:99681876",
+     "commons:99681918"
+    ],
+    "vehicle": [
+     "commons:179551379",
+     "commons:189616661",
+     "commons:11097215",
+     "commons:99681563",
+     "commons:22524146",
+     "commons:99681948",
+     "commons:14523646",
+     "commons:30246582",
+     "commons:99681549",
+     "commons:99681844",
+     "commons:99681859",
+     "commons:99681876",
+     "commons:99681918",
+     "commons:138348915"
+    ]
+   },
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": true
+  },
+  "8516161": {
+   "number": 8516161,
+   "sloid": "ch:1:sloid:16161",
+   "name": "Bern Wankdorf",
+   "counts": {
+    "photo:linked": 32,
+    "photo:stored": 4,
+    "streetlevel_photo:stored": 3,
+    "streetlevel_photo:linked": 34,
+    "orthophoto:stored": 1,
+    "station_plan_pdf:linked": 2,
+    "kerb_plan_pdf:linked": 1,
+    "planning_pdf:linked": 1
+   },
+   "stored": [
+    "commons:8948586",
+    "commons:131111737",
+    "commons:131111740",
+    "commons:129079132",
+    "panoramax:0eba0b22-1b85-47cb-9a8f-df33799e8caa",
+    "panoramax:e3662583-a9d7-44f3-aba8-7fdf0ae2eca6",
+    "panoramax:336faa8f-14f7-4d4a-acdb-f430f288cd53",
+    "ortho-8516161_bern-wankdorf"
+   ],
+   "linked": [
+    "commons:50104762",
+    "commons:123309975",
+    "commons:189344561",
+    "commons:129079141",
+    "commons:129079134",
+    "commons:129079137",
+    "commons:129079133",
+    "commons:71846227",
+    "commons:71846232",
+    "commons:50104755",
+    "commons:129079142",
+    "commons:129079138",
+    "commons:129079136",
+    "commons:71852456",
+    "commons:57483830",
+    "commons:43571816",
+    "panoramax:377887e1-64a1-4365-9526-3089542c5dfe",
+    "panoramax:6eeeb969-0e18-4dd6-a488-051a6e44da46",
+    "panoramax:f32a8c44-210c-4876-9211-102d4d62f86f",
+    "panoramax:9ea9c26a-0aa0-45f4-8b68-006413998ee8",
+    "panoramax:ce43ac02-fc19-4ba5-818e-a406810fb2bb",
+    "panoramax:62bbf7d9-c075-4fcb-90ed-d924c8e0f1d8",
+    "panoramax:4035e279-a1c6-416e-ad17-c457914c2c73",
+    "panoramax:22c98bcf-7921-4290-a611-0bbb23be09af",
+    "panoramax:2a8dbd1d-9a4b-4677-b9be-f5a1d8afe799",
+    "panoramax:0e57daf1-e901-494a-85c0-29f7e57fec81",
+    "panoramax:babc10a2-6450-4f35-8c29-94859b615c6c",
+    "panoramax:a1125c8c-8e52-410a-be50-2abaefb4685e",
+    "panoramax:d23b92a2-982c-4bd6-9f60-3182ea85a854",
+    "panoramax:15b769f7-bf3e-4767-99d1-79d5e713bd4b",
+    "panoramax:992c32f2-a302-423f-8665-2d6c62deafab",
+    "panoramax:47b3ee1f-7e2c-46db-a0c1-db2f59d62263",
+    "panoramax:2bcfbc40-8804-4b47-a0f9-77bb6a952275",
+    "panoramax:10f32387-7f93-4939-b090-a1daf4ef92ca",
+    "panoramax:1c1c364f-d517-4ec3-bb2b-c6578c707382",
+    "panoramax:b0292fbf-4b1a-4ab4-87b9-42ff30c66d86",
+    "panoramax:2ec5ef81-4b5b-4dfc-bd78-91c009e23411",
+    "panoramax:86c1bcdd-dc28-4325-9ed4-32399960a7f1",
+    "panoramax:4e20ddd1-e6b1-45cf-a92b-3b4cdb6bab42",
+    "panoramax:dd84044f-0414-406f-9163-4caf2f04005c",
+    "panoramax:533c37bf-23e0-43cb-9cf5-1982323f9666",
+    "panoramax:5322edc1-c5c1-4f4a-a974-67c6bd6b9a04",
+    "panoramax:1e46e158-f38f-4f3e-b9b6-bc78ae57e6f6",
+    "panoramax:0d2ed3b6-5fb0-4483-b24b-6af5e9fcd889",
+    "panoramax:677a9def-40af-44d5-9f8d-07fa63a1c355",
+    "panoramax:64e3eb84-8316-41cd-a53e-4c467e4c28fd",
+    "panoramax:e3dd7cf4-e90c-40e7-9928-703db6284cc2",
+    "panoramax:f95ae5af-f3ae-4507-96b8-0ca1250706f5",
+    "panoramax:70328ff8-5936-464d-a0e0-f9f3f31e9d37",
+    "panoramax:3ed7191d-1134-4a16-9a6c-19a7281a0b68",
+    "commons:77139841",
+    "commons:45131659",
+    "commons:203022077",
+    "commons:202313448",
+    "commons:203024219",
+    "commons:203024221",
+    "commons:203527782",
+    "commons:203527781",
+    "commons:116485079",
+    "commons:203527776"
+   ],
+   "by_feature": {
+    "canopy": [
+     "commons:189344561"
+    ],
+    "map_plan": [
+     "commons:123309975"
+    ],
+    "platform": [
+     "panoramax:0eba0b22-1b85-47cb-9a8f-df33799e8caa",
+     "panoramax:336faa8f-14f7-4d4a-acdb-f430f288cd53",
+     "commons:123309975"
+    ],
+    "signage": [
+     "commons:129079141",
+     "commons:129079138",
+     "commons:129079142"
+    ],
+    "square": [
+     "commons:129079141",
+     "commons:129079133",
+     "commons:129079134",
+     "commons:129079137"
+    ],
+    "station": [
+     "commons:129079132",
+     "commons:131111737",
+     "commons:131111740",
+     "commons:8948586",
+     "commons:50104762",
+     "commons:123309975",
+     "commons:129079141",
+     "commons:189344561",
+     "commons:129079133",
+     "commons:129079134",
+     "commons:129079137",
+     "commons:129079138",
+     "commons:129079142",
+     "commons:50104755",
+     "commons:71846227"
+    ],
+    "street_level": [
+     "panoramax:0eba0b22-1b85-47cb-9a8f-df33799e8caa",
+     "panoramax:336faa8f-14f7-4d4a-acdb-f430f288cd53",
+     "panoramax:e3662583-a9d7-44f3-aba8-7fdf0ae2eca6"
+    ],
+    "tram_stop": [
+     "panoramax:e3662583-a9d7-44f3-aba8-7fdf0ae2eca6",
+     "commons:50104762"
+    ],
+    "vehicle": [
+     "commons:8948586",
+     "commons:50104762",
+     "commons:189344561",
+     "commons:50104755",
+     "commons:71846232",
+     "commons:71852456"
+    ]
+   },
+   "wikidata": "Q31454839",
+   "commons_category": "Category:Bern Wankdorf railway station",
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": true
+  },
+  "8504108": {
+   "number": 8504108,
+   "sloid": "ch:1:sloid:4108",
+   "name": "Bern Europaplatz",
+   "counts": {
+    "photo:stored": 6,
+    "photo:linked": 17,
+    "orthophoto:stored": 1,
+    "station_plan_pdf:linked": 2
+   },
+   "stored": [
+    "commons:71781258",
+    "commons:71781257",
+    "commons:53766038",
+    "commons:58264127",
+    "commons:58264126",
+    "commons:34635060",
+    "ortho-8504108_bern-europaplatz"
+   ],
+   "linked": [
+    "commons:71781256",
+    "commons:113169412",
+    "commons:89183566",
+    "commons:89183570",
+    "commons:89183571",
+    "commons:89183572",
+    "commons:167142194",
+    "commons:89183567",
+    "commons:202621997",
+    "commons:89183565",
+    "commons:57480414",
+    "commons:74371853",
+    "commons:203024331",
+    "commons:202734916",
+    "commons:202313301",
+    "commons:203021986",
+    "commons:202311745",
+    "link:sbb-trafimage-plan-bern-europaplatz-a4-8504108",
+    "link:sbb-trafimage-plan-bern-europaplatz-a4-poster-8504108"
+   ],
+   "by_feature": {
+    "platform": [
+     "commons:71781258"
+    ],
+    "square": [
+     "commons:71781258",
+     "commons:53766038",
+     "commons:58264126",
+     "commons:58264127",
+     "commons:71781257",
+     "commons:34635060",
+     "commons:113169412",
+     "commons:71781256",
+     "commons:89183566",
+     "commons:89183570",
+     "commons:89183571",
+     "commons:89183572"
+    ],
+    "station": [
+     "commons:71781258",
+     "commons:53766038",
+     "commons:58264126",
+     "commons:58264127",
+     "commons:71781257",
+     "commons:34635060",
+     "commons:113169412",
+     "commons:71781256",
+     "commons:89183571"
+    ]
+   },
+   "wikidata": "Q31450758",
+   "commons_category": "Category:Bern Europaplatz SBB railway station",
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8580939": {
+   "number": 8580939,
+   "sloid": "ch:1:sloid:80939",
+   "name": "Bern Europaplatz, Bahnhof",
+   "counts": {
+    "photo:linked": 8,
+    "photo:stored": 6
+   },
+   "stored": [
+    "commons:71781258",
+    "commons:71781257",
+    "commons:53766038",
+    "commons:58264127",
+    "commons:58264126",
+    "commons:34635060"
+   ],
+   "linked": [
+    "commons:50104748",
+    "commons:50104767",
+    "commons:46058516",
+    "commons:41464297",
+    "commons:71781256",
+    "commons:113169412",
+    "commons:202621997",
+    "commons:202311745"
+   ],
+   "by_feature": {
+    "platform": [
+     "commons:71781258"
+    ],
+    "square": [
+     "commons:71781258",
+     "commons:53766038",
+     "commons:58264126",
+     "commons:58264127",
+     "commons:71781257",
+     "commons:34635060",
+     "commons:46058516",
+     "commons:50104748",
+     "commons:50104767",
+     "commons:41464297",
+     "commons:113169412",
+     "commons:71781256"
+    ],
+    "station": [
+     "commons:71781258",
+     "commons:53766038",
+     "commons:58264126",
+     "commons:58264127",
+     "commons:71781257",
+     "commons:34635060",
+     "commons:46058516",
+     "commons:50104748",
+     "commons:50104767",
+     "commons:41464297",
+     "commons:113169412",
+     "commons:71781256"
+    ],
+    "tram_stop": [
+     "commons:46058516",
+     "commons:50104748",
+     "commons:50104767",
+     "commons:41464297"
+    ],
+    "vehicle": [
+     "commons:46058516",
+     "commons:50104748",
+     "commons:50104767",
+     "commons:41464297"
+    ]
+   },
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8590129": {
+   "number": 8590129,
+   "sloid": "ch:1:sloid:90129",
+   "name": "Bern Wankdorf, Bahnhof",
+   "counts": {
+    "photo:linked": 12,
+    "photo:stored": 4,
+    "streetlevel_photo:stored": 2,
+    "streetlevel_photo:linked": 17,
+    "kerb_plan_pdf:linked": 1,
+    "planning_pdf:linked": 1
+   },
+   "stored": [
+    "commons:8948586",
+    "commons:131111737",
+    "commons:131111740",
+    "commons:129079132",
+    "panoramax:e3662583-a9d7-44f3-aba8-7fdf0ae2eca6",
+    "panoramax:336faa8f-14f7-4d4a-acdb-f430f288cd53"
+   ],
+   "linked": [
+    "commons:50104762",
+    "commons:189344561",
+    "commons:71846227",
+    "commons:71846232",
+    "commons:50104755",
+    "commons:57483830",
+    "commons:43571816",
+    "panoramax:d23b92a2-982c-4bd6-9f60-3182ea85a854",
+    "panoramax:15b769f7-bf3e-4767-99d1-79d5e713bd4b",
+    "panoramax:992c32f2-a302-423f-8665-2d6c62deafab",
+    "panoramax:47b3ee1f-7e2c-46db-a0c1-db2f59d62263",
+    "panoramax:2bcfbc40-8804-4b47-a0f9-77bb6a952275",
+    "panoramax:10f32387-7f93-4939-b090-a1daf4ef92ca",
+    "panoramax:1c1c364f-d517-4ec3-bb2b-c6578c707382",
+    "panoramax:b0292fbf-4b1a-4ab4-87b9-42ff30c66d86",
+    "panoramax:2ec5ef81-4b5b-4dfc-bd78-91c009e23411",
+    "panoramax:86c1bcdd-dc28-4325-9ed4-32399960a7f1",
+    "panoramax:4e20ddd1-e6b1-45cf-a92b-3b4cdb6bab42",
+    "panoramax:533c37bf-23e0-43cb-9cf5-1982323f9666",
+    "panoramax:5322edc1-c5c1-4f4a-a974-67c6bd6b9a04",
+    "panoramax:1e46e158-f38f-4f3e-b9b6-bc78ae57e6f6",
+    "panoramax:0d2ed3b6-5fb0-4483-b24b-6af5e9fcd889",
+    "panoramax:677a9def-40af-44d5-9f8d-07fa63a1c355",
+    "panoramax:64e3eb84-8316-41cd-a53e-4c467e4c28fd",
+    "commons:45131659",
+    "commons:203022077",
+    "commons:202313448",
+    "commons:203024219",
+    "commons:116485079",
+    "link:bernmobil-kanten-wankdorf-2025",
+    "link:are-faktenblatt-wankdorf"
+   ],
+   "by_feature": {
+    "canopy": [
+     "commons:189344561"
+    ],
+    "platform": [
+     "panoramax:336faa8f-14f7-4d4a-acdb-f430f288cd53"
+    ],
+    "station": [
+     "commons:129079132",
+     "commons:131111737",
+     "commons:131111740",
+     "commons:8948586",
+     "commons:50104762",
+     "commons:189344561",
+     "commons:50104755",
+     "commons:71846227",
+     "commons:71846232"
+    ],
+    "street_level": [
+     "panoramax:336faa8f-14f7-4d4a-acdb-f430f288cd53",
+     "panoramax:e3662583-a9d7-44f3-aba8-7fdf0ae2eca6"
+    ],
+    "tram_stop": [
+     "panoramax:e3662583-a9d7-44f3-aba8-7fdf0ae2eca6",
+     "commons:50104762"
+    ],
+    "vehicle": [
+     "commons:8948586",
+     "commons:50104762",
+     "commons:189344561",
+     "commons:50104755",
+     "commons:71846232"
+    ]
+   },
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8516154": {
+   "number": 8516154,
+   "sloid": "ch:1:sloid:16154",
+   "name": "Bern Brünnen Westside",
+   "counts": {
+    "photo:stored": 4,
+    "photo:linked": 6,
+    "orthophoto:stored": 1
+   },
+   "stored": [
+    "commons:88628625",
+    "commons:142346273",
+    "commons:88728756",
+    "commons:61371639",
+    "ortho-8516154_bern-bruennen-westside"
+   ],
+   "linked": [
+    "commons:142346275",
+    "commons:52743936",
+    "commons:142346274",
+    "commons:142346279",
+    "commons:93689736",
+    "commons:202734930"
+   ],
+   "by_feature": {
+    "night": [
+     "commons:88728756"
+    ],
+    "square": [
+     "commons:88728756",
+     "commons:61371639"
+    ],
+    "station": [
+     "commons:142346273",
+     "commons:88628625",
+     "commons:88728756",
+     "commons:61371639",
+     "commons:142346275",
+     "commons:52743936",
+     "commons:142346274",
+     "commons:142346279",
+     "commons:93689736"
+    ],
+    "tram_stop": [
+     "commons:142346273",
+     "commons:88628625"
+    ],
+    "vehicle": [
+     "commons:142346273",
+     "commons:61371639",
+     "commons:142346275",
+     "commons:142346274",
+     "commons:142346279"
+    ]
+   },
+   "wikidata": "Q33511982",
+   "commons_category": "Category:Bern Brünnen Westside railway station",
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8507060": {
+   "number": 8507060,
+   "sloid": "ch:1:sloid:7060",
+   "name": "Bern, Helvetiaplatz",
+   "counts": {
+    "photo:stored": 4,
+    "photo:linked": 95,
+    "orthophoto:stored": 1
+   },
+   "stored": [
+    "commons:11097215",
+    "commons:92937148",
+    "commons:2660933",
+    "commons:2660864",
+    "ortho-8507060_bern-helvetiaplatz"
+   ],
+   "linked": [
+    "commons:2660828",
+    "commons:2660805",
+    "commons:30671211",
+    "commons:84527082",
+    "commons:117653000",
+    "commons:79337152",
+    "commons:83164315",
+    "commons:92937269",
+    "commons:92937419",
+    "commons:92936997",
+    "commons:92937461",
+    "commons:92937093",
+    "commons:92937033",
+    "commons:92936954",
+    "commons:92937045",
+    "commons:92937395",
+    "commons:92937377",
+    "commons:92937110",
+    "commons:92937011",
+    "commons:92937300",
+    "commons:92938387",
+    "commons:92937432",
+    "commons:92937486",
+    "commons:25484603",
+    "commons:4077121",
+    "commons:84527077",
+    "commons:79337342",
+    "commons:79336946",
+    "commons:54765760",
+    "commons:30247140",
+    "commons:117653218",
+    "commons:174121833",
+    "commons:174121829",
+    "commons:174121830",
+    "commons:174121838",
+    "commons:174121839",
+    "commons:79259308",
+    "commons:79259304",
+    "commons:39331944",
+    "commons:79259306",
+    "commons:3148070",
+    "commons:54768769",
+    "commons:69696205",
+    "commons:71808422",
+    "commons:98023666",
+    "commons:98023449",
+    "commons:98024560",
+    "commons:98025153",
+    "commons:98025472",
+    "commons:98025265",
+    "commons:98024987",
+    "commons:98023518",
+    "commons:98024789",
+    "commons:98023611",
+    "commons:98025577",
+    "commons:98022646",
+    "commons:98024113",
+    "commons:98024431",
+    "commons:98025077",
+    "commons:98020887"
+   ],
+   "by_feature": {
+    "artwork": [
+     "commons:92937148",
+     "commons:83164315",
+     "commons:92936954",
+     "commons:92936997",
+     "commons:92937011",
+     "commons:92937033",
+     "commons:92937045",
+     "commons:92937093",
+     "commons:92937110",
+     "commons:92937269",
+     "commons:92937300",
+     "commons:92937377",
+     "commons:92937395",
+     "commons:92937419",
+     "commons:92937432"
+    ],
+    "concourse": [
+     "commons:92937148",
+     "commons:83164315",
+     "commons:92936954",
+     "commons:92936997",
+     "commons:92937011",
+     "commons:92937033",
+     "commons:92937045",
+     "commons:92937093",
+     "commons:92937110",
+     "commons:92937269",
+     "commons:92937300",
+     "commons:92937377",
+     "commons:92937395",
+     "commons:92937419",
+     "commons:92937432"
+    ],
+    "facade": [
+     "commons:83164315"
+    ],
+    "signage": [
+     "commons:79337152",
+     "commons:54765760"
+    ],
+    "square": [
+     "commons:11097215",
+     "commons:2660864",
+     "commons:2660933",
+     "commons:2660805",
+     "commons:2660828",
+     "commons:30671211",
+     "commons:117653000",
+     "commons:79337152",
+     "commons:84527082",
+     "commons:25484603",
+     "commons:79336946",
+     "commons:79337342",
+     "commons:84527077",
+     "commons:54765760"
+    ],
+    "stairs_lift": [
+     "commons:92937148"
+    ],
+    "station": [
+     "commons:11097215",
+     "commons:2660864",
+     "commons:2660933",
+     "commons:2660805",
+     "commons:2660828",
+     "commons:30671211",
+     "commons:25484603"
+    ],
+    "tram_stop": [
+     "commons:11097215",
+     "commons:2660864",
+     "commons:2660933",
+     "commons:2660805",
+     "commons:2660828",
+     "commons:30671211",
+     "commons:25484603"
+    ],
+    "vehicle": [
+     "commons:11097215",
+     "commons:2660864",
+     "commons:2660933",
+     "commons:2660805",
+     "commons:2660828",
+     "commons:30671211",
+     "commons:83164315",
+     "commons:84527082",
+     "commons:25484603"
+    ]
+   },
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": true
+  },
+  "8508054": {
+   "number": 8508054,
+   "sloid": "ch:1:sloid:8054",
+   "name": "Worblaufen",
+   "counts": {
+    "photo:stored": 4,
+    "photo:linked": 35,
+    "orthophoto:stored": 1
+   },
+   "stored": [
+    "commons:74220593",
+    "commons:74220516",
+    "commons:115412626",
+    "commons:18759864",
+    "ortho-8508054_worblaufen"
+   ],
+   "linked": [
+    "commons:74221000",
+    "commons:2614633",
+    "commons:18760031",
+    "commons:47319907",
+    "commons:74220744",
+    "commons:178396132",
+    "commons:74220618",
+    "commons:74220743",
+    "commons:74221445",
+    "commons:142347302",
+    "commons:142347303",
+    "commons:90116745",
+    "commons:90117092",
+    "commons:531658",
+    "commons:100683753",
+    "commons:203024199",
+    "commons:202313549",
+    "commons:203022177",
+    "commons:69228681",
+    "commons:100689503",
+    "commons:100689504",
+    "commons:100692663",
+    "commons:100692677",
+    "commons:100683743",
+    "commons:128608103",
+    "commons:175432338",
+    "commons:175432351",
+    "commons:175432347",
+    "commons:175432339",
+    "commons:175432346",
+    "commons:175432354",
+    "commons:175432350",
+    "commons:175432335",
+    "commons:175432334",
+    "commons:175432341"
+   ],
+   "by_feature": {
+    "platform": [
+     "commons:18759864",
+     "commons:18760031",
+     "commons:2614633"
+    ],
+    "station": [
+     "commons:115412626",
+     "commons:18759864",
+     "commons:74220516",
+     "commons:74220593",
+     "commons:74221000",
+     "commons:18760031",
+     "commons:2614633",
+     "commons:142347302",
+     "commons:142347303",
+     "commons:178396132",
+     "commons:47319907",
+     "commons:74220618",
+     "commons:74220743",
+     "commons:74220744",
+     "commons:74221445"
+    ],
+    "vehicle": [
+     "commons:115412626",
+     "commons:18759864",
+     "commons:74220516",
+     "commons:74220593",
+     "commons:74221000",
+     "commons:18760031",
+     "commons:2614633",
+     "commons:142347302",
+     "commons:142347303",
+     "commons:178396132",
+     "commons:47319907",
+     "commons:74220618",
+     "commons:74220743",
+     "commons:74220744",
+     "commons:74221445"
+    ]
+   },
+   "wikidata": "Q33508989",
+   "commons_category": "Category:Worblaufen railway station",
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8588989": {
+   "number": 8588989,
+   "sloid": "ch:1:sloid:88989",
+   "name": "Bern, Bärenplatz",
+   "counts": {
+    "photo:stored": 4,
+    "photo:linked": 113
+   },
+   "stored": [
+    "commons:129522379",
+    "commons:148255202",
+    "commons:61580898",
+    "commons:90102728"
+   ],
+   "linked": [
+    "commons:90102772",
+    "commons:90102773",
+    "commons:92940337",
+    "commons:61580892",
+    "commons:61580894",
+    "commons:151298177",
+    "commons:54267505",
+    "commons:50974280",
+    "commons:57109361",
+    "commons:57109367",
+    "commons:57109371",
+    "commons:57109381",
+    "commons:49928084",
+    "commons:50974283",
+    "commons:24430004",
+    "commons:57262313",
+    "commons:57262321",
+    "commons:57262273",
+    "commons:57242149",
+    "commons:57242142",
+    "commons:113650983",
+    "commons:3148014",
+    "commons:3148015",
+    "commons:3148016",
+    "commons:3148018",
+    "commons:53660323",
+    "commons:97124565",
+    "commons:29680828",
+    "commons:61581344",
+    "commons:22562818",
+    "commons:8977246",
+    "commons:30771897",
+    "commons:11365466",
+    "commons:16524921",
+    "commons:202646496",
+    "commons:57109388",
+    "commons:79259328",
+    "commons:202660999",
+    "commons:202660943",
+    "commons:89957977",
+    "commons:89957975",
+    "commons:48303001",
+    "commons:73188522",
+    "commons:138870416",
+    "commons:73188570",
+    "commons:73188572",
+    "commons:37561353",
+    "commons:57262317",
+    "commons:79259295",
+    "commons:79259293",
+    "commons:79259297",
+    "commons:129805138",
+    "commons:34065791",
+    "commons:1701280",
+    "commons:941612",
+    "commons:140227069",
+    "commons:135167699",
+    "commons:99682053",
+    "commons:148254365",
+    "commons:61581349"
+   ],
+   "by_feature": {
+    "concourse": [
+     "commons:129522379",
+     "commons:148255202",
+     "commons:61580898"
+    ],
+    "entrance": [
+     "commons:129522379",
+     "commons:148255202"
+    ],
+    "facade": [
+     "commons:92940337"
+    ],
+    "night": [
+     "commons:57109361",
+     "commons:57109367",
+     "commons:57109371",
+     "commons:57109381"
+    ],
+    "square": [
+     "commons:129522379",
+     "commons:90102728",
+     "commons:90102772",
+     "commons:90102773",
+     "commons:92940337",
+     "commons:113650983",
+     "commons:151298177",
+     "commons:24430004",
+     "commons:49928084",
+     "commons:50974280",
+     "commons:50974283",
+     "commons:54267505",
+     "commons:57109361",
+     "commons:57109367",
+     "commons:57109371"
+    ],
+    "vehicle": [
+     "commons:129522379"
+    ]
+   },
+   "wikidata": "Q136704193",
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": true
+  },
+  "8579896": {
+   "number": 8579896,
+   "sloid": "ch:1:sloid:79896",
+   "name": "Bern, Hirschengraben",
+   "counts": {
+    "photo:stored": 4,
+    "photo:linked": 128
+   },
+   "stored": [
+    "commons:37911106",
+    "commons:144372633",
+    "commons:57046308",
+    "commons:57109473"
+   ],
+   "linked": [
+    "commons:99682180",
+    "commons:99682173",
+    "commons:99682131",
+    "commons:99682097",
+    "commons:99682085",
+    "commons:50104749",
+    "commons:180642960",
+    "commons:144372629",
+    "commons:144372628",
+    "commons:115611905",
+    "commons:115611902",
+    "commons:115611904",
+    "commons:57109529",
+    "commons:57046316",
+    "commons:57046250",
+    "commons:139193205",
+    "commons:140953017",
+    "commons:57046293",
+    "commons:107490376",
+    "commons:117655773",
+    "commons:6855966",
+    "commons:63610212",
+    "commons:63610214",
+    "commons:52663757",
+    "commons:8977510",
+    "commons:99682150",
+    "commons:29998422",
+    "commons:29913436",
+    "commons:190587489",
+    "commons:140951550",
+    "commons:30246587",
+    "commons:190588243",
+    "commons:112273680",
+    "commons:112273676",
+    "commons:112262822",
+    "commons:54361690",
+    "commons:3577693",
+    "commons:140951528",
+    "commons:140951534",
+    "commons:140951568",
+    "commons:140951577",
+    "commons:140951797",
+    "commons:183748982",
+    "commons:183748965",
+    "commons:183748961",
+    "commons:183748963",
+    "commons:183748972",
+    "commons:183748949",
+    "commons:183748953",
+    "commons:183748975",
+    "commons:183748948",
+    "commons:183748974",
+    "commons:183748979",
+    "commons:140951520",
+    "commons:140951543",
+    "commons:140951559",
+    "commons:140951584",
+    "commons:140951594",
+    "commons:140951601",
+    "commons:140951613"
+   ],
+   "by_feature": {
+    "aerial": [
+     "commons:107490376"
+    ],
+    "artwork": [
+     "commons:144372633"
+    ],
+    "canopy": [
+     "commons:107490376"
+    ],
+    "concourse": [
+     "commons:37911106",
+     "commons:99682097",
+     "commons:140953017"
+    ],
+    "construction": [
+     "commons:144372633",
+     "commons:139193205",
+     "commons:144372628",
+     "commons:144372629"
+    ],
+    "entrance": [
+     "commons:144372633"
+    ],
+    "map_plan": [
+     "commons:8977510"
+    ],
+    "night": [
+     "commons:57046250",
+     "commons:57046293",
+     "commons:57046316",
+     "commons:57109529"
+    ],
+    "square": [
+     "commons:37911106",
+     "commons:144372633",
+     "commons:57046308",
+     "commons:57109473",
+     "commons:50104749",
+     "commons:99682085",
+     "commons:99682097",
+     "commons:99682131",
+     "commons:99682173",
+     "commons:99682180",
+     "commons:107490376",
+     "commons:115611902",
+     "commons:115611904",
+     "commons:115611905",
+     "commons:117655773"
+    ],
+    "station": [
+     "commons:144372633",
+     "commons:99682085",
+     "commons:99682097",
+     "commons:99682131",
+     "commons:99682173",
+     "commons:99682180",
+     "commons:180642960",
+     "commons:52663757",
+     "commons:6855966"
+    ],
+    "tram_stop": [
+     "commons:99682085",
+     "commons:99682131",
+     "commons:99682173",
+     "commons:99682180"
+    ],
+    "vehicle": [
+     "commons:144372633",
+     "commons:50104749",
+     "commons:99682085",
+     "commons:99682097",
+     "commons:99682131",
+     "commons:99682173",
+     "commons:99682180",
+     "commons:107490376",
+     "commons:117655773",
+     "commons:57046293",
+     "commons:63610212",
+     "commons:63610214",
+     "commons:99682150"
+    ]
+   },
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": true
+  },
+  "8595488": {
+   "number": 8595488,
+   "sloid": "ch:1:sloid:95488",
+   "name": "Gümligen, Bahnhof (Tram)",
+   "counts": {
+    "photo:stored": 4,
+    "photo:linked": 2
+   },
+   "stored": [
+    "commons:6926704",
+    "commons:6926725",
+    "commons:142349030",
+    "commons:142349029"
+   ],
+   "linked": [
+    "commons:189343144",
+    "commons:100683182"
+   ],
+   "by_feature": {
+    "station": [
+     "commons:142349029",
+     "commons:142349030",
+     "commons:6926704",
+     "commons:6926725",
+     "commons:189343144"
+    ],
+    "tram_stop": [
+     "commons:142349029",
+     "commons:142349030",
+     "commons:6926704",
+     "commons:6926725",
+     "commons:189343144"
+    ],
+    "vehicle": [
+     "commons:142349029",
+     "commons:142349030",
+     "commons:6926704",
+     "commons:6926725",
+     "commons:189343144"
+    ]
+   },
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8507078": {
+   "number": 8507078,
+   "sloid": "ch:1:sloid:7078",
+   "name": "Wabern bei Bern",
+   "counts": {
+    "photo:stored": 4,
+    "photo:linked": 17
+   },
+   "stored": [
+    "commons:72839838",
+    "commons:72839840",
+    "commons:95719109",
+    "commons:95719110"
+   ],
+   "linked": [
+    "commons:72839839",
+    "commons:72839842",
+    "commons:72839844",
+    "commons:95719107",
+    "commons:116141582",
+    "commons:116141585",
+    "commons:90798024",
+    "commons:52680081",
+    "commons:52680080",
+    "commons:71773087",
+    "commons:114147751",
+    "commons:116141565",
+    "commons:116141571",
+    "commons:115712133",
+    "commons:95719113",
+    "commons:151826699",
+    "commons:54279257"
+   ],
+   "by_feature": {
+    "construction": [
+     "commons:95719109",
+     "commons:95719110",
+     "commons:95719107"
+    ],
+    "facade": [
+     "commons:116141582",
+     "commons:116141585"
+    ],
+    "signage": [
+     "commons:114147751"
+    ],
+    "station": [
+     "commons:72839838",
+     "commons:72839840",
+     "commons:95719109",
+     "commons:95719110",
+     "commons:72839839",
+     "commons:72839842",
+     "commons:72839844",
+     "commons:95719107",
+     "commons:116141582",
+     "commons:116141585",
+     "commons:90798024",
+     "commons:52680080",
+     "commons:52680081",
+     "commons:71773087"
+    ],
+    "vehicle": [
+     "commons:72839838",
+     "commons:72839840",
+     "commons:72839842"
+    ]
+   },
+   "wikidata": "Q33507372",
+   "commons_category": "Category:Wabern bei Bern railway station",
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8504489": {
+   "number": 8504489,
+   "sloid": "ch:1:sloid:4489",
+   "name": "Bern Bümpliz Nord",
+   "counts": {
+    "photo:stored": 3,
+    "photo:linked": 10,
+    "orthophoto:stored": 1
+   },
+   "stored": [
+    "commons:119246686",
+    "commons:119246698",
+    "commons:88890576",
+    "ortho-8504489_bern-buempliz-nord"
+   ],
+   "linked": [
+    "commons:119246716",
+    "commons:52743814",
+    "commons:203024339",
+    "commons:119246607",
+    "commons:119246625",
+    "commons:119246668",
+    "commons:119246643",
+    "commons:94674734",
+    "commons:202737087",
+    "commons:202737112"
+   ],
+   "by_feature": {
+    "facade": [
+     "commons:119246686",
+     "commons:119246698",
+     "commons:119246716"
+    ],
+    "station": [
+     "commons:119246686",
+     "commons:119246698",
+     "commons:88890576",
+     "commons:119246716",
+     "commons:52743814"
+    ]
+   },
+   "wikidata": "Q33466824",
+   "commons_category": "Category:Bern Bümpliz Nord railway station",
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8508052": {
+   "number": 8508052,
+   "sloid": "ch:1:sloid:8052",
+   "name": "Bern Tiefenau",
+   "counts": {
+    "photo:stored": 2,
+    "photo:linked": 1,
+    "orthophoto:stored": 1
+   },
+   "stored": [
+    "commons:70372650",
+    "commons:70372648",
+    "ortho-8508052_bern-tiefenau"
+   ],
+   "linked": [
+    "commons:70372646"
+   ],
+   "by_feature": {
+    "station": [
+     "commons:70372648",
+     "commons:70372650",
+     "commons:70372646"
+    ]
+   },
+   "wikidata": "Q33508970",
+   "commons_category": "Category:Bern Tiefenau railway station",
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8507069": {
+   "number": 8507069,
+   "sloid": "ch:1:sloid:7069",
+   "name": "Ittigen bei Bern",
+   "counts": {
+    "photo:stored": 3,
+    "photo:linked": 3
+   },
+   "stored": [
+    "commons:127889488",
+    "commons:127889487",
+    "commons:91204935"
+   ],
+   "linked": [
+    "commons:77139841",
+    "commons:158639728",
+    "commons:126000718"
+   ],
+   "by_feature": {
+    "construction": [
+     "commons:127889487",
+     "commons:127889488"
+    ],
+    "station": [
+     "commons:127889487",
+     "commons:127889488",
+     "commons:91204935"
+    ]
+   },
+   "wikidata": "Q33507245",
+   "commons_category": "Category:Ittigen bei Bern railway station",
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8504488": {
+   "number": 8504488,
+   "sloid": "ch:1:sloid:4488",
+   "name": "Bern Riedbach",
+   "counts": {
+    "photo:stored": 2,
+    "photo:linked": 4,
+    "orthophoto:stored": 1
+   },
+   "stored": [
+    "commons:117836968",
+    "commons:117836977",
+    "ortho-8504488_bern-riedbach"
+   ],
+   "linked": [
+    "commons:54482954",
+    "commons:54482955",
+    "commons:54482956",
+    "commons:117836948"
+   ],
+   "by_feature": {
+    "facade": [
+     "commons:117836968",
+     "commons:117836977"
+    ],
+    "station": [
+     "commons:117836968",
+     "commons:117836977",
+     "commons:54482954",
+     "commons:54482955",
+     "commons:54482956"
+    ]
+   },
+   "wikidata": "Q33466805",
+   "commons_category": "Category:Bern Riedbach railway station",
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8507079": {
+   "number": 8507079,
+   "sloid": "ch:1:sloid:7079",
+   "name": "Bern Weissenbühl",
+   "counts": {
+    "photo:stored": 2,
+    "photo:linked": 9,
+    "orthophoto:stored": 1
+   },
+   "stored": [
+    "commons:119246847",
+    "commons:119246868",
+    "ortho-8507079_bern-weissenbuehl"
+   ],
+   "linked": [
+    "commons:119246882",
+    "commons:119246894",
+    "commons:71773093",
+    "commons:71773094",
+    "commons:119246816",
+    "commons:119246825",
+    "commons:119246833",
+    "commons:12602348",
+    "commons:203024420"
+   ],
+   "by_feature": {
+    "facade": [
+     "commons:119246847",
+     "commons:119246868",
+     "commons:119246882",
+     "commons:119246894"
+    ],
+    "station": [
+     "commons:119246847",
+     "commons:119246868",
+     "commons:119246882",
+     "commons:119246894",
+     "commons:71773093",
+     "commons:71773094"
+    ]
+   },
+   "wikidata": "Q33507383",
+   "commons_category": "Category:Bern Weissenbühl railway station",
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8507003": {
+   "number": 8507003,
+   "sloid": "ch:1:sloid:7003",
+   "name": "Gümligen",
+   "counts": {
+    "photo:stored": 2,
+    "photo:linked": 21,
+    "streetlevel_photo:linked": 5
+   },
+   "stored": [
+    "commons:6926704",
+    "commons:6926725"
+   ],
+   "linked": [
+    "commons:118363600",
+    "commons:6926479",
+    "commons:142349024",
+    "commons:142349023",
+    "commons:142349022",
+    "commons:142349031",
+    "commons:142349042",
+    "commons:6926553",
+    "commons:118363578",
+    "commons:118363588",
+    "commons:6926497",
+    "commons:61429784",
+    "commons:74009935",
+    "commons:61429792",
+    "commons:61429791",
+    "commons:118363558",
+    "commons:118363568",
+    "panoramax:888e09f1-fdb1-4819-a9d5-aa712eb0f6be",
+    "panoramax:4a489342-7fb7-4fc6-bb1d-329c6b5a8fd0",
+    "panoramax:a77dc6fe-8630-4022-88de-ce2c8c7e1b84",
+    "panoramax:a6a5bd2b-cfae-4ad2-9a63-f4f64c61fb65",
+    "panoramax:3ece7236-eb59-411d-a142-e4bba7a19532",
+    "commons:108944820",
+    "commons:6926511",
+    "commons:69224456",
+    "commons:6926527"
+   ],
+   "by_feature": {
+    "facade": [
+     "commons:118363578",
+     "commons:118363588"
+    ],
+    "platform": [
+     "commons:118363600"
+    ],
+    "shelter": [
+     "commons:6926479"
+    ],
+    "station": [
+     "commons:6926704",
+     "commons:6926725",
+     "commons:118363600",
+     "commons:6926479",
+     "commons:118363578",
+     "commons:118363588",
+     "commons:142349022",
+     "commons:142349023",
+     "commons:142349024",
+     "commons:142349031",
+     "commons:142349042",
+     "commons:6926497",
+     "commons:6926553"
+    ],
+    "tram_stop": [
+     "commons:6926704",
+     "commons:6926725",
+     "commons:6926479",
+     "commons:6926497"
+    ],
+    "vehicle": [
+     "commons:6926704",
+     "commons:6926725",
+     "commons:6926479",
+     "commons:142349022",
+     "commons:142349023",
+     "commons:142349024",
+     "commons:142349031",
+     "commons:6926497"
+    ]
+   },
+   "wikidata": "Q31454242",
+   "commons_category": "Category:Gümligen railway station",
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8508051": {
+   "number": 8508051,
+   "sloid": "ch:1:sloid:8051",
+   "name": "Bern Felsenau",
+   "counts": {
+    "photo:stored": 1,
+    "photo:linked": 3,
+    "streetlevel_photo:linked": 2,
+    "orthophoto:stored": 1
+   },
+   "stored": [
+    "commons:114512943",
+    "ortho-8508051_bern-felsenau"
+   ],
+   "linked": [
+    "commons:58085394",
+    "commons:58085395",
+    "commons:91203696",
+    "panoramax:ac84fca1-1d38-4f66-bff2-f15571c89395",
+    "panoramax:a563b153-3367-4fce-9036-550852270d04"
+   ],
+   "by_feature": {
+    "station": [
+     "commons:114512943",
+     "commons:58085394",
+     "commons:58085395",
+     "commons:91203696"
+    ],
+    "vehicle": [
+     "commons:58085394"
+    ]
+   },
+   "wikidata": "Q33508961",
+   "commons_category": "Category:Bern Felsenau railway station",
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8504495": {
+   "number": 8504495,
+   "sloid": "ch:1:sloid:4495",
+   "name": "Bern Stöckacker",
+   "counts": {
+    "photo:stored": 2
+   },
+   "stored": [
+    "commons:89183619",
+    "commons:52743663"
+   ],
+   "linked": [],
+   "by_feature": {
+    "station": [
+     "commons:89183619",
+     "commons:52743663"
+    ]
+   },
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8507096": {
+   "number": 8507096,
+   "sloid": "ch:1:sloid:7096",
+   "name": "Papiermühle",
+   "counts": {
+    "photo:stored": 2,
+    "photo:linked": 5
+   },
+   "stored": [
+    "commons:32479790",
+    "commons:32479800"
+   ],
+   "linked": [
+    "commons:152055795",
+    "commons:32331848",
+    "commons:32331811",
+    "commons:126000723",
+    "commons:126000722"
+   ],
+   "by_feature": {
+    "station": [
+     "commons:32479790",
+     "commons:32479800"
+    ],
+    "tram_stop": [
+     "commons:32479790",
+     "commons:32479800"
+    ],
+    "vehicle": [
+     "commons:32479790"
+    ]
+   },
+   "wikidata": "Q33507596",
+   "commons_category": "Category:Papiermühle railway station",
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8504106": {
+   "number": 8504106,
+   "sloid": "ch:1:sloid:4106",
+   "name": "Bern Bümpliz Süd",
+   "counts": {
+    "photo:stored": 1,
+    "photo:linked": 4,
+    "orthophoto:stored": 1
+   },
+   "stored": [
+    "commons:119246737",
+    "ortho-8504106_bern-buempliz-sued"
+   ],
+   "linked": [
+    "commons:90638468",
+    "commons:94784443",
+    "commons:119246725",
+    "commons:202327057"
+   ],
+   "by_feature": {
+    "facade": [
+     "commons:119246737",
+     "commons:94784443"
+    ],
+    "station": [
+     "commons:119246737",
+     "commons:90638468"
+    ]
+   },
+   "wikidata": "Q31450662",
+   "commons_category": "Category:Bern Bümpliz Süd railway station",
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8507081": {
+   "number": 8507081,
+   "sloid": "ch:1:sloid:7081",
+   "name": "Bern Fischermätteli",
+   "counts": {
+    "photo:stored": 2,
+    "photo:linked": 9
+   },
+   "stored": [
+    "commons:119246786",
+    "commons:4930642"
+   ],
+   "linked": [
+    "commons:14652329",
+    "commons:14652351",
+    "commons:14652400",
+    "commons:14652455",
+    "commons:14652501",
+    "commons:119246751",
+    "commons:119246773",
+    "commons:119246795",
+    "commons:119246807"
+   ],
+   "by_feature": {
+    "facade": [
+     "commons:119246786"
+    ],
+    "station": [
+     "commons:119246786",
+     "commons:4930642",
+     "commons:14652329",
+     "commons:14652351",
+     "commons:14652400",
+     "commons:14652455",
+     "commons:14652501"
+    ]
+   },
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8590084": {
+   "number": 8590084,
+   "sloid": "ch:1:sloid:90084",
+   "name": "Bern, Technologiepark",
+   "counts": {
+    "streetlevel_photo:stored": 2,
+    "streetlevel_photo:linked": 10
+   },
+   "stored": [
+    "panoramax:7bfa4d0c-7b32-421f-8fab-12018bb5b753",
+    "panoramax:06a6c335-2b0d-4ace-bb16-3dbf262556f2"
+   ],
+   "linked": [
+    "panoramax:8da94b4a-c7e9-433c-9e02-d0229feed7c2",
+    "panoramax:d8b5cee9-4dce-46c6-ab7f-4b59c2b0efb1",
+    "panoramax:794f97ba-6448-4e29-8489-23f2ea9c4c19",
+    "panoramax:3ddef76a-1f82-4ceb-a2db-20ec5c132059",
+    "panoramax:29e8106e-47b2-467e-96ab-c5d4ff1f79c1",
+    "panoramax:97878bce-2f43-4ef6-8810-9f9bb619219b",
+    "panoramax:8314d63e-ccde-43b0-bdcc-356f9a9067e3",
+    "panoramax:7f65a3fd-d147-469e-a16f-f0442114d6d2",
+    "panoramax:2225b846-4924-41f7-8b36-d61d0b31cdb1",
+    "panoramax:74273c6c-c19e-4d0b-a812-605d96f9332e"
+   ],
+   "by_feature": {
+    "street_level": [
+     "panoramax:06a6c335-2b0d-4ace-bb16-3dbf262556f2",
+     "panoramax:7bfa4d0c-7b32-421f-8fab-12018bb5b753",
+     "panoramax:794f97ba-6448-4e29-8489-23f2ea9c4c19",
+     "panoramax:8da94b4a-c7e9-433c-9e02-d0229feed7c2",
+     "panoramax:d8b5cee9-4dce-46c6-ab7f-4b59c2b0efb1"
+    ],
+    "tram_stop": [
+     "panoramax:06a6c335-2b0d-4ace-bb16-3dbf262556f2",
+     "panoramax:7bfa4d0c-7b32-421f-8fab-12018bb5b753",
+     "panoramax:794f97ba-6448-4e29-8489-23f2ea9c4c19",
+     "panoramax:8da94b4a-c7e9-433c-9e02-d0229feed7c2",
+     "panoramax:d8b5cee9-4dce-46c6-ab7f-4b59c2b0efb1"
+    ]
+   },
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8590083": {
+   "number": 8590083,
+   "sloid": "ch:1:sloid:90083",
+   "name": "Bern, Hallmattstrasse",
+   "counts": {
+    "streetlevel_photo:stored": 2,
+    "streetlevel_photo:linked": 10
+   },
+   "stored": [
+    "panoramax:f5f51921-dc24-490d-a6a5-4297db1b00f0",
+    "panoramax:5b2c7065-96cb-485e-bf1d-ed020e54765e"
+   ],
+   "linked": [
+    "panoramax:6d94db82-08b9-45a8-99e2-db1aadab6deb",
+    "panoramax:2a458058-8c74-4ba5-8748-8bdb49b02301",
+    "panoramax:6b5cde4e-052d-4532-99c7-3328770d2d59",
+    "panoramax:45741c66-4a2e-4ba1-b7e9-10f196bf9b97",
+    "panoramax:c47d640b-6c21-4444-b87f-bc3018cba7c7",
+    "panoramax:e2b7b5d1-1c58-4f61-9c12-e6855655de0b",
+    "panoramax:0b2e004e-cfcc-456a-bed4-3a10167e9a40",
+    "panoramax:13eac255-de6a-4d86-bd52-904a47fc5ec3",
+    "panoramax:17e97c4c-0547-4ebd-842a-e1ea3477f5a1",
+    "panoramax:29d9b378-a7c8-496d-ade7-85156043ef44"
+   ],
+   "by_feature": {
+    "street_level": [
+     "panoramax:5b2c7065-96cb-485e-bf1d-ed020e54765e",
+     "panoramax:f5f51921-dc24-490d-a6a5-4297db1b00f0",
+     "panoramax:2a458058-8c74-4ba5-8748-8bdb49b02301",
+     "panoramax:45741c66-4a2e-4ba1-b7e9-10f196bf9b97",
+     "panoramax:6b5cde4e-052d-4532-99c7-3328770d2d59",
+     "panoramax:6d94db82-08b9-45a8-99e2-db1aadab6deb",
+     "panoramax:c47d640b-6c21-4444-b87f-bc3018cba7c7"
+    ],
+    "tram_stop": [
+     "panoramax:5b2c7065-96cb-485e-bf1d-ed020e54765e",
+     "panoramax:f5f51921-dc24-490d-a6a5-4297db1b00f0",
+     "panoramax:2a458058-8c74-4ba5-8748-8bdb49b02301",
+     "panoramax:45741c66-4a2e-4ba1-b7e9-10f196bf9b97",
+     "panoramax:6b5cde4e-052d-4532-99c7-3328770d2d59",
+     "panoramax:6d94db82-08b9-45a8-99e2-db1aadab6deb",
+     "panoramax:c47d640b-6c21-4444-b87f-bc3018cba7c7"
+    ]
+   },
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8590081": {
+   "number": 8590081,
+   "sloid": "ch:1:sloid:90081",
+   "name": "Bern, Hohliebi",
+   "counts": {
+    "streetlevel_photo:stored": 2,
+    "streetlevel_photo:linked": 6
+   },
+   "stored": [
+    "panoramax:3596e1ad-f7e9-4db7-9798-00f2ff5a9e02",
+    "panoramax:6141f154-ec9b-4a78-bc6f-bafda3455bf1"
+   ],
+   "linked": [
+    "panoramax:a4f67577-3081-4116-b5e7-e6626b0e2890",
+    "panoramax:ffb9ee1e-e0b7-4736-9758-e192bb702dd6",
+    "panoramax:440e6dc3-fadb-4502-b78b-7640d578bf0e",
+    "panoramax:2af4bb01-6478-4360-a989-a3cb3b091a5d",
+    "panoramax:80b75603-19a4-49cb-9c0e-31b3c209e3b0",
+    "panoramax:3f7fc68d-7087-472c-b185-f555fa29f6df"
+   ],
+   "by_feature": {
+    "street_level": [
+     "panoramax:3596e1ad-f7e9-4db7-9798-00f2ff5a9e02",
+     "panoramax:6141f154-ec9b-4a78-bc6f-bafda3455bf1",
+     "panoramax:2af4bb01-6478-4360-a989-a3cb3b091a5d",
+     "panoramax:440e6dc3-fadb-4502-b78b-7640d578bf0e",
+     "panoramax:a4f67577-3081-4116-b5e7-e6626b0e2890",
+     "panoramax:ffb9ee1e-e0b7-4736-9758-e192bb702dd6"
+    ],
+    "tram_stop": [
+     "panoramax:3596e1ad-f7e9-4db7-9798-00f2ff5a9e02",
+     "panoramax:6141f154-ec9b-4a78-bc6f-bafda3455bf1",
+     "panoramax:2af4bb01-6478-4360-a989-a3cb3b091a5d",
+     "panoramax:440e6dc3-fadb-4502-b78b-7640d578bf0e",
+     "panoramax:a4f67577-3081-4116-b5e7-e6626b0e2890",
+     "panoramax:ffb9ee1e-e0b7-4736-9758-e192bb702dd6"
+    ]
+   },
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8504104": {
+   "number": 8504104,
+   "sloid": "ch:1:sloid:4104",
+   "name": "Thörishaus Station",
+   "counts": {
+    "streetlevel_photo:stored": 2,
+    "photo:linked": 6,
+    "streetlevel_photo:linked": 13
+   },
+   "stored": [
+    "panoramax:7cc49695-ff91-4de8-a560-513b0ded9fcb",
+    "panoramax:01d235c0-5752-45cb-b043-11261040af52"
+   ],
+   "linked": [
+    "commons:116497173",
+    "commons:116497184",
+    "panoramax:9bbdcec0-7f35-4a1a-8a8c-6c12016e856b",
+    "panoramax:e39f0958-eb38-475a-a933-087c38d5a8f5",
+    "panoramax:89d34073-296a-4b75-958a-703189c43fc9",
+    "panoramax:ad96d4c5-fd8e-4a4e-8ee9-4d03042ab2ef",
+    "panoramax:5eba42ce-7305-4eb9-b6e8-204e192011d6",
+    "panoramax:a1dde9de-58e1-4aa0-b746-d18d6fb68680",
+    "panoramax:e45c80e2-ffa2-4ddd-ae8a-7b0a4e250266",
+    "panoramax:f5e34488-adc2-4db9-92d7-0da55f4a0b49",
+    "panoramax:497c5b75-cce9-45ce-94d9-f35d8959110a",
+    "panoramax:674d609f-3738-48f5-b8e5-72e9bc64163e",
+    "panoramax:1dc20168-5f77-4882-aa5f-2465bb344f0d",
+    "panoramax:d105139e-edcd-4b26-9fbc-ab276d4b7cda",
+    "panoramax:c279e245-158e-4b41-97cc-46be7382266b",
+    "commons:116497166",
+    "commons:116497156",
+    "commons:116497161",
+    "commons:104810064"
+   ],
+   "by_feature": {
+    "platform": [
+     "panoramax:01d235c0-5752-45cb-b043-11261040af52",
+     "panoramax:7cc49695-ff91-4de8-a560-513b0ded9fcb"
+    ],
+    "street_level": [
+     "panoramax:01d235c0-5752-45cb-b043-11261040af52",
+     "panoramax:7cc49695-ff91-4de8-a560-513b0ded9fcb"
+    ]
+   },
+   "wikidata": "Q30088642",
+   "commons_category": "Category:Thörishaus Station railway station",
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8581119": {
+   "number": 8581119,
+   "sloid": "ch:1:sloid:81119",
+   "name": "Bern, Riedernrain",
+   "counts": {
+    "streetlevel_photo:stored": 2,
+    "streetlevel_photo:linked": 4
+   },
+   "stored": [
+    "panoramax:960e842d-7399-4401-b9b4-fed1f8862e25",
+    "panoramax:b28ace0f-0cd9-4ddd-9795-3f76476481d3"
+   ],
+   "linked": [
+    "panoramax:5e7c9f32-49fd-4389-aa45-786d9c18d4e9",
+    "panoramax:83e8ade0-7477-4957-8dcd-b7045880b454",
+    "panoramax:d6f806ad-8802-4b70-bac8-5bf6e8af329f",
+    "panoramax:678615bb-37e7-43ac-9f8e-7f6bf9aed7d8"
+   ],
+   "by_feature": {
+    "street_level": [
+     "panoramax:960e842d-7399-4401-b9b4-fed1f8862e25",
+     "panoramax:b28ace0f-0cd9-4ddd-9795-3f76476481d3",
+     "panoramax:5e7c9f32-49fd-4389-aa45-786d9c18d4e9"
+    ],
+    "tram_stop": [
+     "panoramax:960e842d-7399-4401-b9b4-fed1f8862e25",
+     "panoramax:b28ace0f-0cd9-4ddd-9795-3f76476481d3",
+     "panoramax:5e7c9f32-49fd-4389-aa45-786d9c18d4e9"
+    ]
+   },
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8590053": {
+   "number": 8590053,
+   "sloid": "ch:1:sloid:90053",
+   "name": "Bern, Weissensteinstrasse",
+   "counts": {
+    "streetlevel_photo:stored": 2
+   },
+   "stored": [
+    "panoramax:3726d073-e1c4-4c49-bdc1-13038230b7aa",
+    "panoramax:2d67b6fc-44fb-4965-9122-850af8a6bf9f"
+   ],
+   "linked": [],
+   "by_feature": {
+    "street_level": [
+     "panoramax:2d67b6fc-44fb-4965-9122-850af8a6bf9f",
+     "panoramax:3726d073-e1c4-4c49-bdc1-13038230b7aa"
+    ],
+    "tram_stop": [
+     "panoramax:2d67b6fc-44fb-4965-9122-850af8a6bf9f",
+     "panoramax:3726d073-e1c4-4c49-bdc1-13038230b7aa"
+    ]
+   },
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8588562": {
+   "number": 8588562,
+   "sloid": "ch:1:sloid:88562",
+   "name": "Wabern, Gurtenbahn",
+   "counts": {
+    "photo:stored": 1
+   },
+   "stored": [
+    "commons:72838844"
+   ],
+   "linked": [],
+   "by_feature": {
+    "station": [
+     "commons:72838844"
+    ],
+    "tram_stop": [
+     "commons:72838844"
+    ],
+    "vehicle": [
+     "commons:72838844"
+    ]
+   },
+   "wikidata": "Q136704164",
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8571395": {
+   "number": 8571395,
+   "sloid": "ch:1:sloid:71395",
+   "name": "Wabern, Tram-Endstation",
+   "counts": {
+    "photo:stored": 1
+   },
+   "stored": [
+    "commons:72838843"
+   ],
+   "linked": [],
+   "by_feature": {
+    "station": [
+     "commons:72838843"
+    ],
+    "tram_stop": [
+     "commons:72838843"
+    ],
+    "vehicle": [
+     "commons:72838843"
+    ]
+   },
+   "wikidata": "Q136704148",
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8530259": {
+   "number": 8530259,
+   "sloid": "ch:1:sloid:30259",
+   "name": "Gümligen, Hofgut",
+   "counts": {
+    "photo:stored": 1
+   },
+   "stored": [
+    "commons:6926934"
+   ],
+   "linked": [],
+   "by_feature": {
+    "station": [
+     "commons:6926934"
+    ],
+    "tram_stop": [
+     "commons:6926934"
+    ],
+    "vehicle": [
+     "commons:6926934"
+    ]
+   },
+   "wikidata": "Q136704172",
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8507053": {
+   "number": 8507053,
+   "sloid": "ch:1:sloid:7053",
+   "name": "Gümligen, Siloah",
+   "counts": {
+    "photo:stored": 1
+   },
+   "stored": [
+    "commons:6926773"
+   ],
+   "linked": [],
+   "by_feature": {
+    "station": [
+     "commons:6926773"
+    ],
+    "tram_stop": [
+     "commons:6926773"
+    ],
+    "vehicle": [
+     "commons:6926773"
+    ]
+   },
+   "wikidata": "Q136704143",
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8589003": {
+   "number": 8589003,
+   "sloid": "ch:1:sloid:89003",
+   "name": "Bern, Thunplatz",
+   "counts": {
+    "photo:stored": 1,
+    "photo:linked": 1,
+    "streetlevel_photo:linked": 7
+   },
+   "stored": [
+    "commons:15960646"
+   ],
+   "linked": [
+    "commons:86493207",
+    "panoramax:41bc4ba4-dcf7-4d31-9d28-5b848b5bd9dd",
+    "panoramax:f0de1e30-9e7f-4d6a-9027-7384c9be9ed4",
+    "panoramax:e266fc49-484b-4cc9-9540-e6e0c69ff91c",
+    "panoramax:d84c0633-beff-493d-bbeb-c591d08c7a21",
+    "panoramax:cbd6550e-dc0d-4c7f-b4af-6980daf8de19",
+    "panoramax:fe369483-71be-4770-b0d0-fa99e10adf9e",
+    "panoramax:0ee2a996-9d30-4953-81d0-1326a5f34da4"
+   ],
+   "by_feature": {
+    "square": [
+     "commons:15960646",
+     "commons:86493207"
+    ],
+    "station": [
+     "commons:15960646"
+    ],
+    "street_level": [
+     "panoramax:41bc4ba4-dcf7-4d31-9d28-5b848b5bd9dd",
+     "panoramax:d84c0633-beff-493d-bbeb-c591d08c7a21",
+     "panoramax:e266fc49-484b-4cc9-9540-e6e0c69ff91c",
+     "panoramax:f0de1e30-9e7f-4d6a-9027-7384c9be9ed4"
+    ],
+    "tram_stop": [
+     "commons:15960646",
+     "panoramax:41bc4ba4-dcf7-4d31-9d28-5b848b5bd9dd",
+     "panoramax:d84c0633-beff-493d-bbeb-c591d08c7a21",
+     "panoramax:e266fc49-484b-4cc9-9540-e6e0c69ff91c",
+     "panoramax:f0de1e30-9e7f-4d6a-9027-7384c9be9ed4"
+    ],
+    "vehicle": [
+     "commons:15960646"
+    ]
+   },
+   "wikidata": "Q136704146",
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8507002": {
+   "number": 8507002,
+   "sloid": "ch:1:sloid:7002",
+   "name": "Ostermundigen",
+   "counts": {
+    "photo:stored": 1,
+    "photo:linked": 16
+   },
+   "stored": [
+    "commons:53773711"
+   ],
+   "linked": [
+    "commons:53773716",
+    "commons:53771012",
+    "commons:53771011",
+    "commons:53771015",
+    "commons:53771014",
+    "commons:53773710",
+    "commons:53773712",
+    "commons:53773717",
+    "commons:93703364",
+    "commons:103225406",
+    "commons:117860133",
+    "commons:29943081",
+    "commons:30013656",
+    "commons:29918132",
+    "commons:29946847",
+    "commons:174975636"
+   ],
+   "by_feature": {
+    "signage": [
+     "commons:53773711",
+     "commons:53773716"
+    ],
+    "station": [
+     "commons:53773711",
+     "commons:53773716",
+     "commons:53771011",
+     "commons:53771012",
+     "commons:53771014",
+     "commons:53771015",
+     "commons:53773710",
+     "commons:53773712",
+     "commons:53773717"
+    ],
+    "vehicle": [
+     "commons:53773716",
+     "commons:53771011",
+     "commons:53771014",
+     "commons:53771015"
+    ]
+   },
+   "wikidata": "Q31454228",
+   "commons_category": "Category:Ostermundigen railway station",
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8576990": {
+   "number": 8576990,
+   "sloid": "ch:1:sloid:76990",
+   "name": "Bern, Guisanplatz Expo",
+   "counts": {
+    "photo:linked": 7,
+    "orthophoto:stored": 1
+   },
+   "stored": [
+    "ortho-8576990_bern-guisanplatz-expo"
+   ],
+   "linked": [
+    "commons:72241580",
+    "commons:15391486",
+    "commons:15391548",
+    "commons:173349354",
+    "commons:23830859",
+    "commons:8452866",
+    "commons:8453171"
+   ],
+   "by_feature": {
+    "aerial": [
+     "commons:15391486",
+     "commons:15391548"
+    ],
+    "square": [
+     "commons:15391486",
+     "commons:15391548",
+     "commons:173349354",
+     "commons:23830859",
+     "commons:72241580"
+    ],
+    "vehicle": [
+     "commons:23830859",
+     "commons:72241580"
+    ]
+   },
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8590115": {
+   "number": 8590115,
+   "sloid": "ch:1:sloid:90115",
+   "name": "Bern, Dampfzentrale",
+   "counts": {
+    "streetlevel_photo:stored": 1,
+    "streetlevel_photo:linked": 2
+   },
+   "stored": [
+    "panoramax:4d411299-55f1-4ced-b8c6-34ae3416c850"
+   ],
+   "linked": [
+    "panoramax:67a16965-3b97-48aa-ab2b-7c97bcbac19b",
+    "panoramax:f6d50067-d9f0-48af-990e-29f84d3d0c0d"
+   ],
+   "by_feature": {
+    "street_level": [
+     "panoramax:4d411299-55f1-4ced-b8c6-34ae3416c850"
+    ],
+    "tram_stop": [
+     "panoramax:4d411299-55f1-4ced-b8c6-34ae3416c850"
+    ]
+   },
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8590054": {
+   "number": 8590054,
+   "sloid": "ch:1:sloid:90054",
+   "name": "Bern, Dübystrasse",
+   "counts": {
+    "streetlevel_photo:stored": 1,
+    "streetlevel_photo:linked": 1
+   },
+   "stored": [
+    "panoramax:f3deb621-5158-4091-91fa-e7542a79bde9"
+   ],
+   "linked": [
+    "panoramax:f1ed61b8-485f-4cda-ad87-3baf4e90eee7"
+   ],
+   "by_feature": {
+    "street_level": [
+     "panoramax:f3deb621-5158-4091-91fa-e7542a79bde9"
+    ],
+    "tram_stop": [
+     "panoramax:f3deb621-5158-4091-91fa-e7542a79bde9"
+    ]
+   },
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8588699": {
+   "number": 8588699,
+   "sloid": "ch:1:sloid:88699",
+   "name": "Bern, Wankdorf Center",
+   "counts": {
+    "photo:linked": 10,
+    "orthophoto:stored": 1
+   },
+   "stored": [
+    "ortho-8588699_bern-wankdorf-center"
+   ],
+   "linked": [
+    "commons:46722306",
+    "commons:202646980",
+    "commons:135209938",
+    "commons:3988768",
+    "commons:24931197",
+    "commons:24931208",
+    "commons:24931204",
+    "commons:24931203",
+    "commons:24931199",
+    "commons:12279693"
+   ],
+   "wikidata": "Q136704184",
+   "commons_category": null,
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8590014": {
+   "number": 8590014,
+   "sloid": "ch:1:sloid:90014",
+   "name": "Bern, Fischermätteli",
+   "counts": {
+    "photo:linked": 6
+   },
+   "stored": [],
+   "linked": [
+    "commons:46058522",
+    "commons:4429801",
+    "commons:104470542",
+    "commons:30246851",
+    "commons:30246847",
+    "commons:30246841"
+   ],
+   "by_feature": {
+    "signage": [
+     "commons:104470542"
+    ],
+    "station": [
+     "commons:46058522",
+     "commons:4429801"
+    ],
+    "tram_stop": [
+     "commons:46058522",
+     "commons:4429801"
+    ],
+    "vehicle": [
+     "commons:46058522",
+     "commons:4429801"
+    ]
+   },
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8571393": {
+   "number": 8571393,
+   "sloid": "ch:1:sloid:71393",
+   "name": "Bern, Eigerplatz",
+   "counts": {
+    "photo:linked": 1
+   },
+   "stored": [],
+   "linked": [
+    "commons:147286515"
+   ],
+   "by_feature": {
+    "square": [
+     "commons:147286515"
+    ]
+   },
+   "wikidata": "Q136704167",
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8590045": {
+   "number": 8590045,
+   "sloid": "ch:1:sloid:90045",
+   "name": "Bern, Gäbelbach",
+   "counts": {
+    "photo:linked": 4
+   },
+   "stored": [],
+   "linked": [
+    "commons:104944999",
+    "commons:104945000",
+    "commons:104944993",
+    "commons:94766187"
+   ],
+   "by_feature": {
+    "signage": [
+     "commons:104944999",
+     "commons:104944993",
+     "commons:104945000"
+    ],
+    "square": [
+     "commons:104944999"
+    ]
+   },
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8590041": {
+   "number": 8590041,
+   "sloid": "ch:1:sloid:90041",
+   "name": "Bern, Loryplatz",
+   "counts": {
+    "photo:linked": 5
+   },
+   "stored": [],
+   "linked": [
+    "commons:158487266",
+    "commons:100565869",
+    "commons:100565871",
+    "commons:158486838",
+    "commons:4941208"
+   ],
+   "by_feature": {
+    "platform": [
+     "commons:158487266"
+    ],
+    "square": [
+     "commons:100565869",
+     "commons:100565871"
+    ],
+    "station": [
+     "commons:158487266"
+    ],
+    "vehicle": [
+     "commons:158487266"
+    ]
+   },
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8589002": {
+   "number": 8589002,
+   "sloid": "ch:1:sloid:89002",
+   "name": "Bern, Saali",
+   "counts": {
+    "photo:linked": 6
+   },
+   "stored": [],
+   "linked": [
+    "commons:30671235",
+    "commons:30671231",
+    "commons:30671226",
+    "commons:30671215",
+    "commons:72241592",
+    "commons:30241724"
+   ],
+   "by_feature": {
+    "station": [
+     "commons:30671215",
+     "commons:30671226",
+     "commons:30671231",
+     "commons:30671235"
+    ],
+    "tram_stop": [
+     "commons:30671215",
+     "commons:30671226",
+     "commons:30671231",
+     "commons:30671235"
+    ],
+    "vehicle": [
+     "commons:30671215",
+     "commons:30671226",
+     "commons:30671231",
+     "commons:30671235"
+    ]
+   },
+   "wikidata": "Q136704212",
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8579900": {
+   "number": 8579900,
+   "sloid": "ch:1:sloid:79900",
+   "name": "Bern, Bümpliz Post",
+   "counts": {
+    "photo:linked": 9
+   },
+   "stored": [],
+   "linked": [
+    "commons:144027589",
+    "commons:82640999",
+    "commons:82640997",
+    "commons:82641002",
+    "commons:82641008",
+    "commons:82640998",
+    "commons:82641006",
+    "commons:82641016",
+    "commons:82641007"
+   ],
+   "by_feature": {
+    "signage": [
+     "commons:144027589",
+     "commons:82640999"
+    ]
+   },
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8587480": {
+   "number": 8587480,
+   "sloid": "ch:1:sloid:87480",
+   "name": "Bern, Ostring",
+   "counts": {
+    "photo:linked": 3
+   },
+   "stored": [],
+   "linked": [
+    "commons:72241585",
+    "commons:102496014",
+    "commons:57242092"
+   ],
+   "by_feature": {
+    "square": [
+     "commons:102496014",
+     "commons:72241585"
+    ],
+    "station": [
+     "commons:72241585"
+    ],
+    "tram_stop": [
+     "commons:72241585"
+    ],
+    "vehicle": [
+     "commons:72241585"
+    ]
+   },
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8590012": {
+   "number": 8590012,
+   "sloid": "ch:1:sloid:90012",
+   "name": "Bern, Pestalozzi",
+   "counts": {
+    "photo:linked": 2
+   },
+   "stored": [],
+   "linked": [
+    "commons:104470559",
+    "commons:104470570"
+   ],
+   "by_feature": {
+    "signage": [
+     "commons:104470559",
+     "commons:104470570"
+    ]
+   },
+   "wikidata": "Q136704200",
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8504115": {
+   "number": 8504115,
+   "sloid": "ch:1:sloid:4115",
+   "name": "Thörishaus Dorf",
+   "counts": {
+    "photo:linked": 3,
+    "streetlevel_photo:linked": 20
+   },
+   "stored": [],
+   "linked": [
+    "commons:131358608",
+    "commons:131358607",
+    "panoramax:b3197c59-64e4-42ac-9040-0a95ef490746",
+    "panoramax:13b090ef-8def-47f1-9f8c-f39b7c2db920",
+    "panoramax:70fb81a7-2353-495d-9262-7615c188e686",
+    "panoramax:70f02a84-16d4-4c2d-b7cf-3f4ad256b325",
+    "panoramax:12a8774a-42c8-4aee-bcc2-e90a7e0a65b5",
+    "panoramax:60552b74-b7f8-4a33-a546-616f7a8bcd2a",
+    "panoramax:9140211a-5bdd-4acb-8cf5-f02516096156",
+    "panoramax:88c5013a-e8a0-43dd-add2-33b861e3f24f",
+    "panoramax:8521691c-502d-452c-aaaa-79fb6fae2008",
+    "panoramax:19d45ad6-76ea-4131-8840-d4bdbf11ea8d",
+    "panoramax:062fb960-c61a-48ce-aec2-ee7fcfe50cce",
+    "panoramax:53cc86ef-72c5-4cd8-984c-4743cdd4cc02",
+    "panoramax:aac060f5-5a94-48b8-a1c2-081987232f21",
+    "panoramax:68e58627-2782-4e0a-88b3-bc95a6bfeec6",
+    "panoramax:03810b1f-a7f3-4e52-9d96-7d98b74e4783",
+    "panoramax:a9a9a639-f832-47e9-8886-e1d7d32fcb01",
+    "panoramax:820a5659-0816-4b75-b066-d0b82d6cf22d",
+    "panoramax:2044fd04-3787-45fc-b378-48859831f7e0",
+    "panoramax:0bf5214f-1d68-4eb7-b305-73d1bdeb863e",
+    "panoramax:e89550cc-3bf1-454b-acc4-3dea4fd16f9c",
+    "commons:202653443"
+   ],
+   "by_feature": {
+    "signage": [
+     "commons:131358608"
+    ]
+   },
+   "wikidata": "Q31450947",
+   "commons_category": "Category:Thörishaus Dorf railway station",
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8508075": {
+   "number": 8508075,
+   "sloid": "ch:1:sloid:8075",
+   "name": "Bern, Breitenrain",
+   "counts": {
+    "photo:linked": 1
+   },
+   "stored": [],
+   "linked": [
+    "commons:104948076"
+   ],
+   "by_feature": {
+    "signage": [
+     "commons:104948076"
+    ]
+   },
+   "wikidata": "Q136704151",
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8507061": {
+   "number": 8507061,
+   "sloid": "ch:1:sloid:7061",
+   "name": "Bern, Brunnadernstrasse",
+   "counts": {
+    "photo:linked": 2,
+    "streetlevel_photo:linked": 4
+   },
+   "stored": [],
+   "linked": [
+    "commons:182002536",
+    "panoramax:973a294c-4996-46b7-882b-70ed4f8845c8",
+    "panoramax:55d0ebb2-88a8-4a56-abbf-58441f918e1d",
+    "panoramax:cd374ee0-aaba-4a3b-9ec8-d847c97092f2",
+    "panoramax:106e73fd-0220-4be5-b84c-192e274711e2",
+    "commons:27713845"
+   ],
+   "by_feature": {
+    "station": [
+     "commons:182002536"
+    ],
+    "street_level": [
+     "panoramax:973a294c-4996-46b7-882b-70ed4f8845c8"
+    ],
+    "tram_stop": [
+     "panoramax:973a294c-4996-46b7-882b-70ed4f8845c8"
+    ],
+    "vehicle": [
+     "commons:182002536"
+    ]
+   },
+   "wikidata": "Q136704192",
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8588988": {
+   "number": 8588988,
+   "sloid": "ch:1:sloid:88988",
+   "name": "Bern, Aegertenstrasse",
+   "counts": {
+    "streetlevel_photo:linked": 2
+   },
+   "stored": [],
+   "linked": [
+    "panoramax:4d43dc0e-b573-4695-b026-dbaf4868ea1f",
+    "panoramax:78140276-e632-4f04-ad9d-cb5af6dbc7c9"
+   ],
+   "by_feature": {
+    "street_level": [
+     "panoramax:4d43dc0e-b573-4695-b026-dbaf4868ea1f"
+    ],
+    "tram_stop": [
+     "panoramax:4d43dc0e-b573-4695-b026-dbaf4868ea1f"
+    ]
+   },
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8590036": {
+   "number": 8590036,
+   "sloid": "ch:1:sloid:90036",
+   "name": "Bern, Seminar",
+   "counts": {
+    "streetlevel_photo:linked": 2
+   },
+   "stored": [],
+   "linked": [
+    "panoramax:b75edfd0-f6ba-4d0d-8127-cee5357a2654",
+    "panoramax:7317fcc7-e547-4d0e-afaf-a62656a0ae54"
+   ],
+   "by_feature": {
+    "street_level": [
+     "panoramax:7317fcc7-e547-4d0e-afaf-a62656a0ae54",
+     "panoramax:b75edfd0-f6ba-4d0d-8127-cee5357a2654"
+    ],
+    "tram_stop": [
+     "panoramax:7317fcc7-e547-4d0e-afaf-a62656a0ae54",
+     "panoramax:b75edfd0-f6ba-4d0d-8127-cee5357a2654"
+    ]
+   },
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8590037": {
+   "number": 8590037,
+   "sloid": "ch:1:sloid:90037",
+   "name": "Bern, Tavelweg",
+   "counts": {
+    "streetlevel_photo:linked": 2
+   },
+   "stored": [],
+   "linked": [
+    "panoramax:0e3e1fd5-fe07-4263-bee9-aedb9f9804eb",
+    "panoramax:0a6c1114-84fe-47ee-b028-7592247b0ec6"
+   ],
+   "by_feature": {
+    "street_level": [
+     "panoramax:0e3e1fd5-fe07-4263-bee9-aedb9f9804eb"
+    ],
+    "tram_stop": [
+     "panoramax:0e3e1fd5-fe07-4263-bee9-aedb9f9804eb"
+    ]
+   },
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8587479": {
+   "number": 8587479,
+   "sloid": "ch:1:sloid:87479",
+   "name": "Bern, Schosshalde",
+   "counts": {
+    "streetlevel_photo:linked": 6
+   },
+   "stored": [],
+   "linked": [
+    "panoramax:cb2c0132-18df-47cd-9720-cef8235cc47c",
+    "panoramax:a642087f-6662-4495-a595-c99646a4522b",
+    "panoramax:d2aaf11b-3f4c-4455-bba6-ee1021b37e42",
+    "panoramax:a895a1f4-a9fe-41f6-882c-655593efaf00",
+    "panoramax:9f26c5ee-bf19-44a2-bd56-a9a8492a2701",
+    "panoramax:1028b2e0-b228-4712-b1c5-d07b8adb84d4"
+   ],
+   "by_feature": {
+    "street_level": [
+     "panoramax:a642087f-6662-4495-a595-c99646a4522b",
+     "panoramax:cb2c0132-18df-47cd-9720-cef8235cc47c",
+     "panoramax:d2aaf11b-3f4c-4455-bba6-ee1021b37e42"
+    ],
+    "tram_stop": [
+     "panoramax:a642087f-6662-4495-a595-c99646a4522b",
+     "panoramax:cb2c0132-18df-47cd-9720-cef8235cc47c",
+     "panoramax:d2aaf11b-3f4c-4455-bba6-ee1021b37e42"
+    ]
+   },
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8590049": {
+   "number": 8590049,
+   "sloid": "ch:1:sloid:90049",
+   "name": "Bern, Galgenfeld",
+   "counts": {
+    "streetlevel_photo:linked": 2
+   },
+   "stored": [],
+   "linked": [
+    "panoramax:66435c66-2a65-4a08-a660-24288d2e5358",
+    "panoramax:094189f8-dab6-4bb9-991f-49ed9ae0ad39"
+   ],
+   "by_feature": {
+    "street_level": [
+     "panoramax:094189f8-dab6-4bb9-991f-49ed9ae0ad39",
+     "panoramax:66435c66-2a65-4a08-a660-24288d2e5358"
+    ],
+    "tram_stop": [
+     "panoramax:094189f8-dab6-4bb9-991f-49ed9ae0ad39",
+     "panoramax:66435c66-2a65-4a08-a660-24288d2e5358"
+    ]
+   },
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8590050": {
+   "number": 8590050,
+   "sloid": "ch:1:sloid:90050",
+   "name": "Bern, Schosshaldenfriedhof",
+   "counts": {
+    "streetlevel_photo:linked": 2
+   },
+   "stored": [],
+   "linked": [
+    "panoramax:c7e6da11-42c8-44a6-a13a-dd8be276939d",
+    "panoramax:ff7a66fb-bd79-46e0-9869-c2e3e61cda69"
+   ],
+   "by_feature": {
+    "street_level": [
+     "panoramax:c7e6da11-42c8-44a6-a13a-dd8be276939d"
+    ],
+    "tram_stop": [
+     "panoramax:c7e6da11-42c8-44a6-a13a-dd8be276939d"
+    ]
+   },
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8595142": {
+   "number": 8595142,
+   "sloid": "ch:1:sloid:95142",
+   "name": "Bern, Weissenbühl (Tram)",
+   "counts": {
+    "photo:linked": 4
+   },
+   "stored": [],
+   "linked": [
+    "commons:112505076",
+    "commons:112505080",
+    "commons:112505085",
+    "commons:112505071"
+   ],
+   "wikidata": "Q136704191",
+   "commons_category": null,
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8507083": {
+   "number": 8507083,
+   "sloid": "ch:1:sloid:7083",
+   "name": "Köniz",
+   "counts": {
+    "photo:linked": 48
+   },
+   "stored": [],
+   "linked": [
+    "commons:202677800",
+    "commons:118319296",
+    "commons:118319292",
+    "commons:118319276",
+    "commons:118319270",
+    "commons:203024479",
+    "commons:118319289",
+    "commons:18814341",
+    "commons:191350896",
+    "commons:191350900",
+    "commons:191350894",
+    "commons:191350905",
+    "commons:191350892",
+    "commons:191350908",
+    "commons:191350889",
+    "commons:191350911",
+    "commons:191350888",
+    "commons:191350915",
+    "commons:191350883",
+    "commons:191350877",
+    "commons:191350914",
+    "commons:191350876",
+    "commons:191350920",
+    "commons:191350923",
+    "commons:191350873",
+    "commons:191350924",
+    "commons:191350867",
+    "commons:191350927",
+    "commons:191350862",
+    "commons:191350935",
+    "commons:191350869",
+    "commons:191350934",
+    "commons:191350858",
+    "commons:191350938",
+    "commons:191350853",
+    "commons:191350940",
+    "commons:191350942",
+    "commons:191350848",
+    "commons:191350846",
+    "commons:191350945",
+    "commons:118319257",
+    "commons:191350843",
+    "commons:191350946",
+    "commons:191350837",
+    "commons:191350952",
+    "commons:191350950",
+    "commons:191350835",
+    "commons:191350954"
+   ],
+   "wikidata": "Q33507421",
+   "commons_category": "Category:Köniz railway station",
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8504105": {
+   "number": 8504105,
+   "sloid": "ch:1:sloid:4105",
+   "name": "Niederwangen",
+   "counts": {
+    "photo:linked": 4,
+    "streetlevel_photo:linked": 13
+   },
+   "stored": [],
+   "linked": [
+    "commons:94784436",
+    "panoramax:be81cfe7-903f-4540-9472-06a1329f0609",
+    "panoramax:aae5bf7e-4d14-46ec-bde5-fadf6366c3c6",
+    "panoramax:94cf0402-8331-4957-b370-7b3facf2c989",
+    "panoramax:5079ed8c-fecf-4c97-90fa-da29c465b25d",
+    "panoramax:40dfbf87-ebe4-4373-ab39-848f6d4e6373",
+    "panoramax:b1148b88-ec47-4c93-89bb-f1e969c2efe9",
+    "panoramax:f0c2854c-9f02-4b35-8929-f214c59dbbc4",
+    "panoramax:a915a96d-e4fb-43df-9978-290eaeb52d07",
+    "panoramax:b80891a7-74ac-4de4-a90c-55af372033b6",
+    "panoramax:69bc9253-44a8-4c3a-a278-c159fe882ed2",
+    "panoramax:79666e21-8abe-4465-b524-a1eccecf7532",
+    "panoramax:b4bca014-39b7-4fc6-9313-775c4be1ba3e",
+    "panoramax:e1402eb1-ca33-4437-a173-fd636afdea61",
+    "commons:94702298",
+    "commons:121637807",
+    "commons:94702454"
+   ],
+   "wikidata": "Q31450565",
+   "commons_category": "Category:Niederwangen railway station",
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8595543": {
+   "number": 8595543,
+   "sloid": "ch:1:sloid:95543",
+   "name": "Bern Wankdorf, Bahnhof Nord",
+   "counts": {
+    "streetlevel_photo:linked": 1
+   },
+   "stored": [],
+   "linked": [
+    "panoramax:2bcfbc40-8804-4b47-a0f9-77bb6a952275"
+   ],
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8507993": {
+   "number": 8507993,
+   "sloid": "ch:1:sloid:7993",
+   "name": "Bern, Bethlehem Säge",
+   "counts": {
+    "photo:linked": 1
+   },
+   "stored": [],
+   "linked": [
+    "commons:203291020"
+   ],
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8579897": {
+   "number": 8579897,
+   "sloid": "ch:1:sloid:79897",
+   "name": "Bern, Kocherpark",
+   "counts": {
+    "photo:linked": 2
+   },
+   "stored": [],
+   "linked": [
+    "commons:203024320",
+    "commons:72241571"
+   ],
+   "wikidata": "Q136704168",
+   "commons_category": null,
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8589991": {
+   "number": 8589991,
+   "sloid": "ch:1:sloid:89991",
+   "name": "Bern, Monbijou",
+   "counts": {
+    "photo:linked": 28
+   },
+   "stored": [],
+   "linked": [
+    "commons:202646994",
+    "commons:202734919",
+    "commons:88555427",
+    "commons:91442493",
+    "commons:90647548",
+    "commons:91442613",
+    "commons:91442376",
+    "commons:90647360",
+    "commons:91442565",
+    "commons:90647946",
+    "commons:90647175",
+    "commons:90647735",
+    "commons:91442540",
+    "commons:90647287",
+    "commons:90647044",
+    "commons:90646988",
+    "commons:90647426",
+    "commons:90646649",
+    "commons:90647693",
+    "commons:90647235",
+    "commons:91442436",
+    "commons:90647764",
+    "commons:90646778",
+    "commons:148073005",
+    "commons:148072209",
+    "commons:90589451",
+    "commons:148054350",
+    "commons:90589536"
+   ],
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8507086": {
+   "number": 8507086,
+   "sloid": "ch:1:sloid:7086",
+   "name": "Niederscherli",
+   "counts": {
+    "photo:linked": 5
+   },
+   "stored": [],
+   "linked": [
+    "commons:117894039",
+    "commons:117894026",
+    "commons:117894016",
+    "commons:117894004",
+    "commons:117894044"
+   ],
+   "wikidata": "Q33507465",
+   "commons_category": "Category:Niederscherli railway station",
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8590015": {
+   "number": 8590015,
+   "sloid": "ch:1:sloid:90015",
+   "name": "Bern, Hasler",
+   "counts": {
+    "photo:linked": 2
+   },
+   "stored": [],
+   "linked": [
+    "commons:164697874",
+    "commons:9916606"
+   ],
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8588174": {
+   "number": 8588174,
+   "sloid": "ch:1:sloid:88174",
+   "name": "Bern, Weltpostverein",
+   "counts": {
+    "photo:linked": 34
+   },
+   "stored": [],
+   "linked": [
+    "commons:92748187",
+    "commons:92747919",
+    "commons:92747705",
+    "commons:92747935",
+    "commons:92747356",
+    "commons:92747306",
+    "commons:92748028",
+    "commons:92747779",
+    "commons:92748683",
+    "commons:92748307",
+    "commons:92748513",
+    "commons:92748737",
+    "commons:92747820",
+    "commons:92747860",
+    "commons:92748644",
+    "commons:92747494",
+    "commons:92747745",
+    "commons:92748455",
+    "commons:92747549",
+    "commons:92748566",
+    "commons:191676639",
+    "commons:80633640",
+    "commons:80633648",
+    "commons:80633659",
+    "commons:80633657",
+    "commons:80633644",
+    "commons:80633656",
+    "commons:80633643",
+    "commons:80633634",
+    "commons:80633650",
+    "commons:80633633",
+    "commons:80633665",
+    "commons:80633635",
+    "commons:80633651"
+   ],
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8507085": {
+   "number": 8507085,
+   "sloid": "ch:1:sloid:7085",
+   "name": "Gasel",
+   "counts": {
+    "photo:linked": 19
+   },
+   "stored": [],
+   "linked": [
+    "commons:118360243",
+    "commons:122232592",
+    "commons:122232596",
+    "commons:118360231",
+    "commons:124581206",
+    "commons:103598703",
+    "commons:103598790",
+    "commons:124581203",
+    "commons:103598729",
+    "commons:103598777",
+    "commons:123783471",
+    "commons:120258259",
+    "commons:120258256",
+    "commons:124596641",
+    "commons:103789960",
+    "commons:120258263",
+    "commons:124596639",
+    "commons:120258260",
+    "commons:123783470"
+   ],
+   "wikidata": "Q33507448",
+   "commons_category": "Category:Gasel railway station",
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8590065": {
+   "number": 8590065,
+   "sloid": "ch:1:sloid:90065",
+   "name": "Bern, Rossfeld",
+   "counts": {
+    "streetlevel_photo:linked": 1
+   },
+   "stored": [],
+   "linked": [
+    "panoramax:ac84fca1-1d38-4f66-bff2-f15571c89395"
+   ],
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8576985": {
+   "number": 8576985,
+   "sloid": "ch:1:sloid:76985",
+   "name": "Bern, Löchligut",
+   "counts": {
+    "streetlevel_photo:linked": 3
+   },
+   "stored": [],
+   "linked": [
+    "panoramax:9699cf71-4947-40a7-803a-5b09bdbdec83",
+    "panoramax:9b46d387-f9aa-4d3d-b8ca-d4e45b7d76ea",
+    "panoramax:47e41959-f9dd-4e83-8e2a-0745ba6a8b90"
+   ],
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8504117": {
+   "number": 8504117,
+   "sloid": "ch:1:sloid:4117",
+   "name": "Oberwangen",
+   "counts": {
+    "streetlevel_photo:linked": 9,
+    "photo:linked": 2
+   },
+   "stored": [],
+   "linked": [
+    "panoramax:79d2ec1e-874a-4fa0-a558-a469ac54d173",
+    "panoramax:b91a2fbb-3446-48e1-aa3d-a5277a1f5668",
+    "panoramax:3a80c57c-c7dc-48c9-944a-f83e04817832",
+    "panoramax:5352369c-96f5-4fca-8bf2-97bac5eceaa6",
+    "panoramax:9d10102e-877f-4be9-b010-38cfba5a55a4",
+    "panoramax:747da9b1-6cab-4ca1-93c5-2aa19a837cd0",
+    "panoramax:4effaa2f-a231-4236-8ccd-dd3fce91c2ad",
+    "panoramax:649e2309-bea5-4a41-beeb-5d4bbfa0486f",
+    "panoramax:5b6535bc-c13e-4aa9-a75b-4e8c4ca37d36",
+    "commons:95187689",
+    "commons:95187773"
+   ],
+   "wikidata": "Q31451038",
+   "commons_category": "Category:Oberwangen railway station",
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8507087": {
+   "number": 8507087,
+   "sloid": "ch:1:sloid:7087",
+   "name": "Mittelhäusern",
+   "counts": {
+    "streetlevel_photo:linked": 14,
+    "photo:linked": 1
+   },
+   "stored": [],
+   "linked": [
+    "panoramax:ec10448d-f026-4b95-8e32-7d7785bf7b34",
+    "panoramax:cf8da977-5d3b-41b3-adcd-ec2b98e50e4c",
+    "panoramax:9e4566d6-7738-4e7c-9db2-21cb2e90bf65",
+    "panoramax:75fa23b0-38cb-4e4b-bfb6-bc4d5f25334f",
+    "panoramax:967e9f0c-ce98-4467-9de2-827d1e13a68e",
+    "panoramax:584006d8-0b6e-48d1-bfe3-a24254a4766c",
+    "panoramax:2f5ce5ca-138b-4282-b123-b18a40b79644",
+    "panoramax:39423b81-782f-4e50-b8af-e07107a7baa1",
+    "panoramax:2a76bce5-ae9b-43aa-860d-52815e9afdd6",
+    "panoramax:efe9919f-4bf6-4542-9029-19ec0ba54d6a",
+    "panoramax:8dfcd65c-dc6b-4048-9103-bdb315f21cf8",
+    "panoramax:00bb2daa-8623-4ad0-b291-51827256932d",
+    "panoramax:32c9d929-82e4-4b29-a9c9-59bc115751b2",
+    "panoramax:2bb9c966-bc8d-4a9a-824d-a5494e1c5c31",
+    "commons:156900827"
+   ],
+   "wikidata": "Q33507480",
+   "commons_category": "Category:Mittelhäusern railway station",
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8588990": {
+   "number": 8588990,
+   "sloid": "ch:1:sloid:88990",
+   "name": "Bern, Bollwerk",
+   "counts": {
+    "streetlevel_photo:linked": 4
+   },
+   "stored": [],
+   "linked": [
+    "panoramax:12daefdd-0aad-4918-abd9-315bc73dbc1b",
+    "panoramax:85760a37-14ca-4d3a-96d8-3173d79bc6d8",
+    "panoramax:d55a5639-ab44-4af5-8a2d-a1f6aab27c46",
+    "panoramax:cbad07e6-ef64-45ce-bddb-bfcd059fba15"
+   ],
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8595136": {
+   "number": 8595136,
+   "sloid": "ch:1:sloid:95136",
+   "name": "Bern, Wankdorfbrücke",
+   "counts": {
+    "streetlevel_photo:linked": 3
+   },
+   "stored": [],
+   "linked": [
+    "panoramax:5dbb3d30-e8f5-4544-a65f-9bce8cbd5c2c",
+    "panoramax:781c1855-9d86-4f7d-a1a0-16b86548a1b0",
+    "panoramax:6b548a96-f7e4-4770-b8fa-dda43b9fe14a"
+   ],
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8589992": {
+   "number": 8589992,
+   "sloid": "ch:1:sloid:89992",
+   "name": "Bern, Sulgenau",
+   "counts": {
+    "streetlevel_photo:linked": 1,
+    "photo:linked": 7
+   },
+   "stored": [],
+   "linked": [
+    "panoramax:169e11f3-fb62-4163-9a7c-29b1c86b61ba",
+    "commons:175184169",
+    "commons:147288269",
+    "commons:147287120",
+    "commons:197530765",
+    "commons:197530769",
+    "commons:197530771",
+    "commons:197530761"
+   ],
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8590076": {
+   "number": 8590076,
+   "sloid": "ch:1:sloid:90076",
+   "name": "Bern, Monbijoubrücke",
+   "counts": {
+    "streetlevel_photo:linked": 1
+   },
+   "stored": [],
+   "linked": [
+    "panoramax:460de86e-bba3-4ea6-8d11-c1ada3321e50"
+   ],
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8590010": {
+   "number": 8590010,
+   "sloid": "ch:1:sloid:90010",
+   "name": "Bern, Brunnhof",
+   "counts": {
+    "photo:linked": 1
+   },
+   "stored": [],
+   "linked": [
+    "commons:82463400"
+   ],
+   "wikidata": "Q136704169",
+   "commons_category": null,
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8571435": {
+   "number": 8571435,
+   "sloid": "ch:1:sloid:71435",
+   "name": "Bern, Holenacker",
+   "counts": {
+    "photo:linked": 3
+   },
+   "stored": [],
+   "linked": [
+    "commons:94674733",
+    "commons:94712434",
+    "commons:94702294"
+   ],
+   "wikidata": "Q136704175",
+   "commons_category": null,
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8590006": {
+   "number": 8590006,
+   "sloid": "ch:1:sloid:90006",
+   "name": "Bern, Luisenstrasse",
+   "counts": {
+    "photo:linked": 2
+   },
+   "stored": [],
+   "linked": [
+    "commons:89110124",
+    "commons:145394686"
+   ],
+   "wikidata": "Q136704204",
+   "commons_category": null,
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8590019": {
+   "number": 8590019,
+   "sloid": "ch:1:sloid:90019",
+   "name": "Bern, Sonnenhof",
+   "counts": {
+    "photo:linked": 1
+   },
+   "stored": [],
+   "linked": [
+    "commons:59363641"
+   ],
+   "wikidata": "Q136704158",
+   "commons_category": null,
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8590021": {
+   "number": 8590021,
+   "sloid": "ch:1:sloid:90021",
+   "name": "Bern, Viktoriaplatz",
+   "counts": {
+    "photo:linked": 5
+   },
+   "stored": [],
+   "linked": [
+    "commons:89043440",
+    "commons:89043462",
+    "commons:89043422",
+    "commons:89033677",
+    "commons:89043375"
+   ],
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8571342": {
+   "number": 8571342,
+   "sloid": "ch:1:sloid:71342",
+   "name": "Bern, Inselplatz",
+   "counts": {
+    "streetlevel_photo:linked": 2
+   },
+   "stored": [],
+   "linked": [
+    "panoramax:2299ec9c-b1a5-427b-9068-99b21f9ef56d",
+    "panoramax:a7767d59-ecfe-42b8-911d-be5e22823d1b"
+   ],
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8579899": {
+   "number": 8579899,
+   "sloid": "ch:1:sloid:79899",
+   "name": "Bern, Bümpliz Höhe",
+   "counts": {
+    "photo:linked": 1
+   },
+   "stored": [],
+   "linked": [
+    "commons:116475903"
+   ],
+   "wikidata": "Q136704159",
+   "commons_category": null,
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8590020": {
+   "number": 8590020,
+   "sloid": "ch:1:sloid:90020",
+   "name": "Bern, Kursaal",
+   "counts": {
+    "photo:linked": 4
+   },
+   "stored": [],
+   "linked": [
+    "commons:182994490",
+    "commons:182994493",
+    "commons:182994489",
+    "commons:54319604"
+   ],
+   "wikidata": "Q136704160",
+   "commons_category": null,
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8590046": {
+   "number": 8590046,
+   "sloid": "ch:1:sloid:90046",
+   "name": "Bern, Tscharnergut",
+   "counts": {
+    "photo:linked": 3
+   },
+   "stored": [],
+   "linked": [
+    "commons:175433223",
+    "commons:175433215",
+    "commons:175433219"
+   ],
+   "wikidata": "Q136704173",
+   "commons_category": null,
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8590009": {
+   "number": 8590009,
+   "sloid": "ch:1:sloid:90009",
+   "name": "Bern, Kaufmännischer Verband",
+   "counts": {
+    "photo:linked": 1
+   },
+   "stored": [],
+   "linked": [
+    "commons:10554302"
+   ],
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8590022": {
+   "number": 8590022,
+   "sloid": "ch:1:sloid:90022",
+   "name": "Bern, Schönegg",
+   "counts": {
+    "photo:linked": 1
+   },
+   "stored": [],
+   "linked": [
+    "commons:151699571"
+   ],
+   "wikidata": "Q136704209",
+   "commons_category": null,
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8576996": {
+   "number": 8576996,
+   "sloid": "ch:1:sloid:76996",
+   "name": "Bern, Wankdorfplatz",
+   "counts": {
+    "photo:linked": 1
+   },
+   "stored": [],
+   "linked": [
+    "commons:52663552"
+   ],
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  },
+  "8507082": {
+   "number": 8507082,
+   "sloid": "ch:1:sloid:7082",
+   "name": "Bern Europaplatz Süd",
+   "counts": {
+    "station_plan_pdf:linked": 2
+   },
+   "stored": [],
+   "linked": [
+    "link:sbb-trafimage-plan-bern-europaplatz-a4-8507082",
+    "link:sbb-trafimage-plan-bern-europaplatz-a4-poster-8507082"
+   ],
+   "wikidata": null,
+   "commons_category": null,
+   "by_feature": {},
+   "by_feature_note": "feature tag -> up to 15 reference ids, stored first, then best-scored linked photos (tags inferred by keyword)",
+   "linked_truncated": false
+  }
+ }
+}
