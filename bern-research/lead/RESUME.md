@@ -1,5 +1,8 @@
 # If the lead session stops: how to continue
 
+**State at 2026-11-21 05:00: the handoff is final** (`MORNING-HANDOFF.md`). Item 5 below is done: join checks,
+sample loader, smoke test and the live-API cross-check are committed. What follows is only needed if work resumes.
+
 For a continuation session (for example Opus 5.5) taking over the lead role. Everything needed is on disk.
 
 1. Read `lead/CONTRACT.md` (rules), then `MORNING-HANDOFF.md` (state), then each folder's `STATUS.md`.
