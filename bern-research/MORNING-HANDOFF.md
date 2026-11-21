@@ -1,6 +1,6 @@
 # Bern research: morning handoff
 
-**Status: in progress, snapshot 2.** Updated 2026-11-21 02:30 Europe/Zurich by the lead. Rewritten at each committed
+**Status: in progress, snapshot 3.** Updated 2026-11-21 03:05 Europe/Zurich by the lead. Rewritten at each committed
 snapshot; final at 07:00. Numbers are from the committed files at this snapshot and may still grow.
 
 - Checkout: `C:\Users\apfel\Documents\Coding\Powercoders-Hackathon`
@@ -16,7 +16,7 @@ snapshot; final at 07:00. Numbers are from the committed files at this snapshot 
 | `transit/` | 1,123 stations, 3,483 boarding edges and areas, timetables for two feeds, accessibility, sectors | `transit/STATUS.md`, `transit/validation/report.md` |
 | `stations/` | 1,095 boarding-edge geometries, 697 station features, by-level detail and walk graphs for focus stations, glTF models | `stations/STATUS.md`, `stations/validation/report.md` |
 | `city3d/` | Terrain tiles, 46,946 buildings with heights, LOD2 roofs for the centre, roads, paths, rail and bridges in 3D | `city3d/HANDOFF.md` |
-| `references/` | 359-station list, 233 street-level photo records, 46 operator links, 16 orthophoto crops, 10 furniture assets | `references/STATUS.md` |
+| `references/` | 2,450 reference records (172 stored with licence and attribution, 144 image files), 46 operator links, 16 orthophoto crops, 12 furniture assets | `references/HANDOFF.md`, `references/ATTRIBUTION.md` |
 | `lead/` | Contract, source list, validation, join checks, smoke test, sample loader | `lead/CONTRACT.md` |
 
 ## Coverage
@@ -72,14 +72,18 @@ snapshot; final at 07:00. Numbers are from the committed files at this snapshot 
 - **Bridge decks** in `city3d/data/network/bridges_deck_approx.geojson` are inferred polygons for display.
 - **Buildings missing** in a strip of about 380 m at the far west of the box (mostly forest near Riedbach).
 - **Terrain and buildings are older than the station rebuild** (buildings 2021 edition).
-- **References:** Mapillary needs a token and KartaView did not answer, so both are links only. The Wikimedia
-  Commons subset is still downloading and is not committed yet.
+- **References:** Mapillary needs a token and KartaView did not answer, so both are links only. Station links and
+  feature tags on photos are inferred (Commons category, distance or keywords). Items found only by keyword search
+  were removed from the stored subset after a false match; 162 linked-only records are flagged
+  `relevance_unverified`. Nobody has looked at every stored photo.
+- **One Wankdorf edge** (`ch:1:sloid:16161:2:3`) is drawn 85 m from its atlas point because the geometry follows the
+  track number; it is documented as a conflict in `stations/STATUS.md`.
 
 ## Validation
 
 | Check | Result at this snapshot | How to run |
 |---|---|---|
-| Lead validator (sizes, parsing, coordinates, ids, flags, manifests, credentials) and cross-folder joins | 0 FAIL, 17 WARN | `python -I bern-research/lead/validate/validate.py` -> `lead/validate/REPORT.md` |
+| Lead validator (sizes, parsing, coordinates, ids, flags, manifests, credentials) and cross-folder joins | 0 FAIL, 19 WARN (03:01) | `python -I bern-research/lead/validate/validate.py` -> `lead/validate/REPORT.md` |
 | Sample loader smoke test in headless Chrome | 10 of 10 pass | `node bern-research/lead/validate/smoke_sample.js` -> `lead/validate/smoke/` |
 | Transit worker checks (incl. timetable decode against the GTFS subset) | 75 checks, 0 failed | `python bern-research/transit/scripts/validate.py` |
 | Stations worker checks | 0 FAIL, 48 WARN | `python bern-research/stations/tools/validate.py` |
@@ -89,8 +93,9 @@ station-geometry edge is known to transit and lies within 15 m of the atlas poin
 edges with coordinates. In the smoke test, 400 of 400 departures at Zytglogge on Monday 2026-11-23 from 08:00
 resolve to a boarding edge with coordinates.
 
-Independent data reviews are scheduled for 03:00 and 05:00 and a handoff review for 06:40. Their findings will be
-added here.
+Independent checkpoint at 03:00 (read-only): all four workers idle, no stalls; it confirmed the references clean-up
+and the Wankdorf documentation, and the lead re-verified both before committing. A second data review is scheduled
+for 05:00 and a handoff review for 06:40. Their findings will be added here.
 
 ## How to run the samples
 
@@ -131,7 +136,10 @@ texts tonight; treat the licence fields as what the publisher states on the data
 | `94ace7d`, `dc2b49e` | Transit snapshots 1 and 2 |
 | `2487027` | References snapshot 1 |
 | `376e88c` | City 3D snapshot 1 (138 MB of data in 755 files) |
-| `acb14c1` | Stations snapshot 1 |
+| `acb14c1`, `33752f6`, `e9bf38b` | Stations snapshots 1 to 3 |
+| `ec017da` | Transit snapshot 3 (timetable slice, handoff) |
+| `17503fd` | References snapshot 2 (licensed image subset, manifest) |
+| `e5d9948` | Sample loader, smoke test |
 
-The repository is now about 90 MB packed. If that is too large to push, `city3d/HANDOFF.md` names the two files to
+The repository is now about 160 MB packed. If that is too large to push, `city3d/HANDOFF.md` names the two files to
 drop first.

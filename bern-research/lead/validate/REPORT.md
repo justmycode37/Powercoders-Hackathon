@@ -1,8 +1,8 @@
 # Validation report
 
-Run 2026-11-21T02:24:59+01:00 on HEAD `acb14c1`, folders: transit, city3d, stations, references, lead.
+Run 2026-11-21T03:01:26+01:00 on HEAD `33752f6`, folders: transit, city3d, stations, references, lead.
 
-**0 FAIL, 19 WARN, 103 OK**
+**0 FAIL, 19 WARN, 104 OK**
 
 ## transit
 
@@ -44,78 +44,79 @@ Run 2026-11-21T02:24:59+01:00 on HEAD `acb14c1`, folders: transit, city3d, stati
 
 ## stations
 
-- **WARN** no HANDOFF.md yet
-- **OK** 265 files, 15.5 MB would be committed
-- **OK** stations/SOURCES.json: 89 manifest entries, all with url, licence, date, checksum
-- **OK** stations/data/boarding_edges.geojson: 1095 features, 9793 vertices, 2286 SLOID values
+- **OK** 268 files, 19.6 MB would be committed
+- **OK** stations/SOURCES.json: 90 manifest entries, all with url, licence, date, checksum
+- **OK** stations/data/boarding_edges.geojson: 1105 features, 9239 vertices, 2310 SLOID values
 - **OK** stations/data/focus/8504104-thoerishaus-station.geojson: 33 features, 469 vertices, 15 SLOID values
-- **OK** stations/data/focus/8504105-niederwangen.geojson: 65 features, 558 vertices, 31 SLOID values
-- **OK** stations/data/focus/8504106-bern-buempliz-sued.geojson: 79 features, 728 vertices, 28 SLOID values
-- **OK** stations/data/focus/8504108-bern-europaplatz.geojson: 96 features, 1477 vertices, 33 SLOID values
+- **OK** stations/data/focus/8504105-niederwangen.geojson: 66 features, 497 vertices, 33 SLOID values
+- **OK** stations/data/focus/8504106-bern-buempliz-sued.geojson: 81 features, 734 vertices, 32 SLOID values
+- **OK** stations/data/focus/8504108-bern-europaplatz.geojson: 100 features, 1486 vertices, 41 SLOID values
 - **OK** stations/data/focus/8504117-oberwangen.geojson: 30 features, 369 vertices, 12 SLOID values
-- **OK** stations/data/focus/8504488-bern-riedbach.geojson: 24 features, 120 vertices, 13 SLOID values
-- **OK** stations/data/focus/8504489-bern-buempliz-nord.geojson: 78 features, 729 vertices, 20 SLOID values
+- **OK** stations/data/focus/8504488-bern-riedbach.geojson: 24 features, 114 vertices, 13 SLOID values
+- **OK** stations/data/focus/8504489-bern-buempliz-nord.geojson: 80 features, 737 vertices, 24 SLOID values
 - **OK** stations/data/focus/8507002-ostermundigen.geojson: 35 features, 225 vertices, 25 SLOID values
-- **OK** stations/data/focus/8507003-guemligen.geojson: 86 features, 667 vertices, 72 SLOID values
-- **OK** stations/data/focus/8507050-bern-egghoelzli.geojson: 48 features, 650 vertices, 26 SLOID values
-- **OK** stations/data/focus/8507060-bern-helvetiaplatz.geojson: 68 features, 669 vertices, 23 SLOID values
-- **OK** stations/data/focus/8507061-bern-brunnadernstrasse.geojson: 67 features, 849 vertices, 22 SLOID values
-- **OK** stations/data/focus/8507062-muri-bei-bern.geojson: 19 features, 149 vertices, 11 SLOID values
+- **OK** stations/data/focus/8507003-guemligen.geojson: 86 features, 664 vertices, 72 SLOID values
+- **OK** stations/data/focus/8507050-bern-egghoelzli.geojson: 52 features, 660 vertices, 36 SLOID values
+- **OK** stations/data/focus/8507060-bern-helvetiaplatz.geojson: 73 features, 683 vertices, 33 SLOID values
+- **OK** stations/data/focus/8507061-bern-brunnadernstrasse.geojson: 68 features, 768 vertices, 33 SLOID values
+- **OK** stations/data/focus/8507062-muri-bei-bern.geojson: 21 features, 112 vertices, 10 SLOID values
 - **OK** stations/data/focus/8507067-deisswil.geojson: 21 features, 115 vertices, 8 SLOID values
-- **OK** stations/data/focus/8507068-bolligen.geojson: 47 features, 284 vertices, 17 SLOID values
-- **OK** stations/data/focus/8507069-ittigen-bei-bern.geojson: 47 features, 226 vertices, 16 SLOID values
+- **OK** stations/data/focus/8507068-bolligen.geojson: 47 features, 265 vertices, 17 SLOID values
+- **OK** stations/data/focus/8507069-ittigen-bei-bern.geojson: 46 features, 201 vertices, 16 SLOID values
 - **OK** stations/data/focus/8507077-kehrsatz.geojson: 33 features, 327 vertices, 12 SLOID values
-- **OK** stations/data/focus/8507078-wabern-bei-bern.geojson: 59 features, 340 vertices, 26 SLOID values
-- **OK** stations/data/focus/8507079-bern-weissenbuehl.geojson: 53 features, 461 vertices, 22 SLOID values
-- **OK** stations/data/focus/8507083-koeniz.geojson: 52 features, 357 vertices, 38 SLOID values
-- **OK** stations/data/focus/8507084-moos.geojson: 17 features, 185 vertices, 7 SLOID values
-- **OK** stations/data/focus/8507085-gasel.geojson: 15 features, 218 vertices, 10 SLOID values
-- **OK** stations/data/focus/8507091-liebefeld.geojson: 25 features, 226 vertices, 20 SLOID values
+- **OK** stations/data/focus/8507078-wabern-bei-bern.geojson: 60 features, 342 vertices, 28 SLOID values
+- **OK** stations/data/focus/8507079-bern-weissenbuehl.geojson: 56 features, 474 vertices, 28 SLOID values
+- **OK** stations/data/focus/8507083-koeniz.geojson: 52 features, 353 vertices, 38 SLOID values
+- **OK** stations/data/focus/8507084-moos.geojson: 17 features, 176 vertices, 7 SLOID values
+- **OK** stations/data/focus/8507085-gasel.geojson: 15 features, 198 vertices, 10 SLOID values
+- **OK** stations/data/focus/8507091-liebefeld.geojson: 25 features, 219 vertices, 20 SLOID values
 - **OK** stations/data/focus/8507093-kehrsatz-nord.geojson: 23 features, 275 vertices, 10 SLOID values
-- **OK** stations/data/focus/8507096-papiermuehle.geojson: 35 features, 297 vertices, 12 SLOID values
-- **OK** stations/data/focus/8508051-bern-felsenau.geojson: 58 features, 735 vertices, 20 SLOID values
-- **OK** stations/data/focus/8508052-bern-tiefenau.geojson: 105 features, 929 vertices, 10 SLOID values
-- **OK** stations/data/focus/8508053-steinibach.geojson: 55 features, 196 vertices, 15 SLOID values
-- **OK** stations/data/focus/8508054-worblaufen.geojson: 88 features, 389 vertices, 34 SLOID values
-- **OK** stations/data/focus/8508055-unterzollikofen.geojson: 29 features, 106 vertices, 12 SLOID values
-- **OK** stations/data/focus/8508070-oberzollikofen.geojson: 45 features, 140 vertices, 16 SLOID values
-- **OK** stations/data/focus/8516154-bern-bruennen-westside.geojson: 67 features, 968 vertices, 18 SLOID values
-- **OK** stations/data/focus/8571342-bern-inselplatz.geojson: 40 features, 572 vertices, 8 SLOID values
-- **OK** stations/data/focus/8571393-bern-eigerplatz.geojson: 52 features, 783 vertices, 20 SLOID values
+- **OK** stations/data/focus/8507096-papiermuehle.geojson: 35 features, 293 vertices, 12 SLOID values
+- **OK** stations/data/focus/8508051-bern-felsenau.geojson: 60 features, 725 vertices, 24 SLOID values
+- **OK** stations/data/focus/8508052-bern-tiefenau.geojson: 107 features, 933 vertices, 14 SLOID values
+- **OK** stations/data/focus/8508053-steinibach.geojson: 54 features, 177 vertices, 14 SLOID values
+- **OK** stations/data/focus/8508054-worblaufen.geojson: 88 features, 379 vertices, 34 SLOID values
+- **OK** stations/data/focus/8508055-unterzollikofen.geojson: 29 features, 94 vertices, 12 SLOID values
+- **OK** stations/data/focus/8508070-oberzollikofen.geojson: 47 features, 144 vertices, 20 SLOID values
+- **OK** stations/data/focus/8516154-bern-bruennen-westside.geojson: 70 features, 975 vertices, 24 SLOID values
+- **OK** stations/data/focus/8571342-bern-inselplatz.geojson: 44 features, 587 vertices, 16 SLOID values
+- **OK** stations/data/focus/8571393-bern-eigerplatz.geojson: 58 features, 826 vertices, 30 SLOID values
 - **OK** stations/data/focus/8571412-liebefeld-hessstrasse.geojson: 35 features, 243 vertices, 16 SLOID values
-- **OK** stations/data/focus/8571413-koeniz-bruehlplatz.geojson: 28 features, 234 vertices, 12 SLOID values
-- **OK** stations/data/focus/8571436-bern-bachmaetteli.geojson: 47 features, 787 vertices, 12 SLOID values
-- **OK** stations/data/focus/8576990-bern-guisanplatz-expo.geojson: 17 features, 153 vertices, 25 SLOID values
-- **OK** stations/data/focus/8576999-bern-upd-waldau.geojson: 13 features, 91 vertices, 14 SLOID values
-- **OK** stations/data/focus/8577002-ostermundigen-waldeck.geojson: 20 features, 133 vertices, 12 SLOID values
-- **OK** stations/data/focus/8579896-bern-hirschengraben.geojson: 142 features, 2798 vertices, 103 SLOID values
-- **OK** stations/data/focus/8579897-bern-kocherpark.geojson: 61 features, 610 vertices, 10 SLOID values
-- **OK** stations/data/focus/8579898-bern-buempliz-unterfuehrung.geojson: 56 features, 451 vertices, 17 SLOID values
-- **OK** stations/data/focus/8579900-bern-buempliz-post.geojson: 60 features, 844 vertices, 24 SLOID values
-- **OK** stations/data/focus/8587479-bern-schosshalde.geojson: 44 features, 662 vertices, 10 SLOID values
+- **OK** stations/data/focus/8571413-koeniz-bruehlplatz.geojson: 27 features, 206 vertices, 12 SLOID values
+- **OK** stations/data/focus/8571436-bern-bachmaetteli.geojson: 50 features, 796 vertices, 18 SLOID values
+- **OK** stations/data/focus/8576990-bern-guisanplatz-expo.geojson: 24 features, 175 vertices, 39 SLOID values
+- **OK** stations/data/focus/8576999-bern-upd-waldau.geojson: 16 features, 101 vertices, 20 SLOID values
+- **OK** stations/data/focus/8577002-ostermundigen-waldeck.geojson: 21 features, 138 vertices, 14 SLOID values
+- **OK** stations/data/focus/8579896-bern-hirschengraben.geojson: 168 features, 2848 vertices, 155 SLOID values
+- **OK** stations/data/focus/8579897-bern-kocherpark.geojson: 64 features, 616 vertices, 16 SLOID values
+- **OK** stations/data/focus/8579898-bern-buempliz-unterfuehrung.geojson: 58 features, 459 vertices, 21 SLOID values
+- **OK** stations/data/focus/8579900-bern-buempliz-post.geojson: 65 features, 861 vertices, 34 SLOID values
+- **OK** stations/data/focus/8587479-bern-schosshalde.geojson: 48 features, 671 vertices, 18 SLOID values
 - **OK** stations/data/focus/8588562-wabern-gurtenbahn.geojson: 33 features, 246 vertices, 10 SLOID values
-- **OK** stations/data/focus/8588988-bern-aegertenstrasse.geojson: 44 features, 632 vertices, 14 SLOID values
-- **OK** stations/data/focus/8588991-bern-breitfeld.geojson: 69 features, 758 vertices, 11 SLOID values
-- **OK** stations/data/focus/8589003-bern-thunplatz.geojson: 21 features, 481 vertices, 14 SLOID values
-- **OK** stations/data/focus/8589991-bern-monbijou.geojson: 48 features, 694 vertices, 16 SLOID values
-- **OK** stations/data/focus/8589992-bern-sulgenau.geojson: 73 features, 944 vertices, 10 SLOID values
-- **OK** stations/data/focus/8589993-bern-wander.geojson: 46 features, 678 vertices, 10 SLOID values
+- **OK** stations/data/focus/8588988-bern-aegertenstrasse.geojson: 48 features, 640 vertices, 22 SLOID values
+- **OK** stations/data/focus/8588991-bern-breitfeld.geojson: 74 features, 778 vertices, 21 SLOID values
+- **OK** stations/data/focus/8589003-bern-thunplatz.geojson: 25 features, 494 vertices, 22 SLOID values
+- **OK** stations/data/focus/8589991-bern-monbijou.geojson: 52 features, 706 vertices, 24 SLOID values
+- **OK** stations/data/focus/8589992-bern-sulgenau.geojson: 77 features, 956 vertices, 18 SLOID values
+- **OK** stations/data/focus/8589993-bern-wander.geojson: 49 features, 694 vertices, 16 SLOID values
 - **OK** stations/data/focus/8589996-spiegel-spiegel.geojson: 26 features, 123 vertices, 16 SLOID values
-- **OK** stations/data/focus/8590014-bern-fischermaetteli.geojson: 57 features, 513 vertices, 18 SLOID values
-- **OK** stations/data/focus/8590021-bern-viktoriaplatz.geojson: 51 features, 796 vertices, 16 SLOID values
-- **OK** stations/data/focus/8590041-bern-loryplatz.geojson: 65 features, 430 vertices, 18 SLOID values
-- **OK** stations/data/focus/bern-bahnhof.geojson: 1193 features, 13678 vertices, 802 SLOID values
-- **OK** stations/data/focus/wankdorf.geojson: 239 features, 2042 vertices, 206 SLOID values
-- **OK** stations/data/focus/zytglogge.geojson: 346 features, 5824 vertices, 35 SLOID values
-- **OK** stations/data/station_features.geojson: 737 features, 4476 vertices, 1370 SLOID values
-- **OK** stations/data/stations.geojson: 442 features, 442 vertices, 442 SLOID values
+- **OK** stations/data/focus/8590014-bern-fischermaetteli.geojson: 61 features, 518 vertices, 26 SLOID values
+- **OK** stations/data/focus/8590021-bern-viktoriaplatz.geojson: 55 features, 802 vertices, 24 SLOID values
+- **OK** stations/data/focus/8590041-bern-loryplatz.geojson: 70 features, 436 vertices, 28 SLOID values
+- **OK** stations/data/focus/bern-bahnhof.geojson: 1328 features, 15771 vertices, 1072 SLOID values
+- **OK** stations/data/focus/wankdorf.geojson: 268 features, 2520 vertices, 264 SLOID values
+- **OK** stations/data/focus/zytglogge.geojson: 352 features, 5834 vertices, 49 SLOID values
+- **OK** stations/data/station_features.geojson: 1238 features, 8229 vertices, 2373 SLOID values
+- **OK** stations/data/stations.geojson: 446 features, 446 vertices, 446 SLOID values
 
 ## references
 
-- **WARN** references/SOURCES.json: 7 manifest entries, missing {'sha256': 1}
 - **WARN** references/manifest.json: 1 manifest entries, missing {'url': 1, 'licence': 1, 'retrieved': 1, 'sha256': 1}
-- **OK** 246 files, 62.9 MB would be committed
-- **OK** references/references.geojson: 1634 features, 1634 vertices, 1633 SLOID values
+- **WARN** references/references.geojson: 1 vertices outside Switzerland (expected only for stations on through trips)
+- **WARN** references/references.geojson: 1 of 1638 vertices outside the Bern box (7.2, 46.85, 7.7, 47.1)
+- **OK** 245 files, 64.1 MB would be committed
+- **OK** references/SOURCES.json: 9 manifest entries, all with url, licence, date, checksum
+- **OK** references/references.geojson: 1638 features, 1638 vertices, 1638 SLOID values
 
 ## lead
 
@@ -137,9 +138,9 @@ Run 2026-11-21T02:24:59+01:00 on HEAD `acb14c1`, folders: transit, city3d, stati
 - **OK** focus 8507110 Bern, Zytglogge: 14 edges/areas in transit, 14 with coordinates
 - **OK** focus 8516161 Bern Wankdorf (rail): 10 edges/areas in transit, 6 with coordinates
 - **OK** focus 8588699 Bern, Wankdorf Center: 2 edges/areas in transit, 2 with coordinates
-- **OK** stations boarding_edges: 1095 features, 0 with an edge SLOID unknown to transit
+- **OK** stations boarding_edges: 1105 features, 0 with an edge SLOID unknown to transit
 - **OK** stations boarding_edges: 0 tier-bern boarding platforms from transit have no geometry feature in stations
-- **OK** stations stations.geojson: 442 stations, 0 not in transit stations
-- **OK** stations focus/bern-bahnhof: 1193 features, 489 flagged inferred; passage 241, building_part 119, sector_board 116, sector_marker 98, boarding_edge 90, access_point 83, stairs_outline 71, building_footprint 53
-- **OK** stations focus/zytglogge: 346 features, 61 flagged inferred; building_part 88, building_footprint 84, stairs_outline 64, access_point 35, passage 21, underpass_outline 20, boarding_edge 14, platform_surface 5
-- **OK** stations focus/wankdorf: 239 features, 126 flagged inferred; sector_board 27, access_point 23, boarding_edge 22, sector_marker 19, shelter 17, passage 17, building_part 16, stairs 16
+- **OK** stations stations.geojson: 446 stations, 0 not in transit stations
+- **OK** stations focus/bern-bahnhof: 1328 features, 623 flagged inferred; passage 241, building_part 118, sector_board 116, sector_marker 98, boarding_edge 90, sector_span 84, access_point 83, stairs_outline 71
+- **OK** stations focus/zytglogge: 352 features, 68 flagged inferred; building_part 87, building_footprint 84, stairs_outline 64, access_point 35, passage 21, underpass_outline 20, boarding_edge 14, surveyed_kerb_candidate 7
+- **OK** stations focus/wankdorf: 268 features, 155 flagged inferred; sector_board 27, access_point 23, boarding_edge 22, sector_marker 19, sector_span 19, shelter 17, passage 17, building_part 16
