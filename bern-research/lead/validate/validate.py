@@ -12,9 +12,10 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))     
 REPO = os.path.dirname(ROOT)
 AREAS = ['transit', 'city3d', 'stations', 'references', 'lead']
 MAX_COMMIT_BYTES = 25 * 1024 * 1024
-CH = (5.9, 45.8, 10.5, 47.9)             # Switzerland lon/lat sanity box
+CH = (5.9, 45.8, 10.5, 47.9)             # Switzerland lon/lat box, for reporting
+EUROPE = (-11.0, 35.0, 32.0, 61.0)       # anything outside this is a CRS or axis-order mistake
 BERN = (7.20, 46.85, 7.70, 47.10)        # generous Bern box, for reporting only
-SLOID = re.compile(r'^ch:1:sloid:\d+(:\d+)*$')
+SLOID = re.compile(r'^ch:1:sloid:\d+(:[0-9A-Za-z_.-]*)*$')   # atlas also has forms like ch:1:sloid:207::161811
 SECRET = re.compile(r'(eyJ[A-Za-z0-9_-]{30,}\.[A-Za-z0-9_-]{10,}|gh[pousr]_[A-Za-z0-9]{30,}|sk-[A-Za-z0-9_-]{30,}|'
                     r'(?i:authorization)\s*[:=]\s*["\']?(?i:bearer)\s+[A-Za-z0-9._-]{20,}|'
                     r'(?i:api[_-]?key|token|secret|password)["\']?\s*[:=]\s*["\'][A-Za-z0-9/+_-]{24,}["\'])')
@@ -47,7 +48,7 @@ def coords(geom):
 def check_geojson(area, rel, d):
     feats = d.get('features') if d.get('type') == 'FeatureCollection' else ([d] if d.get('type') == 'Feature' else None)
     if feats is None: return
-    n = len(feats); swapped = outside_ch = outside_bern = pts = 0; no_source = no_inferred = bad_sloid = 0; sloids = 0
+    n = len(feats); swapped = outside_eu = outside_ch = outside_bern = pts = 0; no_source = no_inferred = bad_sloid = 0; sloids = 0
     for f in feats:
         p = f.get('properties') or {}
         if 'source' not in p: no_source += 1
@@ -59,11 +60,13 @@ def check_geojson(area, rel, d):
         for c in coords(f.get('geometry')):
             pts += 1; x, y = c[0], c[1]
             if x > 40 and y < 20: swapped += 1
+            elif not (EUROPE[0] <= x <= EUROPE[2] and EUROPE[1] <= y <= EUROPE[3]): outside_eu += 1
             elif not (CH[0] <= x <= CH[2] and CH[1] <= y <= CH[3]): outside_ch += 1
             elif not (BERN[0] <= x <= BERN[2] and BERN[1] <= y <= BERN[3]): outside_bern += 1
     line('OK', area, f'{rel}: {n} features, {pts} vertices, {sloids} SLOID values')
     if swapped: line('FAIL', area, f'{rel}: {swapped} vertices look like lat/lon instead of lon/lat')
-    if outside_ch: line('FAIL', area, f'{rel}: {outside_ch} vertices outside Switzerland (wrong CRS?)')
+    if outside_eu: line('FAIL', area, f'{rel}: {outside_eu} vertices outside Europe (wrong CRS or axis order?)')
+    if outside_ch: line('WARN', area, f'{rel}: {outside_ch} vertices outside Switzerland (expected only for stations on through trips)')
     if outside_bern: line('WARN', area, f'{rel}: {outside_bern} of {pts} vertices outside the Bern box {BERN}')
     if bad_sloid: line('FAIL', area, f'{rel}: {bad_sloid} values in sloid properties do not look like SLOIDs')
     if n and no_source: line('WARN', area, f'{rel}: {no_source} of {n} features have no `source`')
