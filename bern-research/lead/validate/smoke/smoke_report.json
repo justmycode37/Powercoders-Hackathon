@@ -1,0 +1,124 @@
+{
+ "run": "2026-11-21T01:23:36.092Z",
+ "checks": [
+  {
+   "name": "sample: page and base map load",
+   "pass": true,
+   "detail": {
+    "log": [
+     "stations/data/focus/index.json: ok, 6 ms",
+     "stations/data/boarding_edges.geojson: 1095 features, 30 ms",
+     "transit/data/edges.geojson: 3483 features, 31 ms",
+     "edges with coordinates: 3222 (585 in Bern municipality)",
+     "loading transit/data/fp2026/timetable.json (first click only)…",
+     "timetable fp2026 decoded in 103 ms",
+     "stations/data/focus/bern-bahnhof.geojson: 1189 features, 14 ms",
+     ""
+    ]
+   }
+  },
+  {
+   "name": "sample: boarding edges loaded",
+   "pass": true,
+   "detail": 3222
+  },
+  {
+   "name": "sample: kerb and track lines loaded",
+   "pass": true,
+   "detail": 1095
+  },
+  {
+   "name": "sample: Zytglogge edge K resolves by SLOID",
+   "pass": true,
+   "detail": {
+    "designation": "K",
+    "station": "Bern, Zytglogge",
+    "coords": [
+     7.4478063,
+     46.9471569
+    ]
+   }
+  },
+  {
+   "name": "sample: timetable decodes, Zytglogge has departures on Mon 2026-11-23 from 08:00",
+   "pass": true,
+   "detail": {
+    "feed": "fp2026",
+    "date": "2026-11-23",
+    "time": "08:00:00",
+    "stationCount": 400,
+    "onKnownEdge": 400,
+    "perEdge": {
+     "B": 89,
+     "A": 94,
+     "D": 50,
+     "E": 34,
+     "F": 49,
+     "#16": 45,
+     "K": 39
+    },
+    "first": [
+     [
+      "08:00:00",
+      "10",
+      "Ostermundigen, Rüti",
+      "B"
+     ],
+     [
+      "08:00:00",
+      "10",
+      "Schliern, Bus-Endstation",
+      "A"
+     ],
+     [
+      "08:00:00",
+      "12",
+      "Bern, Zentrum Paul Klee",
+      "D"
+     ]
+    ]
+   }
+  },
+  {
+   "name": "sample: every one of those departures joins to a boarding edge with coordinates",
+   "pass": true,
+   "detail": {
+    "onKnownEdge": 400,
+    "of": 400
+   }
+  },
+  {
+   "name": "sample: Bern Bahnhof station detail loaded",
+   "pass": true,
+   "detail": 1187
+  },
+  {
+   "name": "sample: no console errors or failed requests",
+   "pass": true,
+   "detail": {
+    "errors": [],
+    "failed": []
+   }
+  },
+  {
+   "name": "city3d: scene page renders a canvas",
+   "pass": true,
+   "detail": {
+    "canvas": true,
+    "w": 1280,
+    "h": 860,
+    "title": "Bern 3D basemap",
+    "text": "Bern 3D basemap (city3d)\nTerrain swissALTI3D 2 m\nBuildings (extruded)\nLOD2 roofs, central sample\nBridges (TLM deck, approx.)\nPaths and stairs (TLM)\nOSM footways (ODbL)\nTransit boarding edges\nbuildings: swissBUILDINGS3D footprints (bern_buildings_extrude.geojson)\nedges: 3222 from ../transit/data/edge"
+   }
+  },
+  {
+   "name": "city3d: no console errors or failed requests",
+   "pass": true,
+   "detail": {
+    "errors": [],
+    "failed": []
+   }
+  }
+ ],
+ "ok": true
+}
