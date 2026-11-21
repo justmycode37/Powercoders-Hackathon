@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-11-21T01:52:29Z",
+ "generated_utc": "2026-11-21T02:08:45Z",
  "source": "atlas PRM: reference-point-v2, relation-v2, stop-point-v2",
  "licence": "opentransportdata.swiss terms of use (free use, source attribution)",
  "note": "Official register of named access points (reference points) per station and whether each platform, toilet, parking lot or contact point can be reached from them without steps (YES, YES_WITH_LIFT, YES_WITH_RAMP, NO, TO_BE_COMPLETED). atlas publishes the reference points without coordinates, so they are not georeferenced here. The same relations are copied onto the boarding edges as 'step_free_access'. Stations without reference points in atlas are not listed.",

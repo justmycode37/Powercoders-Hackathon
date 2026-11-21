@@ -141,8 +141,6 @@ def main() -> int:
           f"{len(conflicts)} edges: " + ", ".join(
               f"{e['properties']['station_name']} {e['properties']['designation']} ({e['id']}, "
               f"{e['properties']['dist_atlas_to_geometry_m']} m)" for e in conflicts))
-    nogeo = [e["id"] for e in edges if e["geometry"] is None]
-    check("WARN" if nogeo else "OK", "edges without any geometry (atlas publishes no coordinates)", f"{len(nogeo)} edges", nogeo)
     meth = collections.Counter(e["properties"]["geometry_method"] for e in edges)
     check("OK", "boarding edges by geometry method", str(dict(meth)))
 
@@ -193,6 +191,35 @@ def main() -> int:
     check("OK", "kerb letters confirmed by Stadt Bern kerb points (same station number and letter)",
           f"{len(same)} edges confirmed (of {lettered_city} lettered tram/bus edges in the municipality); distance atlas point to "
           f"city kerb point: median {pct(same, .5)} m, p95 {pct(same, .95)} m, max {max(same) if same else None} m")
+
+    # (b1) Stadt Bern kerb points as a second official position source (figures from data/build-report.json)
+    cc = load(os.path.join(DATA, "build-report.json")).get("city_kerb_check")
+    if cc:
+        gap = cc["edges_without_atlas_coordinates"]
+        n_null = sum(1 for e in edges if e["geometry"] is None)
+        n_reason = sum(1 for e in edges if e["geometry"] is None and e["properties"].get("no_geometry_reason"))
+        check("FAIL" if n_null != gap["left_without_geometry"] or n_reason != n_null else "WARN" if n_null else "OK",
+              "edges without atlas coordinates: filled from a city kerb only on a unique label match, otherwise explained",
+              f"{gap['total']} such edges, {gap['filled_from_city_kerb']} filled, {gap['left_without_geometry']} left without geometry "
+              f"(each with no_geometry_reason); {gap['candidates_by_elimination']['count']} carry a city_kerb_candidate property")
+        city_pt = [e for e in edges if e["properties"]["geometry_method"] == "city_kerb_point"]
+        bad = [e["id"] for e in city_pt if not (e["properties"].get("inferred") and "Stadt Bern" in e["properties"]["source"])]
+        check("FAIL" if bad else "OK", "edges placed on a city kerb point name the city layer and are inferred", f"{len(city_pt)} edges, {len(bad)} wrong", bad)
+        pg = cc["pairing"]
+        for key, label in (("same_station_and_letter", "paired by station number and kerb letter (independent of position)"),
+                           ("paired_by_position", "paired by position (city kerb nearest to the edge line, mutual)")):
+            x = cc["atlas_vs_city_distance"][key]
+            a, b = x["atlas_point_to_city_kerb_m"], x["edge_geometry_to_city_kerb_m"]
+            check("OK", f"atlas edges vs Stadt Bern kerb points, {label}",
+                  f"{x['n']} pairs; atlas point to city kerb point: median {a['median']} m, p90 {a['p90']} m, max {a['max']} m; "
+                  f"city kerb point to this folder's edge line: median {b['median']} m, p90 {b['p90']} m, max {b['max']} m; "
+                  f"worst: " + ", ".join(f"{w['station_name']} {w.get('letter') or ''} {w['atlas_point_to_city_kerb_m']} m".replace("  ", " ")
+                                         for w in x["worst_ten"][:5]))
+        ld = cc["letter_disagreements"]
+        check("WARN" if ld["count"] else "OK", "atlas and the city layer agree on which kerb letter is where",
+              f"{ld['count']} disagreements; same kerb under another name: "
+              + (", ".join(f"{d['station_name']} atlas {d['atlas_designation']} = city {d['city_kerb_letter']}" for d in pg["same_kerb_other_letter"]) or "none")
+              + f"; city letters adopted for edges without an atlas letter: {cc['city_kerb_letters_added']['count']}")
 
     # (b2) surveyed pavement boundaries next to OSM-based and constructed edges
     kc = [f["properties"] for f in feats if f["properties"]["feature_type"] == "surveyed_kerb_candidate"]

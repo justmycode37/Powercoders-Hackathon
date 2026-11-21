@@ -1,6 +1,6 @@
 # stations/ STATUS
 
-Updated: 2026-11-21 02:53 Europe/Zurich. Owner thread: Bern Station Geometry and 3D Models.
+Updated: 2026-11-21 03:08 Europe/Zurich. Owner thread: Bern Station Geometry and 3D Models.
 
 ## Ready to validate and commit
 
@@ -13,7 +13,7 @@ bern-research/stations/STATUS.md
 bern-research/stations/HANDOFF.md            coverage, limits, findings, rebuild, load
 bern-research/stations/SOURCES.json          90 inputs: url, publisher, licence, retrieved, bytes, sha256, used_for
 bern-research/stations/references.json       operator plans (links only) and what was read off them
-bern-research/stations/tools/                9 Python files, standard library only
+bern-research/stations/tools/                10 Python files, standard library only
 bern-research/stations/data/boarding_edges.geojson
 bern-research/stations/data/station_features.geojson
 bern-research/stations/data/stations.geojson
@@ -30,8 +30,8 @@ bern-research/stations/validation/report.json
 Sizes: `data/` 4.7 MB, `data/focus/` 11.9 MB, `models/` 3.2 MB, everything else under 0.6 MB. Largest file
 `data/boarding_edges.geojson` 2.4 MB. `.cache/` (about 160 MB) is git-ignored.
 
-Checks at 02:53:
-- `python tools/validate.py`: 0 FAIL, 49 WARN, 763 OK (`validation/report.md`). 41 of the WARN are "stairs without a
+Checks at 03:08:
+- `python tools/validate.py`: 0 FAIL, 49 WARN, 767 OK (`validation/report.md`). 41 of the WARN are "stairs without a
   level tag in OSM" at single focus stations.
 - `python -I ../lead/validate/validate.py`: 0 FAIL. One WARN is mine and intended, see "Wankdorf" below.
 
@@ -85,6 +85,29 @@ rail stations, 28 tram/bus stops with at least 4 lettered kerbs). The list with 
 - BERNMOBIL kerb plans (read from the public PDFs, not copied): all 9 Zytglogge letters, 16 of 17 Bern Bahnhof
   letters (K2 is not on the 2026 plan) and A-F at Wankdorf Bahnhof / Nord (G is not on the 2025 plan) are confirmed.
   The SBB station plans could not be fetched by script (HTTP 403), so named SBB passages are not plan-checked.
+
+## Lead request of 03:05 (Stadt Bern kerb layer as second position source): done
+
+Code `tools/city_kerbs.py`; full lists in `data/build-report.json` under `city_kerb_check`; written up in
+`HANDOFF.md` ("Stadt Bern kerb points ..."); checked in `validation/report.md`.
+
+| Question | Result |
+|---|---|
+| Edges without atlas coordinates filled from a city kerb | **0 of 23.** The city layer has letters on 58 of 873 kerbs and no numbers. 20 of the 23 edges are at stops whose city kerbs are unlabelled, 3 (Bern Bahnhof op. 66 and 80, Thunplatz op. 12) are unlettered edges at lettered stops. All 23 keep `geometry: null` and carry `no_geometry_reason`. One (`ch:1:sloid:82210:0:618032`, Untermattweg) carries a `city_kerb_candidate` property found by elimination, not used as geometry |
+| City kerb letters added | **0.** Only 7 located edges without an atlas letter are at stops with city letters; the nearest lettered city kerb is 25 to 141 m away (limit 6 m). `designation` untouched |
+| atlas point to city kerb point, 60 pairs matched by station and letter | median 10.2 m, p75 16.5, p90 20.7, p95 23.3, max 34.3 m; 8 within 5 m, 30 within 10 m, 54 within 20 m |
+| same, 602 pairs matched by position | median 7.1 m, p75 11.3, p90 16.4, p95 21.5, max 42.2 m |
+| City kerb point to my edge line | median 1.2 m, p90 4.4 m (letter pairs): the city points lie on the edge lines |
+| Stops where atlas and the city disagree on which letter is where | **none.** Naming only: Bern Bahnhof atlas `K1` = city `K`. Letters only in atlas: Bahnhof K2, N, Q, Z; Zytglogge K; Hauptbahnhof R, W, X, Y; Hirschengraben N; Wankdorf Bahnhof B; Wankdorf Bahnhof Nord G |
+
+Worst ten letter pairs (atlas to city kerb point): Viktoriaplatz B 34.3 m, Bahnhof E 25.6, Buempliz Unterfuehrung D
+23.3, Bahnhof E 23.2, Bahnhof C 21.7, Bahnhof G 20.7, Hirschengraben C 19.4, Bahnhof B 19.2, Buempliz Unterfuehrung
+B 18.8, Zytglogge F 18.2. In all but two the city point is within 1.3 m of my edge line, so these are offsets along
+the kerb, not wrong kerbs. Table with edge SLOIDs in `HANDOFF.md`.
+
+Correction that came out of this: `lines_at_kerb` had been taken from the city kerb nearest to the atlas point,
+which picked the kerb across the street for 18 edges. It now uses the position pairing (662 edges, before 470).
+No new sources, no model or viewer work.
 
 ## Lead note of 02:55, handled
 

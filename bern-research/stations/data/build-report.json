@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-11-21T01:52:29Z",
+ "generated_utc": "2026-11-21T02:08:45Z",
  "counts": {
   "osm_platform_shared_claims_resolved": 28,
   "edges_osm_platform": 511,
@@ -8,6 +8,13 @@
   "edges_without_atlas_coordinates": 23,
   "edges_point_only": 9,
   "edges_av_bahnsteig_outline": 3,
+  "edges_filled_from_city_kerb": 0,
+  "edges_left_without_geometry": 23,
+  "edges_with_city_kerb_candidate": 1,
+  "city_kerb_letters_added": 0,
+  "edges_paired_with_city_kerb_by_letter": 60,
+  "edges_paired_with_city_kerb_by_position": 602,
+  "city_letter_disagreements": 0,
   "rail_platform_surfaces_linked_to_sbb_edges": 43,
   "shelters_surveyed": 140,
   "shelters_osm": 100,
@@ -30,6 +37,865 @@
   "accessibility_stations": 31,
   "accessibility_relations": 193,
   "edges_with_step_free_access": 92
+ },
+ "city_kerb_check": {
+  "source": "Stadt Bern OeV-Haltestellen (kerb points, Geoinformation Stadt Bern)",
+  "licence": "Geoinformation Stadt Bern, opendata.swiss terms_open",
+  "city_layer": {
+   "kerb_points": 873,
+   "with_letter": 58,
+   "stops": 422,
+   "note": "the layer carries a kerb letter only at stops with several lettered kerbs; it has no kerb numbers"
+  },
+  "edges_without_atlas_coordinates": {
+   "total": 23,
+   "filled_from_city_kerb": 0,
+   "left_without_geometry": 23,
+   "rule": "exactly one city kerb of the same stop carries the edge's designation or operational designation",
+   "filled": [],
+   "not_filled": [
+    {
+     "edge_sloid": "ch:1:sloid:7061:0:2374",
+     "station_number": "8507061",
+     "station_name": "Bern, Brunnadernstrasse",
+     "designation": null,
+     "designation_operational": "17",
+     "city_kerbs_at_stop": 4,
+     "city_kerb_labels": [],
+     "reason": "the city layer has 4 kerb point(s) for this stop but none carries a letter or number, so nothing can be matched to the edge's designation"
+    },
+    {
+     "edge_sloid": "ch:1:sloid:7060:0:2373",
+     "station_number": "8507060",
+     "station_name": "Bern, Helvetiaplatz",
+     "designation": null,
+     "designation_operational": "12",
+     "city_kerbs_at_stop": 4,
+     "city_kerb_labels": [],
+     "reason": "the city layer has 4 kerb point(s) for this stop but none carries a letter or number, so nothing can be matched to the edge's designation"
+    },
+    {
+     "edge_sloid": "ch:1:sloid:71393:0:32",
+     "station_number": "8571393",
+     "station_name": "Bern, Eigerplatz",
+     "designation": null,
+     "designation_operational": "32",
+     "city_kerbs_at_stop": 4,
+     "city_kerb_labels": [],
+     "reason": "the city layer has 4 kerb point(s) for this stop but none carries a letter or number, so nothing can be matched to the edge's designation"
+    },
+    {
+     "edge_sloid": "ch:1:sloid:71393:0:56",
+     "station_number": "8571393",
+     "station_name": "Bern, Eigerplatz",
+     "designation": null,
+     "designation_operational": "56",
+     "city_kerbs_at_stop": 4,
+     "city_kerb_labels": [],
+     "reason": "the city layer has 4 kerb point(s) for this stop but none carries a letter or number, so nothing can be matched to the edge's designation"
+    },
+    {
+     "edge_sloid": "ch:1:sloid:76646:0:66",
+     "station_number": "8576646",
+     "station_name": "Bern, Bahnhof",
+     "designation": null,
+     "designation_operational": "66",
+     "city_kerbs_at_stop": 13,
+     "city_kerb_labels": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M"
+     ],
+     "reason": "none of the city kerb labels ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'] equals the edge's designation ['66']"
+    },
+    {
+     "edge_sloid": "ch:1:sloid:76646:0:80",
+     "station_number": "8576646",
+     "station_name": "Bern, Bahnhof",
+     "designation": null,
+     "designation_operational": "80",
+     "city_kerbs_at_stop": 13,
+     "city_kerb_labels": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M"
+     ],
+     "reason": "none of the city kerb labels ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'] equals the edge's designation ['80']"
+    },
+    {
+     "edge_sloid": "ch:1:sloid:76990:0:1895",
+     "station_number": "8576990",
+     "station_name": "Bern, Guisanplatz Expo",
+     "designation": null,
+     "designation_operational": "10",
+     "city_kerbs_at_stop": 3,
+     "city_kerb_labels": [],
+     "reason": "the city layer has 3 kerb point(s) for this stop but none carries a letter or number, so nothing can be matched to the edge's designation"
+    },
+    {
+     "edge_sloid": "ch:1:sloid:77005:0:9",
+     "station_number": "8577005",
+     "station_name": "Ostermundigen, Wegm\u00fchleg\u00e4ssli",
+     "designation": null,
+     "designation_operational": "09",
+     "city_kerbs_at_stop": 2,
+     "city_kerb_labels": [],
+     "reason": "the city layer has 2 kerb point(s) for this stop but none carries a letter or number, so nothing can be matched to the edge's designation"
+    },
+    {
+     "edge_sloid": "ch:1:sloid:87484:0:22",
+     "station_number": "8587484",
+     "station_name": "Bern, Sch\u00f6nburg",
+     "designation": null,
+     "designation_operational": "22",
+     "city_kerbs_at_stop": 2,
+     "city_kerb_labels": [],
+     "reason": "the city layer has 2 kerb point(s) for this stop but none carries a letter or number, so nothing can be matched to the edge's designation"
+    },
+    {
+     "edge_sloid": "ch:1:sloid:89003:0:2370",
+     "station_number": "8589003",
+     "station_name": "Bern, Thunplatz",
+     "designation": null,
+     "designation_operational": "12",
+     "city_kerbs_at_stop": 4,
+     "city_kerb_labels": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "reason": "none of the city kerb labels ['A', 'B', 'C', 'D'] equals the edge's designation ['12']"
+    },
+    {
+     "edge_sloid": "ch:1:sloid:88994:0:715",
+     "station_number": "8588994",
+     "station_name": "Bern, Gewerbeschule",
+     "designation": null,
+     "designation_operational": "11",
+     "city_kerbs_at_stop": 2,
+     "city_kerb_labels": [],
+     "reason": "the city layer has 2 kerb point(s) for this stop but none carries a letter or number, so nothing can be matched to the edge's designation"
+    },
+    {
+     "edge_sloid": "ch:1:sloid:88994:0:716",
+     "station_number": "8588994",
+     "station_name": "Bern, Gewerbeschule",
+     "designation": null,
+     "designation_operational": "12",
+     "city_kerbs_at_stop": 2,
+     "city_kerb_labels": [],
+     "reason": "the city layer has 2 kerb point(s) for this stop but none carries a letter or number, so nothing can be matched to the edge's designation"
+    },
+    {
+     "edge_sloid": "ch:1:sloid:90006:0:2371",
+     "station_number": "8590006",
+     "station_name": "Bern, Luisenstrasse",
+     "designation": null,
+     "designation_operational": "12",
+     "city_kerbs_at_stop": 2,
+     "city_kerb_labels": [],
+     "reason": "the city layer has 2 kerb point(s) for this stop but none carries a letter or number, so nothing can be matched to the edge's designation"
+    },
+    {
+     "edge_sloid": "ch:1:sloid:90006:0:2372",
+     "station_number": "8590006",
+     "station_name": "Bern, Luisenstrasse",
+     "designation": null,
+     "designation_operational": "11",
+     "city_kerbs_at_stop": 2,
+     "city_kerb_labels": [],
+     "reason": "the city layer has 2 kerb point(s) for this stop but none carries a letter or number, so nothing can be matched to the edge's designation"
+    },
+    {
+     "edge_sloid": "ch:1:sloid:90052::11",
+     "station_number": "8590052",
+     "station_name": "Ostermundigen, R\u00fcti",
+     "designation": "B",
+     "designation_operational": "11",
+     "city_kerbs_at_stop": 1,
+     "city_kerb_labels": [],
+     "reason": "the city layer has 1 kerb point(s) for this stop but none carries a letter or number, so nothing can be matched to the edge's designation"
+    },
+    {
+     "edge_sloid": "ch:1:sloid:90084:0:12",
+     "station_number": "8590084",
+     "station_name": "Bern, Technologiepark",
+     "designation": null,
+     "designation_operational": "12",
+     "city_kerbs_at_stop": 2,
+     "city_kerb_labels": [],
+     "reason": "the city layer has 2 kerb point(s) for this stop but none carries a letter or number, so nothing can be matched to the edge's designation"
+    },
+    {
+     "edge_sloid": "ch:1:sloid:95137:0:1442",
+     "station_number": "8595137",
+     "station_name": "Bern, Weyermannshaus Bad",
+     "designation": null,
+     "designation_operational": "5",
+     "city_kerbs_at_stop": 1,
+     "city_kerb_labels": [],
+     "reason": "the city layer has 1 kerb point(s) for this stop but none carries a letter or number, so nothing can be matched to the edge's designation"
+    },
+    {
+     "edge_sloid": "ch:1:sloid:95136:0:1971",
+     "station_number": "8595136",
+     "station_name": "Bern, Wankdorfbr\u00fccke",
+     "designation": null,
+     "designation_operational": "04",
+     "city_kerbs_at_stop": 2,
+     "city_kerb_labels": [],
+     "reason": "the city layer has 2 kerb point(s) for this stop but none carries a letter or number, so nothing can be matched to the edge's designation"
+    },
+    {
+     "edge_sloid": "ch:1:sloid:95932:0:2247",
+     "station_number": "8595932",
+     "station_name": "Schliern, Bus-Endstation",
+     "designation": null,
+     "designation_operational": "3",
+     "city_kerbs_at_stop": 1,
+     "city_kerb_labels": [],
+     "reason": "the city layer has 1 kerb point(s) for this stop but none carries a letter or number, so nothing can be matched to the edge's designation"
+    },
+    {
+     "edge_sloid": "ch:1:sloid:95932:0:2248",
+     "station_number": "8595932",
+     "station_name": "Schliern, Bus-Endstation",
+     "designation": null,
+     "designation_operational": "4",
+     "city_kerbs_at_stop": 1,
+     "city_kerb_labels": [],
+     "reason": "the city layer has 1 kerb point(s) for this stop but none carries a letter or number, so nothing can be matched to the edge's designation"
+    },
+    {
+     "edge_sloid": "ch:1:sloid:71435:0:13",
+     "station_number": "8571435",
+     "station_name": "Bern, Holenacker",
+     "designation": null,
+     "designation_operational": "13",
+     "city_kerbs_at_stop": 2,
+     "city_kerb_labels": [],
+     "reason": "the city layer has 2 kerb point(s) for this stop but none carries a letter or number, so nothing can be matched to the edge's designation"
+    },
+    {
+     "edge_sloid": "ch:1:sloid:7982:0:3",
+     "station_number": "8507982",
+     "station_name": "Bern, Oberbottigen Dorf",
+     "designation": null,
+     "designation_operational": "3",
+     "city_kerbs_at_stop": 2,
+     "city_kerb_labels": [],
+     "reason": "the city layer has 2 kerb point(s) for this stop but none carries a letter or number, so nothing can be matched to the edge's designation"
+    },
+    {
+     "edge_sloid": "ch:1:sloid:82210:0:618032",
+     "station_number": "8582210",
+     "station_name": "Bern, Untermattweg",
+     "designation": null,
+     "designation_operational": "02",
+     "city_kerbs_at_stop": 2,
+     "city_kerb_labels": [],
+     "reason": "the city layer has 2 kerb point(s) for this stop but none carries a letter or number, so nothing can be matched to the edge's designation",
+     "city_kerb_candidate_objectid": 933
+    }
+   ],
+   "candidates_by_elimination": {
+    "count": 1,
+    "note": "recorded as the property 'city_kerb_candidate', not as geometry",
+    "edges": [
+     "ch:1:sloid:82210:0:618032"
+    ]
+   }
+  },
+  "pairing": {
+   "by_station_and_letter": 60,
+   "by_position": 602,
+   "rule_by_position": "city kerb point nearest to the edge, at most 6 m from its line (12 m from the atlas point when the edge has no line), and the edge is that kerb's nearest edge",
+   "located_edges_at_city_stops_left_unpaired": 261,
+   "unpaired_note": "no city kerb within the limit, or the nearest kerb is nearer to another edge; these edges get no lines_at_kerb",
+   "unpaired_nearest_city_kerb_m": {
+    "median": 17.5,
+    "p90": 94.1,
+    "over_40_m": 72
+   },
+   "unpaired_farthest_ten": [
+    {
+     "edge_sloid": "ch:1:sloid:7078:0:568472",
+     "station_name": "Wabern bei Bern",
+     "nearest_city_kerb_m": 488.3,
+     "mutual_nearest": false
+    },
+    {
+     "edge_sloid": "ch:1:sloid:7078:0:816533",
+     "station_name": "Wabern bei Bern",
+     "nearest_city_kerb_m": 481.2,
+     "mutual_nearest": true
+    },
+    {
+     "edge_sloid": "ch:1:sloid:77004:0:11",
+     "station_name": "Ostermundigen, Zollgasse",
+     "nearest_city_kerb_m": 405.4,
+     "mutual_nearest": false
+    },
+    {
+     "edge_sloid": "ch:1:sloid:77004:0:14",
+     "station_name": "Ostermundigen, Zollgasse",
+     "nearest_city_kerb_m": 396.5,
+     "mutual_nearest": false
+    },
+    {
+     "edge_sloid": "ch:1:sloid:7251:0:5",
+     "station_name": "G\u00fcmligen, Seidenberg",
+     "nearest_city_kerb_m": 266.0,
+     "mutual_nearest": false
+    },
+    {
+     "edge_sloid": "ch:1:sloid:7251:0:4",
+     "station_name": "G\u00fcmligen, Seidenberg",
+     "nearest_city_kerb_m": 260.7,
+     "mutual_nearest": false
+    },
+    {
+     "edge_sloid": "ch:1:sloid:95142:0:7",
+     "station_name": "Bern, Weissenb\u00fchl (Tram)",
+     "nearest_city_kerb_m": 246.9,
+     "mutual_nearest": false
+    },
+    {
+     "edge_sloid": "ch:1:sloid:95142:0:2",
+     "station_name": "Bern, Weissenb\u00fchl (Tram)",
+     "nearest_city_kerb_m": 235.4,
+     "mutual_nearest": false
+    },
+    {
+     "edge_sloid": "ch:1:sloid:7079:0:405080",
+     "station_name": "Bern Weissenb\u00fchl",
+     "nearest_city_kerb_m": 232.9,
+     "mutual_nearest": false
+    },
+    {
+     "edge_sloid": "ch:1:sloid:7079:0:133445",
+     "station_name": "Bern Weissenb\u00fchl",
+     "nearest_city_kerb_m": 228.9,
+     "mutual_nearest": true
+    }
+   ],
+   "same_kerb_other_letter": [
+    {
+     "edge_sloid": "ch:1:sloid:76646:0:25",
+     "station_name": "Bern, Bahnhof",
+     "atlas_designation": "K1",
+     "city_kerb_letter": "K",
+     "dist_m": 2.6
+    }
+   ]
+  },
+  "city_kerb_letters_added": {
+   "count": 0,
+   "limit_m": 6.0,
+   "edges": []
+  },
+  "atlas_vs_city_distance": {
+   "note": "independent check of the atlas coordinates. Pairs by letter are independent of position, so their distances are an unbiased check; pairs by position were selected within the pairing limit of the edge line, so only their atlas-point distance is informative. The city point and the atlas point need not mark the same place along a kerb. 'edge_geometry_to_city_kerb_m' is the distance from the city point to this folder's edge line.",
+   "same_station_and_letter": {
+    "n": 60,
+    "atlas_point_to_city_kerb_m": {
+     "median": 10.2,
+     "p75": 16.5,
+     "p90": 20.7,
+     "p95": 23.3,
+     "max": 34.3
+    },
+    "edge_geometry_to_city_kerb_m": {
+     "median": 1.2,
+     "p75": 2.2,
+     "p90": 4.4,
+     "p95": 9.0,
+     "max": 21.2
+    },
+    "within_m": {
+     "2": 2,
+     "5": 8,
+     "10": 30,
+     "20": 54,
+     "30": 59
+    },
+    "worst_ten": [
+     {
+      "edge_sloid": "ch:1:sloid:90021:0:1",
+      "station_name": "Bern, Viktoriaplatz",
+      "letter": "B",
+      "atlas_point_to_city_kerb_m": 34.3,
+      "edge_geometry_to_city_kerb_m": 4.4,
+      "geometry_method": "osm_platform"
+     },
+     {
+      "edge_sloid": "ch:1:sloid:76646:0:1427",
+      "station_name": "Bern, Bahnhof",
+      "letter": "E",
+      "atlas_point_to_city_kerb_m": 25.6,
+      "edge_geometry_to_city_kerb_m": 0.8,
+      "geometry_method": "osm_platform"
+     },
+     {
+      "edge_sloid": "ch:1:sloid:79898:0:15",
+      "station_name": "Bern, B\u00fcmpliz Unterf\u00fchrung",
+      "letter": "D",
+      "atlas_point_to_city_kerb_m": 23.3,
+      "edge_geometry_to_city_kerb_m": 0.2,
+      "geometry_method": "osm_platform"
+     },
+     {
+      "edge_sloid": "ch:1:sloid:76646:0:13",
+      "station_name": "Bern, Bahnhof",
+      "letter": "E",
+      "atlas_point_to_city_kerb_m": 23.2,
+      "edge_geometry_to_city_kerb_m": 0.8,
+      "geometry_method": "osm_platform"
+     },
+     {
+      "edge_sloid": "ch:1:sloid:76646:0:3",
+      "station_name": "Bern, Bahnhof",
+      "letter": "C",
+      "atlas_point_to_city_kerb_m": 21.7,
+      "edge_geometry_to_city_kerb_m": 1.2,
+      "geometry_method": "osm_platform"
+     },
+     {
+      "edge_sloid": "ch:1:sloid:76646:0:28",
+      "station_name": "Bern, Bahnhof",
+      "letter": "G",
+      "atlas_point_to_city_kerb_m": 20.7,
+      "edge_geometry_to_city_kerb_m": 5.2,
+      "geometry_method": "osm_platform"
+     },
+     {
+      "edge_sloid": "ch:1:sloid:79896:0:4",
+      "station_name": "Bern, Hirschengraben",
+      "letter": "C",
+      "atlas_point_to_city_kerb_m": 19.4,
+      "edge_geometry_to_city_kerb_m": 1.2,
+      "geometry_method": "osm_platform"
+     },
+     {
+      "edge_sloid": "ch:1:sloid:76646:0:1",
+      "station_name": "Bern, Bahnhof",
+      "letter": "B",
+      "atlas_point_to_city_kerb_m": 19.2,
+      "edge_geometry_to_city_kerb_m": 1.3,
+      "geometry_method": "osm_platform"
+     },
+     {
+      "edge_sloid": "ch:1:sloid:79898:0:17",
+      "station_name": "Bern, B\u00fcmpliz Unterf\u00fchrung",
+      "letter": "B",
+      "atlas_point_to_city_kerb_m": 18.8,
+      "edge_geometry_to_city_kerb_m": 0.5,
+      "geometry_method": "osm_platform"
+     },
+     {
+      "edge_sloid": "ch:1:sloid:7110:0:1",
+      "station_name": "Bern, Zytglogge",
+      "letter": "F",
+      "atlas_point_to_city_kerb_m": 18.2,
+      "edge_geometry_to_city_kerb_m": 0.2,
+      "geometry_method": "osm_platform"
+     }
+    ]
+   },
+   "paired_by_position": {
+    "n": 602,
+    "atlas_point_to_city_kerb_m": {
+     "median": 7.1,
+     "p75": 11.3,
+     "p90": 16.4,
+     "p95": 21.5,
+     "max": 42.2
+    },
+    "edge_geometry_to_city_kerb_m": {
+     "median": 1.8,
+     "p75": 3.2,
+     "p90": 4.7,
+     "p95": 5.3,
+     "max": 11.1
+    },
+    "within_m": {
+     "2": 22,
+     "5": 167,
+     "10": 420,
+     "20": 563,
+     "30": 596
+    },
+    "worst_ten": [
+     {
+      "edge_sloid": "ch:1:sloid:90020:0:1",
+      "station_name": "Bern, Kursaal",
+      "atlas_point_to_city_kerb_m": 42.2,
+      "edge_geometry_to_city_kerb_m": 1.4,
+      "geometry_method": "osm_platform"
+     },
+     {
+      "edge_sloid": "ch:1:sloid:30259:0:11",
+      "station_name": "G\u00fcmligen, Hofgut",
+      "atlas_point_to_city_kerb_m": 35.9,
+      "edge_geometry_to_city_kerb_m": 1.2,
+      "geometry_method": "osm_platform"
+     },
+     {
+      "edge_sloid": "ch:1:sloid:88699:0:1",
+      "station_name": "Bern, Wankdorf Center",
+      "atlas_point_to_city_kerb_m": 35.3,
+      "edge_geometry_to_city_kerb_m": 2.1,
+      "geometry_method": "osm_platform"
+     },
+     {
+      "edge_sloid": "ch:1:sloid:90015:0:1",
+      "station_name": "Bern, Hasler",
+      "atlas_point_to_city_kerb_m": 31.3,
+      "edge_geometry_to_city_kerb_m": 2.1,
+      "geometry_method": "osm_platform"
+     },
+     {
+      "edge_sloid": "ch:1:sloid:7060:0:1",
+      "station_name": "Bern, Helvetiaplatz",
+      "atlas_point_to_city_kerb_m": 31.1,
+      "edge_geometry_to_city_kerb_m": 0.3,
+      "geometry_method": "osm_platform"
+     },
+     {
+      "edge_sloid": "ch:1:sloid:8075:0:1",
+      "station_name": "Bern, Breitenrain",
+      "atlas_point_to_city_kerb_m": 30.9,
+      "edge_geometry_to_city_kerb_m": 1.2,
+      "geometry_method": "osm_platform"
+     },
+     {
+      "edge_sloid": "ch:1:sloid:88562:0:1",
+      "station_name": "Wabern, Gurtenbahn",
+      "atlas_point_to_city_kerb_m": 30.0,
+      "edge_geometry_to_city_kerb_m": 0.2,
+      "geometry_method": "osm_platform"
+     },
+     {
+      "edge_sloid": "ch:1:sloid:71435:0:5",
+      "station_name": "Bern, Holenacker",
+      "atlas_point_to_city_kerb_m": 30.0,
+      "edge_geometry_to_city_kerb_m": 0.1,
+      "geometry_method": "osm_platform"
+     },
+     {
+      "edge_sloid": "ch:1:sloid:88989:0:1",
+      "station_name": "Bern, B\u00e4renplatz",
+      "atlas_point_to_city_kerb_m": 29.5,
+      "edge_geometry_to_city_kerb_m": 3.0,
+      "geometry_method": "osm_platform"
+     },
+     {
+      "edge_sloid": "ch:1:sloid:71393:0:22",
+      "station_name": "Bern, Eigerplatz",
+      "atlas_point_to_city_kerb_m": 26.5,
+      "edge_geometry_to_city_kerb_m": 0.6,
+      "geometry_method": "osm_platform"
+     }
+    ]
+   }
+  },
+  "letter_disagreements": {
+   "rule": "an edge whose atlas letter exists in the city layer, but another lettered city kerb is more than 5 m nearer to the edge",
+   "count": 0,
+   "edges": []
+  },
+  "letter_sets_per_stop": [
+   {
+    "station_number": "8507110",
+    "station_name": "Bern, Zytglogge",
+    "atlas": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "E",
+     "F",
+     "G",
+     "H",
+     "K"
+    ],
+    "city": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "E",
+     "F",
+     "G",
+     "H"
+    ],
+    "only_atlas": [
+     "K"
+    ],
+    "only_city": []
+   },
+   {
+    "station_number": "8507785",
+    "station_name": "Bern, Hauptbahnhof",
+    "atlas": [
+     "R",
+     "S",
+     "T",
+     "U",
+     "V",
+     "W",
+     "X",
+     "Y"
+    ],
+    "city": [
+     "S",
+     "T",
+     "U",
+     "V"
+    ],
+    "only_atlas": [
+     "R",
+     "W",
+     "X",
+     "Y"
+    ],
+    "only_city": []
+   },
+   {
+    "station_number": "8576646",
+    "station_name": "Bern, Bahnhof",
+    "atlas": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "E",
+     "F",
+     "G",
+     "H",
+     "I",
+     "J",
+     "K1",
+     "K2",
+     "L",
+     "M",
+     "N",
+     "Q",
+     "Z"
+    ],
+    "city": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "E",
+     "F",
+     "G",
+     "H",
+     "I",
+     "J",
+     "K",
+     "L",
+     "M"
+    ],
+    "only_atlas": [
+     "K1",
+     "K2",
+     "N",
+     "Q",
+     "Z"
+    ],
+    "only_city": [
+     "K"
+    ]
+   },
+   {
+    "station_number": "8576983",
+    "station_name": "Worblaufen, Bahnhof",
+    "atlas": [
+     "A",
+     "B"
+    ],
+    "city": [
+     "A",
+     "B"
+    ],
+    "only_atlas": [],
+    "only_city": []
+   },
+   {
+    "station_number": "8579896",
+    "station_name": "Bern, Hirschengraben",
+    "atlas": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "E",
+     "F",
+     "N"
+    ],
+    "city": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "E",
+     "F"
+    ],
+    "only_atlas": [
+     "N"
+    ],
+    "only_city": []
+   },
+   {
+    "station_number": "8589003",
+    "station_name": "Bern, Thunplatz",
+    "atlas": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "city": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "only_atlas": [],
+    "only_city": []
+   },
+   {
+    "station_number": "8589226",
+    "station_name": "Bern B\u00fcmpliz S\u00fcd, Bahnhof",
+    "atlas": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "city": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "only_atlas": [],
+    "only_city": []
+   },
+   {
+    "station_number": "8589991",
+    "station_name": "Bern, Monbijou",
+    "atlas": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "city": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "only_atlas": [],
+    "only_city": []
+   },
+   {
+    "station_number": "8590021",
+    "station_name": "Bern, Viktoriaplatz",
+    "atlas": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "city": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "only_atlas": [],
+    "only_city": []
+   },
+   {
+    "station_number": "8590129",
+    "station_name": "Bern Wankdorf, Bahnhof",
+    "atlas": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "city": [
+     "A",
+     "C",
+     "D"
+    ],
+    "only_atlas": [
+     "B"
+    ],
+    "only_city": []
+   },
+   {
+    "station_number": "8595543",
+    "station_name": "Bern Wankdorf, Bahnhof Nord",
+    "atlas": [
+     "E",
+     "F",
+     "G"
+    ],
+    "city": [
+     "E",
+     "F"
+    ],
+    "only_atlas": [
+     "G"
+    ],
+    "only_city": []
+   },
+   {
+    "station_number": "8579898",
+    "station_name": "Bern, B\u00fcmpliz Unterf\u00fchrung",
+    "atlas": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "city": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "only_atlas": [],
+    "only_city": []
+   }
+  ]
  },
  "osm_platform_candidates": 565,
  "sbb_kerb_lines": 60,

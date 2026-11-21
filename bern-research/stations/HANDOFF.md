@@ -1,6 +1,6 @@
 # stations/ HANDOFF
 
-Thread: Bern Station Geometry and 3D Models. State of 2026-11-21, 02:53 Europe/Zurich. Formats and schemas are in
+Thread: Bern Station Geometry and 3D Models. State of 2026-11-21, 03:08 Europe/Zurich. Formats and schemas are in
 [README.md](README.md); this file gives coverage, limits, findings, and how to rebuild and load.
 
 ## What is here
@@ -15,7 +15,7 @@ Thread: Bern Station Geometry and 3D Models. State of 2026-11-21, 02:53 Europe/Z
 | 3D models | `models/<slug>.glb` + `.model.json` | 59 models, 2.7 MB of GLB, 124,164 triangles |
 | Fallback | `models/archetypes/*.glb`, `data/edge_placements.json` | 4 pieces, 1,073 placements |
 | Provenance | `SOURCES.json`, `references.json` | 90 inputs, 5 plans |
-| Checks | `validation/report.md`, `report.json` | 0 FAIL, 49 WARN, 763 OK |
+| Checks | `validation/report.md`, `report.json` | 0 FAIL, 49 WARN, 767 OK |
 
 Study area: LV95 E 2591500-2605800, N 1194000-1205200 (the city of Bern and the inner ring). All 598 `bern` tier
 boarding edges of the transit folder and all 503 `ring` tier edges that fall in this box are present (checked
@@ -33,13 +33,13 @@ covered.
 | OSM platform line or polygon side | 511 | community data; median 2.1 m, 95 % within 6.8 m, all within 15 m of the atlas point. 221 of them are confirmed by a surveyed pavement boundary within a mean of 1 m. A tram or bus edge never takes a railway platform, and a platform line contested by two different edges goes to the nearer one (28 such claims resolved) |
 | Constructed straight line | 496 | approximate: passes through the atlas point, bearing from atlas or the nearest road/track; length is nominal (42 m tram, 18 m bus) unless atlas gives one |
 | Point only | 9 | atlas coordinate, no bearing derivable |
-| No geometry | 23 | atlas publishes no coordinate (`geometry: null`) |
+| No geometry | 23 | atlas publishes no coordinate (`geometry: null`); none could be matched to a Stadt Bern kerb by label, each says why in `no_geometry_reason` |
 
 Also on the edges: platform side for 1,055 (for tram and bus edges with an atlas direction of travel it is the
 right-hand side of that direction, 731 of 749 consistent; the other 18 follow their OSM platform polygon); atlas accessibility attributes (`prm`) for 1,049; official step-free
 access from named station entrances (`step_free_access`) for 92 rail edges; lines served (`lines_at_kerb`, Stadt Bern
-kerb layer) for 470 (60 matched by station number and kerb letter, 410 by station number and proximity because atlas
-has no letter there). Only 356 edges have a public letter or track number in atlas at all. 20 edges are not in the
+kerb layer) for 662 (60 paired by station number and kerb letter, 602 by position: the city kerb nearest to the
+edge line within 6 m, mutual). Only 356 edges have a public letter or track number in atlas at all. 20 edges are not in the
 atlas "actual date" file this folder downloaded (other validity dates); their rows come from the transit folder and
 say so in `atlas_record_origin`.
 
@@ -102,6 +102,71 @@ Every item below is labelled on the feature, not only here.
   Crossing a road is only modelled where OSM has a footway across it.
 - **RBS, BLS and bus operators** publish no kerb survey; only SBB infrastructure has surveyed kerb points.
 
+## Stadt Bern kerb points as a second official position source (lead request of 03:05)
+
+The city layer has 873 kerb points at 422 stops. Only 58 of them carry a kerb letter (at the 12 stops with lettered
+kerbs); none carries a number. Full lists are in `data/build-report.json` under `city_kerb_check`; the code is
+`tools/city_kerbs.py`.
+
+**1. Edges without atlas coordinates: 0 of 23 filled.** The rule was: exactly one city kerb of the same stop carries
+the edge's `designation` or `designation_operational`. It matches nowhere:
+- 20 edges: the stop's city kerbs (1 to 4 of them) carry no letter and no number, and the edge has only an
+  operational number, so there is no label to match. This includes Ostermundigen Rueti, the only one of the 23 with a
+  public letter (B): its single city kerb is unlettered.
+- 3 edges (Bern Bahnhof operational 66 and 80, Thunplatz operational 12): the city kerbs are lettered, the edges
+  have no letter.
+All 23 stay `geometry: null` and now say why in `no_geometry_reason`. One of them, `ch:1:sloid:82210:0:618032` (Bern,
+Untermattweg, operational 02), carries a `city_kerb_candidate` property: it is the stop's only edge without a
+coordinate and the city has exactly one kerb there that no located edge is nearest to. That is elimination, not a
+label match, so it is a property and not geometry.
+
+**2. City kerb letters added: 0.** Only 7 located edges without a public letter are at stops where the city has
+letters (4 at Zytglogge, 3 at Bern Bahnhof, all operational extras). Their nearest lettered city kerb is 25 to 141 m
+away, far beyond "a few metres" (limit used: 6 m, mutual nearest). atlas `designation` is untouched everywhere.
+
+**3. Independent accuracy check of the atlas coordinates.**
+
+| Pairing | Pairs | atlas point to city kerb point | city kerb point to my edge line |
+|---|---|---|---|
+| same station number and kerb letter (independent of position) | 60 | median 10.2 m, p75 16.5, p90 20.7, p95 23.3, max 34.3 m; 8 within 5 m, 30 within 10 m, 54 within 20 m | median 1.2 m, p90 4.4, max 21.2 m |
+| by position: city kerb nearest to the edge line (at most 6 m), and the edge is that kerb's nearest edge | 602 | median 7.1 m, p75 11.3, p90 16.4, p95 21.5, max 42.2 m | median 1.8 m, p90 4.7, max 11.1 m (bounded by the rule) |
+
+Reading: atlas and the city agree on which kerb is which, but their points usually mark different places along the
+same kerb, about 10 m apart. The city points lie on the edge lines of this folder (1.2 m median), which is an
+independent confirmation of those lines. So an atlas coordinate is good for "which kerb", not for "where along it".
+
+Worst ten of the letter pairs (atlas point to city kerb point, then city kerb point to edge line):
+
+| Stop | Kerb | atlas to city | city to edge line | Edge |
+|---|---|---|---|---|
+| Bern, Viktoriaplatz | B | 34.3 m | 4.4 m | `ch:1:sloid:90021:0:1` |
+| Bern, Bahnhof | E | 25.6 m | 0.8 m | `ch:1:sloid:76646:0:1427` |
+| Bern, Buempliz Unterfuehrung | D | 23.3 m | 0.2 m | `ch:1:sloid:79898:0:15` |
+| Bern, Bahnhof | E | 23.2 m | 0.8 m | `ch:1:sloid:76646:0:13` |
+| Bern, Bahnhof | C | 21.7 m | 1.2 m | `ch:1:sloid:76646:0:3` |
+| Bern, Bahnhof | G | 20.7 m | 5.2 m | `ch:1:sloid:76646:0:28` |
+| Bern, Hirschengraben | C | 19.4 m | 1.2 m | `ch:1:sloid:79896:0:4` |
+| Bern, Bahnhof | B | 19.2 m | 1.3 m | `ch:1:sloid:76646:0:1` |
+| Bern, Buempliz Unterfuehrung | B | 18.8 m | 0.5 m | `ch:1:sloid:79898:0:17` |
+| Bern, Zytglogge | F | 18.2 m | 0.2 m | `ch:1:sloid:7110:0:1` |
+
+Worst of the position pairs: Bern Kursaal 42.2 m, Guemligen Hofgut 35.9 m, Bern Wankdorf Center 35.3 m, Bern Hasler
+31.3 m, Bern Helvetiaplatz 31.1 m (each with the city point within 2.1 m of the edge line).
+261 located edges at stops the city layer knows stay unpaired (no city kerb within the limit, or the nearest kerb
+belongs to another edge); 72 of them are more than 40 m from any city kerb of their stop.
+
+**Letter disagreements: none.** No atlas-lettered edge has another lettered city kerb more than 5 m nearer than its
+own letter. Naming differences only:
+- Bern, Bahnhof: atlas `K1` is the city's `K` (2.6 m). Letters only in atlas: K2, N, Q, Z.
+- Letters only in atlas elsewhere: Zytglogge K; Bern Hauptbahnhof (PostAuto) R, W, X, Y (the city has S, T, U, V);
+  Hirschengraben N; Wankdorf Bahnhof B; Wankdorf Bahnhof Nord G. No letter exists only in the city layer.
+
+**Side effect, a correction.** `lines_at_kerb` (lines and destinations per kerb) used to come from the city kerb
+nearest to the atlas point within 12 m. Because atlas and city points sit about 10 m apart along a kerb, that rule
+had picked the kerb across the street for 18 edges (for example Bern Pestalozzi and Inselspital, where the two
+directions were swapped). It is replaced by the position pairing above. `lines_at_kerb` is now on 662 edges (60 by
+letter, 602 by position; before: 470), each with the pairing in `verified_against`.
+
 ## Findings worth acting on
 
 1. **atlas coordinates on the wrong track.** Bern Wankdorf tracks 2, 3, 5, 7 and Bern `ch:1:sloid:7000:6:32` have an
@@ -119,6 +184,8 @@ Every item below is labelled on the feature, not only here.
 5. Sector data: SBB boards stand at sector boundaries and show the sector on each side; atlas sector points sit at
    the same places. `sector_span` uses that to give the stretch of each sector.
 6. SBB publishes no kerb points for Bern track 3 and only 179 m of track 4.
+7. **atlas points and Stadt Bern kerb points mark different places along a kerb**, about 10 m apart in the median
+   (60 pairs matched by letter). Both identify the same kerb; neither is a reliable position along it.
 
 ## How to rebuild
 

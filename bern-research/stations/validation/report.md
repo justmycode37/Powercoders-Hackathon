@@ -1,6 +1,6 @@
 # stations/ validation report
 
-Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN, 763 OK.** Lists that are cut short here are complete in `report.json`.
+Generated 2026-11-21T02:09:21Z by `python tools/validate.py`. **0 FAIL, 49 WARN, 767 OK.** Lists that are cut short here are complete in `report.json`.
 
 - **OK** data/boarding_edges.geojson: unique ids: 1105 features, 0 duplicate ids
 - **OK** data/boarding_edges.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -30,7 +30,6 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** edge geometry lies within 15.0 m of the atlas edge point, except edges flagged atlas_position_conflict (recomputed from the GeoJSON); unflagged beyond: 0: av_bahnsteig_outline: n=3, median 0.56 m, p95 1.5 m, max 1.5 m; constructed: n=496, median 0.0 m, p95 0.0 m, max 0.01 m; osm_platform: n=511, median 2.11 m, p95 6.84 m, max 14.92 m; point_only: n=9, median 0.0 m, p95 0.01 m, max 0.01 m; sbb_behig_kerb_points: n=63, median 0.25 m, p95 9.97 m, max 85.55 m
 - **WARN** edges more than 5 m from their atlas point: 50 edges (listed in report.json)
 - **WARN** atlas coordinate sits on a different SBB track than its track number: 5 edges: Bern 12 (ch:1:sloid:7000:6:32, 10.08 m), Bern Wankdorf 2 (ch:1:sloid:16161:1:1, 7.94 m), Bern Wankdorf 3 (ch:1:sloid:16161:1:2, 9.97 m), Bern Wankdorf 5 (ch:1:sloid:16161:2:3, 85.55 m), Bern Wankdorf 7 (ch:1:sloid:16161:3:5, 14.36 m)
-- **WARN** edges without any geometry (atlas publishes no coordinates): 23 edges
 - **OK** boarding edges by geometry method: {'osm_platform': 511, 'constructed': 496, 'sbb_behig_kerb_points': 63, 'none': 23, 'point_only': 9, 'av_bahnsteig_outline': 3}
 - **WARN** sector_marker: distance to the linked edge line <= 12.0 m: 126 of 126 linked; median 2.4 m, p95 100.1 m, max 180.1 m; 10 over
 - **WARN** sector_board: distance to the linked edge line <= 12.0 m: 142 of 152 linked; median 2.4 m, p95 5.1 m, max 180.0 m; 4 over
@@ -38,6 +37,11 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** edge_sloid references in station_features resolve to boarding_edges: 0 dangling
 - **OK** SBB surveyed kerb lines agree with OSM rail platform outlines (two independent sources): 566 sample points: median 0.17 m, p90 0.57 m, p99 8.13 m between the SBB kerb line and the nearest OSM platform boundary
 - **OK** kerb letters confirmed by Stadt Bern kerb points (same station number and letter): 60 edges confirmed (of 175 lettered tram/bus edges in the municipality); distance atlas point to city kerb point: median 10.2 m, p95 23.3 m, max 34.3 m
+- **WARN** edges without atlas coordinates: filled from a city kerb only on a unique label match, otherwise explained: 23 such edges, 0 filled, 23 left without geometry (each with no_geometry_reason); 1 carry a city_kerb_candidate property
+- **OK** edges placed on a city kerb point name the city layer and are inferred: 0 edges, 0 wrong
+- **OK** atlas edges vs Stadt Bern kerb points, paired by station number and kerb letter (independent of position): 60 pairs; atlas point to city kerb point: median 10.2 m, p90 20.7 m, max 34.3 m; city kerb point to this folder's edge line: median 1.2 m, p90 4.4 m, max 21.2 m; worst: Bern, Viktoriaplatz B 34.3 m, Bern, Bahnhof E 25.6 m, Bern, Bümpliz Unterführung D 23.3 m, Bern, Bahnhof E 23.2 m, Bern, Bahnhof C 21.7 m
+- **OK** atlas edges vs Stadt Bern kerb points, paired by position (city kerb nearest to the edge line, mutual): 602 pairs; atlas point to city kerb point: median 7.1 m, p90 16.4 m, max 42.2 m; city kerb point to this folder's edge line: median 1.8 m, p90 4.7 m, max 11.1 m; worst: Bern, Kursaal 42.2 m, Gümligen, Hofgut 35.9 m, Bern, Wankdorf Center 35.3 m, Bern, Hasler 31.3 m, Bern, Helvetiaplatz 31.1 m
+- **OK** atlas and the city layer agree on which kerb letter is where: 0 disagreements; same kerb under another name: Bern, Bahnhof atlas K1 = city K; city letters adopted for edges without an atlas letter: 0
 - **OK** surveyed pavement boundary found next to osm_platform edges (cadastral survey, city of Bern only): 283 of 511 edges; mean offset between the edge line and the surveyed boundary: median 0.58 m, p90 1.53 m; 222 within 1 m
 - **OK** surveyed pavement boundary found next to constructed edges (cadastral survey, city of Bern only): 115 of 496 edges; mean offset between the edge line and the surveyed boundary: median 1.5 m, p90 2.69 m
 - **WARN** surveyed edge length vs atlas length (within 10 %): 63 edges compared, 5 differ by more than 10 %
@@ -63,7 +67,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8504105-niederwangen: level elevations increase with level number: L-1=563.1 m (approximate), L0=567.6 m (source_derived), L1=572.1 m (approximate)
 - **WARN** focus/8504105-niederwangen: vertical connectors carry level information: 11 stairs/escalators/lifts/ramps, 11 without any level tag in OSM
 - **OK** focus/8504105-niederwangen: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 12 level-0 edges, median difference -0.2 m, 0 beyond 2 m
-- **OK** focus/8504105-niederwangen: features confirmed by a second source: passage 0/5, stairs 0/9, boarding_edge 4/12
+- **OK** focus/8504105-niederwangen: features confirmed by a second source: passage 0/5, stairs 0/9, boarding_edge 6/12
 - **OK** focus/8504105-niederwangen: walk graph is consistent: 180 nodes, 204 edges, 7 components, largest holds 92 % of nodes; boarding edges attach at median 6.9 m, max 39.8 m
 - **OK** data/focus/8504106-bern-buempliz-sued.geojson: unique ids: 81 features, 0 duplicate ids
 - **OK** data/focus/8504106-bern-buempliz-sued.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -87,7 +91,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8504108-bern-europaplatz: level elevations increase with level number: L-1=548.5 m (approximate), L0=553.0 m (approximate), L1=557.5 m (source_derived)
 - **WARN** focus/8504108-bern-europaplatz: vertical connectors carry level information: 8 stairs/escalators/lifts/ramps, 1 without any level tag in OSM
 - **OK** focus/8504108-bern-europaplatz: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 4 level-0 edges, median difference -0.1 m, 0 beyond 2 m
-- **OK** focus/8504108-bern-europaplatz: features confirmed by a second source: passage 1/7, stairs 3/5, ramp_or_link 0/2, entrance 1/2, boarding_edge 3/8
+- **OK** focus/8504108-bern-europaplatz: features confirmed by a second source: passage 1/7, stairs 3/5, ramp_or_link 0/2, entrance 1/2, boarding_edge 4/8
 - **OK** focus/8504108-bern-europaplatz: walk graph is consistent: 255 nodes, 294 edges, 7 components, largest holds 79 % of nodes; boarding edges attach at median 4.7 m, max 9.7 m
 - **OK** data/focus/8504117-oberwangen.geojson: unique ids: 30 features, 0 duplicate ids
 - **OK** data/focus/8504117-oberwangen.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -135,7 +139,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8507002-ostermundigen: level elevations increase with level number: L-1=553.8 m (approximate), L0=558.3 m (source_derived)
 - **WARN** focus/8507002-ostermundigen: vertical connectors carry level information: 4 stairs/escalators/lifts/ramps, 3 without any level tag in OSM
 - **OK** focus/8507002-ostermundigen: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 9 level-0 edges, median difference -0.1 m, 0 beyond 2 m
-- **OK** focus/8507002-ostermundigen: features confirmed by a second source: passage 0/3, stairs 0/4, entrance 0/1, boarding_edge 0/9
+- **OK** focus/8507002-ostermundigen: features confirmed by a second source: passage 0/3, stairs 0/4, entrance 0/1, boarding_edge 3/9
 - **OK** focus/8507002-ostermundigen: walk graph is consistent: 194 nodes, 235 edges, 3 components, largest holds 97 % of nodes; boarding edges attach at median 6.2 m, max 16.4 m
 - **OK** data/focus/8507003-guemligen.geojson: unique ids: 86 features, 0 duplicate ids
 - **OK** data/focus/8507003-guemligen.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -147,7 +151,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8507003-guemligen: level elevations increase with level number: L-1=558.0 m (source_derived), L0=561.7 m (source_derived)
 - **WARN** focus/8507003-guemligen: vertical connectors carry level information: 10 stairs/escalators/lifts/ramps, 6 without any level tag in OSM
 - **OK** focus/8507003-guemligen: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 9 level-0 edges, median difference 0.0 m, 0 beyond 2 m
-- **OK** focus/8507003-guemligen: features confirmed by a second source: passage 0/7, stairs 0/9, boarding_edge 0/9
+- **OK** focus/8507003-guemligen: features confirmed by a second source: passage 0/7, stairs 0/9, boarding_edge 2/9
 - **OK** focus/8507003-guemligen: walk graph is consistent: 193 nodes, 223 edges, 3 components, largest holds 98 % of nodes; boarding edges attach at median 6.9 m, max 24.4 m
 - **OK** data/focus/8507050-bern-egghoelzli.geojson: unique ids: 52 features, 0 duplicate ids
 - **OK** data/focus/8507050-bern-egghoelzli.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -159,7 +163,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8507050-bern-egghoelzli: level elevations increase with level number: L-1=548.7 m (approximate), L0=553.2 m (source_derived)
 - **OK** focus/8507050-bern-egghoelzli: vertical connectors carry level information: 0 stairs/escalators/lifts/ramps, 0 without any level tag in OSM
 - **OK** focus/8507050-bern-egghoelzli: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 7 level-0 edges, median difference 0.0 m, 0 beyond 2 m
-- **OK** focus/8507050-bern-egghoelzli: features confirmed by a second source: passage 2/2, boarding_edge 5/7
+- **OK** focus/8507050-bern-egghoelzli: features confirmed by a second source: passage 2/2, boarding_edge 6/7
 - **OK** focus/8507050-bern-egghoelzli: walk graph is consistent: 172 nodes, 217 edges, 2 components, largest holds 99 % of nodes; boarding edges attach at median 13.7 m, max 16.0 m
 - **OK** data/focus/8507060-bern-helvetiaplatz.geojson: unique ids: 73 features, 0 duplicate ids
 - **OK** data/focus/8507060-bern-helvetiaplatz.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -171,7 +175,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8507060-bern-helvetiaplatz: level elevations increase with level number: L-1=526.1 m (approximate), L0=530.6 m (source_derived)
 - **WARN** focus/8507060-bern-helvetiaplatz: vertical connectors carry level information: 4 stairs/escalators/lifts/ramps, 4 without any level tag in OSM
 - **OK** focus/8507060-bern-helvetiaplatz: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 6 level-0 edges, median difference -0.1 m, 0 beyond 2 m
-- **OK** focus/8507060-bern-helvetiaplatz: features confirmed by a second source: passage 0/2, stairs 3/4, boarding_edge 2/7
+- **OK** focus/8507060-bern-helvetiaplatz: features confirmed by a second source: passage 0/2, stairs 3/4, boarding_edge 4/7
 - **OK** focus/8507060-bern-helvetiaplatz: walk graph is consistent: 217 nodes, 272 edges, 2 components, largest holds 99 % of nodes; boarding edges attach at median 6.8 m, max 14.6 m
 - **OK** data/focus/8507061-bern-brunnadernstrasse.geojson: unique ids: 68 features, 0 duplicate ids
 - **OK** data/focus/8507061-bern-brunnadernstrasse.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -183,7 +187,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8507061-bern-brunnadernstrasse: level elevations increase with level number: L0=553.1 m (source_derived)
 - **OK** focus/8507061-bern-brunnadernstrasse: vertical connectors carry level information: 0 stairs/escalators/lifts/ramps, 0 without any level tag in OSM
 - **OK** focus/8507061-bern-brunnadernstrasse: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 6 level-0 edges, median difference -0.1 m, 0 beyond 2 m
-- **OK** focus/8507061-bern-brunnadernstrasse: features confirmed by a second source: passage 0/1, boarding_edge 1/7
+- **OK** focus/8507061-bern-brunnadernstrasse: features confirmed by a second source: passage 0/1, boarding_edge 4/7
 - **OK** focus/8507061-bern-brunnadernstrasse: walk graph is consistent: 149 nodes, 187 edges, 2 components, largest holds 99 % of nodes; boarding edges attach at median 5.7 m, max 8.0 m
 - **OK** data/focus/8507062-muri-bei-bern.geojson: unique ids: 21 features, 0 duplicate ids
 - **OK** data/focus/8507062-muri-bei-bern.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -195,7 +199,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8507062-muri-bei-bern: level elevations increase with level number: L0=556.8 m (source_derived)
 - **WARN** focus/8507062-muri-bei-bern: vertical connectors carry level information: 1 stairs/escalators/lifts/ramps, 1 without any level tag in OSM
 - **OK** focus/8507062-muri-bei-bern: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 4 level-0 edges, median difference -0.1 m, 0 beyond 2 m
-- **OK** focus/8507062-muri-bei-bern: features confirmed by a second source: passage 0/1, stairs 0/1, boarding_edge 0/4
+- **OK** focus/8507062-muri-bei-bern: features confirmed by a second source: passage 0/1, stairs 0/1, boarding_edge 3/4
 - **OK** focus/8507062-muri-bei-bern: walk graph is consistent: 102 nodes, 116 edges, 6 components, largest holds 86 % of nodes; boarding edges attach at median 7.3 m, max 19.1 m
 - **OK** data/focus/8507067-deisswil.geojson: unique ids: 21 features, 0 duplicate ids
 - **OK** data/focus/8507067-deisswil.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -231,7 +235,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8507069-ittigen-bei-bern: level elevations increase with level number: L-1=521.5 m (approximate), L0=526.0 m (source_derived)
 - **WARN** focus/8507069-ittigen-bei-bern: vertical connectors carry level information: 8 stairs/escalators/lifts/ramps, 8 without any level tag in OSM
 - **OK** focus/8507069-ittigen-bei-bern: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 5 level-0 edges, median difference 0.34 m, 0 beyond 2 m
-- **OK** focus/8507069-ittigen-bei-bern: features confirmed by a second source: passage 0/4, stairs 0/7, boarding_edge 0/5
+- **OK** focus/8507069-ittigen-bei-bern: features confirmed by a second source: passage 0/4, stairs 0/7, boarding_edge 1/5
 - **OK** focus/8507069-ittigen-bei-bern: walk graph is consistent: 256 nodes, 319 edges, 1 components, largest holds 100 % of nodes; boarding edges attach at median 4.4 m, max 14.9 m
 - **OK** data/focus/8507077-kehrsatz.geojson: unique ids: 33 features, 0 duplicate ids
 - **OK** data/focus/8507077-kehrsatz.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -255,7 +259,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8507078-wabern-bei-bern: level elevations increase with level number: L-1=555.3 m (approximate), L0=559.8 m (source_derived)
 - **WARN** focus/8507078-wabern-bei-bern: vertical connectors carry level information: 6 stairs/escalators/lifts/ramps, 6 without any level tag in OSM
 - **OK** focus/8507078-wabern-bei-bern: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 12 level-0 edges, median difference -0.1 m, 0 beyond 2 m
-- **OK** focus/8507078-wabern-bei-bern: features confirmed by a second source: passage 0/6, stairs 0/5, entrance 0/3, boarding_edge 3/12
+- **OK** focus/8507078-wabern-bei-bern: features confirmed by a second source: passage 0/6, stairs 0/5, entrance 0/3, boarding_edge 7/12
 - **OK** focus/8507078-wabern-bei-bern: walk graph is consistent: 196 nodes, 211 edges, 4 components, largest holds 95 % of nodes; boarding edges attach at median 8.8 m, max 16.7 m
 - **OK** data/focus/8507079-bern-weissenbuehl.geojson: unique ids: 56 features, 0 duplicate ids
 - **OK** data/focus/8507079-bern-weissenbuehl.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -279,7 +283,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8507083-koeniz: level elevations increase with level number: L-1=567.2 m (source_derived), L0=572.1 m (source_derived)
 - **WARN** focus/8507083-koeniz: vertical connectors carry level information: 5 stairs/escalators/lifts/ramps, 3 without any level tag in OSM
 - **OK** focus/8507083-koeniz: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 13 level-0 edges, median difference -0.1 m, 0 beyond 2 m
-- **OK** focus/8507083-koeniz: features confirmed by a second source: passage 0/5, stairs 0/4, boarding_edge 3/13
+- **OK** focus/8507083-koeniz: features confirmed by a second source: passage 0/5, stairs 0/4, boarding_edge 11/13
 - **OK** focus/8507083-koeniz: walk graph is consistent: 231 nodes, 277 edges, 4 components, largest holds 97 % of nodes; boarding edges attach at median 5.4 m, max 37.3 m
 - **OK** data/focus/8507084-moos.geojson: unique ids: 17 features, 0 duplicate ids
 - **OK** data/focus/8507084-moos.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -315,7 +319,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8507091-liebefeld: level elevations increase with level number: L0=563.3 m (source_derived)
 - **OK** focus/8507091-liebefeld: vertical connectors carry level information: 0 stairs/escalators/lifts/ramps, 0 without any level tag in OSM
 - **OK** focus/8507091-liebefeld: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 6 level-0 edges, median difference -0.1 m, 0 beyond 2 m
-- **OK** focus/8507091-liebefeld: features confirmed by a second source: boarding_edge 1/6
+- **OK** focus/8507091-liebefeld: features confirmed by a second source: boarding_edge 3/6
 - **OK** focus/8507091-liebefeld: walk graph is consistent: 210 nodes, 247 edges, 2 components, largest holds 99 % of nodes; boarding edges attach at median 4.6 m, max 18.0 m
 - **OK** data/focus/8507093-kehrsatz-nord.geojson: unique ids: 23 features, 0 duplicate ids
 - **OK** data/focus/8507093-kehrsatz-nord.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -399,7 +403,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8508055-unterzollikofen: level elevations increase with level number: L-1=539.5 m (approximate), L0=544.0 m (source_derived)
 - **WARN** focus/8508055-unterzollikofen: vertical connectors carry level information: 5 stairs/escalators/lifts/ramps, 4 without any level tag in OSM
 - **OK** focus/8508055-unterzollikofen: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 4 level-0 edges, median difference 0.0 m, 0 beyond 2 m
-- **OK** focus/8508055-unterzollikofen: features confirmed by a second source: passage 0/2, stairs 0/5, boarding_edge 0/4
+- **OK** focus/8508055-unterzollikofen: features confirmed by a second source: passage 0/2, stairs 0/5, boarding_edge 1/4
 - **OK** focus/8508055-unterzollikofen: walk graph is consistent: 161 nodes, 186 edges, 2 components, largest holds 99 % of nodes; boarding edges attach at median 7.1 m, max 10.4 m
 - **OK** data/focus/8508070-oberzollikofen.geojson: unique ids: 47 features, 0 duplicate ids
 - **OK** data/focus/8508070-oberzollikofen.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -411,7 +415,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8508070-oberzollikofen: level elevations increase with level number: L-1=553.5 m (approximate), L0=558.0 m (source_derived)
 - **WARN** focus/8508070-oberzollikofen: vertical connectors carry level information: 9 stairs/escalators/lifts/ramps, 7 without any level tag in OSM
 - **OK** focus/8508070-oberzollikofen: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 9 level-0 edges, median difference 0.0 m, 0 beyond 2 m
-- **OK** focus/8508070-oberzollikofen: features confirmed by a second source: passage 0/10, stairs 0/8, boarding_edge 0/9
+- **OK** focus/8508070-oberzollikofen: features confirmed by a second source: passage 0/10, stairs 0/8, boarding_edge 1/9
 - **OK** focus/8508070-oberzollikofen: walk graph is consistent: 182 nodes, 186 edges, 11 components, largest holds 49 % of nodes; boarding edges attach at median 4.1 m, max 9.7 m
 - **OK** data/focus/8516154-bern-bruennen-westside.geojson: unique ids: 70 features, 0 duplicate ids
 - **OK** data/focus/8516154-bern-bruennen-westside.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -435,7 +439,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8571342-bern-inselplatz: level elevations increase with level number: L-1=539.5 m (approximate), L0=544.0 m (source_derived), L1=548.5 m (approximate)
 - **WARN** focus/8571342-bern-inselplatz: vertical connectors carry level information: 3 stairs/escalators/lifts/ramps, 2 without any level tag in OSM
 - **OK** focus/8571342-bern-inselplatz: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 4 level-0 edges, median difference 0.2 m, 0 beyond 2 m
-- **OK** focus/8571342-bern-inselplatz: features confirmed by a second source: passage 1/3, stairs 0/2, boarding_edge 0/4
+- **OK** focus/8571342-bern-inselplatz: features confirmed by a second source: passage 1/3, stairs 0/2, boarding_edge 3/4
 - **OK** focus/8571342-bern-inselplatz: walk graph is consistent: 172 nodes, 210 edges, 3 components, largest holds 98 % of nodes; boarding edges attach at median 11.2 m, max 11.3 m
 - **OK** data/focus/8571393-bern-eigerplatz.geojson: unique ids: 58 features, 0 duplicate ids
 - **OK** data/focus/8571393-bern-eigerplatz.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -447,7 +451,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8571393-bern-eigerplatz: level elevations increase with level number: L0=524.5 m (source_derived)
 - **WARN** focus/8571393-bern-eigerplatz: vertical connectors carry level information: 4 stairs/escalators/lifts/ramps, 4 without any level tag in OSM
 - **OK** focus/8571393-bern-eigerplatz: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 5 level-0 edges, median difference 0.0 m, 0 beyond 2 m
-- **OK** focus/8571393-bern-eigerplatz: features confirmed by a second source: passage 0/3, stairs 2/4, boarding_edge 2/7
+- **OK** focus/8571393-bern-eigerplatz: features confirmed by a second source: passage 0/3, stairs 2/4, boarding_edge 4/7
 - **OK** focus/8571393-bern-eigerplatz: walk graph is consistent: 211 nodes, 262 edges, 1 components, largest holds 100 % of nodes; boarding edges attach at median 6.5 m, max 7.7 m
 - **OK** data/focus/8571412-liebefeld-hessstrasse.geojson: unique ids: 35 features, 0 duplicate ids
 - **OK** data/focus/8571412-liebefeld-hessstrasse.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -459,7 +463,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8571412-liebefeld-hessstrasse: level elevations increase with level number: L0=562.2 m (source_derived)
 - **OK** focus/8571412-liebefeld-hessstrasse: vertical connectors carry level information: 0 stairs/escalators/lifts/ramps, 0 without any level tag in OSM
 - **OK** focus/8571412-liebefeld-hessstrasse: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 6 level-0 edges, median difference 0.0 m, 0 beyond 2 m
-- **OK** focus/8571412-liebefeld-hessstrasse: features confirmed by a second source: boarding_edge 0/6
+- **OK** focus/8571412-liebefeld-hessstrasse: features confirmed by a second source: boarding_edge 4/6
 - **OK** focus/8571412-liebefeld-hessstrasse: walk graph is consistent: 98 nodes, 105 edges, 4 components, largest holds 94 % of nodes; boarding edges attach at median 13.0 m, max 23.5 m
 - **OK** data/focus/8571413-koeniz-bruehlplatz.geojson: unique ids: 27 features, 0 duplicate ids
 - **OK** data/focus/8571413-koeniz-bruehlplatz.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -471,7 +475,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8571413-koeniz-bruehlplatz: level elevations increase with level number: L0=569.5 m (source_derived)
 - **WARN** focus/8571413-koeniz-bruehlplatz: vertical connectors carry level information: 2 stairs/escalators/lifts/ramps, 2 without any level tag in OSM
 - **OK** focus/8571413-koeniz-bruehlplatz: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 4 level-0 edges, median difference -0.1 m, 0 beyond 2 m
-- **OK** focus/8571413-koeniz-bruehlplatz: features confirmed by a second source: passage 0/1, stairs 0/2, boarding_edge 0/4
+- **OK** focus/8571413-koeniz-bruehlplatz: features confirmed by a second source: passage 0/1, stairs 0/2, boarding_edge 4/4
 - **OK** focus/8571413-koeniz-bruehlplatz: walk graph is consistent: 118 nodes, 133 edges, 2 components, largest holds 98 % of nodes; boarding edges attach at median 5.1 m, max 9.0 m
 - **OK** data/focus/8571436-bern-bachmaetteli.geojson: unique ids: 50 features, 0 duplicate ids
 - **OK** data/focus/8571436-bern-bachmaetteli.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -483,7 +487,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8571436-bern-bachmaetteli: level elevations increase with level number: L0=558.7 m (source_derived), L1=563.2 m (approximate)
 - **OK** focus/8571436-bern-bachmaetteli: vertical connectors carry level information: 0 stairs/escalators/lifts/ramps, 0 without any level tag in OSM
 - **OK** focus/8571436-bern-bachmaetteli: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 4 level-0 edges, median difference -0.1 m, 0 beyond 2 m
-- **OK** focus/8571436-bern-bachmaetteli: features confirmed by a second source: passage 0/1, boarding_edge 2/4
+- **OK** focus/8571436-bern-bachmaetteli: features confirmed by a second source: passage 0/1, boarding_edge 3/4
 - **OK** focus/8571436-bern-bachmaetteli: walk graph is consistent: 127 nodes, 153 edges, 2 components, largest holds 98 % of nodes; boarding edges attach at median 7.9 m, max 10.0 m
 - **OK** data/focus/8576990-bern-guisanplatz-expo.geojson: unique ids: 24 features, 0 duplicate ids
 - **OK** data/focus/8576990-bern-guisanplatz-expo.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -507,7 +511,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8576999-bern-upd-waldau: level elevations increase with level number: L0=558.0 m (source_derived)
 - **OK** focus/8576999-bern-upd-waldau: vertical connectors carry level information: 0 stairs/escalators/lifts/ramps, 0 without any level tag in OSM
 - **OK** focus/8576999-bern-upd-waldau: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 4 level-0 edges, median difference -0.1 m, 0 beyond 2 m
-- **OK** focus/8576999-bern-upd-waldau: features confirmed by a second source: boarding_edge 2/4
+- **OK** focus/8576999-bern-upd-waldau: features confirmed by a second source: boarding_edge 4/4
 - **OK** focus/8576999-bern-upd-waldau: walk graph is consistent: 79 nodes, 90 edges, 3 components, largest holds 96 % of nodes; boarding edges attach at median 5.5 m, max 10.2 m
 - **OK** data/focus/8577002-ostermundigen-waldeck.geojson: unique ids: 21 features, 0 duplicate ids
 - **OK** data/focus/8577002-ostermundigen-waldeck.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -519,7 +523,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8577002-ostermundigen-waldeck: level elevations increase with level number: L-1=556.5 m (approximate), L0=561.0 m (source_derived)
 - **WARN** focus/8577002-ostermundigen-waldeck: vertical connectors carry level information: 1 stairs/escalators/lifts/ramps, 1 without any level tag in OSM
 - **OK** focus/8577002-ostermundigen-waldeck: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 3 level-0 edges, median difference 0.14 m, 0 beyond 2 m
-- **OK** focus/8577002-ostermundigen-waldeck: features confirmed by a second source: passage 1/2, stairs 0/1, boarding_edge 0/4
+- **OK** focus/8577002-ostermundigen-waldeck: features confirmed by a second source: passage 1/2, stairs 0/1, boarding_edge 4/4
 - **OK** focus/8577002-ostermundigen-waldeck: walk graph is consistent: 77 nodes, 86 edges, 7 components, largest holds 87 % of nodes; boarding edges attach at median 8.7 m, max 13.4 m
 - **OK** data/focus/8579896-bern-hirschengraben.geojson: unique ids: 168 features, 0 duplicate ids
 - **OK** data/focus/8579896-bern-hirschengraben.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -543,7 +547,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8579897-bern-kocherpark: level elevations increase with level number: L-1=526.9 m (approximate), L0=531.4 m (source_derived)
 - **WARN** focus/8579897-bern-kocherpark: vertical connectors carry level information: 4 stairs/escalators/lifts/ramps, 2 without any level tag in OSM
 - **OK** focus/8579897-bern-kocherpark: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 4 level-0 edges, median difference -0.1 m, 0 beyond 2 m
-- **OK** focus/8579897-bern-kocherpark: features confirmed by a second source: passage 0/3, stairs 2/3, boarding_edge 2/4
+- **OK** focus/8579897-bern-kocherpark: features confirmed by a second source: passage 0/3, stairs 2/3, boarding_edge 3/4
 - **OK** focus/8579897-bern-kocherpark: walk graph is consistent: 203 nodes, 247 edges, 1 components, largest holds 100 % of nodes; boarding edges attach at median 6.5 m, max 17.8 m
 - **OK** data/focus/8579898-bern-buempliz-unterfuehrung.geojson: unique ids: 58 features, 0 duplicate ids
 - **OK** data/focus/8579898-bern-buempliz-unterfuehrung.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -567,7 +571,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8579900-bern-buempliz-post: level elevations increase with level number: L0=557.5 m (source_derived)
 - **WARN** focus/8579900-bern-buempliz-post: vertical connectors carry level information: 1 stairs/escalators/lifts/ramps, 1 without any level tag in OSM
 - **OK** focus/8579900-bern-buempliz-post: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 8 level-0 edges, median difference -0.1 m, 0 beyond 2 m
-- **OK** focus/8579900-bern-buempliz-post: features confirmed by a second source: passage 0/1, stairs 0/1, boarding_edge 3/8
+- **OK** focus/8579900-bern-buempliz-post: features confirmed by a second source: passage 0/1, stairs 0/1, boarding_edge 7/8
 - **OK** focus/8579900-bern-buempliz-post: walk graph is consistent: 171 nodes, 211 edges, 4 components, largest holds 95 % of nodes; boarding edges attach at median 5.3 m, max 68.8 m
 - **OK** data/focus/8587479-bern-schosshalde.geojson: unique ids: 48 features, 0 duplicate ids
 - **OK** data/focus/8587479-bern-schosshalde.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -579,7 +583,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8587479-bern-schosshalde: level elevations increase with level number: L-1=561.3 m (approximate), L0=565.8 m (source_derived)
 - **WARN** focus/8587479-bern-schosshalde: vertical connectors carry level information: 3 stairs/escalators/lifts/ramps, 2 without any level tag in OSM
 - **OK** focus/8587479-bern-schosshalde: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 4 level-0 edges, median difference -0.1 m, 0 beyond 2 m
-- **OK** focus/8587479-bern-schosshalde: features confirmed by a second source: passage 1/1, stairs 1/3, boarding_edge 2/4
+- **OK** focus/8587479-bern-schosshalde: features confirmed by a second source: passage 1/1, stairs 1/3, boarding_edge 4/4
 - **OK** focus/8587479-bern-schosshalde: walk graph is consistent: 135 nodes, 157 edges, 1 components, largest holds 100 % of nodes; boarding edges attach at median 5.2 m, max 14.2 m
 - **OK** data/focus/8588562-wabern-gurtenbahn.geojson: unique ids: 33 features, 0 duplicate ids
 - **OK** data/focus/8588562-wabern-gurtenbahn.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -591,7 +595,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8588562-wabern-gurtenbahn: level elevations increase with level number: L0=552.6 m (source_derived)
 - **OK** focus/8588562-wabern-gurtenbahn: vertical connectors carry level information: 0 stairs/escalators/lifts/ramps, 0 without any level tag in OSM
 - **OK** focus/8588562-wabern-gurtenbahn: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 5 level-0 edges, median difference -0.2 m, 0 beyond 2 m
-- **OK** focus/8588562-wabern-gurtenbahn: features confirmed by a second source: boarding_edge 0/5
+- **OK** focus/8588562-wabern-gurtenbahn: features confirmed by a second source: boarding_edge 4/5
 - **OK** focus/8588562-wabern-gurtenbahn: walk graph is consistent: 118 nodes, 149 edges, 1 components, largest holds 100 % of nodes; boarding edges attach at median 6.3 m, max 16.1 m
 - **OK** data/focus/8588988-bern-aegertenstrasse.geojson: unique ids: 48 features, 0 duplicate ids
 - **OK** data/focus/8588988-bern-aegertenstrasse.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -603,7 +607,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8588988-bern-aegertenstrasse: level elevations increase with level number: L0=524.5 m (source_derived)
 - **OK** focus/8588988-bern-aegertenstrasse: vertical connectors carry level information: 0 stairs/escalators/lifts/ramps, 0 without any level tag in OSM
 - **OK** focus/8588988-bern-aegertenstrasse: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 6 level-0 edges, median difference -0.2 m, 0 beyond 2 m
-- **OK** focus/8588988-bern-aegertenstrasse: features confirmed by a second source: boarding_edge 2/6
+- **OK** focus/8588988-bern-aegertenstrasse: features confirmed by a second source: boarding_edge 6/6
 - **OK** focus/8588988-bern-aegertenstrasse: walk graph is consistent: 168 nodes, 200 edges, 3 components, largest holds 98 % of nodes; boarding edges attach at median 2.9 m, max 4.2 m
 - **OK** data/focus/8588991-bern-breitfeld.geojson: unique ids: 74 features, 0 duplicate ids
 - **OK** data/focus/8588991-bern-breitfeld.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -651,7 +655,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8589992-bern-sulgenau: level elevations increase with level number: L-1=516.6 m (approximate), L0=521.1 m (source_derived)
 - **WARN** focus/8589992-bern-sulgenau: vertical connectors carry level information: 3 stairs/escalators/lifts/ramps, 3 without any level tag in OSM
 - **OK** focus/8589992-bern-sulgenau: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 4 level-0 edges, median difference -0.1 m, 0 beyond 2 m
-- **OK** focus/8589992-bern-sulgenau: features confirmed by a second source: passage 0/6, stairs 3/3, boarding_edge 1/4
+- **OK** focus/8589992-bern-sulgenau: features confirmed by a second source: passage 0/6, stairs 3/3, boarding_edge 4/4
 - **OK** focus/8589992-bern-sulgenau: walk graph is consistent: 196 nodes, 235 edges, 2 components, largest holds 99 % of nodes; boarding edges attach at median 16.5 m, max 19.4 m
 - **OK** data/focus/8589993-bern-wander.geojson: unique ids: 49 features, 0 duplicate ids
 - **OK** data/focus/8589993-bern-wander.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -663,7 +667,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8589993-bern-wander: level elevations increase with level number: L-1=526.3 m (approximate), L0=530.8 m (source_derived)
 - **OK** focus/8589993-bern-wander: vertical connectors carry level information: 0 stairs/escalators/lifts/ramps, 0 without any level tag in OSM
 - **WARN** focus/8589993-bern-wander: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 4 level-0 edges, median difference -0.2 m, 1 beyond 2 m
-- **OK** focus/8589993-bern-wander: features confirmed by a second source: passage 1/1, boarding_edge 2/4
+- **OK** focus/8589993-bern-wander: features confirmed by a second source: passage 1/1, boarding_edge 4/4
 - **OK** focus/8589993-bern-wander: walk graph is consistent: 188 nodes, 229 edges, 1 components, largest holds 100 % of nodes; boarding edges attach at median 7.9 m, max 9.4 m
 - **OK** data/focus/8589996-spiegel-spiegel.geojson: unique ids: 26 features, 0 duplicate ids
 - **OK** data/focus/8589996-spiegel-spiegel.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -675,7 +679,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8589996-spiegel-spiegel: level elevations increase with level number: L0=607.0 m (source_derived)
 - **WARN** focus/8589996-spiegel-spiegel: vertical connectors carry level information: 2 stairs/escalators/lifts/ramps, 2 without any level tag in OSM
 - **OK** focus/8589996-spiegel-spiegel: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 6 level-0 edges, median difference -0.1 m, 0 beyond 2 m
-- **OK** focus/8589996-spiegel-spiegel: features confirmed by a second source: stairs 0/2, boarding_edge 1/6
+- **OK** focus/8589996-spiegel-spiegel: features confirmed by a second source: stairs 0/2, boarding_edge 5/6
 - **OK** focus/8589996-spiegel-spiegel: walk graph is consistent: 85 nodes, 101 edges, 1 components, largest holds 100 % of nodes; boarding edges attach at median 6.1 m, max 10.6 m
 - **OK** data/focus/8590014-bern-fischermaetteli.geojson: unique ids: 61 features, 0 duplicate ids
 - **OK** data/focus/8590014-bern-fischermaetteli.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -687,7 +691,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8590014-bern-fischermaetteli: level elevations increase with level number: L-1=540.5 m (approximate), L0=545.0 m (source_derived)
 - **OK** focus/8590014-bern-fischermaetteli: vertical connectors carry level information: 0 stairs/escalators/lifts/ramps, 0 without any level tag in OSM
 - **OK** focus/8590014-bern-fischermaetteli: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 5 level-0 edges, median difference -0.1 m, 0 beyond 2 m
-- **OK** focus/8590014-bern-fischermaetteli: features confirmed by a second source: passage 1/1, boarding_edge 4/5
+- **OK** focus/8590014-bern-fischermaetteli: features confirmed by a second source: passage 1/1, boarding_edge 5/5
 - **OK** focus/8590014-bern-fischermaetteli: walk graph is consistent: 154 nodes, 186 edges, 1 components, largest holds 100 % of nodes; boarding edges attach at median 16.9 m, max 33.0 m
 - **OK** data/focus/8590021-bern-viktoriaplatz.geojson: unique ids: 55 features, 0 duplicate ids
 - **OK** data/focus/8590021-bern-viktoriaplatz.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -711,7 +715,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/8590041-bern-loryplatz: level elevations increase with level number: L0=538.5 m (source_derived)
 - **WARN** focus/8590041-bern-loryplatz: vertical connectors carry level information: 7 stairs/escalators/lifts/ramps, 6 without any level tag in OSM
 - **OK** focus/8590041-bern-loryplatz: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 6 level-0 edges, median difference -0.1 m, 0 beyond 2 m
-- **OK** focus/8590041-bern-loryplatz: features confirmed by a second source: stairs 5/7, boarding_edge 5/6
+- **OK** focus/8590041-bern-loryplatz: features confirmed by a second source: stairs 5/7, boarding_edge 6/6
 - **OK** focus/8590041-bern-loryplatz: walk graph is consistent: 264 nodes, 331 edges, 2 components, largest holds 99 % of nodes; boarding edges attach at median 12.7 m, max 14.4 m
 - **OK** data/focus/bern-bahnhof.geojson: unique ids: 1328 features, 0 duplicate ids
 - **OK** data/focus/bern-bahnhof.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -723,7 +727,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/bern-bahnhof: level elevations increase with level number: L-2=517.0 m (source_derived), L-1=536.3 m (approximate), L0=540.8 m (source_derived), L1=547.8 m (source_derived), L2=549.1 m (source_derived), L3=553.6 m (approximate), L4=558.1 m (approximate), L5=562.6 m (approximate)
 - **WARN** focus/bern-bahnhof: vertical connectors carry level information: 140 stairs/escalators/lifts/ramps, 22 without any level tag in OSM
 - **WARN** focus/bern-bahnhof: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 78 level-0 edges, median difference -0.1 m, 1 beyond 2 m
-- **OK** focus/bern-bahnhof: features confirmed by a second source: passage 65/241, stairs 27/53, escalator 17/30, ramp_or_link 7/9, entrance 9/12, boarding_edge 44/90
+- **OK** focus/bern-bahnhof: features confirmed by a second source: passage 65/241, stairs 27/53, escalator 17/30, ramp_or_link 7/9, entrance 9/12, boarding_edge 47/90
 - **OK** focus/bern-bahnhof: walk graph is consistent: 1659 nodes, 2191 edges, 8 components, largest holds 99 % of nodes; boarding edges attach at median 7.2 m, max 140.9 m
 - **OK** data/focus/wankdorf.geojson: unique ids: 268 features, 0 duplicate ids
 - **OK** data/focus/wankdorf.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none
@@ -735,7 +739,7 @@ Generated 2026-11-21T01:53:05Z by `python tools/validate.py`. **0 FAIL, 49 WARN,
 - **OK** focus/wankdorf: level elevations increase with level number: L-1=545.5 m (approximate), L0=550.0 m (source_derived), L1=554.5 m (approximate)
 - **WARN** focus/wankdorf: vertical connectors carry level information: 25 stairs/escalators/lifts/ramps, 15 without any level tag in OSM
 - **OK** focus/wankdorf: atlas edge height vs swissALTI3D terrain at street level (within 2 m): 21 level-0 edges, median difference -0.1 m, 0 beyond 2 m
-- **OK** focus/wankdorf: features confirmed by a second source: passage 0/17, stairs 10/16, boarding_edge 11/22
+- **OK** focus/wankdorf: features confirmed by a second source: passage 0/17, stairs 10/16, boarding_edge 13/22
 - **OK** focus/wankdorf: walk graph is consistent: 474 nodes, 567 edges, 10 components, largest holds 96 % of nodes; boarding edges attach at median 8.7 m, max 36.0 m
 - **OK** data/focus/zytglogge.geojson: unique ids: 352 features, 0 duplicate ids
 - **OK** data/focus/zytglogge.geojson: required properties ('id', 'feature_type', 'source', 'inferred'): missing: none

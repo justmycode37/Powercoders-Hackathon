@@ -1,7 +1,7 @@
 {
- "generated_utc": "2026-11-21T01:53:05Z",
+ "generated_utc": "2026-11-21T02:09:21Z",
  "summary": {
-  "OK": 763,
+  "OK": 767,
   "WARN": 49
  },
  "results": [
@@ -527,36 +527,6 @@
    "data": null
   },
   {
-   "level": "WARN",
-   "check": "edges without any geometry (atlas publishes no coordinates)",
-   "detail": "23 edges",
-   "data": [
-    "ch:1:sloid:7061:0:2374",
-    "ch:1:sloid:7060:0:2373",
-    "ch:1:sloid:71393:0:32",
-    "ch:1:sloid:71393:0:56",
-    "ch:1:sloid:76646:0:66",
-    "ch:1:sloid:76646:0:80",
-    "ch:1:sloid:76990:0:1895",
-    "ch:1:sloid:77005:0:9",
-    "ch:1:sloid:87484:0:22",
-    "ch:1:sloid:89003:0:2370",
-    "ch:1:sloid:90006:0:2371",
-    "ch:1:sloid:90006:0:2372",
-    "ch:1:sloid:90052::11",
-    "ch:1:sloid:90084:0:12",
-    "ch:1:sloid:95137:0:1442",
-    "ch:1:sloid:95136:0:1971",
-    "ch:1:sloid:95932:0:2247",
-    "ch:1:sloid:95932:0:2248",
-    "ch:1:sloid:71435:0:13",
-    "ch:1:sloid:7982:0:3",
-    "ch:1:sloid:82210:0:618032",
-    "ch:1:sloid:88994:0:715",
-    "ch:1:sloid:88994:0:716"
-   ]
-  },
-  {
    "level": "OK",
    "check": "boarding edges by geometry method",
    "detail": "{'osm_platform': 511, 'constructed': 496, 'sbb_behig_kerb_points': 63, 'none': 23, 'point_only': 9, 'av_bahnsteig_outline': 3}",
@@ -596,6 +566,36 @@
    "level": "OK",
    "check": "kerb letters confirmed by Stadt Bern kerb points (same station number and letter)",
    "detail": "60 edges confirmed (of 175 lettered tram/bus edges in the municipality); distance atlas point to city kerb point: median 10.2 m, p95 23.3 m, max 34.3 m",
+   "data": null
+  },
+  {
+   "level": "WARN",
+   "check": "edges without atlas coordinates: filled from a city kerb only on a unique label match, otherwise explained",
+   "detail": "23 such edges, 0 filled, 23 left without geometry (each with no_geometry_reason); 1 carry a city_kerb_candidate property",
+   "data": null
+  },
+  {
+   "level": "OK",
+   "check": "edges placed on a city kerb point name the city layer and are inferred",
+   "detail": "0 edges, 0 wrong",
+   "data": []
+  },
+  {
+   "level": "OK",
+   "check": "atlas edges vs Stadt Bern kerb points, paired by station number and kerb letter (independent of position)",
+   "detail": "60 pairs; atlas point to city kerb point: median 10.2 m, p90 20.7 m, max 34.3 m; city kerb point to this folder's edge line: median 1.2 m, p90 4.4 m, max 21.2 m; worst: Bern, Viktoriaplatz B 34.3 m, Bern, Bahnhof E 25.6 m, Bern, Bümpliz Unterführung D 23.3 m, Bern, Bahnhof E 23.2 m, Bern, Bahnhof C 21.7 m",
+   "data": null
+  },
+  {
+   "level": "OK",
+   "check": "atlas edges vs Stadt Bern kerb points, paired by position (city kerb nearest to the edge line, mutual)",
+   "detail": "602 pairs; atlas point to city kerb point: median 7.1 m, p90 16.4 m, max 42.2 m; city kerb point to this folder's edge line: median 1.8 m, p90 4.7 m, max 11.1 m; worst: Bern, Kursaal 42.2 m, Gümligen, Hofgut 35.9 m, Bern, Wankdorf Center 35.3 m, Bern, Hasler 31.3 m, Bern, Helvetiaplatz 31.1 m",
+   "data": null
+  },
+  {
+   "level": "OK",
+   "check": "atlas and the city layer agree on which kerb letter is where",
+   "detail": "0 disagreements; same kerb under another name: Bern, Bahnhof atlas K1 = city K; city letters adopted for edges without an atlas letter: 0",
    "data": null
   },
   {
@@ -772,7 +772,7 @@
   {
    "level": "OK",
    "check": "focus/8504105-niederwangen: features confirmed by a second source",
-   "detail": "passage 0/5, stairs 0/9, boarding_edge 4/12",
+   "detail": "passage 0/5, stairs 0/9, boarding_edge 6/12",
    "data": null
   },
   {
@@ -916,7 +916,7 @@
   {
    "level": "OK",
    "check": "focus/8504108-bern-europaplatz: features confirmed by a second source",
-   "detail": "passage 1/7, stairs 3/5, ramp_or_link 0/2, entrance 1/2, boarding_edge 3/8",
+   "detail": "passage 1/7, stairs 3/5, ramp_or_link 0/2, entrance 1/2, boarding_edge 4/8",
    "data": null
   },
   {
@@ -1204,7 +1204,7 @@
   {
    "level": "OK",
    "check": "focus/8507002-ostermundigen: features confirmed by a second source",
-   "detail": "passage 0/3, stairs 0/4, entrance 0/1, boarding_edge 0/9",
+   "detail": "passage 0/3, stairs 0/4, entrance 0/1, boarding_edge 3/9",
    "data": null
   },
   {
@@ -1276,7 +1276,7 @@
   {
    "level": "OK",
    "check": "focus/8507003-guemligen: features confirmed by a second source",
-   "detail": "passage 0/7, stairs 0/9, boarding_edge 0/9",
+   "detail": "passage 0/7, stairs 0/9, boarding_edge 2/9",
    "data": null
   },
   {
@@ -1348,7 +1348,7 @@
   {
    "level": "OK",
    "check": "focus/8507050-bern-egghoelzli: features confirmed by a second source",
-   "detail": "passage 2/2, boarding_edge 5/7",
+   "detail": "passage 2/2, boarding_edge 6/7",
    "data": null
   },
   {
@@ -1420,7 +1420,7 @@
   {
    "level": "OK",
    "check": "focus/8507060-bern-helvetiaplatz: features confirmed by a second source",
-   "detail": "passage 0/2, stairs 3/4, boarding_edge 2/7",
+   "detail": "passage 0/2, stairs 3/4, boarding_edge 4/7",
    "data": null
   },
   {
@@ -1492,7 +1492,7 @@
   {
    "level": "OK",
    "check": "focus/8507061-bern-brunnadernstrasse: features confirmed by a second source",
-   "detail": "passage 0/1, boarding_edge 1/7",
+   "detail": "passage 0/1, boarding_edge 4/7",
    "data": null
   },
   {
@@ -1564,7 +1564,7 @@
   {
    "level": "OK",
    "check": "focus/8507062-muri-bei-bern: features confirmed by a second source",
-   "detail": "passage 0/1, stairs 0/1, boarding_edge 0/4",
+   "detail": "passage 0/1, stairs 0/1, boarding_edge 3/4",
    "data": null
   },
   {
@@ -1780,7 +1780,7 @@
   {
    "level": "OK",
    "check": "focus/8507069-ittigen-bei-bern: features confirmed by a second source",
-   "detail": "passage 0/4, stairs 0/7, boarding_edge 0/5",
+   "detail": "passage 0/4, stairs 0/7, boarding_edge 1/5",
    "data": null
   },
   {
@@ -1924,7 +1924,7 @@
   {
    "level": "OK",
    "check": "focus/8507078-wabern-bei-bern: features confirmed by a second source",
-   "detail": "passage 0/6, stairs 0/5, entrance 0/3, boarding_edge 3/12",
+   "detail": "passage 0/6, stairs 0/5, entrance 0/3, boarding_edge 7/12",
    "data": null
   },
   {
@@ -2068,7 +2068,7 @@
   {
    "level": "OK",
    "check": "focus/8507083-koeniz: features confirmed by a second source",
-   "detail": "passage 0/5, stairs 0/4, boarding_edge 3/13",
+   "detail": "passage 0/5, stairs 0/4, boarding_edge 11/13",
    "data": null
   },
   {
@@ -2284,7 +2284,7 @@
   {
    "level": "OK",
    "check": "focus/8507091-liebefeld: features confirmed by a second source",
-   "detail": "boarding_edge 1/6",
+   "detail": "boarding_edge 3/6",
    "data": null
   },
   {
@@ -2788,7 +2788,7 @@
   {
    "level": "OK",
    "check": "focus/8508055-unterzollikofen: features confirmed by a second source",
-   "detail": "passage 0/2, stairs 0/5, boarding_edge 0/4",
+   "detail": "passage 0/2, stairs 0/5, boarding_edge 1/4",
    "data": null
   },
   {
@@ -2860,7 +2860,7 @@
   {
    "level": "OK",
    "check": "focus/8508070-oberzollikofen: features confirmed by a second source",
-   "detail": "passage 0/10, stairs 0/8, boarding_edge 0/9",
+   "detail": "passage 0/10, stairs 0/8, boarding_edge 1/9",
    "data": null
   },
   {
@@ -3004,7 +3004,7 @@
   {
    "level": "OK",
    "check": "focus/8571342-bern-inselplatz: features confirmed by a second source",
-   "detail": "passage 1/3, stairs 0/2, boarding_edge 0/4",
+   "detail": "passage 1/3, stairs 0/2, boarding_edge 3/4",
    "data": null
   },
   {
@@ -3076,7 +3076,7 @@
   {
    "level": "OK",
    "check": "focus/8571393-bern-eigerplatz: features confirmed by a second source",
-   "detail": "passage 0/3, stairs 2/4, boarding_edge 2/7",
+   "detail": "passage 0/3, stairs 2/4, boarding_edge 4/7",
    "data": null
   },
   {
@@ -3148,7 +3148,7 @@
   {
    "level": "OK",
    "check": "focus/8571412-liebefeld-hessstrasse: features confirmed by a second source",
-   "detail": "boarding_edge 0/6",
+   "detail": "boarding_edge 4/6",
    "data": null
   },
   {
@@ -3220,7 +3220,7 @@
   {
    "level": "OK",
    "check": "focus/8571413-koeniz-bruehlplatz: features confirmed by a second source",
-   "detail": "passage 0/1, stairs 0/2, boarding_edge 0/4",
+   "detail": "passage 0/1, stairs 0/2, boarding_edge 4/4",
    "data": null
   },
   {
@@ -3292,7 +3292,7 @@
   {
    "level": "OK",
    "check": "focus/8571436-bern-bachmaetteli: features confirmed by a second source",
-   "detail": "passage 0/1, boarding_edge 2/4",
+   "detail": "passage 0/1, boarding_edge 3/4",
    "data": null
   },
   {
@@ -3436,7 +3436,7 @@
   {
    "level": "OK",
    "check": "focus/8576999-bern-upd-waldau: features confirmed by a second source",
-   "detail": "boarding_edge 2/4",
+   "detail": "boarding_edge 4/4",
    "data": null
   },
   {
@@ -3508,7 +3508,7 @@
   {
    "level": "OK",
    "check": "focus/8577002-ostermundigen-waldeck: features confirmed by a second source",
-   "detail": "passage 1/2, stairs 0/1, boarding_edge 0/4",
+   "detail": "passage 1/2, stairs 0/1, boarding_edge 4/4",
    "data": null
   },
   {
@@ -3652,7 +3652,7 @@
   {
    "level": "OK",
    "check": "focus/8579897-bern-kocherpark: features confirmed by a second source",
-   "detail": "passage 0/3, stairs 2/3, boarding_edge 2/4",
+   "detail": "passage 0/3, stairs 2/3, boarding_edge 3/4",
    "data": null
   },
   {
@@ -3796,7 +3796,7 @@
   {
    "level": "OK",
    "check": "focus/8579900-bern-buempliz-post: features confirmed by a second source",
-   "detail": "passage 0/1, stairs 0/1, boarding_edge 3/8",
+   "detail": "passage 0/1, stairs 0/1, boarding_edge 7/8",
    "data": null
   },
   {
@@ -3868,7 +3868,7 @@
   {
    "level": "OK",
    "check": "focus/8587479-bern-schosshalde: features confirmed by a second source",
-   "detail": "passage 1/1, stairs 1/3, boarding_edge 2/4",
+   "detail": "passage 1/1, stairs 1/3, boarding_edge 4/4",
    "data": null
   },
   {
@@ -3940,7 +3940,7 @@
   {
    "level": "OK",
    "check": "focus/8588562-wabern-gurtenbahn: features confirmed by a second source",
-   "detail": "boarding_edge 0/5",
+   "detail": "boarding_edge 4/5",
    "data": null
   },
   {
@@ -4012,7 +4012,7 @@
   {
    "level": "OK",
    "check": "focus/8588988-bern-aegertenstrasse: features confirmed by a second source",
-   "detail": "boarding_edge 2/6",
+   "detail": "boarding_edge 6/6",
    "data": null
   },
   {
@@ -4300,7 +4300,7 @@
   {
    "level": "OK",
    "check": "focus/8589992-bern-sulgenau: features confirmed by a second source",
-   "detail": "passage 0/6, stairs 3/3, boarding_edge 1/4",
+   "detail": "passage 0/6, stairs 3/3, boarding_edge 4/4",
    "data": null
   },
   {
@@ -4377,7 +4377,7 @@
   {
    "level": "OK",
    "check": "focus/8589993-bern-wander: features confirmed by a second source",
-   "detail": "passage 1/1, boarding_edge 2/4",
+   "detail": "passage 1/1, boarding_edge 4/4",
    "data": null
   },
   {
@@ -4449,7 +4449,7 @@
   {
    "level": "OK",
    "check": "focus/8589996-spiegel-spiegel: features confirmed by a second source",
-   "detail": "stairs 0/2, boarding_edge 1/6",
+   "detail": "stairs 0/2, boarding_edge 5/6",
    "data": null
   },
   {
@@ -4521,7 +4521,7 @@
   {
    "level": "OK",
    "check": "focus/8590014-bern-fischermaetteli: features confirmed by a second source",
-   "detail": "passage 1/1, boarding_edge 4/5",
+   "detail": "passage 1/1, boarding_edge 5/5",
    "data": null
   },
   {
@@ -4665,7 +4665,7 @@
   {
    "level": "OK",
    "check": "focus/8590041-bern-loryplatz: features confirmed by a second source",
-   "detail": "stairs 5/7, boarding_edge 5/6",
+   "detail": "stairs 5/7, boarding_edge 6/6",
    "data": null
   },
   {
@@ -4742,7 +4742,7 @@
   {
    "level": "OK",
    "check": "focus/bern-bahnhof: features confirmed by a second source",
-   "detail": "passage 65/241, stairs 27/53, escalator 17/30, ramp_or_link 7/9, entrance 9/12, boarding_edge 44/90",
+   "detail": "passage 65/241, stairs 27/53, escalator 17/30, ramp_or_link 7/9, entrance 9/12, boarding_edge 47/90",
    "data": null
   },
   {
@@ -4814,7 +4814,7 @@
   {
    "level": "OK",
    "check": "focus/wankdorf: features confirmed by a second source",
-   "detail": "passage 0/17, stairs 10/16, boarding_edge 11/22",
+   "detail": "passage 0/17, stairs 10/16, boarding_edge 13/22",
    "data": null
   },
   {

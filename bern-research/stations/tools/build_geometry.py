@@ -23,6 +23,7 @@ import json
 import math
 import os
 
+import city_kerbs
 import geo
 import kerbs as kerb_survey
 from common import (BBOX_LV95, DATA, LICENCE, ROOT, Grid, closed_ring, esri_paths, feature, fnum, gj_line, gj_point,
@@ -569,13 +570,6 @@ def main() -> int:
                        dist_m=round(geo.dist(P, k["xy"]), 1), objectid=k["oid"])
             base["lines_at_kerb"] = k["lines"]
             base["lines_at_kerb_source"] = "Stadt Bern Haltestellen (Nummer_nach)"
-        elif kerbs and not desig:
-            k = min(kerbs, key=lambda k: geo.dist(P, k["xy"]))
-            if geo.dist(P, k["xy"]) <= 12:
-                chk = dict(source="Stadt Bern Haltestellen", match="same station number, nearest kerb point (atlas has no letter)",
-                           kante=k["kante"] or None, dist_m=round(geo.dist(P, k["xy"]), 1), objectid=k["oid"])
-                base["lines_at_kerb"] = k["lines"]
-                base["lines_at_kerb_source"] = "Stadt Bern Haltestellen (Nummer_nach), matched by proximity"
 
         access = []
         for r in relations.get(t["sloid"], []):
@@ -689,6 +683,16 @@ def main() -> int:
                     prev = used_shelters.get(("osm", s["el"]["id"]))
                     if prev is None or d < prev[0]:
                         used_shelters[("osm", s["el"]["id"])] = (d, s, ft)
+
+    # Stadt Bern kerb points as a second official position source (fills, letters, accuracy check)
+    city_check = city_kerbs.apply_city_kerbs(edges_out, bern_kerbs)
+    report["edges_filled_from_city_kerb"] = city_check["edges_without_atlas_coordinates"]["filled_from_city_kerb"]
+    report["edges_left_without_geometry"] = city_check["edges_without_atlas_coordinates"]["left_without_geometry"]
+    report["edges_with_city_kerb_candidate"] = city_check["edges_without_atlas_coordinates"]["candidates_by_elimination"]["count"]
+    report["city_kerb_letters_added"] = city_check["city_kerb_letters_added"]["count"]
+    report["edges_paired_with_city_kerb_by_letter"] = city_check["pairing"]["by_station_and_letter"]
+    report["edges_paired_with_city_kerb_by_position"] = city_check["pairing"]["by_position"]
+    report["city_letter_disagreements"] = city_check["letter_disagreements"]["count"]
 
     # rail platforms: link OSM platform polygons to the surveyed SBB edges that run along their boundary
     for ft in edges_out:
@@ -936,7 +940,8 @@ def main() -> int:
     by_m = collections.defaultdict(list)
     for m, d in dist_stats:
         by_m[m].append(d)
-    rep = dict(generated_utc=NOW, counts=dict(report), osm_platform_candidates=n_plat, sbb_kerb_lines=len(sbb_lines),
+    rep = dict(generated_utc=NOW, counts=dict(report), city_kerb_check=city_check,
+               osm_platform_candidates=n_plat, sbb_kerb_lines=len(sbb_lines),
                sbb_kerb_line_max_point_gap_m=round(max(s["max_gap"] for s in sbb_lines), 2),
                atlas_position_conflicts=[dict(edge_sloid=f["properties"]["edge_sloid"], station=f["properties"]["station_name"],
                                               note=f["properties"]["atlas_position_conflict"])

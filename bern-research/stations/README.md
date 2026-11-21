@@ -51,7 +51,7 @@ Slugs: `bern-bahnhof`, `zytglogge`, `wankdorf`, and `<station number>-<name>` fo
 |---|---|
 | `source`, `source_id`, `source_url` | dataset and record the geometry comes from |
 | `licence` | licence of that source; OSM-derived features say ODbL |
-| `geometry_quality` | `surveyed` (Stadt Bern cadastral survey, SBB kerb points), `official_point` (atlas or SBB register coordinate), `community` (OSM), `approximate` (constructed by this project), `missing` |
+| `geometry_quality` | `surveyed` (Stadt Bern cadastral survey, SBB kerb points), `official_point` (atlas or SBB register coordinate), `official_city_point` (Stadt Bern kerb point), `community` (OSM), `approximate` (constructed by this project), `missing` |
 | `inferred`, `inferred_how` | `true` when the geometry or a link was derived, matched by proximity, estimated or drawn, with the method |
 | `dim_quality`, `height_quality`, `width_quality`, `length_quality`, `clear_height_quality` | `surveyed`, `source_derived`, `approximate` or `missing` for that dimension, with a `*_note` where a nominal value was used |
 | `verified_against` | list of independent sources that confirm the feature, each with the match rule and a distance |
@@ -68,13 +68,18 @@ One feature per atlas `BOARDING_PLATFORM`. `geometry_method` says how the line w
 | `osm_platform` | `community` | OSM platform way, or one long side of an OSM platform polygon: the side that has the platform on the right of the atlas direction of travel, else the side nearest to the atlas point. Matched within 15 m (rail 30 m), preferring the same `ref` letter (`osm_ref_check`). A tram or bus edge never takes a railway platform or a line longer than 100 m; a line contested by two different edges goes to the nearer one (`osm_platforms_left_to_a_nearer_edge` on the other) |
 | `constructed` | `approximate` | straight line through the atlas point; bearing from atlas `compassDirection`, else the nearest OSM track or road; length from atlas, else a nominal 42 m (tram) or 18 m (bus) |
 | `point_only` | `official_point` | the atlas coordinate; no bearing could be derived |
-| `none` | `missing` | atlas publishes no coordinate for this edge; `geometry` is `null` |
+| `city_kerb_point` | `official_city_point` | point of the one Stadt Bern kerb whose label equals the edge's designation or operational designation, for edges without an atlas coordinate (rule in place; no edge qualifies at present) |
+| `none` | `missing` | atlas publishes no coordinate for this edge; `geometry` is `null` and `no_geometry_reason` says why no city kerb could be matched |
 
 Main properties: `designation` (public letter or track), `designation_operational`, `parent_area_sloid`,
 `station_modes`, `mode_guess`, `atlas_height_m`, `atlas_length_m`, `atlas_boarding_height_cm`,
 `atlas_compass_direction_deg`, `atlas_lon`, `atlas_lat`, `lv95_e`, `lv95_n`, `length_m`, `axis_bearing_deg`,
 `dist_atlas_to_geometry_m`, `platform_side_bearing_deg` (bearing pointing from the kerb into the waiting area) with
-`platform_side_how`, `lines_at_kerb` (lines and destinations from the Stadt Bern kerb layer), `prm` (atlas
+`platform_side_how`, `lines_at_kerb` (lines and destinations of the paired Stadt Bern kerb point: paired by station
+number and kerb letter, else the city kerb nearest to the edge line within 6 m when the edge is also that kerb's
+nearest edge; the pairing is in `verified_against`), `city_kerb_letter` (the city's letter for an edge without an
+atlas letter; never overwrites `designation`), `city_kerb_candidate` and `no_geometry_reason` (edges without an
+atlas coordinate), `prm` (atlas
 accessibility attributes of the edge), `step_free_access` (list: named atlas reference point, its type, and
 `YES`, `YES_WITH_LIFT`, `YES_WITH_RAMP`, `NO` or `TO_BE_COMPLETED`), `surveyed_kerb_candidate` (pointer to the
 candidate feature with its mean offset), `sbb_partial_coverage`, `in_transit_edges`, `transit_tier`, `atlas_valid_today`,

@@ -1,5 +1,5 @@
 {
- "generated_utc": "2026-11-21T01:52:33Z",
+ "generated_utc": "2026-11-21T02:08:48Z",
  "selection": {
   "tier_1": "priority stations set by hand: bern-bahnhof, zytglogge, wankdorf",
   "tier_2": "rule: every atlas rail station in the study area and every tram/bus stop with at least 4 lettered kerbs, unless it already lies inside another focus area (see tools/common.py focus_areas)"
@@ -201,7 +201,7 @@
     "official_point": 256
    },
    "cross_checked_by_type": {
-    "boarding_edge": 44,
+    "boarding_edge": 47,
     "platform_surface": 6,
     "stairs": 27,
     "passage": 65,
@@ -479,7 +479,7 @@
     "official_point": 59
    },
    "cross_checked_by_type": {
-    "boarding_edge": 11,
+    "boarding_edge": 13,
     "platform_surface": 4,
     "stairs": 10
    },
@@ -847,6 +847,7 @@
     "approximate": 4
    },
    "cross_checked_by_type": {
+    "boarding_edge": 3,
     "platform_surface": 1
    },
    "inferred": 25,
@@ -935,6 +936,7 @@
     "official_point": 24
    },
    "cross_checked_by_type": {
+    "boarding_edge": 2,
     "platform_surface": 2
    },
    "inferred": 46,
@@ -1037,7 +1039,7 @@
     "official_point": 4
    },
    "cross_checked_by_type": {
-    "boarding_edge": 4,
+    "boarding_edge": 6,
     "platform_surface": 2
    },
    "inferred": 39,
@@ -1234,7 +1236,7 @@
     "official_point": 4
    },
    "cross_checked_by_type": {
-    "boarding_edge": 3,
+    "boarding_edge": 4,
     "platform_surface": 3,
     "passage": 1,
     "stairs": 3,
@@ -1567,7 +1569,9 @@
     "community": 43,
     "approximate": 3
    },
-   "cross_checked_by_type": {},
+   "cross_checked_by_type": {
+    "boarding_edge": 1
+   },
    "inferred": 31,
    "walk_graph": {
     "nodes": 256,
@@ -1741,7 +1745,7 @@
     "approximate": 2
    },
    "cross_checked_by_type": {
-    "boarding_edge": 3,
+    "boarding_edge": 7,
     "platform_surface": 2
    },
    "inferred": 35,
@@ -1942,7 +1946,7 @@
     "official_point": 3
    },
    "cross_checked_by_type": {
-    "boarding_edge": 3,
+    "boarding_edge": 11,
     "platform_surface": 1
    },
    "inferred": 29,
@@ -2410,7 +2414,9 @@
     "official_point": 1,
     "community": 38
    },
-   "cross_checked_by_type": {},
+   "cross_checked_by_type": {
+    "boarding_edge": 1
+   },
    "inferred": 33,
    "walk_graph": {
     "nodes": 182,
@@ -2707,7 +2713,7 @@
     "official_point": 2
    },
    "cross_checked_by_type": {
-    "boarding_edge": 1,
+    "boarding_edge": 3,
     "platform_surface": 1
    },
    "inferred": 12,
@@ -2852,7 +2858,9 @@
     "community": 26,
     "approximate": 3
    },
-   "cross_checked_by_type": {},
+   "cross_checked_by_type": {
+    "boarding_edge": 1
+   },
    "inferred": 20,
    "walk_graph": {
     "nodes": 161,
@@ -3011,7 +3019,7 @@
     "surveyed": 32
    },
    "cross_checked_by_type": {
-    "boarding_edge": 1
+    "boarding_edge": 4
    },
    "inferred": 23,
    "walk_graph": {
@@ -3122,7 +3130,9 @@
    "by_geometry_quality": {
     "community": 33
    },
-   "cross_checked_by_type": {},
+   "cross_checked_by_type": {
+    "boarding_edge": 4
+   },
    "inferred": 10,
    "walk_graph": {
     "nodes": 118,
@@ -3185,7 +3195,7 @@
     "surveyed": 30
    },
    "cross_checked_by_type": {
-    "boarding_edge": 4,
+    "boarding_edge": 5,
     "passage": 1
    },
    "inferred": 24,
@@ -3261,7 +3271,7 @@
     "surveyed": 23
    },
    "cross_checked_by_type": {
-    "boarding_edge": 5,
+    "boarding_edge": 6,
     "passage": 2
    },
    "inferred": 28,
@@ -3338,7 +3348,7 @@
     "surveyed": 29
    },
    "cross_checked_by_type": {
-    "boarding_edge": 2,
+    "boarding_edge": 4,
     "stairs": 3
    },
    "inferred": 32,
@@ -3400,7 +3410,9 @@
     "approximate": 4,
     "community": 17
    },
-   "cross_checked_by_type": {},
+   "cross_checked_by_type": {
+    "boarding_edge": 3
+   },
    "inferred": 10,
    "walk_graph": {
     "nodes": 102,
@@ -3473,6 +3485,7 @@
     "community": 20
    },
    "cross_checked_by_type": {
+    "boarding_edge": 3,
     "passage": 1
    },
    "inferred": 23,
@@ -3540,7 +3553,7 @@
     "surveyed": 26
    },
    "cross_checked_by_type": {
-    "boarding_edge": 2,
+    "boarding_edge": 4,
     "stairs": 2
    },
    "inferred": 24,
@@ -3597,7 +3610,9 @@
     "community": 33,
     "approximate": 2
    },
-   "cross_checked_by_type": {},
+   "cross_checked_by_type": {
+    "boarding_edge": 4
+   },
    "inferred": 28,
    "walk_graph": {
     "nodes": 98,
@@ -3647,7 +3662,9 @@
    "by_geometry_quality": {
     "community": 27
    },
-   "cross_checked_by_type": {},
+   "cross_checked_by_type": {
+    "boarding_edge": 4
+   },
    "inferred": 17,
    "walk_graph": {
     "nodes": 118,
@@ -3712,7 +3729,7 @@
     "surveyed": 28
    },
    "cross_checked_by_type": {
-    "boarding_edge": 2
+    "boarding_edge": 3
    },
    "inferred": 12,
    "walk_graph": {
@@ -3771,7 +3788,7 @@
     "surveyed": 7
    },
    "cross_checked_by_type": {
-    "boarding_edge": 2
+    "boarding_edge": 4
    },
    "inferred": 10,
    "walk_graph": {
@@ -3838,6 +3855,7 @@
     "surveyed": 3
    },
    "cross_checked_by_type": {
+    "boarding_edge": 4,
     "passage": 1
    },
    "inferred": 12,
@@ -3912,7 +3930,7 @@
     "surveyed": 23
    },
    "cross_checked_by_type": {
-    "boarding_edge": 2,
+    "boarding_edge": 3,
     "stairs": 2
    },
    "inferred": 28,
@@ -4055,7 +4073,7 @@
     "surveyed": 32
    },
    "cross_checked_by_type": {
-    "boarding_edge": 3
+    "boarding_edge": 7
    },
    "inferred": 21,
    "walk_graph": {
@@ -4124,7 +4142,7 @@
     "surveyed": 25
    },
    "cross_checked_by_type": {
-    "boarding_edge": 2,
+    "boarding_edge": 4,
     "stairs": 1,
     "passage": 1
    },
@@ -4193,7 +4211,7 @@
     "surveyed": 26
    },
    "cross_checked_by_type": {
-    "boarding_edge": 2
+    "boarding_edge": 6
    },
    "inferred": 15,
    "walk_graph": {
@@ -4443,7 +4461,7 @@
     "surveyed": 35
    },
    "cross_checked_by_type": {
-    "boarding_edge": 1,
+    "boarding_edge": 4,
     "stairs": 3
    },
    "inferred": 23,
@@ -4518,7 +4536,7 @@
     "surveyed": 25
    },
    "cross_checked_by_type": {
-    "boarding_edge": 2,
+    "boarding_edge": 4,
     "passage": 1
    },
    "inferred": 14,
@@ -4584,7 +4602,7 @@
     "approximate": 2
    },
    "cross_checked_by_type": {
-    "boarding_edge": 1
+    "boarding_edge": 5
    },
    "inferred": 13,
    "walk_graph": {
@@ -4703,7 +4721,7 @@
     "surveyed": 26
    },
    "cross_checked_by_type": {
-    "boarding_edge": 5,
+    "boarding_edge": 6,
     "stairs": 5
    },
    "inferred": 39,
