@@ -797,7 +797,8 @@
       <h2>Who it’s for</h2>
       <p id="evAudience"></p>
       <a class="ev-map-btn" id="evOrganizer" target="_blank" rel="noopener noreferrer">Organizer details</a>
-      <button class="ev-map-btn" id="evShowMap" type="button">Show on map</button>
+      <button class="ev-map-btn" id="evShowJourney" type="button">Show journey</button>
+      <p id="evJourneyStatus" role="status"></p>
     </div>
   </article>
 
@@ -1402,7 +1403,10 @@
 
     function select(i) {
       const r = results[i];
-      if (!r) return;
+      if (r) showDestinationJourney(r);
+    }
+
+    function showDestinationJourney(r) {
       input.value = r.title;
       clearBtn.classList.add('show');
       list.classList.remove('open');
@@ -2781,7 +2785,14 @@
       evPage.scrollTop = 0;
     }
 
+    const eventJourneyButton = document.getElementById('evShowJourney');
+    const eventJourneyStatus = document.getElementById('evJourneyStatus');
+    let eventLocationRequest = 0;
+
     function routeFromHash() {
+      eventLocationRequest++;
+      eventJourneyButton.disabled = false;
+      eventJourneyStatus.textContent = '';
       const m = location.hash.match(/^#event\/(.+)$/);
       const f = m && findEvent(decodeURIComponent(m[1]));
       if (f) {
@@ -2805,13 +2816,38 @@
 
     window.addEventListener('hashchange', () => { if (!location.hash) pushedHash = false; routeFromHash(); });
     document.getElementById('evBack').addEventListener('click', closeEvent);
-    document.getElementById('evShowMap').addEventListener('click', () => {
-      const f = pageEvent;
-      closeEvent();
-      if (f) {
-        setEventsOn(true);
-        map.flyTo({ center: f.geometry.coordinates, zoom: Math.max(map.getZoom(), 16), speed: 1.4 });
+    eventJourneyButton.addEventListener('click', () => {
+      const event = pageEvent;
+      if (!event) return;
+      if (!window.isSecureContext || !navigator.geolocation) {
+        eventJourneyStatus.textContent = 'Location is unavailable. Open this page over HTTPS in a browser with location access.';
+        return;
       }
+      const request = ++eventLocationRequest;
+      eventJourneyButton.disabled = true;
+      eventJourneyStatus.textContent = 'Finding your current location…';
+      navigator.geolocation.getCurrentPosition(position => {
+        if (request !== eventLocationRequest) return;
+        eventJourneyButton.disabled = false;
+        if (!inSwitzerland([position.coords.longitude, position.coords.latitude])) {
+          eventJourneyStatus.textContent = 'Journeys are available from locations in Switzerland.';
+          return;
+        }
+        onPosition(position);
+        const destination = event.properties.areaOnly
+          ? event.properties.title + ' (' + event.properties.city + ' area)'
+          : event.properties.title;
+        pushedHash = false;
+        history.replaceState(null, '', location.pathname + location.search);
+        routeFromHash();
+        showDestinationJourney({ title: destination, lngLat: event.geometry.coordinates });
+      }, error => {
+        if (request !== eventLocationRequest) return;
+        eventJourneyButton.disabled = false;
+        eventJourneyStatus.textContent = error.code === 1
+          ? 'Allow location access in your browser, then tap Show journey again.'
+          : 'Your location could not be found. Tap Show journey to try again.';
+      }, { enableHighAccuracy: true, maximumAge: 30000, timeout: 15000 });
     });
     routeFromHash(); // a shared #event/… link opens straight on the page
 
