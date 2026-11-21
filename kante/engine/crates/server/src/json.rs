@@ -57,6 +57,8 @@ pub struct NearbyLine {
     pub quay: Quay,
     pub next: Vec<i64>,
     pub live: bool,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub delay_s: Option<i32>,
     pub trip_id: String,
     pub service_date: String,
     pub seq: u16,
@@ -344,6 +346,7 @@ pub struct Departure {
     pub service_date: String,
     pub seq: u16,
     pub dep: i64,
+    pub live: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub delay_s: Option<i32>,
     #[serde(skip_serializing_if = "std::ops::Not::not")]

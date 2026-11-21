@@ -359,8 +359,11 @@ impl App {
 
     pub fn line_badge(&self, trip: TripIdx) -> json::LineBadge {
         let line = self.tt.trip_line(trip);
+        // Cableways, funiculars and lifts carry an internal course number as
+        // their "line name" ("2350"); nobody knows them by it.
+        let internal = matches!(line.mode, Mode::Funicular | Mode::Cableway | Mode::Lift) && line.name.len() >= 3 && line.name.chars().all(|c| c.is_ascii_digit());
         json::LineBadge {
-            name: line.name.clone(),
+            name: if internal { String::new() } else { line.name.clone() },
             category: line.category.clone(),
             mode: line.mode.as_str(),
             operator: self.tt.agencies.get(line.agency as usize).map(|a| a.name.clone()).unwrap_or_default(),
@@ -397,13 +400,17 @@ impl App {
                 1 => ("tram-track", "the tram tracks"),
                 _ => ("rail-track", "the tracks"),
             };
-            let what = if sd.street.is_empty() { generic.to_string() } else { sd.street.clone() };
-            Some(json::QuaySide {
-                street: sd.street.clone(),
-                side: SIDE_CODES[sd.side as usize],
-                of,
-                text: format!("{} side of {}", SIDE_WORDS[sd.side as usize], what),
-            })
+            let word = SIDE_WORDS[sd.side as usize];
+            let text = if !sd.street.is_empty() {
+                format!("{word} side of {}", sd.street)
+            } else if !sd.place.is_empty() {
+                // On an island or in a square: the side is of the lane or
+                // track right beside the stop, not of the whole street.
+                format!("on {}, {word} side of {generic}", sd.place)
+            } else {
+                format!("{word} side of {generic}")
+            };
+            Some(json::QuaySide { street: if sd.street.is_empty() { sd.place.clone() } else { sd.street.clone() }, side: SIDE_CODES[sd.side as usize], of, text })
         });
         json::Quay {
             id: stop.gtfs_id.clone(),

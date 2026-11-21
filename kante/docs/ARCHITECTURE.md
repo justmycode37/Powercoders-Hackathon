@@ -266,7 +266,7 @@ impl WalkRouter {
 ### kante-link
 
 ```rust
-pub struct LinkOptions { /// Footpaths are computed up to this walking time at DEFAULT_SPEED_MPS (default 900 s).
+pub struct LinkOptions { /// Footpaths are computed up to this walking time at DEFAULT_SPEED_MPS (default 720 s).
                          pub max_transfer_s: f32 }
 pub fn link(tt: &Timetable, router: &WalkRouter, extract: &OsmExtract, opts: &LinkOptions) -> LinkData;
 ```

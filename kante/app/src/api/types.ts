@@ -46,7 +46,7 @@ export interface SearchResponse {
   results: Place[];
 }
 
-/** GET /api/nearby?lat=&lon=&radius=&limit=  → stations around a point with what leaves next. */
+/** GET /api/nearby?lat=&lon=&radius=&limit=&time=  → stations around a point with what leaves next (`time`: unix s, default now). */
 export interface NearbyResponse {
   stations: NearbyStation[];
 }
@@ -64,6 +64,8 @@ export interface NearbyLine {
   /** Next departure times (unix s), up to 3, live where available. */
   next: number[];
   live: boolean;
+  /** Delay of the first departure in seconds, when live. */
+  delayS?: number;
   tripId: string;
   serviceDate: string;
   /** Position of this stop in the trip's stop sequence. */
@@ -112,13 +114,13 @@ export interface Quay {
 }
 
 export interface QuaySide {
-  /** Street, square or "" when unnamed. */
+  /** Street or square the boarding point is on or beside; "" when unnamed. */
   street: string;
   /** Compass side of the roadway/track the boarding point is on. */
   side: "N" | "NE" | "E" | "SE" | "S" | "SW" | "W" | "NW";
   /** What the side refers to. */
   of: "road" | "tram-track" | "rail-track";
-  /** Ready-made English sentence fragment: "north side of Bubenbergplatz". */
+  /** Ready-made English sentence fragment: "north side of Bubenbergplatz", or "on Bubenbergplatz, south side of the road" for a stop on an island in a square. */
   text: string;
 }
 
@@ -356,6 +358,8 @@ export interface Departure {
   seq: number;
   /** Scheduled departure (unix s). */
   dep: number;
+  /** Live data exists for this trip. */
+  live: boolean;
   delayS?: number;
   cancelled?: boolean;
   /** Id of an entry in `quays`. */
@@ -455,7 +459,7 @@ export interface MetaResponse {
   validTo: string;
   /** Area with detailed walking data, `[west, south, east, north]`. */
   walkBbox: [number, number, number, number];
-  realtime: { enabled: boolean; source?: string; updatedAt?: number; trips?: number };
+  realtime: { enabled: boolean; source?: string; updatedAt?: number; trips?: number; /** Last polling error, if the latest poll failed. */ error?: string };
   counts: { stations: number; quays: number; trips: number; walkEdges: number };
   attribution: string[];
 }

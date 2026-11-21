@@ -739,7 +739,11 @@ fn side_of(stop: &Stop, link: &StopLink, lines: &Lines, router: &WalkRouter, seg
                 line = *surface;
             }
         }
-        let mut info = SideInfo { street: String::new(), side: 255, ref_kind: k as u8, dist_m: line.dist, line_bearing: (line.bearing % 180.0) as i16 };
+        let mut info = SideInfo { street: String::new(), place: String::new(), side: 255, ref_kind: k as u8, dist_m: line.dist, line_bearing: (line.bearing % 180.0) as i16 };
+        // The named street or square the stop is at, even when no side can be stated for it.
+        if let Some(named) = nearest(CarriagewayKind::Road, reg).into_iter().find(|p| p.name != 0 && p.dist <= 25.0) {
+            info.place = name_of(named.name);
+        }
         let Some((point, mut pr)) = reference(line.cw) else {
             // On the centre line: no side, but the street is still the stop's street.
             if k == CarriagewayKind::Road && line.name != 0 {

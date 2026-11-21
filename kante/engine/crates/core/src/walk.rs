@@ -22,7 +22,7 @@ use crate::timetable::StopIdx;
 use serde::{Deserialize, Serialize};
 
 pub const WALKGRAPH_SCHEMA: &str = "walkgraph-v1";
-pub const LINKS_SCHEMA: &str = "links-v1";
+pub const LINKS_SCHEMA: &str = "links-v2";
 
 pub const STAIRS_FACTOR: f32 = 2.2;
 pub const LIFT_S: f32 = 50.0;
@@ -323,8 +323,14 @@ pub enum LinkMatch {
 /// Where a Stop sits relative to the street: "north side of Bubenbergplatz".
 #[derive(Clone, Debug, Default, Serialize, Deserialize)]
 pub struct SideInfo {
-    /// Name of the road / square the reference line belongs to ("" if unnamed).
+    /// Name of the road / square the reference line belongs to ("" if unnamed,
+    /// or if the side would not hold for every carriageway of that name —
+    /// a stop on an island in the middle of a square).
     pub street: String,
+    /// The named street or square the stop is on or beside, whether or not
+    /// `side` can be stated relative to it ("" if none nearby). Lets the app
+    /// say "on Bubenbergplatz, south side of the road".
+    pub place: String,
     /// Compass side of the reference line the stop is on, as an index into
     /// N, NE, E, SE, S, SW, W, NW; 255 = unknown.
     pub side: u8,

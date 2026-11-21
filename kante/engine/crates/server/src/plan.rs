@@ -629,7 +629,11 @@ impl App {
                         qdate = d;
                         query.date = d;
                         let limit = s + total;
-                        picked = self.range(&query, s, total, 4).into_iter().filter(|j| if by_arrival { j.arr <= limit } else { j.dep <= limit }).collect();
+                        // "Earlier" pages end at a departure time: search two
+                        // hours past it so that journeys leaving later can
+                        // still rule out slower ones that leave before it.
+                        let tail = if by_arrival { 0 } else { 2 * 3600 };
+                        picked = self.range(&query, s, total + tail, if tail > 0 { 6 } else { 4 }).into_iter().filter(|j| if by_arrival { j.arr <= limit } else { j.dep <= limit }).collect();
                         if picked.len() >= 3 {
                             break;
                         }

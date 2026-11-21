@@ -1001,7 +1001,7 @@ function plan(req) {
 
 /** @param {Station} s @param {number} from @param {number} limit @param {string | null} quayId @returns {T.Departure[]} */
 function departuresOf(s, from, limit, quayId) {
-  /** @type {(T.Departure & { live: number })[]} */
+  /** @type {(T.Departure & { sortAt: number })[]} */
   const out = [];
   for (const p of patterns) {
     for (let i = 0; i < p.stops.length - 1; i++) {
@@ -1014,8 +1014,8 @@ function departuresOf(s, from, limit, quayId) {
         const quay = quayAt(t, i);
         if (quayId && quay.id !== quayId) continue;
         const nq = quayAt(t, i + 1);
-        /** @type {T.Departure & { live: number }} */
-        const d = { line: p.line.badge, headsign: p.headsign, tripId: t.id, serviceDate: t.date, seq: i, dep, quayId: quay.id, towards: p.stops[i + 1].station.name, bearing: Math.round(bearing(quay.lat, quay.lon, nq.lat, nq.lon)), live };
+        /** @type {T.Departure & { sortAt: number }} */
+        const d = { line: p.line.badge, headsign: p.headsign, tripId: t.id, serviceDate: t.date, seq: i, dep, quayId: quay.id, towards: p.stops[i + 1].station.name, bearing: Math.round(bearing(quay.lat, quay.lon, nq.lat, nq.lon)), live: t.delayS !== undefined, sortAt: live };
         if (p.line.number) d.number = p.line.number;
         if (t.delayS !== undefined) d.delayS = t.delayS;
         if (t.cancelled) d.cancelled = true;
@@ -1024,8 +1024,8 @@ function departuresOf(s, from, limit, quayId) {
       }
     }
   }
-  out.sort((a, b) => a.live - b.live);
-  return out.slice(0, limit).map(({ live, ...d }) => d);
+  out.sort((a, b) => a.sortAt - b.sortAt);
+  return out.slice(0, limit).map(({ sortAt, ...d }) => d);
 }
 
 /** Quays of a station, with sectors stripped (they belong to a call). @param {Station} s */
