@@ -1,6 +1,6 @@
 # Validation report
 
-Run 2026-11-21T03:01:26+01:00 on HEAD `33752f6`, folders: transit, city3d, stations, references, lead.
+Run 2026-11-21T03:21:43+01:00 on HEAD `abf846f`, folders: transit, city3d, stations, references, lead.
 
 **0 FAIL, 19 WARN, 104 OK**
 
@@ -44,7 +44,7 @@ Run 2026-11-21T03:01:26+01:00 on HEAD `33752f6`, folders: transit, city3d, stati
 
 ## stations
 
-- **OK** 268 files, 19.6 MB would be committed
+- **OK** 269 files, 19.8 MB would be committed
 - **OK** stations/SOURCES.json: 90 manifest entries, all with url, licence, date, checksum
 - **OK** stations/data/boarding_edges.geojson: 1105 features, 9239 vertices, 2310 SLOID values
 - **OK** stations/data/focus/8504104-thoerishaus-station.geojson: 33 features, 469 vertices, 15 SLOID values

@@ -1,6 +1,6 @@
 # Bern research: morning handoff
 
-**Status: in progress, snapshot 3.** Updated 2026-11-21 03:05 Europe/Zurich by the lead. Rewritten at each committed
+**Status: in progress, snapshot 4.** Updated 2026-11-21 03:25 Europe/Zurich by the lead. Rewritten at each committed
 snapshot; final at 07:00. Numbers are from the committed files at this snapshot and may still grow.
 
 - Checkout: `C:\Users\apfel\Documents\Coding\Powercoders-Hackathon`
@@ -62,6 +62,12 @@ snapshot; final at 07:00. Numbers are from the committed files at this snapshot 
   letter or track, only an operational number.
 - **Kerb lines:** 448 are constructed from a point and a bearing with a default length (`geometry_quality:
   approximate`), 551 come from OSM (`community`). Only the 64 SBB lines are surveyed.
+- **Atlas edge points are not kerb-exact along the kerb.** Against the Stadt Bern kerb layer (60 edges matched by
+  stop and letter) the atlas point is a median 10.2 m from the city's kerb point (90 % within 20.7 m, maximum
+  34.3 m). The offsets run along the kerb: the city points lie a median 1.2 m from the drawn edge lines. Atlas and
+  the city never disagree on which letter is on which side.
+- **The 23 edges without atlas coordinates stay without geometry.** The city layer could not fill them: it has
+  letters on only 58 of 873 kerbs and no operational numbers.
 - **Four rail edges disagree with their track number:** the atlas point for Bern track 12 and Wankdorf tracks 2, 3
   and 7 sits on the neighbouring track. The geometry follows the track number; see `stations/data/build-report.json`.
 - **Station interiors come from OSM.** Many stairs and lifts carry no level tag there. Nothing inside the stations
@@ -136,7 +142,7 @@ texts tonight; treat the licence fields as what the publisher states on the data
 | `94ace7d`, `dc2b49e` | Transit snapshots 1 and 2 |
 | `2487027` | References snapshot 1 |
 | `376e88c` | City 3D snapshot 1 (138 MB of data in 755 files) |
-| `acb14c1`, `33752f6`, `e9bf38b` | Stations snapshots 1 to 3 |
+| `acb14c1`, `33752f6`, `e9bf38b`, and the next commit | Stations snapshots 1 to 4 |
 | `ec017da` | Transit snapshot 3 (timetable slice, handoff) |
 | `17503fd` | References snapshot 2 (licensed image subset, manifest) |
 | `e5d9948` | Sample loader, smoke test |
