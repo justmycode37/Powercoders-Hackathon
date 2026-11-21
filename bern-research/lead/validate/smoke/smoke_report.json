@@ -1,18 +1,18 @@
 {
- "run": "2026-11-21T01:23:36.092Z",
+ "run": "2026-11-21T03:38:58.085Z",
  "checks": [
   {
    "name": "sample: page and base map load",
    "pass": true,
    "detail": {
     "log": [
-     "stations/data/focus/index.json: ok, 6 ms",
-     "stations/data/boarding_edges.geojson: 1095 features, 30 ms",
-     "transit/data/edges.geojson: 3483 features, 31 ms",
+     "stations/data/focus/index.json: ok, 8 ms",
+     "stations/data/boarding_edges.geojson: 1105 features, 32 ms",
+     "transit/data/edges.geojson: 3483 features, 32 ms",
      "edges with coordinates: 3222 (585 in Bern municipality)",
      "loading transit/data/fp2026/timetable.json (first click only)…",
-     "timetable fp2026 decoded in 103 ms",
-     "stations/data/focus/bern-bahnhof.geojson: 1189 features, 14 ms",
+     "timetable fp2026 decoded in 110 ms",
+     "stations/data/focus/bern-bahnhof.geojson: 1328 features, 21 ms",
      ""
     ]
    }
@@ -25,7 +25,7 @@
   {
    "name": "sample: kerb and track lines loaded",
    "pass": true,
-   "detail": 1095
+   "detail": 1105
   },
   {
    "name": "sample: Zytglogge edge K resolves by SLOID",
@@ -90,7 +90,7 @@
   {
    "name": "sample: Bern Bahnhof station detail loaded",
    "pass": true,
-   "detail": 1187
+   "detail": 1326
   },
   {
    "name": "sample: no console errors or failed requests",

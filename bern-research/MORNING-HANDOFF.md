@@ -1,6 +1,6 @@
 # Bern research: morning handoff
 
-**Status: in progress, snapshot 4.** Updated 2026-11-21 03:25 Europe/Zurich by the lead. Rewritten at each committed
+**Status: in progress, snapshot 5.** Updated 2026-11-21 04:50 Europe/Zurich by the lead. Rewritten at each committed
 snapshot; final at 07:00. Numbers are from the committed files at this snapshot and may still grow.
 
 - Checkout: `C:\Users\apfel\Documents\Coding\Powercoders-Hackathon`
@@ -91,6 +91,7 @@ snapshot; final at 07:00. Numbers are from the committed files at this snapshot 
 |---|---|---|
 | Lead validator (sizes, parsing, coordinates, ids, flags, manifests, credentials) and cross-folder joins | 0 FAIL, 19 WARN (03:01) | `python -I bern-research/lead/validate/validate.py` -> `lead/validate/REPORT.md` |
 | Sample loader smoke test in headless Chrome | 10 of 10 pass | `node bern-research/lead/validate/smoke_sample.js` -> `lead/validate/smoke/` |
+| Timetable against the live Swiss journey API (`transport.opendata.ch` station boards) for Zytglogge, Bern Bahnhof, Bern, Bern Wankdorf and Wankdorf Bahnhof | 605 of 607 departures found at the same minute and line, on Mon 2026-11-23 08:00, Sun 2026-11-22 23:30 (past midnight) and Mon 2026-12-14 17:30 (2027 feed). Platform or kerb equal in all 592 cases where both sides give one. The 2 misses are long-distance trains the API lists by train number. | `node bern-research/lead/validate/crosscheck_stationboard.js 2026-11-23 08:00` |
 | Transit worker checks (incl. timetable decode against the GTFS subset) | 75 checks, 0 failed | `python bern-research/transit/scripts/validate.py` |
 | Stations worker checks | 0 FAIL, 48 WARN | `python bern-research/stations/tools/validate.py` |
 
@@ -142,7 +143,7 @@ texts tonight; treat the licence fields as what the publisher states on the data
 | `94ace7d`, `dc2b49e` | Transit snapshots 1 and 2 |
 | `2487027` | References snapshot 1 |
 | `376e88c` | City 3D snapshot 1 (138 MB of data in 755 files) |
-| `acb14c1`, `33752f6`, `e9bf38b`, and the next commit | Stations snapshots 1 to 4 |
+| `acb14c1`, `33752f6`, `e9bf38b`, `3766ba6` | Stations snapshots 1 to 4 |
 | `ec017da` | Transit snapshot 3 (timetable slice, handoff) |
 | `17503fd` | References snapshot 2 (licensed image subset, manifest) |
 | `e5d9948` | Sample loader, smoke test |

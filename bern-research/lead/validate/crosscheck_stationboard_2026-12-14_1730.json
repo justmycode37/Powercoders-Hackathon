@@ -1,0 +1,72 @@
+{
+ "run": "2026-11-21T03:38:40.850Z",
+ "date": "2026-12-14",
+ "time": "17:30",
+ "feed": "fp2027",
+ "api": "https://transport.opendata.ch/v1/stationboard",
+ "stations": [
+  {
+   "num": "8507110",
+   "name": "Bern, Zytglogge",
+   "api_departures": 41,
+   "ours_in_window": 646,
+   "matched": 41,
+   "share_matched": 1,
+   "platform_compared": 41,
+   "platform_same": 41,
+   "misses": [],
+   "platform_differences": []
+  },
+  {
+   "num": "8576646",
+   "name": "Bern, Bahnhof",
+   "api_departures": 40,
+   "ours_in_window": 884,
+   "matched": 40,
+   "share_matched": 1,
+   "platform_compared": 40,
+   "platform_same": 40,
+   "misses": [],
+   "platform_differences": []
+  },
+  {
+   "num": "8507000",
+   "name": "Bern",
+   "api_departures": 42,
+   "ours_in_window": 344,
+   "matched": 41,
+   "share_matched": 0.976,
+   "platform_compared": 41,
+   "platform_same": 41,
+   "misses": [
+    "18:04 ICE000100 -> Basel Bad Bf"
+   ],
+   "platform_differences": []
+  },
+  {
+   "num": "8516161",
+   "name": "Bern Wankdorf",
+   "api_departures": 40,
+   "ours_in_window": 124,
+   "matched": 40,
+   "share_matched": 1,
+   "platform_compared": 40,
+   "platform_same": 40,
+   "misses": [],
+   "platform_differences": []
+  },
+  {
+   "num": "8590129",
+   "name": "Bern, Wankdorf Bahnhof",
+   "api_departures": 40,
+   "ours_in_window": 107,
+   "matched": 40,
+   "share_matched": 1,
+   "platform_compared": 40,
+   "platform_same": 40,
+   "misses": [],
+   "platform_differences": []
+  }
+ ],
+ "ok": true
+}

@@ -1,0 +1,70 @@
+{
+ "run": "2026-11-21T03:38:40.000Z",
+ "date": "2026-11-23",
+ "time": "08:00",
+ "feed": "fp2026",
+ "api": "https://transport.opendata.ch/v1/stationboard",
+ "stations": [
+  {
+   "num": "8507110",
+   "name": "Bern, Zytglogge",
+   "api_departures": 41,
+   "ours_in_window": 1073,
+   "matched": 41,
+   "share_matched": 1,
+   "platform_compared": 35,
+   "platform_same": 35,
+   "misses": [],
+   "platform_differences": []
+  },
+  {
+   "num": "8576646",
+   "name": "Bern, Bahnhof",
+   "api_departures": 40,
+   "ours_in_window": 1340,
+   "matched": 40,
+   "share_matched": 1,
+   "platform_compared": 35,
+   "platform_same": 35,
+   "misses": [],
+   "platform_differences": []
+  },
+  {
+   "num": "8507000",
+   "name": "Bern",
+   "api_departures": 40,
+   "ours_in_window": 612,
+   "matched": 40,
+   "share_matched": 1,
+   "platform_compared": 40,
+   "platform_same": 40,
+   "misses": [],
+   "platform_differences": []
+  },
+  {
+   "num": "8516161",
+   "name": "Bern Wankdorf",
+   "api_departures": 40,
+   "ours_in_window": 203,
+   "matched": 40,
+   "share_matched": 1,
+   "platform_compared": 40,
+   "platform_same": 40,
+   "misses": [],
+   "platform_differences": []
+  },
+  {
+   "num": "8590129",
+   "name": "Bern, Wankdorf Bahnhof",
+   "api_departures": 40,
+   "ours_in_window": 236,
+   "matched": 40,
+   "share_matched": 1,
+   "platform_compared": 40,
+   "platform_same": 40,
+   "misses": [],
+   "platform_differences": []
+  }
+ ],
+ "ok": true
+}

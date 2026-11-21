@@ -1,0 +1,72 @@
+{
+ "run": "2026-11-21T03:38:40.457Z",
+ "date": "2026-11-22",
+ "time": "23:30",
+ "feed": "fp2026",
+ "api": "https://transport.opendata.ch/v1/stationboard",
+ "stations": [
+  {
+   "num": "8507110",
+   "name": "Bern, Zytglogge",
+   "api_departures": 41,
+   "ours_in_window": 587,
+   "matched": 41,
+   "share_matched": 1,
+   "platform_compared": 41,
+   "platform_same": 41,
+   "misses": [],
+   "platform_differences": []
+  },
+  {
+   "num": "8576646",
+   "name": "Bern, Bahnhof",
+   "api_departures": 42,
+   "ours_in_window": 637,
+   "matched": 42,
+   "share_matched": 1,
+   "platform_compared": 40,
+   "platform_same": 40,
+   "misses": [],
+   "platform_differences": []
+  },
+  {
+   "num": "8507000",
+   "name": "Bern",
+   "api_departures": 40,
+   "ours_in_window": 275,
+   "matched": 39,
+   "share_matched": 0.975,
+   "platform_compared": 39,
+   "platform_same": 39,
+   "misses": [
+    "04:18 IR002155 -> Zürich Flughafen"
+   ],
+   "platform_differences": []
+  },
+  {
+   "num": "8516161",
+   "name": "Bern Wankdorf",
+   "api_departures": 40,
+   "ours_in_window": 100,
+   "matched": 40,
+   "share_matched": 1,
+   "platform_compared": 40,
+   "platform_same": 40,
+   "misses": [],
+   "platform_differences": []
+  },
+  {
+   "num": "8590129",
+   "name": "Bern, Wankdorf Bahnhof",
+   "api_departures": 40,
+   "ours_in_window": 114,
+   "matched": 40,
+   "share_matched": 1,
+   "platform_compared": 40,
+   "platform_same": 40,
+   "misses": [],
+   "platform_differences": []
+  }
+ ],
+ "ok": true
+}
