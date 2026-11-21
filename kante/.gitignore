@@ -1,0 +1,14 @@
+# Downloaded and built data, API keys
+data/
+
+# Build output
+engine/target*/
+node_modules/
+app/dist/
+app/.cache/
+*.log
+
+# Third-party screenshots the UI studies were written from (kept locally only;
+# each study's sources.md says where they came from)
+docs/ui-research/*/*
+!docs/ui-research/*/sources.md
