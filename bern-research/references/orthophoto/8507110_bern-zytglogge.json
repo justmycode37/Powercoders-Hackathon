@@ -1,0 +1,44 @@
+{
+ "id": "ortho-8507110_bern-zytglogge",
+ "file": "orthophoto/8507110_bern-zytglogge.jpg",
+ "world_file": "orthophoto/8507110_bern-zytglogge.jgw",
+ "station": {
+  "number": 8507110,
+  "sloid": "ch:1:sloid:7110",
+  "name": "Bern, Zytglogge"
+ },
+ "feature": "Zytglogge/Kornhausplatz/Theaterplatz tram stop islands",
+ "bbox_lv95": [
+  2600595,
+  1199570,
+  2600755,
+  1199710
+ ],
+ "crs": "EPSG:2056",
+ "bbox_wgs84": [
+  7.4464526,
+  46.9472129,
+  7.4485545,
+  46.9484721
+ ],
+ "bbox_wgs84_note": "converted with swisstopo approximate formulas (about 1 m)",
+ "metres_per_pixel": [
+  0.1,
+  0.1
+ ],
+ "width_px": 1600,
+ "height_px": 1400,
+ "bytes": 708239,
+ "sha256": "8f20ca2f377227a8bf7349b9617e13c829fc08cfb74ddf006635fedc7b47c402",
+ "source": "swisstopo SWISSIMAGE (WMS layer ch.swisstopo.swissimage)",
+ "source_url": "https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ch.swisstopo.swissimage&STYLES=&CRS=EPSG%3A2056&BBOX=2600595%2C1199570%2C2600755%2C1199710&WIDTH=1600&HEIGHT=1400&FORMAT=image%2Fjpeg",
+ "publisher": "Federal Office of Topography swisstopo",
+ "licence": "swisstopo free geodata (OGD)",
+ "licence_url": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-ogd",
+ "attribution": "© swisstopo",
+ "capture_date": null,
+ "capture_date_note": "SWISSIMAGE flight year varies per area; look up in map.geo.admin.ch layer ch.swisstopo.images-swissimage-dop10.metadata",
+ "retrieved": "2026-11-21T01:54:20+01:00",
+ "inferred": false,
+ "model_use": "Top-down footprint: canopy outlines, platform edges, tram islands, kerbs, road markings; drape on terrain or trace in a GIS (world file + EPSG:2056)."
+}

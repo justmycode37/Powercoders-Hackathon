@@ -1,0 +1,53 @@
+{
+ "id": "sbb-platform-bench",
+ "title": "Platform bench (SBB style, generic)",
+ "file": "assets/sbb-platform-bench.gltf",
+ "format": "glTF 2.0 (embedded buffer)",
+ "approximate": true,
+ "inferred": true,
+ "inferred_how": "parametric primitives; dimensions estimated from the evidence listed, not measured",
+ "units": "metre",
+ "axes": "glTF: +Y up, right-handed; +X along the long side, +Z towards the passenger/front side",
+ "origin": "centre of footprint at ground level (y = 0)",
+ "parameters": {
+  "length": 1.8,
+  "seat_h": 0.45,
+  "depth": 0.45,
+  "back_h": 0.4,
+  "legs": 2
+ },
+ "bbox_m": {
+  "min": [
+   -0.9,
+   0.0,
+   -0.225
+  ],
+  "max": [
+   0.9,
+   0.93,
+   0.225
+  ]
+ },
+ "triangles": 72,
+ "evidence": [
+  {
+   "kind": "dataset",
+   "ref": "sbb-dataset-mobiliar-im-bahnhof",
+   "what": "'Sitzbank' is listed for Bern (8507000)"
+  },
+  {
+   "kind": "photos",
+   "ref": "tag:bench",
+   "what": "see data/manifest.json records whose features include the tag named here"
+  },
+  {
+   "kind": "standard",
+   "what": "seat height 0.45 m is the usual ergonomic value (SN 640 075 style); not measured"
+  }
+ ],
+ "notes": "Slat detail collapsed into slabs.",
+ "licence": "CC0 1.0 (original work generated for this repository)",
+ "bytes": 9951,
+ "sha256": "9f64c8931830fdb4d6dd7f3146e03ed90d666b72a37826ffce847f4eded30e20",
+ "source": "tools/07_assets.py"
+}

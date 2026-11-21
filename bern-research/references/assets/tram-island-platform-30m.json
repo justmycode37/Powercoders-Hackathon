@@ -1,0 +1,54 @@
+{
+ "id": "tram-island-platform-30m",
+ "title": "Tram/bus island platform, 30 m, with end ramps",
+ "file": "assets/tram-island-platform-30m.gltf",
+ "format": "glTF 2.0 (embedded buffer)",
+ "approximate": true,
+ "inferred": true,
+ "inferred_how": "parametric primitives; dimensions estimated from the evidence listed, not measured",
+ "units": "metre",
+ "axes": "glTF: +Y up, right-handed; +X along the long side, +Z towards the passenger/front side",
+ "origin": "centre of footprint at ground level (y = 0)",
+ "parameters": {
+  "length": 30.0,
+  "width": 3.0,
+  "kerb_h": 0.27,
+  "ramp_len": 4.0,
+  "tactile_offset": 0.6
+ },
+ "bbox_m": {
+  "min": [
+   -19.0,
+   0.0,
+   -1.5
+  ],
+  "max": [
+   19.0,
+   0.276,
+   1.5
+  ]
+ },
+ "triangles": 44,
+ "evidence": [
+  {
+   "kind": "standard",
+   "ref": "bern-normalien-2-5-3",
+   "what": "Stadt Bern standard cross-sections for combined tram/bus stops (kerb height, widths)"
+  },
+  {
+   "kind": "standard",
+   "ref": "be-hindernisfreie-bushaltestellen-2017",
+   "what": "barrier-free boarding height for low-floor vehicles"
+  },
+  {
+   "kind": "orthophoto",
+   "ref": "ortho-8507110_bern-zytglogge",
+   "what": "island widths visible top-down"
+  }
+ ],
+ "notes": "Kerb height 0.27 m and width 3.0 m are approximate typical values; length is a parameter (use atlas edge length when available).",
+ "licence": "CC0 1.0 (original work generated for this repository)",
+ "bytes": 6825,
+ "sha256": "bc6ef26c2e2440012271113d9164ef370a09b454571656dea840100f73102b24",
+ "source": "tools/07_assets.py"
+}

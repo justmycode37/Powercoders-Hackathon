@@ -1,0 +1,44 @@
+{
+ "id": "ortho-8504106_bern-buempliz-sued",
+ "file": "orthophoto/8504106_bern-buempliz-sued.jpg",
+ "world_file": "orthophoto/8504106_bern-buempliz-sued.jgw",
+ "station": {
+  "number": 8504106,
+  "sloid": "ch:1:sloid:4106",
+  "name": "Bern Bümpliz Süd"
+ },
+ "feature": "Bümpliz Süd station",
+ "bbox_lv95": [
+  2596586,
+  1198410,
+  2596806,
+  1198570
+ ],
+ "crs": "EPSG:2056",
+ "bbox_wgs84": [
+  7.3938026,
+  46.93677,
+  7.3966907,
+  46.9382103
+ ],
+ "bbox_wgs84_note": "converted with swisstopo approximate formulas (about 1 m)",
+ "metres_per_pixel": [
+  0.120022,
+  0.12003
+ ],
+ "width_px": 1833,
+ "height_px": 1333,
+ "bytes": 742803,
+ "sha256": "9b1a089cce101a107183a8aaf4d1f6009a4d2e759c952c49805d532ccb6612ac",
+ "source": "swisstopo SWISSIMAGE (WMS layer ch.swisstopo.swissimage)",
+ "source_url": "https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ch.swisstopo.swissimage&STYLES=&CRS=EPSG%3A2056&BBOX=2596586%2C1198410%2C2596806%2C1198570&WIDTH=1833&HEIGHT=1333&FORMAT=image%2Fjpeg",
+ "publisher": "Federal Office of Topography swisstopo",
+ "licence": "swisstopo free geodata (OGD)",
+ "licence_url": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-ogd",
+ "attribution": "© swisstopo",
+ "capture_date": null,
+ "capture_date_note": "SWISSIMAGE flight year varies per area; look up in map.geo.admin.ch layer ch.swisstopo.images-swissimage-dop10.metadata",
+ "retrieved": "2026-11-21T01:54:20+01:00",
+ "inferred": false,
+ "model_use": "Top-down footprint: canopy outlines, platform edges, tram islands, kerbs, road markings; drape on terrain or trace in a GIS (world file + EPSG:2056)."
+}

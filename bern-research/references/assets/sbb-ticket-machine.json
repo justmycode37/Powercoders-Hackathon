@@ -1,0 +1,54 @@
+{
+ "id": "sbb-ticket-machine",
+ "title": "Ticket machine (red body, generic)",
+ "file": "assets/sbb-ticket-machine.gltf",
+ "format": "glTF 2.0 (embedded buffer)",
+ "approximate": true,
+ "inferred": true,
+ "inferred_how": "parametric primitives; dimensions estimated from the evidence listed, not measured",
+ "units": "metre",
+ "axes": "glTF: +Y up, right-handed; +X along the long side, +Z towards the passenger/front side",
+ "origin": "centre of footprint at ground level (y = 0)",
+ "parameters": {
+  "width": 0.62,
+  "depth": 0.45,
+  "height": 1.8,
+  "screen_w": 0.4,
+  "screen_h": 0.32
+ },
+ "bbox_m": {
+  "min": [
+   -0.33,
+   0.0,
+   -0.235
+  ],
+  "max": [
+   0.33,
+   1.8,
+   0.305
+  ]
+ },
+ "triangles": 48,
+ "evidence": [
+  {
+   "kind": "dataset",
+   "ref": "sbb-dataset-billetautomat",
+   "what": "positions and type per machine (fetched by stations/)"
+  },
+  {
+   "kind": "dataset",
+   "ref": "sbb-dataset-mobiliar-im-bahnhof",
+   "what": "'Billetautomat' listed for Bern"
+  },
+  {
+   "kind": "photos",
+   "ref": "tag:ticket_machine",
+   "what": "see data/manifest.json records whose features include the tag named here"
+  }
+ ],
+ "notes": "Red body and dark screen echo the common SBB machine; proportions estimated from photos, not measured. No logo.",
+ "licence": "CC0 1.0 (original work generated for this repository)",
+ "bytes": 8555,
+ "sha256": "0ee2ac6548d95f2cd1932474cc3dcef7786d83e7aa93634929994618752a0f3e",
+ "source": "tools/07_assets.py"
+}

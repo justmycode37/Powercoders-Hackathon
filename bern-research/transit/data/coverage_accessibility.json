@@ -1,0 +1,36 @@
+{
+  "edges_with_accessibility": 2902,
+  "by_tier": {
+    "connected": 1540,
+    "ring": 787,
+    "bern": 575
+  },
+  "bern_boarding_edges": 598,
+  "bern_edges_with_atlas_platform": 573,
+  "bern_edges_with_bfr_wheelchair": 569,
+  "bern_vehicle_access": {
+    "PLATFORM_ACCESS_WITH_ASSISTANCE": 216,
+    "PLATFORM_NOT_WHEELCHAIR_ACCESSIBLE": 212,
+    "PLATFORM_ACCESS_WITHOUT_ASSISTANCE": 86,
+    "(empty)": 52,
+    "TO_BE_COMPLETED": 7
+  },
+  "stations_with_accessibility": 1112,
+  "stations_by_tier": {
+    "connected": 524,
+    "ring": 383,
+    "bern": 205
+  },
+  "bern_reference_points": 15,
+  "bern_toilets": 5,
+  "bern_parking_lots": 8,
+  "bern_contact_points": 5,
+  "relations": 1365,
+  "sectors": 1803,
+  "sectors_by_tier": {
+    "connected": 1650,
+    "ring": 36,
+    "bern": 117
+  },
+  "bern_edges_with_sectors": 20
+}

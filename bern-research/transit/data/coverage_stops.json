@@ -1,0 +1,636 @@
+{
+  "coverage_logic": {
+    "bern": "atlas service point with municipality FSO number 351 (atlas attribute fsoNumber) that is a stop point, or an operating point owning a boarding edge (stop_point=false)",
+    "ring": "atlas stop point (or operating point owning a boarding edge) outside Bern whose coordinate is at most 5 km from the swisstopo municipal boundary of Bern",
+    "connected": "any other station called at by a GTFS trip that serves at least one `bern` stop (fp2026 or fp2027)"
+  },
+  "ring_km": 5.0,
+  "stations_by_tier": {
+    "bern": 208,
+    "ring": 386,
+    "connected": 529
+  },
+  "stations_total": 1123,
+  "stations_not_in_atlas": [
+    8003005,
+    8014350,
+    8301003,
+    8771500
+  ],
+  "edges_by_tier_and_type": {
+    "bern/BOARDING_AREA": 21,
+    "bern/BOARDING_PLATFORM": 598,
+    "connected/BOARDING_AREA": 399,
+    "connected/BOARDING_PLATFORM": 1597,
+    "ring/BOARDING_AREA": 50,
+    "ring/BOARDING_PLATFORM": 818
+  },
+  "edges_total": 3483,
+  "bern_edges": {
+    "boarding_platforms": 598,
+    "with_geometry": 579,
+    "with_compass_direction": 428,
+    "with_public_designation": 223,
+    "with_height": 579,
+    "coord_rounded": 141,
+    "not_valid_today": 10,
+    "referenced_by_gtfs_fp2026": 548,
+    "referenced_by_gtfs_fp2027": 490
+  },
+  "bern_stations": {
+    "total": 208,
+    "stop_points": 204,
+    "not_valid_today": [
+      [
+        "Bern, Berner Fachhochschule",
+        "2026-03-20",
+        "2026-03-21"
+      ],
+      [
+        "Bern, Bundesgasse",
+        "2026-03-20",
+        "2026-03-20"
+      ],
+      [
+        "Bern, Engehalde",
+        "2022-05-06",
+        "2026-08-26"
+      ]
+    ],
+    "operating_points_owning_edges": [
+      "Bern Europaplatz Süd",
+      "Bern Fischermätteli",
+      "Bern Stöckacker",
+      "Bern, Engehalde"
+    ],
+    "inside_generalised_boundary_polygon": 208,
+    "outside_generalised_boundary_polygon": [],
+    "without_edges": [
+      "Bern Matte",
+      "Bern Münsterplattform"
+    ],
+    "in_gtfs_fp2026": 204,
+    "in_gtfs_fp2027": 200
+  },
+  "known_gaps": {
+    "note": "Gaps in the published atlas data, kept visible rather than filled in. Nothing here is estimated.",
+    "bern_stations_without_any_boarding_edge": [
+      [
+        "ch:1:sloid:249",
+        8500249,
+        "Bern Matte",
+        "valid today"
+      ],
+      [
+        "ch:1:sloid:258",
+        8500258,
+        "Bern Münsterplattform",
+        "valid today"
+      ]
+    ],
+    "bern_edges_and_areas_without_coordinates": {
+      "count": 34,
+      "boarding_platforms": [
+        [
+          "ch:1:sloid:7060:0:2373",
+          "Bern, Helvetiaplatz",
+          "12"
+        ],
+        [
+          "ch:1:sloid:7061:0:2374",
+          "Bern, Brunnadernstrasse",
+          "17"
+        ],
+        [
+          "ch:1:sloid:71393:0:32",
+          "Bern, Eigerplatz",
+          "32"
+        ],
+        [
+          "ch:1:sloid:71393:0:56",
+          "Bern, Eigerplatz",
+          "56"
+        ],
+        [
+          "ch:1:sloid:71435:0:13",
+          "Bern, Holenacker",
+          "13"
+        ],
+        [
+          "ch:1:sloid:76646:0:66",
+          "Bern, Bahnhof",
+          "66"
+        ],
+        [
+          "ch:1:sloid:76646:0:80",
+          "Bern, Bahnhof",
+          "80"
+        ],
+        [
+          "ch:1:sloid:76990:0:1895",
+          "Bern, Guisanplatz Expo",
+          "10"
+        ],
+        [
+          "ch:1:sloid:7982:0:3",
+          "Bern, Oberbottigen Dorf",
+          "3"
+        ],
+        [
+          "ch:1:sloid:82210:0:618032",
+          "Bern, Untermattweg",
+          "02"
+        ],
+        [
+          "ch:1:sloid:87484:0:22",
+          "Bern, Schönburg",
+          "22"
+        ],
+        [
+          "ch:1:sloid:88994:0:715",
+          "Bern, Gewerbeschule",
+          "11"
+        ],
+        [
+          "ch:1:sloid:88994:0:716",
+          "Bern, Gewerbeschule",
+          "12"
+        ],
+        [
+          "ch:1:sloid:89003:0:2370",
+          "Bern, Thunplatz",
+          "12"
+        ],
+        [
+          "ch:1:sloid:90006:0:2371",
+          "Bern, Luisenstrasse",
+          "12"
+        ],
+        [
+          "ch:1:sloid:90006:0:2372",
+          "Bern, Luisenstrasse",
+          "11"
+        ],
+        [
+          "ch:1:sloid:90084:0:12",
+          "Bern, Technologiepark",
+          "12"
+        ],
+        [
+          "ch:1:sloid:95136:0:1971",
+          "Bern, Wankdorfbrücke",
+          "04"
+        ],
+        [
+          "ch:1:sloid:95137:0:1442",
+          "Bern, Weyermannshaus Bad",
+          "5"
+        ]
+      ],
+      "boarding_areas": [
+        [
+          "ch:1:sloid:16161:0",
+          "Bern Wankdorf",
+          "Perron 0"
+        ],
+        [
+          "ch:1:sloid:16161:1",
+          "Bern Wankdorf",
+          "Perron 1"
+        ],
+        [
+          "ch:1:sloid:16161:2",
+          "Bern Wankdorf",
+          "Perron 2"
+        ],
+        [
+          "ch:1:sloid:16161:3",
+          "Bern Wankdorf",
+          "Perron 3"
+        ],
+        [
+          "ch:1:sloid:4106:1",
+          "Bern Bümpliz Süd",
+          "Perron 1"
+        ],
+        [
+          "ch:1:sloid:4106:2",
+          "Bern Bümpliz Süd",
+          "Perron 2"
+        ],
+        [
+          "ch:1:sloid:4108:1",
+          "Bern Europaplatz",
+          "Perron 1"
+        ],
+        [
+          "ch:1:sloid:4108:2",
+          "Bern Europaplatz",
+          "Perron 2"
+        ],
+        [
+          "ch:1:sloid:7000:1",
+          "Bern",
+          "Perron 1"
+        ],
+        [
+          "ch:1:sloid:7000:2",
+          "Bern",
+          "Perron 2"
+        ],
+        [
+          "ch:1:sloid:7000:3",
+          "Bern",
+          "Perron 3"
+        ],
+        [
+          "ch:1:sloid:7000:4",
+          "Bern",
+          "Perron 4"
+        ],
+        [
+          "ch:1:sloid:7000:5",
+          "Bern",
+          "Perron 5"
+        ],
+        [
+          "ch:1:sloid:7000:55",
+          "Bern",
+          "Perron 55"
+        ],
+        [
+          "ch:1:sloid:7000:6",
+          "Bern",
+          "Perron 6"
+        ]
+      ]
+    },
+    "bern_edges_without_height": 19,
+    "bern_edges_without_compass_direction": 170,
+    "bern_edges_without_public_designation": 375,
+    "bern_edges_with_coordinates_rounded_to_whole_metres": 141,
+    "bern_edges_not_referenced_by_any_timetable": [
+      [
+        "ch:1:sloid:30257:0:497737",
+        "Bern (Marzilibahn)",
+        "01"
+      ],
+      [
+        "ch:1:sloid:30258:0:477056",
+        "Bern Marzili",
+        "01"
+      ],
+      [
+        "ch:1:sloid:4489:0:151893",
+        "Bern Bümpliz Nord",
+        "2"
+      ],
+      [
+        "ch:1:sloid:4495:0:358493",
+        "Bern Stöckacker",
+        "2"
+      ],
+      [
+        "ch:1:sloid:4495:0:699701",
+        "Bern Stöckacker",
+        "1"
+      ],
+      [
+        "ch:1:sloid:7000:0:229097",
+        "Bern",
+        "8"
+      ],
+      [
+        "ch:1:sloid:7050:0:3",
+        "Bern, Egghölzli",
+        "03"
+      ],
+      [
+        "ch:1:sloid:7050:0:6",
+        "Bern, Egghölzli",
+        "06"
+      ],
+      [
+        "ch:1:sloid:7061:0:7",
+        "Bern, Brunnadernstrasse",
+        "A"
+      ],
+      [
+        "ch:1:sloid:7081:0:640619",
+        "Bern Fischermätteli",
+        "1"
+      ],
+      [
+        "ch:1:sloid:7110:0:17",
+        "Bern, Zytglogge",
+        "K"
+      ],
+      [
+        "ch:1:sloid:7636:0:1",
+        "Bern Tiefenau, Bahnhof",
+        "01"
+      ],
+      [
+        "ch:1:sloid:7636:0:2",
+        "Bern Tiefenau, Bahnhof",
+        "02"
+      ],
+      [
+        "ch:1:sloid:76646:0:14",
+        "Bern, Bahnhof",
+        "I"
+      ],
+      [
+        "ch:1:sloid:76646:0:1427",
+        "Bern, Bahnhof",
+        "E"
+      ],
+      [
+        "ch:1:sloid:76646:0:21",
+        "Bern, Bahnhof",
+        "L"
+      ],
+      [
+        "ch:1:sloid:76646:0:65",
+        "Bern, Bahnhof",
+        "65"
+      ],
+      [
+        "ch:1:sloid:76646:0:80",
+        "Bern, Bahnhof",
+        "80"
+      ],
+      [
+        "ch:1:sloid:76985:0:1",
+        "Bern, Löchligut",
+        "01"
+      ],
+      [
+        "ch:1:sloid:76985:0:2",
+        "Bern, Löchligut",
+        "02"
+      ],
+      [
+        "ch:1:sloid:76987:0:2",
+        "Bern, Wankdorf City",
+        "02"
+      ],
+      [
+        "ch:1:sloid:76987:0:3",
+        "Bern, Wankdorf City",
+        "03"
+      ],
+      [
+        "ch:1:sloid:76988:0:1",
+        "Bern, Stauffacherbrücke",
+        "01"
+      ],
+      [
+        "ch:1:sloid:76988:0:2",
+        "Bern, Stauffacherbrücke",
+        "02"
+      ],
+      [
+        "ch:1:sloid:76989:0:1",
+        "Bern, Winkelriedstrasse",
+        "01"
+      ],
+      [
+        "ch:1:sloid:76989:0:2",
+        "Bern, Winkelriedstrasse",
+        "02"
+      ],
+      [
+        "ch:1:sloid:76990:0:1437",
+        "Bern, Guisanplatz Expo",
+        "A"
+      ],
+      [
+        "ch:1:sloid:76991:0:3",
+        "Bern, Kasernenstrasse",
+        "03"
+      ],
+      [
+        "ch:1:sloid:76991:0:4",
+        "Bern, Kasernenstrasse",
+        "04"
+      ],
+      [
+        "ch:1:sloid:7785:0:233351",
+        "Bern, Hauptbahnhof",
+        "X"
+      ],
+      [
+        "ch:1:sloid:7785:0:408919",
+        "Bern, Hauptbahnhof",
+        "W"
+      ],
+      [
+        "ch:1:sloid:79896:0:3",
+        "Bern, Hirschengraben",
+        "N"
+      ],
+      [
+        "ch:1:sloid:8075:0:11",
+        "Bern, Breitenrain",
+        "11"
+      ],
+      [
+        "ch:1:sloid:80941:0:113248",
+        "Bern, Engehalde",
+        "02"
+      ],
+      [
+        "ch:1:sloid:80941:0:989181",
+        "Bern, Engehalde",
+        "01"
+      ],
+      [
+        "ch:1:sloid:87484:0:22",
+        "Bern, Schönburg",
+        "22"
+      ],
+      [
+        "ch:1:sloid:87485:0:5",
+        "Bern, Rosengarten",
+        "05"
+      ],
+      [
+        "ch:1:sloid:87485:0:6",
+        "Bern, Rosengarten",
+        "06"
+      ],
+      [
+        "ch:1:sloid:88174:0:5",
+        "Bern, Weltpostverein",
+        "05"
+      ],
+      [
+        "ch:1:sloid:88174:0:8",
+        "Bern, Weltpostverein",
+        "08"
+      ],
+      [
+        "ch:1:sloid:88989:0:13",
+        "Bern, Bärenplatz",
+        "13"
+      ],
+      [
+        "ch:1:sloid:88989:0:4",
+        "Bern, Bärenplatz",
+        "04"
+      ],
+      [
+        "ch:1:sloid:88994:0:715",
+        "Bern, Gewerbeschule",
+        "11"
+      ],
+      [
+        "ch:1:sloid:88994:0:716",
+        "Bern, Gewerbeschule",
+        "12"
+      ],
+      [
+        "ch:1:sloid:89001:0:11",
+        "Bern, Petruskirche",
+        "11"
+      ],
+      [
+        "ch:1:sloid:90034:0:1433",
+        "Bern, Bärenpark",
+        "11"
+      ],
+      [
+        "ch:1:sloid:90075:0:1439",
+        "Bern, Neufeld P+R",
+        "22"
+      ]
+    ],
+    "all_tiers_edges_and_areas_without_coordinates": 261,
+    "stations_without_swiss_sloid": [
+      [
+        8003005,
+        "Berlin Ostbahnhof"
+      ],
+      [
+        8014350,
+        "Freiburg(Breisgau) Hbf"
+      ],
+      [
+        8301003,
+        "Domodossola (I)"
+      ],
+      [
+        8771500,
+        "Pontarlier"
+      ]
+    ]
+  },
+  "ring_stations_inside_polygon_but_other_municipality": [],
+  "gtfs_stop_map": {
+    "fp2026": {
+      "summary_all_stops": {
+        "stop_times_rows": 2066447,
+        "rows_by_kind": {
+          "edge": 1975850,
+          "station": 83049,
+          "edge_sector_variant": 4170,
+          "edge_by_designation": 2752,
+          "station_not_in_atlas": 592,
+          "edge_unresolved": 34,
+          "parent_station": 0
+        },
+        "share_edge_sloid": 0.9595,
+        "share_station_sloid_only": 0.0402,
+        "share_no_sloid": 0.0003
+      },
+      "summary_tier_bern": {
+        "stop_times_rows": 1240690,
+        "rows_by_kind": {
+          "edge": 1210572,
+          "station": 26412,
+          "edge_sector_variant": 3706,
+          "parent_station": 0
+        },
+        "share_edge_sloid": 0.9787,
+        "share_station_sloid_only": 0.0213,
+        "share_no_sloid": 0.0
+      },
+      "summary_tier_bern_and_ring": {
+        "stop_times_rows": 1831572,
+        "rows_by_kind": {
+          "edge": 1752728,
+          "station": 73891,
+          "edge_sector_variant": 3706,
+          "edge_by_designation": 1247,
+          "parent_station": 0
+        },
+        "share_edge_sloid": 0.9597,
+        "share_station_sloid_only": 0.0403,
+        "share_no_sloid": 0.0
+      },
+      "stop_count_by_kind": {
+        "edge": 1942,
+        "parent_station": 1023,
+        "station": 411,
+        "edge_sector_variant": 27,
+        "edge_by_designation": 5,
+        "station_not_in_atlas": 4,
+        "edge_unresolved": 3
+      }
+    },
+    "fp2027": {
+      "summary_all_stops": {
+        "stop_times_rows": 444996,
+        "rows_by_kind": {
+          "edge": 418086,
+          "station": 25153,
+          "edge_by_designation": 811,
+          "edge_sector_variant": 692,
+          "edge_unresolved": 148,
+          "station_not_in_atlas": 106,
+          "parent_station": 0
+        },
+        "share_edge_sloid": 0.9429,
+        "share_station_sloid_only": 0.0569,
+        "share_no_sloid": 0.0002
+      },
+      "summary_tier_bern": {
+        "stop_times_rows": 243243,
+        "rows_by_kind": {
+          "edge": 231587,
+          "station": 11137,
+          "edge_sector_variant": 492,
+          "edge_unresolved": 27,
+          "parent_station": 0
+        },
+        "share_edge_sloid": 0.9541,
+        "share_station_sloid_only": 0.0459,
+        "share_no_sloid": 0.0
+      },
+      "summary_tier_bern_and_ring": {
+        "stop_times_rows": 373775,
+        "rows_by_kind": {
+          "edge": 350807,
+          "station": 22015,
+          "edge_sector_variant": 492,
+          "edge_by_designation": 331,
+          "edge_unresolved": 130,
+          "parent_station": 0
+        },
+        "share_edge_sloid": 0.9408,
+        "share_station_sloid_only": 0.0592,
+        "share_no_sloid": 0.0
+      },
+      "stop_count_by_kind": {
+        "edge": 1736,
+        "parent_station": 971,
+        "station": 342,
+        "edge_sector_variant": 21,
+        "edge_by_designation": 7,
+        "edge_unresolved": 5,
+        "station_not_in_atlas": 2
+      }
+    }
+  }
+}

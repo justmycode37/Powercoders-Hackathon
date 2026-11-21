@@ -1,0 +1,43 @@
+{
+ "id": "hall-meeting-point-ring-bench",
+ "title": "Station hall meeting point: ring bench with tree planter",
+ "file": "assets/hall-meeting-point-ring-bench.gltf",
+ "format": "glTF 2.0 (embedded buffer)",
+ "approximate": true,
+ "inferred": true,
+ "inferred_how": "parametric primitives; dimensions estimated from the evidence listed, not measured",
+ "units": "metre",
+ "axes": "glTF: +Y up, right-handed; +X along the long side, +Z towards the passenger/front side",
+ "origin": "centre of footprint at ground level (y = 0)",
+ "parameters": {
+  "r_inner": 1.0,
+  "r_outer": 2.3,
+  "seat_h": 0.45,
+  "planter_h": 0.95
+ },
+ "bbox_m": {
+  "min": [
+   -2.3,
+   0,
+   -2.3
+  ],
+  "max": [
+   2.3,
+   0.95,
+   2.3
+  ]
+ },
+ "triangles": 384,
+ "evidence": [
+  {
+   "kind": "photo",
+   "ref": "commons:60777612",
+   "what": "Bern station hall from above: circular bench around a tree, wooden sloped planter, meeting-point sign posts"
+  }
+ ],
+ "notes": "Tree and the meeting-point sign posts are not modelled. Radii estimated from people seated on the ring (about 0.5 m per person).",
+ "licence": "CC0 1.0 (original work generated for this repository)",
+ "bytes": 45616,
+ "sha256": "20989fc1788d6fc5387915dbc111c535b3c3de2b1eee912caf6f5ed86cd2531e",
+ "source": "tools/07_assets.py"
+}

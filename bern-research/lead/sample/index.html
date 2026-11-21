@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bern research: sample loader</title>
+<!-- Thin sample loader, not an app. It only proves that the files under bern-research/ load and join.
+     Serve the bern-research/ folder (python -m http.server 8140) and open /lead/sample/ -->
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<style>
+  html, body { margin: 0; height: 100%; font: 13px/1.4 system-ui, sans-serif; color: #14171a; }
+  #map { position: fixed; inset: 0; }
+  #panel { position: fixed; top: 10px; left: 10px; width: 330px; max-width: calc(100vw - 20px); max-height: calc(100vh - 20px); overflow: auto;
+           background: #fff; border-radius: 10px; box-shadow: 0 2px 14px rgba(0,0,0,.25); padding: 10px 12px; box-sizing: border-box; }
+  h1 { font-size: 14px; margin: 0 0 6px; } h2 { font-size: 13px; margin: 10px 0 4px; }
+  select, button { font: inherit; } label { display: block; margin: 2px 0; }
+  .sw { display: inline-block; width: 22px; height: 0; border-top: 4px solid; vertical-align: middle; margin-right: 6px; }
+  .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; border: 2px solid #111; vertical-align: middle; margin: 0 12px 0 6px; background: #fff; }
+  table { border-collapse: collapse; width: 100%; } td { padding: 1px 4px 1px 0; vertical-align: top; } td.k { color: #5b6470; white-space: nowrap; }
+  .mono { font-family: ui-monospace, Consolas, monospace; font-size: 12px; word-break: break-all; }
+  .note { color: #5b6470; font-size: 12px; } .warn { color: #a14a00; }
+  #log { white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<div id="panel">
+  <h1>Bern research: sample loader</h1>
+  <div class="note">Reads the committed files as they are. Click a boarding edge for its record and scheduled departures.</div>
+  <h2>Layers</h2>
+  <label><input type="checkbox" id="l-edges" checked> Boarding edges, official points (<span class="mono">transit/data/edges.geojson</span>)</label>
+  <label><input type="checkbox" id="l-kerbs" checked> Kerb and track lines (<span class="mono">stations/data/boarding_edges.geojson</span>)</label>
+  <label>Station detail: <select id="focus"><option value="">none</option></select> level <select id="level"><option value="">all</option></select></label>
+  <div><span class="sw" style="border-color:#0a7d3c"></span>surveyed (SBB kerb points)</div>
+  <div><span class="sw" style="border-color:#1464c8"></span>community (OSM platform)</div>
+  <div><span class="sw" style="border-color:#d97706;border-top-style:dashed"></span>approximate (constructed from point and bearing)</div>
+  <div><span class="dot"></span>official edge point &nbsp;<span class="dot" style="border-color:#c2410c"></span>coordinate rounded at source</div>
+  <div class="note"><a href="../../city3d/index.html">3D terrain and buildings sample</a> (city3d folder)</div>
+  <h2>Selection</h2>
+  <div id="sel" class="note">Nothing selected.</div>
+  <h2>Load log</h2>
+  <div id="log" class="note"></div>
+</div>
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="../../transit/web/bern-transit.js"></script>
+<script>
+const R = '../../';
+const $ = (id) => document.getElementById(id);
+const log = (m) => { $('log').textContent += m + '\n'; };
+const esc = (s) => String(s == null ? '' : s).replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+async function get(path) {
+  const t = performance.now(), r = await fetch(R + path);
+  if (!r.ok) throw new Error(path + ' -> HTTP ' + r.status);
+  const d = await r.json();
+  log(`${path}: ${d.features ? d.features.length + ' features' : 'ok'}, ${Math.round(performance.now() - t)} ms`);
+  return d;
+}
+const map = new maplibregl.Map({ container: 'map', center: [7.4415, 46.9485], zoom: 15.2, attributionControl: false,
+  style: 'https://vectortiles.geo.admin.ch/styles/ch.swisstopo.lightbasemap.vt/style.json' });
+map.addControl(new maplibregl.AttributionControl({ customAttribution:
+  '© swisstopo · opentransportdata.swiss (SKI) · SBB open data · Geoinformation Stadt Bern · © OpenStreetMap contributors (ODbL)' }));
+map.addControl(new maplibregl.NavigationControl(), 'top-right');
+const QUALITY = ['match', ['get', 'geometry_quality'], 'surveyed', '#0a7d3c', 'community', '#1464c8', 'approximate', '#d97706', '#6b7280'];
+const timetables = {};
+
+map.on('load', async () => {
+  try {
+    const [edges, kerbs, idx] = await Promise.all([get('transit/data/edges.geojson'), get('stations/data/boarding_edges.geojson'), get('stations/data/focus/index.json')]);
+    edges.features = edges.features.filter((f) => f.geometry);           // some official records have no coordinates
+    map.addSource('focus', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
+    map.addLayer({ id: 'focus-fill', type: 'fill', source: 'focus', filter: ['==', ['geometry-type'], 'Polygon'],
+      paint: { 'fill-color': ['match', ['get', 'feature_type'], 'platform_surface', '#fde68a', 'stairs_outline', '#f9a8d4', 'underpass_outline', '#c4b5fd', 'shelter', '#a7f3d0', '#cbd5e1'], 'fill-opacity': 0.5, 'fill-outline-color': '#475569' } });
+    map.addLayer({ id: 'focus-line', type: 'line', source: 'focus', filter: ['==', ['geometry-type'], 'LineString'],
+      paint: { 'line-color': ['match', ['get', 'feature_type'], 'passage', '#7c3aed', 'stairs', '#db2777', 'boarding_edge', QUALITY, '#475569'], 'line-width': 2.5 } });
+    map.addLayer({ id: 'focus-pt', type: 'circle', source: 'focus', filter: ['==', ['geometry-type'], 'Point'],
+      paint: { 'circle-radius': 4, 'circle-color': ['match', ['get', 'feature_type'], 'access_point', '#dc2626', 'sector_board', '#0891b2', 'sector_marker', '#0e7490', '#475569'], 'circle-stroke-color': '#fff', 'circle-stroke-width': 1 } });
+    map.addSource('kerbs', { type: 'geojson', data: kerbs });
+    const KW = ['interpolate', ['linear'], ['zoom'], 13, 1.5, 18, 6], APPROX = ['==', ['get', 'geometry_quality'], 'approximate'];
+    map.addLayer({ id: 'kerbs', type: 'line', source: 'kerbs', filter: ['all', ['==', ['geometry-type'], 'LineString'], ['!', APPROX]], minzoom: 13,
+      paint: { 'line-color': QUALITY, 'line-width': KW } });
+    map.addLayer({ id: 'kerbs-approx', type: 'line', source: 'kerbs', filter: ['all', ['==', ['geometry-type'], 'LineString'], APPROX], minzoom: 13,
+      paint: { 'line-color': QUALITY, 'line-width': KW, 'line-dasharray': [2, 1.5] } });
+    map.addSource('edges', { type: 'geojson', data: edges });
+    map.addLayer({ id: 'edges', type: 'circle', source: 'edges', minzoom: 11,
+      paint: { 'circle-radius': ['interpolate', ['linear'], ['zoom'], 11, 1.5, 15, 4, 18, 7], 'circle-color': '#fff', 'circle-stroke-width': 2,
+               'circle-stroke-color': ['case', ['to-boolean', ['get', 'coord_rounded']], '#c2410c', '#111'] } });
+    for (const f of idx.focus) { const o = document.createElement('option'); o.value = f.slug; o.textContent = f.title; $('focus').appendChild(o); }
+    const bern = edges.features.filter((f) => f.properties.tier === 'bern').length;
+    log(`edges with coordinates: ${edges.features.length} (${bern} in Bern municipality)`);
+  } catch (e) { log('ERROR ' + e.message); }
+});
+$('l-edges').onchange = (e) => map.setLayoutProperty('edges', 'visibility', e.target.checked ? 'visible' : 'none');
+$('l-kerbs').onchange = (e) => ['kerbs', 'kerbs-approx'].forEach((l) => map.setLayoutProperty(l, 'visibility', e.target.checked ? 'visible' : 'none'));
+let focusData = null;
+function showFocus() {
+  const lv = $('level').value;
+  const feats = !focusData ? [] : focusData.features.filter((f) => f.geometry && (lv === '' || String(f.properties.level) === lv));
+  map.getSource('focus').setData({ type: 'FeatureCollection', features: feats });
+}
+$('level').onchange = showFocus;
+$('focus').onchange = async (e) => {
+  focusData = e.target.value ? await get(`stations/data/focus/${e.target.value}.geojson`) : null;
+  const levels = [...new Set((focusData ? focusData.features : []).map((f) => f.properties.level).filter((v) => v != null).map(String))].sort((a, b) => a - b);
+  $('level').innerHTML = '<option value="">all</option>' + levels.map((l) => `<option>${esc(l)}</option>`).join('');
+  showFocus();
+  if (focusData) {
+    const b = new maplibregl.LngLatBounds();
+    const walk = (c) => (typeof c[0] === 'number' ? b.extend(c) : c.forEach(walk));
+    focusData.features.forEach((f) => f.geometry && walk(f.geometry.coordinates));
+    if (!b.isEmpty()) map.fitBounds(b, { padding: { top: 40, bottom: 40, left: 360, right: 40 }, maxZoom: 18 });
+  }
+};
+const zurichNow = () => { const p = Object.fromEntries(new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Zurich', hourCycle: 'h23', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).formatToParts(new Date()).map((x) => [x.type, x.value])); return { date: `${p.year}-${p.month}-${p.day}`, time: `${p.hour}:${p.minute}:${p.second}` }; };
+async function departuresFor(p, date, time) {          // date/time default to now in Europe/Zurich
+  const now = date ? { date, time: time || '00:00:00' } : zurichNow(), feed = now.date > '2026-12-12' ? 'fp2027' : 'fp2026';
+  if (!timetables[feed]) { log(`loading transit/data/${feed}/timetable.json (first click only)…`); const t = performance.now(); timetables[feed] = BERN_TRANSIT.load(`${R}transit/data/${feed}/timetable.json`); await timetables[feed]; log(`timetable ${feed} decoded in ${Math.round(performance.now() - t)} ms`); }
+  const tt = await timetables[feed];
+  let all = tt.departures(Number(p.station_number), now.date, now.time, 400, 6 * 3600);
+  if (!all.length) all = tt.departures(String(p.station_number), now.date, now.time, 400, 6 * 3600);
+  return { feed, now, station: all.length, all, here: all.filter((d) => d.edge_sloid === p.sloid).slice(0, 8), any: all.slice(0, 5) };
+}
+map.on('click', 'edges', async (ev) => {
+  const p = ev.features[0].properties;
+  const row = (k, v) => (v == null || v === '' || v === 'null' ? '' : `<tr><td class="k">${k}</td><td>${v}</td></tr>`);
+  $('sel').innerHTML = `<table>${row('Station', esc(p.station_name) + ' <span class="mono">' + esc(p.station_number) + '</span>')}${row('Designation', '<b>' + esc(p.designation) + '</b>')}${row('Operational', esc(p.designation_operational))}
+    ${row('Edge SLOID', '<span class="mono">' + esc(p.sloid) + '</span>')}${row('Type', esc(p.type))}${row('Height', esc(p.height_m) + ' m (LN02)')}${row('Compass', esc(p.compass_direction_deg) + '°')}
+    ${row('Coordinate', p.coord_rounded && p.coord_rounded !== 'false' ? '<span class="warn">rounded at source: ' + esc(p.coord_rounded_how) + '</span>' : 'as published')}${row('Source', esc(p.source))}</table><div id="dep" class="note">Loading departures…</div>`;
+  try {
+    const d = await departuresFor(p);
+    const line = (x) => `<tr><td class="k">${esc(x.time.slice(0, 5))}</td><td><b>${esc(x.route)}</b> ${esc(x.headsign || x.last_stop)}</td><td class="k">${esc(x.platform)}</td></tr>`;
+    $('dep').innerHTML = `<b>Scheduled departures from this edge</b>, ${d.now.date} from ${d.now.time.slice(0, 5)} (feed ${d.feed}; no realtime)` +
+      (d.here.length ? `<table>${d.here.map(line).join('')}</table>` : `<div class="warn">None in the next 6 h for this edge SLOID.</div>`) +
+      (d.here.length ? '' : `<div>Station as a whole: ${d.station} departures${d.any.length ? '<table>' + d.any.map(line).join('') + '</table>' : ''}</div>`);
+  } catch (e) { $('dep').textContent = 'Departures failed: ' + e.message; }
+});
+const kerbClick = (ev) => { if (map.queryRenderedFeatures(ev.point, { layers: ['edges'] }).length) return; const p = ev.features[0].properties;
+  $('sel').innerHTML = `<table><tr><td class="k">Kerb line</td><td>${esc(p.station_name)} <b>${esc(p.designation || '')}</b></td></tr><tr><td class="k">Edge SLOID</td><td class="mono">${esc(p.edge_sloid)}</td></tr><tr><td class="k">Geometry</td><td>${esc(p.geometry_method)} / ${esc(p.geometry_quality)}${p.inferred ? ', inferred' : ''}</td></tr><tr><td class="k">Lines here</td><td>${esc(p.lines_at_kerb)}</td></tr><tr><td class="k">Source</td><td>${esc(p.source)}</td></tr></table>`; };
+map.on('click', 'kerbs', kerbClick); map.on('click', 'kerbs-approx', kerbClick);
+for (const l of ['edges', 'kerbs', 'kerbs-approx']) { map.on('mouseenter', l, () => map.getCanvas().style.cursor = 'pointer'); map.on('mouseleave', l, () => map.getCanvas().style.cursor = ''); }
+window.SAMPLE = { map, departuresFor };
+</script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+{
+ "id": "baldachin-bahnhofplatz-approx",
+ "title": "Baldachin Bahnhofplatz Bern (glass canopy), coarse approximation",
+ "file": "assets/baldachin-bahnhofplatz-approx.gltf",
+ "format": "glTF 2.0 (embedded buffer)",
+ "approximate": true,
+ "inferred": true,
+ "inferred_how": "parametric primitives; dimensions estimated from the evidence listed, not measured",
+ "units": "metre",
+ "axes": "glTF: +Y up, right-handed; +X along the long side, +Z towards the passenger/front side",
+ "origin": "centre of footprint at ground level (y = 0)",
+ "parameters": {
+  "outline_xz": [
+   [
+    -19.92,
+    -41.46
+   ],
+   [
+    -14.97,
+    -44.21
+   ],
+   [
+    -7.27,
+    -44.98
+   ],
+   [
+    -2.87,
+    -41.46
+   ],
+   [
+    2.63,
+    -32.66
+   ],
+   [
+    8.13,
+    -23.86
+   ],
+   [
+    13.63,
+    -12.86
+   ],
+   [
+    18.03,
+    -1.86
+   ],
+   [
+    21.88,
+    9.14
+   ],
+   [
+    23.53,
+    20.14
+   ],
+   [
+    22.43,
+    28.94
+   ],
+   [
+    18.03,
+    35.54
+   ],
+   [
+    10.33,
+    39.94
+   ],
+   [
+    1.53,
+    40.49
+   ],
+   [
+    -7.27,
+    37.74
+   ],
+   [
+    -13.87,
+    32.24
+   ],
+   [
+    -17.17,
+    24.54
+   ],
+   [
+    -18.05,
+    8.04
+   ],
+   [
+    -18.82,
+    -8.46
+   ],
+   [
+    -19.92,
+    -24.96
+   ]
+  ],
+  "height": 9.0,
+  "roof_thick": 0.6,
+  "columns": [
+   [
+    -5.0,
+    -28.0,
+    0.25
+   ],
+   [
+    2.0,
+    -12.0,
+    0.25
+   ],
+   [
+    6.0,
+    4.0,
+    0.25
+   ],
+   [
+    8.0,
+    20.0,
+    0.25
+   ]
+  ]
+ },
+ "bbox_m": {
+  "min": [
+   -19.92,
+   0.0,
+   -44.98
+  ],
+  "max": [
+   23.53,
+   9.0,
+   40.49
+  ]
+ },
+ "triangles": 300,
+ "evidence": [
+  {
+   "kind": "orthophoto",
+   "ref": "ortho-8576646_bern-bahnhof",
+   "what": "outline hand-traced from SWISSIMAGE 0.1 m/px, estimated error 1.5 m"
+  },
+  {
+   "kind": "photos",
+   "ref": "tag:canopy",
+   "what": "Commons photos of Bahnhofplatz/Baldachin: roof is a curved glass/steel shell; height and column positions are estimates"
+  },
+  {
+   "kind": "link",
+   "ref": "bernmobil-kanten-bahnhof-bern-2026",
+   "what": "edges under/along the canopy"
+  }
+ ],
+ "notes": "The real roof is a doubly curved shell; this is a flat slab at an estimated 9 m with 4 estimated columns. Local frame: +X east, -Z north, origin at outline centroid. LV95 of the origin is in 'anchor_lv95'.",
+ "licence": "CC0 1.0 (original work generated for this repository)",
+ "bytes": 35880,
+ "sha256": "f93da0da717de0d49c4a2154fac8cebdd3dcc9781c95ba60df754dcfb543e258",
+ "source": "tools/07_assets.py",
+ "anchor_lv95": [
+  2600133.87,
+  1199629.54
+ ],
+ "footprint_lv95": [
+  [
+   2600113.95,
+   1199671.0
+  ],
+  [
+   2600118.9,
+   1199673.75
+  ],
+  [
+   2600126.6,
+   1199674.52
+  ],
+  [
+   2600131.0,
+   1199671.0
+  ],
+  [
+   2600136.5,
+   1199662.2
+  ],
+  [
+   2600142.0,
+   1199653.4
+  ],
+  [
+   2600147.5,
+   1199642.4
+  ],
+  [
+   2600151.9,
+   1199631.4
+  ],
+  [
+   2600155.75,
+   1199620.4
+  ],
+  [
+   2600157.4,
+   1199609.4
+  ],
+  [
+   2600156.3,
+   1199600.6
+  ],
+  [
+   2600151.9,
+   1199594.0
+  ],
+  [
+   2600144.2,
+   1199589.6
+  ],
+  [
+   2600135.4,
+   1199589.05
+  ],
+  [
+   2600126.6,
+   1199591.8
+  ],
+  [
+   2600120.0,
+   1199597.3
+  ],
+  [
+   2600116.7,
+   1199605.0
+  ],
+  [
+   2600115.82,
+   1199621.5
+  ],
+  [
+   2600115.05,
+   1199638.0
+  ],
+  [
+   2600113.95,
+   1199654.5
+  ]
+ ]
+}

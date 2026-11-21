@@ -1,0 +1,33 @@
+{
+  "feed": "fp2027",
+  "counts": {
+    "agencies": 18,
+    "routes": 123,
+    "trips": 32473,
+    "stop_times": 444996,
+    "patterns": 2577,
+    "time_profiles": 3542,
+    "services": 1858,
+    "stops": 2113,
+    "stations": 972,
+    "frequencies": 2,
+    "stop_time_rows_with_time_at_or_after_24h": 23160,
+    "max_time": "29:25:00",
+    "calendar_rows": 1858,
+    "calendar_dates_added": 6738,
+    "calendar_dates_removed": 221091,
+    "calendar_dates_outside_feed_range": 0,
+    "services_without_calendar": 0,
+    "transfers": 8924,
+    "segments": 3747,
+    "lines": 220
+  },
+  "files": {
+    "edge_directions.json": 821393,
+    "gtfs_bern_fp2027.zip": 3890046,
+    "lines.geojson": 351925,
+    "segments.geojson": 3117574,
+    "timetable.json": 4357134,
+    "transfers.json": 860798
+  }
+}

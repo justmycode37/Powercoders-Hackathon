@@ -1,0 +1,99 @@
+{
+ "sheets": [
+  {
+   "sheet": "1166-12",
+   "file": "swissbuildings3d_3_0_2021_1166-12_2056_5728.citygml.zip",
+   "buildings_in_box": 622
+  },
+  {
+   "sheet": "1166-14",
+   "file": "swissbuildings3d_3_0_2021_1166-14_2056_5728.citygml.zip",
+   "buildings_in_box": 746
+  },
+  {
+   "sheet": "1166-21",
+   "file": "swissbuildings3d_3_0_2021_1166-21_2056_5728.citygml.zip",
+   "buildings_in_box": 829
+  },
+  {
+   "sheet": "1166-22",
+   "file": "swissbuildings3d_3_0_2021_1166-22_2056_5728.citygml.zip",
+   "buildings_in_box": 1933
+  },
+  {
+   "sheet": "1166-23",
+   "file": "swissbuildings3d_3_0_2021_1166-23_2056_5728.citygml.zip",
+   "buildings_in_box": 1629
+  },
+  {
+   "sheet": "1166-24",
+   "file": "swissbuildings3d_3_0_2021_1166-24_2056_5728.citygml.zip",
+   "buildings_in_box": 7398
+  },
+  {
+   "sheet": "1166-32",
+   "file": "swissbuildings3d_3_0_2021_1166-32_2056_5728.citygml.zip",
+   "buildings_in_box": 842
+  },
+  {
+   "sheet": "1166-34",
+   "file": "swissbuildings3d_3_0_2021_1166-34_2056_5728.citygml.zip",
+   "buildings_in_box": 484
+  },
+  {
+   "sheet": "1166-41",
+   "file": "swissbuildings3d_3_0_2021_1166-41_2056_5728.citygml.zip",
+   "buildings_in_box": 5104
+  },
+  {
+   "sheet": "1166-42",
+   "file": "swissbuildings3d_3_0_2021_1166-42_2056_5728.citygml.zip",
+   "buildings_in_box": 11606
+  },
+  {
+   "sheet": "1166-43",
+   "file": "swissbuildings3d_3_0_2021_1166-43_2056_5728.citygml.zip",
+   "buildings_in_box": 1886
+  },
+  {
+   "sheet": "1166-44",
+   "file": "swissbuildings3d_3_0_2021_1166-44_2056_5728.citygml.zip",
+   "buildings_in_box": 1907
+  },
+  {
+   "sheet": "1167-11",
+   "file": "swissbuildings3d_3_0_2021_1167-11_2056_5728.citygml.zip",
+   "buildings_in_box": 1246
+  },
+  {
+   "sheet": "1167-13",
+   "file": "swissbuildings3d_3_0_2021_1167-13_2056_5728.citygml.zip",
+   "buildings_in_box": 4988
+  },
+  {
+   "sheet": "1167-31",
+   "file": "swissbuildings3d_3_0_2021_1167-31_2056_5728.citygml.zip",
+   "buildings_in_box": 4361
+  },
+  {
+   "sheet": "1167-33",
+   "file": "swissbuildings3d_3_0_2021_1167-33_2056_5728.citygml.zip",
+   "buildings_in_box": 1365
+  }
+ ],
+ "buildings": 46946,
+ "in_municipality": 20925,
+ "with_egid": 45148,
+ "footprint_from_roof": 1073,
+ "central_glb_buildings": 2933,
+ "glb_counts": {
+  "roof": {
+   "vertices": 367833,
+   "triangles": 122611
+  },
+  "wall": {
+   "vertices": 686013,
+   "triangles": 228671
+  }
+ }
+}

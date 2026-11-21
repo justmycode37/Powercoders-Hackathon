@@ -1,0 +1,55 @@
+{
+ "id": "tram-bus-shelter",
+ "title": "Tram/bus stop shelter (glass, flat roof)",
+ "file": "assets/tram-bus-shelter.gltf",
+ "format": "glTF 2.0 (embedded buffer)",
+ "approximate": true,
+ "inferred": true,
+ "inferred_how": "parametric primitives; dimensions estimated from the evidence listed, not measured",
+ "units": "metre",
+ "axes": "glTF: +Y up, right-handed; +X along the long side, +Z towards the passenger/front side",
+ "origin": "centre of footprint at ground level (y = 0)",
+ "parameters": {
+  "length": 4.0,
+  "depth": 1.6,
+  "height": 2.5,
+  "roof_overhang": 0.25,
+  "back_glass": true,
+  "side_glass": true
+ },
+ "bbox_m": {
+  "min": [
+   -2.25,
+   0.0,
+   -1.05
+  ],
+  "max": [
+   2.25,
+   2.63,
+   1.05
+  ]
+ },
+ "triangles": 108,
+ "evidence": [
+  {
+   "kind": "dataset",
+   "ref": "sbb-dataset-haltestelle-wartehallen",
+   "what": "shelter inventory (rail stops)"
+  },
+  {
+   "kind": "photos",
+   "ref": "tag:shelter",
+   "what": "see data/manifest.json records whose features include the tag named here"
+  },
+  {
+   "kind": "standard",
+   "ref": "be-hindernisfreie-bushaltestellen-2017",
+   "what": "clear passage behind/around shelters"
+  }
+ ],
+ "notes": "Generic city-stop shelter; Bern uses several shelter generations, check the stop photos before placing.",
+ "licence": "CC0 1.0 (original work generated for this repository)",
+ "bytes": 14696,
+ "sha256": "3da786f413941ddac904d68a4ac370953091182df018210e1e693e53d12def67",
+ "source": "tools/07_assets.py"
+}

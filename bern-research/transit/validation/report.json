@@ -1,0 +1,3006 @@
+{
+ "generated": "2026-11-21T05:09:14+01:00",
+ "feeds": {
+  "fp2026": {
+   "national_rows": {
+    "stops": 105048,
+    "stop_times": 42579086,
+    "trips": 2615528,
+    "routes": 5187,
+    "agency": 476,
+    "calendar": 86765,
+    "calendar_dates": 10273263,
+    "frequencies": 1909,
+    "transfers": 1123512
+   },
+   "kept_rows": {
+    "stop_times": 2066447,
+    "trips": 140500,
+    "routes": 166,
+    "agency": 19,
+    "calendar": 8839,
+    "calendar_dates": 1154155,
+    "frequencies": 2,
+    "transfers": 51122,
+    "stops": 3415
+   },
+   "feed_info": {
+    "feed_publisher_name": "SBB",
+    "feed_publisher_url": "https://sbb.ch",
+    "feed_lang": "DE",
+    "feed_start_date": "20251214",
+    "feed_end_date": "20261212",
+    "feed_version": "20261118"
+   },
+   "valid": [
+    "2025-12-14",
+    "2026-12-12"
+   ],
+   "valid_today": true,
+   "agency_timezone_in_source": [
+    "Europe/Berlin"
+   ],
+   "stop_times_rows": 2066447,
+   "rows_at_or_after_24h": 123886,
+   "latest_time": "29:45:00",
+   "services": 8839,
+   "calendar_exceptions": {
+    "added": 34912,
+    "removed": 1119243
+   },
+   "gtfs_vs_atlas_edge_coordinate_m": {
+    "compared": 1950,
+    "median": 0.18,
+    "p95": 0.4,
+    "max": 0.5,
+    "over_25_m": 0,
+    "examples_over_25_m": []
+   },
+   "stop_resolution": {
+    "summary_all_stops": {
+     "stop_times_rows": 2066447,
+     "rows_by_kind": {
+      "edge": 1975850,
+      "station": 83049,
+      "edge_sector_variant": 4170,
+      "edge_by_designation": 2752,
+      "station_not_in_atlas": 592,
+      "edge_unresolved": 34,
+      "parent_station": 0
+     },
+     "share_edge_sloid": 0.9595,
+     "share_station_sloid_only": 0.0402,
+     "share_no_sloid": 0.0003
+    },
+    "summary_tier_bern": {
+     "stop_times_rows": 1240690,
+     "rows_by_kind": {
+      "edge": 1210572,
+      "station": 26412,
+      "edge_sector_variant": 3706,
+      "parent_station": 0
+     },
+     "share_edge_sloid": 0.9787,
+     "share_station_sloid_only": 0.0213,
+     "share_no_sloid": 0.0
+    },
+    "summary_tier_bern_and_ring": {
+     "stop_times_rows": 1831572,
+     "rows_by_kind": {
+      "edge": 1752728,
+      "station": 73891,
+      "edge_sector_variant": 3706,
+      "edge_by_designation": 1247,
+      "parent_station": 0
+     },
+     "share_edge_sloid": 0.9597,
+     "share_station_sloid_only": 0.0403,
+     "share_no_sloid": 0.0
+    },
+    "stop_count_by_kind": {
+     "edge": 1942,
+     "parent_station": 1023,
+     "station": 411,
+     "edge_sector_variant": 27,
+     "edge_by_designation": 5,
+     "station_not_in_atlas": 4,
+     "edge_unresolved": 3
+    }
+   },
+   "gtfs_stops_whose_edge_belongs_to_another_atlas_station": [
+    [
+     "Bern Europaplatz",
+     "Bern Europaplatz Süd"
+    ]
+   ],
+   "bern_stations_with_trips": 204,
+   "bern_stations_without_trips": [],
+   "trips_per_day_median_by_weekday": {
+    "Sun": 6704,
+    "Mon": 8912,
+    "Tue": 8910,
+    "Wed": 8913,
+    "Thu": 8913,
+    "Fri": 9196,
+    "Sat": 8081
+   },
+   "trips_per_day": {
+    "min": 6453,
+    "max": 10618
+   },
+   "counts": {
+    "agencies": 19,
+    "routes": 166,
+    "trips": 140500,
+    "stop_times": 2066447,
+    "patterns": 11941,
+    "time_profiles": 17632,
+    "services": 8839,
+    "stops": 2392,
+    "stations": 1024,
+    "frequencies": 2,
+    "stop_time_rows_with_time_at_or_after_24h": 123886,
+    "max_time": "29:45:00",
+    "calendar_rows": 8839,
+    "calendar_dates_added": 34912,
+    "calendar_dates_removed": 1119243,
+    "calendar_dates_outside_feed_range": 0,
+    "services_without_calendar": 0,
+    "transfers": 51122
+   },
+   "routes_by_type": {
+    "700 B": 49,
+    "705 BN": 26,
+    "109 S": 18,
+    "103 IR": 17,
+    "700 EV": 15,
+    "117 EXT": 14,
+    "102 IC": 11,
+    "106 RE": 6,
+    "900 T": 5,
+    "102 EC": 2,
+    "102 ICE": 1,
+    "1303 ASC": 1,
+    "1400 FUN": 1
+   },
+   "trips_by_agency": {
+    "Städtische Verkehrsbetriebe Bern": 95454,
+    "Schweizerische Bundesbahnen SBB": 13627,
+    "BLS AG (bls)": 11421,
+    "PostAuto AG": 4986,
+    "Autobusbetrieb RBS": 4788,
+    "Aufzug Matte-Plattform (Bern)": 3364,
+    "Regionalverkehr Bern-Solothurn": 2429,
+    "BLS Netz AG Ersatzverkehr": 1532,
+    "Schweizerische Südostbahn (sob)": 1385,
+    "Regionalverkehr Bern-Solothurn Ersatzverkehr": 464,
+    "Transports publics fribourgeois": 293,
+    "SBB Infrastruktur AG Bahnersatz": 230,
+    "Verkehrsbetriebe Biel": 221,
+    "Service d'automobiles TPF": 165,
+    "Automobildienste Aare Seeland mobil": 48,
+    "STI Bus AG": 45,
+    "Busland AG": 31,
+    "Busbetrieb Solothurn und Umgebung": 15,
+    "Drahtseilbahn Marzili-Stadt Bern AG": 2
+   },
+   "window_files": {
+    "timetable_2026-11-21_2026-12-12.json": {
+     "trips": 35443,
+     "window": [
+      "2026-11-21",
+      "2026-12-12"
+     ],
+     "bytes": 4829285
+    }
+   },
+   "inferred_edges": {
+    "summary": {
+     "groups": 230,
+     "groups_resolved": 105,
+     "station_level_stop_times": 26412,
+     "stop_times_resolved": 10588,
+     "stop_times_unresolved": 15824,
+     "resolved_pct": 40.09,
+     "stop_times_by_outcome": {
+      "ambiguous": 7588,
+      "edges_without_compass_or_coordinates": 882,
+      "last_stop_of_trip": 3988,
+      "no_edge_at_stop": 3364,
+      "one_edge_only": 2,
+      "resolved_high": 8540,
+      "resolved_medium": 2048
+     },
+     "trip_days_by_outcome": {
+      "ambiguous": 194624,
+      "edges_without_compass_or_coordinates": 29543,
+      "last_stop_of_trip": 650569,
+      "no_edge_at_stop": 626768,
+      "one_edge_only": 728,
+      "resolved_high": 216929,
+      "resolved_medium": 46778
+     }
+    },
+    "back_test": {
+     "decided_share_of_all_pct": {
+      "stop_times": 43.95,
+      "trip_days": 42.72
+     },
+     "correct_among_decided_pct": {
+      "stop_times": 95.1,
+      "trip_days": 96.74
+     },
+     "wrong_among_decided_pct": {
+      "stop_times": 4.9,
+      "trip_days": 3.26
+     },
+     "ambiguous_share_of_all_pct": {
+      "stop_times": 38.49,
+      "trip_days": 35.19
+     },
+     "by_confidence": {
+      "high": {
+       "correct_stop_times": 301209,
+       "wrong_stop_times": 128,
+       "correct_pct_stop_times": 99.96,
+       "correct_trip_days": 5343095,
+       "wrong_trip_days": 128,
+       "correct_pct_trip_days": 100.0
+      },
+      "medium": {
+       "correct_stop_times": 206359,
+       "wrong_stop_times": 26026,
+       "correct_pct_stop_times": 88.8,
+       "correct_trip_days": 4285643,
+       "wrong_trip_days": 324609,
+       "correct_pct_trip_days": 92.96
+      }
+     }
+    }
+   }
+  },
+  "fp2027": {
+   "national_rows": {
+    "stops": 96376,
+    "stop_times": 15928426,
+    "trips": 992547,
+    "routes": 4255,
+    "agency": 441,
+    "calendar": 20354,
+    "calendar_dates": 2241744,
+    "frequencies": 1707,
+    "transfers": 289977
+   },
+   "kept_rows": {
+    "stop_times": 444996,
+    "trips": 32473,
+    "routes": 123,
+    "agency": 18,
+    "calendar": 1858,
+    "calendar_dates": 227829,
+    "frequencies": 2,
+    "transfers": 8924,
+    "stops": 3084
+   },
+   "feed_info": {
+    "feed_publisher_name": "SBB",
+    "feed_publisher_url": "https://sbb.ch",
+    "feed_lang": "DE",
+    "feed_start_date": "20261213",
+    "feed_end_date": "20271211",
+    "feed_version": "20261118"
+   },
+   "valid": [
+    "2026-12-13",
+    "2027-12-11"
+   ],
+   "valid_today": false,
+   "agency_timezone_in_source": [
+    "Europe/Berlin"
+   ],
+   "stop_times_rows": 444996,
+   "rows_at_or_after_24h": 23160,
+   "latest_time": "29:25:00",
+   "services": 1858,
+   "calendar_exceptions": {
+    "added": 6738,
+    "removed": 221091
+   },
+   "gtfs_vs_atlas_edge_coordinate_m": {
+    "compared": 1756,
+    "median": 0.17,
+    "p95": 0.39,
+    "max": 0.5,
+    "over_25_m": 0,
+    "examples_over_25_m": []
+   },
+   "stop_resolution": {
+    "summary_all_stops": {
+     "stop_times_rows": 444996,
+     "rows_by_kind": {
+      "edge": 418086,
+      "station": 25153,
+      "edge_by_designation": 811,
+      "edge_sector_variant": 692,
+      "edge_unresolved": 148,
+      "station_not_in_atlas": 106,
+      "parent_station": 0
+     },
+     "share_edge_sloid": 0.9429,
+     "share_station_sloid_only": 0.0569,
+     "share_no_sloid": 0.0002
+    },
+    "summary_tier_bern": {
+     "stop_times_rows": 243243,
+     "rows_by_kind": {
+      "edge": 231587,
+      "station": 11137,
+      "edge_sector_variant": 492,
+      "edge_unresolved": 27,
+      "parent_station": 0
+     },
+     "share_edge_sloid": 0.9541,
+     "share_station_sloid_only": 0.0459,
+     "share_no_sloid": 0.0
+    },
+    "summary_tier_bern_and_ring": {
+     "stop_times_rows": 373775,
+     "rows_by_kind": {
+      "edge": 350807,
+      "station": 22015,
+      "edge_sector_variant": 492,
+      "edge_by_designation": 331,
+      "edge_unresolved": 130,
+      "parent_station": 0
+     },
+     "share_edge_sloid": 0.9408,
+     "share_station_sloid_only": 0.0592,
+     "share_no_sloid": 0.0
+    },
+    "stop_count_by_kind": {
+     "edge": 1736,
+     "parent_station": 971,
+     "station": 342,
+     "edge_sector_variant": 21,
+     "edge_by_designation": 7,
+     "edge_unresolved": 5,
+     "station_not_in_atlas": 2
+    }
+   },
+   "gtfs_stops_whose_edge_belongs_to_another_atlas_station": [
+    [
+     "Bern Europaplatz",
+     "Bern Europaplatz Süd"
+    ]
+   ],
+   "bern_stations_with_trips": 200,
+   "bern_stations_without_trips": [
+    [
+     8510471,
+     "Bern, Kunstmuseum"
+    ],
+    [
+     8511982,
+     "Bern, Bundesgasse"
+    ],
+    [
+     8512116,
+     "Bern, Waisenhausplatz"
+    ],
+    [
+     8512525,
+     "Bern, Berner Fachhochschule"
+    ]
+   ],
+   "trips_per_day_median_by_weekday": {
+    "Sun": 6672,
+    "Mon": 9140,
+    "Tue": 9141,
+    "Wed": 9141,
+    "Thu": 9141,
+    "Fri": 9432,
+    "Sat": 8075
+   },
+   "trips_per_day": {
+    "min": 6669,
+    "max": 9452
+   },
+   "counts": {
+    "agencies": 18,
+    "routes": 123,
+    "trips": 32473,
+    "stop_times": 444996,
+    "patterns": 2577,
+    "time_profiles": 3542,
+    "services": 1858,
+    "stops": 2113,
+    "stations": 972,
+    "frequencies": 2,
+    "stop_time_rows_with_time_at_or_after_24h": 23160,
+    "max_time": "29:25:00",
+    "calendar_rows": 1858,
+    "calendar_dates_added": 6738,
+    "calendar_dates_removed": 221091,
+    "calendar_dates_outside_feed_range": 0,
+    "services_without_calendar": 0,
+    "transfers": 8924
+   },
+   "routes_by_type": {
+    "700 B": 39,
+    "705 BN": 25,
+    "109 S": 14,
+    "103 IR": 13,
+    "102 IC": 10,
+    "106 RE": 6,
+    "900 T": 5,
+    "117 EXT": 3,
+    "700 EV": 3,
+    "102 ICE": 2,
+    "102 EC": 1,
+    "1303 ASC": 1,
+    "1400 FUN": 1
+   },
+   "trips_by_agency": {
+    "Städtische Verkehrsbetriebe Bern": 14660,
+    "PostAuto AG": 4686,
+    "BLS AG (bls)": 4106,
+    "Aufzug Matte-Plattform (Bern)": 3364,
+    "Schweizerische Bundesbahnen SBB": 2804,
+    "Regionalverkehr Bern-Solothurn": 1138,
+    "Autobusbetrieb RBS": 931,
+    "BLS Netz AG Ersatzverkehr": 268,
+    "Schweizerische Südostbahn (sob)": 215,
+    "Transports publics fribourgeois": 195,
+    "Automobildienste Aare Seeland mobil": 40,
+    "Service d'automobiles TPF": 24,
+    "Verkehrsbetriebe Biel": 16,
+    "Busland AG": 9,
+    "STI Bus AG": 8,
+    "Busbetrieb Solothurn und Umgebung": 6,
+    "Drahtseilbahn Marzili-Stadt Bern AG": 2,
+    "SBB Infrastruktur AG Bahnersatz": 1
+   },
+   "inferred_edges": {
+    "summary": {
+     "groups": 162,
+     "groups_resolved": 56,
+     "station_level_stop_times": 11164,
+     "stop_times_resolved": 1810,
+     "stop_times_unresolved": 9354,
+     "resolved_pct": 16.21,
+     "stop_times_by_outcome": {
+      "ambiguous": 1578,
+      "edges_without_compass_or_coordinates": 813,
+      "last_stop_of_trip": 3597,
+      "no_edge_at_stop": 3364,
+      "one_edge_only": 2,
+      "resolved_high": 1575,
+      "resolved_medium": 235
+     },
+     "trip_days_by_outcome": {
+      "ambiguous": 202249,
+      "edges_without_compass_or_coordinates": 29570,
+      "last_stop_of_trip": 652918,
+      "no_edge_at_stop": 626888,
+      "one_edge_only": 728,
+      "resolved_high": 207317,
+      "resolved_medium": 25634
+     }
+    },
+    "back_test": {
+     "decided_share_of_all_pct": {
+      "stop_times": 40.65,
+      "trip_days": 43.19
+     },
+     "correct_among_decided_pct": {
+      "stop_times": 97.11,
+      "trip_days": 96.98
+     },
+     "wrong_among_decided_pct": {
+      "stop_times": 2.89,
+      "trip_days": 3.02
+     },
+     "ambiguous_share_of_all_pct": {
+      "stop_times": 30.02,
+      "trip_days": 34.84
+     },
+     "by_confidence": {
+      "high": {
+       "correct_stop_times": 53357,
+       "wrong_stop_times": 0,
+       "correct_pct_stop_times": 100.0,
+       "correct_trip_days": 5678522,
+       "wrong_trip_days": 0,
+       "correct_pct_trip_days": 100.0
+      },
+      "medium": {
+       "correct_stop_times": 38255,
+       "wrong_stop_times": 2729,
+       "correct_pct_stop_times": 93.34,
+       "correct_trip_days": 4053904,
+       "wrong_trip_days": 302943,
+       "correct_pct_trip_days": 93.05
+      }
+     }
+    }
+   }
+  }
+ },
+ "sources": {
+  "gtfs_fp2026": {
+   "resolved_file": "gtfs_fp2026_20261118.zip",
+   "http_last_modified": "Thu, 19 Nov 2026 07:03:57 GMT",
+   "bytes": 291720727,
+   "sha256": "fb7d7f864c1da40642c8af24f0c9347e39d4e525a3857c6efbf375bb0232dec3",
+   "fetched_at_utc": "2026-11-21T00:41:30Z"
+  },
+  "gtfs_fp2027": {
+   "resolved_file": "gtfs_fp2027_20261118.zip",
+   "http_last_modified": "Thu, 19 Nov 2026 07:04:34 GMT",
+   "bytes": 111511801,
+   "sha256": "1de024ff0e55a57c1d516c5e5c9fcb1205bf192ba80b12e199b3afe23016b80f",
+   "fetched_at_utc": "2026-11-21T00:41:32Z"
+  },
+  "atlas_traffic_point": {
+   "resolved_file": "actual-date-world-traffic-point.csv",
+   "http_last_modified": "Fri, 20 Nov 2026 01:21:09 GMT",
+   "bytes": 22986127,
+   "sha256": "47fd152d4b1b32e10c3f24a1440d44326a44b7afb8511160a5a62829a2dd297b",
+   "fetched_at_utc": "2026-11-21T00:41:32Z"
+  },
+  "atlas_service_point": {
+   "resolved_file": "actual-date-swiss-service-point.csv",
+   "http_last_modified": "Fri, 20 Nov 2026 01:17:09 GMT",
+   "bytes": 26697417,
+   "sha256": "fa23a23d7cd4fdb1797171ba939f81d96523a0e44ab6f106e93ba4bc65ac7932",
+   "fetched_at_utc": "2026-11-21T00:41:33Z"
+  },
+  "atlas_traffic_point_years": {
+   "resolved_file": "timetable-years-world-traffic-point.csv",
+   "http_last_modified": "Fri, 20 Nov 2026 01:21:32 GMT",
+   "bytes": 40704572,
+   "sha256": "6f84373113b7f4d5dd9b7f5f8ac79f1bf19d1807c5deab10946a0d65df0ad6f7",
+   "fetched_at_utc": "2026-11-21T00:53:01Z"
+  },
+  "atlas_service_point_years": {
+   "resolved_file": "timetable-years-swiss-service-point.csv",
+   "http_last_modified": "Fri, 20 Nov 2026 01:17:31 GMT",
+   "bytes": 27230196,
+   "sha256": "2710838880d5bb4f7125a9c0c4e0436c24cd0cc5c4ecda3fcb1350d210bffb49",
+   "fetched_at_utc": "2026-11-21T00:53:03Z"
+  },
+  "atlas_prm_platform": {
+   "resolved_file": "actual-date-platform.csv",
+   "http_last_modified": "Fri, 20 Nov 2026 01:14:07 GMT",
+   "bytes": 13215250,
+   "sha256": "40a5232f33a25ace49a2f1c5b3d7be03e8dd6fb6f46c2ee4d1ae0c261983e9fe",
+   "fetched_at_utc": "2026-11-21T01:02:18Z"
+  },
+  "atlas_prm_stop_point": {
+   "resolved_file": "actual-date-stop-point.csv",
+   "http_last_modified": "Fri, 20 Nov 2026 01:18:06 GMT",
+   "bytes": 3918808,
+   "sha256": "da04babf12941046dc4fbcd6b7ac2c6a290035e7a820e6c1d14e21bc23d9588f",
+   "fetched_at_utc": "2026-11-21T01:02:18Z"
+  },
+  "atlas_sectors": {
+   "resolved_file": "actual-date-sectors-and-sector-groups.csv",
+   "http_last_modified": "Fri, 20 Nov 2026 01:24:06 GMT",
+   "bytes": 832287,
+   "sha256": "1cb74b510a2d8ad33a3817d2dd87c0f7feddf6a3d5e0dd1119ed2bd0d6203d67",
+   "fetched_at_utc": "2026-11-21T01:02:19Z"
+  },
+  "atlas_prm_reference_point": {
+   "resolved_file": "actual-date-reference-point.csv",
+   "http_last_modified": "Fri, 20 Nov 2026 01:15:08 GMT",
+   "bytes": 349886,
+   "sha256": "48cc33d6a5851ec33a6bd33bec83f21f5ba10c85ca80e56efc53a1ba622f8b56",
+   "fetched_at_utc": "2026-11-21T01:02:19Z"
+  },
+  "atlas_prm_toilet": {
+   "resolved_file": "actual-date-toilet.csv",
+   "http_last_modified": "Fri, 20 Nov 2026 01:20:08 GMT",
+   "bytes": 89397,
+   "sha256": "38122d9c043a28534a569013c78167f80c007f5c7413aa079638b6695ed22ba3",
+   "fetched_at_utc": "2026-11-21T01:02:20Z"
+  },
+  "atlas_prm_parking_lot": {
+   "resolved_file": "actual-date-parking-lot.csv",
+   "http_last_modified": "Fri, 20 Nov 2026 01:13:05 GMT",
+   "bytes": 166397,
+   "sha256": "7c77fb639f45874e2783a07d449435d235b4fbe57821a5e05b91eab71d342b45",
+   "fetched_at_utc": "2026-11-21T01:02:21Z"
+  },
+  "atlas_prm_contact_point": {
+   "resolved_file": "actual-date-contact-point.csv",
+   "http_last_modified": "Fri, 20 Nov 2026 01:11:05 GMT",
+   "bytes": 106258,
+   "sha256": "f5b6627241d93d9adc2d9f45eb7b0c967f661067a8af5ab9befd643dffb072d2",
+   "fetched_at_utc": "2026-11-21T01:02:21Z"
+  },
+  "atlas_prm_relation": {
+   "resolved_file": "actual-date-relation.csv",
+   "http_last_modified": "Fri, 20 Nov 2026 01:16:05 GMT",
+   "bytes": 981117,
+   "sha256": "f80f7b6ebeb6063d48f4107d8d7b4dbdf0db96188d90d33bc9ab613b1e103641",
+   "fetched_at_utc": "2026-11-21T01:02:22Z"
+  },
+  "bfr_wheelchair": {
+   "resolved_file": "bfr_haltestellendaten.csv",
+   "http_last_modified": "Fri, 20 Nov 2026 04:01:09 GMT",
+   "bytes": 7522641,
+   "sha256": "f59498c3c5b4b1f039777d8a062a12878ad739f606452900a8e8a3d2e10b2bfb",
+   "fetched_at_utc": "2026-11-21T01:02:22Z"
+  },
+  "boundary_bern": {
+   "resolved_file": "bern_351.geojson",
+   "http_last_modified": null,
+   "bytes": 29027,
+   "sha256": "23e935f1773108bd1227675b2fbf34bc3fdf314d0cc7f21c10a76670b96c2abe",
+   "fetched_at_utc": "2026-11-21T01:02:32Z"
+  }
+ },
+ "stops": {
+  "accessibility_edges": 2902,
+  "accessibility_stations": 1112,
+  "sectors": 1803,
+  "sector_to_edge_distance_m": {
+   "median": 80,
+   "max": 372
+  },
+  "stations": 1123,
+  "stations_by_tier": {
+   "connected": 529,
+   "bern": 208,
+   "ring": 386
+  },
+  "edges_and_areas": 3483,
+  "edges_by_tier_type": {
+   "bern/BOARDING_AREA": 21,
+   "bern/BOARDING_PLATFORM": 598,
+   "connected/BOARDING_AREA": 399,
+   "connected/BOARDING_PLATFORM": 1597,
+   "ring/BOARDING_AREA": 50,
+   "ring/BOARDING_PLATFORM": 818
+  },
+  "bern_edge_to_station_distance_m": {
+   "median": 27,
+   "p95": 143,
+   "max": 445
+  },
+  "bern_edges_far_from_station": [
+   [
+    "ch:1:sloid:7000:55:49",
+    "Bern",
+    445
+   ],
+   [
+    "ch:1:sloid:7000:55:50",
+    "Bern",
+    427
+   ]
+  ],
+  "bern_designation_lookup": {
+   "unique_designations": 197,
+   "designations_shared_by_several_edges": 13
+  },
+  "bern_edges_without_geometry": [
+   "ch:1:sloid:7060:0:2373",
+   "ch:1:sloid:7061:0:2374",
+   "ch:1:sloid:71393:0:32",
+   "ch:1:sloid:71393:0:56",
+   "ch:1:sloid:71435:0:13",
+   "ch:1:sloid:76646:0:66",
+   "ch:1:sloid:76646:0:80",
+   "ch:1:sloid:76990:0:1895",
+   "ch:1:sloid:7982:0:3",
+   "ch:1:sloid:82210:0:618032",
+   "ch:1:sloid:87484:0:22",
+   "ch:1:sloid:88994:0:715",
+   "ch:1:sloid:88994:0:716",
+   "ch:1:sloid:89003:0:2370",
+   "ch:1:sloid:90006:0:2371",
+   "ch:1:sloid:90006:0:2372",
+   "ch:1:sloid:90084:0:12",
+   "ch:1:sloid:95136:0:1971",
+   "ch:1:sloid:95137:0:1442"
+  ]
+ },
+ "bern_stations_only_in_fp2026": [
+  [
+   8510471,
+   "Bern, Kunstmuseum"
+  ],
+  [
+   8511982,
+   "Bern, Bundesgasse"
+  ],
+  [
+   8512116,
+   "Bern, Waisenhausplatz"
+  ],
+  [
+   8512525,
+   "Bern, Berner Fachhochschule"
+  ]
+ ],
+ "bern_stations_only_in_fp2027": [],
+ "route_names_only_in_fp2026": [
+  "B 3A",
+  "B 6A",
+  "B 7A",
+  "B 80",
+  "B 81",
+  "B 82",
+  "B 8A",
+  "B 9A",
+  "B 9B",
+  "B EXT",
+  "BN 9B",
+  "EC EC6",
+  "EV EV",
+  "EV EV3",
+  "EV EV4",
+  "EV EV5",
+  "EV EV7",
+  "IC IC9",
+  "S S"
+ ],
+ "route_names_only_in_fp2027": [
+  "B 15"
+ ],
+ "stationboard_crosscheck": {
+  "source": "https://transport.opendata.ch/v1/stationboard (independent API on the official timetable; the team app uses it)",
+  "method": "same station, date and time; compare (minute, line) pairs inside the window the API returned; then compare the platform letter",
+  "results": [
+   {
+    "feed": "fp2026",
+    "group": "focus",
+    "station_number": 8507000,
+    "station": "Bern (main station, rail)",
+    "date": "2026-11-24",
+    "from": "08:00:00",
+    "window_until": "08:34",
+    "api_departures": 37,
+    "ours_in_window": 37,
+    "api_matched_in_ours": 37,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 37,
+    "platform_equal": 37
+   },
+   {
+    "feed": "fp2026",
+    "group": "focus",
+    "station_number": 8576646,
+    "station": "Bern, Bahnhof (tram and bus stop at the main station)",
+    "date": "2026-11-24",
+    "from": "08:00:00",
+    "window_until": "08:11",
+    "api_departures": 38,
+    "ours_in_window": 38,
+    "api_matched_in_ours": 38,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 38,
+    "platform_equal": 38
+   },
+   {
+    "feed": "fp2026",
+    "group": "focus",
+    "station_number": 8507110,
+    "station": "Bern, Zytglogge",
+    "date": "2026-11-24",
+    "from": "08:00:00",
+    "window_until": "08:16",
+    "api_departures": 38,
+    "ours_in_window": 38,
+    "api_matched_in_ours": 38,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 38,
+    "platform_equal": 38
+   },
+   {
+    "feed": "fp2026",
+    "group": "focus",
+    "station_number": 8516161,
+    "station": "Bern Wankdorf (rail)",
+    "date": "2026-11-24",
+    "from": "08:00:00",
+    "window_until": "09:55",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 39,
+    "platform_equal": 39
+   },
+   {
+    "feed": "fp2026",
+    "group": "focus",
+    "station_number": 8590129,
+    "station": "Bern, Wankdorf Bahnhof (tram and bus)",
+    "date": "2026-11-24",
+    "from": "08:00:00",
+    "window_until": "09:28",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 39,
+    "platform_equal": 39
+   },
+   {
+    "feed": "fp2026",
+    "group": "focus",
+    "station_number": 8507000,
+    "station": "Bern (main station, rail)",
+    "date": "2026-11-23",
+    "from": "08:00:00",
+    "window_until": "08:34",
+    "api_departures": 37,
+    "ours_in_window": 37,
+    "api_matched_in_ours": 37,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 37,
+    "platform_equal": 37
+   },
+   {
+    "feed": "fp2026",
+    "group": "focus",
+    "station_number": 8576646,
+    "station": "Bern, Bahnhof (tram and bus stop at the main station)",
+    "date": "2026-11-23",
+    "from": "08:00:00",
+    "window_until": "08:15",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 34,
+    "platform_equal": 34
+   },
+   {
+    "feed": "fp2026",
+    "group": "focus",
+    "station_number": 8507110,
+    "station": "Bern, Zytglogge",
+    "date": "2026-11-23",
+    "from": "08:00:00",
+    "window_until": "08:15",
+    "api_departures": 38,
+    "ours_in_window": 38,
+    "api_matched_in_ours": 38,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 33,
+    "platform_equal": 33
+   },
+   {
+    "feed": "fp2026",
+    "group": "focus",
+    "station_number": 8516161,
+    "station": "Bern Wankdorf (rail)",
+    "date": "2026-11-23",
+    "from": "08:00:00",
+    "window_until": "09:55",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 39,
+    "platform_equal": 39
+   },
+   {
+    "feed": "fp2026",
+    "group": "focus",
+    "station_number": 8590129,
+    "station": "Bern, Wankdorf Bahnhof (tram and bus)",
+    "date": "2026-11-23",
+    "from": "08:00:00",
+    "window_until": "09:37",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 39,
+    "platform_equal": 39
+   },
+   {
+    "feed": "fp2026",
+    "group": "focus",
+    "station_number": 8507000,
+    "station": "Bern (main station, rail)",
+    "date": "2026-11-22",
+    "from": "00:30:00",
+    "window_until": "06:12",
+    "api_departures": 37,
+    "ours_in_window": 37,
+    "api_matched_in_ours": 37,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 37,
+    "platform_equal": 37
+   },
+   {
+    "feed": "fp2026",
+    "group": "focus",
+    "station_number": 8576646,
+    "station": "Bern, Bahnhof (tram and bus stop at the main station)",
+    "date": "2026-11-22",
+    "from": "00:30:00",
+    "window_until": "00:55",
+    "api_departures": 38,
+    "ours_in_window": 38,
+    "api_matched_in_ours": 38,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 36,
+    "platform_equal": 36
+   },
+   {
+    "feed": "fp2026",
+    "group": "focus",
+    "station_number": 8507110,
+    "station": "Bern, Zytglogge",
+    "date": "2026-11-22",
+    "from": "00:30:00",
+    "window_until": "01:07",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 39,
+    "platform_equal": 39
+   },
+   {
+    "feed": "fp2026",
+    "group": "focus",
+    "station_number": 8516161,
+    "station": "Bern Wankdorf (rail)",
+    "date": "2026-11-22",
+    "from": "00:30:00",
+    "window_until": "07:53",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 39,
+    "platform_equal": 39
+   },
+   {
+    "feed": "fp2026",
+    "group": "focus",
+    "station_number": 8590129,
+    "station": "Bern, Wankdorf Bahnhof (tram and bus)",
+    "date": "2026-11-22",
+    "from": "00:30:00",
+    "window_until": "09:13",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 39,
+    "platform_equal": 39
+   },
+   {
+    "feed": "fp2027",
+    "group": "focus",
+    "station_number": 8507000,
+    "station": "Bern (main station, rail)",
+    "date": "2026-12-15",
+    "from": "08:00:00",
+    "window_until": "08:35",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 39,
+    "platform_equal": 39
+   },
+   {
+    "feed": "fp2027",
+    "group": "focus",
+    "station_number": 8576646,
+    "station": "Bern, Bahnhof (tram and bus stop at the main station)",
+    "date": "2026-12-15",
+    "from": "08:00:00",
+    "window_until": "08:12",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 39,
+    "platform_equal": 39
+   },
+   {
+    "feed": "fp2027",
+    "group": "focus",
+    "station_number": 8507110,
+    "station": "Bern, Zytglogge",
+    "date": "2026-12-15",
+    "from": "08:00:00",
+    "window_until": "08:16",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 39,
+    "platform_equal": 39
+   },
+   {
+    "feed": "fp2027",
+    "group": "focus",
+    "station_number": 8516161,
+    "station": "Bern Wankdorf (rail)",
+    "date": "2026-12-15",
+    "from": "08:00:00",
+    "window_until": "09:55",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 39,
+    "platform_equal": 39
+   },
+   {
+    "feed": "fp2027",
+    "group": "focus",
+    "station_number": 8590129,
+    "station": "Bern, Wankdorf Bahnhof (tram and bus)",
+    "date": "2026-12-15",
+    "from": "08:00:00",
+    "window_until": "09:28",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 39,
+    "platform_equal": 39
+   },
+   {
+    "feed": "fp2027",
+    "group": "focus",
+    "station_number": 8507000,
+    "station": "Bern (main station, rail)",
+    "date": "2026-12-20",
+    "from": "00:30:00",
+    "window_until": "06:12",
+    "api_departures": 38,
+    "ours_in_window": 38,
+    "api_matched_in_ours": 38,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 38,
+    "platform_equal": 38
+   },
+   {
+    "feed": "fp2027",
+    "group": "focus",
+    "station_number": 8576646,
+    "station": "Bern, Bahnhof (tram and bus stop at the main station)",
+    "date": "2026-12-20",
+    "from": "00:30:00",
+    "window_until": "00:55",
+    "api_departures": 37,
+    "ours_in_window": 37,
+    "api_matched_in_ours": 37,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 35,
+    "platform_equal": 35
+   },
+   {
+    "feed": "fp2027",
+    "group": "focus",
+    "station_number": 8507110,
+    "station": "Bern, Zytglogge",
+    "date": "2026-12-20",
+    "from": "00:30:00",
+    "window_until": "01:10",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 39,
+    "platform_equal": 39
+   },
+   {
+    "feed": "fp2027",
+    "group": "focus",
+    "station_number": 8516161,
+    "station": "Bern Wankdorf (rail)",
+    "date": "2026-12-20",
+    "from": "00:30:00",
+    "window_until": "07:53",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 39,
+    "platform_equal": 39
+   },
+   {
+    "feed": "fp2027",
+    "group": "focus",
+    "station_number": 8590129,
+    "station": "Bern, Wankdorf Bahnhof (tram and bus)",
+    "date": "2026-12-20",
+    "from": "00:30:00",
+    "window_until": "09:13",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 39,
+    "platform_equal": 39
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8507000,
+    "station": "Bern",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "12:34",
+    "api_departures": 37,
+    "ours_in_window": 37,
+    "api_matched_in_ours": 37,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 37,
+    "platform_equal": 37
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8507000,
+    "station": "Bern",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "12:35",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 39,
+    "platform_equal": 39
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8508075,
+    "station": "Bern, Breitenrain",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "13:08",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 36,
+    "platform_equal": 36
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8508075,
+    "station": "Bern, Breitenrain",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "13:08",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 36,
+    "platform_equal": 36
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8571342,
+    "station": "Bern, Inselplatz",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "13:04",
+    "api_departures": 38,
+    "ours_in_window": 38,
+    "api_matched_in_ours": 38,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 38,
+    "platform_equal": 38
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8571342,
+    "station": "Bern, Inselplatz",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "13:05",
+    "api_departures": 38,
+    "ours_in_window": 38,
+    "api_matched_in_ours": 38,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 38,
+    "platform_equal": 38
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8571358,
+    "station": "Bern, Mittelstrasse",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "12:59",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8571358,
+    "station": "Bern, Mittelstrasse",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "12:59",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8571438,
+    "station": "Bern, Niederbottigen",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "16:54",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8571438,
+    "station": "Bern, Niederbottigen",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "16:54",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8576999,
+    "station": "Bern, UPD Waldau",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "15:17",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 39,
+    "platform_equal": 39
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8576999,
+    "station": "Bern, UPD Waldau",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "15:17",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 39,
+    "platform_equal": 39
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8577000,
+    "station": "Bern, Schermenweg",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "18:58",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8577000,
+    "station": "Bern, Schermenweg",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "18:58",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8579523,
+    "station": "Bern Bümpliz Nord, Bahnhof",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "17:00",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8579523,
+    "station": "Bern Bümpliz Nord, Bahnhof",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "17:00",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8579897,
+    "station": "Bern, Kocherpark",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "12:34",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 39,
+    "platform_equal": 39
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8579897,
+    "station": "Bern, Kocherpark",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "12:34",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 39,
+    "platform_equal": 39
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8580427,
+    "station": "Bern Riedbach, Bahnhof",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "11:48",
+    "api_departures": 36,
+    "ours_in_window": 36,
+    "api_matched_in_ours": 36,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8580427,
+    "station": "Bern Riedbach, Bahnhof",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "11:48",
+    "api_departures": 36,
+    "ours_in_window": 36,
+    "api_matched_in_ours": 36,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8582210,
+    "station": "Bern, Untermattweg",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "13:56",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8582210,
+    "station": "Bern, Untermattweg",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "13:56",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8582225,
+    "station": "Bern, Bümpliz Schloss",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "16:58",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8582225,
+    "station": "Bern, Bümpliz Schloss",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "16:58",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8582262,
+    "station": "Bern Brünnen Westside, Bahnhof",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "15:19",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8582262,
+    "station": "Bern Brünnen Westside, Bahnhof",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "15:19",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8583046,
+    "station": "Bern, Forsthaus",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "14:34",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8583046,
+    "station": "Bern, Forsthaus",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "14:34",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8587483,
+    "station": "Bern, Salem",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "13:39",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8587483,
+    "station": "Bern, Salem",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "13:39",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8587484,
+    "station": "Bern, Schönburg",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "13:38",
+    "api_departures": 38,
+    "ours_in_window": 38,
+    "api_matched_in_ours": 38,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8587484,
+    "station": "Bern, Schönburg",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "13:39",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8588989,
+    "station": "Bern, Bärenplatz",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "12:28",
+    "api_departures": 37,
+    "ours_in_window": 37,
+    "api_matched_in_ours": 37,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8588989,
+    "station": "Bern, Bärenplatz",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "12:28",
+    "api_departures": 38,
+    "ours_in_window": 38,
+    "api_matched_in_ours": 38,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8588990,
+    "station": "Bern, Bollwerk",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "12:53",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 39,
+    "platform_equal": 39
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8588990,
+    "station": "Bern, Bollwerk",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "12:53",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 39,
+    "platform_equal": 39
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8589005,
+    "station": "Bern, Willadingweg",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "15:14",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8589005,
+    "station": "Bern, Willadingweg",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "15:15",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8589008,
+    "station": "Bern, Wyleregg",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "13:57",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8589008,
+    "station": "Bern, Wyleregg",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "13:57",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8590006,
+    "station": "Bern, Luisenstrasse",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "13:02",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8590006,
+    "station": "Bern, Luisenstrasse",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "13:02",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8590012,
+    "station": "Bern, Pestalozzi",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "15:18",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8590012,
+    "station": "Bern, Pestalozzi",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "15:18",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8590015,
+    "station": "Bern, Hasler",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "14:12",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 39,
+    "platform_equal": 39
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8590015,
+    "station": "Bern, Hasler",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "14:12",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 39,
+    "platform_equal": 39
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8590019,
+    "station": "Bern, Sonnenhof",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "13:13",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8590019,
+    "station": "Bern, Sonnenhof",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "13:14",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8590023,
+    "station": "Bern, Sandrain",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "13:59",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8590023,
+    "station": "Bern, Sandrain",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "13:59",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8590025,
+    "station": "Bern, Güterbahnhof",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "15:08",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8590025,
+    "station": "Bern, Güterbahnhof",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "15:18",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8590037,
+    "station": "Bern, Tavelweg",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "13:55",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8590037,
+    "station": "Bern, Tavelweg",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "13:57",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8590044,
+    "station": "Bern, Bümpliz",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "15:19",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 39,
+    "platform_equal": 39
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8590044,
+    "station": "Bern, Bümpliz",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "15:19",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 39,
+    "platform_equal": 39
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8590060,
+    "station": "Bern, Ka-We-De",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "15:19",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8590060,
+    "station": "Bern, Ka-We-De",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "15:19",
+    "api_departures": 38,
+    "ours_in_window": 38,
+    "api_matched_in_ours": 38,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8590061,
+    "station": "Bern, Tierpark",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "15:19",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8590061,
+    "station": "Bern, Tierpark",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "15:18",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8590062,
+    "station": "Bern, Tillierstrasse",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "15:17",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8590062,
+    "station": "Bern, Tillierstrasse",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "15:18",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8590066,
+    "station": "Bern, Felsenaustrasse",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "15:14",
+    "api_departures": 38,
+    "ours_in_window": 38,
+    "api_matched_in_ours": 38,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8590066,
+    "station": "Bern, Felsenaustrasse",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "15:14",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8590079,
+    "station": "Bern, Schützenweg",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "18:37",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8590079,
+    "station": "Bern, Schützenweg",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "18:37",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8590081,
+    "station": "Bern, Hohliebi",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "16:53",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8590081,
+    "station": "Bern, Hohliebi",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "16:53",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8590084,
+    "station": "Bern, Technologiepark",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "16:52",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8590084,
+    "station": "Bern, Technologiepark",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "16:52",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8590112,
+    "station": "Bern, Mühlenplatz",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "00:21",
+    "api_departures": 11,
+    "ours_in_window": 11,
+    "api_matched_in_ours": 11,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8590112,
+    "station": "Bern, Mühlenplatz",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "00:21",
+    "api_departures": 11,
+    "ours_in_window": 11,
+    "api_matched_in_ours": 11,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8590113,
+    "station": "Bern, Badgasse",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "00:22",
+    "api_departures": 11,
+    "ours_in_window": 11,
+    "api_matched_in_ours": 11,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8590113,
+    "station": "Bern, Badgasse",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "00:22",
+    "api_departures": 11,
+    "ours_in_window": 11,
+    "api_matched_in_ours": 11,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8590114,
+    "station": "Bern, Marzilistrasse",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "00:24",
+    "api_departures": 11,
+    "ours_in_window": 11,
+    "api_matched_in_ours": 11,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8590114,
+    "station": "Bern, Marzilistrasse",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "00:25",
+    "api_departures": 11,
+    "ours_in_window": 11,
+    "api_matched_in_ours": 11,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8595136,
+    "station": "Bern, Wankdorfbrücke",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "13:39",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8595136,
+    "station": "Bern, Wankdorfbrücke",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "13:39",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2026",
+    "group": "random",
+    "station_number": 8595142,
+    "station": "Bern, Weissenbühl (Tram)",
+    "date": "2026-11-24",
+    "from": "12:00:00",
+    "window_until": "18:34",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   },
+   {
+    "feed": "fp2027",
+    "group": "random",
+    "station_number": 8595142,
+    "station": "Bern, Weissenbühl (Tram)",
+    "date": "2026-12-15",
+    "from": "12:00:00",
+    "window_until": "18:33",
+    "api_departures": 39,
+    "ours_in_window": 39,
+    "api_matched_in_ours": 39,
+    "api_missing_in_ours": [],
+    "ours_not_in_api": 0,
+    "platform_compared": 0,
+    "platform_equal": 0
+   }
+  ],
+  "totals": {
+   "fp2026/focus": {
+    "boards": 15,
+    "boards_failed_to_load": 0,
+    "api_departures": 575,
+    "matched": 575,
+    "ours_not_in_api": 0,
+    "platform_compared": 563,
+    "platform_equal": 563
+   },
+   "fp2026/random": {
+    "boards": 40,
+    "boards_failed_to_load": 0,
+    "api_departures": 1466,
+    "matched": 1466,
+    "ours_not_in_api": 0,
+    "platform_compared": 306,
+    "platform_equal": 306
+   },
+   "fp2027/focus": {
+    "boards": 10,
+    "boards_failed_to_load": 0,
+    "api_departures": 387,
+    "matched": 387,
+    "ours_not_in_api": 0,
+    "platform_compared": 385,
+    "platform_equal": 385
+   },
+   "fp2027/random": {
+    "boards": 40,
+    "boards_failed_to_load": 0,
+    "api_departures": 1470,
+    "matched": 1470,
+    "ours_not_in_api": 0,
+    "platform_compared": 308,
+    "platform_equal": 308
+   }
+  }
+ },
+ "checks": [
+  {
+   "check": "source gtfs_fp2026: cached file matches recorded sha256",
+   "ok": true,
+   "hard": true,
+   "detail": "gtfs_fp2026_20261118.zip"
+  },
+  {
+   "check": "source gtfs_fp2027: cached file matches recorded sha256",
+   "ok": true,
+   "hard": true,
+   "detail": "gtfs_fp2027_20261118.zip"
+  },
+  {
+   "check": "source atlas_traffic_point: cached file matches recorded sha256",
+   "ok": true,
+   "hard": true,
+   "detail": "actual-date-world-traffic-point.csv"
+  },
+  {
+   "check": "source atlas_service_point: cached file matches recorded sha256",
+   "ok": true,
+   "hard": true,
+   "detail": "actual-date-swiss-service-point.csv"
+  },
+  {
+   "check": "source atlas_traffic_point_years: cached file matches recorded sha256",
+   "ok": true,
+   "hard": true,
+   "detail": "timetable-years-world-traffic-point.csv"
+  },
+  {
+   "check": "source atlas_service_point_years: cached file matches recorded sha256",
+   "ok": true,
+   "hard": true,
+   "detail": "timetable-years-swiss-service-point.csv"
+  },
+  {
+   "check": "source atlas_prm_platform: cached file matches recorded sha256",
+   "ok": true,
+   "hard": true,
+   "detail": "actual-date-platform.csv"
+  },
+  {
+   "check": "source atlas_prm_stop_point: cached file matches recorded sha256",
+   "ok": true,
+   "hard": true,
+   "detail": "actual-date-stop-point.csv"
+  },
+  {
+   "check": "source atlas_sectors: cached file matches recorded sha256",
+   "ok": true,
+   "hard": true,
+   "detail": "actual-date-sectors-and-sector-groups.csv"
+  },
+  {
+   "check": "source atlas_prm_reference_point: cached file matches recorded sha256",
+   "ok": true,
+   "hard": true,
+   "detail": "actual-date-reference-point.csv"
+  },
+  {
+   "check": "source atlas_prm_toilet: cached file matches recorded sha256",
+   "ok": true,
+   "hard": true,
+   "detail": "actual-date-toilet.csv"
+  },
+  {
+   "check": "source atlas_prm_parking_lot: cached file matches recorded sha256",
+   "ok": true,
+   "hard": true,
+   "detail": "actual-date-parking-lot.csv"
+  },
+  {
+   "check": "source atlas_prm_contact_point: cached file matches recorded sha256",
+   "ok": true,
+   "hard": true,
+   "detail": "actual-date-contact-point.csv"
+  },
+  {
+   "check": "source atlas_prm_relation: cached file matches recorded sha256",
+   "ok": true,
+   "hard": true,
+   "detail": "actual-date-relation.csv"
+  },
+  {
+   "check": "source bfr_wheelchair: cached file matches recorded sha256",
+   "ok": true,
+   "hard": true,
+   "detail": "bfr_haltestellendaten.csv"
+  },
+  {
+   "check": "source boundary_bern: cached file matches recorded sha256",
+   "ok": true,
+   "hard": true,
+   "detail": "bern_351.geojson"
+  },
+  {
+   "check": "stations: unique number",
+   "ok": true,
+   "hard": true,
+   "detail": "1123 stations"
+  },
+  {
+   "check": "stations: unique sloid",
+   "ok": true,
+   "hard": true,
+   "detail": ""
+  },
+  {
+   "check": "edges: unique sloid",
+   "ok": true,
+   "hard": true,
+   "detail": "3483 edges and areas"
+  },
+  {
+   "check": "edges: every edge has a parent station in stations.geojson",
+   "ok": true,
+   "hard": true,
+   "detail": "0 orphans"
+  },
+  {
+   "check": "edges: tier equals the parent station tier",
+   "ok": true,
+   "hard": true,
+   "detail": ""
+  },
+  {
+   "check": "edges: edge sloid starts with the station sloid",
+   "ok": true,
+   "hard": false,
+   "detail": "0 exceptions"
+  },
+  {
+   "check": "coverage: all 'bern' stations (atlas fsoNumber 351) lie inside the swisstopo boundary polygon",
+   "ok": true,
+   "hard": true,
+   "detail": "208 stations, outside: []"
+  },
+  {
+   "check": "coverage: no station of another tier lies inside the Bern polygon",
+   "ok": true,
+   "hard": true,
+   "detail": "[]"
+  },
+  {
+   "check": "coverage: no edge of a non-Bern station lies inside the (generalised) Bern polygon",
+   "ok": false,
+   "hard": false,
+   "detail": "border stops atlas attributes to the neighbouring municipality: ['Liebefeld, Lerbermatt', 'Ostermundigen, Waldeck']; trips serving them are included"
+  },
+  {
+   "check": "coverage: every 'ring' station is within 5 km of the boundary",
+   "ok": true,
+   "hard": true,
+   "detail": ""
+  },
+  {
+   "check": "edges (bern): every edge lies within 400 m of its station coordinate",
+   "ok": false,
+   "hard": false,
+   "detail": "median 27 m, max 445 m, far: [['ch:1:sloid:7000:55:49', 'Bern', 445], ['ch:1:sloid:7000:55:50', 'Bern', 427]]"
+  },
+  {
+   "check": "edge_lookup: every referenced edge exists in edges.geojson",
+   "ok": true,
+   "hard": true,
+   "detail": ""
+  },
+  {
+   "check": "accessibility: every edge key exists in edges.geojson",
+   "ok": true,
+   "hard": true,
+   "detail": "2902 edges"
+  },
+  {
+   "check": "accessibility: every station key exists in stations.geojson",
+   "ok": true,
+   "hard": true,
+   "detail": "1112 stations"
+  },
+  {
+   "check": "accessibility: PLATFORM relations point at edges in edges.geojson",
+   "ok": false,
+   "hard": false,
+   "detail": "14 relations name an edge that is not in atlas traffic-point-v2"
+  },
+  {
+   "check": "sectors: every sector belongs to an edge in edges.geojson",
+   "ok": true,
+   "hard": true,
+   "detail": "1803 sectors"
+  },
+  {
+   "check": "sectors: a sector point lies within 450 m of its edge point",
+   "ok": true,
+   "hard": false,
+   "detail": "median 80 m, max 372 m over 1797 sectors"
+  },
+  {
+   "check": "fp2026: stop_times rows of a trip are contiguous and every trip id is in trips.txt",
+   "ok": true,
+   "hard": true,
+   "detail": ""
+  },
+  {
+   "check": "fp2026: subset zip passes CRC test",
+   "ok": true,
+   "hard": true,
+   "detail": "17,788,850 bytes"
+  },
+  {
+   "check": "fp2026: routes -> agency",
+   "ok": true,
+   "hard": true,
+   "detail": "166 routes, 19 agencies"
+  },
+  {
+   "check": "fp2026: trips -> routes",
+   "ok": true,
+   "hard": true,
+   "detail": "140,500 trips"
+  },
+  {
+   "check": "fp2026: trips -> calendar or calendar_dates",
+   "ok": true,
+   "hard": true,
+   "detail": "8,839 services"
+  },
+  {
+   "check": "fp2026: stops -> parent_station",
+   "ok": true,
+   "hard": true,
+   "detail": "3,415 stops"
+  },
+  {
+   "check": "fp2026: agency_timezone has Zurich rules",
+   "ok": true,
+   "hard": true,
+   "detail": "source says ['Europe/Berlin']; Europe/Berlin and Europe/Zurich share offset and DST dates, outputs are labelled Europe/Zurich"
+  },
+  {
+   "check": "fp2026: stop_times -> trips and stops",
+   "ok": true,
+   "hard": true,
+   "detail": "2,066,447 rows"
+  },
+  {
+   "check": "fp2026: times never run backwards within a trip, stop_sequence strictly increasing",
+   "ok": true,
+   "hard": true,
+   "detail": "0 violations"
+  },
+  {
+   "check": "fp2026: times at or after 24:00:00 are preserved",
+   "ok": true,
+   "hard": true,
+   "detail": "123,886 rows, latest 29:45:00"
+  },
+  {
+   "check": "fp2026: timetable.json decodes to exactly the stop_times of the GTFS subset",
+   "ok": true,
+   "hard": true,
+   "detail": "2,066,447 rows compared field by field"
+  },
+  {
+   "check": "fp2026: timetable.json decodes to exactly the trips of the GTFS subset",
+   "ok": true,
+   "hard": true,
+   "detail": "140,500 trips, all 9 columns"
+  },
+  {
+   "check": "fp2026: routes preserved",
+   "ok": true,
+   "hard": true,
+   "detail": ""
+  },
+  {
+   "check": "fp2026: service-day bitmasks equal calendar.txt + calendar_dates.txt for every service",
+   "ok": true,
+   "hard": true,
+   "detail": "8,839 services, 381,133 service-days, 1,154,155 exceptions"
+  },
+  {
+   "check": "fp2026: every timetable stop resolves to an edge SLOID or a station SLOID",
+   "ok": true,
+   "hard": false,
+   "detail": "2388 of 2392 resolve; 4 are stations atlas does not hold (number only)"
+  },
+  {
+   "check": "fp2026: every timetable stop has a station record",
+   "ok": true,
+   "hard": true,
+   "detail": ""
+  },
+  {
+   "check": "fp2026: GTFS stop coordinates agree with atlas edge coordinates (95 % within 5 m)",
+   "ok": true,
+   "hard": false,
+   "detail": "median 0.18 m, p95 0.40 m, 0 of 1950 differ by more than 25 m"
+  },
+  {
+   "check": "fp2026: every edge used by the timetable is in edges.geojson",
+   "ok": true,
+   "hard": true,
+   "detail": "1 GTFS station(s) use edges that atlas files under another service point: [['Bern Europaplatz', 'Bern Europaplatz Süd']]"
+  },
+  {
+   "check": "fp2026: every atlas stop in Bern municipality has scheduled trips",
+   "ok": true,
+   "hard": false,
+   "detail": "204 of 204; missing: []"
+  },
+  {
+   "check": "fp2026: at least one trip runs on every day of the feed",
+   "ok": true,
+   "hard": true,
+   "detail": "364 days, min 6,453 / max 10,618 trips per day"
+  },
+  {
+   "check": "fp2026: timetable_2026-11-21_2026-12-12.json holds exactly the trips running 2026-11-21 to 2026-12-12, unchanged",
+   "ok": true,
+   "hard": true,
+   "detail": "35,443 of 140,500 trips; stop_times identical: True; same trips on each of 23 days: True; same departures at the focus stations: True"
+  },
+  {
+   "check": "fp2026: inferred_edges.json is reproduced exactly by re-running the rule and its back-test",
+   "ok": true,
+   "hard": true,
+   "detail": "230 groups"
+  },
+  {
+   "check": "fp2026: inferred_edges.json covers every station-level stop_time at tier-bern stops",
+   "ok": true,
+   "hard": true,
+   "detail": "26,412 stop_times in the table, 26,412 in gtfs_stop_map; resolved 10,588 (40.09 %)"
+  },
+  {
+   "check": "fp2026: every inferred edge exists in edges.geojson and belongs to the stop's own station; flags complete",
+   "ok": true,
+   "hard": true,
+   "detail": "0 bad references"
+  },
+  {
+   "check": "fp2026: back-test of the inference rule on stops with a known edge (>= 95 % of decided trip-days correct, >= 99 % in class high)",
+   "ok": true,
+   "hard": false,
+   "detail": "decided 42.72 % of trip-days; correct 96.74 % by trip-days, 95.1 % by stop_times; class high 99.96 %, class medium 88.8 % (stop_times)"
+  },
+  {
+   "check": "fp2027: stop_times rows of a trip are contiguous and every trip id is in trips.txt",
+   "ok": true,
+   "hard": true,
+   "detail": ""
+  },
+  {
+   "check": "fp2027: subset zip passes CRC test",
+   "ok": true,
+   "hard": true,
+   "detail": "3,890,046 bytes"
+  },
+  {
+   "check": "fp2027: routes -> agency",
+   "ok": true,
+   "hard": true,
+   "detail": "123 routes, 18 agencies"
+  },
+  {
+   "check": "fp2027: trips -> routes",
+   "ok": true,
+   "hard": true,
+   "detail": "32,473 trips"
+  },
+  {
+   "check": "fp2027: trips -> calendar or calendar_dates",
+   "ok": true,
+   "hard": true,
+   "detail": "1,858 services"
+  },
+  {
+   "check": "fp2027: stops -> parent_station",
+   "ok": true,
+   "hard": true,
+   "detail": "3,084 stops"
+  },
+  {
+   "check": "fp2027: agency_timezone has Zurich rules",
+   "ok": true,
+   "hard": true,
+   "detail": "source says ['Europe/Berlin']; Europe/Berlin and Europe/Zurich share offset and DST dates, outputs are labelled Europe/Zurich"
+  },
+  {
+   "check": "fp2027: stop_times -> trips and stops",
+   "ok": true,
+   "hard": true,
+   "detail": "444,996 rows"
+  },
+  {
+   "check": "fp2027: times never run backwards within a trip, stop_sequence strictly increasing",
+   "ok": true,
+   "hard": true,
+   "detail": "0 violations"
+  },
+  {
+   "check": "fp2027: times at or after 24:00:00 are preserved",
+   "ok": true,
+   "hard": true,
+   "detail": "23,160 rows, latest 29:25:00"
+  },
+  {
+   "check": "fp2027: timetable.json decodes to exactly the stop_times of the GTFS subset",
+   "ok": true,
+   "hard": true,
+   "detail": "444,996 rows compared field by field"
+  },
+  {
+   "check": "fp2027: timetable.json decodes to exactly the trips of the GTFS subset",
+   "ok": true,
+   "hard": true,
+   "detail": "32,473 trips, all 9 columns"
+  },
+  {
+   "check": "fp2027: routes preserved",
+   "ok": true,
+   "hard": true,
+   "detail": ""
+  },
+  {
+   "check": "fp2027: service-day bitmasks equal calendar.txt + calendar_dates.txt for every service",
+   "ok": true,
+   "hard": true,
+   "detail": "1,858 services, 120,943 service-days, 227,829 exceptions"
+  },
+  {
+   "check": "fp2027: every timetable stop resolves to an edge SLOID or a station SLOID",
+   "ok": true,
+   "hard": false,
+   "detail": "2111 of 2113 resolve; 2 are stations atlas does not hold (number only)"
+  },
+  {
+   "check": "fp2027: every timetable stop has a station record",
+   "ok": true,
+   "hard": true,
+   "detail": ""
+  },
+  {
+   "check": "fp2027: GTFS stop coordinates agree with atlas edge coordinates (95 % within 5 m)",
+   "ok": true,
+   "hard": false,
+   "detail": "median 0.17 m, p95 0.39 m, 0 of 1756 differ by more than 25 m"
+  },
+  {
+   "check": "fp2027: every edge used by the timetable is in edges.geojson",
+   "ok": true,
+   "hard": true,
+   "detail": "1 GTFS station(s) use edges that atlas files under another service point: [['Bern Europaplatz', 'Bern Europaplatz Süd']]"
+  },
+  {
+   "check": "fp2027: every atlas stop in Bern municipality has scheduled trips",
+   "ok": false,
+   "hard": false,
+   "detail": "200 of 204; missing: [[8510471, 'Bern, Kunstmuseum'], [8511982, 'Bern, Bundesgasse'], [8512116, 'Bern, Waisenhausplatz'], [8512525, 'Bern, Berner Fachhochschule']]"
+  },
+  {
+   "check": "fp2027: at least one trip runs on every day of the feed",
+   "ok": true,
+   "hard": true,
+   "detail": "364 days, min 6,669 / max 9,452 trips per day"
+  },
+  {
+   "check": "fp2027: inferred_edges.json is reproduced exactly by re-running the rule and its back-test",
+   "ok": true,
+   "hard": true,
+   "detail": "162 groups"
+  },
+  {
+   "check": "fp2027: inferred_edges.json covers every station-level stop_time at tier-bern stops",
+   "ok": true,
+   "hard": true,
+   "detail": "11,164 stop_times in the table, 11,164 in gtfs_stop_map; resolved 1,810 (16.21 %)"
+  },
+  {
+   "check": "fp2027: every inferred edge exists in edges.geojson and belongs to the stop's own station; flags complete",
+   "ok": true,
+   "hard": true,
+   "detail": "0 bad references"
+  },
+  {
+   "check": "fp2027: back-test of the inference rule on stops with a known edge (>= 95 % of decided trip-days correct, >= 99 % in class high)",
+   "ok": true,
+   "hard": false,
+   "detail": "decided 43.19 % of trip-days; correct 96.98 % by trip-days, 97.11 % by stop_times; class high 100.0 %, class medium 93.34 % (stop_times)"
+  },
+  {
+   "check": "fp2026: departures at focus stations (Bern, Bern Bahnhof, Zytglogge, Wankdorf) agree with transport.opendata.ch stationboard (>= 95 % of API departures found)",
+   "ok": true,
+   "hard": false,
+   "detail": "15 boards: 575 of 575 API departures found at the same minute and line; 0 of ours not in the API list; platform equal for 563 of 563"
+  },
+  {
+   "check": "fp2026: departures at 40 random Bern stops agree with transport.opendata.ch stationboard (>= 95 % of API departures found)",
+   "ok": true,
+   "hard": false,
+   "detail": "40 boards: 1466 of 1466 API departures found at the same minute and line; 0 of ours not in the API list; platform equal for 306 of 306"
+  },
+  {
+   "check": "fp2027: departures at focus stations (Bern, Bern Bahnhof, Zytglogge, Wankdorf) agree with transport.opendata.ch stationboard (>= 95 % of API departures found)",
+   "ok": true,
+   "hard": false,
+   "detail": "10 boards: 387 of 387 API departures found at the same minute and line; 0 of ours not in the API list; platform equal for 385 of 385"
+  },
+  {
+   "check": "fp2027: departures at 40 random Bern stops agree with transport.opendata.ch stationboard (>= 95 % of API departures found)",
+   "ok": true,
+   "hard": false,
+   "detail": "40 boards: 1470 of 1470 API departures found at the same minute and line; 0 of ours not in the API list; platform equal for 308 of 308"
+  },
+  {
+   "check": "web/bern-transit.js returns the same departures as scripts/timetable.py",
+   "ok": true,
+   "hard": true,
+   "detail": "1294 departures over 25 queries"
+  }
+ ],
+ "summary": {
+  "checks": 87,
+  "passed": 83,
+  "warnings": 4,
+  "failed": 0
+ }
+}

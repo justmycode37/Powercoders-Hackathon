@@ -1,0 +1,47 @@
+{
+ "id": "platform-sector-sign",
+ "title": "Platform sector sign (letter field blank)",
+ "file": "assets/platform-sector-sign.gltf",
+ "format": "glTF 2.0 (embedded buffer)",
+ "approximate": true,
+ "inferred": true,
+ "inferred_how": "parametric primitives; dimensions estimated from the evidence listed, not measured",
+ "units": "metre",
+ "axes": "glTF: +Y up, right-handed; +X along the long side, +Z towards the passenger/front side",
+ "origin": "centre of footprint at ground level (y = 0)",
+ "parameters": {
+  "width": 0.6,
+  "height": 0.5,
+  "mount_h": 2.6
+ },
+ "bbox_m": {
+  "min": [
+   -0.3,
+   2.6,
+   -0.027
+  ],
+  "max": [
+   0.3,
+   3.9,
+   0.027
+  ]
+ },
+ "triangles": 60,
+ "evidence": [
+  {
+   "kind": "dataset",
+   "ref": "sbb-dataset-sektortafel",
+   "what": "143 sector boards for Bern (BN) with positions (fetched by stations/)"
+  },
+  {
+   "kind": "photo",
+   "ref": "commons:179915274",
+   "what": "blue sector signs with white track numbers and sector letter"
+  }
+ ],
+ "notes": "Apply the sector letter (A-E) as a texture or text at load time.",
+ "licence": "CC0 1.0 (original work generated for this repository)",
+ "bytes": 9205,
+ "sha256": "8e2f9c7ee2ca26e360e473ed53be250a8572e47fbd851d18686fcc6111f3d894",
+ "source": "tools/07_assets.py"
+}

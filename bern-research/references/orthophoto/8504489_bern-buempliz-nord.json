@@ -1,0 +1,44 @@
+{
+ "id": "ortho-8504489_bern-buempliz-nord",
+ "file": "orthophoto/8504489_bern-buempliz-nord.jpg",
+ "world_file": "orthophoto/8504489_bern-buempliz-nord.jgw",
+ "station": {
+  "number": 8504489,
+  "sloid": "ch:1:sloid:4489",
+  "name": "Bern Bümpliz Nord"
+ },
+ "feature": "Bümpliz Nord station",
+ "bbox_lv95": [
+  2596169,
+  1199337,
+  2596389,
+  1199497
+ ],
+ "crs": "EPSG:2056",
+ "bbox_wgs84": [
+  7.3883186,
+  46.9451062,
+  7.3912069,
+  46.9465467
+ ],
+ "bbox_wgs84_note": "converted with swisstopo approximate formulas (about 1 m)",
+ "metres_per_pixel": [
+  0.120022,
+  0.12003
+ ],
+ "width_px": 1833,
+ "height_px": 1333,
+ "bytes": 672843,
+ "sha256": "06cc1c5060b437b7b69b90c866569b9d8561d89bf1c89ba25d43f49a7d1ece8f",
+ "source": "swisstopo SWISSIMAGE (WMS layer ch.swisstopo.swissimage)",
+ "source_url": "https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ch.swisstopo.swissimage&STYLES=&CRS=EPSG%3A2056&BBOX=2596169%2C1199337%2C2596389%2C1199497&WIDTH=1833&HEIGHT=1333&FORMAT=image%2Fjpeg",
+ "publisher": "Federal Office of Topography swisstopo",
+ "licence": "swisstopo free geodata (OGD)",
+ "licence_url": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-ogd",
+ "attribution": "© swisstopo",
+ "capture_date": null,
+ "capture_date_note": "SWISSIMAGE flight year varies per area; look up in map.geo.admin.ch layer ch.swisstopo.images-swissimage-dop10.metadata",
+ "retrieved": "2026-11-21T01:54:20+01:00",
+ "inferred": false,
+ "model_use": "Top-down footprint: canopy outlines, platform edges, tram islands, kerbs, road markings; drape on terrain or trace in a GIS (world file + EPSG:2056)."
+}

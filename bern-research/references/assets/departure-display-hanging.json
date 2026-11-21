@@ -1,0 +1,48 @@
+{
+ "id": "departure-display-hanging",
+ "title": "Hanging platform departure display",
+ "file": "assets/departure-display-hanging.gltf",
+ "format": "glTF 2.0 (embedded buffer)",
+ "approximate": true,
+ "inferred": true,
+ "inferred_how": "parametric primitives; dimensions estimated from the evidence listed, not measured",
+ "units": "metre",
+ "axes": "glTF: +Y up, right-handed; +X along the long side, +Z towards the passenger/front side",
+ "origin": "centre of footprint at ground level (y = 0)",
+ "parameters": {
+  "width": 2.4,
+  "height": 0.55,
+  "depth": 0.15,
+  "mount_h": 2.7
+ },
+ "bbox_m": {
+  "min": [
+   -1.2,
+   2.7,
+   -0.08
+  ],
+  "max": [
+   1.2,
+   4.25,
+   0.08
+  ]
+ },
+ "triangles": 60,
+ "evidence": [
+  {
+   "kind": "photo",
+   "ref": "commons:179915274",
+   "what": "Bern Perronhalle: blue hanging platform displays and blue sector signs (12 A 13), clocks on the same hangers"
+  },
+  {
+   "kind": "dataset",
+   "ref": "sbb-dataset-mobiliar-im-bahnhof",
+   "what": "'BildschirmMonitor' and 'Videoanlage' listed for Bern"
+  }
+ ],
+ "notes": "",
+ "licence": "CC0 1.0 (original work generated for this repository)",
+ "bytes": 9255,
+ "sha256": "56af27ce1300bc4f7c7f2f4c58b49dae919295f2adce2ebe5500a95228579f54",
+ "source": "tools/07_assets.py"
+}

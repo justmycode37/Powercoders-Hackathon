@@ -1,0 +1,44 @@
+{
+ "id": "ortho-8576990_bern-guisanplatz-expo",
+ "file": "orthophoto/8576990_bern-guisanplatz-expo.jpg",
+ "world_file": "orthophoto/8576990_bern-guisanplatz-expo.jgw",
+ "station": {
+  "number": 8576990,
+  "sloid": "ch:1:sloid:76990",
+  "name": "Bern, Guisanplatz Expo"
+ },
+ "feature": "Guisanplatz Expo tram/bus stop",
+ "bbox_lv95": [
+  2601845,
+  1200867,
+  2602025,
+  1201027
+ ],
+ "crs": "EPSG:2056",
+ "bbox_wgs84": [
+  7.4628768,
+  46.9588774,
+  7.4652423,
+  46.9603161
+ ],
+ "bbox_wgs84_note": "converted with swisstopo approximate formulas (about 1 m)",
+ "metres_per_pixel": [
+  0.1,
+  0.1
+ ],
+ "width_px": 1800,
+ "height_px": 1600,
+ "bytes": 876427,
+ "sha256": "c93483d74c996227e2a8141142cb08523951c32248e26917d39700034fb55334",
+ "source": "swisstopo SWISSIMAGE (WMS layer ch.swisstopo.swissimage)",
+ "source_url": "https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ch.swisstopo.swissimage&STYLES=&CRS=EPSG%3A2056&BBOX=2601845%2C1200867%2C2602025%2C1201027&WIDTH=1800&HEIGHT=1600&FORMAT=image%2Fjpeg",
+ "publisher": "Federal Office of Topography swisstopo",
+ "licence": "swisstopo free geodata (OGD)",
+ "licence_url": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-ogd",
+ "attribution": "© swisstopo",
+ "capture_date": null,
+ "capture_date_note": "SWISSIMAGE flight year varies per area; look up in map.geo.admin.ch layer ch.swisstopo.images-swissimage-dop10.metadata",
+ "retrieved": "2026-11-21T01:54:20+01:00",
+ "inferred": false,
+ "model_use": "Top-down footprint: canopy outlines, platform edges, tram islands, kerbs, road markings; drape on terrain or trace in a GIS (world file + EPSG:2056)."
+}
