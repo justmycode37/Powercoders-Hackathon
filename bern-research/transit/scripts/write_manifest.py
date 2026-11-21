@@ -45,6 +45,11 @@ for feed, src in (("fp2026", GTFS_26), ("fp2027", GTFS_27)):
     ]
 
 
+for _p in sorted((DATA / "fp2026").glob("timetable_20*.json")):
+    OUTPUTS.append((f"fp2026/{_p.name}", "Window of the compact timetable: only trips running on the dates in the file name (same schema)",
+                    "slice_timetable.py", GTFS_26, "meta.counts.trips"))
+
+
 def sha256(path) -> str:
     h = hashlib.sha256()
     with open(path, "rb") as fh:

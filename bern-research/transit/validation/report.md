@@ -1,8 +1,8 @@
 # Validation report
 
-Generated 2026-11-21T02:17:31+01:00 by `scripts/validate.py` `--online` `--node`.
+Generated 2026-11-21T02:36:48+01:00 by `scripts/validate.py` `--online` `--node`.
 
-**74 of 78 checks passed, 4 warnings, 0 failed.**
+**75 of 79 checks passed, 4 warnings, 0 failed.**
 
 | Result | Check | Detail |
 |---|---|---|
@@ -59,6 +59,7 @@ Generated 2026-11-21T02:17:31+01:00 by `scripts/validate.py` `--online` `--node`
 | pass | fp2026: every edge used by the timetable is in edges.geojson | 1 GTFS station(s) use edges that atlas files under another service point: [['Bern Europaplatz', 'Bern Europaplatz Süd']] |
 | pass | fp2026: every atlas stop in Bern municipality has scheduled trips | 204 of 204; missing: [] |
 | pass | fp2026: at least one trip runs on every day of the feed | 364 days, min 6,453 / max 10,618 trips per day |
+| pass | fp2026: timetable_2026-11-21_2026-12-12.json holds exactly the trips running 2026-11-21 to 2026-12-12, unchanged | 35,443 of 140,500 trips; stop_times identical: True; same trips on each of 23 days: True; same departures at the focus stations: True |
 | pass | fp2027: stop_times rows of a trip are contiguous and every trip id is in trips.txt |  |
 | pass | fp2027: subset zip passes CRC test | 3,890,046 bytes |
 | pass | fp2027: routes -> agency | 123 routes, 18 agencies |

@@ -433,7 +433,8 @@ def main() -> int:
     }, ensure_ascii=False, separators=(",", ":")).replace("],[", "],\n[") + "\n", encoding="utf-8")
 
     stats = {"feed": feed, "counts": counts,
-             "files": {p.name: p.stat().st_size for p in sorted(out.iterdir()) if p.is_file() and p.name != "timetable_stats.json"}}
+             "files": {n: (out / n).stat().st_size for n in sorted([f"gtfs_bern_{feed}.zip", "timetable.json", "edge_directions.json",
+                                                                    "segments.geojson", "lines.geojson", "transfers.json"])}}
     (out / "timetable_stats.json").write_text(json.dumps(stats, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(stats, indent=2))
     return 0

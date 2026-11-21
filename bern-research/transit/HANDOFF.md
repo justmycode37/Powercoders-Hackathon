@@ -1,6 +1,6 @@
 # transit/ handoff
 
-Owner thread: Bern Transit GTFS and DiDok Data. State of 2026-11-21, 02:20 Europe/Zurich. Nothing is staged or
+Owner thread: Bern Transit GTFS and DiDok Data. State of 2026-11-21, 02:40 Europe/Zurich. Nothing is staged or
 committed by this thread; everything is inside `bern-research/transit/`.
 
 ## What you get
@@ -21,16 +21,17 @@ attributes. All of it joins on atlas SLOIDs and DiDok numbers. Two timetable yea
 | `data/sectors.geojson` | platform sectors with coordinates | 1,803; bern 117 on 20 edges |
 | `data/<feed>/gtfs_bern_<feed>.zip` | lossless GTFS subset (valid GTFS, source rows verbatim) | fp2026: 140,500 trips, 2,066,447 stop_times, 166 routes, 8,839 services. fp2027: 32,473 trips, 444,996 stop_times, 123 routes, 1,858 services |
 | `data/<feed>/timetable.json` | the same timetable, compact; decodes to the zip exactly | fp2026: 11,941 patterns. fp2027: 2,577 patterns |
+| `data/fp2026/timetable_2026-11-21_2026-12-12.json` | the same schema, only the trips that run on the 22 days left in the 2026 timetable year; 4.8 MB instead of 19.4 MB | 35,443 trips, 501,227 stop_times |
 | `data/<feed>/edge_directions.json` | derived: lines and next stops per edge | 1,294 / 1,174 stops |
 | `data/<feed>/segments.geojson` | derived: every stop-to-stop hop | 5,961 / 3,747 |
 | `data/<feed>/lines.geojson` | derived: one stop sequence per line and direction | 266 / 220 |
 | `data/<feed>/transfers.json` | minimum transfer times, in-seat transfers | 48,383 / 7,219 |
 | `data/coverage_stops.json`, `data/coverage_accessibility.json` | coverage logic, counts, known gaps | |
-| `SOURCES.json`, `data/MANIFEST.json` | provenance of inputs and outputs (sha256, bytes, licence) | 16 inputs, 24 outputs |
-| `validation/` | `report.md`, `report.json`, `sample_departures.md`, `sample_departures.json` | 78 checks |
-| `scripts/`, `web/bern-transit.js` | pipeline and a thin reader | 11 scripts |
+| `SOURCES.json`, `data/MANIFEST.json` | provenance of inputs and outputs (sha256, bytes, licence) | 16 inputs, 25 outputs |
+| `validation/` | `report.md`, `report.json`, `sample_departures.md`, `sample_departures.json` | 79 checks |
+| `scripts/`, `web/bern-transit.js` | pipeline and a thin reader | 12 scripts |
 
-Total 76 MB, largest file 19.4 MB. Field-level schemas are in `docs/SCHEMA.md`.
+Total 81 MB, largest file 19.4 MB. Field-level schemas are in `docs/SCHEMA.md`.
 
 fp2027 has a quarter of the trip records of fp2026 but the same service per day (median Tuesday: 8,910 trips in
 fp2026, 9,141 in fp2027). The 2026 feed carries a year of construction-site variants as separate trips.
@@ -57,7 +58,7 @@ fp2026, 9,141 in fp2027). The 2026 feed carries a year of construction-site vari
 
 ## Validation
 
-`python scripts/validate.py --online --node`: 78 checks, 74 pass, 4 warnings, 0 failed. Highlights:
+`python scripts/validate.py --online --node`: 79 checks, 75 pass, 4 warnings, 0 failed. Highlights:
 
 - `timetable.json` decodes to exactly the stop_times (2,066,447 and 444,996 rows, all 7 columns) and trips
   (all 9 columns) of the GTFS subset, for both feeds.
@@ -70,6 +71,7 @@ fp2026, 9,141 in fp2027). The 2026 feed carries a year of construction-site vari
   ours was absent from the API list, and the platform string equals ours for 1,562 of 1,562.
 - GTFS stop coordinates and atlas edge coordinates agree: median 0.18 m, 95 % within 0.4 m, maximum 0.5 m.
 - `web/bern-transit.js` returns the same 1,294 departures as `scripts/timetable.py` over 25 queries.
+- The window file holds exactly the trips that run from 2026-11-21 to 2026-12-12, with identical stop_times.
 - The join section of `bern-research/lead/validate/validate.py` reports no failure for this folder.
 
 The four warnings are known and harmless: two border stops whose edges fall inside the generalised polygon;
@@ -185,7 +187,7 @@ on the Monday before.
 ```
 cd bern-research/transit
 python scripts/run_all.py              # 16 downloads (about 560 MB) into .cache/, then build and validate
-python scripts/run_all.py --skip-fetch # rebuild from .cache/ in about 2.5 minutes; checked: all 24 outputs come out byte-identical
+python scripts/run_all.py --skip-fetch # rebuild from .cache/ in about 2.5 minutes; checked: the outputs come out byte-identical
 ```
 
 Python 3.11, standard library only. No key or login is needed for any input. A fresh download gives newer
@@ -193,6 +195,11 @@ source versions (GTFS on Wednesdays and Saturdays, atlas every night), so counts
 the committed files are pinned by sha256 in `SOURCES.json`. atlas download links change with every nightly
 publication. `fetch_sources.py` therefore finds the current link on the dataset page by file name
 (`--resolve-only` shows the links without downloading; two had already changed during this session).
+
+Freshness, checked at 02:23 on 2026-11-21: the inputs are the GTFS release of 2026-11-18 (still the newest one
+behind the permalink) and the atlas publication of 2026-11-20. The atlas publication of 2026-11-21 came out
+during the session; compared row by row for the stations and edges in coverage it differs in one row only (the
+end date of one edge at Bärau, Schärischachen, tier `connected`), so the files were not rebuilt.
 
 ## How to load
 
@@ -207,6 +214,10 @@ publication. `fetch_sources.py` therefore finds the current link on the dataset 
   leads to the coordinate, height and compass direction in `edges.geojson` and to `accessibility_edges.json`.
 - **Any GTFS tool:** `data/<feed>/gtfs_bern_<feed>.zip` is a standard feed.
 - **Choosing the feed:** dates up to 2026-12-12 use `fp2026`, from 2026-12-13 use `fp2027`.
+- **Lighter load in a browser:** for dates from 2026-11-21 to 2026-12-12 load
+  `data/fp2026/timetable_2026-11-21_2026-12-12.json` (4.8 MB) instead of the full year (19.4 MB). Same reader,
+  same results for those dates. `python scripts/slice_timetable.py --feed <feed> --from <date> --to <date>` cuts
+  any other window.
 
 ## Suggested commit set
 

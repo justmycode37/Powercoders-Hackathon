@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-21T02:17:31+01:00",
+ "generated": "2026-11-21T02:36:48+01:00",
  "feeds": {
   "fp2026": {
    "national_rows": {
@@ -183,6 +183,16 @@
     "Busland AG": 31,
     "Busbetrieb Solothurn und Umgebung": 15,
     "Drahtseilbahn Marzili-Stadt Bern AG": 2
+   },
+   "window_files": {
+    "timetable_2026-11-21_2026-12-12.json": {
+     "trips": 35443,
+     "window": [
+      "2026-11-21",
+      "2026-12-12"
+     ],
+     "bytes": 4829285
+    }
    }
   },
   "fp2027": {
@@ -2655,6 +2665,12 @@
    "detail": "364 days, min 6,453 / max 10,618 trips per day"
   },
   {
+   "check": "fp2026: timetable_2026-11-21_2026-12-12.json holds exactly the trips running 2026-11-21 to 2026-12-12, unchanged",
+   "ok": true,
+   "hard": true,
+   "detail": "35,443 of 140,500 trips; stop_times identical: True; same trips on each of 23 days: True; same departures at the focus stations: True"
+  },
+  {
    "check": "fp2027: stop_times rows of a trip are contiguous and every trip id is in trips.txt",
    "ok": true,
    "hard": true,
@@ -2806,8 +2822,8 @@
   }
  ],
  "summary": {
-  "checks": 78,
-  "passed": 74,
+  "checks": 79,
+  "passed": 75,
   "warnings": 4,
   "failed": 0
  }

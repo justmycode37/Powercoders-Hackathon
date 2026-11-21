@@ -25,6 +25,7 @@ data/
   fp2026/  fp2027/            one folder per timetable year:
     gtfs_bern_<feed>.zip        lossless GTFS subset
     timetable.json              compact timetable
+    timetable_<from>_<to>.json  the same for a date window (fp2026: the days left in 2026, 4.8 MB)
     edge_directions.json  segments.geojson  lines.geojson  transfers.json
 scripts/                      pipeline (Python 3.11, standard library only)
 web/bern-transit.js           thin reader for timetable.json (browser and node)
@@ -75,7 +76,7 @@ python scripts/run_all.py --skip-fetch # reuse .cache/
 
 Building takes about two and a half minutes after the downloads. Steps: `fetch_sources.py` (16 downloads, about 560 MB; atlas links change every night, so they are looked up on the dataset page by file name) -> `extract_gtfs.py --feed <feed>` (one streaming pass over
 the national feed) -> `build_stops.py` -> `build_accessibility.py` -> `build_timetable.py --feed <feed>` ->
-`write_manifest.py` -> `validate.py --online --node`.
+`slice_timetable.py --feed fp2026` -> `write_manifest.py` -> `validate.py --online --node`.
 
 A rebuild picks up whatever the publisher has released by then (GTFS twice a week, atlas daily), so counts move.
 The exact inputs of the committed files are pinned by sha256 in `SOURCES.json`.

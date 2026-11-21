@@ -329,6 +329,18 @@
         "gtfs_fp2027"
       ],
       "commit": true
+    },
+    {
+      "path": "data/fp2026/timetable_2026-11-21_2026-12-12.json",
+      "description": "Window of the compact timetable: only trips running on the dates in the file name (same schema)",
+      "bytes": 4829285,
+      "sha256": "70d72d73e2bf799565b7b32b1a3e6e51092e376b4698cfca8af5febb3e15157c",
+      "records": 35443,
+      "built_by": "scripts/slice_timetable.py",
+      "sources": [
+        "gtfs_fp2026"
+      ],
+      "commit": true
     }
   ]
 }

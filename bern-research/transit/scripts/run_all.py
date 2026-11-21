@@ -44,6 +44,7 @@ def main() -> int:
     run("build_accessibility.py")
     for feed in ("fp2026", "fp2027"):
         run("build_timetable.py", "--feed", feed)
+    run("slice_timetable.py", "--feed", "fp2026")      # the days left in the 2026 timetable year, a much smaller file
     run("write_manifest.py")
     flags = [] if args.offline else ["--online"]
     if shutil.which("node"):

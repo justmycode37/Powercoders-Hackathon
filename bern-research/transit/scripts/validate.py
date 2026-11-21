@@ -325,6 +325,31 @@ def validate_feed(feed, report, st_by_number, edge_by_sloid, today):
     return tt
 
 
+def validate_slices(feed, tt, report):
+    """A window file must hold exactly the trips that run in its window, unchanged."""
+    full = {}
+    for row in tt.stop_times():
+        full[row[0]] = hash((full.get(row[0]), row[1:]))
+    for path in sorted((DATA / feed).glob("timetable_20*.json")):
+        sl = Timetable(json.loads(path.read_text(encoding="utf-8")))
+        w = sl.meta["window"]
+        part = {}
+        for row in sl.stop_times():
+            part[row[0]] = hash((part.get(row[0]), row[1:]))
+        same_rows = all(full.get(k) == v for k, v in part.items())
+
+        def running(t, day):
+            return {tid for p in t.patterns for tid, sv in zip(p["t"]["id"], p["t"]["sv"]) if t.runs(sv, day)}
+        d0, d1 = tt.day_index(w["from"]), tt.day_index(w["to"])
+        days_ok = all(running(tt, d) == running(sl, d) for d in range(d0 - 1, d1 + 1))
+        deps_ok = all(tt.departures(n, w["from"], "00:00:00", limit=500, window_sec=30 * 3600) == sl.departures(n, w["from"], "00:00:00", limit=500, window_sec=30 * 3600)
+                      for n, _ in SAMPLE_STATIONS)
+        check(f"{feed}: {path.name} holds exactly the trips running {w['from']} to {w['to']}, unchanged",
+              same_rows and days_ok and deps_ok,
+              f"{len(part):,} of {len(full):,} trips; stop_times identical: {same_rows}; same trips on each of {d1 - d0 + 2} days: {days_ok}; same departures at the focus stations: {deps_ok}")
+        report["feeds"][feed].setdefault("window_files", {})[path.name] = {"trips": len(part), "window": [w["from"], w["to"]], "bytes": path.stat().st_size}
+
+
 def stationboard(number, date, time_, limit=40):
     q = urllib.parse.urlencode({"id": number, "datetime": f"{date} {time_[:5]}", "limit": limit})
     req = urllib.request.Request(f"https://transport.opendata.ch/v1/stationboard?{q}", headers={"User-Agent": USER_AGENT})
@@ -468,6 +493,7 @@ def main() -> int:
     for feed in FEEDS:
         if (DATA / feed / "timetable.json").exists():
             tts[feed] = validate_feed(feed, report, st_by_number, edge_by_sloid, today)
+            validate_slices(feed, tts[feed], report)
     if len(tts) == 2:
         a, b = ({s[1] for s in tts[f].stops if st_by_number[s[1]]["properties"]["tier"] == "bern"} for f in ("fp2026", "fp2027"))
         report["bern_stations_only_in_fp2026"] = sorted([n, st_by_number[n]["properties"]["name"]] for n in a - b)

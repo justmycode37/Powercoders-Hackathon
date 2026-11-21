@@ -194,6 +194,14 @@ service `i` runs on `feed_start_date + n` days. The masks already contain `calen
 `frequencies` holds the two trips of the Marzili funicular, which the feed describes by headway instead of
 single departures; the readers skip them unless asked.
 
+## data/fp2026/timetable_<from>_<to>.json
+
+A window of `timetable.json` with the same structure: only the trips whose service runs on a day from `<from>` to
+`<to>` (and on the day before `<from>`, for trips still running after midnight). `meta.window` = `{ from, to,
+note, derived_from }`; `meta.counts` is recomputed. Service masks are unchanged. Outside the window the file is
+incomplete. Built by `scripts/slice_timetable.py`; the validation checks that it holds exactly those trips with
+identical stop_times.
+
 ## data/<feed>/edge_directions.json  (derived, `inferred: true`)
 
 `stops[]` for every GTFS stop in tiers `bern` and `ring`: `stop_id`, `edge_sloid`, `station_sloid`, `number`,
