@@ -1,0 +1,3 @@
+# raw official downloads (re-fetch with scripts/fetch_sources.py)
+.cache/
+__pycache__/

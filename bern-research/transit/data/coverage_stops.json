@@ -1,0 +1,174 @@
+{
+  "coverage_logic": {
+    "bern": "atlas service point with municipality FSO number 351 (atlas attribute fsoNumber) that is a stop point, or an operating point owning a boarding edge the timetable uses (stop_point=false)",
+    "ring": "atlas stop point outside Bern whose coordinate is at most 5 km from the swisstopo municipal boundary of Bern",
+    "connected": "any other station called at by a GTFS trip that serves at least one `bern` stop (fp2026 or fp2027)"
+  },
+  "ring_km": 5.0,
+  "stations_by_tier": {
+    "bern": 205,
+    "ring": 386,
+    "connected": 529
+  },
+  "stations_total": 1120,
+  "stations_not_in_atlas": [
+    8003005,
+    8014350,
+    8301003,
+    8771500
+  ],
+  "edges_by_tier_and_type": {
+    "bern/BOARDING_AREA": 21,
+    "bern/BOARDING_PLATFORM": 593,
+    "connected/BOARDING_AREA": 399,
+    "connected/BOARDING_PLATFORM": 1597,
+    "ring/BOARDING_AREA": 50,
+    "ring/BOARDING_PLATFORM": 818
+  },
+  "edges_total": 3478,
+  "bern_edges": {
+    "boarding_platforms": 593,
+    "with_geometry": 574,
+    "with_compass_direction": 428,
+    "with_public_designation": 220,
+    "with_height": 574,
+    "coord_rounded": 139,
+    "not_valid_today": 6,
+    "referenced_by_gtfs_fp2026": 548,
+    "referenced_by_gtfs_fp2027": 490
+  },
+  "bern_stations": {
+    "total": 205,
+    "stop_points": 204,
+    "not_valid_today": [
+      [
+        "Bern, Berner Fachhochschule",
+        "2026-03-20",
+        "2026-03-21"
+      ],
+      [
+        "Bern, Bundesgasse",
+        "2026-03-20",
+        "2026-03-20"
+      ]
+    ],
+    "operating_points_owning_edges": [
+      "Bern Europaplatz Süd"
+    ],
+    "inside_generalised_boundary_polygon": 205,
+    "outside_generalised_boundary_polygon": [],
+    "without_edges": [
+      "Bern Matte",
+      "Bern Münsterplattform"
+    ],
+    "in_gtfs_fp2026": 204,
+    "in_gtfs_fp2027": 200
+  },
+  "ring_stations_inside_polygon_but_other_municipality": [],
+  "gtfs_stop_map": {
+    "fp2026": {
+      "summary_all_stops": {
+        "stop_times_rows": 2066447,
+        "rows_by_kind": {
+          "edge": 1975850,
+          "station": 83049,
+          "edge_sector_variant": 4170,
+          "edge_by_designation": 2752,
+          "station_not_in_atlas": 592,
+          "edge_unresolved": 34,
+          "parent_station": 0
+        },
+        "share_edge_sloid": 0.9595,
+        "share_station_sloid_only": 0.0402,
+        "share_no_sloid": 0.0003
+      },
+      "summary_tier_bern": {
+        "stop_times_rows": 1240690,
+        "rows_by_kind": {
+          "edge": 1210572,
+          "station": 26412,
+          "edge_sector_variant": 3706,
+          "parent_station": 0
+        },
+        "share_edge_sloid": 0.9787,
+        "share_station_sloid_only": 0.0213,
+        "share_no_sloid": 0.0
+      },
+      "summary_tier_bern_and_ring": {
+        "stop_times_rows": 1831572,
+        "rows_by_kind": {
+          "edge": 1752728,
+          "station": 73891,
+          "edge_sector_variant": 3706,
+          "edge_by_designation": 1247,
+          "parent_station": 0
+        },
+        "share_edge_sloid": 0.9597,
+        "share_station_sloid_only": 0.0403,
+        "share_no_sloid": 0.0
+      },
+      "stop_count_by_kind": {
+        "edge": 1942,
+        "parent_station": 1023,
+        "station": 411,
+        "edge_sector_variant": 27,
+        "edge_by_designation": 5,
+        "station_not_in_atlas": 4,
+        "edge_unresolved": 3
+      }
+    },
+    "fp2027": {
+      "summary_all_stops": {
+        "stop_times_rows": 444996,
+        "rows_by_kind": {
+          "edge": 418086,
+          "station": 25153,
+          "edge_by_designation": 811,
+          "edge_sector_variant": 692,
+          "edge_unresolved": 148,
+          "station_not_in_atlas": 106,
+          "parent_station": 0
+        },
+        "share_edge_sloid": 0.9429,
+        "share_station_sloid_only": 0.0569,
+        "share_no_sloid": 0.0002
+      },
+      "summary_tier_bern": {
+        "stop_times_rows": 243243,
+        "rows_by_kind": {
+          "edge": 231587,
+          "station": 11137,
+          "edge_sector_variant": 492,
+          "edge_unresolved": 27,
+          "parent_station": 0
+        },
+        "share_edge_sloid": 0.9541,
+        "share_station_sloid_only": 0.0459,
+        "share_no_sloid": 0.0
+      },
+      "summary_tier_bern_and_ring": {
+        "stop_times_rows": 373775,
+        "rows_by_kind": {
+          "edge": 350807,
+          "station": 22015,
+          "edge_sector_variant": 492,
+          "edge_by_designation": 331,
+          "edge_unresolved": 130,
+          "parent_station": 0
+        },
+        "share_edge_sloid": 0.9408,
+        "share_station_sloid_only": 0.0592,
+        "share_no_sloid": 0.0
+      },
+      "stop_count_by_kind": {
+        "edge": 1736,
+        "parent_station": 971,
+        "station": 342,
+        "edge_sector_variant": 21,
+        "edge_by_designation": 7,
+        "edge_unresolved": 5,
+        "station_not_in_atlas": 2
+      }
+    }
+  }
+}
